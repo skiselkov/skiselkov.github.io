@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['rec_5fcb_3516',['rec_cb',['../compress__zip_8c.html#a3dd9f4b558d9f941aad8d6423c05ba51',1,'compress_zip.c']]],
+  ['rel_5fangle_3517',['rel_angle',['../geom_8h.html#a95524074f1f51b7c7332fab9964da9b7',1,'rel_angle(double a1, double a2) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#acae90c48cb9c26a1a95e97ab6a18b6c9',1,'rel_angle(double a1, double a2):&#160;geom.c']]],
+  ['rel_5fhdg_5fimpl_3518',['rel_hdg_impl',['../helpers_8h.html#a97c92876bf548ebe198fac19378a93ef',1,'rel_hdg_impl(double hdg1, double hdg2, const char *file, int line):&#160;helpers.c'],['../helpers_8c.html#aab2e0b814c99c025f8f9f104fbc2524b',1,'rel_hdg_impl(double hdg1, double hdg2, const char *file, int line):&#160;helpers.c']]],
+  ['remove_5fdirectory_3519',['remove_directory',['../helpers_8h.html#aa229ebeac14d63bb501bdd32320f2a0b',1,'remove_directory(const char *dirname):&#160;helpers.c'],['../helpers_8c.html#a3b91113e3a9b25ab00175dbe5d7301af',1,'remove_directory(const char *dirname):&#160;helpers.c']]],
+  ['remove_5ffile_3520',['remove_file',['../helpers_8h.html#acd0dc9ca74a97088a1c7bcbe2099e637',1,'remove_file(const char *filename, bool_t notfound_ok):&#160;helpers.c'],['../helpers_8c.html#ac0e3a3ed39b38189fa9e7c99c536eec7',1,'remove_file(const char *filename, bool_t notfound_ok):&#160;helpers.c']]],
+  ['return_3521',['return',['../jsmn__path_8h.html#a6d0d083eaad57c6296fd1a7c676daac6',1,'return(tok):&#160;jsmn_path.h'],['../jsmn__path_8h.html#a0705cb6b31823e7d40c6e0046a1472aa',1,'return(result):&#160;jsmn_path.h']]],
+  ['riff_5fdump_3522',['riff_dump',['../riff_8h.html#afb1d2f3451fa16c0f51f2189df31a670',1,'riff_dump(const riff_chunk_t *topchunk):&#160;riff.c'],['../riff_8c.html#a646a9cff159ba6abb1de726bf54ef322',1,'riff_dump(const riff_chunk_t *topchunk):&#160;riff.c']]],
+  ['riff_5ffind_5fchunk_3523',['riff_find_chunk',['../riff_8h.html#a13c5c97612d7b05fbf0f86e7e43d4f3c',1,'riff_find_chunk(riff_chunk_t *topchunk,...):&#160;riff.c'],['../riff_8c.html#a42ed08edbc0484e940d2016e7fc2169e',1,'riff_find_chunk(riff_chunk_t *topchunk,...):&#160;riff.c']]],
+  ['riff_5ffree_5fchunk_3524',['riff_free_chunk',['../riff_8h.html#aa0b2c4b88e021031ce26e1e9de176b17',1,'riff_free_chunk(riff_chunk_t *c):&#160;riff.c'],['../riff_8c.html#adad0194e533af1c3f496801422ff2a52',1,'riff_free_chunk(riff_chunk_t *c):&#160;riff.c']]],
+  ['riff_5fparse_3525',['riff_parse',['../riff_8h.html#af9f031cc5599493b430960c03a645142',1,'riff_parse(uint32_t filetype, uint8_t *buf, size_t bufsz):&#160;riff.c'],['../riff_8c.html#a078a465858b4382fe7fb0a9a567cf6bc',1,'riff_parse(uint32_t filetype, uint8_t *buf, size_t bufsz):&#160;riff.c']]]
+];
