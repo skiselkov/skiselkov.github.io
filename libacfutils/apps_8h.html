@@ -72,19 +72,19 @@ $(function() {
 <div class="title">apps.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="types_8h_source.html">acfutils/types.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;acfutils/types.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for apps.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="apps_8h__incl.png" border="0" usemap="#a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2apps_8h" alt=""/></div>
 <map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2apps_8h" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2apps_8h">
 <area shape="rect" title=" " alt="" coords="63,5,237,61"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="89,109,211,136"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="89,109,211,136"/>
 <area shape="rect" title=" " alt="" coords="5,184,76,211"/>
 <area shape="rect" title=" " alt="" coords="108,259,179,285"/>
 <area shape="rect" title=" " alt="" coords="152,184,223,211"/>
 <area shape="rect" href="core_8h.html" title=" " alt="" coords="247,184,309,211"/>
-<area shape="rect" href="libconfig_8h.html" title=" " alt="" coords="233,259,323,285"/>
+<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="233,259,323,285"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -94,7 +94,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2apps_8hdep" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2apps_8hdep">
 <area shape="rect" title=" " alt="" coords="105,5,280,61"/>
 <area shape="rect" href="apps_8c.html" title=" " alt="" coords="5,109,180,165"/>
-<area shape="rect" href="chart__prov__navigraph_8c.html" title=" " alt="" coords="205,109,383,165"/>
+<area shape="rect" href="chart__prov__navigraph_8c_source.html" title=" " alt="" coords="205,109,383,165"/>
 </map>
 </div>
 </div>
@@ -102,7 +102,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4be870e47611c712f2dac7ad7fb57f38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apps_8h.html#a4be870e47611c712f2dac7ad7fb57f38">lacf_open_URL</a> (const char *url)</td></tr>
+<tr class="memitem:a4be870e47611c712f2dac7ad7fb57f38"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="apps_8h.html#a4be870e47611c712f2dac7ad7fb57f38">lacf_open_URL</a> (const char *url)</td></tr>
 <tr class="separator:a4be870e47611c712f2dac7ad7fb57f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -113,7 +113,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> lacf_open_URL </td>
+          <td class="memname">bool_t lacf_open_URL </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>url</em></td><td>)</td>
@@ -121,6 +121,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Given a URL, attempts to open it in the host operating system's preferred web browser. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>A URL that can be passed on to a web browser. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if launching the browser succeeded, <code>B_FALSE</code> otherwise. This always succeeds on Windows. On macOS and Linux, this depends on the return value of the shell command (<code>open</code> on macOS and <code>xdg-open</code> on Linux). </dd></dl>
 
 </div>
 </div>

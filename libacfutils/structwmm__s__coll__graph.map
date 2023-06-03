@@ -1,5 +1,5 @@
-<map id="wmm_s" name="wmm_s">
-<area shape="rect" id="node1" title=" " alt="" coords="158,109,231,136"/>
+<map id="wmm_t" name="wmm_t">
+<area shape="rect" id="node1" title=" " alt="" coords="159,109,230,136"/>
 <area shape="rect" id="node2" href="$struct_m_a_gtype___magnetic_model.html" title=" " alt="" coords="5,5,195,32"/>
 <area shape="rect" id="node3" href="$struct_m_a_gtype___ellipsoid.html" title=" " alt="" coords="219,5,363,32"/>
 </map>

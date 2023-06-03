@@ -1,6 +1,4 @@
-<map id="taskq_s" name="taskq_s">
-<area shape="rect" id="node1" title=" " alt="" coords="38,201,110,228"/>
-<area shape="rect" id="node2" href="$structmutex__t.html" title=" " alt="" coords="5,97,81,124"/>
-<area shape="rect" id="node3" href="$structlist.html" title=" " alt="" coords="106,97,149,124"/>
-<area shape="rect" id="node4" href="$structlist__node.html" title=" " alt="" coords="87,7,168,33"/>
+<map id="taskq_t" name="taskq_t">
+<area shape="rect" id="node1" title=" " alt="" coords="8,95,79,121"/>
+<area shape="rect" id="node2" href="$structmutex__t.html" title=" " alt="" coords="5,5,81,32"/>
 </map>

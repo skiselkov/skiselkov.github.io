@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -174,7 +173,7 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvect3l__t.html">vect3l_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvect2__s.html">vect2_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvect2__t.html">vect2_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structellip__t.html">ellip_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,7 +216,7 @@ Macros</h2></td></tr>
 <tr class="separator:af8492b4914e60cbc3e2c685147b537e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab51bc790ffda01f243abf3e193594463"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab51bc790ffda01f243abf3e193594463">TO_GEO2_32</a>(geo2)&#160;&#160;&#160;	((<a class="el" href="structgeo__pos3__32__t.html">geo_pos3_32_t</a>){(geo3).lat, (geo3).lon})</td></tr>
 <tr class="separator:ab51bc790ffda01f243abf3e193594463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef9ee3b0deac953bb9bb8f5fdba178af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(x,  y)&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){(x), (y)})</td></tr>
+<tr class="memitem:aef9ee3b0deac953bb9bb8f5fdba178af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(x,  y)&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){(x), (y)})</td></tr>
 <tr class="separator:aef9ee3b0deac953bb9bb8f5fdba178af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea373e309a07e638ee6ecbb087987c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a4ea373e309a07e638ee6ecbb087987c6">VECT3</a>(x,  y,  z)&#160;&#160;&#160;((<a class="el" href="structvect3__t.html">vect3_t</a>){(x), (y), (z)})</td></tr>
 <tr class="separator:a4ea373e309a07e638ee6ecbb087987c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,13 +228,13 @@ Macros</h2></td></tr>
 <tr class="separator:a63bd56b7a9baef06cda42973a3e914d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7ffa7accbe28342b9c209b8cb330352"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ad7ffa7accbe28342b9c209b8cb330352">VECT2_PARALLEL</a>(a,  b)&#160;&#160;&#160;	(((a).y == 0 &amp;&amp; (b).y == 0) || (((a).x / (a).y) == ((b).x / (b).y)))</td></tr>
 <tr class="separator:ad7ffa7accbe28342b9c209b8cb330352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef4d45b6cf4232c04f4344da5a57fc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d">ZERO_VECT2</a>&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){0.0, 0.0})</td></tr>
+<tr class="memitem:aef4d45b6cf4232c04f4344da5a57fc2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d">ZERO_VECT2</a>&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){0.0, 0.0})</td></tr>
 <tr class="separator:aef4d45b6cf4232c04f4344da5a57fc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c6d95bea5158d98bbb68a119f7472d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3c6d95bea5158d98bbb68a119f7472d8">ZERO_VECT3</a>&#160;&#160;&#160;((<a class="el" href="structvect3__t.html">vect3_t</a>){0.0, 0.0, 0.0})</td></tr>
 <tr class="separator:a3c6d95bea5158d98bbb68a119f7472d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a610be6b44f33d3693436e770385c6b37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a610be6b44f33d3693436e770385c6b37">ZERO_VECT3L</a>&#160;&#160;&#160;((<a class="el" href="structvect3l__t.html">vect3l_t</a>){0.0, 0.0, 0.0})</td></tr>
 <tr class="separator:a610be6b44f33d3693436e770385c6b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf6bffc23ef733c49b9e9ac84f1616ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){NAN, NAN})</td></tr>
+<tr class="memitem:adf6bffc23ef733c49b9e9ac84f1616ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){NAN, NAN})</td></tr>
 <tr class="separator:adf6bffc23ef733c49b9e9ac84f1616ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a200e879824b017925f05b0dddf6b2224"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a>&#160;&#160;&#160;((<a class="el" href="structvect3__t.html">vect3_t</a>){NAN, NAN, NAN})</td></tr>
 <tr class="separator:a200e879824b017925f05b0dddf6b2224"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,7 +266,7 @@ Macros</h2></td></tr>
 <tr class="separator:ac44ce1344ed9d3c8c65fbb460eb76a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a770e5cb2736783b9aec863000c3aeed8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a770e5cb2736783b9aec863000c3aeed8">VECT2_TO_VECT3</a>(v,  z)&#160;&#160;&#160;((<a class="el" href="structvect3__t.html">vect3_t</a>){(v).x, (v).y, (z)})</td></tr>
 <tr class="separator:a770e5cb2736783b9aec863000c3aeed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11599910703d38503af773f2d7d8008e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a11599910703d38503af773f2d7d8008e">VECT3_TO_VECT2</a>(v)&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){(v).x, (v).y})</td></tr>
+<tr class="memitem:a11599910703d38503af773f2d7d8008e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a11599910703d38503af773f2d7d8008e">VECT3_TO_VECT2</a>(v)&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){(v).x, (v).y})</td></tr>
 <tr class="separator:a11599910703d38503af773f2d7d8008e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f4e679c59410074769e27ef4674ce38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a5f4e679c59410074769e27ef4674ce38">VECT3L_TO_VECT3</a>(v)&#160;&#160;&#160;((<a class="el" href="structvect3__t.html">vect3_t</a>){(v).x, (v).y, (v).z})</td></tr>
 <tr class="separator:a5f4e679c59410074769e27ef4674ce38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -500,11 +499,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a27a2f4d7d3a52bd889a09ca368067f3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a27a2f4d7d3a52bd889a09ca368067f3f">mat3_ident</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(mat3_ident)</td></tr>
 <tr class="separator:a27a2f4d7d3a52bd889a09ca368067f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ac96c6204fe282e82b971cb81d642cb1e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structvect2__s.html">vect2_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a></td></tr>
-<tr class="separator:ac96c6204fe282e82b971cb81d642cb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a43089af5fb44f496d5974760c07d5751"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a43089af5fb44f496d5974760c07d5751">is_on_arc</a> (double angle_x, double angle1, double angle2, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> cw)</td></tr>
@@ -519,49 +513,49 @@ Functions</h2></td></tr>
 <tr class="separator:a5571691299a1c525de522419daea56c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e2970bc9ff0bbce013fd6ef3579b62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab3e2970bc9ff0bbce013fd6ef3579b62">vect3l_dist</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, <a class="el" href="structvect3l__t.html">vect3l_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ab3e2970bc9ff0bbce013fd6ef3579b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e06fae047a80e513faf09d9194fe54d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3e06fae047a80e513faf09d9194fe54d">vect2_abs</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a3e06fae047a80e513faf09d9194fe54d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3e06fae047a80e513faf09d9194fe54d">vect2_abs</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a3e06fae047a80e513faf09d9194fe54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c2f1d8aedefcffb62aca249a0e8384e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a9c2f1d8aedefcffb62aca249a0e8384e">vect2_dist</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a9c2f1d8aedefcffb62aca249a0e8384e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a9c2f1d8aedefcffb62aca249a0e8384e">vect2_dist</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a9c2f1d8aedefcffb62aca249a0e8384e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab496ba77e7a5a3bfe2520b315b0aa5e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab496ba77e7a5a3bfe2520b315b0aa5e5">vect3_set_abs</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, double abs) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ab496ba77e7a5a3bfe2520b315b0aa5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acff1974301794ded48da39ddfbe68a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#acff1974301794ded48da39ddfbe68a99">vect3l_set_abs</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, long double abs) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:acff1974301794ded48da39ddfbe68a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a654ee48ecfa39edc686254138c47a489"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a654ee48ecfa39edc686254138c47a489">vect2_set_abs</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, double abs) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a654ee48ecfa39edc686254138c47a489"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a654ee48ecfa39edc686254138c47a489">vect2_set_abs</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, double abs) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a654ee48ecfa39edc686254138c47a489"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadeb259ac6602e76c046ba4979ac30d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aadeb259ac6602e76c046ba4979ac30d0">vect3_unit</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, double *l)</td></tr>
 <tr class="separator:aadeb259ac6602e76c046ba4979ac30d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca47db4ff77a380bfda201bffb4ac8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a5ca47db4ff77a380bfda201bffb4ac8a">vect2_unit</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, double *l)</td></tr>
+<tr class="memitem:a5ca47db4ff77a380bfda201bffb4ac8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a5ca47db4ff77a380bfda201bffb4ac8a">vect2_unit</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, double *l)</td></tr>
 <tr class="separator:a5ca47db4ff77a380bfda201bffb4ac8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c31bc6d184aa693d87d9c33e1bc907"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a25c31bc6d184aa693d87d9c33e1bc907">vect3_add</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, <a class="el" href="structvect3__t.html">vect3_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a25c31bc6d184aa693d87d9c33e1bc907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7754255d707a4481fde3860fe6037f27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a7754255d707a4481fde3860fe6037f27">vect3l_add</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, <a class="el" href="structvect3l__t.html">vect3l_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a7754255d707a4481fde3860fe6037f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a925b17eed4e5bd8205a21e0156e9c685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a925b17eed4e5bd8205a21e0156e9c685">vect2_add</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a925b17eed4e5bd8205a21e0156e9c685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a925b17eed4e5bd8205a21e0156e9c685">vect2_add</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a925b17eed4e5bd8205a21e0156e9c685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab491b59f2d4189a2a1c33385af1bed65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab491b59f2d4189a2a1c33385af1bed65">vect3_sub</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, <a class="el" href="structvect3__t.html">vect3_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ab491b59f2d4189a2a1c33385af1bed65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38e5ff98fef7c96601cb126ffbfbee12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a38e5ff98fef7c96601cb126ffbfbee12">vect3l_sub</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, <a class="el" href="structvect3l__t.html">vect3l_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a38e5ff98fef7c96601cb126ffbfbee12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8144323a0f84b2a3104e600a992e2cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae8144323a0f84b2a3104e600a992e2cc">vect2_sub</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:ae8144323a0f84b2a3104e600a992e2cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae8144323a0f84b2a3104e600a992e2cc">vect2_sub</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ae8144323a0f84b2a3104e600a992e2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a609380b7d7db40ecf33e578bca48d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a72a609380b7d7db40ecf33e578bca48d">vect3_mul</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, <a class="el" href="structvect3__t.html">vect3_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a72a609380b7d7db40ecf33e578bca48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa80724252637ab44e182358442651e7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aa80724252637ab44e182358442651e7e">vect3l_mul</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, <a class="el" href="structvect3l__t.html">vect3l_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:aa80724252637ab44e182358442651e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb245607b8027e6cab883f9ad98478d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aeb245607b8027e6cab883f9ad98478d8">vect2_mul</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:aeb245607b8027e6cab883f9ad98478d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aeb245607b8027e6cab883f9ad98478d8">vect2_mul</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:aeb245607b8027e6cab883f9ad98478d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5ab75534aa0716b4fe6e485756fefea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ae5ab75534aa0716b4fe6e485756fefea">vect3_scmul</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, double b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ae5ab75534aa0716b4fe6e485756fefea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0ebfab699b3a1860fc942dbf6e81c58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#af0ebfab699b3a1860fc942dbf6e81c58">vect3l_scmul</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, long double b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:af0ebfab699b3a1860fc942dbf6e81c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3014d9b7332f5ad6505f5f26ae434ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab3014d9b7332f5ad6505f5f26ae434ee">vect2_scmul</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, double b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:ab3014d9b7332f5ad6505f5f26ae434ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab3014d9b7332f5ad6505f5f26ae434ee">vect2_scmul</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, double b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ab3014d9b7332f5ad6505f5f26ae434ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f1b63a4ad16a176f073b6f7a112b95a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a0f1b63a4ad16a176f073b6f7a112b95a">vect3_dotprod</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, <a class="el" href="structvect3__t.html">vect3_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a0f1b63a4ad16a176f073b6f7a112b95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47ab524d2038f266f4c2fe9802764890"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a47ab524d2038f266f4c2fe9802764890">vect3l_dotprod</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, <a class="el" href="structvect3l__t.html">vect3l_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a47ab524d2038f266f4c2fe9802764890"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9348e42d5f0319ab9fa4154b42a7e021"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a9348e42d5f0319ab9fa4154b42a7e021">vect2_dotprod</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a9348e42d5f0319ab9fa4154b42a7e021"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a9348e42d5f0319ab9fa4154b42a7e021">vect2_dotprod</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a9348e42d5f0319ab9fa4154b42a7e021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e18639da7d44219f1ab0ccaf77ad5ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a8e18639da7d44219f1ab0ccaf77ad5ee">vect3_xprod</a> (<a class="el" href="structvect3__t.html">vect3_t</a> a, <a class="el" href="structvect3__t.html">vect3_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a8e18639da7d44219f1ab0ccaf77ad5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -571,23 +565,23 @@ Functions</h2></td></tr>
 <tr class="separator:a6a821dbe3ac9e5536c50db9dfb9183bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d21614130e38bd04d1bfedff35dece1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3d21614130e38bd04d1bfedff35dece1">vect3l_mean</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> a, <a class="el" href="structvect3l__t.html">vect3l_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a3d21614130e38bd04d1bfedff35dece1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d37584af13cb05337eec11874f94f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a65d37584af13cb05337eec11874f94f7">vect2_mean</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a65d37584af13cb05337eec11874f94f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a65d37584af13cb05337eec11874f94f7">vect2_mean</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> b) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a65d37584af13cb05337eec11874f94f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79ca9ef02ed9c0070cdd3588f2bef249"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a79ca9ef02ed9c0070cdd3588f2bef249">vect2_norm</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> v, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> right) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a79ca9ef02ed9c0070cdd3588f2bef249"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a79ca9ef02ed9c0070cdd3588f2bef249">vect2_norm</a> (<a class="el" href="structvect2__t.html">vect2_t</a> v, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> right) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a79ca9ef02ed9c0070cdd3588f2bef249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b79f57a0bb3d68d1711eb7dec352572"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a6b79f57a0bb3d68d1711eb7dec352572">vect3_rot</a> (<a class="el" href="structvect3__t.html">vect3_t</a> v, double angle, unsigned axis) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a6b79f57a0bb3d68d1711eb7dec352572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff72a37e025ce15d7ce02250bf6f112e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aff72a37e025ce15d7ce02250bf6f112e">vect3l_rot</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> v, long double angle, unsigned axis) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:aff72a37e025ce15d7ce02250bf6f112e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb98b716630049b15736313f9603b757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#adb98b716630049b15736313f9603b757">vect2_rot</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> v, double angle) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:adb98b716630049b15736313f9603b757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#adb98b716630049b15736313f9603b757">vect2_rot</a> (<a class="el" href="structvect2__t.html">vect2_t</a> v, double angle) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:adb98b716630049b15736313f9603b757"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a668f6dabe49879f6f88f63ae8b33f741"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a668f6dabe49879f6f88f63ae8b33f741">vect2_rot_inv_y</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> v, double angle) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a668f6dabe49879f6f88f63ae8b33f741"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a668f6dabe49879f6f88f63ae8b33f741">vect2_rot_inv_y</a> (<a class="el" href="structvect2__t.html">vect2_t</a> v, double angle) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a668f6dabe49879f6f88f63ae8b33f741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3153973293a18c00724068d4b585f4cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3153973293a18c00724068d4b585f4cd">vect3_neg</a> (<a class="el" href="structvect3__t.html">vect3_t</a> v) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a3153973293a18c00724068d4b585f4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf769d67d1b1e755cdd087b1acf3f5ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3l__t.html">vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#adf769d67d1b1e755cdd087b1acf3f5ac">vect3l_neg</a> (<a class="el" href="structvect3l__t.html">vect3l_t</a> v) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:adf769d67d1b1e755cdd087b1acf3f5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1259c030058d7184edf8076614ff1ecf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1259c030058d7184edf8076614ff1ecf">vect2_neg</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> v) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a1259c030058d7184edf8076614ff1ecf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1259c030058d7184edf8076614ff1ecf">vect2_neg</a> (<a class="el" href="structvect2__t.html">vect2_t</a> v) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a1259c030058d7184edf8076614ff1ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c8ba0e5440b568515b6ed430e54081c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a0c8ba0e5440b568515b6ed430e54081c">vect3_local2acf</a> (<a class="el" href="structvect3__t.html">vect3_t</a> v, double roll, double pitch, double hdgt) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a0c8ba0e5440b568515b6ed430e54081c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -629,25 +623,25 @@ Functions</h2></td></tr>
 <tr class="separator:a14b773d63f7235886a1a18c6ddd7bf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94ba6edce324161315330ff8d080b986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a94ba6edce324161315330ff8d080b986">vect2sph_isect</a> (<a class="el" href="structvect3__t.html">vect3_t</a> v, <a class="el" href="structvect3__t.html">vect3_t</a> o, <a class="el" href="structvect3__t.html">vect3_t</a> c, double r, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> confined, <a class="el" href="structvect3__t.html">vect3_t</a> i[2])</td></tr>
 <tr class="separator:a94ba6edce324161315330ff8d080b986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d62ffcdb882162cbe7ff47b10d329ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1d62ffcdb882162cbe7ff47b10d329ad">vect2circ_isect</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> v, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> o, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> c, double r, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> confined, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> i[2])</td></tr>
+<tr class="memitem:a1d62ffcdb882162cbe7ff47b10d329ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1d62ffcdb882162cbe7ff47b10d329ad">vect2circ_isect</a> (<a class="el" href="structvect2__t.html">vect2_t</a> v, <a class="el" href="structvect2__t.html">vect2_t</a> o, <a class="el" href="structvect2__t.html">vect2_t</a> c, double r, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> confined, <a class="el" href="structvect2__t.html">vect2_t</a> i[2])</td></tr>
 <tr class="separator:a1d62ffcdb882162cbe7ff47b10d329ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a594c8d25f3b466f11adbf68eb247e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1a594c8d25f3b466f11adbf68eb247e2">vect2vect_isect</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> da, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> oa, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> db, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> ob, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> confined) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a1a594c8d25f3b466f11adbf68eb247e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a1a594c8d25f3b466f11adbf68eb247e2">vect2vect_isect</a> (<a class="el" href="structvect2__t.html">vect2_t</a> da, <a class="el" href="structvect2__t.html">vect2_t</a> oa, <a class="el" href="structvect2__t.html">vect2_t</a> db, <a class="el" href="structvect2__t.html">vect2_t</a> ob, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> confined) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a1a594c8d25f3b466f11adbf68eb247e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebafe705c107161e0e18669bae9c7c1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aebafe705c107161e0e18669bae9c7c1e">circ2circ_isect</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> ca, double ra, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> cb, double rb, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> i[2])</td></tr>
+<tr class="memitem:aebafe705c107161e0e18669bae9c7c1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aebafe705c107161e0e18669bae9c7c1e">circ2circ_isect</a> (<a class="el" href="structvect2__t.html">vect2_t</a> ca, double ra, <a class="el" href="structvect2__t.html">vect2_t</a> cb, double rb, <a class="el" href="structvect2__t.html">vect2_t</a> i[2])</td></tr>
 <tr class="separator:aebafe705c107161e0e18669bae9c7c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0937a21ce32ce2227ba3d3ca00fe5a7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a0937a21ce32ce2227ba3d3ca00fe5a7b">vect2poly_isect_get</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> oa, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *poly, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *isects, unsigned <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>)</td></tr>
+<tr class="memitem:a0937a21ce32ce2227ba3d3ca00fe5a7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a0937a21ce32ce2227ba3d3ca00fe5a7b">vect2poly_isect_get</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> oa, const <a class="el" href="structvect2__t.html">vect2_t</a> *poly, <a class="el" href="structvect2__t.html">vect2_t</a> *isects, unsigned cap)</td></tr>
 <tr class="separator:a0937a21ce32ce2227ba3d3ca00fe5a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34a7ac6789453b13b3dc3339b836d71a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a34a7ac6789453b13b3dc3339b836d71a">vect2poly_isect</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> a, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> oa, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *poly) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a34a7ac6789453b13b3dc3339b836d71a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a34a7ac6789453b13b3dc3339b836d71a">vect2poly_isect</a> (<a class="el" href="structvect2__t.html">vect2_t</a> a, <a class="el" href="structvect2__t.html">vect2_t</a> oa, const <a class="el" href="structvect2__t.html">vect2_t</a> *poly) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a34a7ac6789453b13b3dc3339b836d71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d85a484ff1190ab242ed97a8e571b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a05d85a484ff1190ab242ed97a8e571b4">point_in_poly</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> pt, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *poly) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a05d85a484ff1190ab242ed97a8e571b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a05d85a484ff1190ab242ed97a8e571b4">point_in_poly</a> (<a class="el" href="structvect2__t.html">vect2_t</a> pt, const <a class="el" href="structvect2__t.html">vect2_t</a> *poly) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a05d85a484ff1190ab242ed97a8e571b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8270db68e528a8e5dcf7f9c28b79c8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aa8270db68e528a8e5dcf7f9c28b79c8a">hdg2dir</a> (double truehdg) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:aa8270db68e528a8e5dcf7f9c28b79c8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aa8270db68e528a8e5dcf7f9c28b79c8a">hdg2dir</a> (double truehdg) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:aa8270db68e528a8e5dcf7f9c28b79c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae07a9bfd5b40aaa8a5bfd90472b7ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#afae07a9bfd5b40aaa8a5bfd90472b7ec">dir2hdg</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> dir) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:afae07a9bfd5b40aaa8a5bfd90472b7ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#afae07a9bfd5b40aaa8a5bfd90472b7ec">dir2hdg</a> (<a class="el" href="structvect2__t.html">vect2_t</a> dir) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:afae07a9bfd5b40aaa8a5bfd90472b7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab22e0d19aca49590109d0045f1e38a5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab22e0d19aca49590109d0045f1e38a5d">geo_displace</a> (const <a class="el" href="structellip__t.html">ellip_t</a> *ellip, <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, double truehdg, double dist) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:ab22e0d19aca49590109d0045f1e38a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2933dda15f8fa00e6e0b739f8d1eb771"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a2933dda15f8fa00e6e0b739f8d1eb771">geo_displace_dir</a> (const <a class="el" href="structellip__t.html">ellip_t</a> *ellip, <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> dir, double dist) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a2933dda15f8fa00e6e0b739f8d1eb771"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a2933dda15f8fa00e6e0b739f8d1eb771">geo_displace_dir</a> (const <a class="el" href="structellip__t.html">ellip_t</a> *ellip, <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, <a class="el" href="structvect2__t.html">vect2_t</a> dir, double dist) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a2933dda15f8fa00e6e0b739f8d1eb771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aded6eab0d714c5d913af19976ee95847"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#aded6eab0d714c5d913af19976ee95847">geo_pos2_from_str</a> (const char *lat, const char *lon, <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> *pos)</td></tr>
 <tr class="separator:aded6eab0d714c5d913af19976ee95847"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -671,17 +665,17 @@ Functions</h2></td></tr>
 <tr class="separator:aaeae276f9294e1f34ec74ee023a3c4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c79de2949f493f40bef6caff85e04d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structfpp__t.html">fpp_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a2c79de2949f493f40bef6caff85e04d5">stereo_fpp_init</a> (<a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> center, double rot, const <a class="el" href="structellip__t.html">ellip_t</a> *ellip, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> allow_inv)</td></tr>
 <tr class="separator:a2c79de2949f493f40bef6caff85e04d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21cd2bec4050f8da221d76817b4d1a1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a21cd2bec4050f8da221d76817b4d1a1b">geo2fpp</a> (<a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, const <a class="el" href="structfpp__t.html">fpp_t</a> *fpp) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a21cd2bec4050f8da221d76817b4d1a1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a21cd2bec4050f8da221d76817b4d1a1b">geo2fpp</a> (<a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, const <a class="el" href="structfpp__t.html">fpp_t</a> *fpp) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a21cd2bec4050f8da221d76817b4d1a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0404fc3f9ec9a9361b1c059003cce3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a5d0404fc3f9ec9a9361b1c059003cce3">fpp2geo</a> (<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> pos, const <a class="el" href="structfpp__t.html">fpp_t</a> *fpp) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a5d0404fc3f9ec9a9361b1c059003cce3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a5d0404fc3f9ec9a9361b1c059003cce3">fpp2geo</a> (<a class="el" href="structvect2__t.html">vect2_t</a> pos, const <a class="el" href="structfpp__t.html">fpp_t</a> *fpp) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a5d0404fc3f9ec9a9361b1c059003cce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea42551201cb524d2a15e0badbffc81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3ea42551201cb524d2a15e0badbffc81">fpp_set_scale</a> (<a class="el" href="structfpp__t.html">fpp_t</a> *fpp, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> scale)</td></tr>
+<tr class="memitem:a3ea42551201cb524d2a15e0badbffc81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a3ea42551201cb524d2a15e0badbffc81">fpp_set_scale</a> (<a class="el" href="structfpp__t.html">fpp_t</a> *fpp, <a class="el" href="structvect2__t.html">vect2_t</a> scale)</td></tr>
 <tr class="separator:a3ea42551201cb524d2a15e0badbffc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4af160b5c2331f12ab94e65e0100ab1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a4af160b5c2331f12ab94e65e0100ab1a">fpp_get_scale</a> (const <a class="el" href="structfpp__t.html">fpp_t</a> *fpp)</td></tr>
+<tr class="memitem:a4af160b5c2331f12ab94e65e0100ab1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a4af160b5c2331f12ab94e65e0100ab1a">fpp_get_scale</a> (const <a class="el" href="structfpp__t.html">fpp_t</a> *fpp)</td></tr>
 <tr class="separator:a4af160b5c2331f12ab94e65e0100ab1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac33c3648e4728e68cf542904f9a115d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structlcc__t.html">lcc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ac33c3648e4728e68cf542904f9a115d5">lcc_init</a> (double reflat, double reflon, double stdpar1, double stdpar2)</td></tr>
 <tr class="separator:ac33c3648e4728e68cf542904f9a115d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58414b1a7b3709f98cb5bd64544fb57d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a58414b1a7b3709f98cb5bd64544fb57d">geo2lcc</a> (<a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, const <a class="el" href="structlcc__t.html">lcc_t</a> *lcc) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
+<tr class="memitem:a58414b1a7b3709f98cb5bd64544fb57d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#a58414b1a7b3709f98cb5bd64544fb57d">geo2lcc</a> (<a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> pos, const <a class="el" href="structlcc__t.html">lcc_t</a> *lcc) <a class="el" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">PURE_ATTR</a></td></tr>
 <tr class="separator:a58414b1a7b3709f98cb5bd64544fb57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6a7936cabf44206d15b20076b0dae66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structbezier__t.html">bezier_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geom_8h.html#ab6a7936cabf44206d15b20076b0dae66">bezier_alloc</a> (size_t num_pts)</td></tr>
 <tr class="separator:ab6a7936cabf44206d15b20076b0dae66"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2021,7 +2015,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NULL_VECT2&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){NAN, NAN})</td>
+          <td class="memname">#define NULL_VECT2&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){NAN, NAN})</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2475,7 +2469,7 @@ Variables</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){(x), (y)})</td>
+          <td></td><td>&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){(x), (y)})</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3163,7 +3157,7 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">v</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){(v).x, (v).y})</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){(v).x, (v).y})</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3495,7 +3489,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ZERO_VECT2&#160;&#160;&#160;((<a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>){0.0, 0.0})</td>
+          <td class="memname">#define ZERO_VECT2&#160;&#160;&#160;((<a class="el" href="structvect2__t.html">vect2_t</a>){0.0, 0.0})</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3533,21 +3527,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="geom_8h_source.html#l00160">160</a> of file <a class="el" href="geom_8h_source.html">geom.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="ac96c6204fe282e82b971cb81d642cb1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac96c6204fe282e82b971cb81d642cb1e">&#9670;&nbsp;</a></span>vect2_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structvect2__s.html">vect2_s</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -3601,7 +3580,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned circ2circ_isect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>ca</em>, </td>
         </tr>
         <tr>
@@ -3613,7 +3592,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -3625,7 +3604,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>i</em>[2]&#160;</td>
         </tr>
         <tr>
@@ -3649,7 +3628,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double dir2hdg </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -3921,7 +3900,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> fpp2geo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
@@ -3949,7 +3928,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> fpp_get_scale </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> fpp_get_scale </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structfpp__t.html">fpp_t</a> *&#160;</td>
           <td class="paramname"><em>fpp</em></td><td>)</td>
@@ -4025,7 +4004,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>scale</em>&#160;</td>
         </tr>
         <tr>
@@ -4203,7 +4182,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> geo2fpp </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> geo2fpp </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
@@ -4233,7 +4212,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> geo2lcc </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> geo2lcc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
@@ -4349,7 +4328,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
@@ -4537,7 +4516,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> hdg2dir </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> hdg2dir </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>truehdg</em></td><td>)</td>
@@ -4725,13 +4704,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> point_in_poly </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>pt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>poly</em>&#160;</td>
         </tr>
         <tr>
@@ -5039,7 +5018,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double vect2_abs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -5057,15 +5036,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_add </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5089,13 +5068,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double vect2_dist </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5119,13 +5098,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double vect2_dotprod </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5147,15 +5126,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_mean </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_mean </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5177,15 +5156,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_mul </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_mul </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5207,9 +5186,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_neg </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_neg </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
@@ -5227,9 +5206,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_norm </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_norm </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -5257,9 +5236,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_rot </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_rot </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -5287,9 +5266,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_rot_inv_y </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_rot_inv_y </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -5317,9 +5296,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_scmul </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_scmul </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -5347,9 +5326,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_set_abs </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_set_abs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -5377,15 +5356,15 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_sub </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_sub </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -5407,9 +5386,9 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2_unit </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2_unit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -5439,19 +5418,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned vect2circ_isect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>o</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>c</em>, </td>
         </tr>
         <tr>
@@ -5469,7 +5448,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>i</em>[2]&#160;</td>
         </tr>
         <tr>
@@ -5493,19 +5472,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned vect2poly_isect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>oa</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>poly</em>&#160;</td>
         </tr>
         <tr>
@@ -5529,25 +5508,25 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned vect2poly_isect_get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>oa</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>poly</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>isects</em>, </td>
         </tr>
         <tr>
@@ -5629,27 +5608,27 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> vect2vect_isect </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structvect2__t.html">vect2_t</a> vect2vect_isect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>da</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>oa</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>db</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>ob</em>, </td>
         </tr>
         <tr>

@@ -70,7 +70,7 @@ $(function() {
 <div class="title">riff.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="riff_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -100,8 +100,8 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;list.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
@@ -115,12 +115,12 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * the file&#39;s endianness doesn&#39;t match ours, so that direct comparisons</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * with this macro&#39;s output work regardless of machine &amp; file byte order.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="riff_8h.html#a7a137f8d46c22215af07fb57c4fe40e3">   46</a></span>&#160;<span class="preprocessor">#define FOURCC(str) \</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define FOURCC(str) \</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    ((unsigned)((str)[0] | ((str)[1] &lt;&lt; 8u) | ((str)[2] &lt;&lt; 16u) | \</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">    ((str)[3] &lt;&lt; 24u)))</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structriff__chunk.html">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structriff__chunk.html">riff_chunk</a> {</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structriff__chunk.html#aa5d906425500585aa7832161b2a40e1b">   51</a></span>&#160;    uint32_t    <a class="code" href="structriff__chunk.html#aa5d906425500585aa7832161b2a40e1b">fourcc</a>;     <span class="comment">/* In machine-native endian */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structriff__chunk__t.html">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>riff_chunk {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    uint32_t    fourcc;     <span class="comment">/* In machine-native endian */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * Indicates the file was in reverse endian to the machine&#39;s native</span></div>
@@ -128,47 +128,29 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * order, anything in `data&#39; is left as-is by the parser. So use</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     * this field to determine if you need to byteswap `data&#39; contents.</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structriff__chunk.html#a2202c4b5a2e358dc468cea3203d362a6">   59</a></span>&#160;    <a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>      <a class="code" href="structriff__chunk.html#a2202c4b5a2e358dc468cea3203d362a6">bswap</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structriff__chunk.html#abe222f6d3581e7920dcad5306cc906a8">   60</a></span>&#160;    uint8_t     *<a class="code" href="structriff__chunk.html#abe222f6d3581e7920dcad5306cc906a8">data</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structriff__chunk.html#ad30a76ef3926ea6673f91c636fe4ed60">   61</a></span>&#160;    uint32_t    <a class="code" href="structriff__chunk.html#ad30a76ef3926ea6673f91c636fe4ed60">datasz</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    bool_t      bswap;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint8_t     *data;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint32_t    datasz;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/* Populated if fourcc is RIFF_ID or LIST_ID */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structriff__chunk.html#a2aabcb9669dc035fcc45f9623a16c8d5">   64</a></span>&#160;    uint32_t    <a class="code" href="structriff__chunk.html#a2aabcb9669dc035fcc45f9623a16c8d5">listcc</a>;     <span class="comment">/* In machine-native endian */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structriff__chunk.html#a6d7c277c383e4d4e78079bec3c652e1d">   65</a></span>&#160;    <a class="code" href="structlist.html">list_t</a>      <a class="code" href="structriff__chunk.html#a6d7c277c383e4d4e78079bec3c652e1d">subchunks</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint32_t    listcc;     <span class="comment">/* In machine-native endian */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    list_t      subchunks;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structriff__chunk.html#af895e0b212294c823f85b8c01fe80f80">   67</a></span>&#160;    <a class="code" href="structlist__node.html">list_node_t</a> <a class="code" href="structriff__chunk.html#af895e0b212294c823f85b8c01fe80f80">node</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="riff_8h.html#a6b234f9f9d6b45e454e4bd59bf26dbc1">   68</a></span>&#160;} <a class="code" href="riff_8h.html#a6b234f9f9d6b45e454e4bd59bf26dbc1">riff_chunk_t</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    list_node_t node;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">void</span> <a class="code" href="riff_8h.html#aa0b2c4b88e021031ce26e1e9de176b17">riff_free_chunk</a>(<a class="code" href="structriff__chunk.html">riff_chunk_t</a> *c);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="code" href="structriff__chunk.html">riff_chunk_t</a> *<a class="code" href="riff_8h.html#af9f031cc5599493b430960c03a645142">riff_parse</a>(uint32_t filetype, uint8_t *buf,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;API_EXPORT <span class="keywordtype">void</span> riff_free_chunk(<a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *c);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;API_EXPORT <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *riff_parse(uint32_t filetype, uint8_t *buf,</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">size_t</span> bufsz);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="code" href="structriff__chunk.html">riff_chunk_t</a> *<a class="code" href="riff_8h.html#a13c5c97612d7b05fbf0f86e7e43d4f3c">riff_find_chunk</a>(<a class="code" href="structriff__chunk.html">riff_chunk_t</a> *topchunk, ...);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">char</span> *<a class="code" href="riff_8h.html#afb1d2f3451fa16c0f51f2189df31a670">riff_dump</a>(<span class="keyword">const</span> <a class="code" href="structriff__chunk.html">riff_chunk_t</a> *topchunk);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;API_EXPORT <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *riff_find_chunk(<a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *topchunk, ...);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;API_EXPORT <span class="keywordtype">char</span> *riff_dump(<span class="keyword">const</span> <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *topchunk);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_RIFF_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="acore_8h_html_a5e3652cae8b48c1ad174f0b06bbd06d0"><div class="ttname"><a href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a></div><div class="ttdeci">#define API_EXPORT</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00056">core.h:56</a></div></div>
-<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
-<div class="ttc" id="ariff_8h_html_a13c5c97612d7b05fbf0f86e7e43d4f3c"><div class="ttname"><a href="riff_8h.html#a13c5c97612d7b05fbf0f86e7e43d4f3c">riff_find_chunk</a></div><div class="ttdeci">API_EXPORT riff_chunk_t * riff_find_chunk(riff_chunk_t *topchunk,...)</div><div class="ttdef"><b>Definition:</b> <a href="riff_8c_source.html#l00187">riff.c:187</a></div></div>
-<div class="ttc" id="ariff_8h_html_a6b234f9f9d6b45e454e4bd59bf26dbc1"><div class="ttname"><a href="riff_8h.html#a6b234f9f9d6b45e454e4bd59bf26dbc1">riff_chunk_t</a></div><div class="ttdeci">struct riff_chunk riff_chunk_t</div></div>
-<div class="ttc" id="ariff_8h_html_aa0b2c4b88e021031ce26e1e9de176b17"><div class="ttname"><a href="riff_8h.html#aa0b2c4b88e021031ce26e1e9de176b17">riff_free_chunk</a></div><div class="ttdeci">API_EXPORT void riff_free_chunk(riff_chunk_t *c)</div><div class="ttdef"><b>Definition:</b> <a href="riff_8c_source.html#l00046">riff.c:46</a></div></div>
-<div class="ttc" id="ariff_8h_html_af9f031cc5599493b430960c03a645142"><div class="ttname"><a href="riff_8h.html#af9f031cc5599493b430960c03a645142">riff_parse</a></div><div class="ttdeci">API_EXPORT riff_chunk_t * riff_parse(uint32_t filetype, uint8_t *buf, size_t bufsz)</div><div class="ttdef"><b>Definition:</b> <a href="riff_8c_source.html#l00150">riff.c:150</a></div></div>
-<div class="ttc" id="ariff_8h_html_afb1d2f3451fa16c0f51f2189df31a670"><div class="ttname"><a href="riff_8h.html#afb1d2f3451fa16c0f51f2189df31a670">riff_dump</a></div><div class="ttdeci">API_EXPORT char * riff_dump(const riff_chunk_t *topchunk)</div><div class="ttdef"><b>Definition:</b> <a href="riff_8c_source.html#l00278">riff.c:278</a></div></div>
-<div class="ttc" id="astructlist__node_html"><div class="ttname"><a href="structlist__node.html">list_node</a></div><div class="ttdef"><b>Definition:</b> <a href="list__impl_8h_source.html#l00036">list_impl.h:36</a></div></div>
-<div class="ttc" id="astructlist_html"><div class="ttname"><a href="structlist.html">list</a></div><div class="ttdef"><b>Definition:</b> <a href="list__impl_8h_source.html#l00041">list_impl.h:41</a></div></div>
-<div class="ttc" id="astructriff__chunk_html"><div class="ttname"><a href="structriff__chunk.html">riff_chunk</a></div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00050">riff.h:50</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_a2202c4b5a2e358dc468cea3203d362a6"><div class="ttname"><a href="structriff__chunk.html#a2202c4b5a2e358dc468cea3203d362a6">riff_chunk::bswap</a></div><div class="ttdeci">bool_t bswap</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00059">riff.h:59</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_a2aabcb9669dc035fcc45f9623a16c8d5"><div class="ttname"><a href="structriff__chunk.html#a2aabcb9669dc035fcc45f9623a16c8d5">riff_chunk::listcc</a></div><div class="ttdeci">uint32_t listcc</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00064">riff.h:64</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_a6d7c277c383e4d4e78079bec3c652e1d"><div class="ttname"><a href="structriff__chunk.html#a6d7c277c383e4d4e78079bec3c652e1d">riff_chunk::subchunks</a></div><div class="ttdeci">list_t subchunks</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00065">riff.h:65</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_aa5d906425500585aa7832161b2a40e1b"><div class="ttname"><a href="structriff__chunk.html#aa5d906425500585aa7832161b2a40e1b">riff_chunk::fourcc</a></div><div class="ttdeci">uint32_t fourcc</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00051">riff.h:51</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_abe222f6d3581e7920dcad5306cc906a8"><div class="ttname"><a href="structriff__chunk.html#abe222f6d3581e7920dcad5306cc906a8">riff_chunk::data</a></div><div class="ttdeci">uint8_t * data</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00060">riff.h:60</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_ad30a76ef3926ea6673f91c636fe4ed60"><div class="ttname"><a href="structriff__chunk.html#ad30a76ef3926ea6673f91c636fe4ed60">riff_chunk::datasz</a></div><div class="ttdeci">uint32_t datasz</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00061">riff.h:61</a></div></div>
-<div class="ttc" id="astructriff__chunk_html_af895e0b212294c823f85b8c01fe80f80"><div class="ttname"><a href="structriff__chunk.html#af895e0b212294c823f85b8c01fe80f80">riff_chunk::node</a></div><div class="ttdeci">list_node_t node</div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00067">riff.h:67</a></div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
+<div class="ttc" id="astructriff__chunk__t_html"><div class="ttname"><a href="structriff__chunk__t.html">riff_chunk_t</a></div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00050">riff.h:50</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

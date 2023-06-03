@@ -152,9 +152,9 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrender__surf__t.html">render_surf_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__render__s.html">mt_cairo_render_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__render__s.html">mt_cairo_render_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html">mt_cairo_uploader_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html">mt_cairo_uploader_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -170,57 +170,57 @@ Functions</h2></td></tr>
 <tr class="separator:a8d9ff15b2a8ce6029b98c5a43a0418ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70a8ee09b688b2311c92b8feba5dc223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a70a8ee09b688b2311c92b8feba5dc223">mt_cairo_render_glob_init</a> (<a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> want_coherent_mem)</td></tr>
 <tr class="separator:a70a8ee09b688b2311c92b8feba5dc223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab59b96c6042b0c95e69aba8b12449b21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ab59b96c6042b0c95e69aba8b12449b21">mt_cairo_render_init_impl</a> (const char *filename, int line, unsigned w, unsigned h, double fps, <a class="el" href="mt__cairo__render_8h.html#a028fb273c1bd6cc21749dc78c575a293">mt_cairo_init_cb_t</a> init_cb, <a class="el" href="mt__cairo__render_8h.html#acf699310e37ae80b0f8b1b4f06c53fa3">mt_cairo_render_cb_t</a> render_cb, <a class="el" href="mt__cairo__render_8h.html#a9a8431d260458c0871b743bc803f6a01">mt_cairo_fini_cb_t</a> fini_cb, void *userinfo)</td></tr>
+<tr class="memitem:ab59b96c6042b0c95e69aba8b12449b21"><td class="memItemLeft" align="right" valign="top">mt_cairo_render_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ab59b96c6042b0c95e69aba8b12449b21">mt_cairo_render_init_impl</a> (const char *filename, int line, unsigned w, unsigned h, double fps, <a class="el" href="mt__cairo__render_8h.html#a028fb273c1bd6cc21749dc78c575a293">mt_cairo_init_cb_t</a> init_cb, <a class="el" href="mt__cairo__render_8h.html#acf699310e37ae80b0f8b1b4f06c53fa3">mt_cairo_render_cb_t</a> render_cb, <a class="el" href="mt__cairo__render_8h.html#a9a8431d260458c0871b743bc803f6a01">mt_cairo_fini_cb_t</a> fini_cb, void *userinfo)</td></tr>
 <tr class="separator:ab59b96c6042b0c95e69aba8b12449b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a584568806c696b8600561796aa26a6b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a584568806c696b8600561796aa26a6b2">mt_cairo_render_fini</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a584568806c696b8600561796aa26a6b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a584568806c696b8600561796aa26a6b2">mt_cairo_render_fini</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a584568806c696b8600561796aa26a6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af294a21a9f8302a94d7f566ddf79998e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#af294a21a9f8302a94d7f566ddf79998e">mt_cairo_render_set_fps</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, double fps)</td></tr>
+<tr class="memitem:af294a21a9f8302a94d7f566ddf79998e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#af294a21a9f8302a94d7f566ddf79998e">mt_cairo_render_set_fps</a> (mt_cairo_render_t *mtcr, double fps)</td></tr>
 <tr class="separator:af294a21a9f8302a94d7f566ddf79998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93a62114a62a7814013c595d99329399"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a93a62114a62a7814013c595d99329399">mt_cairo_render_get_fps</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a93a62114a62a7814013c595d99329399"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a93a62114a62a7814013c595d99329399">mt_cairo_render_get_fps</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a93a62114a62a7814013c595d99329399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7964742bfee01bfa7cd54b8fcf5d46b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ae7964742bfee01bfa7cd54b8fcf5d46b">mt_cairo_render_enable_fg_mode</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:ae7964742bfee01bfa7cd54b8fcf5d46b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ae7964742bfee01bfa7cd54b8fcf5d46b">mt_cairo_render_enable_fg_mode</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:ae7964742bfee01bfa7cd54b8fcf5d46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a224d8e34b4eaa021e15280e3db9328cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a224d8e34b4eaa021e15280e3db9328cb">mt_cairo_render_set_texture_filter</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, unsigned gl_filter_enum)</td></tr>
+<tr class="memitem:a224d8e34b4eaa021e15280e3db9328cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a224d8e34b4eaa021e15280e3db9328cb">mt_cairo_render_set_texture_filter</a> (mt_cairo_render_t *mtcr, unsigned gl_filter_enum)</td></tr>
 <tr class="separator:a224d8e34b4eaa021e15280e3db9328cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8722d85a13a77aa0247f574fe53c581f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a8722d85a13a77aa0247f574fe53c581f">mt_cairo_render_set_shader</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, unsigned prog)</td></tr>
+<tr class="memitem:a8722d85a13a77aa0247f574fe53c581f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a8722d85a13a77aa0247f574fe53c581f">mt_cairo_render_set_shader</a> (mt_cairo_render_t *mtcr, unsigned prog)</td></tr>
 <tr class="separator:a8722d85a13a77aa0247f574fe53c581f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a2378b025cf8238212e4b559cdddcbe"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a0a2378b025cf8238212e4b559cdddcbe">mt_cairo_render_get_shader</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a0a2378b025cf8238212e4b559cdddcbe"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a0a2378b025cf8238212e4b559cdddcbe">mt_cairo_render_get_shader</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a0a2378b025cf8238212e4b559cdddcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adea2504bae7326ee79b086b636014700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#adea2504bae7326ee79b086b636014700">mt_cairo_render_set_monochrome</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="structvect3__t.html">vect3_t</a> color)</td></tr>
+<tr class="memitem:adea2504bae7326ee79b086b636014700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#adea2504bae7326ee79b086b636014700">mt_cairo_render_set_monochrome</a> (mt_cairo_render_t *mtcr, <a class="el" href="structvect3__t.html">vect3_t</a> color)</td></tr>
 <tr class="separator:adea2504bae7326ee79b086b636014700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ee3d86ad502e744ce9d277b0f6cbdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a09ee3d86ad502e744ce9d277b0f6cbdb">mt_cairo_render_get_monochrome</a> (const <a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a09ee3d86ad502e744ce9d277b0f6cbdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvect3__t.html">vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a09ee3d86ad502e744ce9d277b0f6cbdb">mt_cairo_render_get_monochrome</a> (const mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a09ee3d86ad502e744ce9d277b0f6cbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc519a49b2baf997426faa947e2e964b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#afc519a49b2baf997426faa947e2e964b">mt_cairo_render_once</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:afc519a49b2baf997426faa947e2e964b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#afc519a49b2baf997426faa947e2e964b">mt_cairo_render_once</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:afc519a49b2baf997426faa947e2e964b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07ab5e0f2e052d745c1c04a51d85bfd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a07ab5e0f2e052d745c1c04a51d85bfd9">mt_cairo_render_once_wait</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a07ab5e0f2e052d745c1c04a51d85bfd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a07ab5e0f2e052d745c1c04a51d85bfd9">mt_cairo_render_once_wait</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a07ab5e0f2e052d745c1c04a51d85bfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa76e051a4233da8d30a1cfb380e0ec1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#aa76e051a4233da8d30a1cfb380e0ec1d">mt_cairo_render_draw</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> size)</td></tr>
+<tr class="memitem:aa76e051a4233da8d30a1cfb380e0ec1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#aa76e051a4233da8d30a1cfb380e0ec1d">mt_cairo_render_draw</a> (mt_cairo_render_t *mtcr, <a class="el" href="structvect2__t.html">vect2_t</a> pos, <a class="el" href="structvect2__t.html">vect2_t</a> size)</td></tr>
 <tr class="separator:aa76e051a4233da8d30a1cfb380e0ec1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5a9b5caf5f047f75bd680939efff7e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#aa5a9b5caf5f047f75bd680939efff7e3">mt_cairo_render_draw_pvm</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> size, const GLfloat *pvm)</td></tr>
+<tr class="memitem:aa5a9b5caf5f047f75bd680939efff7e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#aa5a9b5caf5f047f75bd680939efff7e3">mt_cairo_render_draw_pvm</a> (mt_cairo_render_t *mtcr, <a class="el" href="structvect2__t.html">vect2_t</a> pos, <a class="el" href="structvect2__t.html">vect2_t</a> size, const GLfloat *pvm)</td></tr>
 <tr class="separator:aa5a9b5caf5f047f75bd680939efff7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b139023e042e7208e418c863b6bafa7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a3b139023e042e7208e418c863b6bafa7">mt_cairo_render_draw_subrect</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> src_pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> src_sz, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> size)</td></tr>
+<tr class="memitem:a3b139023e042e7208e418c863b6bafa7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a3b139023e042e7208e418c863b6bafa7">mt_cairo_render_draw_subrect</a> (mt_cairo_render_t *mtcr, <a class="el" href="structvect2__t.html">vect2_t</a> src_pos, <a class="el" href="structvect2__t.html">vect2_t</a> src_sz, <a class="el" href="structvect2__t.html">vect2_t</a> pos, <a class="el" href="structvect2__t.html">vect2_t</a> size)</td></tr>
 <tr class="separator:a3b139023e042e7208e418c863b6bafa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab330b46783ff2ed415da318dfb86476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#aab330b46783ff2ed415da318dfb86476">mt_cairo_render_draw_subrect_pvm</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> src_pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> src_sz, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> pos, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> size, const GLfloat *pvm)</td></tr>
+<tr class="memitem:aab330b46783ff2ed415da318dfb86476"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#aab330b46783ff2ed415da318dfb86476">mt_cairo_render_draw_subrect_pvm</a> (mt_cairo_render_t *mtcr, <a class="el" href="structvect2__t.html">vect2_t</a> src_pos, <a class="el" href="structvect2__t.html">vect2_t</a> src_sz, <a class="el" href="structvect2__t.html">vect2_t</a> pos, <a class="el" href="structvect2__t.html">vect2_t</a> size, const GLfloat *pvm)</td></tr>
 <tr class="separator:aab330b46783ff2ed415da318dfb86476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9adcf8c786a7d8590ab6e7d7f5ae432"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ab9adcf8c786a7d8590ab6e7d7f5ae432">mt_cairo_render_set_uploader</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a> *mtul)</td></tr>
+<tr class="memitem:ab9adcf8c786a7d8590ab6e7d7f5ae432"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ab9adcf8c786a7d8590ab6e7d7f5ae432">mt_cairo_render_set_uploader</a> (mt_cairo_render_t *mtcr, mt_cairo_uploader_t *mtul)</td></tr>
 <tr class="separator:ab9adcf8c786a7d8590ab6e7d7f5ae432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29b69002c0a5ea31a84d19f9c681c74b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a29b69002c0a5ea31a84d19f9c681c74b">mt_cairo_render_get_uploader</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a29b69002c0a5ea31a84d19f9c681c74b"><td class="memItemLeft" align="right" valign="top">mt_cairo_uploader_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a29b69002c0a5ea31a84d19f9c681c74b">mt_cairo_render_get_uploader</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a29b69002c0a5ea31a84d19f9c681c74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0621eb89eea8d889c716e0408074130e"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a0621eb89eea8d889c716e0408074130e">mt_cairo_render_get_tex</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a0621eb89eea8d889c716e0408074130e"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a0621eb89eea8d889c716e0408074130e">mt_cairo_render_get_tex</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a0621eb89eea8d889c716e0408074130e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d5acdb4db96fb89b8bcc7d3a09246e8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a6d5acdb4db96fb89b8bcc7d3a09246e8">mt_cairo_render_get_width</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a6d5acdb4db96fb89b8bcc7d3a09246e8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a6d5acdb4db96fb89b8bcc7d3a09246e8">mt_cairo_render_get_width</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a6d5acdb4db96fb89b8bcc7d3a09246e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac014bdae821422448423e7e4d2a3fd2c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ac014bdae821422448423e7e4d2a3fd2c">mt_cairo_render_get_height</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:ac014bdae821422448423e7e4d2a3fd2c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ac014bdae821422448423e7e4d2a3fd2c">mt_cairo_render_get_height</a> (mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:ac014bdae821422448423e7e4d2a3fd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac59590d476dc289b5e8b77d6879fdadb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ac59590d476dc289b5e8b77d6879fdadb">mt_cairo_render_set_ctx_checking_enabled</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> flag)</td></tr>
+<tr class="memitem:ac59590d476dc289b5e8b77d6879fdadb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ac59590d476dc289b5e8b77d6879fdadb">mt_cairo_render_set_ctx_checking_enabled</a> (mt_cairo_render_t *mtcr, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> flag)</td></tr>
 <tr class="separator:ac59590d476dc289b5e8b77d6879fdadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8649732df2516f751709fe69270564e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ad8649732df2516f751709fe69270564e">mt_cairo_render_set_debug</a> (<a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> flag)</td></tr>
+<tr class="memitem:ad8649732df2516f751709fe69270564e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ad8649732df2516f751709fe69270564e">mt_cairo_render_set_debug</a> (mt_cairo_render_t *mtcr, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> flag)</td></tr>
 <tr class="separator:ad8649732df2516f751709fe69270564e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a807490ce1a2dc76d8745e6329a022c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a1a807490ce1a2dc76d8745e6329a022c">mt_cairo_render_get_debug</a> (const <a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *mtcr)</td></tr>
+<tr class="memitem:a1a807490ce1a2dc76d8745e6329a022c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#a1a807490ce1a2dc76d8745e6329a022c">mt_cairo_render_get_debug</a> (const mt_cairo_render_t *mtcr)</td></tr>
 <tr class="separator:a1a807490ce1a2dc76d8745e6329a022c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb6b67796b231f6285396c802285ebb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#abb6b67796b231f6285396c802285ebb7">mt_cairo_uploader_init</a> (void)</td></tr>
+<tr class="memitem:abb6b67796b231f6285396c802285ebb7"><td class="memItemLeft" align="right" valign="top">mt_cairo_uploader_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#abb6b67796b231f6285396c802285ebb7">mt_cairo_uploader_init</a> (void)</td></tr>
 <tr class="separator:abb6b67796b231f6285396c802285ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab948f78eeb0137d63e2a48645bea1eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ab948f78eeb0137d63e2a48645bea1eb4">mt_cairo_uploader_fini</a> (<a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a> *mtul)</td></tr>
+<tr class="memitem:ab948f78eeb0137d63e2a48645bea1eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mt__cairo__render_8c.html#ab948f78eeb0137d63e2a48645bea1eb4">mt_cairo_uploader_fini</a> (mt_cairo_uploader_t *mtul)</td></tr>
 <tr class="separator:ab948f78eeb0137d63e2a48645bea1eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -258,19 +258,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_draw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -294,19 +294,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_draw_pvm </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -336,31 +336,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_draw_subrect </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>src_pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>src_sz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -384,31 +384,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_draw_subrect_pvm </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>src_pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>src_sz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -438,7 +438,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_enable_fg_mode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -458,7 +458,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_fini </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -478,7 +478,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> mt_cairo_render_get_debug </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">const mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -498,7 +498,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">double mt_cairo_render_get_fps </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -518,7 +518,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">unsigned mt_cairo_render_get_height </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -538,7 +538,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structvect3__t.html">vect3_t</a> mt_cairo_render_get_monochrome </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">const mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -558,7 +558,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">unsigned mt_cairo_render_get_shader </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -578,7 +578,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">GLuint mt_cairo_render_get_tex </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -596,9 +596,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a>* mt_cairo_render_get_uploader </td>
+          <td class="memname">mt_cairo_uploader_t* mt_cairo_render_get_uploader </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -618,7 +618,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">unsigned mt_cairo_render_get_width </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -656,7 +656,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a>* mt_cairo_render_init_impl </td>
+          <td class="memname">mt_cairo_render_t* mt_cairo_render_init_impl </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -730,7 +730,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_once </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -750,7 +750,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_once_wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -770,7 +770,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_ctx_checking_enabled </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
@@ -800,7 +800,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_debug </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
@@ -830,7 +830,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_fps </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
@@ -860,7 +860,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_monochrome </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
@@ -890,7 +890,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_shader </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
@@ -920,7 +920,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_texture_filter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
@@ -950,13 +950,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_render_set_uploader </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a3ae063a8fb9f1603bde08b56b139136e">mt_cairo_render_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_render_t *&#160;</td>
           <td class="paramname"><em>mtcr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_uploader_t *&#160;</td>
           <td class="paramname"><em>mtul</em>&#160;</td>
         </tr>
         <tr>
@@ -980,7 +980,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mt_cairo_uploader_fini </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a> *&#160;</td>
+          <td class="paramtype">mt_cairo_uploader_t *&#160;</td>
           <td class="paramname"><em>mtul</em></td><td>)</td>
           <td></td>
         </tr>
@@ -998,7 +998,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="mt__cairo__render_8h.html#a46493c29598d3fecca7ca5d060a0c118">mt_cairo_uploader_t</a>* mt_cairo_uploader_init </td>
+          <td class="memname">mt_cairo_uploader_t* mt_cairo_uploader_init </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1055,7 +1055,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> draw_call_type</td>
+          <td class="memname">dr_t draw_call_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1071,7 +1071,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> mv_matrix</td>
+          <td class="memname">dr_t mv_matrix</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1087,7 +1087,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> proj_matrix</td>
+          <td class="memname">dr_t proj_matrix</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1103,7 +1103,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> viewport</td>
+          <td class="memname">dr_t viewport</td>
         </tr>
       </table>
 </div><div class="memdoc">

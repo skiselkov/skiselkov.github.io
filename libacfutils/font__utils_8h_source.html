@@ -70,7 +70,7 @@ $(function() {
 <div class="title">font_utils.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="font__utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -103,16 +103,16 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;ft2build.h&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include FT_FREETYPE_H</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216">   40</a></span>&#160;<span class="preprocessor">#define ft_err2str  ACFSYM(ft_err2str)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="font__utils_8h.html#a3d91eedf03d79dfe82ad61ffca9b5fcc">   41</a></span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216">ft_err2str</a>(FT_Error err);</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="font__utils_8h.html#ad6cf431e4e0556a544d7c35f19947658">   42</a></span>&#160;<span class="preprocessor">#define try_load_font   ACFSYM(try_load_font)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="font__utils_8h.html#aa15fb126e09c5009c59e37c1928d4ffd">   43</a></span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="font__utils_8h.html#ad6cf431e4e0556a544d7c35f19947658">try_load_font</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fontdir, <span class="keyword">const</span> <span class="keywordtype">char</span> *fontfile,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define ft_err2str  ACFSYM(ft_err2str)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;API_EXPORT <span class="keyword">const</span> <span class="keywordtype">char</span> *ft_err2str(FT_Error err);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define try_load_font   ACFSYM(try_load_font)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;API_EXPORT bool_t try_load_font(<span class="keyword">const</span> <span class="keywordtype">char</span> *fontdir, <span class="keyword">const</span> <span class="keywordtype">char</span> *fontfile,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    FT_Library ft, FT_Face *font, cairo_font_face_t **cr_font);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
@@ -120,11 +120,6 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_FONT_UTILS_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="acore_8h_html_a5e3652cae8b48c1ad174f0b06bbd06d0"><div class="ttname"><a href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a></div><div class="ttdeci">#define API_EXPORT</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00056">core.h:56</a></div></div>
-<div class="ttc" id="afont__utils_8h_html_a01bae0f61c15f59758ad3cc18a0ef216"><div class="ttname"><a href="font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216">ft_err2str</a></div><div class="ttdeci">#define ft_err2str</div><div class="ttdef"><b>Definition:</b> <a href="font__utils_8h_source.html#l00040">font_utils.h:40</a></div></div>
-<div class="ttc" id="afont__utils_8h_html_ad6cf431e4e0556a544d7c35f19947658"><div class="ttname"><a href="font__utils_8h.html#ad6cf431e4e0556a544d7c35f19947658">try_load_font</a></div><div class="ttdeci">#define try_load_font</div><div class="ttdef"><b>Definition:</b> <a href="font__utils_8h_source.html#l00042">font_utils.h:42</a></div></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

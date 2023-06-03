@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['obst_5flight_5ft_4494',['obst_light_t',['../odb_8h.html#a4ac15b8460841967405ce458b0f4e5dd',1,'odb.h']]],
-  ['obst_5ftype_5ft_4495',['obst_type_t',['../odb_8h.html#a5c5b7205c7a0d938131fa5b29f8b5b5e',1,'odb.h']]]
+  ['params_4322',['PARAMS',['../_geomagnetism_library_8c.html#a0f38d677bf7565d6cca7adfa1fc4d7ee',1,'GeomagnetismLibrary.c']]]
 ];

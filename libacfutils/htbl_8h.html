@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">htbl.h File Reference</div>  </div>
@@ -114,7 +113,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhtbl__multi__value__t.html">htbl_multi_value_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhtbl__bucket__item__s.html">htbl_bucket_item_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhtbl__bucket__item__t.html">htbl_bucket_item_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhtbl__t.html">htbl_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,11 +122,6 @@ Data Structures</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:ab5b59d969356f69c1016f3dcc3ed72b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a>(x)&#160;&#160;&#160;(((<a class="el" href="structhtbl__multi__value__t.html">htbl_multi_value_t</a> *)(x))-&gt;value)</td></tr>
 <tr class="separator:ab5b59d969356f69c1016f3dcc3ed72b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a3b9753c276f29c8989c511bfbc2918a8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structhtbl__bucket__item__s.html">htbl_bucket_item_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a3b9753c276f29c8989c511bfbc2918a8">htbl_bucket_item_t</a></td></tr>
-<tr class="separator:a3b9753c276f29c8989c511bfbc2918a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -147,7 +141,7 @@ Functions</h2></td></tr>
 <tr class="separator:a52047813edc99eb52cf1c8e87207b3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abff55803c6865611949e1849f04b70b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#abff55803c6865611949e1849f04b70b3">htbl_lookup</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key)</td></tr>
 <tr class="separator:abff55803c6865611949e1849f04b70b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29af82ee789cd01d9f66ede92c6156f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> const <a class="el" href="list_8h.html#a15376354e4e8b4f1732e9df17f30786c">list_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a29af82ee789cd01d9f66ede92c6156f8">htbl_lookup_multi</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key)</td></tr>
+<tr class="memitem:a29af82ee789cd01d9f66ede92c6156f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> const list_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a29af82ee789cd01d9f66ede92c6156f8">htbl_lookup_multi</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key)</td></tr>
 <tr class="separator:a29af82ee789cd01d9f66ede92c6156f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1e5257a4d2b395f0e155c144e4fb7f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#ac1e5257a4d2b395f0e155c144e4fb7f0">htbl_foreach</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, void(*func)(const void *, void *, void *), void *arg)</td></tr>
 <tr class="separator:ac1e5257a4d2b395f0e155c144e4fb7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,21 +166,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00080">80</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a3b9753c276f29c8989c511bfbc2918a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b9753c276f29c8989c511bfbc2918a8">&#9670;&nbsp;</a></span>htbl_bucket_item_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structhtbl__bucket__item__s.html">htbl_bucket_item_s</a> <a class="el" href="htbl_8h.html#a3b9753c276f29c8989c511bfbc2918a8">htbl_bucket_item_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -412,7 +391,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> const <a class="el" href="list_8h.html#a15376354e4e8b4f1732e9df17f30786c">list_t</a>* htbl_lookup_multi </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> const list_t* htbl_lookup_multi </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structhtbl__t.html">htbl_t</a> *&#160;</td>
           <td class="paramname"><em>htbl</em>, </td>

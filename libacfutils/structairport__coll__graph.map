@@ -1,13 +1,9 @@
-<map id="airport" name="airport">
-<area shape="rect" id="node1" title=" " alt="" coords="381,219,447,245"/>
-<area shape="rect" id="node2" href="$structavl__node.html" title=" " alt="" coords="5,7,87,33"/>
-<area shape="rect" id="node8" href="$structavl__tree.html" title=" " alt="" coords="134,113,209,140"/>
-<area shape="rect" id="node3" href="$structlist__node.html" title=" " alt="" coords="224,7,305,33"/>
-<area shape="rect" id="node10" href="$structlist.html" title=" " alt="" coords="393,113,435,140"/>
-<area shape="rect" id="node4" href="$structfpp__t.html" title=" " alt="" coords="460,113,515,140"/>
-<area shape="rect" id="node5" href="$structellip__t.html" title=" " alt="" coords="415,7,477,33"/>
-<area shape="rect" id="node6" href="$structsph__xlate__t.html" title=" " alt="" coords="501,7,599,33"/>
-<area shape="rect" id="node7" href="$structvect2__s.html" title=" " alt="" coords="623,7,695,33"/>
-<area shape="rect" id="node9" href="$structgeo__pos3__t.html" title=" " alt="" coords="539,113,635,140"/>
-<area shape="rect" id="node11" href="$structvect3__t.html" title=" " alt="" coords="660,113,731,140"/>
+<map id="airport_t" name="airport_t">
+<area shape="rect" id="node1" title=" " alt="" coords="202,213,279,240"/>
+<area shape="rect" id="node2" href="$structfpp__t.html" title=" " alt="" coords="113,109,168,136"/>
+<area shape="rect" id="node3" href="$structellip__t.html" title=" " alt="" coords="5,5,68,32"/>
+<area shape="rect" id="node4" href="$structsph__xlate__t.html" title=" " alt="" coords="92,5,189,32"/>
+<area shape="rect" id="node5" href="$structvect2__t.html" title=" " alt="" coords="213,5,284,32"/>
+<area shape="rect" id="node6" href="$structgeo__pos3__t.html" title=" " alt="" coords="193,109,289,136"/>
+<area shape="rect" id="node7" href="$structvect3__t.html" title=" " alt="" coords="313,109,384,136"/>
 </map>

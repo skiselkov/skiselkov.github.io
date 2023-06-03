@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">widget.h File Reference</div>  </div>
@@ -157,11 +156,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a714b7d669c2e81c725f318b40458993f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a714b7d669c2e81c725f318b40458993f">win_resize_ctl_update</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(win_resize_ctl_update)</td></tr>
 <tr class="separator:a714b7d669c2e81c725f318b40458993f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a9e6285af9781a9d9c1186f1f6b04a78f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtooltip__set.html">tooltip_set</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a></td></tr>
-<tr class="separator:a9e6285af9781a9d9c1186f1f6b04a78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acb60c178076dfd779edc6ceafd48d874"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPWidgetID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#acb60c178076dfd779edc6ceafd48d874">create_widget_rel</a> (int x, int y, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> y_from_bottom, int width, int height, int visible, const char *descr, int root, XPWidgetID container, XPWidgetClass cls)</td></tr>
@@ -178,27 +172,27 @@ Functions</h2></td></tr>
 <tr class="separator:ab2b1cca38c15a02d58ec56be34ac6a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f452db10274a1452385763d750bd59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ad9f452db10274a1452385763d750bd59">tooltip_fini</a> (void)</td></tr>
 <tr class="separator:ad9f452db10274a1452385763d750bd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ad77f8162e242518d295f7acd514fa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a6ad77f8162e242518d295f7acd514fa8">tooltip_set_new</a> (XPWidgetID window)</td></tr>
+<tr class="memitem:a6ad77f8162e242518d295f7acd514fa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> tooltip_set_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a6ad77f8162e242518d295f7acd514fa8">tooltip_set_new</a> (XPWidgetID window)</td></tr>
 <tr class="separator:a6ad77f8162e242518d295f7acd514fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cea393e2ab6033f361722890250f8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a58cea393e2ab6033f361722890250f8a">tooltip_set_new_native</a> (XPLMWindowID window)</td></tr>
+<tr class="memitem:a58cea393e2ab6033f361722890250f8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> tooltip_set_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a58cea393e2ab6033f361722890250f8a">tooltip_set_new_native</a> (XPLMWindowID window)</td></tr>
 <tr class="separator:a58cea393e2ab6033f361722890250f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3ed8f71babbbcd95e7235e482bb61e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ae3ed8f71babbbcd95e7235e482bb61e8">tooltip_set_orig_win_size</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts, unsigned orig_w, unsigned orig_h)</td></tr>
+<tr class="memitem:ae3ed8f71babbbcd95e7235e482bb61e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ae3ed8f71babbbcd95e7235e482bb61e8">tooltip_set_orig_win_size</a> (tooltip_set_t *tts, unsigned orig_w, unsigned orig_h)</td></tr>
 <tr class="separator:ae3ed8f71babbbcd95e7235e482bb61e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a610cc867a9604855b7a9c50fd9333423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a610cc867a9604855b7a9c50fd9333423">tooltip_set_delay</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *set, double secs)</td></tr>
+<tr class="memitem:a610cc867a9604855b7a9c50fd9333423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a610cc867a9604855b7a9c50fd9333423">tooltip_set_delay</a> (tooltip_set_t *set, double secs)</td></tr>
 <tr class="separator:a610cc867a9604855b7a9c50fd9333423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d0a41c3001680e050ee28f0a31f26d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a7d0a41c3001680e050ee28f0a31f26d5">tooltip_set_destroy</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts)</td></tr>
+<tr class="memitem:a7d0a41c3001680e050ee28f0a31f26d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a7d0a41c3001680e050ee28f0a31f26d5">tooltip_set_destroy</a> (tooltip_set_t *tts)</td></tr>
 <tr class="separator:a7d0a41c3001680e050ee28f0a31f26d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4197637c88a9d0855bebd2faa02ecc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ab4197637c88a9d0855bebd2faa02ecc0">tooltip_set_opaque</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> opaque)</td></tr>
+<tr class="memitem:ab4197637c88a9d0855bebd2faa02ecc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ab4197637c88a9d0855bebd2faa02ecc0">tooltip_set_opaque</a> (tooltip_set_t *tts, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> opaque)</td></tr>
 <tr class="separator:ab4197637c88a9d0855bebd2faa02ecc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fe533eb6cc14eacc1e9eaba586fe6fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a5fe533eb6cc14eacc1e9eaba586fe6fb">tooltip_new</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts, int x, int y, int w, int h, const char *text)</td></tr>
+<tr class="memitem:a5fe533eb6cc14eacc1e9eaba586fe6fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a5fe533eb6cc14eacc1e9eaba586fe6fb">tooltip_new</a> (tooltip_set_t *tts, int x, int y, int w, int h, const char *text)</td></tr>
 <tr class="separator:a5fe533eb6cc14eacc1e9eaba586fe6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0c7db743214cde94b02dd3275f6d263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ab0c7db743214cde94b02dd3275f6d263">tooltip_set_font_face</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts, cairo_font_face_t *font)</td></tr>
+<tr class="memitem:ab0c7db743214cde94b02dd3275f6d263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#ab0c7db743214cde94b02dd3275f6d263">tooltip_set_font_face</a> (tooltip_set_t *tts, cairo_font_face_t *font)</td></tr>
 <tr class="separator:ab0c7db743214cde94b02dd3275f6d263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c5771f11af33c5225f1febca136de92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> cairo_font_face_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a9c5771f11af33c5225f1febca136de92">tooltip_get_font_face</a> (const <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts)</td></tr>
+<tr class="memitem:a9c5771f11af33c5225f1febca136de92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> cairo_font_face_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a9c5771f11af33c5225f1febca136de92">tooltip_get_font_face</a> (const tooltip_set_t *tts)</td></tr>
 <tr class="separator:a9c5771f11af33c5225f1febca136de92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11f223d63c5a00e62517632a410d128b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a11f223d63c5a00e62517632a410d128b">tooltip_set_font_size</a> (<a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts, double size)</td></tr>
+<tr class="memitem:a11f223d63c5a00e62517632a410d128b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a11f223d63c5a00e62517632a410d128b">tooltip_set_font_size</a> (tooltip_set_t *tts, double size)</td></tr>
 <tr class="separator:a11f223d63c5a00e62517632a410d128b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbcbdaa93279ddd9b1fd5af24a7a620b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#adbcbdaa93279ddd9b1fd5af24a7a620b">tooltip_get_font_size</a> (const <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *tts)</td></tr>
+<tr class="memitem:adbcbdaa93279ddd9b1fd5af24a7a620b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#adbcbdaa93279ddd9b1fd5af24a7a620b">tooltip_get_font_size</a> (const tooltip_set_t *tts)</td></tr>
 <tr class="separator:adbcbdaa93279ddd9b1fd5af24a7a620b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f87e6226d52b264d9a7b3674bee09ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="widget_8h.html#a8f87e6226d52b264d9a7b3674bee09ca">window_follow_VR</a> (XPLMWindowID win)</td></tr>
 <tr class="separator:a8f87e6226d52b264d9a7b3674bee09ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -353,23 +347,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="widget_8h_source.html#l00104">104</a> of file <a class="el" href="widget_8h_source.html">widget.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a9e6285af9781a9d9c1186f1f6b04a78f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e6285af9781a9d9c1186f1f6b04a78f">&#9670;&nbsp;</a></span>tooltip_set_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structtooltip__set.html">tooltip_set</a> <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="widget_8h_source.html#l00001">1</a> of file <a class="el" href="widget_8h_source.html">widget.h</a>.</p>
 
 </div>
 </div>
@@ -605,7 +582,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> cairo_font_face_t* tooltip_get_font_face </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">const tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em></td><td>)</td>
           <td></td>
         </tr>
@@ -625,7 +602,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double tooltip_get_font_size </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">const tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em></td><td>)</td>
           <td></td>
         </tr>
@@ -665,7 +642,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_new </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em>, </td>
         </tr>
         <tr>
@@ -719,7 +696,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_set_delay </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>set</em>, </td>
         </tr>
         <tr>
@@ -749,7 +726,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_set_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em></td><td>)</td>
           <td></td>
         </tr>
@@ -769,7 +746,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_set_font_face </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em>, </td>
         </tr>
         <tr>
@@ -799,7 +776,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_set_font_size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em>, </td>
         </tr>
         <tr>
@@ -827,7 +804,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a>* tooltip_set_new </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> tooltip_set_t* tooltip_set_new </td>
           <td>(</td>
           <td class="paramtype">XPWidgetID&#160;</td>
           <td class="paramname"><em>window</em></td><td>)</td>
@@ -847,7 +824,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a>* tooltip_set_new_native </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> tooltip_set_t* tooltip_set_new_native </td>
           <td>(</td>
           <td class="paramtype">XPLMWindowID&#160;</td>
           <td class="paramname"><em>window</em></td><td>)</td>
@@ -869,7 +846,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_set_opaque </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em>, </td>
         </tr>
         <tr>
@@ -897,7 +874,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void tooltip_set_orig_win_size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="widget_8h.html#a9e6285af9781a9d9c1186f1f6b04a78f">tooltip_set_t</a> *&#160;</td>
+          <td class="paramtype">tooltip_set_t *&#160;</td>
           <td class="paramname"><em>tts</em>, </td>
         </tr>
         <tr>

@@ -128,30 +128,30 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtaskq__thr__t.html">taskq_thr_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtaskq__s.html">taskq_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtaskq__s.html">taskq_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af27f8d131b450ea0a2f597ac167d6ce8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#af27f8d131b450ea0a2f597ac167d6ce8">taskq_alloc</a> (unsigned num_threads_min, unsigned num_threads_max, uint64_t thr_stop_delay_us, <a class="el" href="taskq_8h.html#a8a91875c1ad99c08f8152ad1dc8d2bf0">taskq_init_thr_t</a> init_func, <a class="el" href="taskq_8h.html#a51ad632d8affdd347e23f1dde155cf97">taskq_fini_thr_t</a> fini_func, <a class="el" href="taskq_8h.html#a13c5baf65f53a3e61ff6e5fb27c40d28">taskq_proc_task_t</a> proc_func, <a class="el" href="taskq_8h.html#af58b53c0496176129c5d296ebb016828">taskq_discard_task_t</a> discard_func, void *userinfo)</td></tr>
+<tr class="memitem:af27f8d131b450ea0a2f597ac167d6ce8"><td class="memItemLeft" align="right" valign="top">taskq_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#af27f8d131b450ea0a2f597ac167d6ce8">taskq_alloc</a> (unsigned num_threads_min, unsigned num_threads_max, uint64_t thr_stop_delay_us, <a class="el" href="taskq_8h.html#a8a91875c1ad99c08f8152ad1dc8d2bf0">taskq_init_thr_t</a> init_func, <a class="el" href="taskq_8h.html#a51ad632d8affdd347e23f1dde155cf97">taskq_fini_thr_t</a> fini_func, <a class="el" href="taskq_8h.html#a13c5baf65f53a3e61ff6e5fb27c40d28">taskq_proc_task_t</a> proc_func, <a class="el" href="taskq_8h.html#af58b53c0496176129c5d296ebb016828">taskq_discard_task_t</a> discard_func, void *userinfo)</td></tr>
 <tr class="separator:af27f8d131b450ea0a2f597ac167d6ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3357489e5a873591ca5365e4f94d315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#ac3357489e5a873591ca5365e4f94d315">taskq_free</a> (<a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq)</td></tr>
+<tr class="memitem:ac3357489e5a873591ca5365e4f94d315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#ac3357489e5a873591ca5365e4f94d315">taskq_free</a> (taskq_t *tq)</td></tr>
 <tr class="separator:ac3357489e5a873591ca5365e4f94d315"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2189425c20e9e1219b5f08a5d133dceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a2189425c20e9e1219b5f08a5d133dceb">taskq_submit</a> (<a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq, void *task)</td></tr>
+<tr class="memitem:a2189425c20e9e1219b5f08a5d133dceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a2189425c20e9e1219b5f08a5d133dceb">taskq_submit</a> (taskq_t *tq, void *task)</td></tr>
 <tr class="separator:a2189425c20e9e1219b5f08a5d133dceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e086c4145f06febf1919f455e9d3043"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a0e086c4145f06febf1919f455e9d3043">taskq_wants_shutdown</a> (<a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq)</td></tr>
+<tr class="memitem:a0e086c4145f06febf1919f455e9d3043"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a0e086c4145f06febf1919f455e9d3043">taskq_wants_shutdown</a> (taskq_t *tq)</td></tr>
 <tr class="separator:a0e086c4145f06febf1919f455e9d3043"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeddd3b56ed1ddfdeb14296580e447976"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#aeddd3b56ed1ddfdeb14296580e447976">taskq_set_num_threads_min</a> (<a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq, unsigned num_threads_min)</td></tr>
+<tr class="memitem:aeddd3b56ed1ddfdeb14296580e447976"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#aeddd3b56ed1ddfdeb14296580e447976">taskq_set_num_threads_min</a> (taskq_t *tq, unsigned num_threads_min)</td></tr>
 <tr class="separator:aeddd3b56ed1ddfdeb14296580e447976"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a635938475f1b35733fae77f7b318c8d8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a635938475f1b35733fae77f7b318c8d8">taskq_get_num_threads_min</a> (const <a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq)</td></tr>
+<tr class="memitem:a635938475f1b35733fae77f7b318c8d8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a635938475f1b35733fae77f7b318c8d8">taskq_get_num_threads_min</a> (const taskq_t *tq)</td></tr>
 <tr class="separator:a635938475f1b35733fae77f7b318c8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a60b7377ebe23bbce2448f50df6ed7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a9a60b7377ebe23bbce2448f50df6ed7d">taskq_set_num_threads_max</a> (<a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq, unsigned num_threads_max)</td></tr>
+<tr class="memitem:a9a60b7377ebe23bbce2448f50df6ed7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a9a60b7377ebe23bbce2448f50df6ed7d">taskq_set_num_threads_max</a> (taskq_t *tq, unsigned num_threads_max)</td></tr>
 <tr class="separator:a9a60b7377ebe23bbce2448f50df6ed7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab33652352803e9659803bf2809481ad6"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#ab33652352803e9659803bf2809481ad6">taskq_get_num_threads_max</a> (const <a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq)</td></tr>
+<tr class="memitem:ab33652352803e9659803bf2809481ad6"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#ab33652352803e9659803bf2809481ad6">taskq_get_num_threads_max</a> (const taskq_t *tq)</td></tr>
 <tr class="separator:ab33652352803e9659803bf2809481ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a355cb6d6e300a80bac11c055e736acb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a355cb6d6e300a80bac11c055e736acb6">taskq_set_thr_stop_delay</a> (<a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq, uint64_t thr_stop_delay_us)</td></tr>
+<tr class="memitem:a355cb6d6e300a80bac11c055e736acb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a355cb6d6e300a80bac11c055e736acb6">taskq_set_thr_stop_delay</a> (taskq_t *tq, uint64_t thr_stop_delay_us)</td></tr>
 <tr class="separator:a355cb6d6e300a80bac11c055e736acb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62d68a087fb1c8b51b8fc47d51f3fe4e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a62d68a087fb1c8b51b8fc47d51f3fe4e">taskq_get_thr_stop_delay</a> (const <a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *tq)</td></tr>
+<tr class="memitem:a62d68a087fb1c8b51b8fc47d51f3fe4e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="taskq_8c.html#a62d68a087fb1c8b51b8fc47d51f3fe4e">taskq_get_thr_stop_delay</a> (const taskq_t *tq)</td></tr>
 <tr class="separator:a62d68a087fb1c8b51b8fc47d51f3fe4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -162,7 +162,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a>* taskq_alloc </td>
+          <td class="memname">taskq_t* taskq_alloc </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>num_threads_min</em>, </td>
@@ -230,7 +230,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void taskq_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em></td><td>)</td>
           <td></td>
         </tr>
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">unsigned taskq_get_num_threads_max </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">const taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em></td><td>)</td>
           <td></td>
         </tr>
@@ -270,7 +270,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">unsigned taskq_get_num_threads_min </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">const taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em></td><td>)</td>
           <td></td>
         </tr>
@@ -290,7 +290,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">uint64_t taskq_get_thr_stop_delay </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">const taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em></td><td>)</td>
           <td></td>
         </tr>
@@ -310,7 +310,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void taskq_set_num_threads_max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em>, </td>
         </tr>
         <tr>
@@ -340,7 +340,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void taskq_set_num_threads_min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em>, </td>
         </tr>
         <tr>
@@ -370,7 +370,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void taskq_set_thr_stop_delay </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em>, </td>
         </tr>
         <tr>
@@ -400,7 +400,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void taskq_submit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em>, </td>
         </tr>
         <tr>
@@ -430,7 +430,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool taskq_wants_shutdown </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="taskq_8h.html#a561ea46991911c02a3b1e88e7ed0e08b">taskq_t</a> *&#160;</td>
+          <td class="paramtype">taskq_t *&#160;</td>
           <td class="paramname"><em>tq</em></td><td>)</td>
           <td></td>
         </tr>

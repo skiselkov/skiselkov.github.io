@@ -133,7 +133,7 @@ Include dependency graph for conf.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconf.html">conf</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconf.html">conf_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconf__key__t.html">conf_key_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,101 +158,101 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ad80ba6fb8d367180123b5355182c346e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad80ba6fb8d367180123b5355182c346e">CTASSERT</a> (sizeof(double)==sizeof(unsigned long long))</td></tr>
 <tr class="separator:ad80ba6fb8d367180123b5355182c346e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab16f33643c43aaa20ad81ba86af62b41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ab16f33643c43aaa20ad81ba86af62b41">conf_create_empty</a> (void)</td></tr>
+<tr class="memitem:ab16f33643c43aaa20ad81ba86af62b41"><td class="memItemLeft" align="right" valign="top">conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ab16f33643c43aaa20ad81ba86af62b41">conf_create_empty</a> (void)</td></tr>
 <tr class="separator:ab16f33643c43aaa20ad81ba86af62b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eabbf9b1e323f6fe20136def0dc5621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a4eabbf9b1e323f6fe20136def0dc5621">conf_create_copy</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *conf2)</td></tr>
+<tr class="memitem:a4eabbf9b1e323f6fe20136def0dc5621"><td class="memItemLeft" align="right" valign="top">conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a4eabbf9b1e323f6fe20136def0dc5621">conf_create_copy</a> (const conf_t *conf2)</td></tr>
 <tr class="separator:a4eabbf9b1e323f6fe20136def0dc5621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a856e224a2beb8052cd152ca2eb2c5c11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a856e224a2beb8052cd152ca2eb2c5c11">conf_merge</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *conf_from, <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *conf_to)</td></tr>
+<tr class="memitem:a856e224a2beb8052cd152ca2eb2c5c11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a856e224a2beb8052cd152ca2eb2c5c11">conf_merge</a> (const conf_t *conf_from, conf_t *conf_to)</td></tr>
 <tr class="separator:a856e224a2beb8052cd152ca2eb2c5c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcdaec3e273332da27d16524c514f2d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#abcdaec3e273332da27d16524c514f2d2">conf_free</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>)</td></tr>
+<tr class="memitem:abcdaec3e273332da27d16524c514f2d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#abcdaec3e273332da27d16524c514f2d2">conf_free</a> (conf_t *<a class="el" href="structconf.html">conf</a>)</td></tr>
 <tr class="separator:abcdaec3e273332da27d16524c514f2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6a85ef02aca4749e30c08f5c193af86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aa6a85ef02aca4749e30c08f5c193af86">conf_read_file</a> (const char *filename, int *errline)</td></tr>
+<tr class="memitem:aa6a85ef02aca4749e30c08f5c193af86"><td class="memItemLeft" align="right" valign="top">conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aa6a85ef02aca4749e30c08f5c193af86">conf_read_file</a> (const char *filename, int *errline)</td></tr>
 <tr class="separator:aa6a85ef02aca4749e30c08f5c193af86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a099f5a3a0d0bc3d93aa66099a7ffe0d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a099f5a3a0d0bc3d93aa66099a7ffe0d9">conf_read</a> (FILE *fp, int *errline)</td></tr>
+<tr class="memitem:a099f5a3a0d0bc3d93aa66099a7ffe0d9"><td class="memItemLeft" align="right" valign="top">conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a099f5a3a0d0bc3d93aa66099a7ffe0d9">conf_read</a> (FILE *fp, int *errline)</td></tr>
 <tr class="separator:a099f5a3a0d0bc3d93aa66099a7ffe0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a887cf26dc4aa4e9109845782fc4a21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a5a887cf26dc4aa4e9109845782fc4a21">conf_read2</a> (void *fp, int *errline, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> compressed)</td></tr>
+<tr class="memitem:a5a887cf26dc4aa4e9109845782fc4a21"><td class="memItemLeft" align="right" valign="top">conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a5a887cf26dc4aa4e9109845782fc4a21">conf_read2</a> (void *fp, int *errline, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> compressed)</td></tr>
 <tr class="separator:a5a887cf26dc4aa4e9109845782fc4a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaad0f6138466af57a16e4e3b0c922f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#adaad0f6138466af57a16e4e3b0c922f7">conf_read_buf</a> (const void *buf, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>, int *errline)</td></tr>
+<tr class="memitem:adaad0f6138466af57a16e4e3b0c922f7"><td class="memItemLeft" align="right" valign="top">conf_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#adaad0f6138466af57a16e4e3b0c922f7">conf_read_buf</a> (const void *buf, size_t cap, int *errline)</td></tr>
 <tr class="separator:adaad0f6138466af57a16e4e3b0c922f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc141e42dd3255ade394ab8d325741d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#acc141e42dd3255ade394ab8d325741d9">conf_write_file</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *filename)</td></tr>
+<tr class="memitem:acc141e42dd3255ade394ab8d325741d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#acc141e42dd3255ade394ab8d325741d9">conf_write_file</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *filename)</td></tr>
 <tr class="separator:acc141e42dd3255ade394ab8d325741d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad81168a17f344ef051a4df63e15b8503"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad81168a17f344ef051a4df63e15b8503">conf_write_file2</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *filename, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> compressed)</td></tr>
+<tr class="memitem:ad81168a17f344ef051a4df63e15b8503"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad81168a17f344ef051a4df63e15b8503">conf_write_file2</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *filename, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> compressed)</td></tr>
 <tr class="separator:ad81168a17f344ef051a4df63e15b8503"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af60d28d2ab4b5d5f02733645136c0278"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af60d28d2ab4b5d5f02733645136c0278">conf_write_buf</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, void *buf, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>)</td></tr>
+<tr class="memitem:af60d28d2ab4b5d5f02733645136c0278"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af60d28d2ab4b5d5f02733645136c0278">conf_write_buf</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, void *buf, size_t cap)</td></tr>
 <tr class="separator:af60d28d2ab4b5d5f02733645136c0278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a847390b78d1f58512d585712744f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a68a847390b78d1f58512d585712744f0">conf_write</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, FILE *fp)</td></tr>
+<tr class="memitem:a68a847390b78d1f58512d585712744f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a68a847390b78d1f58512d585712744f0">conf_write</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, FILE *fp)</td></tr>
 <tr class="separator:a68a847390b78d1f58512d585712744f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9469d0ccce3ef218cee68825a8708c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad9469d0ccce3ef218cee68825a8708c7">conf_get_str</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, const char **value)</td></tr>
+<tr class="memitem:ad9469d0ccce3ef218cee68825a8708c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad9469d0ccce3ef218cee68825a8708c7">conf_get_str</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, const char **value)</td></tr>
 <tr class="separator:ad9469d0ccce3ef218cee68825a8708c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee8f2f7e41dc1f14fff67b5e5e015a2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aee8f2f7e41dc1f14fff67b5e5e015a2e">conf_get_i</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, int *value)</td></tr>
+<tr class="memitem:aee8f2f7e41dc1f14fff67b5e5e015a2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aee8f2f7e41dc1f14fff67b5e5e015a2e">conf_get_i</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, int *value)</td></tr>
 <tr class="separator:aee8f2f7e41dc1f14fff67b5e5e015a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a492cab1be80f5411632fdc0581ed36e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a492cab1be80f5411632fdc0581ed36e6">conf_get_lli</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, long long *value)</td></tr>
+<tr class="memitem:a492cab1be80f5411632fdc0581ed36e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a492cab1be80f5411632fdc0581ed36e6">conf_get_lli</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, long long *value)</td></tr>
 <tr class="separator:a492cab1be80f5411632fdc0581ed36e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66cc177c4bc983c919b86e98434fc83b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a66cc177c4bc983c919b86e98434fc83b">conf_get_d</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, double *value)</td></tr>
+<tr class="memitem:a66cc177c4bc983c919b86e98434fc83b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a66cc177c4bc983c919b86e98434fc83b">conf_get_d</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, double *value)</td></tr>
 <tr class="separator:a66cc177c4bc983c919b86e98434fc83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb8505bc6c6adb43316afbbe5deda0ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#abb8505bc6c6adb43316afbbe5deda0ed">conf_get_f</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, float *value)</td></tr>
+<tr class="memitem:abb8505bc6c6adb43316afbbe5deda0ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#abb8505bc6c6adb43316afbbe5deda0ed">conf_get_f</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, float *value)</td></tr>
 <tr class="separator:abb8505bc6c6adb43316afbbe5deda0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a82121e50361a9a80648e4164ab7236"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a1a82121e50361a9a80648e4164ab7236">conf_get_da</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, double *value)</td></tr>
+<tr class="memitem:a1a82121e50361a9a80648e4164ab7236"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a1a82121e50361a9a80648e4164ab7236">conf_get_da</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, double *value)</td></tr>
 <tr class="separator:a1a82121e50361a9a80648e4164ab7236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e772b1d838aed1c4df86ff157b91fa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a6e772b1d838aed1c4df86ff157b91fa8">conf_get_b</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> *value)</td></tr>
+<tr class="memitem:a6e772b1d838aed1c4df86ff157b91fa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a6e772b1d838aed1c4df86ff157b91fa8">conf_get_b</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> *value)</td></tr>
 <tr class="separator:a6e772b1d838aed1c4df86ff157b91fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d5d4a778cac945be2fbc0273ad64a7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a4d5d4a778cac945be2fbc0273ad64a7b">conf_get_b2</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, bool *value)</td></tr>
+<tr class="memitem:a4d5d4a778cac945be2fbc0273ad64a7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a4d5d4a778cac945be2fbc0273ad64a7b">conf_get_b2</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, bool *value)</td></tr>
 <tr class="separator:a4d5d4a778cac945be2fbc0273ad64a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5046ccebaddedc3b678647327943e5c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af5046ccebaddedc3b678647327943e5c">conf_get_data</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, void *buf, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>)</td></tr>
+<tr class="memitem:af5046ccebaddedc3b678647327943e5c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af5046ccebaddedc3b678647327943e5c">conf_get_data</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, void *buf, size_t cap)</td></tr>
 <tr class="separator:af5046ccebaddedc3b678647327943e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5100ca068890d3d59dfaab65c21fbf6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, const char *value)</td></tr>
+<tr class="memitem:a5100ca068890d3d59dfaab65c21fbf6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, const char *value)</td></tr>
 <tr class="separator:a5100ca068890d3d59dfaab65c21fbf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac41fd414f651e7aa8282e66300a106ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ac41fd414f651e7aa8282e66300a106ca">conf_set_i</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, int value)</td></tr>
+<tr class="memitem:ac41fd414f651e7aa8282e66300a106ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ac41fd414f651e7aa8282e66300a106ca">conf_set_i</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, int value)</td></tr>
 <tr class="separator:ac41fd414f651e7aa8282e66300a106ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9141de6ec91a5b2703e760f5b85ff8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af9141de6ec91a5b2703e760f5b85ff8d">conf_set_lli</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, long long value)</td></tr>
+<tr class="memitem:af9141de6ec91a5b2703e760f5b85ff8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af9141de6ec91a5b2703e760f5b85ff8d">conf_set_lli</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, long long value)</td></tr>
 <tr class="separator:af9141de6ec91a5b2703e760f5b85ff8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af084f64aac66caadb4c9cba255c5080d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af084f64aac66caadb4c9cba255c5080d">conf_set_d</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, double value)</td></tr>
+<tr class="memitem:af084f64aac66caadb4c9cba255c5080d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af084f64aac66caadb4c9cba255c5080d">conf_set_d</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, double value)</td></tr>
 <tr class="separator:af084f64aac66caadb4c9cba255c5080d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a415d7aa9a0931e63f68b24a48c9521d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a415d7aa9a0931e63f68b24a48c9521d8">conf_set_f</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, float value)</td></tr>
+<tr class="memitem:a415d7aa9a0931e63f68b24a48c9521d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a415d7aa9a0931e63f68b24a48c9521d8">conf_set_f</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, float value)</td></tr>
 <tr class="separator:a415d7aa9a0931e63f68b24a48c9521d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b6a34954ef5f0896840969a4086e24b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a4b6a34954ef5f0896840969a4086e24b">conf_set_da</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, double value)</td></tr>
+<tr class="memitem:a4b6a34954ef5f0896840969a4086e24b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a4b6a34954ef5f0896840969a4086e24b">conf_set_da</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, double value)</td></tr>
 <tr class="separator:a4b6a34954ef5f0896840969a4086e24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fbef60d648d09313dccad7de9df522b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a1fbef60d648d09313dccad7de9df522b">conf_set_b</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> value)</td></tr>
+<tr class="memitem:a1fbef60d648d09313dccad7de9df522b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a1fbef60d648d09313dccad7de9df522b">conf_set_b</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> value)</td></tr>
 <tr class="separator:a1fbef60d648d09313dccad7de9df522b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51667c493877ea33d856b97686fa5181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a51667c493877ea33d856b97686fa5181">conf_set_b2</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, bool value)</td></tr>
+<tr class="memitem:a51667c493877ea33d856b97686fa5181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a51667c493877ea33d856b97686fa5181">conf_set_b2</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, bool value)</td></tr>
 <tr class="separator:a51667c493877ea33d856b97686fa5181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b793efef1115fe7585bfd3f37139328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a5b793efef1115fe7585bfd3f37139328">conf_set_data</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *key, const void *buf, size_t sz)</td></tr>
+<tr class="memitem:a5b793efef1115fe7585bfd3f37139328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a5b793efef1115fe7585bfd3f37139328">conf_set_data</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *key, const void *buf, size_t sz)</td></tr>
 <tr class="separator:a5b793efef1115fe7585bfd3f37139328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa3c45e0cb0dc76cfa8aeff9b44968c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, const char **value,...)</td></tr>
+<tr class="memitem:aaa3c45e0cb0dc76cfa8aeff9b44968c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, const char **value,...)</td></tr>
 <tr class="separator:aaa3c45e0cb0dc76cfa8aeff9b44968c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d16a591f0e1e271d915f084eda5eb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a42d16a591f0e1e271d915f084eda5eb8">conf_get_i_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, int *value,...)</td></tr>
+<tr class="memitem:a42d16a591f0e1e271d915f084eda5eb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a42d16a591f0e1e271d915f084eda5eb8">conf_get_i_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, int *value,...)</td></tr>
 <tr class="separator:a42d16a591f0e1e271d915f084eda5eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23e4b113870ad598dd98491bf6c84434"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a23e4b113870ad598dd98491bf6c84434">conf_get_lli_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, long long *value,...)</td></tr>
+<tr class="memitem:a23e4b113870ad598dd98491bf6c84434"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a23e4b113870ad598dd98491bf6c84434">conf_get_lli_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, long long *value,...)</td></tr>
 <tr class="separator:a23e4b113870ad598dd98491bf6c84434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac71d76f59855d1c0ac75efaea289537b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ac71d76f59855d1c0ac75efaea289537b">conf_get_f_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, float *value,...)</td></tr>
+<tr class="memitem:ac71d76f59855d1c0ac75efaea289537b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ac71d76f59855d1c0ac75efaea289537b">conf_get_f_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, float *value,...)</td></tr>
 <tr class="separator:ac71d76f59855d1c0ac75efaea289537b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a308bc8c59c1e73a3104af57ef60e4f20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a308bc8c59c1e73a3104af57ef60e4f20">conf_get_d_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, double *value,...)</td></tr>
+<tr class="memitem:a308bc8c59c1e73a3104af57ef60e4f20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a308bc8c59c1e73a3104af57ef60e4f20">conf_get_d_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, double *value,...)</td></tr>
 <tr class="separator:a308bc8c59c1e73a3104af57ef60e4f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a668a977fc3c33bc97aa8494ff7c5c625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a668a977fc3c33bc97aa8494ff7c5c625">conf_get_da_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, double *value,...)</td></tr>
+<tr class="memitem:a668a977fc3c33bc97aa8494ff7c5c625"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a668a977fc3c33bc97aa8494ff7c5c625">conf_get_da_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, double *value,...)</td></tr>
 <tr class="separator:a668a977fc3c33bc97aa8494ff7c5c625"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4dd8bc94a21201d4609f4890c1a2051"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ab4dd8bc94a21201d4609f4890c1a2051">conf_get_data_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, void *buf, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>,...)</td></tr>
+<tr class="memitem:ab4dd8bc94a21201d4609f4890c1a2051"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ab4dd8bc94a21201d4609f4890c1a2051">conf_get_data_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, void *buf, size_t cap,...)</td></tr>
 <tr class="separator:ab4dd8bc94a21201d4609f4890c1a2051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a798e6dc7085121040a61f1feb12428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a8a798e6dc7085121040a61f1feb12428">conf_get_b_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> *value,...)</td></tr>
+<tr class="memitem:a8a798e6dc7085121040a61f1feb12428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a8a798e6dc7085121040a61f1feb12428">conf_get_b_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> *value,...)</td></tr>
 <tr class="separator:a8a798e6dc7085121040a61f1feb12428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a963f3921514cf363a6760f4238ba81d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a963f3921514cf363a6760f4238ba81d9">conf_get_b2_v</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, bool *value,...)</td></tr>
+<tr class="memitem:a963f3921514cf363a6760f4238ba81d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a963f3921514cf363a6760f4238ba81d9">conf_get_b2_v</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, bool *value,...)</td></tr>
 <tr class="separator:a963f3921514cf363a6760f4238ba81d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af859105aaac3b6298b24369597d4bb0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af859105aaac3b6298b24369597d4bb0f">conf_set_str_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, const char *value,...)</td></tr>
+<tr class="memitem:af859105aaac3b6298b24369597d4bb0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#af859105aaac3b6298b24369597d4bb0f">conf_set_str_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, const char *value,...)</td></tr>
 <tr class="separator:af859105aaac3b6298b24369597d4bb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c3396f25baaca63791a062a8a13545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a74c3396f25baaca63791a062a8a13545">conf_set_i_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, int value,...)</td></tr>
+<tr class="memitem:a74c3396f25baaca63791a062a8a13545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a74c3396f25baaca63791a062a8a13545">conf_set_i_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, int value,...)</td></tr>
 <tr class="separator:a74c3396f25baaca63791a062a8a13545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71a21d7140626461d290f6b140a46814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a71a21d7140626461d290f6b140a46814">conf_set_lli_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, long long value,...)</td></tr>
+<tr class="memitem:a71a21d7140626461d290f6b140a46814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a71a21d7140626461d290f6b140a46814">conf_set_lli_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, long long value,...)</td></tr>
 <tr class="separator:a71a21d7140626461d290f6b140a46814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa707fddcbc51caeb5ef1c5580ffb7a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aa707fddcbc51caeb5ef1c5580ffb7a1b">conf_set_f_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, double value,...)</td></tr>
+<tr class="memitem:aa707fddcbc51caeb5ef1c5580ffb7a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#aa707fddcbc51caeb5ef1c5580ffb7a1b">conf_set_f_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, double value,...)</td></tr>
 <tr class="separator:aa707fddcbc51caeb5ef1c5580ffb7a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69920f87bd399c0f3d54d4ec8bbf86db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a69920f87bd399c0f3d54d4ec8bbf86db">conf_set_d_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, double value,...)</td></tr>
+<tr class="memitem:a69920f87bd399c0f3d54d4ec8bbf86db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a69920f87bd399c0f3d54d4ec8bbf86db">conf_set_d_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, double value,...)</td></tr>
 <tr class="separator:a69920f87bd399c0f3d54d4ec8bbf86db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b1f66306c36efb87f554f0dafb727bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a8b1f66306c36efb87f554f0dafb727bd">conf_set_da_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, double value,...)</td></tr>
+<tr class="memitem:a8b1f66306c36efb87f554f0dafb727bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a8b1f66306c36efb87f554f0dafb727bd">conf_set_da_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, double value,...)</td></tr>
 <tr class="separator:a8b1f66306c36efb87f554f0dafb727bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c43189c3c21d13aeaa80a7e0589cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad7c43189c3c21d13aeaa80a7e0589cc8">conf_set_b_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> value,...)</td></tr>
+<tr class="memitem:ad7c43189c3c21d13aeaa80a7e0589cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#ad7c43189c3c21d13aeaa80a7e0589cc8">conf_set_b_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> value,...)</td></tr>
 <tr class="separator:ad7c43189c3c21d13aeaa80a7e0589cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35733aad8efdf27bb8a815e3d4cf447b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a35733aad8efdf27bb8a815e3d4cf447b">conf_set_data_v</a> (<a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char *fmt, const void *buf, size_t sz,...)</td></tr>
+<tr class="memitem:a35733aad8efdf27bb8a815e3d4cf447b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a35733aad8efdf27bb8a815e3d4cf447b">conf_set_data_v</a> (conf_t *<a class="el" href="structconf.html">conf</a>, const char *fmt, const void *buf, size_t sz,...)</td></tr>
 <tr class="separator:a35733aad8efdf27bb8a815e3d4cf447b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7478d5a102c0976749c626c668c95f69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a7478d5a102c0976749c626c668c95f69">conf_walk</a> (const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *<a class="el" href="structconf.html">conf</a>, const char **key, const char **value, void **cookie)</td></tr>
+<tr class="memitem:a7478d5a102c0976749c626c668c95f69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conf_8c.html#a7478d5a102c0976749c626c668c95f69">conf_walk</a> (const conf_t *<a class="el" href="structconf.html">conf</a>, const char **key, const char **value, void **cookie)</td></tr>
 <tr class="separator:a7478d5a102c0976749c626c668c95f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -414,9 +414,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a>* conf_create_copy </td>
+          <td class="memname">conf_t* conf_create_copy </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf2</em></td><td>)</td>
           <td></td>
         </tr>
@@ -434,7 +434,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a>* conf_create_empty </td>
+          <td class="memname">conf_t* conf_create_empty </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -456,7 +456,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em></td><td>)</td>
           <td></td>
         </tr>
@@ -476,7 +476,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_b </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -512,7 +512,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool conf_get_b2 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -548,7 +548,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool conf_get_b2_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -590,7 +590,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_b_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -632,7 +632,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_d </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -668,7 +668,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_d_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -710,7 +710,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_da </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -746,7 +746,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_da_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -788,7 +788,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t conf_get_data </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -830,7 +830,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t conf_get_data_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -878,7 +878,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_f </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -914,7 +914,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_f_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -956,7 +956,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_i </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -992,7 +992,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_i_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1034,7 +1034,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_lli </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1070,7 +1070,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_lli_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1112,7 +1112,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_str </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1148,7 +1148,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_get_str_v </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1190,13 +1190,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_merge </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf_from</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf_to</em>&#160;</td>
         </tr>
         <tr>
@@ -1218,7 +1218,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a>* conf_read </td>
+          <td class="memname">conf_t* conf_read </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>fp</em>, </td>
@@ -1248,7 +1248,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a>* conf_read2 </td>
+          <td class="memname">conf_t* conf_read2 </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>fp</em>, </td>
@@ -1284,7 +1284,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a>* conf_read_buf </td>
+          <td class="memname">conf_t* conf_read_buf </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
           <td class="paramname"><em>buf</em>, </td>
@@ -1320,7 +1320,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a>* conf_read_file </td>
+          <td class="memname">conf_t* conf_read_file </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -1352,7 +1352,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_b </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1388,7 +1388,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_b2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1424,7 +1424,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_b_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1466,7 +1466,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_d </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1502,7 +1502,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_d_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1544,7 +1544,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_da </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1580,7 +1580,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_da_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1622,7 +1622,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_data </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1664,7 +1664,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_data_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1712,7 +1712,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_f </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1748,7 +1748,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_f_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1790,7 +1790,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_i </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1826,7 +1826,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_i_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1868,7 +1868,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_lli </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1904,7 +1904,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_lli_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1946,7 +1946,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_str </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -1982,7 +1982,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void conf_set_str_v </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -2024,7 +2024,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_walk </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -2066,7 +2066,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_write </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -2096,7 +2096,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t conf_write_buf </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -2132,7 +2132,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_write_file </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
@@ -2162,7 +2162,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> conf_write_file2 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="conf_8h.html#a222ad91c77bda9fc57486115c3c208fa">conf_t</a> *&#160;</td>
+          <td class="paramtype">const conf_t *&#160;</td>
           <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>

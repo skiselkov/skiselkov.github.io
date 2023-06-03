@@ -70,7 +70,7 @@ $(function() {
 <div class="title">icao2cc.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="icao2cc_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file and its contents are supplied under the terms of the</span></div>
@@ -92,12 +92,12 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="icao2cc_8h.html">acfutils/icao2cc.h</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;acfutils/icao2cc.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structicao2cc__t.html">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structicao2cc__t.html#a36cb5b542effd11ffb24df159064eae5">   26</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structicao2cc__t.html#a36cb5b542effd11ffb24df159064eae5">icao</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structicao2cc__t.html#a65999c888d2a7ad1d7f15c849b22de7f">   27</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structicao2cc__t.html#a65999c888d2a7ad1d7f15c849b22de7f">cc</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structicao2cc__t.html#a7d86234830aaf21f69a934efbd929242">   28</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structicao2cc__t.html#a7d86234830aaf21f69a934efbd929242">lang</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *icao;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *cc;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *lang;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <a class="code" href="structicao2cc__t.html">icao2cc_t</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*</span></div>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     * to guarantee they get picked up by the scanner ahead of all the</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * more generic ones.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    { .<a class="code" href="structicao2cc__t.html#a36cb5b542effd11ffb24df159064eae5">icao</a> = <span class="stringliteral">&quot;CYAD&quot;</span>, .cc = <span class="stringliteral">&quot;CA&quot;</span>, .lang = <span class="stringliteral">&quot;fr&quot;</span> },</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    { .icao = <span class="stringliteral">&quot;CYAD&quot;</span>, .cc = <span class="stringliteral">&quot;CA&quot;</span>, .lang = <span class="stringliteral">&quot;fr&quot;</span> },</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    { .icao = <span class="stringliteral">&quot;CYAH&quot;</span>, .cc = <span class="stringliteral">&quot;CA&quot;</span>, .lang = <span class="stringliteral">&quot;fr&quot;</span> },</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    { .icao = <span class="stringliteral">&quot;CYAS&quot;</span>, .cc = <span class="stringliteral">&quot;CA&quot;</span>, .lang = <span class="stringliteral">&quot;fr&quot;</span> },</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    { .icao = <span class="stringliteral">&quot;CYBC&quot;</span>, .cc = <span class="stringliteral">&quot;CA&quot;</span>, .lang = <span class="stringliteral">&quot;fr&quot;</span> },</div>
@@ -490,7 +490,7 @@ $(function() {
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    { .icao = <span class="stringliteral">&quot;ZU&quot;</span>, .cc = <span class="stringliteral">&quot;CN&quot;</span>, .lang = <span class="stringliteral">&quot;zh&quot;</span> }, <span class="comment">/* China */</span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    { .icao = <span class="stringliteral">&quot;ZW&quot;</span>, .cc = <span class="stringliteral">&quot;CN&quot;</span>, .lang = <span class="stringliteral">&quot;zh&quot;</span> }, <span class="comment">/* China */</span></div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    { .icao = <span class="stringliteral">&quot;ZY&quot;</span>, .cc = <span class="stringliteral">&quot;CN&quot;</span>, .lang = <span class="stringliteral">&quot;zh&quot;</span> }, <span class="comment">/* China */</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    { .icao = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, .cc = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, .lang = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> }  <span class="comment">/* Last entry */</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    { .icao = NULL, .cc = NULL, .lang = NULL }  <span class="comment">/* Last entry */</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;};</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="comment">/*</span></div>
@@ -498,20 +498,20 @@ $(function() {
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment"> * match using the icao2cc_table.</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l00429"></a><span class="lineno"><a class="line" href="icao2cc_8h.html#aa3a5bb4c91d8eaa11efe22e1aee151fc">  429</a></span>&#160;<a class="code" href="icao2cc_8c.html#a576da01fbb674f9358bf335b1b85c943">icao2cc</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;icao2cc(<span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;{</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="comment">     * Doing a linear search is not particularly elegant, but the size</span></div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="comment">     * of the ICAO table is fixed and small, so it probably doesn&#39;t</span></div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="comment">     * matter anyway.</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; icao2cc_table[i].<a class="code" href="structicao2cc__t.html#a36cb5b542effd11ffb24df159064eae5">icao</a> != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; i++) {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; icao2cc_table[i].icao != NULL; i++) {</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">if</span> (memcmp(icao, icao2cc_table[i].icao,</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            strlen(icao2cc_table[i].icao)) == 0)</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">return</span> (icao2cc_table[i].cc);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    }</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;}</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment">/*</span></div>
@@ -523,23 +523,16 @@ $(function() {
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment"> * or &quot;XX&quot; if no suitable mapping was found.</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l00454"></a><span class="lineno"><a class="line" href="icao2cc_8h.html#aea07ed598864d54f40c5af99aaa0baec">  454</a></span>&#160;<a class="code" href="icao2cc_8c.html#aa26189acfd68ebb68a595c2a658a0516">icao2lang</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;icao2lang(<span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;{</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; icao2cc_table[i].<a class="code" href="structicao2cc__t.html#a36cb5b542effd11ffb24df159064eae5">icao</a> != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; i++) {</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; icao2cc_table[i].icao != NULL; i++) {</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordflow">if</span> (memcmp(icao, icao2cc_table[i].icao,</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            strlen(icao2cc_table[i].icao)) == 0)</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            <span class="keywordflow">return</span> (icao2cc_table[i].lang);</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    }</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordflow">return</span> (<span class="stringliteral">&quot;XX&quot;</span>);</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
-<div class="ttc" id="aicao2cc_8c_html_a576da01fbb674f9358bf335b1b85c943"><div class="ttname"><a href="icao2cc_8c.html#a576da01fbb674f9358bf335b1b85c943">icao2cc</a></div><div class="ttdeci">const char * icao2cc(const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="icao2cc_8c_source.html#l00429">icao2cc.c:429</a></div></div>
-<div class="ttc" id="aicao2cc_8c_html_aa26189acfd68ebb68a595c2a658a0516"><div class="ttname"><a href="icao2cc_8c.html#aa26189acfd68ebb68a595c2a658a0516">icao2lang</a></div><div class="ttdeci">const char * icao2lang(const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="icao2cc_8c_source.html#l00454">icao2cc.c:454</a></div></div>
-<div class="ttc" id="aicao2cc_8h_html"><div class="ttname"><a href="icao2cc_8h.html">icao2cc.h</a></div></div>
-<div class="ttc" id="alibc_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00047">libc.h:47</a></div></div>
 <div class="ttc" id="astructicao2cc__t_html"><div class="ttname"><a href="structicao2cc__t.html">icao2cc_t</a></div><div class="ttdef"><b>Definition:</b> <a href="icao2cc_8c_source.html#l00025">icao2cc.c:25</a></div></div>
-<div class="ttc" id="astructicao2cc__t_html_a36cb5b542effd11ffb24df159064eae5"><div class="ttname"><a href="structicao2cc__t.html#a36cb5b542effd11ffb24df159064eae5">icao2cc_t::icao</a></div><div class="ttdeci">const char * icao</div><div class="ttdef"><b>Definition:</b> <a href="icao2cc_8c_source.html#l00026">icao2cc.c:26</a></div></div>
-<div class="ttc" id="astructicao2cc__t_html_a65999c888d2a7ad1d7f15c849b22de7f"><div class="ttname"><a href="structicao2cc__t.html#a65999c888d2a7ad1d7f15c849b22de7f">icao2cc_t::cc</a></div><div class="ttdeci">const char * cc</div><div class="ttdef"><b>Definition:</b> <a href="icao2cc_8c_source.html#l00027">icao2cc.c:27</a></div></div>
-<div class="ttc" id="astructicao2cc__t_html_a7d86234830aaf21f69a934efbd929242"><div class="ttname"><a href="structicao2cc__t.html#a7d86234830aaf21f69a934efbd929242">icao2cc_t::lang</a></div><div class="ttdeci">const char * lang</div><div class="ttdef"><b>Definition:</b> <a href="icao2cc_8c_source.html#l00028">icao2cc.c:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

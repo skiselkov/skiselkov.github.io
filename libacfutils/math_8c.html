@@ -114,13 +114,13 @@ Functions</h2></td></tr>
 <tr class="separator:a5b1d34bdfcc702824ea10eaac19e3af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2aca95baa9de5cb7872e22a02d76808a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#a2aca95baa9de5cb7872e22a02d76808a">fx_lin</a> (double x, double x1, double y1, double x2, double y2)</td></tr>
 <tr class="separator:a2aca95baa9de5cb7872e22a02d76808a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace90961832d82032d33c6963f1b1e02"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a> (double x, const struct <a class="el" href="structvect2__s.html">vect2_s</a> *points, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> extrapolate)</td></tr>
+<tr class="memitem:aace90961832d82032d33c6963f1b1e02"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a> (double x, const struct vect2_s *points, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> extrapolate)</td></tr>
 <tr class="separator:aace90961832d82032d33c6963f1b1e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaef3687aa9d7671f2e83a5732169552"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#acaef3687aa9d7671f2e83a5732169552">fx_lin_multi_inv2</a> (double y, const struct <a class="el" href="structvect2__s.html">vect2_s</a> *points, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> extrapolate, size_t *num_out)</td></tr>
+<tr class="memitem:acaef3687aa9d7671f2e83a5732169552"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#acaef3687aa9d7671f2e83a5732169552">fx_lin_multi_inv2</a> (double y, const struct vect2_s *points, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> extrapolate, size_t *num_out)</td></tr>
 <tr class="separator:acaef3687aa9d7671f2e83a5732169552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed92d6c73e5faf8a2eff15428d11ea4a"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#aed92d6c73e5faf8a2eff15428d11ea4a">fx_lin_multi_inv</a> (double y, const struct <a class="el" href="structvect2__s.html">vect2_s</a> *points, size_t *num_out)</td></tr>
+<tr class="memitem:aed92d6c73e5faf8a2eff15428d11ea4a"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#aed92d6c73e5faf8a2eff15428d11ea4a">fx_lin_multi_inv</a> (double y, const struct vect2_s *points, size_t *num_out)</td></tr>
 <tr class="separator:aed92d6c73e5faf8a2eff15428d11ea4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3bee1d477c312fb3df9d07e185a2ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#af3bee1d477c312fb3df9d07e185a2ef3">pn_interp_init</a> (<a class="el" href="structpn__interp__t.html">pn_interp_t</a> *interp, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *points, unsigned numpts)</td></tr>
+<tr class="memitem:af3bee1d477c312fb3df9d07e185a2ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8c.html#af3bee1d477c312fb3df9d07e185a2ef3">pn_interp_init</a> (<a class="el" href="structpn__interp__t.html">pn_interp_t</a> *interp, const <a class="el" href="structvect2__t.html">vect2_t</a> *points, unsigned numpts)</td></tr>
 <tr class="separator:af3bee1d477c312fb3df9d07e185a2ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -187,7 +187,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structvect2__s.html">vect2_s</a> *&#160;</td>
+          <td class="paramtype">const struct vect2_s *&#160;</td>
           <td class="paramname"><em>points</em>, </td>
         </tr>
         <tr>
@@ -223,7 +223,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structvect2__s.html">vect2_s</a> *&#160;</td>
+          <td class="paramtype">const struct vect2_s *&#160;</td>
           <td class="paramname"><em>points</em>, </td>
         </tr>
         <tr>
@@ -259,7 +259,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="structvect2__s.html">vect2_s</a> *&#160;</td>
+          <td class="paramtype">const struct vect2_s *&#160;</td>
           <td class="paramname"><em>points</em>, </td>
         </tr>
         <tr>
@@ -301,7 +301,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>points</em>, </td>
         </tr>
         <tr>

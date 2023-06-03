@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['accel_5fand_5fclb_4501',['ACCEL_AND_CLB',['../perf_8h.html#abe1101242814e958cfeded000a4e9410a9505b80e314091962692f18f8789933e',1,'perf.h']]],
-  ['accel_5ftakeoff_4502',['ACCEL_TAKEOFF',['../perf_8h.html#abe1101242814e958cfeded000a4e9410a02728fea79ffde46b7b488fcac1d868e',1,'perf.h']]],
-  ['accel_5fthen_5fclb_4503',['ACCEL_THEN_CLB',['../perf_8h.html#abe1101242814e958cfeded000a4e9410af36ef87a44290c0a8ca0fdaecebf18ca',1,'perf.h']]]
+  ['freq_5ftype_5fapp_524',['FREQ_TYPE_APP',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da3009f58ed68eab5c989e05f9d12b084a',1,'airportdb.h']]],
+  ['freq_5ftype_5fclnc_525',['FREQ_TYPE_CLNC',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82dac19ef224a369c31b9f0f6b1bdc3ecbf5',1,'airportdb.h']]],
+  ['freq_5ftype_5fctaf_526',['FREQ_TYPE_CTAF',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82daca8bccd19e755ae55f9333cb87231557',1,'airportdb.h']]],
+  ['freq_5ftype_5fdep_527',['FREQ_TYPE_DEP',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da2bbb45d874d6b5378c297520d1626760',1,'airportdb.h']]],
+  ['freq_5ftype_5fgnd_528',['FREQ_TYPE_GND',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da3b6e9f168a549e74573a7f2919a552e2',1,'airportdb.h']]],
+  ['freq_5ftype_5frec_529',['FREQ_TYPE_REC',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da23ade366d635e2a6554dffe905521ce2',1,'airportdb.h']]],
+  ['freq_5ftype_5ftwr_530',['FREQ_TYPE_TWR',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82daeeebb930b938f691855804e67f1491e8',1,'airportdb.h']]]
 ];

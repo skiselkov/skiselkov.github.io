@@ -70,7 +70,7 @@ $(function() {
 <div class="title">log.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="log_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file and its contents are supplied under the terms of the</span></div>
@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="time_8h.html">time.h</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if IBM</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
@@ -102,20 +102,20 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="log_8h.html">acfutils/log.h</a>&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="thread_8h.html">acfutils/thread.h</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;acfutils/helpers.h&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;acfutils/thread.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="log_8c.html#ab88071d2dae07659090a23e67a1e4d7f">   37</a></span>&#160;<span class="preprocessor">#define DATE_FMT    &quot;%Y-%m-%d %H:%M:%S&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="log_8c.html#afef6438c400e9146f34ddf609703a343">   38</a></span>&#160;<span class="preprocessor">#define PREFIX_FMT  &quot;%s %s[%s:%d]: &quot;</span>, timedate, log_prefix, filename, line</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define DATE_FMT    &quot;%Y-%m-%d %H:%M:%S&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define PREFIX_FMT  &quot;%s %s[%s:%d]: &quot;</span>, timedate, log_prefix, filename, line</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">   40</a></span>&#160;<span class="preprocessor">#define MAX_STACK_FRAMES    128</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="log_8c.html#a6cce4323245f92154efd90478606fe56">   41</a></span>&#160;<span class="preprocessor">#define MAX_MODULES     1024</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="log_8c.html#a2be9645acd8d059eae5ba0f04b002aff">   42</a></span>&#160;<span class="preprocessor">#define BACKTRACE_STR       &quot;Backtrace is:\n&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MAX_STACK_FRAMES    128</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define MAX_MODULES     1024</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define BACKTRACE_STR       &quot;Backtrace is:\n&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#if defined(__GNUC__) || defined(__clang__)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define BACKTRACE_STRLEN    __builtin_strlen(BACKTRACE_STR)</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !__GNUC__ &amp;&amp; !__clang__ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="log_8c.html#a38b69439b7e8af975e649ecc4460370d">   46</a></span>&#160;<span class="preprocessor">#define BACKTRACE_STRLEN    strlen(BACKTRACE_STR)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define BACKTRACE_STRLEN    strlen(BACKTRACE_STR)</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !__GNUC__ &amp;&amp; !__clang__ */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#if IBM</span></div>
@@ -133,48 +133,48 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/* DbgHelp is not thread-safe, so avoid concurrency */</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">static</span> <a class="code" href="structmutex__t.html">mutex_t</a> backtrace_lock;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">static</span> HMODULE modules[<a class="code" href="log_8c.html#a6cce4323245f92154efd90478606fe56">MAX_MODULES</a>];</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> MODULEINFO mi[<a class="code" href="log_8c.html#a6cce4323245f92154efd90478606fe56">MAX_MODULES</a>];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">static</span> HMODULE modules[MAX_MODULES];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> MODULEINFO mi[MAX_MODULES];</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">static</span> DWORD num_modules;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define SYMNAME_MAXLEN  1023    </span><span class="comment">/* C++ symbols can be HUUUUGE */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">static</span> <a class="code" href="log_8h.html#aaf7eab30acb9cf71d0ad7ee09a33268a">logfunc_t</a> log_func = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *log_prefix = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">static</span> logfunc_t log_func = NULL;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *log_prefix = NULL;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="log_8h.html#aab0c8cc27548840d4635891bc94781ee">   75</a></span>&#160;<a class="code" href="log_8c.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a>(<a class="code" href="log_8h.html#aaf7eab30acb9cf71d0ad7ee09a33268a">logfunc_t</a> func, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;log_init(logfunc_t func, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/* Can&#39;t use VERIFY here, since it uses this logging interface. */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (func == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || prefix == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (func == NULL || prefix == NULL)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        abort();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    log_func = func;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    log_prefix = prefix;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="thread_8h.html#a45c94f43dc0e6640ce504b74803841b3">mutex_init</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    mutex_init(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="log_8h.html#a442a1673bcac817e48a113b902e526d2">   88</a></span>&#160;<a class="code" href="log_8c.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;log_fini(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="thread_8h.html#af54c902e7b0fa0727c7daf22a14a20a4">mutex_destroy</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    mutex_destroy(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="log_8c.html#a3f58a73e8891294c3a3df8a0ec520164">   96</a></span>&#160;<a class="code" href="log_8c.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;log_impl(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    va_list ap;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="jsmn__path_8h.html#a488c86bf8e175ded483ae251d15adf8b">va_start</a>(ap, fmt);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="log_8c.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a>(filename, line, fmt, ap);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="jsmn__path_8h.html#aa694120a0e2e1e38b7bebb913a0fe88e">va_end</a>(ap);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    va_start(ap, fmt);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    log_impl_v(filename, line, fmt, ap);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    va_end(ap);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="log_8h.html#ace49bf84ff39dacd8383835365ca8654">  105</a></span>&#160;<a class="code" href="log_8c.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, va_list ap)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;log_impl_v(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, va_list ap)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    va_list ap_copy;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">char</span> timedate[32];</div>
@@ -183,26 +183,26 @@ $(function() {
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">struct </span>tm *tm;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    time_t t;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    t = time(<a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    t = time(NULL);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    tm = localtime(&amp;t);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(strftime(timedate, <span class="keyword">sizeof</span> (timedate), <a class="code" href="log_8c.html#ab88071d2dae07659090a23e67a1e4d7f">DATE_FMT</a>, tm) != 0);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(strftime(timedate, <span class="keyword">sizeof</span> (timedate), DATE_FMT, tm) != 0);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">/* Can&#39;t use VERIFY here, since it uses this logging interface. */</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (log_func == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || log_prefix == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL || log_prefix == NULL)</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        abort();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    prefix_len = snprintf(<a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, <a class="code" href="log_8c.html#afef6438c400e9146f34ddf609703a343">PREFIX_FMT</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    prefix_len = snprintf(NULL, 0, PREFIX_FMT);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    va_copy(ap_copy, ap);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    len = vsnprintf(<a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, fmt, ap_copy);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    len = vsnprintf(NULL, 0, fmt, ap_copy);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    buf = (<span class="keywordtype">char</span> *)malloc(prefix_len + len + 2);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    (void) snprintf(buf, prefix_len + 1, <a class="code" href="log_8c.html#afef6438c400e9146f34ddf609703a343">PREFIX_FMT</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    (void) snprintf(buf, prefix_len + 1, PREFIX_FMT);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    (void) vsnprintf(&amp;buf[prefix_len], len + 1, fmt, ap);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    (void) sprintf(&amp;buf[strlen(buf)], <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    log_func(buf);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="jsmn__path_8h.html#a95f008205354a13f67d30080c841dd7a">free</a>(buf);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    free(buf);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#if IBM</span></div>
@@ -228,24 +228,24 @@ $(function() {
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">     * through a stack trace we are in a pretty precarious state, so we</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">     * can&#39;t rely on having much stack space available.</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> symstxtname[<a class="code" href="sysmacros_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a>];</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> symstxtname[MAX_PATH];</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> prevsym[SYMNAME_MAXLEN + 1];</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *sep;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">static</span> FILE *fp;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *prevptr = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *image_base = <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *prevptr = NULL;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *image_base = NULL;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    *symname = 0;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    *prevsym = 0;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    sep = strrchr(filename, <a class="code" href="sysmacros_8h.html#a2c89f3449c0cc91f289ecbef54188d8d">DIRSEP</a>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (sep == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    sep = strrchr(filename, DIRSEP);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (sep == NULL)</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="helpers_8h.html#ac2afbaedc3080aab7848bc65317ac5f2">lacf_strlcpy</a>(symstxtname, filename, <a class="code" href="sysmacros_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>((uintptr_t)(sep - filename) + 1,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    lacf_strlcpy(symstxtname, filename, MIN((uintptr_t)(sep - filename) + 1,</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">sizeof</span> (symstxtname)));</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    strncat(symstxtname, <a class="code" href="sysmacros_8h.html#a997fea999c4078f59e9b107acdac4e15">DIRSEP_S</a> <span class="stringliteral">&quot;syms.txt&quot;</span>, <span class="keyword">sizeof</span> (symstxtname));</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    strncat(symstxtname, DIRSEP_S <span class="stringliteral">&quot;syms.txt&quot;</span>, <span class="keyword">sizeof</span> (symstxtname));</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    fp = fopen(symstxtname, <span class="stringliteral">&quot;rb&quot;</span>);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (fp == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (fp == NULL)</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">while</span> (!feof(fp)) {</div>
@@ -253,7 +253,7 @@ $(function() {
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> *ptr;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> sym[SYMNAME_MAXLEN + 1];</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">&quot;%p %c %&quot;</span> <a class="code" href="sysmacros_8h.html#ab5b72abdc80cd393892329a16599fb8c">SCANF_STR_AUTOLEN</a>(SYMNAME_MAXLEN) <span class="stringliteral">&quot;s&quot;</span>,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">&quot;%p %c %&quot;</span> SCANF_STR_AUTOLEN(SYMNAME_MAXLEN) <span class="stringliteral">&quot;s&quot;</span>,</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            &amp;ptr, &amp;unused_c, sym) != 3) {</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
@@ -268,7 +268,7 @@ $(function() {
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        prevptr = ptr;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="helpers_8h.html#ac2afbaedc3080aab7848bc65317ac5f2">lacf_strlcpy</a>(prevsym, sym, <span class="keyword">sizeof</span> (prevsym));</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        lacf_strlcpy(prevsym, sym, <span class="keyword">sizeof</span> (prevsym));</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    fclose(fp);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
@@ -278,16 +278,16 @@ $(function() {
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">static</span> DWORD i;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; num_modules; i++) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">static</span> LPVOID <a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>, end;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a> = mi[i].lpBaseOfDll;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        end = <a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a> + mi[i].SizeOfImage;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">static</span> LPVOID start, end;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        start = mi[i].lpBaseOfDll;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        end = start + mi[i].SizeOfImage;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">if</span> (start &lt;= pc &amp;&amp; end &gt; pc) {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            *module_base = (DWORD64)<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            *module_base = (DWORD64)start;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">return</span> (modules[i]);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    *module_base = 0;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
@@ -295,31 +295,31 @@ $(function() {
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    HANDLE process = GetCurrentProcess();</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    EnumProcessModules(process, modules, <span class="keyword">sizeof</span> (HMODULE) * <a class="code" href="log_8c.html#a6cce4323245f92154efd90478606fe56">MAX_MODULES</a>,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    EnumProcessModules(process, modules, <span class="keyword">sizeof</span> (HMODULE) * MAX_MODULES,</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        &amp;num_modules);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    num_modules = <a class="code" href="sysmacros_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>(num_modules, <a class="code" href="log_8c.html#a6cce4323245f92154efd90478606fe56">MAX_MODULES</a>);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    num_modules = MIN(num_modules, MAX_MODULES);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; num_modules; i++)</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        GetModuleInformation(process, modules[i], &amp;mi[i], <span class="keyword">sizeof</span> (*mi));</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<a class="code" href="log_8c.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;log_backtrace(<span class="keywordtype">int</span> skip_frames)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;{</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> frames;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *stack[<a class="code" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a>];</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *stack[MAX_STACK_FRAMES];</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">static</span> SYMBOL_INFO *symbol;</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">static</span> HANDLE process;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">static</span> DWORD displacement;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">static</span> IMAGEHLP_LINE64 *line;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[<a class="code" href="sysmacros_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a>];</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[MAX_PATH];</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    frames = RtlCaptureStackBackTrace(skip_frames + 1, <a class="code" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a>,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        stack, <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    frames = RtlCaptureStackBackTrace(skip_frames + 1, MAX_STACK_FRAMES,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        stack, NULL);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    process = GetCurrentProcess();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <a class="code" href="thread_8h.html#a0f51cda6c30f674ac3de89aca011b94c">mutex_enter</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    mutex_enter(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    SymInitialize(process, <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code" href="_geomagnetism_library_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    SymInitialize(process, NULL, TRUE);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    SymSetOptions(SYMOPT_LOAD_LINES);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    gather_module_info();</div>
@@ -335,7 +335,7 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    line-&gt;SizeOfStruct = <span class="keyword">sizeof</span> (*line);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="helpers_8h.html#ac2afbaedc3080aab7848bc65317ac5f2">lacf_strlcpy</a>(backtrace_buf, <a class="code" href="log_8c.html#a2be9645acd8d059eae5ba0f04b002aff">BACKTRACE_STR</a>, <span class="keyword">sizeof</span> (backtrace_buf));</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    lacf_strlcpy(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> frame_nr = 0; frame_nr &lt; frames; frame_nr++) {</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keyword">static</span> DWORD64 address;</div>
@@ -349,22 +349,22 @@ $(function() {
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">         * Try to grab the symbol name from the stored %rip data.</span></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">if</span> (!SymFromAddr(process, address, 0, symbol)) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keyword">static</span> DWORD64 <a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keyword">static</span> DWORD64 start;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keyword">static</span> HMODULE module;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            module = find_module((<span class="keywordtype">void</span> *)address, &amp;<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">if</span> (module != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            module = find_module((<span class="keywordtype">void</span> *)address, &amp;start);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">if</span> (module != NULL) {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">char</span> symname[SYMNAME_MAXLEN + 1];</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                GetModuleFileNameA(module, filename,</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    <span class="keyword">sizeof</span> (filename));</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                find_symbol(filename, stack[frame_nr] - <a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                find_symbol(filename, stack[frame_nr] - start,</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    symname, <span class="keyword">sizeof</span> (symname));</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                fill += snprintf(&amp;backtrace_buf[fill],</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    <span class="stringliteral">&quot;%d %p %s+%p (%s)\n&quot;</span>, frame_nr,</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    stack[frame_nr], filename,</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    stack[frame_nr] - <a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>, symname);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    stack[frame_nr] - start, symname);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                fill += snprintf(&amp;backtrace_buf[fill],</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
@@ -390,21 +390,21 @@ $(function() {
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (log_func == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        abort();</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    log_func(backtrace_buf);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    fputs(backtrace_buf, stderr);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    fflush(stderr);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    SymCleanup(process);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="thread_8h.html#a8983eb617afffad4a58bac887225b084">mutex_exit</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    mutex_exit(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;log_backtrace_sw64(PCONTEXT ctx)</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[<a class="code" href="sysmacros_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a>];</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keyword">static</span> DWORD64 pcs[<a class="code" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a>];</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[MAX_PATH];</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keyword">static</span> DWORD64 pcs[MAX_STACK_FRAMES];</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> num_stack_frames;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keyword">static</span> STACKFRAME64 sf;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keyword">static</span> HANDLE process, thread;</div>
@@ -413,9 +413,9 @@ $(function() {
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    process = GetCurrentProcess();</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    thread = GetCurrentThread();</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="thread_8h.html#a0f51cda6c30f674ac3de89aca011b94c">mutex_enter</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    mutex_enter(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    SymInitialize(process, <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code" href="_geomagnetism_library_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    SymInitialize(process, NULL, TRUE);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    SymSetOptions(SYMOPT_LOAD_LINES);</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    gather_module_info();</div>
@@ -445,17 +445,17 @@ $(function() {
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="preprocessor">#error  &quot;Unsupported architecture&quot;</span></div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _M_X64 */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">for</span> (num_stack_frames = 0; num_stack_frames &lt; <a class="code" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a>;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">for</span> (num_stack_frames = 0; num_stack_frames &lt; MAX_STACK_FRAMES;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        num_stack_frames++) {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">if</span> (!StackWalk64(machine, process, thread, &amp;sf, ctx, <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            SymFunctionTableAccess64, SymGetModuleBase64, <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">if</span> (!StackWalk64(machine, process, thread, &amp;sf, ctx, NULL,</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            SymFunctionTableAccess64, SymGetModuleBase64, NULL)) {</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        pcs[num_stack_frames] = sf.AddrPC.Offset;</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <a class="code" href="helpers_8h.html#ac2afbaedc3080aab7848bc65317ac5f2">lacf_strlcpy</a>(backtrace_buf, <a class="code" href="log_8c.html#a2be9645acd8d059eae5ba0f04b002aff">BACKTRACE_STR</a>, <span class="keyword">sizeof</span> (backtrace_buf));</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    lacf_strlcpy(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; num_stack_frames; i++) {</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> fill;</div>
@@ -477,83 +477,51 @@ $(function() {
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            (<span class="keywordtype">void</span> *)(pc - mbase), symname);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (log_func == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        abort();</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    log_func(backtrace_buf);</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    fputs(backtrace_buf, stderr);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    fflush(stderr);</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    SymCleanup(process);</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <a class="code" href="thread_8h.html#a8983eb617afffad4a58bac887225b084">mutex_exit</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    mutex_exit(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno"><a class="line" href="log_8h.html#aa5d65cb4094348e6220e4b9fe3a0f033">  421</a></span>&#160;<a class="code" href="log_8c.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames)</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;log_backtrace(<span class="keywordtype">int</span> skip_frames)</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> *msg;</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> msg_len;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *trace[<a class="code" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a>];</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *trace[MAX_STACK_FRAMES];</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> i, j, sz;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> **fnames;</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    sz = backtrace(trace, <a class="code" href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a>);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    sz = backtrace(trace, MAX_STACK_FRAMES);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    fnames = backtrace_symbols(trace, sz);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, msg_len = <a class="code" href="log_8c.html#a38b69439b7e8af975e649ecc4460370d">BACKTRACE_STRLEN</a>; i &lt; sz; i++)</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        msg_len += snprintf(<a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, msg_len = BACKTRACE_STRLEN; i &lt; sz; i++)</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        msg_len += snprintf(NULL, 0, <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    msg = (<span class="keywordtype">char</span> *)malloc(msg_len + 1);</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    strcpy(msg, <a class="code" href="log_8c.html#a2be9645acd8d059eae5ba0f04b002aff">BACKTRACE_STR</a>);</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, j = <a class="code" href="log_8c.html#a38b69439b7e8af975e649ecc4460370d">BACKTRACE_STRLEN</a>; i &lt; sz; i++)</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    strcpy(msg, BACKTRACE_STR);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, j = BACKTRACE_STRLEN; i &lt; sz; i++)</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        j += sprintf(&amp;msg[j], <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">if</span> (log_func == <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        abort();</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    log_func(msg);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    fputs(msg, stderr);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <a class="code" href="jsmn__path_8h.html#a95f008205354a13f67d30080c841dd7a">free</a>(msg);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <a class="code" href="jsmn__path_8h.html#a95f008205354a13f67d30080c841dd7a">free</a>(fnames);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    free(msg);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    free(fnames);</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="a_geomagnetism_library_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="_geomagnetism_library_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="_geomagnetism_library_8h_source.html#l00059">GeomagnetismLibrary.h:59</a></div></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00073">assert.h:73</a></div></div>
-<div class="ttc" id="ahelpers_8c_html_ac621bcfb466f3b6a6421c5f48b30ade3"><div class="ttname"><a href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a></div><div class="ttdeci">const char * start</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00107">helpers.c:107</a></div></div>
-<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_ac2afbaedc3080aab7848bc65317ac5f2"><div class="ttname"><a href="helpers_8h.html#ac2afbaedc3080aab7848bc65317ac5f2">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *restrict dest, const char *restrict src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01435">helpers.c:1435</a></div></div>
-<div class="ttc" id="ajsmn__path_8h_html_a488c86bf8e175ded483ae251d15adf8b"><div class="ttname"><a href="jsmn__path_8h.html#a488c86bf8e175ded483ae251d15adf8b">va_start</a></div><div class="ttdeci">va_start(ap, format)</div></div>
-<div class="ttc" id="ajsmn__path_8h_html_a95f008205354a13f67d30080c841dd7a"><div class="ttname"><a href="jsmn__path_8h.html#a95f008205354a13f67d30080c841dd7a">free</a></div><div class="ttdeci">free(path)</div></div>
-<div class="ttc" id="ajsmn__path_8h_html_aa694120a0e2e1e38b7bebb913a0fe88e"><div class="ttname"><a href="jsmn__path_8h.html#aa694120a0e2e1e38b7bebb913a0fe88e">va_end</a></div><div class="ttdeci">va_end(ap)</div></div>
-<div class="ttc" id="alibc_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00047">libc.h:47</a></div></div>
-<div class="ttc" id="alog_8c_html_a0e966ca3747ea0355fe786918b3f6345"><div class="ttname"><a href="log_8c.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a></div><div class="ttdeci">void log_impl_v(const char *filename, int line, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00105">log.c:105</a></div></div>
-<div class="ttc" id="alog_8c_html_a2be9645acd8d059eae5ba0f04b002aff"><div class="ttname"><a href="log_8c.html#a2be9645acd8d059eae5ba0f04b002aff">BACKTRACE_STR</a></div><div class="ttdeci">#define BACKTRACE_STR</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00042">log.c:42</a></div></div>
-<div class="ttc" id="alog_8c_html_a2ed127ee3fe422f95420f138273e6da7"><div class="ttname"><a href="log_8c.html#a2ed127ee3fe422f95420f138273e6da7">MAX_STACK_FRAMES</a></div><div class="ttdeci">#define MAX_STACK_FRAMES</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00040">log.c:40</a></div></div>
-<div class="ttc" id="alog_8c_html_a38b69439b7e8af975e649ecc4460370d"><div class="ttname"><a href="log_8c.html#a38b69439b7e8af975e649ecc4460370d">BACKTRACE_STRLEN</a></div><div class="ttdeci">#define BACKTRACE_STRLEN</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00046">log.c:46</a></div></div>
-<div class="ttc" id="alog_8c_html_a3f58a73e8891294c3a3df8a0ec520164"><div class="ttname"><a href="log_8c.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a></div><div class="ttdeci">void log_impl(const char *filename, int line, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00096">log.c:96</a></div></div>
-<div class="ttc" id="alog_8c_html_a6cce4323245f92154efd90478606fe56"><div class="ttname"><a href="log_8c.html#a6cce4323245f92154efd90478606fe56">MAX_MODULES</a></div><div class="ttdeci">#define MAX_MODULES</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00041">log.c:41</a></div></div>
-<div class="ttc" id="alog_8c_html_ab764c12d013acf2af98b24058a4bb894"><div class="ttname"><a href="log_8c.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a></div><div class="ttdeci">void log_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00088">log.c:88</a></div></div>
-<div class="ttc" id="alog_8c_html_ab88071d2dae07659090a23e67a1e4d7f"><div class="ttname"><a href="log_8c.html#ab88071d2dae07659090a23e67a1e4d7f">DATE_FMT</a></div><div class="ttdeci">#define DATE_FMT</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00037">log.c:37</a></div></div>
-<div class="ttc" id="alog_8c_html_ad02cd0021647e725d93ac1ab07d9f5b0"><div class="ttname"><a href="log_8c.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a></div><div class="ttdeci">void log_init(logfunc_t func, const char *prefix)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00075">log.c:75</a></div></div>
-<div class="ttc" id="alog_8c_html_ad3222ede877663a8712ee41d15c1c0cf"><div class="ttname"><a href="log_8c.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a></div><div class="ttdeci">void log_backtrace(int skip_frames)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00421">log.c:421</a></div></div>
-<div class="ttc" id="alog_8c_html_afef6438c400e9146f34ddf609703a343"><div class="ttname"><a href="log_8c.html#afef6438c400e9146f34ddf609703a343">PREFIX_FMT</a></div><div class="ttdeci">#define PREFIX_FMT</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00038">log.c:38</a></div></div>
-<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
-<div class="ttc" id="alog_8h_html_aaf7eab30acb9cf71d0ad7ee09a33268a"><div class="ttname"><a href="log_8h.html#aaf7eab30acb9cf71d0ad7ee09a33268a">logfunc_t</a></div><div class="ttdeci">void(* logfunc_t)(const char *)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00034">log.h:34</a></div></div>
+<div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_a2c89f3449c0cc91f289ecbef54188d8d"><div class="ttname"><a href="sysmacros_8h.html#a2c89f3449c0cc91f289ecbef54188d8d">DIRSEP</a></div><div class="ttdeci">#define DIRSEP</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00046">sysmacros.h:46</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_a74e75242132eaabbc1c512488a135926"><div class="ttname"><a href="sysmacros_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a></div><div class="ttdeci">#define MIN(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00215">sysmacros.h:215</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_a997fea999c4078f59e9b107acdac4e15"><div class="ttname"><a href="sysmacros_8h.html#a997fea999c4078f59e9b107acdac4e15">DIRSEP_S</a></div><div class="ttdeci">#define DIRSEP_S</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00047">sysmacros.h:47</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_ab5b72abdc80cd393892329a16599fb8c"><div class="ttname"><a href="sysmacros_8h.html#ab5b72abdc80cd393892329a16599fb8c">SCANF_STR_AUTOLEN</a></div><div class="ttdeci">#define SCANF_STR_AUTOLEN(_str_)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00283">sysmacros.h:283</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_ab99ded389af74001a6298fc9e44e74e5"><div class="ttname"><a href="sysmacros_8h.html#ab99ded389af74001a6298fc9e44e74e5">MAX_PATH</a></div><div class="ttdeci">#define MAX_PATH</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00049">sysmacros.h:49</a></div></div>
-<div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
-<div class="ttc" id="athread_8h_html_a0f51cda6c30f674ac3de89aca011b94c"><div class="ttname"><a href="thread_8h.html#a0f51cda6c30f674ac3de89aca011b94c">mutex_enter</a></div><div class="ttdeci">#define mutex_enter(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00251">thread.h:251</a></div></div>
-<div class="ttc" id="athread_8h_html_a45c94f43dc0e6640ce504b74803841b3"><div class="ttname"><a href="thread_8h.html#a45c94f43dc0e6640ce504b74803841b3">mutex_init</a></div><div class="ttdeci">#define mutex_init(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00240">thread.h:240</a></div></div>
-<div class="ttc" id="athread_8h_html_a8983eb617afffad4a58bac887225b084"><div class="ttname"><a href="thread_8h.html#a8983eb617afffad4a58bac887225b084">mutex_exit</a></div><div class="ttdeci">#define mutex_exit(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00256">thread.h:256</a></div></div>
-<div class="ttc" id="athread_8h_html_af54c902e7b0fa0727c7daf22a14a20a4"><div class="ttname"><a href="thread_8h.html#af54c902e7b0fa0727c7daf22a14a20a4">mutex_destroy</a></div><div class="ttdeci">#define mutex_destroy(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00245">thread.h:245</a></div></div>
-<div class="ttc" id="atime_8h_html"><div class="ttname"><a href="time_8h.html">time.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

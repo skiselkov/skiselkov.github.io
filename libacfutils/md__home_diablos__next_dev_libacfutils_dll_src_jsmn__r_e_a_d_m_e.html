@@ -110,7 +110,7 @@ Design</h1>
 <p>This approach provides enough information for parsing any JSON data and makes it possible to use zero-copy techniques.</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
 Usage</h1>
-<p>Download <code><a class="el" href="jsmn_8h.html">jsmn.h</a></code>, include it, done.</p>
+<p>Download <code><a class="el" href="jsmn_8h_source.html">jsmn.h</a></code>, include it, done.</p>
 <div class="fragment"><div class="line">#include &quot;jsmn.h&quot;</div>
 <div class="line"> </div>
 <div class="line">...</div>
@@ -119,7 +119,7 @@ Usage</h1>
 <div class="line"> </div>
 <div class="line">jsmn_init(&amp;p);</div>
 <div class="line">r = jsmn_parse(&amp;p, s, strlen(s), t, 128);</div>
-</div><!-- fragment --><p>Since jsmn is a single-header, header-only library, for more complex use cases you might need to define additional macros. <code>#define JSMN_STATIC</code> hides all jsmn API symbols by making them static. Also, if you want to include <code><a class="el" href="jsmn_8h.html">jsmn.h</a></code> from multiple C files, to avoid duplication of symbols you may define <code>JSMN_HEADER</code> macro.</p>
+</div><!-- fragment --><p>Since jsmn is a single-header, header-only library, for more complex use cases you might need to define additional macros. <code>#define JSMN_STATIC</code> hides all jsmn API symbols by making them static. Also, if you want to include <code><a class="el" href="jsmn_8h_source.html">jsmn.h</a></code> from multiple C files, to avoid duplication of symbols you may define <code>JSMN_HEADER</code> macro.</p>
 <div class="fragment"><div class="line">/* In every .c file that uses jsmn include only declarations: */</div>
 <div class="line">#define JSMN_HEADER</div>
 <div class="line">#include &quot;jsmn.h&quot;</div>
@@ -141,7 +141,7 @@ API</h1>
 <li><code>'n'</code> - null</li>
 <li><code>'-', '0'..'9'</code> - number</li>
 </ul>
-<p>Token is an object of <code>jsmntok_t</code> type: </p><pre class="fragment">typedef struct {
+<p>Token is an object of <code><a class="el" href="structjsmntok__t.html">jsmntok_t</a></code> type: </p><pre class="fragment">typedef struct {
     jsmntype_t type; // Token type
     int start;       // Token start position
     int end;         // Token end position

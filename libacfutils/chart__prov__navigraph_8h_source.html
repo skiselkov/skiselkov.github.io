@@ -70,7 +70,7 @@ $(function() {
 <div class="title">chart_prov_navigraph.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="chart__prov__navigraph_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -99,43 +99,30 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define _ACF_UTILS_CHART_PROV_NAVIGRAPH_H_</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">acfutils/core.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chartdb_8h.html">acfutils/chartdb.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chartdb__impl_8h.html">chartdb_impl.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;acfutils/chartdb.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;chartdb_impl.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="chart__prov__navigraph_8h.html#a717076c695e865c3800aa3b45485aa1a">chart_navigraph_init</a>(<a class="code" href="structchartdb__s.html">chartdb_t</a> *cdb);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="chart__prov__navigraph_8h.html#a71149b7e9449d97503993d4cea27e026">chart_navigraph_fini</a>(<a class="code" href="structchartdb__s.html">chartdb_t</a> *cdb);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;bool_t chart_navigraph_init(chartdb_t *cdb);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> chart_navigraph_fini(chartdb_t *cdb);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="structchart__arpt__s.html">chart_arpt_t</a> *<a class="code" href="chart__prov__navigraph_8h.html#a43e6594a6ae0953cd7252d1bc9122b79">chart_navigraph_arpt_lazy_discover</a>(<a class="code" href="structchartdb__s.html">chartdb_t</a> *cdb,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;chart_arpt_t *chart_navigraph_arpt_lazy_discover(chartdb_t *cdb,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *icao);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="chart__prov__navigraph_8h.html#abc304f0066c39cca15b8fb9ac6d32770">chart_navigraph_get_chart</a>(<a class="code" href="structchart__s.html">chart_t</a> *chart);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="chart__prov__navigraph_8h.html#a491b436f088dfb7e015a400dd7ee7df3">chart_navigraph_watermark_chart</a>(<a class="code" href="structchart__s.html">chart_t</a> *chart, cairo_surface_t *surf);</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="chart__prov__navigraph_8h.html#a4df2912fe9cc40e6802a05c988778d8f">   44</a></span>&#160;<a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="chart__prov__navigraph_8h.html#a4df2912fe9cc40e6802a05c988778d8f">chart_navigraph_test_conn</a>(<span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="chart__prov__navigraph_8h.html#aec658b4ce97c2c7c880133c1a5050f3d">chart_navigraph_pending_ext_account_setup</a>(<a class="code" href="structchartdb__s.html">chartdb_t</a> *cdb);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;bool_t chart_navigraph_get_chart(chart_t *chart);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> chart_navigraph_watermark_chart(chart_t *chart, cairo_surface_t *surf);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;bool_t chart_navigraph_test_conn(<span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;bool_t chart_navigraph_pending_ext_account_setup(chartdb_t *cdb);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_CHART_PROV_NAVIGRAPH_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_a43e6594a6ae0953cd7252d1bc9122b79"><div class="ttname"><a href="chart__prov__navigraph_8h.html#a43e6594a6ae0953cd7252d1bc9122b79">chart_navigraph_arpt_lazy_discover</a></div><div class="ttdeci">chart_arpt_t * chart_navigraph_arpt_lazy_discover(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l01150">chart_prov_navigraph.c:1150</a></div></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_a491b436f088dfb7e015a400dd7ee7df3"><div class="ttname"><a href="chart__prov__navigraph_8h.html#a491b436f088dfb7e015a400dd7ee7df3">chart_navigraph_watermark_chart</a></div><div class="ttdeci">void chart_navigraph_watermark_chart(chart_t *chart, cairo_surface_t *surf)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l00867">chart_prov_navigraph.c:867</a></div></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_a4df2912fe9cc40e6802a05c988778d8f"><div class="ttname"><a href="chart__prov__navigraph_8h.html#a4df2912fe9cc40e6802a05c988778d8f">chart_navigraph_test_conn</a></div><div class="ttdeci">bool_t chart_navigraph_test_conn(const chart_prov_info_login_t *creds)</div></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_a71149b7e9449d97503993d4cea27e026"><div class="ttname"><a href="chart__prov__navigraph_8h.html#a71149b7e9449d97503993d4cea27e026">chart_navigraph_fini</a></div><div class="ttdeci">void chart_navigraph_fini(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l00800">chart_prov_navigraph.c:800</a></div></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_a717076c695e865c3800aa3b45485aa1a"><div class="ttname"><a href="chart__prov__navigraph_8h.html#a717076c695e865c3800aa3b45485aa1a">chart_navigraph_init</a></div><div class="ttdeci">bool_t chart_navigraph_init(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l00738">chart_prov_navigraph.c:738</a></div></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_abc304f0066c39cca15b8fb9ac6d32770"><div class="ttname"><a href="chart__prov__navigraph_8h.html#abc304f0066c39cca15b8fb9ac6d32770">chart_navigraph_get_chart</a></div><div class="ttdeci">bool_t chart_navigraph_get_chart(chart_t *chart)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l00826">chart_prov_navigraph.c:826</a></div></div>
-<div class="ttc" id="achart__prov__navigraph_8h_html_aec658b4ce97c2c7c880133c1a5050f3d"><div class="ttname"><a href="chart__prov__navigraph_8h.html#aec658b4ce97c2c7c880133c1a5050f3d">chart_navigraph_pending_ext_account_setup</a></div><div class="ttdeci">bool_t chart_navigraph_pending_ext_account_setup(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l01190">chart_prov_navigraph.c:1190</a></div></div>
-<div class="ttc" id="achartdb_8h_html"><div class="ttname"><a href="chartdb_8h.html">chartdb.h</a></div></div>
-<div class="ttc" id="achartdb__impl_8h_html"><div class="ttname"><a href="chartdb__impl_8h.html">chartdb_impl.h</a></div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
-<div class="ttc" id="astructchart__arpt__s_html"><div class="ttname"><a href="structchart__arpt__s.html">chart_arpt_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00081">chartdb_impl.h:81</a></div></div>
 <div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00057">chartdb.h:57</a></div></div>
-<div class="ttc" id="astructchart__s_html"><div class="ttname"><a href="structchart__s.html">chart_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00047">chartdb_impl.h:47</a></div></div>
-<div class="ttc" id="astructchartdb__s_html"><div class="ttname"><a href="structchartdb__s.html">chartdb_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00100">chartdb_impl.h:100</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

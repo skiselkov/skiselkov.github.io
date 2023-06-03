@@ -143,7 +143,7 @@ Macros</h2></td></tr>
 <tr class="separator:ac5b512d637a40c5d0391d922449b9a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7851f74b23813c155c8518194ea46298"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dsf_8c.html#a7851f74b23813c155c8518194ea46298">REALLOC_INCR</a>&#160;&#160;&#160;(1 &lt;&lt; 14)	/* items */</td></tr>
 <tr class="separator:a7851f74b23813c155c8518194ea46298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cc2d2d16abe752af199b47382efe93a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dsf_8c.html#a6cc2d2d16abe752af199b47382efe93a">RESIZE</a>(buf,  fill,  <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>,  itemsz,  add)</td></tr>
+<tr class="memitem:a6cc2d2d16abe752af199b47382efe93a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dsf_8c.html#a6cc2d2d16abe752af199b47382efe93a">RESIZE</a>(buf,  fill,  cap,  itemsz,  add)</td></tr>
 <tr class="separator:a6cc2d2d16abe752af199b47382efe93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7936e4ece9e51b031490bee79035dfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dsf_8c.html#ab7936e4ece9e51b031490bee79035dfd">DIFF_DEC</a>(ctype)</td></tr>
 <tr class="separator:ab7936e4ece9e51b031490bee79035dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,7 +366,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>, </td>
+          <td class="paramname">cap, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -388,13 +388,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
-<div class="line">        if (fill + add &gt; <a class="code" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>) { \</div>
+<div class="line">        if (fill + add &gt; cap) { \</div>
 <div class="line">            cap += <a class="code" href="dsf_8c.html#a7851f74b23813c155c8518194ea46298">REALLOC_INCR</a>; \</div>
-<div class="line">            buf = realloc(buf, <a class="code" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a> * (itemsz)); \</div>
+<div class="line">            buf = realloc(buf, cap * (itemsz)); \</div>
 <div class="line">        } \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 <div class="ttc" id="adsf_8c_html_a7851f74b23813c155c8518194ea46298"><div class="ttname"><a href="dsf_8c.html#a7851f74b23813c155c8518194ea46298">REALLOC_INCR</a></div><div class="ttdeci">#define REALLOC_INCR</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00286">dsf.c:286</a></div></div>
-<div class="ttc" id="ajsmn__path_8h_html_a84e1e77711f4f73c63954f1030696003"><div class="ttname"><a href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a></div><div class="ttdeci">UNUSED_ATTR const jsmntok_t int const char char size_t cap</div><div class="ttdef"><b>Definition:</b> <a href="jsmn__path_8h_source.html#l00244">jsmn_path.h:244</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l00287">287</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 

@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -332,11 +331,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ad45eb868607c2353fe267a225a0fc828"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#ad45eb868607c2353fe267a225a0fc828">earth_gravity_accurate</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(earth_gravity_accurate)</td></tr>
 <tr class="separator:ad45eb868607c2353fe267a225a0fc828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a5acc248ee6c994dfa25ccb550e15608b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structperf__table__set__s.html">perf_table_set_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a5acc248ee6c994dfa25ccb550e15608b">perf_table_set_t</a></td></tr>
-<tr class="separator:a5acc248ee6c994dfa25ccb550e15608b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:abe1101242814e958cfeded000a4e9410"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#abe1101242814e958cfeded000a4e9410">accelclb_t</a> { <a class="el" href="perf_8h.html#abe1101242814e958cfeded000a4e9410af36ef87a44290c0a8ca0fdaecebf18ca">ACCEL_THEN_CLB</a>
@@ -361,15 +355,15 @@ Functions</h2></td></tr>
 <tr class="separator:a972d771d235c38f957ca373e3e2b177a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa26cc124c1ea6c953df0236f1cf1c600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#aa26cc124c1ea6c953df0236f1cf1c600">eng_max_thr_avg</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double alt1, double alt2, double ktas, double qnh, double isadev, double tp_alt)</td></tr>
 <tr class="separator:aa26cc124c1ea6c953df0236f1cf1c600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a007626ff9d15650a65aad22c0427d0ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a007626ff9d15650a65aad22c0427d0ac">accelclb2dist</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double tp_alt, double accel_alt, double fuel, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> dir, double alt1, double kcas1, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind1, double alt2, double kcas2, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind2, double flap_ratio, double mach_lim, <a class="el" href="perf_8h.html#abe1101242814e958cfeded000a4e9410">accelclb_t</a> type, double *burnp, double *kcas_out)</td></tr>
+<tr class="memitem:a007626ff9d15650a65aad22c0427d0ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a007626ff9d15650a65aad22c0427d0ac">accelclb2dist</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double tp_alt, double accel_alt, double fuel, <a class="el" href="structvect2__t.html">vect2_t</a> dir, double alt1, double kcas1, <a class="el" href="structvect2__t.html">vect2_t</a> wind1, double alt2, double kcas2, <a class="el" href="structvect2__t.html">vect2_t</a> wind2, double flap_ratio, double mach_lim, <a class="el" href="perf_8h.html#abe1101242814e958cfeded000a4e9410">accelclb_t</a> type, double *burnp, double *kcas_out)</td></tr>
 <tr class="separator:a007626ff9d15650a65aad22c0427d0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50d4e42d86199942f898f33a1579f304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a50d4e42d86199942f898f33a1579f304">dist2accelclb</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double tp_alt, double accel_alt, double fuel, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> dir, double flap_ratio, double *alt, double *kcas, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind, double alt_tgt, double kcas_tgt, double mach_lim, double dist_tgt, <a class="el" href="perf_8h.html#abe1101242814e958cfeded000a4e9410">accelclb_t</a> type, double *burnp, double *ttg_out)</td></tr>
+<tr class="memitem:a50d4e42d86199942f898f33a1579f304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a50d4e42d86199942f898f33a1579f304">dist2accelclb</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double tp_alt, double accel_alt, double fuel, <a class="el" href="structvect2__t.html">vect2_t</a> dir, double flap_ratio, double *alt, double *kcas, <a class="el" href="structvect2__t.html">vect2_t</a> wind, double alt_tgt, double kcas_tgt, double mach_lim, double dist_tgt, <a class="el" href="perf_8h.html#abe1101242814e958cfeded000a4e9410">accelclb_t</a> type, double *burnp, double *ttg_out)</td></tr>
 <tr class="separator:a50d4e42d86199942f898f33a1579f304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a204f1d3886c5011930b8ad8c64167ea2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a204f1d3886c5011930b8ad8c64167ea2">decel2dist</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double tp_alt, double fuel, double alt, double kcas1, double kcas2, double dist_tgt, double *kcas_out, double *burn_out)</td></tr>
 <tr class="separator:a204f1d3886c5011930b8ad8c64167ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36ea5820ba9f810bb309a93bf77b19d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a36ea5820ba9f810bb309a93bf77b19d8">perf_crz2burn</a> (double isadev, double tp_alt, double qnh, double alt_ft, double spd, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> is_mach, double hdg, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind1, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind2, double fuel, double dist_nm, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, double *ttg_out)</td></tr>
+<tr class="memitem:a36ea5820ba9f810bb309a93bf77b19d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a36ea5820ba9f810bb309a93bf77b19d8">perf_crz2burn</a> (double isadev, double tp_alt, double qnh, double alt_ft, double spd, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> is_mach, double hdg, <a class="el" href="structvect2__t.html">vect2_t</a> wind1, <a class="el" href="structvect2__t.html">vect2_t</a> wind2, double fuel, double dist_nm, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, double *ttg_out)</td></tr>
 <tr class="separator:a36ea5820ba9f810bb309a93bf77b19d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21b862864db525f2f6d2f5566c8bcffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a21b862864db525f2f6d2f5566c8bcffb">perf_des2burn</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double fuel, double hdgt, double dist_nm, double mach_lim, double alt1_ft, double kcas1, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind1, double alt2_ft, double kcas2, <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> wind2, double *ttg_out)</td></tr>
+<tr class="memitem:a21b862864db525f2f6d2f5566c8bcffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a21b862864db525f2f6d2f5566c8bcffb">perf_des2burn</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft, double isadev, double qnh, double fuel, double hdgt, double dist_nm, double mach_lim, double alt1_ft, double kcas1, <a class="el" href="structvect2__t.html">vect2_t</a> wind1, double alt2_ft, double kcas2, <a class="el" href="structvect2__t.html">vect2_t</a> wind2, double *ttg_out)</td></tr>
 <tr class="separator:a21b862864db525f2f6d2f5566c8bcffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d01589f1f4b53faec793a4901bb7ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="perf_8h.html#a75d01589f1f4b53faec793a4901bb7ca">perf_TO_spd</a> (const <a class="el" href="structflt__perf__t.html">flt_perf_t</a> *flt, const <a class="el" href="structacft__perf__t.html">acft_perf_t</a> *acft)</td></tr>
 <tr class="separator:a75d01589f1f4b53faec793a4901bb7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2241,23 +2235,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a5acc248ee6c994dfa25ccb550e15608b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5acc248ee6c994dfa25ccb550e15608b">&#9670;&nbsp;</a></span>perf_table_set_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structperf__table__set__s.html">perf_table_set_s</a> <a class="el" href="perf_8h.html#a5acc248ee6c994dfa25ccb550e15608b">perf_table_set_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="perf_8h_source.html#l00001">1</a> of file <a class="el" href="perf_8h_source.html">perf.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="abe1101242814e958cfeded000a4e9410"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe1101242814e958cfeded000a4e9410">&#9670;&nbsp;</a></span>accelclb_t</h2>
@@ -2332,7 +2309,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
@@ -2350,7 +2327,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind1</em>, </td>
         </tr>
         <tr>
@@ -2368,7 +2345,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind2</em>, </td>
         </tr>
         <tr>
@@ -2914,7 +2891,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>dir</em>, </td>
         </tr>
         <tr>
@@ -2938,7 +2915,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind</em>, </td>
         </tr>
         <tr>
@@ -3802,13 +3779,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind2</em>, </td>
         </tr>
         <tr>
@@ -3922,7 +3899,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind1</em>, </td>
         </tr>
         <tr>
@@ -3940,7 +3917,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td>
           <td class="paramname"><em>wind2</em>, </td>
         </tr>
         <tr>

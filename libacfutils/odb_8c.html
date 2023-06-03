@@ -149,7 +149,7 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structodb__tile__t.html">odb_tile_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structodb__s.html">odb_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structodb__s.html">odb_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -176,23 +176,23 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acab6e32ac3bb2c421309e29e9cf24469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#acab6e32ac3bb2c421309e29e9cf24469">odb_init</a> (const char *xpdir, const char *cainfo)</td></tr>
+<tr class="memitem:acab6e32ac3bb2c421309e29e9cf24469"><td class="memItemLeft" align="right" valign="top">odb_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#acab6e32ac3bb2c421309e29e9cf24469">odb_init</a> (const char *xpdir, const char *cainfo)</td></tr>
 <tr class="separator:acab6e32ac3bb2c421309e29e9cf24469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1fd3acf0328d39fa1367e2b4df7ff88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#af1fd3acf0328d39fa1367e2b4df7ff88">odb_fini</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb)</td></tr>
+<tr class="memitem:af1fd3acf0328d39fa1367e2b4df7ff88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#af1fd3acf0328d39fa1367e2b4df7ff88">odb_fini</a> (odb_t *odb)</td></tr>
 <tr class="separator:af1fd3acf0328d39fa1367e2b4df7ff88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20b056f305a5fe65a5889c955b06b4a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a20b056f305a5fe65a5889c955b06b4a6">odb_set_unload_delay</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, unsigned seconds)</td></tr>
+<tr class="memitem:a20b056f305a5fe65a5889c955b06b4a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a20b056f305a5fe65a5889c955b06b4a6">odb_set_unload_delay</a> (odb_t *odb, unsigned seconds)</td></tr>
 <tr class="separator:a20b056f305a5fe65a5889c955b06b4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69389c80157422545ec7f07071ab84e2"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a69389c80157422545ec7f07071ab84e2">odb_get_cc_refresh_date_impl</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, const char *cc)</td></tr>
+<tr class="memitem:a69389c80157422545ec7f07071ab84e2"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a69389c80157422545ec7f07071ab84e2">odb_get_cc_refresh_date_impl</a> (odb_t *odb, const char *cc)</td></tr>
 <tr class="separator:a69389c80157422545ec7f07071ab84e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f9d6ea6ed79e324654f28bc97653411"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a9f9d6ea6ed79e324654f28bc97653411">odb_get_cc_refresh_date</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, const char *cc)</td></tr>
+<tr class="memitem:a9f9d6ea6ed79e324654f28bc97653411"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a9f9d6ea6ed79e324654f28bc97653411">odb_get_cc_refresh_date</a> (odb_t *odb, const char *cc)</td></tr>
 <tr class="separator:a9f9d6ea6ed79e324654f28bc97653411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a012617ad4c4b177e9c86e14f66fd689b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a012617ad4c4b177e9c86e14f66fd689b">odb_refresh_cc</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, const char *cc)</td></tr>
+<tr class="memitem:a012617ad4c4b177e9c86e14f66fd689b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a012617ad4c4b177e9c86e14f66fd689b">odb_refresh_cc</a> (odb_t *odb, const char *cc)</td></tr>
 <tr class="separator:a012617ad4c4b177e9c86e14f66fd689b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada83d3d6511c601fedb07877bbb70f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#ada83d3d6511c601fedb07877bbb70f67">odb_get_obstacles</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, int lat, int lon, <a class="el" href="odb_8h.html#aaea549f387881a0c79386122e0e42e07">add_obst_cb_t</a> cb, void *userinfo)</td></tr>
+<tr class="memitem:ada83d3d6511c601fedb07877bbb70f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#ada83d3d6511c601fedb07877bbb70f67">odb_get_obstacles</a> (odb_t *odb, int lat, int lon, <a class="el" href="odb_8h.html#aaea549f387881a0c79386122e0e42e07">add_obst_cb_t</a> cb, void *userinfo)</td></tr>
 <tr class="separator:ada83d3d6511c601fedb07877bbb70f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7741b4a18ef6d0db2aaa42f855ca79bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a7741b4a18ef6d0db2aaa42f855ca79bc">odb_set_proxy</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, const char *proxy)</td></tr>
+<tr class="memitem:a7741b4a18ef6d0db2aaa42f855ca79bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#a7741b4a18ef6d0db2aaa42f855ca79bc">odb_set_proxy</a> (odb_t *odb, const char *proxy)</td></tr>
 <tr class="separator:a7741b4a18ef6d0db2aaa42f855ca79bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2f3a23fcc4517ba1263853f3c91518a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#ae2f3a23fcc4517ba1263853f3c91518a">odb_get_proxy</a> (<a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *odb, char *proxy, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>)</td></tr>
+<tr class="memitem:ae2f3a23fcc4517ba1263853f3c91518a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="odb_8c.html#ae2f3a23fcc4517ba1263853f3c91518a">odb_get_proxy</a> (odb_t *odb, char *proxy, size_t cap)</td></tr>
 <tr class="separator:ae2f3a23fcc4517ba1263853f3c91518a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -323,7 +323,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void odb_fini </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -343,7 +343,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">time_t odb_get_cc_refresh_date </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>
@@ -373,7 +373,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">time_t odb_get_cc_refresh_date_impl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>
@@ -403,7 +403,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> odb_get_obstacles </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>
@@ -451,7 +451,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">size_t odb_get_proxy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>
@@ -485,7 +485,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a>* odb_init </td>
+          <td class="memname">odb_t* odb_init </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>xpdir</em>, </td>
@@ -517,7 +517,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> odb_refresh_cc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>
@@ -547,7 +547,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void odb_set_proxy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>
@@ -577,7 +577,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void odb_set_unload_delay </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="odb_8h.html#a9c1483b51f273117a2760a28da63f916">odb_t</a> *&#160;</td>
+          <td class="paramtype">odb_t *&#160;</td>
           <td class="paramname"><em>odb</em>, </td>
         </tr>
         <tr>

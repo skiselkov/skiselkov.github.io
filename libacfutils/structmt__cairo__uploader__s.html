@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: mt_cairo_uploader_s Struct Reference</title>
+<title>libacfutils: mt_cairo_uploader_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,174 +65,50 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">mt_cairo_uploader_s Struct Reference</div>  </div>
+<div class="title">mt_cairo_uploader_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for mt_cairo_uploader_s:</div>
+Collaboration diagram for mt_cairo_uploader_t:</div>
 <div class="dyncontent">
-<div class="center"><img src="structmt__cairo__uploader__s__coll__graph.png" border="0" usemap="#amt__cairo__uploader__s_coll__map" alt="Collaboration graph"/></div>
-<map name="amt__cairo__uploader__s_coll__map" id="amt__cairo__uploader__s_coll__map">
-<area shape="rect" title=" " alt="" coords="61,187,218,213"/>
-<area shape="rect" href="structmutex__t.html" title=" " alt="" coords="5,97,81,124"/>
-<area shape="rect" href="structglctx__s.html" title=" " alt="" coords="105,97,173,124"/>
-<area shape="rect" href="structlist.html" title=" " alt="" coords="198,97,241,124"/>
-<area shape="rect" href="structlist__node.html" title=" " alt="" coords="179,7,260,33"/>
+<div class="center"><img src="structmt__cairo__uploader__s__coll__graph.png" border="0" usemap="#amt__cairo__uploader__t_coll__map" alt="Collaboration graph"/></div>
+<map name="amt__cairo__uploader__t_coll__map" id="amt__cairo__uploader__t_coll__map">
+<area shape="rect" title=" " alt="" coords="5,95,160,121"/>
+<area shape="rect" href="structmutex__t.html" title=" " alt="" coords="45,5,121,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:af1207ded3cc1425c62b3a203273e2b2f"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#af1207ded3cc1425c62b3a203273e2b2f">refcnt</a></td></tr>
+<tr class="memitem:af1207ded3cc1425c62b3a203273e2b2f"><td class="memItemLeft" align="right" valign="top"><a id="af1207ded3cc1425c62b3a203273e2b2f"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>refcnt</b></td></tr>
 <tr class="separator:af1207ded3cc1425c62b3a203273e2b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4b8f4ac31731ba8cbfe6b2943c852f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glctx_8h.html#a090f63e36996256a5d54a2b3a389df91">glctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#af4b8f4ac31731ba8cbfe6b2943c852f3">ctx</a></td></tr>
+<tr class="memitem:af4b8f4ac31731ba8cbfe6b2943c852f3"><td class="memItemLeft" align="right" valign="top"><a id="af4b8f4ac31731ba8cbfe6b2943c852f3"></a>
+glctx_t *&#160;</td><td class="memItemRight" valign="bottom"><b>ctx</b></td></tr>
 <tr class="separator:af4b8f4ac31731ba8cbfe6b2943c852f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af302237f7e2352081ec19fe14f11a646"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#af302237f7e2352081ec19fe14f11a646">lock</a></td></tr>
+<tr class="memitem:af302237f7e2352081ec19fe14f11a646"><td class="memItemLeft" align="right" valign="top"><a id="af302237f7e2352081ec19fe14f11a646"></a>
+<a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lock</b></td></tr>
 <tr class="separator:af302237f7e2352081ec19fe14f11a646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734e83a3da5d66cea6f3b93a3029173a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="thread_8h.html#a24783eb7e6c8daba680be535ea42f418">condvar_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#a734e83a3da5d66cea6f3b93a3029173a">cv_queue</a></td></tr>
+<tr class="memitem:a734e83a3da5d66cea6f3b93a3029173a"><td class="memItemLeft" align="right" valign="top"><a id="a734e83a3da5d66cea6f3b93a3029173a"></a>
+condvar_t&#160;</td><td class="memItemRight" valign="bottom"><b>cv_queue</b></td></tr>
 <tr class="separator:a734e83a3da5d66cea6f3b93a3029173a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad143c317cce443f57842b77253ac5445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="thread_8h.html#a24783eb7e6c8daba680be535ea42f418">condvar_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#ad143c317cce443f57842b77253ac5445">cv_done</a></td></tr>
+<tr class="memitem:ad143c317cce443f57842b77253ac5445"><td class="memItemLeft" align="right" valign="top"><a id="ad143c317cce443f57842b77253ac5445"></a>
+condvar_t&#160;</td><td class="memItemRight" valign="bottom"><b>cv_done</b></td></tr>
 <tr class="separator:ad143c317cce443f57842b77253ac5445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a391e79d7189b9047db27042c1f67e023"><td class="memItemLeft" align="right" valign="top"><a class="el" href="list_8h.html#a15376354e4e8b4f1732e9df17f30786c">list_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#a391e79d7189b9047db27042c1f67e023">queue</a></td></tr>
+<tr class="memitem:a391e79d7189b9047db27042c1f67e023"><td class="memItemLeft" align="right" valign="top"><a id="a391e79d7189b9047db27042c1f67e023"></a>
+list_t&#160;</td><td class="memItemRight" valign="bottom"><b>queue</b></td></tr>
 <tr class="separator:a391e79d7189b9047db27042c1f67e023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5d00f4464ea797f128a323209591a61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#ae5d00f4464ea797f128a323209591a61">shutdown</a></td></tr>
+<tr class="memitem:ae5d00f4464ea797f128a323209591a61"><td class="memItemLeft" align="right" valign="top"><a id="ae5d00f4464ea797f128a323209591a61"></a>
+bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b></td></tr>
 <tr class="separator:ae5d00f4464ea797f128a323209591a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97d85293c19e8240fa86c604e9dea49b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="thread_8h.html#a608886e38de551d883250e166014c151">thread_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmt__cairo__uploader__s.html#a97d85293c19e8240fa86c604e9dea49b">worker</a></td></tr>
+<tr class="memitem:a97d85293c19e8240fa86c604e9dea49b"><td class="memItemLeft" align="right" valign="top"><a id="a97d85293c19e8240fa86c604e9dea49b"></a>
+thread_t&#160;</td><td class="memItemRight" valign="bottom"><b>worker</b></td></tr>
 <tr class="separator:a97d85293c19e8240fa86c604e9dea49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00138">138</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="af4b8f4ac31731ba8cbfe6b2943c852f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4b8f4ac31731ba8cbfe6b2943c852f3">&#9670;&nbsp;</a></span>ctx</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="glctx_8h.html#a090f63e36996256a5d54a2b3a389df91">glctx_t</a>* ctx</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00140">140</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="ad143c317cce443f57842b77253ac5445"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad143c317cce443f57842b77253ac5445">&#9670;&nbsp;</a></span>cv_done</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="thread_8h.html#a24783eb7e6c8daba680be535ea42f418">condvar_t</a> cv_done</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00143">143</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="a734e83a3da5d66cea6f3b93a3029173a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a734e83a3da5d66cea6f3b93a3029173a">&#9670;&nbsp;</a></span>cv_queue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="thread_8h.html#a24783eb7e6c8daba680be535ea42f418">condvar_t</a> cv_queue</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00142">142</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="af302237f7e2352081ec19fe14f11a646"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af302237f7e2352081ec19fe14f11a646">&#9670;&nbsp;</a></span>lock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmutex__t.html">mutex_t</a> lock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00141">141</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="a391e79d7189b9047db27042c1f67e023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a391e79d7189b9047db27042c1f67e023">&#9670;&nbsp;</a></span>queue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="list_8h.html#a15376354e4e8b4f1732e9df17f30786c">list_t</a> queue</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00144">144</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="af1207ded3cc1425c62b3a203273e2b2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1207ded3cc1425c62b3a203273e2b2f">&#9670;&nbsp;</a></span>refcnt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t refcnt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00139">139</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="ae5d00f4464ea797f128a323209591a61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5d00f4464ea797f128a323209591a61">&#9670;&nbsp;</a></span>shutdown</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> shutdown</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00145">145</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<a id="a97d85293c19e8240fa86c604e9dea49b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97d85293c19e8240fa86c604e9dea49b">&#9670;&nbsp;</a></span>worker</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="thread_8h.html#a608886e38de551d883250e166014c151">thread_t</a> worker</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mt__cairo__render_8c_source.html#l00146">146</a> of file <a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/diablos/NextDev/libacfutils-dll/src/<a class="el" href="mt__cairo__render_8c_source.html">mt_cairo_render.c</a></li>
 </ul>
 </div><!-- contents -->

@@ -70,7 +70,7 @@ $(function() {
 <div class="title">libc.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="libc_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// a libc replacement (more or less) for the Microsoft Visual C compiler</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// a libc replacement (more or less) for the Microsoft Visual C compiler</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// this file is public domain -- do with it whatever you want!</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __LIBC_H_INCLUDED__</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define __LIBC_H_INCLUDED__</span></div>
@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// check if minilibc is required</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef NEED_MINILIBC</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">    #ifndef NOLIBC</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="libc_8h.html#ae3ad61deb061c4ba4f2a49f2f239ec23">    9</a></span>&#160;<span class="preprocessor">        #define NEED_MINILIBC 0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">        #define NEED_MINILIBC 0</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">    #else</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">        #define NEED_MINILIBC 1</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    #endif</span></div>
@@ -93,8 +93,8 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">   24</a></span>&#160;<span class="preprocessor">    #define INLINE inline</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="libc_8h.html#a6f671bc94a3e87fcef3b36ec87d34bff">   25</a></span>&#160;<span class="preprocessor">    #define FASTCALL __attribute__((fastcall))</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">    #define INLINE inline</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    #define FASTCALL __attribute__((fastcall))</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">    #include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
@@ -112,21 +112,21 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    #include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">    #include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="math_8h.html">math.h</a>&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifndef NULL</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">   47</a></span>&#160;<span class="preprocessor">    #define NULL 0</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    #define NULL 0</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#ifndef M_PI</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="libc_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">   51</a></span>&#160;<span class="preprocessor">    #define M_PI 3.14159265358979</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #define M_PI 3.14159265358979</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#if NEED_MINILIBC </span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">void</span> <a class="code" href="libc_8h.html#a8966376aacd6951a115713d32d5f034c">libc_memset</a>(<span class="keywordtype">void</span> *dest, <span class="keywordtype">int</span> value, <span class="keywordtype">int</span> count) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">void</span> libc_memset(<span class="keywordtype">void</span> *dest, <span class="keywordtype">int</span> value, <span class="keywordtype">int</span> count) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (!count) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    __asm {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        cld</div>
@@ -137,7 +137,7 @@ $(function() {
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">void</span> <a class="code" href="libc_8h.html#afc808eee3e9c87717dc4c20c06bf4907">libc_memcpy</a>(<span class="keywordtype">void</span> *dest, <span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">int</span> count) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">void</span> libc_memcpy(<span class="keywordtype">void</span> *dest, <span class="keyword">const</span> <span class="keywordtype">void</span> *src, <span class="keywordtype">int</span> count) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (!count) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    __asm {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        cld</div>
@@ -150,29 +150,29 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define libc_memmove libc_memcpy</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">void</span>* <a class="code" href="libc_8h.html#ab544142269026c6bd43e3c08192bb1f9">libc_malloc</a>(<span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">void</span>* libc_malloc(<span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*) LocalAlloc(LMEM_FIXED, size);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">void</span>* <a class="code" href="libc_8h.html#a65d67895d407bb237253fb77ca78e292">libc_calloc</a>(<span class="keywordtype">int</span> size, <span class="keywordtype">int</span> nmemb) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">void</span>* libc_calloc(<span class="keywordtype">int</span> size, <span class="keywordtype">int</span> nmemb) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*) LocalAlloc(LMEM_FIXED | LMEM_ZEROINIT, size * nmemb);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">void</span>* <a class="code" href="libc_8h.html#a6f3cd7e1857d5642b932ce6404b33f7a">libc_realloc</a>(<span class="keywordtype">void</span>* old, <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">void</span>* libc_realloc(<span class="keywordtype">void</span>* old, <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> oldsize = (int) LocalSize((HLOCAL) old);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> *mem;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (size &lt;= oldsize) <span class="keywordflow">return</span> old;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    mem = LocalAlloc(LMEM_FIXED, size);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="libc_8h.html#afc808eee3e9c87717dc4c20c06bf4907">libc_memcpy</a>(mem, old, oldsize);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    libc_memcpy(mem, old, oldsize);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    LocalFree((HLOCAL) old);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> mem;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">void</span> <a class="code" href="libc_8h.html#ad77ef15123c2d2c0f1c2d2081099d1bb">libc_free</a>(<span class="keywordtype">void</span> *mem) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">void</span> libc_free(<span class="keywordtype">void</span> *mem) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    LocalFree((HLOCAL) mem);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">double</span> <a class="code" href="libc_8h.html#a3330229c5260450aba0c97f8b0b4a94f">libc_frexp</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">int</span> *e) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">double</span> libc_frexp(<span class="keywordtype">double</span> x, <span class="keywordtype">int</span> *e) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">double</span> res = -9999.999;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">unsigned</span> __int64 i = *(<span class="keywordtype">unsigned</span> __int64*)(&amp;x);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (!(i &amp; 0x7F00000000000000UL)) {</div>
@@ -185,7 +185,7 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> *(<span class="keywordtype">double</span>*)(&amp;i) * 0.5;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">static</span> <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">double</span> __declspec(naked) <a class="code" href="libc_8h.html#aca497e13c0bbb5b51b72d850ae32b667">libc_exp</a>(<span class="keywordtype">double</span> x) { __asm {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">static</span> INLINE <span class="keywordtype">double</span> __declspec(naked) libc_exp(<span class="keywordtype">double</span> x) { __asm {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    fldl2e</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    fld qword ptr [esp+4]</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    fmul</div>
@@ -201,7 +201,7 @@ $(function() {
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;} }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;static <a class="code" href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a> <span class="keywordtype">double</span> __declspec(naked) <a class="code" href="libc_8h.html#afa48fe86051161680ca448f13fdc3600">libc_pow</a>(<span class="keywordtype">double</span> b, <span class="keywordtype">double</span> e) { __asm {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;static INLINE <span class="keywordtype">double</span> __declspec(naked) libc_pow(<span class="keywordtype">double</span> b, <span class="keywordtype">double</span> e) { __asm {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    fld qword ptr [esp+12]</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    fld qword ptr [esp+4]</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    fyl2x</div>
@@ -221,33 +221,22 @@ $(function() {
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#else </span><span class="comment">// NEED_MINILIBC == 0</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="libc_8h.html#ab544142269026c6bd43e3c08192bb1f9">  153</a></span>&#160;<span class="preprocessor">#define libc_malloc  malloc</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="libc_8h.html#a65d67895d407bb237253fb77ca78e292">  154</a></span>&#160;<span class="preprocessor">#define libc_calloc  calloc</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="libc_8h.html#a6f3cd7e1857d5642b932ce6404b33f7a">  155</a></span>&#160;<span class="preprocessor">#define libc_realloc realloc</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="libc_8h.html#ad77ef15123c2d2c0f1c2d2081099d1bb">  156</a></span>&#160;<span class="preprocessor">#define libc_free    free</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#define libc_malloc  malloc</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#define libc_calloc  calloc</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#define libc_realloc realloc</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#define libc_free    free</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="libc_8h.html#a8966376aacd6951a115713d32d5f034c">  158</a></span>&#160;<span class="preprocessor">#define libc_memset  memset</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="libc_8h.html#afc808eee3e9c87717dc4c20c06bf4907">  159</a></span>&#160;<span class="preprocessor">#define libc_memcpy  memcpy</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="libc_8h.html#ac7f4ebf0683f0cf296369f197c70f5a2">  160</a></span>&#160;<span class="preprocessor">#define libc_memmove memmove</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#define libc_memset  memset</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#define libc_memcpy  memcpy</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#define libc_memmove memmove</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="libc_8h.html#a3330229c5260450aba0c97f8b0b4a94f">  162</a></span>&#160;<span class="preprocessor">#define libc_frexp   frexp</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="libc_8h.html#aca497e13c0bbb5b51b72d850ae32b667">  163</a></span>&#160;<span class="preprocessor">#define libc_exp     exp</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="libc_8h.html#afa48fe86051161680ca448f13fdc3600">  164</a></span>&#160;<span class="preprocessor">#define libc_pow     pow</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#define libc_frexp   frexp</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#define libc_exp     exp</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#define libc_pow     pow</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// NEED_MINILIBC</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span><span class="comment">//__LIBC_H_INCLUDED__</span></div>
-<div class="ttc" id="alibc_8h_html_a2eb6f9e0395b47b8d5e3eeae4fe0c116"><div class="ttname"><a href="libc_8h.html#a2eb6f9e0395b47b8d5e3eeae4fe0c116">INLINE</a></div><div class="ttdeci">#define INLINE</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00024">libc.h:24</a></div></div>
-<div class="ttc" id="alibc_8h_html_a3330229c5260450aba0c97f8b0b4a94f"><div class="ttname"><a href="libc_8h.html#a3330229c5260450aba0c97f8b0b4a94f">libc_frexp</a></div><div class="ttdeci">#define libc_frexp</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00162">libc.h:162</a></div></div>
-<div class="ttc" id="alibc_8h_html_a65d67895d407bb237253fb77ca78e292"><div class="ttname"><a href="libc_8h.html#a65d67895d407bb237253fb77ca78e292">libc_calloc</a></div><div class="ttdeci">#define libc_calloc</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00154">libc.h:154</a></div></div>
-<div class="ttc" id="alibc_8h_html_a6f3cd7e1857d5642b932ce6404b33f7a"><div class="ttname"><a href="libc_8h.html#a6f3cd7e1857d5642b932ce6404b33f7a">libc_realloc</a></div><div class="ttdeci">#define libc_realloc</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00155">libc.h:155</a></div></div>
-<div class="ttc" id="alibc_8h_html_a8966376aacd6951a115713d32d5f034c"><div class="ttname"><a href="libc_8h.html#a8966376aacd6951a115713d32d5f034c">libc_memset</a></div><div class="ttdeci">#define libc_memset</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00158">libc.h:158</a></div></div>
-<div class="ttc" id="alibc_8h_html_ab544142269026c6bd43e3c08192bb1f9"><div class="ttname"><a href="libc_8h.html#ab544142269026c6bd43e3c08192bb1f9">libc_malloc</a></div><div class="ttdeci">#define libc_malloc</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00153">libc.h:153</a></div></div>
-<div class="ttc" id="alibc_8h_html_aca497e13c0bbb5b51b72d850ae32b667"><div class="ttname"><a href="libc_8h.html#aca497e13c0bbb5b51b72d850ae32b667">libc_exp</a></div><div class="ttdeci">#define libc_exp</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00163">libc.h:163</a></div></div>
-<div class="ttc" id="alibc_8h_html_ad77ef15123c2d2c0f1c2d2081099d1bb"><div class="ttname"><a href="libc_8h.html#ad77ef15123c2d2c0f1c2d2081099d1bb">libc_free</a></div><div class="ttdeci">#define libc_free</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00156">libc.h:156</a></div></div>
-<div class="ttc" id="alibc_8h_html_afa48fe86051161680ca448f13fdc3600"><div class="ttname"><a href="libc_8h.html#afa48fe86051161680ca448f13fdc3600">libc_pow</a></div><div class="ttdeci">#define libc_pow</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00164">libc.h:164</a></div></div>
-<div class="ttc" id="alibc_8h_html_afc808eee3e9c87717dc4c20c06bf4907"><div class="ttname"><a href="libc_8h.html#afc808eee3e9c87717dc4c20c06bf4907">libc_memcpy</a></div><div class="ttdeci">#define libc_memcpy</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00159">libc.h:159</a></div></div>
-<div class="ttc" id="amath_8h_html"><div class="ttname"><a href="math_8h.html">math.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

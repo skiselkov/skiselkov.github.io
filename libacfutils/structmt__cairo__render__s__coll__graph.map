@@ -1,11 +1,7 @@
-<map id="mt_cairo_render_s" name="mt_cairo_render_s">
-<area shape="rect" id="node1" title=" " alt="" coords="352,305,495,332"/>
-<area shape="rect" id="node2" href="$structrender__surf__t.html" title=" " alt="" coords="5,201,113,228"/>
-<area shape="rect" id="node3" href="$structlist__node.html" title=" " alt="" coords="132,7,213,33"/>
-<area shape="rect" id="node7" href="$structlist.html" title=" " alt="" coords="386,97,429,124"/>
-<area shape="rect" id="node4" href="$structmutex__t.html" title=" " alt="" coords="264,97,340,124"/>
-<area shape="rect" id="node6" href="$structmt__cairo__uploader__s.html" title=" " alt="" coords="345,201,502,228"/>
-<area shape="rect" id="node5" href="$structglctx__s.html" title=" " alt="" coords="473,97,541,124"/>
-<area shape="rect" id="node8" href="$structvect2__s.html" title=" " alt="" coords="647,201,719,228"/>
-<area shape="rect" id="node9" href="$structvect3__t.html" title=" " alt="" coords="744,201,815,228"/>
+<map id="mt_cairo_render_t" name="mt_cairo_render_t">
+<area shape="rect" id="node1" title=" " alt="" coords="153,109,293,136"/>
+<area shape="rect" id="node2" href="$structrender__surf__t.html" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node3" href="$structmutex__t.html" title=" " alt="" coords="137,5,213,32"/>
+<area shape="rect" id="node4" href="$structvect2__t.html" title=" " alt="" coords="237,5,308,32"/>
+<area shape="rect" id="node5" href="$structvect3__t.html" title=" " alt="" coords="332,5,403,32"/>
 </map>

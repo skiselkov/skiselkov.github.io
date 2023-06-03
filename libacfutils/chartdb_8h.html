@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -142,11 +141,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a011139322191ec92f7a0e88acf5875a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a011139322191ec92f7a0e88acf5875a0">MAX_CHART_PROCS</a>&#160;&#160;&#160;24</td></tr>
 <tr class="separator:a011139322191ec92f7a0e88acf5875a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a8cae9df461b7738b2382621035e7b5e8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structchartdb__s.html">chartdb_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a></td></tr>
-<tr class="separator:a8cae9df461b7738b2382621035e7b5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a5365b2cd6df4b0e6f6b90beddaad2ebd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a5365b2cd6df4b0e6f6b90beddaad2ebd">chart_type_t</a> { <br />
@@ -177,53 +171,53 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a34975e56813c75b5d146bcc42d3a689f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a34975e56813c75b5d146bcc42d3a689f">chartdb_init</a> (const char *cache_path, const char *pdftoppm_path, const char *pdfinfo_path, unsigned airac, const char *provider_name, void *provider_info)</td></tr>
+<tr class="memitem:a34975e56813c75b5d146bcc42d3a689f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> chartdb_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a34975e56813c75b5d146bcc42d3a689f">chartdb_init</a> (const char *cache_path, const char *pdftoppm_path, const char *pdfinfo_path, unsigned airac, const char *provider_name, void *provider_info)</td></tr>
 <tr class="separator:a34975e56813c75b5d146bcc42d3a689f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa48651afcfb197a29d757eaab2f8c258"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa48651afcfb197a29d757eaab2f8c258">chartdb_fini</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb)</td></tr>
+<tr class="memitem:aa48651afcfb197a29d757eaab2f8c258"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa48651afcfb197a29d757eaab2f8c258">chartdb_fini</a> (chartdb_t *cdb)</td></tr>
 <tr class="separator:aa48651afcfb197a29d757eaab2f8c258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cef8a8b8fc80b5e22f7ebc5312e910f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a5cef8a8b8fc80b5e22f7ebc5312e910f">chartdb_test_connection</a> (const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds)</td></tr>
 <tr class="separator:a5cef8a8b8fc80b5e22f7ebc5312e910f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cdbd565ab6cddf240333d362cc8017f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2</a> (const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds, const char *proxy)</td></tr>
 <tr class="separator:a1cdbd565ab6cddf240333d362cc8017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f377030ec3ce9e6ab1e61d9319a5f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a3f377030ec3ce9e6ab1e61d9319a5f73">chartdb_set_load_limit</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, uint64_t <a class="el" href="glutils_8c.html#a99d471f5c504804ddec6a79bba355aba">bytes</a>)</td></tr>
+<tr class="memitem:a3f377030ec3ce9e6ab1e61d9319a5f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a3f377030ec3ce9e6ab1e61d9319a5f73">chartdb_set_load_limit</a> (chartdb_t *cdb, uint64_t <a class="el" href="glutils_8c.html#a99d471f5c504804ddec6a79bba355aba">bytes</a>)</td></tr>
 <tr class="separator:a3f377030ec3ce9e6ab1e61d9319a5f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc95b0fd54759fd9b4223383d51c5f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a2bc95b0fd54759fd9b4223383d51c5f9">chartdb_purge</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb)</td></tr>
+<tr class="memitem:a2bc95b0fd54759fd9b4223383d51c5f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a2bc95b0fd54759fd9b4223383d51c5f9">chartdb_purge</a> (chartdb_t *cdb)</td></tr>
 <tr class="separator:a2bc95b0fd54759fd9b4223383d51c5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab95f98a2172e600cdd0d8f3fcdc8c57f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f">chartdb_set_proxy</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *proxy)</td></tr>
+<tr class="memitem:ab95f98a2172e600cdd0d8f3fcdc8c57f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f">chartdb_set_proxy</a> (chartdb_t *cdb, const char *proxy)</td></tr>
 <tr class="separator:ab95f98a2172e600cdd0d8f3fcdc8c57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728f0afa8db46da279a55aa311b0d507"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a728f0afa8db46da279a55aa311b0d507">chartdb_get_proxy</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, char *proxy, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>)</td></tr>
+<tr class="memitem:a728f0afa8db46da279a55aa311b0d507"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a728f0afa8db46da279a55aa311b0d507">chartdb_get_proxy</a> (chartdb_t *cdb, char *proxy, size_t cap)</td></tr>
 <tr class="separator:a728f0afa8db46da279a55aa311b0d507"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ccf654a37baae3bbb3fc3dc629dffee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, <a class="el" href="chartdb_8h.html#a5365b2cd6df4b0e6f6b90beddaad2ebd">chart_type_t</a> type, size_t *num_charts)</td></tr>
+<tr class="memitem:a7ccf654a37baae3bbb3fc3dc629dffee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names</a> (chartdb_t *cdb, const char *icao, <a class="el" href="chartdb_8h.html#a5365b2cd6df4b0e6f6b90beddaad2ebd">chart_type_t</a> type, size_t *num_charts)</td></tr>
 <tr class="separator:a7ccf654a37baae3bbb3fc3dc629dffee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac11fdc60013d2116e7b6456ae78bbca7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ac11fdc60013d2116e7b6456ae78bbca7">chartdb_free_str_list</a> (char **l, size_t num)</td></tr>
 <tr class="separator:ac11fdc60013d2116e7b6456ae78bbca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9663bd021340922774fe2e2822e8190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#af9663bd021340922774fe2e2822e8190">chartdb_get_chart_codename</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="memitem:af9663bd021340922774fe2e2822e8190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#af9663bd021340922774fe2e2822e8190">chartdb_get_chart_codename</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
 <tr class="separator:af9663bd021340922774fe2e2822e8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509ac9c07c651d1624cb867b42fab445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="chartdb_8h.html#a5365b2cd6df4b0e6f6b90beddaad2ebd">chart_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a509ac9c07c651d1624cb867b42fab445">chartdb_get_chart_type</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="memitem:a509ac9c07c651d1624cb867b42fab445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="chartdb_8h.html#a5365b2cd6df4b0e6f6b90beddaad2ebd">chart_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a509ac9c07c651d1624cb867b42fab445">chartdb_get_chart_type</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
 <tr class="separator:a509ac9c07c651d1624cb867b42fab445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8977fb53dc67bd10972e1574366a8571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__georef__t.html">chart_georef_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a8977fb53dc67bd10972e1574366a8571">chartdb_get_chart_georef</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="memitem:a8977fb53dc67bd10972e1574366a8571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__georef__t.html">chart_georef_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a8977fb53dc67bd10972e1574366a8571">chartdb_get_chart_georef</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
 <tr class="separator:a8977fb53dc67bd10972e1574366a8571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82077f17e5af3fba328f7fb659328897"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__bbox__t.html">chart_bbox_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a82077f17e5af3fba328f7fb659328897">chartdb_get_chart_view</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, const char *chart_name, <a class="el" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view)</td></tr>
+<tr class="memitem:a82077f17e5af3fba328f7fb659328897"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__bbox__t.html">chart_bbox_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a82077f17e5af3fba328f7fb659328897">chartdb_get_chart_view</a> (chartdb_t *cdb, const char *icao, const char *chart_name, <a class="el" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view)</td></tr>
 <tr class="separator:a82077f17e5af3fba328f7fb659328897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67d7deb216e75ecce8f1fde3eb2630b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__procs__t.html">chart_procs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a67d7deb216e75ecce8f1fde3eb2630b2">chartdb_get_chart_procs</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="memitem:a67d7deb216e75ecce8f1fde3eb2630b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__procs__t.html">chart_procs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a67d7deb216e75ecce8f1fde3eb2630b2">chartdb_get_chart_procs</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
 <tr class="separator:a67d7deb216e75ecce8f1fde3eb2630b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a866c12785f0eb162dcb123bc1a039c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a866c12785f0eb162dcb123bc1a039c7a">chartdb_get_chart_surface</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao, const char *chart_name, int page, double zoom, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> night, cairo_surface_t **surf, int *num_pages)</td></tr>
+<tr class="memitem:a866c12785f0eb162dcb123bc1a039c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a866c12785f0eb162dcb123bc1a039c7a">chartdb_get_chart_surface</a> (chartdb_t *cdb, const char *icao, const char *chart_name, int page, double zoom, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> night, cairo_surface_t **surf, int *num_pages)</td></tr>
 <tr class="separator:a866c12785f0eb162dcb123bc1a039c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0360b67dc55ef7e33f3c615fca0d5a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa0360b67dc55ef7e33f3c615fca0d5a6">chartdb_is_ready</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb)</td></tr>
+<tr class="memitem:aa0360b67dc55ef7e33f3c615fca0d5a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa0360b67dc55ef7e33f3c615fca0d5a6">chartdb_is_ready</a> (chartdb_t *cdb)</td></tr>
 <tr class="separator:aa0360b67dc55ef7e33f3c615fca0d5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4383b5d7f0833ca741aaa11ed58c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a9e4383b5d7f0833ca741aaa11ed58c92">chartdb_is_arpt_known</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao)</td></tr>
+<tr class="memitem:a9e4383b5d7f0833ca741aaa11ed58c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a9e4383b5d7f0833ca741aaa11ed58c92">chartdb_is_arpt_known</a> (chartdb_t *cdb, const char *icao)</td></tr>
 <tr class="separator:a9e4383b5d7f0833ca741aaa11ed58c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae669e938b07f3d5f77cb1048d21c1ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aae669e938b07f3d5f77cb1048d21c1ae">chartdb_get_arpt_name</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao)</td></tr>
+<tr class="memitem:aae669e938b07f3d5f77cb1048d21c1ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aae669e938b07f3d5f77cb1048d21c1ae">chartdb_get_arpt_name</a> (chartdb_t *cdb, const char *icao)</td></tr>
 <tr class="separator:aae669e938b07f3d5f77cb1048d21c1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eef7300d9e81bd57fc2de23e4a1aa19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a1eef7300d9e81bd57fc2de23e4a1aa19">chartdb_get_arpt_city</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao)</td></tr>
+<tr class="memitem:a1eef7300d9e81bd57fc2de23e4a1aa19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a1eef7300d9e81bd57fc2de23e4a1aa19">chartdb_get_arpt_city</a> (chartdb_t *cdb, const char *icao)</td></tr>
 <tr class="separator:a1eef7300d9e81bd57fc2de23e4a1aa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaab9e8fabd05b99156690634b89d6d77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aaab9e8fabd05b99156690634b89d6d77">chartdb_get_arpt_state</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao)</td></tr>
+<tr class="memitem:aaab9e8fabd05b99156690634b89d6d77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aaab9e8fabd05b99156690634b89d6d77">chartdb_get_arpt_state</a> (chartdb_t *cdb, const char *icao)</td></tr>
 <tr class="separator:aaab9e8fabd05b99156690634b89d6d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe6f688ed76d41caa1dc8c2720228b97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao)</td></tr>
+<tr class="memitem:afe6f688ed76d41caa1dc8c2720228b97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar</a> (chartdb_t *cdb, const char *icao)</td></tr>
 <tr class="separator:afe6f688ed76d41caa1dc8c2720228b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e2d5a171fcb09694ba05dcd1a163df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df">chartdb_get_taf</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb, const char *icao)</td></tr>
+<tr class="memitem:a27e2d5a171fcb09694ba05dcd1a163df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df">chartdb_get_taf</a> (chartdb_t *cdb, const char *icao)</td></tr>
 <tr class="separator:a27e2d5a171fcb09694ba05dcd1a163df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d28e397082a14cb2a39ab96aa9e443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a77d28e397082a14cb2a39ab96aa9e443">chartdb_pending_ext_account_setup</a> (<a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *cdb)</td></tr>
+<tr class="memitem:a77d28e397082a14cb2a39ab96aa9e443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a77d28e397082a14cb2a39ab96aa9e443">chartdb_pending_ext_account_setup</a> (chartdb_t *cdb)</td></tr>
 <tr class="separator:a77d28e397082a14cb2a39ab96aa9e443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -256,23 +250,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00041">41</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a8cae9df461b7738b2382621035e7b5e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cae9df461b7738b2382621035e7b5e8">&#9670;&nbsp;</a></span>chartdb_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structchartdb__s.html">chartdb_s</a> <a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00001">1</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +314,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void chartdb_fini </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -387,7 +364,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char* chartdb_get_arpt_city </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -417,7 +394,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char* chartdb_get_arpt_name </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -447,7 +424,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char* chartdb_get_arpt_state </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -477,7 +454,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char* chartdb_get_chart_codename </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -513,7 +490,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__georef__t.html">chart_georef_t</a> chartdb_get_chart_georef </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -549,7 +526,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char** chartdb_get_chart_names </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -591,7 +568,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__procs__t.html">chart_procs_t</a> chartdb_get_chart_procs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -627,7 +604,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> chartdb_get_chart_surface </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -693,7 +670,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="chartdb_8h.html#a5365b2cd6df4b0e6f6b90beddaad2ebd">chart_type_t</a> chartdb_get_chart_type </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -729,7 +706,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="structchart__bbox__t.html">chart_bbox_t</a> chartdb_get_chart_view </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -771,7 +748,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char* chartdb_get_metar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -801,7 +778,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> size_t chartdb_get_proxy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -837,7 +814,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> char* chartdb_get_taf </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -865,7 +842,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a>* chartdb_init </td>
+          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> chartdb_t* chartdb_init </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>cache_path</em>, </td>
@@ -921,7 +898,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> chartdb_is_arpt_known </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -951,7 +928,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> chartdb_is_ready </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -971,7 +948,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> chartdb_pending_ext_account_setup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -991,7 +968,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void chartdb_purge </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1011,7 +988,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void chartdb_set_load_limit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>
@@ -1041,7 +1018,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void chartdb_set_proxy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="chartdb_8h.html#a8cae9df461b7738b2382621035e7b5e8">chartdb_t</a> *&#160;</td>
+          <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
         </tr>
         <tr>

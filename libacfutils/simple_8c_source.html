@@ -70,7 +70,7 @@ $(function() {
 <div class="title">simple.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="simple_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../jsmn.h&quot;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../jsmn.h&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
@@ -84,22 +84,22 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="stringliteral">&quot;{\&quot;user\&quot;: \&quot;johndoe\&quot;, \&quot;admin\&quot;: false, \&quot;uid\&quot;: 1000,\n  &quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="stringliteral">&quot;\&quot;groups\&quot;: [\&quot;users\&quot;, \&quot;wheel\&quot;, \&quot;audio\&quot;, \&quot;video\&quot;]}&quot;</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> jsoneq(<span class="keyword">const</span> <span class="keywordtype">char</span> *json, <a class="code" href="structjsmntok.html">jsmntok_t</a> *<a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *s) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>-&gt;<a class="code" href="structjsmntok.html#a7def41ebc3980f6e4526819b42c2721f">type</a> == <a class="code" href="jsmn_8h.html#a065320719769f9dc1fbe30094e52802fad4ea6277c135d9d3377bf8b719779539">JSMN_STRING</a> &amp;&amp; (<span class="keywordtype">int</span>)strlen(s) == <a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>-&gt;<a class="code" href="structjsmntok.html#abce9f5dc9c83f2639b72024fdee5d388">end</a> - <a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>-&gt;<a class="code" href="structjsmntok.html#a37722a150250e2a5a98e5e0d11e53449">start</a> &amp;&amp;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      strncmp(json + <a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>-&gt;<a class="code" href="structjsmntok.html#a37722a150250e2a5a98e5e0d11e53449">start</a>, s, <a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>-&gt;<a class="code" href="structjsmntok.html#abce9f5dc9c83f2639b72024fdee5d388">end</a> - <a class="code" href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a>-&gt;<a class="code" href="structjsmntok.html#a37722a150250e2a5a98e5e0d11e53449">start</a>) == 0) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> jsoneq(<span class="keyword">const</span> <span class="keywordtype">char</span> *json, <a class="code" href="structjsmntok__t.html">jsmntok_t</a> *tok, <span class="keyword">const</span> <span class="keywordtype">char</span> *s) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span> (tok-&gt;type == JSMN_STRING &amp;&amp; (<span class="keywordtype">int</span>)strlen(s) == tok-&gt;end - tok-&gt;start &amp;&amp;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      strncmp(json + tok-&gt;start, s, tok-&gt;end - tok-&gt;start) == 0) {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="simple_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="simple_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> main() {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">int</span> r;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="structjsmn__parser.html">jsmn_parser</a> p;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="structjsmntok.html">jsmntok_t</a> t[128]; <span class="comment">/* We expect no more than 128 tokens */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="structjsmntok__t.html">jsmntok_t</a> t[128]; <span class="comment">/* We expect no more than 128 tokens */</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="jsmn_8h.html#ac18a603f0737ecb4e953b4335d9652bb">jsmn_init</a>(&amp;p);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  r = <a class="code" href="jsmn_8h.html#a5e34c2b99133f3b538bf8a12a6313184">jsmn_parse</a>(&amp;p, JSON_STRING, strlen(JSON_STRING), t,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  jsmn_init(&amp;p);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  r = jsmn_parse(&amp;p, JSON_STRING, strlen(JSON_STRING), t,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                 <span class="keyword">sizeof</span>(t) / <span class="keyword">sizeof</span>(t[0]));</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">if</span> (r &lt; 0) {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    printf(<span class="stringliteral">&quot;Failed to parse JSON: %d\n&quot;</span>, r);</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">/* Assume the top-level element is an object */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span> (r &lt; 1 || t[0].type != <a class="code" href="jsmn_8h.html#a065320719769f9dc1fbe30094e52802fa416d6e733082bedc1166f0d66f571867">JSMN_OBJECT</a>) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span> (r &lt; 1 || t[0].type != JSMN_OBJECT) {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    printf(<span class="stringliteral">&quot;Object expected\n&quot;</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
@@ -116,51 +116,39 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">for</span> (i = 1; i &lt; r; i++) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (jsoneq(JSON_STRING, &amp;t[i], <span class="stringliteral">&quot;user&quot;</span>) == 0) {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="comment">/* We may use strndup() to fetch string value */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      printf(<span class="stringliteral">&quot;- User: %.*s\n&quot;</span>, t[i + 1].end - t[i + 1].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;             JSON_STRING + t[i + 1].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      printf(<span class="stringliteral">&quot;- User: %.*s\n&quot;</span>, t[i + 1].end - t[i + 1].start,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;             JSON_STRING + t[i + 1].start);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      i++;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jsoneq(JSON_STRING, &amp;t[i], <span class="stringliteral">&quot;admin&quot;</span>) == 0) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="comment">/* We may additionally check if the value is either &quot;true&quot; or &quot;false&quot; */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      printf(<span class="stringliteral">&quot;- Admin: %.*s\n&quot;</span>, t[i + 1].end - t[i + 1].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;             JSON_STRING + t[i + 1].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      printf(<span class="stringliteral">&quot;- Admin: %.*s\n&quot;</span>, t[i + 1].end - t[i + 1].start,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;             JSON_STRING + t[i + 1].start);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      i++;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jsoneq(JSON_STRING, &amp;t[i], <span class="stringliteral">&quot;uid&quot;</span>) == 0) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">/* We may want to do strtol() here to get numeric value */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      printf(<span class="stringliteral">&quot;- UID: %.*s\n&quot;</span>, t[i + 1].end - t[i + 1].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;             JSON_STRING + t[i + 1].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      printf(<span class="stringliteral">&quot;- UID: %.*s\n&quot;</span>, t[i + 1].end - t[i + 1].start,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;             JSON_STRING + t[i + 1].start);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      i++;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jsoneq(JSON_STRING, &amp;t[i], <span class="stringliteral">&quot;groups&quot;</span>) == 0) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordtype">int</span> j;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      printf(<span class="stringliteral">&quot;- Groups:\n&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">if</span> (t[i + 1].type != <a class="code" href="jsmn_8h.html#a065320719769f9dc1fbe30094e52802fabc4c47216dacf36bd4f64ac3d649d471">JSMN_ARRAY</a>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">if</span> (t[i + 1].type != JSMN_ARRAY) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">continue</span>; <span class="comment">/* We expect groups to be an array of strings */</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">for</span> (j = 0; j &lt; t[i + 1].<a class="code" href="structjsmntok.html#a439227feff9d7f55384e8780cfc2eb82">size</a>; j++) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="structjsmntok.html">jsmntok_t</a> *g = &amp;t[i + j + 2];</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        printf(<span class="stringliteral">&quot;  * %.*s\n&quot;</span>, g-&gt;<a class="code" href="structjsmntok.html#abce9f5dc9c83f2639b72024fdee5d388">end</a> - g-&gt;<a class="code" href="structjsmntok.html#a37722a150250e2a5a98e5e0d11e53449">start</a>, JSON_STRING + g-&gt;<a class="code" href="structjsmntok.html#a37722a150250e2a5a98e5e0d11e53449">start</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">for</span> (j = 0; j &lt; t[i + 1].size; j++) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="structjsmntok__t.html">jsmntok_t</a> *g = &amp;t[i + j + 2];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        printf(<span class="stringliteral">&quot;  * %.*s\n&quot;</span>, g-&gt;end - g-&gt;start, JSON_STRING + g-&gt;start);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      i += t[i + 1].<a class="code" href="structjsmntok.html#a439227feff9d7f55384e8780cfc2eb82">size</a> + 1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      i += t[i + 1].size + 1;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      printf(<span class="stringliteral">&quot;Unexpected key: %.*s\n&quot;</span>, t[i].end - t[i].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;             JSON_STRING + t[i].<a class="code" href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      printf(<span class="stringliteral">&quot;Unexpected key: %.*s\n&quot;</span>, t[i].end - t[i].start,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;             JSON_STRING + t[i].start);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="ttc" id="ahelpers_8c_html_ac621bcfb466f3b6a6421c5f48b30ade3"><div class="ttname"><a href="helpers_8c.html#ac621bcfb466f3b6a6421c5f48b30ade3">start</a></div><div class="ttdeci">const char * start</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00107">helpers.c:107</a></div></div>
-<div class="ttc" id="ajsmn_8h_html_a065320719769f9dc1fbe30094e52802fa416d6e733082bedc1166f0d66f571867"><div class="ttname"><a href="jsmn_8h.html#a065320719769f9dc1fbe30094e52802fa416d6e733082bedc1166f0d66f571867">JSMN_OBJECT</a></div><div class="ttdeci">@ JSMN_OBJECT</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00048">jsmn.h:48</a></div></div>
-<div class="ttc" id="ajsmn_8h_html_a065320719769f9dc1fbe30094e52802fabc4c47216dacf36bd4f64ac3d649d471"><div class="ttname"><a href="jsmn_8h.html#a065320719769f9dc1fbe30094e52802fabc4c47216dacf36bd4f64ac3d649d471">JSMN_ARRAY</a></div><div class="ttdeci">@ JSMN_ARRAY</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00049">jsmn.h:49</a></div></div>
-<div class="ttc" id="ajsmn_8h_html_a065320719769f9dc1fbe30094e52802fad4ea6277c135d9d3377bf8b719779539"><div class="ttname"><a href="jsmn_8h.html#a065320719769f9dc1fbe30094e52802fad4ea6277c135d9d3377bf8b719779539">JSMN_STRING</a></div><div class="ttdeci">@ JSMN_STRING</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00050">jsmn.h:50</a></div></div>
-<div class="ttc" id="ajsmn_8h_html_a5e34c2b99133f3b538bf8a12a6313184"><div class="ttname"><a href="jsmn_8h.html#a5e34c2b99133f3b538bf8a12a6313184">jsmn_parse</a></div><div class="ttdeci">JSMN_API int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len, jsmntok_t *tokens, const unsigned int num_tokens)</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00268">jsmn.h:268</a></div></div>
-<div class="ttc" id="ajsmn_8h_html_ac18a603f0737ecb4e953b4335d9652bb"><div class="ttname"><a href="jsmn_8h.html#ac18a603f0737ecb4e953b4335d9652bb">jsmn_init</a></div><div class="ttdeci">JSMN_API void jsmn_init(jsmn_parser *parser)</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00459">jsmn.h:459</a></div></div>
-<div class="ttc" id="ajsmn__path_8h_html_aaed7efc24c87b1d9d6fdbd6b1fee6521"><div class="ttname"><a href="jsmn__path_8h.html#aaed7efc24c87b1d9d6fdbd6b1fee6521">tok</a></div><div class="ttdeci">const jsmntok_t * tok</div><div class="ttdef"><b>Definition:</b> <a href="jsmn__path_8h_source.html#l00174">jsmn_path.h:174</a></div></div>
-<div class="ttc" id="asimple_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="simple_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="simple_8c_source.html#l00023">simple.c:23</a></div></div>
 <div class="ttc" id="astructjsmn__parser_html"><div class="ttname"><a href="structjsmn__parser.html">jsmn_parser</a></div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00083">jsmn.h:83</a></div></div>
-<div class="ttc" id="astructjsmntok_html"><div class="ttname"><a href="structjsmntok.html">jsmntok</a></div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00069">jsmn.h:69</a></div></div>
-<div class="ttc" id="astructjsmntok_html_a37722a150250e2a5a98e5e0d11e53449"><div class="ttname"><a href="structjsmntok.html#a37722a150250e2a5a98e5e0d11e53449">jsmntok::start</a></div><div class="ttdeci">int start</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00071">jsmn.h:71</a></div></div>
-<div class="ttc" id="astructjsmntok_html_a439227feff9d7f55384e8780cfc2eb82"><div class="ttname"><a href="structjsmntok.html#a439227feff9d7f55384e8780cfc2eb82">jsmntok::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00073">jsmn.h:73</a></div></div>
-<div class="ttc" id="astructjsmntok_html_a7def41ebc3980f6e4526819b42c2721f"><div class="ttname"><a href="structjsmntok.html#a7def41ebc3980f6e4526819b42c2721f">jsmntok::type</a></div><div class="ttdeci">jsmntype_t type</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00070">jsmn.h:70</a></div></div>
-<div class="ttc" id="astructjsmntok_html_abce9f5dc9c83f2639b72024fdee5d388"><div class="ttname"><a href="structjsmntok.html#abce9f5dc9c83f2639b72024fdee5d388">jsmntok::end</a></div><div class="ttdeci">int end</div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00072">jsmn.h:72</a></div></div>
+<div class="ttc" id="astructjsmntok__t_html"><div class="ttname"><a href="structjsmntok__t.html">jsmntok_t</a></div><div class="ttdef"><b>Definition:</b> <a href="jsmn_8h_source.html#l00069">jsmn.h:69</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

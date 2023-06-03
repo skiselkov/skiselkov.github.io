@@ -1,5 +1,4 @@
 <map id="obst_t" name="obst_t">
-<area shape="rect" id="node1" title=" " alt="" coords="113,97,176,124"/>
-<area shape="rect" id="node2" href="$structlist__node.html" title=" " alt="" coords="5,7,87,33"/>
-<area shape="rect" id="node3" href="$structgeo__pos3__t.html" title=" " alt="" coords="197,7,293,33"/>
+<area shape="rect" id="node1" title=" " alt="" coords="22,95,85,121"/>
+<area shape="rect" id="node2" href="$structgeo__pos3__t.html" title=" " alt="" coords="5,5,101,32"/>
 </map>

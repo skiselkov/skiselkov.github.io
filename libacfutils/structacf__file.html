@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: acf_file Struct Reference</title>
+<title>libacfutils: acf_file_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,30 +65,21 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">acf_file Struct Reference</div>  </div>
+<div class="title">acf_file_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for acf_file:</div>
-<div class="dyncontent">
-<div class="center"><img src="structacf__file__coll__graph.png" border="0" usemap="#aacf__file_coll__map" alt="Collaboration graph"/></div>
-<map name="aacf__file_coll__map" id="aacf__file_coll__map">
-<area shape="rect" title=" " alt="" coords="11,187,81,213"/>
-<area shape="rect" href="structavl__tree.html" title=" " alt="" coords="9,97,83,124"/>
-<area shape="rect" href="structavl__node.html" title=" " alt="" coords="5,7,87,33"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aad880fc4455c253781e8968f2239d56f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structacf__file.html#aad880fc4455c253781e8968f2239d56f">version</a></td></tr>
 <tr class="separator:aad880fc4455c253781e8968f2239d56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b494e73effa7e7c732ea088597a0552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structacf__file.html#a2b494e73effa7e7c732ea088597a0552">props</a></td></tr>
+<tr class="memitem:a2b494e73effa7e7c732ea088597a0552"><td class="memItemLeft" align="right" valign="top">avl_tree_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structacf__file.html#a2b494e73effa7e7c732ea088597a0552">props</a></td></tr>
 <tr class="separator:a2b494e73effa7e7c732ea088597a0552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="acf__file_8c_source.html#l00040">40</a> of file <a class="el" href="acf__file_8c_source.html">acf_file.c</a>.</p>
+<div class="textblock"><p>This provides functionality to read and inspect the contents of an .acf file of X-Plane. Use <a class="el" href="acf__file_8c.html#a36d0c08511c258c0ee41f554048d26b1">acf_file_read()</a> to generate this structure from an .acf file, and <a class="el" href="acf__file_8c.html#a93c1812eed3f49fed82c7920b7074147">acf_file_free()</a> to release it after use. </p>
+
+<p class="definition">Definition at line <a class="el" href="acf__file_8c_source.html#l00045">45</a> of file <a class="el" href="acf__file_8c_source.html">acf_file.c</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="a2b494e73effa7e7c732ea088597a0552"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b494e73effa7e7c732ea088597a0552">&#9670;&nbsp;</a></span>props</h2>
@@ -97,12 +88,13 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> props</td>
+          <td class="memname">avl_tree_t props</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tree of <a class="el" href="structacf__prop__t.html">acf_prop_t</a>'s. </p>
 
-<p class="definition">Definition at line <a class="el" href="acf__file_8c_source.html#l00042">42</a> of file <a class="el" href="acf__file_8c_source.html">acf_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="acf__file_8c_source.html#l00047">47</a> of file <a class="el" href="acf__file_8c_source.html">acf_file.c</a>.</p>
 
 </div>
 </div>
@@ -117,8 +109,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Version number of the file. </p>
 
-<p class="definition">Definition at line <a class="el" href="acf__file_8c_source.html#l00041">41</a> of file <a class="el" href="acf__file_8c_source.html">acf_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="acf__file_8c_source.html#l00046">46</a> of file <a class="el" href="acf__file_8c_source.html">acf_file.c</a>.</p>
 
 </div>
 </div>

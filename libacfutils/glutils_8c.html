@@ -146,9 +146,9 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcache__entry__t.html">cache_entry_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglutils__cache__s.html">glutils_cache_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglutils__cache__s.html">glutils_cache_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglutils__nl__s.html">glutils_nl_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglutils__nl__s.html">glutils_nl_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnl__vtx__data__t.html">nl_vtx_data_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,27 +175,27 @@ Functions</h2></td></tr>
 <tr class="separator:a990e0a3f11b8d93578388ffc27996fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83112016d440771c868f115a9e430ec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a83112016d440771c868f115a9e430ec5">glutils_make_quads_IBO</a> (size_t num_vtx)</td></tr>
 <tr class="separator:a83112016d440771c868f115a9e430ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa537f17313cd05012fc9056e52ad0dfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#aa537f17313cd05012fc9056e52ad0dfa">glutils_init_2D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *p, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *t, size_t num_pts)</td></tr>
+<tr class="memitem:aa537f17313cd05012fc9056e52ad0dfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#aa537f17313cd05012fc9056e52ad0dfa">glutils_init_2D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="structvect2__t.html">vect2_t</a> *p, const <a class="el" href="structvect2__t.html">vect2_t</a> *t, size_t num_pts)</td></tr>
 <tr class="separator:aa537f17313cd05012fc9056e52ad0dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c57092e178c56bbc24d030bd761bade"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a8c57092e178c56bbc24d030bd761bade">glutils_update_2D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *p, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *t, size_t num_pts)</td></tr>
+<tr class="memitem:a8c57092e178c56bbc24d030bd761bade"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a8c57092e178c56bbc24d030bd761bade">glutils_update_2D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="structvect2__t.html">vect2_t</a> *p, const <a class="el" href="structvect2__t.html">vect2_t</a> *t, size_t num_pts)</td></tr>
 <tr class="separator:a8c57092e178c56bbc24d030bd761bade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9499027b89dfa32174db8660cb632728"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a9499027b89dfa32174db8660cb632728">glutils_init_3D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *t, size_t num_pts)</td></tr>
+<tr class="memitem:a9499027b89dfa32174db8660cb632728"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a9499027b89dfa32174db8660cb632728">glutils_init_3D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, const <a class="el" href="structvect2__t.html">vect2_t</a> *t, size_t num_pts)</td></tr>
 <tr class="separator:a9499027b89dfa32174db8660cb632728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace30a8c168b288d7d0d192a918920919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#ace30a8c168b288d7d0d192a918920919">glutils_update_3D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *t, size_t num_pts)</td></tr>
+<tr class="memitem:ace30a8c168b288d7d0d192a918920919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#ace30a8c168b288d7d0d192a918920919">glutils_update_3D_quads_impl</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, const char *filename, int line, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, const <a class="el" href="structvect2__t.html">vect2_t</a> *t, size_t num_pts)</td></tr>
 <tr class="separator:ace30a8c168b288d7d0d192a918920919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ff24e6cb22e7ad0a04f236473cb553a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a3ff24e6cb22e7ad0a04f236473cb553a">glutils_destroy_quads</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads)</td></tr>
 <tr class="separator:a3ff24e6cb22e7ad0a04f236473cb553a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fef6cfd612d7c8991d6b3dd891eafcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a5fef6cfd612d7c8991d6b3dd891eafcb">glutils_draw_quads</a> (<a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, GLint prog)</td></tr>
 <tr class="separator:a5fef6cfd612d7c8991d6b3dd891eafcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4776edae0db6f5f2dceaa34546ae1227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a4776edae0db6f5f2dceaa34546ae1227">glutils_cache_new</a> (size_t cap_bytes)</td></tr>
+<tr class="memitem:a4776edae0db6f5f2dceaa34546ae1227"><td class="memItemLeft" align="right" valign="top">glutils_cache_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a4776edae0db6f5f2dceaa34546ae1227">glutils_cache_new</a> (size_t cap_bytes)</td></tr>
 <tr class="separator:a4776edae0db6f5f2dceaa34546ae1227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a87949597fa0dd2c6c02a05ab596e34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a6a87949597fa0dd2c6c02a05ab596e34">glutils_cache_destroy</a> (<a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *cache)</td></tr>
+<tr class="memitem:a6a87949597fa0dd2c6c02a05ab596e34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a6a87949597fa0dd2c6c02a05ab596e34">glutils_cache_destroy</a> (glutils_cache_t *cache)</td></tr>
 <tr class="separator:a6a87949597fa0dd2c6c02a05ab596e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b86fbbc9f0c38f65ee03245152c792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a54b86fbbc9f0c38f65ee03245152c792">glutils_cache_get_2D_quads</a> (<a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *cache, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *p, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *t, size_t num_pts)</td></tr>
+<tr class="memitem:a54b86fbbc9f0c38f65ee03245152c792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a54b86fbbc9f0c38f65ee03245152c792">glutils_cache_get_2D_quads</a> (glutils_cache_t *cache, const <a class="el" href="structvect2__t.html">vect2_t</a> *p, const <a class="el" href="structvect2__t.html">vect2_t</a> *t, size_t num_pts)</td></tr>
 <tr class="separator:a54b86fbbc9f0c38f65ee03245152c792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9098d7a8b37da6e2999ebbce6da2dd7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a9098d7a8b37da6e2999ebbce6da2dd7a">glutils_cache_get_3D_quads</a> (<a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *cache, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *t, size_t num_pts)</td></tr>
+<tr class="memitem:a9098d7a8b37da6e2999ebbce6da2dd7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a9098d7a8b37da6e2999ebbce6da2dd7a">glutils_cache_get_3D_quads</a> (glutils_cache_t *cache, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, const <a class="el" href="structvect2__t.html">vect2_t</a> *t, size_t num_pts)</td></tr>
 <tr class="separator:a9098d7a8b37da6e2999ebbce6da2dd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405718f3727a5d4a2add700603cbb07e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a405718f3727a5d4a2add700603cbb07e">glutils_cache_get_3D_lines</a> (<a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *cache, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, size_t num_pts)</td></tr>
+<tr class="memitem:a405718f3727a5d4a2add700603cbb07e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a405718f3727a5d4a2add700603cbb07e">glutils_cache_get_3D_lines</a> (glutils_cache_t *cache, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, size_t num_pts)</td></tr>
 <tr class="separator:a405718f3727a5d4a2add700603cbb07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ba3f5b91ef3e2da6bcdeec96ae31598"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a9ba3f5b91ef3e2da6bcdeec96ae31598">glutils_init_3D_lines_impl</a> (<a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> *lines, const char *filename, int line, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, size_t num_pts)</td></tr>
 <tr class="separator:a9ba3f5b91ef3e2da6bcdeec96ae31598"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,9 +209,9 @@ Functions</h2></td></tr>
 <tr class="separator:a0b3d12289e3c09dea730a66540ad7aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ae746eed0268fe1e91eb7f2530d2993"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a9ae746eed0268fe1e91eb7f2530d2993">glutils_texsz_fini</a> (void)</td></tr>
 <tr class="separator:a9ae746eed0268fe1e91eb7f2530d2993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19ef477cc1eac3f501f9eedfd4a81488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a19ef477cc1eac3f501f9eedfd4a81488">glutils_texsz_alloc</a> (const char *token, const void *instance, const char *filename, int line, GLenum <a class="el" href="jsmn__path_8h.html#add8c3d13a578c0a8b3542fccda3b04b5">format</a>, GLenum type, unsigned w, unsigned h)</td></tr>
+<tr class="memitem:a19ef477cc1eac3f501f9eedfd4a81488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a19ef477cc1eac3f501f9eedfd4a81488">glutils_texsz_alloc</a> (const char *token, const void *instance, const char *filename, int line, GLenum format, GLenum type, unsigned w, unsigned h)</td></tr>
 <tr class="separator:a19ef477cc1eac3f501f9eedfd4a81488"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b3a99e4edfcb0f5a0c396a979651f56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a2b3a99e4edfcb0f5a0c396a979651f56">glutils_texsz_free</a> (const char *token, const void *instance, GLenum <a class="el" href="jsmn__path_8h.html#add8c3d13a578c0a8b3542fccda3b04b5">format</a>, GLenum type, unsigned w, unsigned h)</td></tr>
+<tr class="memitem:a2b3a99e4edfcb0f5a0c396a979651f56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a2b3a99e4edfcb0f5a0c396a979651f56">glutils_texsz_free</a> (const char *token, const void *instance, GLenum format, GLenum type, unsigned w, unsigned h)</td></tr>
 <tr class="separator:a2b3a99e4edfcb0f5a0c396a979651f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea9a047c00547c2834b6b6544d3420f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a4ea9a047c00547c2834b6b6544d3420f">glutils_texsz_alloc_bytes</a> (const char *token, const void *instance, const char *filename, int line, int64_t <a class="el" href="glutils_8c.html#a99d471f5c504804ddec6a79bba355aba">bytes</a>)</td></tr>
 <tr class="separator:a4ea9a047c00547c2834b6b6544d3420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,13 +225,13 @@ Functions</h2></td></tr>
 <tr class="separator:a316c9c57d769563de791f80973cd40e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30182f04d046b525751e08d94b0861fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a30182f04d046b525751e08d94b0861fd">glutils_nsight_debugger_present</a> (void)</td></tr>
 <tr class="separator:a30182f04d046b525751e08d94b0861fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e7c3ef433fa0e2a49ab9023c59794ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D</a> (const vec2 *pts, size_t num_pts)</td></tr>
+<tr class="memitem:a7e7c3ef433fa0e2a49ab9023c59794ba"><td class="memItemLeft" align="right" valign="top">glutils_nl_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D</a> (const vec2 *pts, size_t num_pts)</td></tr>
 <tr class="separator:a7e7c3ef433fa0e2a49ab9023c59794ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4060c897ae5664012f2f0b3502d51ddf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a4060c897ae5664012f2f0b3502d51ddf">glutils_nl_alloc_3D</a> (const vec3 *pts, size_t num_pts)</td></tr>
+<tr class="memitem:a4060c897ae5664012f2f0b3502d51ddf"><td class="memItemLeft" align="right" valign="top">glutils_nl_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a4060c897ae5664012f2f0b3502d51ddf">glutils_nl_alloc_3D</a> (const vec3 *pts, size_t num_pts)</td></tr>
 <tr class="separator:a4060c897ae5664012f2f0b3502d51ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeac34bb8268a6a992b6d7aba8ae6a15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free</a> (<a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a> *nl)</td></tr>
+<tr class="memitem:afeac34bb8268a6a992b6d7aba8ae6a15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free</a> (glutils_nl_t *nl)</td></tr>
 <tr class="separator:afeac34bb8268a6a992b6d7aba8ae6a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0868cd748e01d48be3ea63de6ef8cd4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw</a> (<a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a> *nl, float width, GLuint prog)</td></tr>
+<tr class="memitem:a0868cd748e01d48be3ea63de6ef8cd4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw</a> (glutils_nl_t *nl, float width, GLuint prog)</td></tr>
 <tr class="separator:a0868cd748e01d48be3ea63de6ef8cd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac54f080841d8dd01f438f371a4883dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="glutils_8c.html#ac54f080841d8dd01f438f371a4883dea">glutils_png2gltexfmt</a> (int png_color_type, int png_bit_depth, GLint *int_fmt, GLint *fmt, GLint *type)</td></tr>
 <tr class="separator:ac54f080841d8dd01f438f371a4883dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,7 +270,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void glutils_cache_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *&#160;</td>
+          <td class="paramtype">glutils_cache_t *&#160;</td>
           <td class="paramname"><em>cache</em></td><td>)</td>
           <td></td>
         </tr>
@@ -290,19 +290,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structglutils__quads__t.html">glutils_quads_t</a>* glutils_cache_get_2D_quads </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *&#160;</td>
+          <td class="paramtype">glutils_cache_t *&#160;</td>
           <td class="paramname"><em>cache</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -332,7 +332,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structglutils__lines__t.html">glutils_lines_t</a>* glutils_cache_get_3D_lines </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *&#160;</td>
+          <td class="paramtype">glutils_cache_t *&#160;</td>
           <td class="paramname"><em>cache</em>, </td>
         </tr>
         <tr>
@@ -368,7 +368,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structglutils__quads__t.html">glutils_quads_t</a>* glutils_cache_get_3D_quads </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a> *&#160;</td>
+          <td class="paramtype">glutils_cache_t *&#160;</td>
           <td class="paramname"><em>cache</em>, </td>
         </tr>
         <tr>
@@ -380,7 +380,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -408,7 +408,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="glutils_8h.html#a2fdf715dd3e9e0c78f2cdd204839b4f0">glutils_cache_t</a>* glutils_cache_new </td>
+          <td class="memname">glutils_cache_t* glutils_cache_new </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>cap_bytes</em></td><td>)</td>
@@ -608,13 +608,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -716,7 +716,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -764,7 +764,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a>* glutils_nl_alloc_2D </td>
+          <td class="memname">glutils_nl_t* glutils_nl_alloc_2D </td>
           <td>(</td>
           <td class="paramtype">const vec2 *&#160;</td>
           <td class="paramname"><em>pts</em>, </td>
@@ -794,7 +794,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a>* glutils_nl_alloc_3D </td>
+          <td class="memname">glutils_nl_t* glutils_nl_alloc_3D </td>
           <td>(</td>
           <td class="paramtype">const vec3 *&#160;</td>
           <td class="paramname"><em>pts</em>, </td>
@@ -826,7 +826,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void glutils_nl_draw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a> *&#160;</td>
+          <td class="paramtype">glutils_nl_t *&#160;</td>
           <td class="paramname"><em>nl</em>, </td>
         </tr>
         <tr>
@@ -862,7 +862,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void glutils_nl_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="glutils_8h.html#ae99e0de3bc4dc649735a5ac2eeea67db">glutils_nl_t</a> *&#160;</td>
+          <td class="paramtype">glutils_nl_t *&#160;</td>
           <td class="paramname"><em>nl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1302,13 +1302,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -1362,7 +1362,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="geom_8h.html#ac96c6204fe282e82b971cb81d642cb1e">vect2_t</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="structvect2__t.html">vect2_t</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -1447,7 +1447,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> allocs</td>
+          <td class="memname">avl_tree_t allocs</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">dr.h File Reference</div>  </div>
@@ -133,7 +132,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdr__s.html">dr_s</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdr__s.html">dr_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -177,68 +176,63 @@ Macros</h2></td></tr>
 <tr class="memitem:a1afdbae095a5f917401218d6c640794c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1afdbae095a5f917401218d6c640794c">dr_setbytes</a>(__dr,  __data,  __off,  __num)&#160;&#160;&#160;	<a class="el" href="dr_8c.html#a0e721e7fbe8eba94d53827ad0e2b3914">dr_setbytes_impl</a>((__dr), <a class="el" href="dr_8h.html#a1d3ef7a3202a0936fda55be84ff6fc9f">DR_DEBUG</a>(#__dr), (__data), (__off), (__num))</td></tr>
 <tr class="separator:a1afdbae095a5f917401218d6c640794c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a8a2ea943910564523a8d97f8399b3056"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdr__s.html">dr_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a></td></tr>
-<tr class="separator:a8a2ea943910564523a8d97f8399b3056"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1717e39133a88c1b3dd2608feb114170"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1717e39133a88c1b3dd2608feb114170">dr_find</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(2)</td></tr>
+<tr class="memitem:a1717e39133a88c1b3dd2608feb114170"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1717e39133a88c1b3dd2608feb114170">dr_find</a> (dr_t *dr, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(2)</td></tr>
 <tr class="separator:a1717e39133a88c1b3dd2608feb114170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e1ad37461ad80028c71fadfce86fd87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a7e1ad37461ad80028c71fadfce86fd87">dr_writable</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr)</td></tr>
+<tr class="memitem:a7e1ad37461ad80028c71fadfce86fd87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a7e1ad37461ad80028c71fadfce86fd87">dr_writable</a> (dr_t *dr)</td></tr>
 <tr class="separator:a7e1ad37461ad80028c71fadfce86fd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8b151718da0489bb864a702b397ee10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ac8b151718da0489bb864a702b397ee10">dr_geti_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:ac8b151718da0489bb864a702b397ee10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ac8b151718da0489bb864a702b397ee10">dr_geti_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:ac8b151718da0489bb864a702b397ee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28d21656dee695ef4e6aae9bea6fd059"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a28d21656dee695ef4e6aae9bea6fd059">dr_seti_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, int i) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a28d21656dee695ef4e6aae9bea6fd059"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a28d21656dee695ef4e6aae9bea6fd059">dr_seti_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, int i) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a28d21656dee695ef4e6aae9bea6fd059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5d22e9a9f508eccaa70e2c9beb6569b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ac5d22e9a9f508eccaa70e2c9beb6569b">dr_getf_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:ac5d22e9a9f508eccaa70e2c9beb6569b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ac5d22e9a9f508eccaa70e2c9beb6569b">dr_getf_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:ac5d22e9a9f508eccaa70e2c9beb6569b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3ac7753f46aedd1c0d4f4d074b68e9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#aa3ac7753f46aedd1c0d4f4d074b68e9a">dr_setf_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, double f) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:aa3ac7753f46aedd1c0d4f4d074b68e9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#aa3ac7753f46aedd1c0d4f4d074b68e9a">dr_setf_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, double f) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:aa3ac7753f46aedd1c0d4f4d074b68e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e5b7ca526c94b2e19b6325e715dea0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a0e5b7ca526c94b2e19b6325e715dea0f">dr_getvi_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, int *i, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a0e5b7ca526c94b2e19b6325e715dea0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a0e5b7ca526c94b2e19b6325e715dea0f">dr_getvi_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, int *i, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a0e5b7ca526c94b2e19b6325e715dea0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18c5030bd0ed1d1ffea224c2a45d1164"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a18c5030bd0ed1d1ffea224c2a45d1164">dr_setvi_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, int *i, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a18c5030bd0ed1d1ffea224c2a45d1164"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a18c5030bd0ed1d1ffea224c2a45d1164">dr_setvi_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, int *i, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a18c5030bd0ed1d1ffea224c2a45d1164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6a489da3f4ec7aec1f68b154879f96c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ad6a489da3f4ec7aec1f68b154879f96c">dr_getvf_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, double *df, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:ad6a489da3f4ec7aec1f68b154879f96c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ad6a489da3f4ec7aec1f68b154879f96c">dr_getvf_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, double *df, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:ad6a489da3f4ec7aec1f68b154879f96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26e3210a30cbcaa7d21b4a7f0e0f5636"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a26e3210a30cbcaa7d21b4a7f0e0f5636">dr_setvf_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, double *df, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a26e3210a30cbcaa7d21b4a7f0e0f5636"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a26e3210a30cbcaa7d21b4a7f0e0f5636">dr_setvf_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, double *df, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a26e3210a30cbcaa7d21b4a7f0e0f5636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c0f050e623bdc908d1da9ac5519158"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a83c0f050e623bdc908d1da9ac5519158">dr_getvf32_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, float *ff, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a83c0f050e623bdc908d1da9ac5519158"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a83c0f050e623bdc908d1da9ac5519158">dr_getvf32_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, float *ff, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a83c0f050e623bdc908d1da9ac5519158"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad71194d90bbda711fabcfa14d1d1dac3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ad71194d90bbda711fabcfa14d1d1dac3">dr_setvf32_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, float *ff, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:ad71194d90bbda711fabcfa14d1d1dac3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#ad71194d90bbda711fabcfa14d1d1dac3">dr_setvf32_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, float *ff, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:ad71194d90bbda711fabcfa14d1d1dac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af41f5129d4e595676f3a24070786a73c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#af41f5129d4e595676f3a24070786a73c">dr_gets_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, char *str, size_t <a class="el" href="jsmn__path_8h.html#a84e1e77711f4f73c63954f1030696003">cap</a>) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:af41f5129d4e595676f3a24070786a73c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#af41f5129d4e595676f3a24070786a73c">dr_gets_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, char *str, size_t cap) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:af41f5129d4e595676f3a24070786a73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ee633bb3f90cbeb391293ea920776a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a0ee633bb3f90cbeb391293ea920776a2">dr_sets_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, char *str) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a0ee633bb3f90cbeb391293ea920776a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a0ee633bb3f90cbeb391293ea920776a2">dr_sets_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, char *str) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a0ee633bb3f90cbeb391293ea920776a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7940bb3bd378ff07eb6ca8e86e21218f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a7940bb3bd378ff07eb6ca8e86e21218f">dr_getbytes_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, void *data, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:a7940bb3bd378ff07eb6ca8e86e21218f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a7940bb3bd378ff07eb6ca8e86e21218f">dr_getbytes_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, void *data, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:a7940bb3bd378ff07eb6ca8e86e21218f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af52657ebf504dd0ac3529a86e10168d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#af52657ebf504dd0ac3529a86e10168d2">dr_setbytes_impl</a> (const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, void *data, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
+<tr class="memitem:af52657ebf504dd0ac3529a86e10168d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#af52657ebf504dd0ac3529a86e10168d2">dr_setbytes_impl</a> (const dr_t *dr, <a class="el" href="dr_8h.html#a156bb402b03c75ba2a0d112141b15e6d">DR_DEBUG_VARS</a>, void *data, unsigned off, unsigned num) <a class="el" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">HOT_ATTR</a></td></tr>
 <tr class="separator:af52657ebf504dd0ac3529a86e10168d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d82151805cbab7ab4a8041f81c4be91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1d82151805cbab7ab4a8041f81c4be91">dr_create_i</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, int *value, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(4)</td></tr>
+<tr class="memitem:a1d82151805cbab7ab4a8041f81c4be91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1d82151805cbab7ab4a8041f81c4be91">dr_create_i</a> (dr_t *dr, int *value, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(4)</td></tr>
 <tr class="separator:a1d82151805cbab7ab4a8041f81c4be91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1acb67b2329df324c3cfdc8cc54a6c0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1acb67b2329df324c3cfdc8cc54a6c0b">dr_create_f</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, float *value, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(4)</td></tr>
+<tr class="memitem:a1acb67b2329df324c3cfdc8cc54a6c0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1acb67b2329df324c3cfdc8cc54a6c0b">dr_create_f</a> (dr_t *dr, float *value, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(4)</td></tr>
 <tr class="separator:a1acb67b2329df324c3cfdc8cc54a6c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c41b856c2a4dcd82760542a824febf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1c41b856c2a4dcd82760542a824febf9">dr_create_f64</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, double *value, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(4)</td></tr>
+<tr class="memitem:a1c41b856c2a4dcd82760542a824febf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1c41b856c2a4dcd82760542a824febf9">dr_create_f64</a> (dr_t *dr, double *value, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(4)</td></tr>
 <tr class="separator:a1c41b856c2a4dcd82760542a824febf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250d95ffa3162953260274cc857d415a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a250d95ffa3162953260274cc857d415a">dr_create_vi</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, int *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:a250d95ffa3162953260274cc857d415a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a250d95ffa3162953260274cc857d415a">dr_create_vi</a> (dr_t *dr, int *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:a250d95ffa3162953260274cc857d415a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64de85460ed040562c5c46b39fca5f79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a64de85460ed040562c5c46b39fca5f79">dr_create_vf</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, float *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:a64de85460ed040562c5c46b39fca5f79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a64de85460ed040562c5c46b39fca5f79">dr_create_vf</a> (dr_t *dr, float *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:a64de85460ed040562c5c46b39fca5f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6abde0ed35b315d05d0f5b3abdce2d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a6abde0ed35b315d05d0f5b3abdce2d5e">dr_create_vf64</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, double *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:a6abde0ed35b315d05d0f5b3abdce2d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a6abde0ed35b315d05d0f5b3abdce2d5e">dr_create_vf64</a> (dr_t *dr, double *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:a6abde0ed35b315d05d0f5b3abdce2d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa56225e0032e68f3a905efb55d9334c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#aaa56225e0032e68f3a905efb55d9334c">dr_create_vi_autoscalar</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, int *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:aaa56225e0032e68f3a905efb55d9334c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#aaa56225e0032e68f3a905efb55d9334c">dr_create_vi_autoscalar</a> (dr_t *dr, int *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:aaa56225e0032e68f3a905efb55d9334c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1666cf43c13192c4af331088b35ccb9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1666cf43c13192c4af331088b35ccb9a">dr_create_vf_autoscalar</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, float *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:a1666cf43c13192c4af331088b35ccb9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a1666cf43c13192c4af331088b35ccb9a">dr_create_vf_autoscalar</a> (dr_t *dr, float *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:a1666cf43c13192c4af331088b35ccb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa95355b8ca0a72bbdab4a0feefd6904e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#aa95355b8ca0a72bbdab4a0feefd6904e">dr_create_vf64_autoscalar</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, double *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:aa95355b8ca0a72bbdab4a0feefd6904e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#aa95355b8ca0a72bbdab4a0feefd6904e">dr_create_vf64_autoscalar</a> (dr_t *dr, double *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:aa95355b8ca0a72bbdab4a0feefd6904e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5933870178449d0c61add714be4cfd40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a5933870178449d0c61add714be4cfd40">dr_create_b</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, void *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="jsmn__path_8h.html#a6ed912ebe5cfb651d3a7afe62f6fb6af">PRINTF_ATTR</a>(5)</td></tr>
+<tr class="memitem:a5933870178449d0c61add714be4cfd40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a5933870178449d0c61add714be4cfd40">dr_create_b</a> (dr_t *dr, void *value, size_t n, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> writable, <a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(5)</td></tr>
 <tr class="separator:a5933870178449d0c61add714be4cfd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21d2d54a2f82efc2130996484e14b9ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a21d2d54a2f82efc2130996484e14b9ad">dr_array_set_stride</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr, size_t stride)</td></tr>
+<tr class="memitem:a21d2d54a2f82efc2130996484e14b9ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a21d2d54a2f82efc2130996484e14b9ad">dr_array_set_stride</a> (dr_t *dr, size_t stride)</td></tr>
 <tr class="separator:a21d2d54a2f82efc2130996484e14b9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a1d2ad6add912b80109abe12615777d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a7a1d2ad6add912b80109abe12615777d">dr_delete</a> (<a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *dr)</td></tr>
+<tr class="memitem:a7a1d2ad6add912b80109abe12615777d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dr_8h.html#a7a1d2ad6add912b80109abe12615777d">dr_delete</a> (dr_t *dr)</td></tr>
 <tr class="separator:a7a1d2ad6add912b80109abe12615777d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -855,23 +849,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a8a2ea943910564523a8d97f8399b3056"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a2ea943910564523a8d97f8399b3056">&#9670;&nbsp;</a></span>dr_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structdr__s.html">dr_s</a> <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="dr_8h_source.html#l00001">1</a> of file <a class="el" href="dr_8h_source.html">dr.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a21d2d54a2f82efc2130996484e14b9ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21d2d54a2f82efc2130996484e14b9ad">&#9670;&nbsp;</a></span>dr_array_set_stride()</h2>
@@ -882,7 +859,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_array_set_stride </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -912,7 +889,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_b </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -964,7 +941,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_f </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1010,7 +987,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_f64 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1056,7 +1033,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_i </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1102,7 +1079,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_vf </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1154,7 +1131,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_vf64 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1206,7 +1183,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_vf64_autoscalar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1258,7 +1235,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_vf_autoscalar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1310,7 +1287,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_vi </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1362,7 +1339,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_create_vi_autoscalar </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1414,7 +1391,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_delete </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1434,7 +1411,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> dr_find </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1468,7 +1445,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int dr_getbytes_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1516,7 +1493,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double dr_getf_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1546,7 +1523,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int dr_geti_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1576,7 +1553,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int dr_gets_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1618,7 +1595,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int dr_getvf32_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1666,7 +1643,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int dr_getvf_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1714,7 +1691,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> int dr_getvi_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1762,7 +1739,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_setbytes_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1810,7 +1787,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_setf_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1846,7 +1823,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_seti_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1882,7 +1859,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_sets_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1918,7 +1895,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_setvf32_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -1966,7 +1943,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_setvf_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -2014,7 +1991,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void dr_setvi_impl </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">const dr_t *&#160;</td>
           <td class="paramname"><em>dr</em>, </td>
         </tr>
         <tr>
@@ -2062,7 +2039,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> dr_writable </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dr_8h.html#a8a2ea943910564523a8d97f8399b3056">dr_t</a> *&#160;</td>
+          <td class="paramtype">dr_t *&#160;</td>
           <td class="paramname"><em>dr</em></td><td>)</td>
           <td></td>
         </tr>

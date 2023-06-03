@@ -70,7 +70,7 @@ $(function() {
 <div class="title">sysmacros.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="sysmacros_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -102,23 +102,23 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a7e5a6a543990dd67c2d58a87949beafc">   39</a></span>&#160;<span class="preprocessor">#define NO_ACF_TYPE     0</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a977ff98b783d79a69f6a0b3fdfe9fe79">   40</a></span>&#160;<span class="preprocessor">#define FF_A320_ACF_TYPE    1</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define NO_ACF_TYPE     0</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define FF_A320_ACF_TYPE    1</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#if IBM</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define DIRSEP      &#39;\\&#39;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define DIRSEP_S    &quot;\\&quot;</span>    <span class="comment">/* DIRSEP as a string */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a2c89f3449c0cc91f289ecbef54188d8d">   46</a></span>&#160;<span class="preprocessor">#define DIRSEP      &#39;/&#39;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a997fea999c4078f59e9b107acdac4e15">   47</a></span>&#160;<span class="preprocessor">#define DIRSEP_S    &quot;/&quot;</span> <span class="comment">/* DIRSEP as a string */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define DIRSEP      &#39;/&#39;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define DIRSEP_S    &quot;/&quot;</span> <span class="comment">/* DIRSEP as a string */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifndef MAX_PATH</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ab99ded389af74001a6298fc9e44e74e5">   49</a></span>&#160;<span class="preprocessor">#define MAX_PATH    512</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define MAX_PATH    512</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
@@ -144,20 +144,20 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !__GNUC__ &amp;&amp; !__clang__ */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">   75</a></span>&#160;<span class="preprocessor">#define PRINTF_ATTR(x)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a53a492b42745f60852e0aa7fa34d44c8">   76</a></span>&#160;<span class="preprocessor">#define PRINTF_ATTR2(x,y)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a40677e61d4787736e73ffa102fb6b523">   77</a></span>&#160;<span class="preprocessor">#define SENTINEL_ATTR</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a8c12ebd9b7231c2c0fec4873e9ad371e">   78</a></span>&#160;<span class="preprocessor">#define HOT_ATTR</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a951cb5700a87b89db16ce2570ed2707d">   79</a></span>&#160;<span class="preprocessor">#define PURE_ATTR</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#accd44ce28930f6408667ccee9d92e72a">   80</a></span>&#160;<span class="preprocessor">#define ALWAYS_INLINE_ATTR</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define PRINTF_ATTR(x)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define PRINTF_ATTR2(x,y)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define SENTINEL_ATTR</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define HOT_ATTR</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define PURE_ATTR</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define ALWAYS_INLINE_ATTR</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#adb756a8af0dda4f41c9604dd30f2597d">   82</a></span>&#160;<span class="preprocessor">#define COND_LIKELY(x)      x</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#aef232e4297e36682c0d19cbc8d6fc5a5">   83</a></span>&#160;<span class="preprocessor">#define COND_UNLIKELY(x)    x</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define COND_LIKELY(x)      x</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define COND_UNLIKELY(x)    x</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define ALIGN_ATTR(x)       __declspec(align(x))</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a45141a54c4eacabd3faecf3d3140c92a">   88</a></span>&#160;<span class="preprocessor">#define ALIGN_ATTR(x)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define ALIGN_ATTR(x)</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#if _MSC_VER &gt;= 1400</span></div>
@@ -169,19 +169,19 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#  define   PRINTF_FORMAT(f)    __format_string f</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"># endif </span><span class="comment">/* FORMAT_STRING */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* _MSC_VER &lt; 1400 */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">  100</a></span>&#160;<span class="preprocessor"># define    PRINTF_FORMAT(f)    f</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"># define    PRINTF_FORMAT(f)    f</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifndef BSWAP32</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a5b9670220af6a7b1f964e53887255cab">  104</a></span>&#160;<span class="preprocessor">#define BSWAP16(x)  \</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define BSWAP16(x)  \</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">    ((((x) &amp; 0xff00u) &gt;&gt; 8) | \</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">    (((x) &amp; 0x00ffu) &lt;&lt; 8))</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a10a33c6d9f0f240b071460be8f387d9c">  107</a></span>&#160;<span class="preprocessor">#define BSWAP32(x)  \</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#define BSWAP32(x)  \</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">    ((((x) &amp; 0xff000000u) &gt;&gt; 24) | \</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">    (((x) &amp; 0x00ff0000u) &gt;&gt; 8) | \</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">    (((x) &amp; 0x0000ff00u) &lt;&lt; 8) | \</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">    (((x) &amp; 0x000000ffu) &lt;&lt; 24))</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#abfe90b65dc156977f14c9da5b4c46a94">  112</a></span>&#160;<span class="preprocessor">#define BSWAP64(x)  \</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#define BSWAP64(x)  \</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">    ((((x) &amp; 0x00000000000000ffllu) &gt;&gt; 56) | \</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">    (((x) &amp; 0x000000000000ff00llu) &lt;&lt; 40) | \</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">    (((x) &amp; 0x0000000000ff0000llu) &lt;&lt; 24) | \</span></div>
@@ -194,17 +194,17 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !__GNUC__ &amp;&amp; !__clang__ */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#if __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a71926c24ce776dacf3a59a880211dc37">  125</a></span>&#160;<span class="preprocessor">#define BE64(x) (x)</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ae88eb35e4ef96c0c0f59871c8fce75b8">  126</a></span>&#160;<span class="preprocessor">#define BE32(x) (x)</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a34c0ccbaef341c224a18eb4dcaf44407">  127</a></span>&#160;<span class="preprocessor">#define BE16(x) (x)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#define BE64(x) (x)</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#define BE32(x) (x)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#define BE16(x) (x)</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* __BYTE_ORDER__ != __ORDER_BIG_ENDIAN__ */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#define BE64(x) BSWAP64(x)</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#define BE32(x) BSWAP32(x)</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#define BE16(x) BSWAP16(x)</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* __BYTE_ORDER__ != __ORDER_BIG_ENDIAN__ */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ad136e4f3c5ca43df199c1230dbbcafa7">  134</a></span>&#160;<span class="preprocessor">#define DESTROY(x)  do { free(x); (x) = NULL; } while (0)</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a3914f696fbf77d3fc0f53842bdaa9595">  135</a></span>&#160;<span class="preprocessor">#define DESTROY_OP(var, zero_val, destroy_op) \</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#define DESTROY(x)  do { free(x); (x) = NULL; } while (0)</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#define DESTROY_OP(var, zero_val, destroy_op) \</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">        if ((var) != (zero_val)) { \</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">            destroy_op; \</span></div>
@@ -215,23 +215,23 @@ $(function() {
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#ifdef  WINDOWS</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#define PATHSEP &quot;\\&quot;</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#add147d27dd39c3119dfd2d2e7868a66b">  146</a></span>&#160;<span class="preprocessor">#define PATHSEP &quot;/&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#define PATHSEP &quot;/&quot;</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/* Minimum/Maximum allowable elevation AMSL of anything */</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#aff97717be8e9afc7b5d9396cb61fe602">  150</a></span>&#160;<span class="preprocessor">#define MIN_ELEV    -2000.0</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a41c81a276a1d76aa6b5092546fc3ad87">  151</a></span>&#160;<span class="preprocessor">#define MAX_ELEV    30000.0</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#define MIN_ELEV    -2000.0</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#define MAX_ELEV    30000.0</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/* Minimum/Maximum allowable altitude AMSL of anything */</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ac4af596782111ed976bcf01f1f1027d3">  154</a></span>&#160;<span class="preprocessor">#define MIN_ALT     -2000.0</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a93c97efc6e6ebd64ef14fefb0bbd9226">  155</a></span>&#160;<span class="preprocessor">#define MAX_ALT     100000.0</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#define MIN_ALT     -2000.0</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#define MAX_ALT     100000.0</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">/* Maximum valid speed of anything */</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#afc25dfb4fa68f1782205513d3c2ff739">  158</a></span>&#160;<span class="preprocessor">#define MAX_SPD     1000.0</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#define MAX_SPD     1000.0</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">/* Minimum/Maximum allowable arc radius on any procedure */</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a9ba64ec3aecd176155adee073873c772">  161</a></span>&#160;<span class="preprocessor">#define MIN_ARC_RADIUS  0.1</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ac3998693ae72bb508949ce8ae637171c">  162</a></span>&#160;<span class="preprocessor">#define MAX_ARC_RADIUS  100.0</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#define MIN_ARC_RADIUS  0.1</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#define MAX_ARC_RADIUS  100.0</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"> * Compile-time assertion. The condition &#39;x&#39; must be constant.</span></div>
@@ -245,7 +245,7 @@ $(function() {
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#define NOT_TYPE_ASSERT(x, type) \</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">    CTASSERT(_Generic((x), type: 0, default: 1) != 0)</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* __STDC_VERSION__ &lt; 201112L */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a8b6974bf2f546d5209be6e24da6f4cbe">  176</a></span>&#160;<span class="preprocessor">#define TYPE_ASSERT(x, type)</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#define TYPE_ASSERT(x, type)</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#if defined(__GNUC__) || defined(__clang__)</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#define CTASSERT(x)     _CTASSERT(x, __LINE__)</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#define _CTASSERT(x, y)     __CTASSERT(x, y)</span></div>
@@ -253,7 +253,7 @@ $(function() {
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">    typedef char __compile_time_assertion__ ## y [(x) ? 1 : -1] \</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">        __attribute__((unused))</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !defined(__GNUC__) &amp;&amp; !defined(__clang__) */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a8821cdb56135e0c0b55669242856d15a">  184</a></span>&#160;<span class="preprocessor">#define CTASSERT(x)</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#define CTASSERT(x)</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !defined(__GNUC__) &amp;&amp; !defined(__clang__) */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* __STDC_VERSION__ &lt; 201112L */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
@@ -284,13 +284,13 @@ $(function() {
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#ifndef MIN</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a74e75242132eaabbc1c512488a135926">  215</a></span>&#160;<span class="preprocessor">#define MIN(x, y)   ((x) &lt; (y) ? (x) : (y))</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#define MIN(x, y)   ((x) &lt; (y) ? (x) : (y))</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#ifndef MAX</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">  218</a></span>&#160;<span class="preprocessor">#define MAX(x, y)   ((x) &gt; (y) ? (x) : (y))</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#define MAX(x, y)   ((x) &gt; (y) ? (x) : (y))</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#ifndef AVG</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ae0ff23ffbb628acc5356e5e5a8902ad3">  221</a></span>&#160;<span class="preprocessor">#define AVG(x, y)   (((x) + (y)) / 2.0)</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#define AVG(x, y)   (((x) + (y)) / 2.0)</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"> * Provides a gradual method of integrating an old value until it approaches</span></div>
@@ -301,7 +301,7 @@ $(function() {
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment"> * &#39;2&#39; and d_t in seconds makes old_val approach new_val with a ramp that</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"> * is approximately 2 seconds long).</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ab5475e0ad4d465d50f25327a6a1b8c15">  232</a></span>&#160;<span class="preprocessor">#define FILTER_IN(old_val, new_val, d_t, lag) \</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#define FILTER_IN(old_val, new_val, d_t, lag) \</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">        __typeof__(old_val) o = (old_val); \</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">        __typeof__(new_val) n = (new_val); \</span></div>
@@ -318,7 +318,7 @@ $(function() {
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"> * it is set to new_val directly (without gradual filtering). Otherwise this</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> * simply calls the FILTER_IN macro as normal.</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a68bd92315a9c90b4caac50c9ed9b5f08">  249</a></span>&#160;<span class="preprocessor">#define FILTER_IN_NAN(old_val, new_val, d_t, lag) \</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#define FILTER_IN_NAN(old_val, new_val, d_t, lag) \</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">        __typeof__(old_val) o = (old_val); \</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor">        __typeof__(new_val) n = (new_val); \</span></div>
@@ -334,7 +334,7 @@ $(function() {
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment"> * Linearly interpolates old_val until it is equal to tgt. The current</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment"> * time delta is d_t (in seconds). The interpolation speed is step/second.</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#a24f4b22d2abbe923cee183ad9e0b60a2">  265</a></span>&#160;<span class="preprocessor">#define FILTER_IN_LIN(old_val, tgt, d_t, step) \</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">#define FILTER_IN_LIN(old_val, tgt, d_t, step) \</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">        double o = (old_val); \</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">        double t = (tgt); \</span></div>
@@ -351,15 +351,14 @@ $(function() {
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">            (old_val) += s; \</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">    } while (0)</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#af183d21faab880ce97397b6b984c7cf5">  282</a></span>&#160;<span class="preprocessor">#define SCANF_STR_AUTOLEN_IMPL(_str_)   #_str_</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="sysmacros_8h.html#ab5b72abdc80cd393892329a16599fb8c">  283</a></span>&#160;<span class="preprocessor">#define SCANF_STR_AUTOLEN(_str_)    SCANF_STR_AUTOLEN_IMPL(_str_)</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#define SCANF_STR_AUTOLEN_IMPL(_str_)   #_str_</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#define SCANF_STR_AUTOLEN(_str_)    SCANF_STR_AUTOLEN_IMPL(_str_)</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_SYSMACROS_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

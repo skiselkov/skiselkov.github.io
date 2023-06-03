@@ -70,7 +70,7 @@ $(function() {
 <div class="title">delay_line.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="delay__line_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -103,14 +103,14 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">core.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crc64_8h.html">crc64.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="time_8h.html">time.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;crc64.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;time.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227">   41</a></span>&#160;<span class="keyword">typedef</span> uint64_t (*<a class="code" href="delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227">delay_line_time_func_t</a>)(<span class="keywordtype">void</span> *userinfo);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">typedef</span> uint64_t (*delay_line_time_func_t)(<span class="keywordtype">void</span> *userinfo);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * Implements a generic variable that changes after a short delay.</span></div>
@@ -121,27 +121,27 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structdelay__line__t.html">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">union </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a35a9b0adab9f7ddb672b720854e419be">   52</a></span>&#160;        int64_t     <a class="code" href="structdelay__line__t.html#a35a9b0adab9f7ddb672b720854e419be">i64</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a91ee3b6e2425e78feef03fb5c69d63e5">   53</a></span>&#160;        uint64_t    <a class="code" href="structdelay__line__t.html#a91ee3b6e2425e78feef03fb5c69d63e5">u64</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a4a511caf994d6ffbbd9180293c53fd38">   54</a></span>&#160;        <span class="keywordtype">double</span>      <a class="code" href="structdelay__line__t.html#a4a511caf994d6ffbbd9180293c53fd38">f64</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        int64_t     i64;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        uint64_t    u64;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">double</span>      f64;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">union </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#aaf9fd2baa5cdb64b6ac9a4f8ac6a3cb7">   57</a></span>&#160;        int64_t     <a class="code" href="structdelay__line__t.html#aaf9fd2baa5cdb64b6ac9a4f8ac6a3cb7">i64_new</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#ab3fff36b65fbd492108e0d3aba9d3cab">   58</a></span>&#160;        uint64_t    <a class="code" href="structdelay__line__t.html#ab3fff36b65fbd492108e0d3aba9d3cab">u64_new</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a98e246d961e08238e9b167a982d48fba">   59</a></span>&#160;        <span class="keywordtype">double</span>      <a class="code" href="structdelay__line__t.html#a98e246d961e08238e9b167a982d48fba">f64_new</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        int64_t     i64_new;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        uint64_t    u64_new;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">double</span>      f64_new;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a5ae23c8241b065ba943756e05524f6cf">   61</a></span>&#160;    uint64_t        <a class="code" href="structdelay__line__t.html#a5ae23c8241b065ba943756e05524f6cf">changed_t</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">   62</a></span>&#160;    uint64_t        <a class="code" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_us</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">   63</a></span>&#160;    uint64_t        <a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">   64</a></span>&#160;    <span class="keywordtype">double</span>          <a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint64_t        changed_t;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint64_t        delay_us;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint64_t        delay_base_us;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">double</span>          delay_rand_fract;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifndef _MSC_VER</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a2b14befe0fdea4288fd53ac8113ea088">   66</a></span>&#160;    <span class="keywordtype">int</span>         __serialize_marker[0];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span>         __serialize_marker[0];</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">/* MSVC really hates a zero-length array */</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span>         __serialize_marker[1];</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#afa33267ac21b8b0e9c934acffcb37050">   71</a></span>&#160;    <a class="code" href="delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227">delay_line_time_func_t</a>  <a class="code" href="structdelay__line__t.html#afa33267ac21b8b0e9c934acffcb37050">time_func</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structdelay__line__t.html#a960773e4d2ed057d547dd19af4dcb9e4">   72</a></span>&#160;    <span class="keywordtype">void</span>            *<a class="code" href="structdelay__line__t.html#a960773e4d2ed057d547dd19af4dcb9e4">time_func_userinfo</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    delay_line_time_func_t  time_func;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span>            *time_func_userinfo;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <a class="code" href="structdelay__line__t.html">delay_line_t</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/*</span></div>
@@ -153,75 +153,75 @@ $(function() {
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;delay_line_init(<a class="code" href="structdelay__line__t.html">delay_line_t</a> *line, uint64_t delay_us)</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    memset(line, 0, <span class="keyword">sizeof</span> (*line));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_us</a> = delay_us;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a> = delay_us;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a> = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    line-&gt;delay_us = delay_us;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    line-&gt;delay_base_us = delay_us;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    line-&gt;delay_rand_fract = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;delay_line_init_time_func(<a class="code" href="structdelay__line__t.html">delay_line_t</a> *line, uint64_t delay_us,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227">delay_line_time_func_t</a> time_func, <span class="keywordtype">void</span> *time_func_userinfo)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    delay_line_time_func_t time_func, <span class="keywordtype">void</span> *time_func_userinfo)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    memset(line, 0, <span class="keyword">sizeof</span> (*line));</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_us</a> = delay_us;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a> = delay_us;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a> = 0;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#afa33267ac21b8b0e9c934acffcb37050">time_func</a> = time_func;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#a960773e4d2ed057d547dd19af4dcb9e4">time_func_userinfo</a> = time_func_userinfo;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    line-&gt;delay_us = delay_us;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    line-&gt;delay_base_us = delay_us;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    line-&gt;delay_rand_fract = 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    line-&gt;time_func = time_func;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    line-&gt;time_func_userinfo = time_func_userinfo;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;delay_line_refresh_delay(<a class="code" href="structdelay__line__t.html">delay_line_t</a> *line)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (line-&gt;<a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a> == 0) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        line-&gt;<a class="code" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_us</a> = line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (line-&gt;delay_rand_fract == 0) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        line-&gt;delay_us = line-&gt;delay_base_us;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        uint64_t rand_us = line-&gt;<a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a> * line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        line-&gt;<a class="code" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_us</a> = line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a> +</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            (uint64_t)((<a class="code" href="crc64_8c.html#ac6fd60a54300417cd2cdbf1c8d1c7ffa">crc64_rand_fract</a>() - 0.5) * rand_us);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        uint64_t rand_us = line-&gt;delay_rand_fract * line-&gt;delay_base_us;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        line-&gt;delay_us = line-&gt;delay_base_us +</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            (uint64_t)((crc64_rand_fract() - 0.5) * rand_us);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;delay_line_set_delay(<a class="code" href="structdelay__line__t.html">delay_line_t</a> *line, uint64_t delay_us)</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a> = delay_us;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    line-&gt;delay_base_us = delay_us;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    delay_line_refresh_delay(line);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;delay_line_get_delay(<span class="keyword">const</span> <a class="code" href="structdelay__line__t.html">delay_line_t</a> *line)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (line-&gt;<a class="code" href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_base_us</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (line-&gt;delay_base_us);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;delay_line_get_delay_act(<span class="keyword">const</span> <a class="code" href="structdelay__line__t.html">delay_line_t</a> *line)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> (line-&gt;<a class="code" href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_us</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> (line-&gt;delay_us);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;delay_line_set_rand(<a class="code" href="structdelay__line__t.html">delay_line_t</a> *line, <span class="keywordtype">double</span> rand_fract)</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(rand_fract, &gt;=, 0);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(rand_fract, &lt;=, 1);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    line-&gt;<a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a> = rand_fract;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    line-&gt;delay_rand_fract = rand_fract;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    delay_line_refresh_delay(line);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;delay_line_get_rand(<span class="keyword">const</span> <a class="code" href="structdelay__line__t.html">delay_line_t</a> *line)</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> (line-&gt;<a class="code" href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_rand_fract</a>);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> (line-&gt;delay_rand_fract);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">/*</span></div>
@@ -233,7 +233,7 @@ $(function() {
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"> * keep returning the old value until `delay_us&#39; microseconds have</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"> * elapsed, after which they start returning the new value.</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="delay__line_8h.html#a010dc869eb88d2dfffd5c33b1f9597ee">  164</a></span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PULL(typename, abbrev_type) \</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PULL(typename, abbrev_type) \</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">static inline typename \</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">delay_line_pull_ ## abbrev_type(delay_line_t *line) \</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">{ \</span></div>
@@ -248,9 +248,9 @@ $(function() {
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">    } \</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">    return (line-&gt;abbrev_type); \</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<a class="code" href="delay__line_8h.html#a010dc869eb88d2dfffd5c33b1f9597ee">DEF_DELAY_LINE_PULL</a>(int64_t, i64)</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<a class="code" href="delay__line_8h.html#a010dc869eb88d2dfffd5c33b1f9597ee">DEF_DELAY_LINE_PULL</a>(uint64_t, u64)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<a class="code" href="delay__line_8h.html#a010dc869eb88d2dfffd5c33b1f9597ee">DEF_DELAY_LINE_PULL</a>(<span class="keywordtype">double</span>, f64)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;DEF_DELAY_LINE_PULL(int64_t, i64)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;DEF_DELAY_LINE_PULL(uint64_t, u64)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;DEF_DELAY_LINE_PULL(<span class="keywordtype">double</span>, f64)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> * Functions to peek at the old value in a delay line without ever</span></div>
@@ -261,16 +261,16 @@ $(function() {
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment"> *  delay_line_pull_u64 - peeks at the delay line as a uint64_t</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment"> *  delay_line_pull_f64 - peeks at the delay line as a double</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">  192</a></span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PEEK(typename, abbrev_type) \</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PEEK(typename, abbrev_type) \</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">static inline typename \</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">delay_line_peek_ ## abbrev_type(const delay_line_t *line) \</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">{ \</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">    ASSERT(line != NULL); \</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">    return (line-&gt;abbrev_type); \</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<a class="code" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a>(int64_t, i64)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<a class="code" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a>(uint64_t, u64)</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<a class="code" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a>(<span class="keywordtype">double</span>, f64)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;DEF_DELAY_LINE_PEEK(int64_t, i64)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;DEF_DELAY_LINE_PEEK(uint64_t, u64)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;DEF_DELAY_LINE_PEEK(<span class="keywordtype">double</span>, f64)</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment"> * Functions to peek at the new value in a delay line without ever</span></div>
@@ -281,9 +281,9 @@ $(function() {
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"> *  delay_line_pull_u64_new - peeks at the delay line as a uint64_t</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment"> *  delay_line_pull_f64_new - peeks at the delay line as a double</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<a class="code" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a>(int64_t, i64_new)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<a class="code" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a>(uint64_t, u64_new)</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<a class="code" href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a>(<span class="keywordtype">double</span>, f64_new)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;DEF_DELAY_LINE_PEEK(int64_t, i64_new)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;DEF_DELAY_LINE_PEEK(uint64_t, u64_new)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;DEF_DELAY_LINE_PEEK(<span class="keywordtype">double</span>, f64_new)</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"> * Functions that push a new value to a delay line:</span></div>
@@ -295,7 +295,7 @@ $(function() {
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"> * different from the current value of the delay line, the new value</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"> * will become the delay line&#39;s current value after `delay_us&#39; microsecs.</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="delay__line_8h.html#a26d08fbee71a3753592a74c5d27cf22d">  226</a></span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PUSH(typename, abbrev_type) \</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PUSH(typename, abbrev_type) \</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">static inline typename \</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">delay_line_push_ ## abbrev_type(delay_line_t *line, typename value) \</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">{ \</span></div>
@@ -311,9 +311,9 @@ $(function() {
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">    line-&gt;abbrev_type ## _new = value; \</span></div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">    return (delay_line_pull_ ## abbrev_type(line)); \</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<a class="code" href="delay__line_8h.html#a26d08fbee71a3753592a74c5d27cf22d">DEF_DELAY_LINE_PUSH</a>(int64_t, i64)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<a class="code" href="delay__line_8h.html#a26d08fbee71a3753592a74c5d27cf22d">DEF_DELAY_LINE_PUSH</a>(uint64_t, u64)</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<a class="code" href="delay__line_8h.html#a26d08fbee71a3753592a74c5d27cf22d">DEF_DELAY_LINE_PUSH</a>(<span class="keywordtype">double</span>, f64)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;DEF_DELAY_LINE_PUSH(int64_t, i64)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;DEF_DELAY_LINE_PUSH(uint64_t, u64)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;DEF_DELAY_LINE_PUSH(<span class="keywordtype">double</span>, f64)</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> * Functions that push a new value to a delay line immediately:</span></div>
@@ -324,7 +324,7 @@ $(function() {
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment"> * change the delay line immediately to the new value and return the</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"> * new value.</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="delay__line_8h.html#a941bb60c48827e4bd9cdd93483a10a8c">  255</a></span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PUSH_IMM(typename, abbrev_type) \</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#define DEF_DELAY_LINE_PUSH_IMM(typename, abbrev_type) \</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">static inline typename \</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">delay_line_push_imm_ ## abbrev_type(delay_line_t *line, typename value) \</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">{ \</span></div>
@@ -333,9 +333,9 @@ $(function() {
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">    line-&gt;abbrev_type ## _new = value; \</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">    return (line-&gt;abbrev_type); \</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<a class="code" href="delay__line_8h.html#a941bb60c48827e4bd9cdd93483a10a8c">DEF_DELAY_LINE_PUSH_IMM</a>(int64_t, i64)</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<a class="code" href="delay__line_8h.html#a941bb60c48827e4bd9cdd93483a10a8c">DEF_DELAY_LINE_PUSH_IMM</a>(uint64_t, u64)</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<a class="code" href="delay__line_8h.html#a941bb60c48827e4bd9cdd93483a10a8c">DEF_DELAY_LINE_PUSH_IMM</a>(<span class="keywordtype">double</span>, f64)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;DEF_DELAY_LINE_PUSH_IMM(int64_t, i64)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;DEF_DELAY_LINE_PUSH_IMM(uint64_t, u64)</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;DEF_DELAY_LINE_PUSH_IMM(<span class="keywordtype">double</span>, f64)</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment"> * Generics require at least C11.</span></div>
@@ -364,9 +364,9 @@ $(function() {
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">        uint64_t:       delay_line_push_imm_u64((line), (value)), \</span></div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">        default:        delay_line_push_imm_i64((line), (value)))</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* __STDC_VERSION__ &lt; 201112L */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="delay__line_8h.html#a67cb409cfc3cce1b17ababc587b2be83">  295</a></span>&#160;<span class="preprocessor">#define DELAY_LINE_PUSH(line, value) \</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#define DELAY_LINE_PUSH(line, value) \</span></div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">    DELAY_LINE_PUSH_macro_requires_C11_or_greater</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="delay__line_8h.html#a6acb91fd216c5d35c81c434cc2689e6a">  297</a></span>&#160;<span class="preprocessor">#define DELAY_LINE_PUSH_IMM(line, value) \</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">#define DELAY_LINE_PUSH_IMM(line, value) \</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">    DELAY_LINE_PUSH_IMM_macro_requires_C11_or_greater</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* __STDC_VERSION__ &lt; 201112L */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
@@ -380,10 +380,10 @@ $(function() {
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;delay_line_get_time_since_change(<span class="keyword">const</span> <a class="code" href="structdelay__line__t.html">delay_line_t</a> *line)</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    uint64_t now;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    now = (line-&gt;<a class="code" href="structdelay__line__t.html#afa33267ac21b8b0e9c934acffcb37050">time_func</a> != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> ?</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        line-&gt;<a class="code" href="structdelay__line__t.html#afa33267ac21b8b0e9c934acffcb37050">time_func</a>(line-&gt;<a class="code" href="structdelay__line__t.html#a960773e4d2ed057d547dd19af4dcb9e4">time_func_userinfo</a>) : microclock());</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> (now - line-&gt;<a class="code" href="structdelay__line__t.html#a5ae23c8241b065ba943756e05524f6cf">changed_t</a>);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    now = (line-&gt;time_func != NULL ?</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        line-&gt;time_func(line-&gt;time_func_userinfo) : microclock());</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> (now - line-&gt;changed_t);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
@@ -392,31 +392,10 @@ $(function() {
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_DELAY_LINE_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00112">assert.h:112</a></div></div>
-<div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00115">assert.h:115</a></div></div>
+<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00190">assert.h:190</a></div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
-<div class="ttc" id="acrc64_8c_html_ac6fd60a54300417cd2cdbf1c8d1c7ffa"><div class="ttname"><a href="crc64_8c.html#ac6fd60a54300417cd2cdbf1c8d1c7ffa">crc64_rand_fract</a></div><div class="ttdeci">double crc64_rand_fract(void)</div><div class="ttdef"><b>Definition:</b> <a href="crc64_8c_source.html#l00108">crc64.c:108</a></div></div>
-<div class="ttc" id="acrc64_8h_html"><div class="ttname"><a href="crc64_8h.html">crc64.h</a></div></div>
-<div class="ttc" id="adelay__line_8h_html_a010dc869eb88d2dfffd5c33b1f9597ee"><div class="ttname"><a href="delay__line_8h.html#a010dc869eb88d2dfffd5c33b1f9597ee">DEF_DELAY_LINE_PULL</a></div><div class="ttdeci">#define DEF_DELAY_LINE_PULL(typename, abbrev_type)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00164">delay_line.h:164</a></div></div>
-<div class="ttc" id="adelay__line_8h_html_a26d08fbee71a3753592a74c5d27cf22d"><div class="ttname"><a href="delay__line_8h.html#a26d08fbee71a3753592a74c5d27cf22d">DEF_DELAY_LINE_PUSH</a></div><div class="ttdeci">#define DEF_DELAY_LINE_PUSH(typename, abbrev_type)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00226">delay_line.h:226</a></div></div>
-<div class="ttc" id="adelay__line_8h_html_a54586d9dd755e38ff0675f1fa2b3e227"><div class="ttname"><a href="delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227">delay_line_time_func_t</a></div><div class="ttdeci">uint64_t(* delay_line_time_func_t)(void *userinfo)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00041">delay_line.h:41</a></div></div>
-<div class="ttc" id="adelay__line_8h_html_a941bb60c48827e4bd9cdd93483a10a8c"><div class="ttname"><a href="delay__line_8h.html#a941bb60c48827e4bd9cdd93483a10a8c">DEF_DELAY_LINE_PUSH_IMM</a></div><div class="ttdeci">#define DEF_DELAY_LINE_PUSH_IMM(typename, abbrev_type)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00255">delay_line.h:255</a></div></div>
-<div class="ttc" id="adelay__line_8h_html_aa1d8ec68e19f0e7241746e6dc914c6cd"><div class="ttname"><a href="delay__line_8h.html#aa1d8ec68e19f0e7241746e6dc914c6cd">DEF_DELAY_LINE_PEEK</a></div><div class="ttdeci">#define DEF_DELAY_LINE_PEEK(typename, abbrev_type)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00192">delay_line.h:192</a></div></div>
-<div class="ttc" id="alibc_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00047">libc.h:47</a></div></div>
 <div class="ttc" id="astructdelay__line__t_html"><div class="ttname"><a href="structdelay__line__t.html">delay_line_t</a></div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00050">delay_line.h:50</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a0f137bf3c635974425291b635fb5f99a"><div class="ttname"><a href="structdelay__line__t.html#a0f137bf3c635974425291b635fb5f99a">delay_line_t::delay_us</a></div><div class="ttdeci">uint64_t delay_us</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00062">delay_line.h:62</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a35a9b0adab9f7ddb672b720854e419be"><div class="ttname"><a href="structdelay__line__t.html#a35a9b0adab9f7ddb672b720854e419be">delay_line_t::i64</a></div><div class="ttdeci">int64_t i64</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00052">delay_line.h:52</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a4a511caf994d6ffbbd9180293c53fd38"><div class="ttname"><a href="structdelay__line__t.html#a4a511caf994d6ffbbd9180293c53fd38">delay_line_t::f64</a></div><div class="ttdeci">double f64</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00054">delay_line.h:54</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a5ae23c8241b065ba943756e05524f6cf"><div class="ttname"><a href="structdelay__line__t.html#a5ae23c8241b065ba943756e05524f6cf">delay_line_t::changed_t</a></div><div class="ttdeci">uint64_t changed_t</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00061">delay_line.h:61</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a91ee3b6e2425e78feef03fb5c69d63e5"><div class="ttname"><a href="structdelay__line__t.html#a91ee3b6e2425e78feef03fb5c69d63e5">delay_line_t::u64</a></div><div class="ttdeci">uint64_t u64</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00053">delay_line.h:53</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a960773e4d2ed057d547dd19af4dcb9e4"><div class="ttname"><a href="structdelay__line__t.html#a960773e4d2ed057d547dd19af4dcb9e4">delay_line_t::time_func_userinfo</a></div><div class="ttdeci">void * time_func_userinfo</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00072">delay_line.h:72</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_a98e246d961e08238e9b167a982d48fba"><div class="ttname"><a href="structdelay__line__t.html#a98e246d961e08238e9b167a982d48fba">delay_line_t::f64_new</a></div><div class="ttdeci">double f64_new</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00059">delay_line.h:59</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_aa0ec73b9d09441a5ce1821d5dca59bec"><div class="ttname"><a href="structdelay__line__t.html#aa0ec73b9d09441a5ce1821d5dca59bec">delay_line_t::delay_rand_fract</a></div><div class="ttdeci">double delay_rand_fract</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00064">delay_line.h:64</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_aaf9fd2baa5cdb64b6ac9a4f8ac6a3cb7"><div class="ttname"><a href="structdelay__line__t.html#aaf9fd2baa5cdb64b6ac9a4f8ac6a3cb7">delay_line_t::i64_new</a></div><div class="ttdeci">int64_t i64_new</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00057">delay_line.h:57</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_ab3fff36b65fbd492108e0d3aba9d3cab"><div class="ttname"><a href="structdelay__line__t.html#ab3fff36b65fbd492108e0d3aba9d3cab">delay_line_t::u64_new</a></div><div class="ttdeci">uint64_t u64_new</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00058">delay_line.h:58</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_ac8aa8ecfb71f62469412888e71740e54"><div class="ttname"><a href="structdelay__line__t.html#ac8aa8ecfb71f62469412888e71740e54">delay_line_t::delay_base_us</a></div><div class="ttdeci">uint64_t delay_base_us</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00063">delay_line.h:63</a></div></div>
-<div class="ttc" id="astructdelay__line__t_html_afa33267ac21b8b0e9c934acffcb37050"><div class="ttname"><a href="structdelay__line__t.html#afa33267ac21b8b0e9c934acffcb37050">delay_line_t::time_func</a></div><div class="ttdeci">delay_line_time_func_t time_func</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00071">delay_line.h:71</a></div></div>
-<div class="ttc" id="atime_8h_html"><div class="ttname"><a href="time_8h.html">time.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

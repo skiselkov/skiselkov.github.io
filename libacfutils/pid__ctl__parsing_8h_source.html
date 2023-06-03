@@ -70,7 +70,7 @@ $(function() {
 <div class="title">pid_ctl_parsing.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="pid__ctl__parsing_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -99,30 +99,30 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define _ACFUTILS_PID_CTL_PARSING_H_</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="conf_8h.html">conf.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pid__ctl_8h.html">pid_ctl.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;conf.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;pid_ctl.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;pid_ctl_parse2(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keyword">const</span> <a class="code" href="structconf.html">conf_t</a> *<a class="code" href="structconf.html">conf</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;pid_ctl_parse2(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keyword">const</span> conf_t *<a class="code" href="structconf.html">conf</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix,</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> noreset)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">double</span> k_p = 0, k_i = 0, lim_i = 0, k_d = 0, r_d = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> integ_clamp;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    bool_t integ_clamp;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="structconf.html">conf</a> != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(prefix != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="structconf.html">conf</a> != NULL);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(prefix != NULL);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="conf_8h.html#adc316ac7f1fe885eeea1677e37fd6fd3">conf_get_d_v</a>(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/k_p&quot;</span>, &amp;k_p, prefix);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="conf_8h.html#adc316ac7f1fe885eeea1677e37fd6fd3">conf_get_d_v</a>(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/k_i&quot;</span>, &amp;k_i, prefix);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="conf_8h.html#adc316ac7f1fe885eeea1677e37fd6fd3">conf_get_d_v</a>(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/lim_i&quot;</span>, &amp;lim_i, prefix);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="conf_8h.html#adc316ac7f1fe885eeea1677e37fd6fd3">conf_get_d_v</a>(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/k_d&quot;</span>, &amp;k_d, prefix);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="conf_8h.html#adc316ac7f1fe885eeea1677e37fd6fd3">conf_get_d_v</a>(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/r_d&quot;</span>, &amp;r_d, prefix);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="conf_8h.html#a40f0eec7f777fdb9fc363c4e317d416e">conf_get_b_v</a>(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/integ_clamp&quot;</span>, &amp;integ_clamp, prefix);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    conf_get_d_v(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/k_p&quot;</span>, &amp;k_p, prefix);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    conf_get_d_v(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/k_i&quot;</span>, &amp;k_i, prefix);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    conf_get_d_v(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/lim_i&quot;</span>, &amp;lim_i, prefix);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    conf_get_d_v(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/k_d&quot;</span>, &amp;k_d, prefix);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    conf_get_d_v(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/r_d&quot;</span>, &amp;r_d, prefix);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    conf_get_b_v(<a class="code" href="structconf.html">conf</a>, <span class="stringliteral">&quot;%s/integ_clamp&quot;</span>, &amp;integ_clamp, prefix);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (noreset)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        pid_ctl_init_noreset(pid, k_p, k_i, lim_i, k_d, r_d);</div>
@@ -132,7 +132,7 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;pid_ctl_parse(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keyword">const</span> <a class="code" href="structconf.html">conf_t</a> *<a class="code" href="structconf.html">conf</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;pid_ctl_parse(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keyword">const</span> conf_t *<a class="code" href="structconf.html">conf</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    pid_ctl_parse2(pid, <a class="code" href="structconf.html">conf</a>, prefix, <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
@@ -143,15 +143,9 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACFUTILS_PID_CTL_PARSING_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00112">assert.h:112</a></div></div>
-<div class="ttc" id="aconf_8h_html"><div class="ttname"><a href="conf_8h.html">conf.h</a></div></div>
-<div class="ttc" id="aconf_8h_html_a40f0eec7f777fdb9fc363c4e317d416e"><div class="ttname"><a href="conf_8h.html#a40f0eec7f777fdb9fc363c4e317d416e">conf_get_b_v</a></div><div class="ttdeci">API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t conf_get_b_v(const conf_t *conf, PRINTF_FORMAT(const char *fmt), bool_t *value,...) PRINTF_ATTR2(2</div></div>
-<div class="ttc" id="aconf_8h_html_adc316ac7f1fe885eeea1677e37fd6fd3"><div class="ttname"><a href="conf_8h.html#adc316ac7f1fe885eeea1677e37fd6fd3">conf_get_d_v</a></div><div class="ttdeci">API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t API_EXPORT bool_t conf_get_d_v(const conf_t *conf, PRINTF_FORMAT(const char *fmt), double *value,...) PRINTF_ATTR2(2</div></div>
-<div class="ttc" id="alibc_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00047">libc.h:47</a></div></div>
-<div class="ttc" id="apid__ctl_8h_html"><div class="ttname"><a href="pid__ctl_8h.html">pid_ctl.h</a></div></div>
+<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="astructconf_html"><div class="ttname"><a href="structconf.html">conf</a></div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00057">conf.c:57</a></div></div>
 <div class="ttc" id="astructpid__ctl__t_html"><div class="ttname"><a href="structpid__ctl__t.html">pid_ctl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00049">pid_ctl.h:49</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

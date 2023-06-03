@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['earth_5fgravity_4977',['EARTH_GRAVITY',['../perf_8h.html#a86d8ad802eb726f5cef184892a3b45a4',1,'perf.h']]],
-  ['earth_5fgravity_5faccurate_4978',['earth_gravity_accurate',['../perf_8h.html#ad45eb868607c2353fe267a225a0fc828',1,'perf.h']]],
-  ['earth_5fmsl_4979',['EARTH_MSL',['../geom_8h.html#a0d1b9eee30c28a0f1e9dbbac93c44daa',1,'geom.h']]],
-  ['earth_5frot_5frate_4980',['EARTH_ROT_RATE',['../perf_8h.html#a6053381cddedbba041660df3a504b374',1,'perf.h']]],
-  ['earth_5fsid_5fday_4981',['EARTH_SID_DAY',['../perf_8h.html#aea9d7919f38673112fef3208d716fd46',1,'perf.h']]],
-  ['ecef2ecmi_4982',['ecef2ecmi',['../geom_8h.html#a25dc2da6652d97779fd8040245ceeecd',1,'geom.h']]],
-  ['ecef2geo_4983',['ecef2geo',['../geom_8h.html#a457e98ec96a7d90d4b1fcdb95bba051b',1,'geom.h']]],
-  ['ecef2gl_4984',['ecef2gl',['../geom_8h.html#a67af1ac2ed0e45a3619001ca7e660fbf',1,'geom.h']]],
-  ['ecef2gl_5fl_4985',['ecef2gl_l',['../geom_8h.html#abcd7e5b257d22d81952a36c8241e60dd',1,'geom.h']]],
-  ['ecef2sph_4986',['ecef2sph',['../geom_8h.html#ab7e0d362ced4241863aeed3bcc95c932',1,'geom.h']]],
-  ['ecmi2ecef_4987',['ecmi2ecef',['../geom_8h.html#aa64790e9e7688cd5dbe592d2a23dd87c',1,'geom.h']]],
-  ['ecmi2geo_4988',['ecmi2geo',['../geom_8h.html#a16629beb800fbf0668a3c144c329e212',1,'geom.h']]],
-  ['ecmi2sph_4989',['ecmi2sph',['../geom_8h.html#aaec5f285f5907fbb94345ede55794c51',1,'geom.h']]],
-  ['ellip_5finit_4990',['ellip_init',['../geom_8h.html#a1d5c38df38c0d9d9e0bab5ed0196e5ff',1,'geom.h']]],
-  ['eng_5fmax_5fthr_5favg_4991',['eng_max_thr_avg',['../perf_8h.html#acfc7bf02843d3fa63c02a37448f47d1c',1,'perf.h']]],
-  ['except_5ffini_4992',['except_fini',['../except_8h.html#a865408a05497cb5dbd9c159119fb259f',1,'except.h']]],
-  ['except_5finit_4993',['except_init',['../except_8h.html#a1ab3efd05cbcc131934d8ad4a3378457',1,'except.h']]],
-  ['exception_5fassertion_5ffailed_4994',['EXCEPTION_ASSERTION_FAILED',['../assert_8h.html#a3b231ff53304e8c8b72639ddda808be2',1,'assert.h']]],
-  ['explode_5fline_4995',['explode_line',['../helpers_8h.html#a666665a60349a59709f63ff3ee1da640',1,'helpers.h']]],
-  ['extra_5f2d_5fdefines_4996',['EXTRA_2D_DEFINES',['../shader_8c.html#a3d11dae5c60c052d003d5f513b9a3a38',1,'shader.c']]],
-  ['extrabytes_4997',['EXTRABYTES',['../minimp3_8c.html#a57aa8c12d2c78263b12175b3c4dd9546',1,'minimp3.c']]],
-  ['extract_5ficao_5fcountry_5fcode_4998',['extract_icao_country_code',['../helpers_8h.html#a4f3efaa6fbee28202623c86e88b8de35',1,'helpers.h']]]
+  ['unused_543',['UNUSED',['../core_8h.html#a86d500a34c624c2cae56bc25a31b12f3',1,'core.h']]],
+  ['unused_5fattr_544',['UNUSED_ATTR',['../core_8h.html#ab58a705ceeb200925bb0a7e302959982',1,'core.h']]]
 ];

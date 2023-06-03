@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vgsi_5ft_4499',['vgsi_t',['../airportdb_8c.html#a8412890edc2e713a5019877e063d4962',1,'airportdb.c']]]
+  ['xpjoy_5faxis_5ft_4326',['xpjoy_axis_t',['../joystick_8h.html#ab7e81012fa7b93e829d88a6bd1f31415',1,'joystick.h']]]
 ];

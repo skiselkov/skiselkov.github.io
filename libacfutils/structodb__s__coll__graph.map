@@ -1,6 +1,4 @@
-<map id="odb_s" name="odb_s">
-<area shape="rect" id="node1" title=" " alt="" coords="67,216,127,243"/>
-<area shape="rect" id="node2" href="$structavl__tree.html" title=" " alt="" coords="9,97,83,124"/>
-<area shape="rect" id="node3" href="$structavl__node.html" title=" " alt="" coords="5,7,87,33"/>
-<area shape="rect" id="node4" href="$structmutex__t.html" title=" " alt="" coords="108,97,184,124"/>
+<map id="odb_t" name="odb_t">
+<area shape="rect" id="node1" title=" " alt="" coords="14,124,73,151"/>
+<area shape="rect" id="node2" href="$structmutex__t.html" title=" " alt="" coords="5,5,81,32"/>
 </map>

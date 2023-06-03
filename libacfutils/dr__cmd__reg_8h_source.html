@@ -70,7 +70,7 @@ $(function() {
 <div class="title">dr_cmd_reg.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="dr__cmd__reg_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -101,39 +101,39 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cmd_8h.html">cmd.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">dr.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;cmd.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;dr.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">void</span> <a class="code" href="dr__cmd__reg_8h.html#a2dbacd244d57ff56ef37c2c2851a97d1">dcr_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">void</span> <a class="code" href="dr__cmd__reg_8h.html#aa02e6566beeadd545d3da90088ca7d6b">dcr_fini</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;API_EXPORT <span class="keywordtype">void</span> dcr_init(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;API_EXPORT <span class="keywordtype">void</span> dcr_fini(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#aa7f36e656ebe0fc18805883487f44a0e">   42</a></span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="code" href="dr__cmd__reg_8h.html#aa7f36e656ebe0fc18805883487f44a0e">dcr_find_cmd</a>(<a class="code" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;API_EXPORT XPLMCommandRef dcr_find_cmd(PRINTF_FORMAT(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt),</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    XPLMCommandCallback_f cb, <span class="keywordtype">bool</span> before, <span class="keywordtype">void</span> *refcon, ...)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="jsmn__path_8h.html#a54e92e882e9bab93da31d6ada8936d99">PRINTF_ATTR2</a>(1, 5);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="code" href="dr__cmd__reg_8h.html#a671f53580e5674e7acc435f217a38868">dcr_find_cmd_v</a>(const <span class="keywordtype">char</span> *fmt,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    PRINTF_ATTR2(1, 5);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;API_EXPORT XPLMCommandRef dcr_find_cmd_v(const <span class="keywordtype">char</span> *fmt,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    XPLMCommandCallback_f cb, <span class="keywordtype">bool</span> before, <span class="keywordtype">void</span> *refcon, va_list ap);</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#ab70fc7e27e5e8315f96daa71b1f2da8b">   47</a></span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="code" href="dr__cmd__reg_8h.html#ab70fc7e27e5e8315f96daa71b1f2da8b">f_dcr_find_cmd</a>(<a class="code" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const <span class="keywordtype">char</span> *fmt),</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;API_EXPORT XPLMCommandRef f_dcr_find_cmd(PRINTF_FORMAT(const <span class="keywordtype">char</span> *fmt),</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    XPLMCommandCallback_f cb, <span class="keywordtype">bool</span> before, <span class="keywordtype">void</span> *refcon, ...)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="jsmn__path_8h.html#a54e92e882e9bab93da31d6ada8936d99">PRINTF_ATTR2</a>(1, 5);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="code" href="dr__cmd__reg_8h.html#a05fd01b7245fabf855480a00c7b3f226">f_dcr_find_cmd_v</a>(const <span class="keywordtype">char</span> *fmt,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    PRINTF_ATTR2(1, 5);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;API_EXPORT XPLMCommandRef f_dcr_find_cmd_v(const <span class="keywordtype">char</span> *fmt,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    XPLMCommandCallback_f cb, <span class="keywordtype">bool</span> before, <span class="keywordtype">void</span> *refcon, va_list ap);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="code" href="dr__cmd__reg_8h.html#a2981007d10b09282306d83e3c450bca3">dcr_create_cmd</a>(const <span class="keywordtype">char</span> *cmdname,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;API_EXPORT XPLMCommandRef dcr_create_cmd(const <span class="keywordtype">char</span> *cmdname,</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    const <span class="keywordtype">char</span> *cmddesc, XPLMCommandCallback_f cb, <span class="keywordtype">bool</span> before, <span class="keywordtype">void</span> *refcon);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/* Internal, do not call, use the DCR_CREATE_ macros instead */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">void</span> *<a class="code" href="dr__cmd__reg_8h.html#aed4020afca4b8154a4e3915b11fbccc8">dcr_alloc_rdr</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="code" href="structdr__s.html">dr_t</a> *<a class="code" href="dr__cmd__reg_8h.html#a70cfd2ca2ff733c5ed15bed60c1f6d31">dcr_get_dr</a>(<span class="keywordtype">void</span> *token);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">void</span> <a class="code" href="dr__cmd__reg_8h.html#ad63be2ed36abcaa45df4c1342e2796e7">dcr_insert_rdr</a>(<span class="keywordtype">void</span> *token);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;API_EXPORT <span class="keywordtype">void</span> *dcr_alloc_rdr(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;API_EXPORT dr_t *dcr_get_dr(<span class="keywordtype">void</span> *token);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;API_EXPORT <span class="keywordtype">void</span> dcr_insert_rdr(<span class="keywordtype">void</span> *token);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#ifdef  __clang</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#pragma GCC diagnostic  push</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#pragma GCC diagnostic  ignored &quot;-Wnull-dereference&quot;</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#ac3ec2d187837424df1ac51ca1fa06425">   64</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_COMMON(type, dr_ptr, ...) \</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define DCR_CREATE_COMMON(type, dr_ptr, ...) \</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">        void *__rdr = dcr_alloc_rdr(); \</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">        dr_t *__dr = dcr_get_dr(__rdr); \</span></div>
@@ -142,25 +142,25 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">        if ((dr_ptr) != NULL) \</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">            *(dr_t **)(dr_ptr) = __dr; \</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a9b2fa3a7b4832597c47f3828c20a3dd7">   73</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_I(dr_p, ...)     \</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define DCR_CREATE_I(dr_p, ...)     \</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(i, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#ac840452580130cbeb545174dcffbdbd7">   75</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_F(dr_p, ...)     \</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define DCR_CREATE_F(dr_p, ...)     \</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(f, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#abf85a420e178934e51130f14454b27a6">   77</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_F64(dr_p, ...)   \</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define DCR_CREATE_F64(dr_p, ...)   \</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(f64, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a3c3bc54e508ddb9df98cdc547d9cf8c1">   79</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_VI(dr_p, ...)    \</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define DCR_CREATE_VI(dr_p, ...)    \</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(vi, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a1dcf94cee36ac2cec10a6cc8fd141623">   81</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_VF(dr_p, ...)    \</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#define DCR_CREATE_VF(dr_p, ...)    \</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(vf, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#ab69633678cd5f88e896dda6d4cd66285">   83</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_VF64(dr_p, ...)  \</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define DCR_CREATE_VF64(dr_p, ...)  \</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(vf64, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a0f1015c24b00545d98cfa11fcdbebe95">   85</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_VI_AUTOSCALAR(dr_p, ...) \</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#define DCR_CREATE_VI_AUTOSCALAR(dr_p, ...) \</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(vi_autoscalar, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a5c2e964f2dcc95de6b3c652c38363316">   87</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_VF_AUTOSCALAR(dr_p, ...) \</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define DCR_CREATE_VF_AUTOSCALAR(dr_p, ...) \</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(vf_autoscalar, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a223be04d9326e1afc8dc7b6a480ae520">   89</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_VF64_AUTOSCALAR(dr_p, ...) \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define DCR_CREATE_VF64_AUTOSCALAR(dr_p, ...) \</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(vf64_autoscalar, dr_p, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="dr__cmd__reg_8h.html#a336db499dcc436e61eee44cea21c4e0f">   91</a></span>&#160;<span class="preprocessor">#define DCR_CREATE_B(dr_p, ...)     \</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define DCR_CREATE_B(dr_p, ...)     \</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">    DCR_CREATE_COMMON(b, dr_p, __VA_ARGS__)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef  __clang</span></div>
@@ -172,22 +172,6 @@ $(function() {
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_DR_CMD_REG_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="acmd_8h_html"><div class="ttname"><a href="cmd_8h.html">cmd.h</a></div></div>
-<div class="ttc" id="acore_8h_html_a5e3652cae8b48c1ad174f0b06bbd06d0"><div class="ttname"><a href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a></div><div class="ttdeci">#define API_EXPORT</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00056">core.h:56</a></div></div>
-<div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_a05fd01b7245fabf855480a00c7b3f226"><div class="ttname"><a href="dr__cmd__reg_8h.html#a05fd01b7245fabf855480a00c7b3f226">f_dcr_find_cmd_v</a></div><div class="ttdeci">API_EXPORT XPLMCommandRef API_EXPORT XPLMCommandRef f_dcr_find_cmd_v(const char *fmt, XPLMCommandCallback_f cb, bool before, void *refcon, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00204">dr_cmd_reg.c:204</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_a2981007d10b09282306d83e3c450bca3"><div class="ttname"><a href="dr__cmd__reg_8h.html#a2981007d10b09282306d83e3c450bca3">dcr_create_cmd</a></div><div class="ttdeci">API_EXPORT XPLMCommandRef dcr_create_cmd(const char *cmdname, const char *cmddesc, XPLMCommandCallback_f cb, bool before, void *refcon)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00223">dr_cmd_reg.c:223</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_a2dbacd244d57ff56ef37c2c2851a97d1"><div class="ttname"><a href="dr__cmd__reg_8h.html#a2dbacd244d57ff56ef37c2c2851a97d1">dcr_init</a></div><div class="ttdeci">API_EXPORT void dcr_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00070">dr_cmd_reg.c:70</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_a671f53580e5674e7acc435f217a38868"><div class="ttname"><a href="dr__cmd__reg_8h.html#a671f53580e5674e7acc435f217a38868">dcr_find_cmd_v</a></div><div class="ttdeci">API_EXPORT XPLMCommandRef API_EXPORT XPLMCommandRef dcr_find_cmd_v(const char *fmt, XPLMCommandCallback_f cb, bool before, void *refcon, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00154">dr_cmd_reg.c:154</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_a70cfd2ca2ff733c5ed15bed60c1f6d31"><div class="ttname"><a href="dr__cmd__reg_8h.html#a70cfd2ca2ff733c5ed15bed60c1f6d31">dcr_get_dr</a></div><div class="ttdeci">API_EXPORT dr_t * dcr_get_dr(void *token)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00116">dr_cmd_reg.c:116</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_aa02e6566beeadd545d3da90088ca7d6b"><div class="ttname"><a href="dr__cmd__reg_8h.html#aa02e6566beeadd545d3da90088ca7d6b">dcr_fini</a></div><div class="ttdeci">API_EXPORT void dcr_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00082">dr_cmd_reg.c:82</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_aa7f36e656ebe0fc18805883487f44a0e"><div class="ttname"><a href="dr__cmd__reg_8h.html#aa7f36e656ebe0fc18805883487f44a0e">dcr_find_cmd</a></div><div class="ttdeci">API_EXPORT XPLMCommandRef dcr_find_cmd(PRINTF_FORMAT(const char *fmt), XPLMCommandCallback_f cb, bool before, void *refcon,...) PRINTF_ATTR2(1</div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_ab70fc7e27e5e8315f96daa71b1f2da8b"><div class="ttname"><a href="dr__cmd__reg_8h.html#ab70fc7e27e5e8315f96daa71b1f2da8b">f_dcr_find_cmd</a></div><div class="ttdeci">API_EXPORT XPLMCommandRef f_dcr_find_cmd(PRINTF_FORMAT(const char *fmt), XPLMCommandCallback_f cb, bool before, void *refcon,...) PRINTF_ATTR2(1</div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_ad63be2ed36abcaa45df4c1342e2796e7"><div class="ttname"><a href="dr__cmd__reg_8h.html#ad63be2ed36abcaa45df4c1342e2796e7">dcr_insert_rdr</a></div><div class="ttdeci">API_EXPORT void dcr_insert_rdr(void *token)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00124">dr_cmd_reg.c:124</a></div></div>
-<div class="ttc" id="adr__cmd__reg_8h_html_aed4020afca4b8154a4e3915b11fbccc8"><div class="ttname"><a href="dr__cmd__reg_8h.html#aed4020afca4b8154a4e3915b11fbccc8">dcr_alloc_rdr</a></div><div class="ttdeci">API_EXPORT void * dcr_alloc_rdr(void)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00109">dr_cmd_reg.c:109</a></div></div>
-<div class="ttc" id="ajsmn__path_8h_html_a54e92e882e9bab93da31d6ada8936d99"><div class="ttname"><a href="jsmn__path_8h.html#a54e92e882e9bab93da31d6ada8936d99">PRINTF_ATTR2</a></div><div class="ttdeci">UNUSED_ATTR PRINTF_ATTR2(4, 7) static bool_t jsmn_get_tok_data_path_format(const char *json</div></div>
-<div class="ttc" id="astructdr__s_html"><div class="ttname"><a href="structdr__s.html">dr_s</a></div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00044">dr.h:44</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_a2482b4824c0a48a0d3b58f6dd5126d1b"><div class="ttname"><a href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a></div><div class="ttdeci">#define PRINTF_FORMAT(f)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00100">sysmacros.h:100</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

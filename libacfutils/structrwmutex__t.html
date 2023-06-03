@@ -68,8 +68,6 @@ $(function() {
 <div class="title">rwmutex_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="thread_8h_source.html">thread.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for rwmutex_t:</div>
 <div class="dyncontent">
@@ -82,120 +80,29 @@ Collaboration diagram for rwmutex_t:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:af302237f7e2352081ec19fe14f11a646"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwmutex__t.html#af302237f7e2352081ec19fe14f11a646">lock</a></td></tr>
+<tr class="memitem:af302237f7e2352081ec19fe14f11a646"><td class="memItemLeft" align="right" valign="top"><a id="af302237f7e2352081ec19fe14f11a646"></a>
+<a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lock</b></td></tr>
 <tr class="separator:af302237f7e2352081ec19fe14f11a646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268c4295c21563809c37b625cf018ce4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="thread_8h.html#a24783eb7e6c8daba680be535ea42f418">condvar_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwmutex__t.html#a268c4295c21563809c37b625cf018ce4">cv</a></td></tr>
+<tr class="memitem:a268c4295c21563809c37b625cf018ce4"><td class="memItemLeft" align="right" valign="top"><a id="a268c4295c21563809c37b625cf018ce4"></a>
+condvar_t&#160;</td><td class="memItemRight" valign="bottom"><b>cv</b></td></tr>
 <tr class="separator:a268c4295c21563809c37b625cf018ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe3944144613c0c581e1f62c0a0afa9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwmutex__t.html#afe3944144613c0c581e1f62c0a0afa9f">write_locked</a></td></tr>
+<tr class="memitem:afe3944144613c0c581e1f62c0a0afa9f"><td class="memItemLeft" align="right" valign="top"><a id="afe3944144613c0c581e1f62c0a0afa9f"></a>
+bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>write_locked</b></td></tr>
 <tr class="separator:afe3944144613c0c581e1f62c0a0afa9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a942ac3fd06211e108722f52f1edef3a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="thread_8h.html#ad0ada5642d10ce71bdd90816182f9b79">thread_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwmutex__t.html#a942ac3fd06211e108722f52f1edef3a9">writer</a></td></tr>
+<tr class="memitem:a942ac3fd06211e108722f52f1edef3a9"><td class="memItemLeft" align="right" valign="top"><a id="a942ac3fd06211e108722f52f1edef3a9"></a>
+thread_id_t&#160;</td><td class="memItemRight" valign="bottom"><b>writer</b></td></tr>
 <tr class="separator:a942ac3fd06211e108722f52f1edef3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b6bc7ece5d64a4a47392d1641a4102a"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwmutex__t.html#a4b6bc7ece5d64a4a47392d1641a4102a">refcount</a></td></tr>
+<tr class="memitem:a4b6bc7ece5d64a4a47392d1641a4102a"><td class="memItemLeft" align="right" valign="top"><a id="a4b6bc7ece5d64a4a47392d1641a4102a"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>refcount</b></td></tr>
 <tr class="separator:a4b6bc7ece5d64a4a47392d1641a4102a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a574e7a6cc4618bc6c68a6246c72d5dae"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrwmutex__t.html#a574e7a6cc4618bc6c68a6246c72d5dae">waiters</a></td></tr>
+<tr class="memitem:a574e7a6cc4618bc6c68a6246c72d5dae"><td class="memItemLeft" align="right" valign="top"><a id="a574e7a6cc4618bc6c68a6246c72d5dae"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>waiters</b></td></tr>
 <tr class="separator:a574e7a6cc4618bc6c68a6246c72d5dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00540">540</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="a268c4295c21563809c37b625cf018ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a268c4295c21563809c37b625cf018ce4">&#9670;&nbsp;</a></span>cv</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="thread_8h.html#a24783eb7e6c8daba680be535ea42f418">condvar_t</a> cv</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00542">542</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<a id="af302237f7e2352081ec19fe14f11a646"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af302237f7e2352081ec19fe14f11a646">&#9670;&nbsp;</a></span>lock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmutex__t.html">mutex_t</a> lock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00541">541</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<a id="a4b6bc7ece5d64a4a47392d1641a4102a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b6bc7ece5d64a4a47392d1641a4102a">&#9670;&nbsp;</a></span>refcount</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned refcount</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00545">545</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<a id="a574e7a6cc4618bc6c68a6246c72d5dae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a574e7a6cc4618bc6c68a6246c72d5dae">&#9670;&nbsp;</a></span>waiters</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned waiters</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00546">546</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<a id="afe3944144613c0c581e1f62c0a0afa9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe3944144613c0c581e1f62c0a0afa9f">&#9670;&nbsp;</a></span>write_locked</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> write_locked</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00543">543</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<a id="a942ac3fd06211e108722f52f1edef3a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a942ac3fd06211e108722f52f1edef3a9">&#9670;&nbsp;</a></span>writer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="thread_8h.html#ad0ada5642d10ce71bdd90816182f9b79">thread_id_t</a> writer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00544">544</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/diablos/NextDev/libacfutils-dll/src/acfutils/<a class="el" href="thread_8h_source.html">thread.h</a></li>
 </ul>
 </div><!-- contents -->

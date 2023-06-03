@@ -70,7 +70,7 @@ $(function() {
 <div class="title">chart_prov_faa.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="chart__prov__faa_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -99,31 +99,23 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define _ACF_UTILS_CHART_PROV_FAA_H_</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">acfutils/core.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chartdb_8h.html">acfutils/chartdb.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chartdb__impl_8h.html">chartdb_impl.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;acfutils/chartdb.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;chartdb_impl.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="chart__prov__faa_8h.html#ae42d794ce362461c47fad738e0e57f99">chart_faa_init</a>(<a class="code" href="structchartdb__s.html">chartdb_t</a> *cdb);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="chart__prov__faa_8h.html#a7201e6ce531938c7865b1ec9bc3e4de8">chart_faa_fini</a>(<a class="code" href="structchartdb__s.html">chartdb_t</a> *cdb);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="code" href="chart__prov__faa_8h.html#a1b8d36548bfcf0de8b05a26cbd918f90">chart_faa_get_chart</a>(<a class="code" href="structchart__s.html">chart_t</a> *chart);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;bool_t chart_faa_init(chartdb_t *cdb);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> chart_faa_fini(chartdb_t *cdb);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;bool_t chart_faa_get_chart(chart_t *chart);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_CHART_PROV_FAA_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="achart__prov__faa_8h_html_a1b8d36548bfcf0de8b05a26cbd918f90"><div class="ttname"><a href="chart__prov__faa_8h.html#a1b8d36548bfcf0de8b05a26cbd918f90">chart_faa_get_chart</a></div><div class="ttdeci">bool_t chart_faa_get_chart(chart_t *chart)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__faa_8c_source.html#l00318">chart_prov_faa.c:318</a></div></div>
-<div class="ttc" id="achart__prov__faa_8h_html_a7201e6ce531938c7865b1ec9bc3e4de8"><div class="ttname"><a href="chart__prov__faa_8h.html#a7201e6ce531938c7865b1ec9bc3e4de8">chart_faa_fini</a></div><div class="ttdeci">void chart_faa_fini(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__faa_8c_source.html#l00312">chart_prov_faa.c:312</a></div></div>
-<div class="ttc" id="achart__prov__faa_8h_html_ae42d794ce362461c47fad738e0e57f99"><div class="ttname"><a href="chart__prov__faa_8h.html#ae42d794ce362461c47fad738e0e57f99">chart_faa_init</a></div><div class="ttdeci">bool_t chart_faa_init(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__faa_8c_source.html#l00296">chart_prov_faa.c:296</a></div></div>
-<div class="ttc" id="achartdb_8h_html"><div class="ttname"><a href="chartdb_8h.html">chartdb.h</a></div></div>
-<div class="ttc" id="achartdb__impl_8h_html"><div class="ttname"><a href="chartdb__impl_8h.html">chartdb_impl.h</a></div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
-<div class="ttc" id="astructchart__s_html"><div class="ttname"><a href="structchart__s.html">chart_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00047">chartdb_impl.h:47</a></div></div>
-<div class="ttc" id="astructchartdb__s_html"><div class="ttname"><a href="structchartdb__s.html">chartdb_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00100">chartdb_impl.h:100</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

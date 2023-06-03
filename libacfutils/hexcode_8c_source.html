@@ -70,7 +70,7 @@ $(function() {
 <div class="title">hexcode.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="hexcode_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file and its contents are supplied under the terms of the</span></div>
@@ -92,10 +92,10 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="hexcode_8h.html">acfutils/hexcode.h</a>&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;acfutils/hexcode.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="hexcode_8h.html#a8f5f5dc9829a7bffdc82b8543d186c36">   26</a></span>&#160;<a class="code" href="hexcode_8c.html#a8f5f5dc9829a7bffdc82b8543d186c36">hex_enc</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *in_raw, <span class="keywordtype">size_t</span> len, <span class="keywordtype">void</span> *out_enc, <span class="keywordtype">size_t</span> out_cap)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;API_EXPORT <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;hex_enc(<span class="keyword">const</span> <span class="keywordtype">void</span> *in_raw, <span class="keywordtype">size_t</span> len, <span class="keywordtype">void</span> *out_enc, <span class="keywordtype">size_t</span> out_cap)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> uint8_t *in_8b = in_raw;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span> *out = out_enc;</div>
@@ -118,34 +118,27 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> (-1);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="hexcode_8h.html#a4d26bdaa0db6a3041fcd67c64c230a7d">   50</a></span>&#160;<a class="code" href="hexcode_8c.html#a4d26bdaa0db6a3041fcd67c64c230a7d">hex_dec</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> *in_enc, <span class="keywordtype">size_t</span> len, <span class="keywordtype">void</span> *out_raw, <span class="keywordtype">size_t</span> out_cap)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;API_EXPORT bool_t</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;hex_dec(<span class="keyword">const</span> <span class="keywordtype">void</span> *in_enc, <span class="keywordtype">size_t</span> len, <span class="keywordtype">void</span> *out_raw, <span class="keywordtype">size_t</span> out_cap)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *in_str = in_enc;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    uint8_t *out = out_raw;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/* Input length must be a multiple of two and fit into output */</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> ((len % 2 != 0) || (out_cap &lt; len / 2))</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="types_8h.html#a4c0942f7e57f1351f4d35ed7cb7e5db5">B_FALSE</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0, j = 0; i &lt; len &amp;&amp; j &lt; out_cap; i += 2, j++) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> a = xdigit2int(in_str[i]);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> b = xdigit2int(in_str[i + 1]);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (a == -1 || b == -1)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="types_8h.html#a4c0942f7e57f1351f4d35ed7cb7e5db5">B_FALSE</a>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        out[j] = (a &lt;&lt; 4) | b;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="types_8h.html#ac17c9c787c428150babd7c4daf3caa5b">B_TRUE</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="ttc" id="acore_8h_html_a5e3652cae8b48c1ad174f0b06bbd06d0"><div class="ttname"><a href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a></div><div class="ttdeci">#define API_EXPORT</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00056">core.h:56</a></div></div>
-<div class="ttc" id="ahexcode_8c_html_a4d26bdaa0db6a3041fcd67c64c230a7d"><div class="ttname"><a href="hexcode_8c.html#a4d26bdaa0db6a3041fcd67c64c230a7d">hex_dec</a></div><div class="ttdeci">API_EXPORT bool_t hex_dec(const void *in_enc, size_t len, void *out_raw, size_t out_cap)</div><div class="ttdef"><b>Definition:</b> <a href="hexcode_8c_source.html#l00050">hexcode.c:50</a></div></div>
-<div class="ttc" id="ahexcode_8c_html_a8f5f5dc9829a7bffdc82b8543d186c36"><div class="ttname"><a href="hexcode_8c.html#a8f5f5dc9829a7bffdc82b8543d186c36">hex_enc</a></div><div class="ttdeci">API_EXPORT void hex_enc(const void *in_raw, size_t len, void *out_enc, size_t out_cap)</div><div class="ttdef"><b>Definition:</b> <a href="hexcode_8c_source.html#l00026">hexcode.c:26</a></div></div>
-<div class="ttc" id="ahexcode_8h_html"><div class="ttname"><a href="hexcode_8h.html">hexcode.h</a></div></div>
-<div class="ttc" id="atypes_8h_html_a4c0942f7e57f1351f4d35ed7cb7e5db5"><div class="ttname"><a href="types_8h.html#a4c0942f7e57f1351f4d35ed7cb7e5db5">B_FALSE</a></div><div class="ttdeci">#define B_FALSE</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00036">types.h:36</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
-<div class="ttc" id="atypes_8h_html_ac17c9c787c428150babd7c4daf3caa5b"><div class="ttname"><a href="types_8h.html#ac17c9c787c428150babd7c4daf3caa5b">B_TRUE</a></div><div class="ttdeci">#define B_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00035">types.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

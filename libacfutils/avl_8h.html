@@ -144,46 +144,42 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a096305e5242b9d3894f2b6b76767cae6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structavl__tree.html">avl_tree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a></td></tr>
-<tr class="separator:a096305e5242b9d3894f2b6b76767cae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaba2796e1b3d8149d34813c339f37aad"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structavl__node.html">avl_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#aaba2796e1b3d8149d34813c339f37aad">avl_node_t</a></td></tr>
-<tr class="separator:aaba2796e1b3d8149d34813c339f37aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4be84537145752bd25b72bfa9c2df176"><td class="memItemLeft" align="right" valign="top">typedef uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></td></tr>
 <tr class="separator:a4be84537145752bd25b72bfa9c2df176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba404e030d36c4822ace9fa12d021d4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</td></tr>
+<tr class="memitem:aba404e030d36c4822ace9fa12d021d4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a> (avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</td></tr>
 <tr class="separator:aba404e030d36c4822ace9fa12d021d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0053b8f527f8323531da8684c3d5ce6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a> (const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, const void *node, <a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> *where)</td></tr>
+<tr class="memitem:a0053b8f527f8323531da8684c3d5ce6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a> (const avl_tree_t *tree, const void *node, <a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> *where)</td></tr>
 <tr class="separator:a0053b8f527f8323531da8684c3d5ce6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce45828c27903812f9d0d888bc5eeac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, void *node, <a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where)</td></tr>
+<tr class="memitem:a6ce45828c27903812f9d0d888bc5eeac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a> (avl_tree_t *tree, void *node, <a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where)</td></tr>
 <tr class="separator:a6ce45828c27903812f9d0d888bc5eeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c82e070b1e7451f51baf56f71e45eda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a9c82e070b1e7451f51baf56f71e45eda">avl_insert_here</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, void *new_data, void *here, int direction)</td></tr>
+<tr class="memitem:a9c82e070b1e7451f51baf56f71e45eda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a9c82e070b1e7451f51baf56f71e45eda">avl_insert_here</a> (avl_tree_t *tree, void *new_data, void *here, int direction)</td></tr>
 <tr class="separator:a9c82e070b1e7451f51baf56f71e45eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6af8c1b69457cc43c64b3546561b77d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a> (const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree)</td></tr>
+<tr class="memitem:a6af8c1b69457cc43c64b3546561b77d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a> (const avl_tree_t *tree)</td></tr>
 <tr class="separator:a6af8c1b69457cc43c64b3546561b77d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac57bf3c6c9862265f259bbfd85ac0628"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#ac57bf3c6c9862265f259bbfd85ac0628">avl_last</a> (const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree)</td></tr>
+<tr class="memitem:ac57bf3c6c9862265f259bbfd85ac0628"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#ac57bf3c6c9862265f259bbfd85ac0628">avl_last</a> (const avl_tree_t *tree)</td></tr>
 <tr class="separator:ac57bf3c6c9862265f259bbfd85ac0628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d5eb3519617f16b6f58dc6169d237fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a> (const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, <a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where, int direction)</td></tr>
+<tr class="memitem:a6d5eb3519617f16b6f58dc6169d237fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a> (const avl_tree_t *tree, <a class="el" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where, int direction)</td></tr>
 <tr class="separator:a6d5eb3519617f16b6f58dc6169d237fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afddd03eaf0ef4acfdadf298b2041c484"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, void *node)</td></tr>
+<tr class="memitem:afddd03eaf0ef4acfdadf298b2041c484"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a> (avl_tree_t *tree, void *node)</td></tr>
 <tr class="separator:afddd03eaf0ef4acfdadf298b2041c484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd58378e694bc9edc9fb9a83fea2a569"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, void *node)</td></tr>
+<tr class="memitem:afd58378e694bc9edc9fb9a83fea2a569"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a> (avl_tree_t *tree, void *node)</td></tr>
 <tr class="separator:afd58378e694bc9edc9fb9a83fea2a569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfeb0b9f6cf0956a380c408764f5a462"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#abfeb0b9f6cf0956a380c408764f5a462">avl_update</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *, void *)</td></tr>
+<tr class="memitem:abfeb0b9f6cf0956a380c408764f5a462"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#abfeb0b9f6cf0956a380c408764f5a462">avl_update</a> (avl_tree_t *, void *)</td></tr>
 <tr class="separator:abfeb0b9f6cf0956a380c408764f5a462"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a5d49301c0dd78a91b10d5cedd10f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#ac2a5d49301c0dd78a91b10d5cedd10f0">avl_update_lt</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *, void *)</td></tr>
+<tr class="memitem:ac2a5d49301c0dd78a91b10d5cedd10f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#ac2a5d49301c0dd78a91b10d5cedd10f0">avl_update_lt</a> (avl_tree_t *, void *)</td></tr>
 <tr class="separator:ac2a5d49301c0dd78a91b10d5cedd10f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a601cb6f2a8e90020e9e75b83f29ab81f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a601cb6f2a8e90020e9e75b83f29ab81f">avl_update_gt</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *, void *)</td></tr>
+<tr class="memitem:a601cb6f2a8e90020e9e75b83f29ab81f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a601cb6f2a8e90020e9e75b83f29ab81f">avl_update_gt</a> (avl_tree_t *, void *)</td></tr>
 <tr class="separator:a601cb6f2a8e90020e9e75b83f29ab81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5a7519e632d4d99a2698234a80e4b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a> (const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree)</td></tr>
+<tr class="memitem:aab5a7519e632d4d99a2698234a80e4b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a> (const avl_tree_t *tree)</td></tr>
 <tr class="separator:aab5a7519e632d4d99a2698234a80e4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e75eee4cb04ffe894ae4c1a30eeb8a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a7e75eee4cb04ffe894ae4c1a30eeb8a2">avl_is_empty</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree)</td></tr>
+<tr class="memitem:a7e75eee4cb04ffe894ae4c1a30eeb8a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a7e75eee4cb04ffe894ae4c1a30eeb8a2">avl_is_empty</a> (avl_tree_t *tree)</td></tr>
 <tr class="separator:a7e75eee4cb04ffe894ae4c1a30eeb8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree, void **cookie)</td></tr>
+<tr class="memitem:a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a> (avl_tree_t *tree, void **cookie)</td></tr>
 <tr class="separator:a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cf3b775ff89ad265184470d5b0c65f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a> (<a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *tree)</td></tr>
+<tr class="memitem:a9cf3b775ff89ad265184470d5b0c65f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a> (avl_tree_t *tree)</td></tr>
 <tr class="separator:a9cf3b775ff89ad265184470d5b0c65f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -312,38 +308,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aaba2796e1b3d8149d34813c339f37aad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaba2796e1b3d8149d34813c339f37aad">&#9670;&nbsp;</a></span>avl_node_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structavl__node.html">avl_node</a> <a class="el" href="avl_8h.html#aaba2796e1b3d8149d34813c339f37aad">avl_node_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="avl_8h_source.html#l00001">1</a> of file <a class="el" href="avl_8h_source.html">avl.h</a>.</p>
-
-</div>
-</div>
-<a id="a096305e5242b9d3894f2b6b76767cae6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a096305e5242b9d3894f2b6b76767cae6">&#9670;&nbsp;</a></span>avl_tree_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structavl__tree.html">avl_tree</a> <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="avl_8h_source.html#l00001">1</a> of file <a class="el" href="avl_8h_source.html">avl.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="afddd03eaf0ef4acfdadf298b2041c484"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afddd03eaf0ef4acfdadf298b2041c484">&#9670;&nbsp;</a></span>avl_add()</h2>
@@ -354,7 +318,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void avl_add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -384,7 +348,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void avl_create </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -426,7 +390,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void avl_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em></td><td>)</td>
           <td></td>
         </tr>
@@ -446,7 +410,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void* avl_destroy_nodes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -476,7 +440,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void* avl_find </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">const avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -512,7 +476,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void* avl_first </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">const avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em></td><td>)</td>
           <td></td>
         </tr>
@@ -532,7 +496,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void avl_insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -568,7 +532,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void avl_insert_here </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -610,7 +574,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> avl_is_empty </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em></td><td>)</td>
           <td></td>
         </tr>
@@ -630,7 +594,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void* avl_last </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">const avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em></td><td>)</td>
           <td></td>
         </tr>
@@ -650,7 +614,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void* avl_nearest </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">const avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -686,7 +650,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> unsigned long avl_numnodes </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">const avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em></td><td>)</td>
           <td></td>
         </tr>
@@ -706,7 +670,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void avl_remove </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>tree</em>, </td>
         </tr>
         <tr>
@@ -736,7 +700,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> avl_update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -766,7 +730,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> avl_update_gt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
@@ -796,7 +760,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> avl_update_lt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="avl_8h.html#a096305e5242b9d3894f2b6b76767cae6">avl_tree_t</a> *&#160;</td>
+          <td class="paramtype">avl_tree_t *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>

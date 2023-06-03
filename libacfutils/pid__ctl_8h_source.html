@@ -70,7 +70,7 @@ $(function() {
 <div class="title">pid_ctl.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="pid__ctl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -98,11 +98,11 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef _ACFUTILS_PID_CTL_H_</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define _ACFUTILS_PID_CTL_H_</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="math_8h.html">math.h</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sysmacros_8h.html">sysmacros.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="math_8h.html">math.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;sysmacros.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;math.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
@@ -119,21 +119,21 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">   50</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">e_prev</a>;     <span class="comment">/* current error value */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a43c13bc4e47d27d6bce60a4f97883996">   51</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a43c13bc4e47d27d6bce60a4f97883996">V_prev</a>;     <span class="comment">/* previous actual value */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">   52</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a>;      <span class="comment">/* integrated value */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">   53</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">deriv</a>;      <span class="comment">/* derivative value */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">double</span>  e_prev;     <span class="comment">/* current error value */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">double</span>  V_prev;     <span class="comment">/* previous actual value */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span>  integ;      <span class="comment">/* integrated value */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span>  deriv;      <span class="comment">/* derivative value */</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">   55</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">k_p_gain</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">   56</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">k_p</a>;        <span class="comment">/* proportional coefficient */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">   57</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">k_i_gain</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">   58</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">k_i</a>;        <span class="comment">/* integral coefficient */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">   59</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">lim_i</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">   60</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">k_d</a>;        <span class="comment">/* derivative coefficient */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">   61</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">k_d_gain</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">   62</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">r_d</a>;        <span class="comment">/* derivative update rate */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span>  k_p_gain;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span>  k_p;        <span class="comment">/* proportional coefficient */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span>  k_i_gain;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">double</span>  k_i;        <span class="comment">/* integral coefficient */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">double</span>  lim_i;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">double</span>  k_d;        <span class="comment">/* derivative coefficient */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span>  k_d_gain;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">double</span>  r_d;        <span class="comment">/* derivative update rate */</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structpid__ctl__t.html#a903edada72509aabf55d819e164a7e17">   64</a></span>&#160;    <a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>  <a class="code" href="structpid__ctl__t.html#a903edada72509aabf55d819e164a7e17">integ_clamp</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    bool_t  integ_clamp;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> pid_ctl_reset(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid);</div>
@@ -167,31 +167,31 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;pid_ctl_init_noreset(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_p, <span class="keywordtype">double</span> k_i, <span class="keywordtype">double</span> lim_i,</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">double</span> k_d, <span class="keywordtype">double</span> r_d)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">k_p</a> = k_p;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">k_p_gain</a> = 1;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">k_i</a> = k_i;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">k_i_gain</a> = 1;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">lim_i</a> = lim_i;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">k_d</a> = k_d;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">k_d_gain</a> = 1;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">r_d</a> = r_d;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a903edada72509aabf55d819e164a7e17">integ_clamp</a> = <a class="code" href="types_8h.html#ac17c9c787c428150babd7c4daf3caa5b">B_TRUE</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    pid-&gt;k_p = k_p;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    pid-&gt;k_p_gain = 1;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    pid-&gt;k_i = k_i;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    pid-&gt;k_i_gain = 1;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    pid-&gt;lim_i = lim_i;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    pid-&gt;k_d = k_d;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    pid-&gt;k_d_gain = 1;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    pid-&gt;r_d = r_d;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    pid-&gt;integ_clamp = B_TRUE;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;pid_ctl_init(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_p, <span class="keywordtype">double</span> k_i, <span class="keywordtype">double</span> lim_i, <span class="keywordtype">double</span> k_d,</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">double</span> r_d)</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    pid_ctl_init_noreset(pid, k_p, k_i, lim_i, k_d, r_d);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    pid_ctl_reset(pid);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;pid_ctl_set_integ_clamp(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <a class="code" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> flag)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;pid_ctl_set_integ_clamp(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, bool_t flag)</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a903edada72509aabf55d819e164a7e17">integ_clamp</a> = flag;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    pid-&gt;integ_clamp = flag;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">/*</span></div>
@@ -214,26 +214,26 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">double</span> delta_V;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    delta_V = (V - pid-&gt;<a class="code" href="structpid__ctl__t.html#a43c13bc4e47d27d6bce60a4f97883996">V_prev</a>) / d_t;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (isnan(pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a>))</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> = 0;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> = clamp(pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> + e * d_t, -pid-&gt;<a class="code" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">lim_i</a>, pid-&gt;<a class="code" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">lim_i</a>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    delta_V = (V - pid-&gt;V_prev) / d_t;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (isnan(pid-&gt;integ))</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        pid-&gt;integ = 0;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    pid-&gt;integ = clamp(pid-&gt;integ + e * d_t, -pid-&gt;lim_i, pid-&gt;lim_i);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">     * Clamp the integrated value to the current proportional value. This</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">     * prevents excessive over-correcting when the value returns to center.</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a903edada72509aabf55d819e164a7e17">integ_clamp</a>) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (pid-&gt;integ_clamp) {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (e &lt; 0)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> = <a class="code" href="sysmacros_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a>(pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a>, e);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            pid-&gt;integ = MAX(pid-&gt;integ, e);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> = <a class="code" href="sysmacros_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a>(pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a>, e);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            pid-&gt;integ = MIN(pid-&gt;integ, e);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (!isnan(delta_V))</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="sysmacros_8h.html#a68bd92315a9c90b4caac50c9ed9b5f08">FILTER_IN_NAN</a>(pid-&gt;<a class="code" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">deriv</a>, delta_V, d_t, pid-&gt;<a class="code" href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">r_d</a>);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">e_prev</a> = e;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a43c13bc4e47d27d6bce60a4f97883996">V_prev</a> = V;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        FILTER_IN_NAN(pid-&gt;deriv, delta_V, d_t, pid-&gt;r_d);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    pid-&gt;e_prev = e;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    pid-&gt;V_prev = V;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">/*</span></div>
@@ -260,11 +260,11 @@ $(function() {
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;pid_ctl_get(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(pid-&gt;<a class="code" href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">e_prev</a>));</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">k_p_gain</a> * pid-&gt;<a class="code" href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">k_p</a> * pid-&gt;<a class="code" href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">e_prev</a> +</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        pid-&gt;<a class="code" href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">k_i_gain</a> * pid-&gt;<a class="code" href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">k_i</a> * pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> +</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        pid-&gt;<a class="code" href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">k_d_gain</a> * pid-&gt;<a class="code" href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">k_d</a> * pid-&gt;<a class="code" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">deriv</a>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(pid-&gt;e_prev));</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_p_gain * pid-&gt;k_p * pid-&gt;e_prev +</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        pid-&gt;k_i_gain * pid-&gt;k_i * pid-&gt;integ +</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        pid-&gt;k_d_gain * pid-&gt;k_d * pid-&gt;deriv);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">/*</span></div>
@@ -275,11 +275,11 @@ $(function() {
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;pid_ctl_reset(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">e_prev</a> = NAN;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a43c13bc4e47d27d6bce60a4f97883996">V_prev</a> = NAN;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> = NAN;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">deriv</a> = NAN;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    pid-&gt;e_prev = NAN;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    pid-&gt;V_prev = NAN;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    pid-&gt;integ = NAN;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    pid-&gt;deriv = NAN;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">/*</span></div>
@@ -289,29 +289,29 @@ $(function() {
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;pid_ctl_set_k_p(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_p)</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">k_p</a> = k_p;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    pid-&gt;k_p = k_p;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;pid_ctl_get_k_p(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;{</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">k_p</a>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_p);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;pid_ctl_set_k_p_gain(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_p_gain)</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">k_p_gain</a> = k_p_gain;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    pid-&gt;k_p_gain = k_p_gain;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;pid_ctl_get_k_p_gain(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">k_p_gain</a>);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_p_gain);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">/*</span></div>
@@ -321,29 +321,29 @@ $(function() {
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;pid_ctl_set_k_i(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_i)</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;{</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">k_i</a> = k_i;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    pid-&gt;k_i = k_i;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;pid_ctl_get_k_i(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">k_i</a>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_i);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;pid_ctl_set_k_i_gain(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_i_gain)</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;{</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">k_i_gain</a> = k_i_gain;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    pid-&gt;k_i_gain = k_i_gain;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;pid_ctl_get_k_i_gain(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">k_i_gain</a>);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_i_gain);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">/*</span></div>
@@ -353,15 +353,15 @@ $(function() {
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;pid_ctl_set_lim_i(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> lim_i)</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">lim_i</a> = lim_i;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    pid-&gt;lim_i = lim_i;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;pid_ctl_get_lim_i(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">lim_i</a>);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;lim_i);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;}</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">/*</span></div>
@@ -371,71 +371,71 @@ $(function() {
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;pid_ctl_set_k_d(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_d)</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">k_d</a> = k_d;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    pid-&gt;k_d = k_d;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;pid_ctl_get_k_d(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">k_d</a>);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_d);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;pid_ctl_set_k_d_gain(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> k_d_gain)</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">k_d_gain</a> = k_d_gain;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    pid-&gt;k_d_gain = k_d_gain;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;pid_ctl_get_k_d_gain(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">k_d_gain</a>);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;k_d_gain);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;pid_ctl_set_r_d(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> r_d)</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">r_d</a> = r_d;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    pid-&gt;r_d = r_d;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;pid_ctl_get_r_d(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;{</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">r_d</a>);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;r_d);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;}</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;pid_ctl_set_integ(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> integ)</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a> = integ;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    pid-&gt;integ = integ;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;pid_ctl_get_integ(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;{</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">integ</a>);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;integ);</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;pid_ctl_set_deriv(<a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid, <span class="keywordtype">double</span> deriv)</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    pid-&gt;<a class="code" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">deriv</a> = deriv;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    pid-&gt;deriv = deriv;</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;pid_ctl_get_deriv(<span class="keyword">const</span> <a class="code" href="structpid__ctl__t.html">pid_ctl_t</a> *pid)</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != <a class="code" href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;<a class="code" href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">deriv</a>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(pid != NULL);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">return</span> (pid-&gt;deriv);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment">/*</span></div>
@@ -449,7 +449,7 @@ $(function() {
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    pid_ctl_set_k_i_gain(pid, gain);</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno"><a class="line" href="pid__ctl_8h.html#a1a5659c498aca7ef033f920ef3175e78">  380</a></span>&#160;<span class="preprocessor">#define PID_CTL_DEBUG(pid_ptr) \</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor">#define PID_CTL_DEBUG(pid_ptr) \</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">        const pid_ctl_t *pid = (pid_ptr); \</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="preprocessor">        printf(#pid_ptr &quot;: e: %f  integ: %f  deriv: %f\n&quot;</span>, \</div>
@@ -461,29 +461,8 @@ $(function() {
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACFUTILS_PID_CTL_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00112">assert.h:112</a></div></div>
-<div class="ttc" id="alibc_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="libc_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="libc_8h_source.html#l00047">libc.h:47</a></div></div>
-<div class="ttc" id="amath_8h_html"><div class="ttname"><a href="math_8h.html">math.h</a></div></div>
+<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="astructpid__ctl__t_html"><div class="ttname"><a href="structpid__ctl__t.html">pid_ctl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00049">pid_ctl.h:49</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a14533131b6c9c51f9a92229c3055e21d"><div class="ttname"><a href="structpid__ctl__t.html#a14533131b6c9c51f9a92229c3055e21d">pid_ctl_t::r_d</a></div><div class="ttdeci">double r_d</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00062">pid_ctl.h:62</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a16c189f98f7037b56e80507bbe2fc856"><div class="ttname"><a href="structpid__ctl__t.html#a16c189f98f7037b56e80507bbe2fc856">pid_ctl_t::k_d_gain</a></div><div class="ttdeci">double k_d_gain</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00061">pid_ctl.h:61</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a2014865a10fb3d544f3b3c4b7396ac47"><div class="ttname"><a href="structpid__ctl__t.html#a2014865a10fb3d544f3b3c4b7396ac47">pid_ctl_t::deriv</a></div><div class="ttdeci">double deriv</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00053">pid_ctl.h:53</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a33e029f3062a8b6bd0525d67ecc7cbe0"><div class="ttname"><a href="structpid__ctl__t.html#a33e029f3062a8b6bd0525d67ecc7cbe0">pid_ctl_t::k_p</a></div><div class="ttdeci">double k_p</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00056">pid_ctl.h:56</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a43c13bc4e47d27d6bce60a4f97883996"><div class="ttname"><a href="structpid__ctl__t.html#a43c13bc4e47d27d6bce60a4f97883996">pid_ctl_t::V_prev</a></div><div class="ttdeci">double V_prev</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00051">pid_ctl.h:51</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a5ff5f825f42ba07d80a709162f69425e"><div class="ttname"><a href="structpid__ctl__t.html#a5ff5f825f42ba07d80a709162f69425e">pid_ctl_t::k_p_gain</a></div><div class="ttdeci">double k_p_gain</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00055">pid_ctl.h:55</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a6eb487b34836efa54c3b296b2c4b5ea8"><div class="ttname"><a href="structpid__ctl__t.html#a6eb487b34836efa54c3b296b2c4b5ea8">pid_ctl_t::k_i_gain</a></div><div class="ttdeci">double k_i_gain</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00057">pid_ctl.h:57</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a901c5eae307fb9b227a448444424c4b9"><div class="ttname"><a href="structpid__ctl__t.html#a901c5eae307fb9b227a448444424c4b9">pid_ctl_t::k_i</a></div><div class="ttdeci">double k_i</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00058">pid_ctl.h:58</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_a903edada72509aabf55d819e164a7e17"><div class="ttname"><a href="structpid__ctl__t.html#a903edada72509aabf55d819e164a7e17">pid_ctl_t::integ_clamp</a></div><div class="ttdeci">bool_t integ_clamp</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00064">pid_ctl.h:64</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_ab8fce3a1873bac77a34e056462729991"><div class="ttname"><a href="structpid__ctl__t.html#ab8fce3a1873bac77a34e056462729991">pid_ctl_t::e_prev</a></div><div class="ttdeci">double e_prev</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00050">pid_ctl.h:50</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_ad78f47b2256345683851d4fe9e191dc9"><div class="ttname"><a href="structpid__ctl__t.html#ad78f47b2256345683851d4fe9e191dc9">pid_ctl_t::lim_i</a></div><div class="ttdeci">double lim_i</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00059">pid_ctl.h:59</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_aec58f05acb1a55bdd3bc3c116efa3fdb"><div class="ttname"><a href="structpid__ctl__t.html#aec58f05acb1a55bdd3bc3c116efa3fdb">pid_ctl_t::integ</a></div><div class="ttdeci">double integ</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00052">pid_ctl.h:52</a></div></div>
-<div class="ttc" id="astructpid__ctl__t_html_aece5d67e269a6ba92502bf264ffe43b2"><div class="ttname"><a href="structpid__ctl__t.html#aece5d67e269a6ba92502bf264ffe43b2">pid_ctl_t::k_d</a></div><div class="ttdeci">double k_d</div><div class="ttdef"><b>Definition:</b> <a href="pid__ctl_8h_source.html#l00060">pid_ctl.h:60</a></div></div>
-<div class="ttc" id="asysmacros_8h_html"><div class="ttname"><a href="sysmacros_8h.html">sysmacros.h</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_a68bd92315a9c90b4caac50c9ed9b5f08"><div class="ttname"><a href="sysmacros_8h.html#a68bd92315a9c90b4caac50c9ed9b5f08">FILTER_IN_NAN</a></div><div class="ttdeci">#define FILTER_IN_NAN(old_val, new_val, d_t, lag)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00249">sysmacros.h:249</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_a74e75242132eaabbc1c512488a135926"><div class="ttname"><a href="sysmacros_8h.html#a74e75242132eaabbc1c512488a135926">MIN</a></div><div class="ttdeci">#define MIN(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00215">sysmacros.h:215</a></div></div>
-<div class="ttc" id="asysmacros_8h_html_aacc3ee1a7f283f8ef65cea31f4436a95"><div class="ttname"><a href="sysmacros_8h.html#aacc3ee1a7f283f8ef65cea31f4436a95">MAX</a></div><div class="ttdeci">#define MAX(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00218">sysmacros.h:218</a></div></div>
-<div class="ttc" id="atypes_8h_html_a7e838849f6686c3c903f6ff955a433f5"><div class="ttname"><a href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a></div><div class="ttdeci">unsigned int bool_t</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
-<div class="ttc" id="atypes_8h_html_ac17c9c787c428150babd7c4daf3caa5b"><div class="ttname"><a href="types_8h.html#ac17c9c787c428150babd7c4daf3caa5b">B_TRUE</a></div><div class="ttdeci">#define B_TRUE</div><div class="ttdef"><b>Definition:</b> <a href="types_8h_source.html#l00035">types.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
