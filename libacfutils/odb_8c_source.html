@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;junzip.h&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;acfutils/avl.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;acfutils/compress.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;acfutils/list.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;acfutils/odb.h&gt;</span></div>
@@ -388,7 +388,7 @@ $(function() {
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    odb-&gt;unload_delay = DEFAULT_UNLOAD_DELAY;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    mutex_init(&amp;odb-&gt;tiles_lock);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    avl_create(&amp;odb-&gt;tiles, tile_compar, sizeof (<a class="code" href="structodb__tile__t.html">odb_tile_t</a>),</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;odb-&gt;tiles, tile_compar, sizeof (<a class="code" href="structodb__tile__t.html">odb_tile_t</a>),</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        offsetof(<a class="code" href="structodb__tile__t.html">odb_tile_t</a>, node));</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    mutex_init(&amp;odb-&gt;refresh_lock);</div>
@@ -414,7 +414,7 @@ $(function() {
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    odb_flush_tiles(odb);</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    mutex_exit(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    avl_destroy(&amp;odb-&gt;tiles);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;odb-&gt;tiles);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    mutex_destroy(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    free(odb-&gt;proxy);</div>
@@ -552,8 +552,8 @@ $(function() {
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    ASSERT_MUTEX_HELD(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cc != NULL);</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structodb__tile__t.html">odb_tile_t</a> *tile = avl_first(&amp;odb-&gt;tiles); tile != NULL;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        tile = AVL_NEXT(&amp;odb-&gt;tiles, tile)) {</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structodb__tile__t.html">odb_tile_t</a> *tile = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;odb-&gt;tiles); tile != NULL;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        tile = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;odb-&gt;tiles, tile)) {</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        <span class="keywordflow">if</span> (!write_tile(odb, tile, cc))</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    }</div>
@@ -568,7 +568,7 @@ $(function() {
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(odb != NULL);</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    ASSERT_MUTEX_HELD(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">while</span> ((tile = avl_destroy_nodes(&amp;odb-&gt;tiles, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">while</span> ((tile = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;odb-&gt;tiles, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        free_tile(tile);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;}</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
@@ -764,12 +764,12 @@ $(function() {
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;{</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <a class="code" href="structodb__tile__t.html">odb_tile_t</a> *tile;</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <a class="code" href="structodb__tile__t.html">odb_tile_t</a> srch = { .lat = lat, .lon = lon };</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(odb != NULL);</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    ASSERT_MUTEX_HELD(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    tile = avl_find(&amp;odb-&gt;tiles, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    tile = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;odb-&gt;tiles, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">if</span> (tile == NULL) {</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        tile = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*tile));</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        tile-&gt;odb = odb;</div>
@@ -780,7 +780,7 @@ $(function() {
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <span class="keywordflow">if</span> (load_from_db)</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            odb_populate_tile(odb, tile);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        avl_insert(&amp;odb-&gt;tiles, tile, where);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;odb-&gt;tiles, tile, where);</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    }</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordflow">if</span> (load_from_db)</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        tile-&gt;access_t = time(NULL);</div>
@@ -847,6 +847,15 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_a26960017b3b93ae2f2025c5a4bb06493"><div class="ttname"><a href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a></div><div class="ttdeci">#define ASSERT_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00193">assert.h:193</a></div></div>
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6af8c1b69457cc43c64b3546561b77d8"><div class="ttname"><a href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a></div><div class="ttdeci">API_EXPORT void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
+<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_ad886c4acb2da4a7e86e6b94f50cc9b6b"><div class="ttname"><a href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a></div><div class="ttdeci">#define AVL_NEXT(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00212">avl.h:212</a></div></div>
 <div class="ttc" id="acore_8h_html_a0fa6d0c5d486260d0230d134e9c9a9a3"><div class="ttname"><a href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free</a></div><div class="ttdeci">API_EXPORT void lacf_free(void *buf)</div><div class="ttdef"><b>Definition:</b> <a href="core_8c_source.html#l00049">core.c:49</a></div></div>
 <div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>

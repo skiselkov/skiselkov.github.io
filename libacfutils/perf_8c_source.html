@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;acfutils/avl.h&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/geom.h&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;acfutils/math.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;acfutils/list.h&gt;</span></div>
@@ -244,7 +244,7 @@ $(function() {
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    perf_table_set_t *ts = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ts));</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    avl_create(&amp;ts-&gt;by_isa, perf_isas_compar, sizeof (<a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a>),</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;ts-&gt;by_isa, perf_isas_compar, sizeof (<a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a>),</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        offsetof(<a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a>, ts_node));</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> (ts);</div>
@@ -256,24 +256,24 @@ $(function() {
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> *cookie = NULL;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a> *isa;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">while</span> ((isa = avl_destroy_nodes(&amp;ts-&gt;by_isa, &amp;cookie)) != NULL) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">while</span> ((isa = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;ts-&gt;by_isa, &amp;cookie)) != NULL) {</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordtype">void</span> *cookie2;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="structperf__table__t.html">perf_table_t</a> *table;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        cookie2 = NULL;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">while</span> ((avl_destroy_nodes(&amp;isa-&gt;by_ias, &amp;cookie2)) != NULL)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">while</span> ((<a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;isa-&gt;by_ias, &amp;cookie2)) != NULL)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            ;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        avl_destroy(&amp;isa-&gt;by_ias);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;isa-&gt;by_ias);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        cookie2 = NULL;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">while</span> ((avl_destroy_nodes(&amp;isa-&gt;by_mach, &amp;cookie2)) != NULL)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">while</span> ((<a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;isa-&gt;by_mach, &amp;cookie2)) != NULL)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            ;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        avl_destroy(&amp;isa-&gt;by_mach);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;isa-&gt;by_mach);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">while</span> ((table = list_remove_head(&amp;isa-&gt;tables)) != NULL)</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            perf_table_free(table);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        list_destroy(&amp;isa-&gt;tables);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        free(isa);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    avl_destroy(&amp;ts-&gt;by_isa);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;ts-&gt;by_isa);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    free(ts);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
@@ -362,7 +362,7 @@ $(function() {
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="structperf__table__t.html">perf_table_t</a> *table = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*table));</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">char</span> *line = NULL;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordtype">size_t</span> line_cap = 0;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(fp != NULL);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ts != NULL);</div>
@@ -474,33 +474,33 @@ $(function() {
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    srch_isa.isa = table-&gt;isa;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    isa = avl_find(&amp;ts-&gt;by_isa, &amp;srch_isa, &amp;where);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    isa = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;ts-&gt;by_isa, &amp;srch_isa, &amp;where);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">if</span> (isa == NULL) {</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        isa = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*isa));</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        isa-&gt;isa = table-&gt;isa;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        avl_create(&amp;isa-&gt;by_ias, perf_tables_ias_compar,</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;isa-&gt;by_ias, perf_tables_ias_compar,</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>), offsetof(<a class="code" href="structperf__table__t.html">perf_table_t</a>, ias_node));</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        avl_create(&amp;isa-&gt;by_mach, perf_tables_mach_compar,</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;isa-&gt;by_mach, perf_tables_mach_compar,</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>), offsetof(<a class="code" href="structperf__table__t.html">perf_table_t</a>, mach_node));</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        list_create(&amp;isa-&gt;tables, sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>),</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            offsetof(<a class="code" href="structperf__table__t.html">perf_table_t</a>, isa_node));</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        avl_insert(&amp;ts-&gt;by_isa, isa, where);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;ts-&gt;by_isa, isa, where);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">if</span> (!isnan(table-&gt;ias)) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">if</span> (avl_find(&amp;isa-&gt;by_ias, table, &amp;where) != NULL) {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;isa-&gt;by_ias, table, &amp;where) != NULL) {</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            logMsg(<span class="stringliteral">&quot;Duplicate table for ISA %.1f/IAS %.1f&quot;</span>,</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                table-&gt;isa, MPS2KT(table-&gt;ias));</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        }</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        avl_insert(&amp;isa-&gt;by_ias, table, where);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;isa-&gt;by_ias, table, where);</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    }</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordflow">if</span> (!isnan(table-&gt;mach)) {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">if</span> (avl_find(&amp;isa-&gt;by_mach, table, &amp;where) != NULL) {</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;isa-&gt;by_mach, table, &amp;where) != NULL) {</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            logMsg(<span class="stringliteral">&quot;Duplicate table for ISA %.1f/Mach %.3f&quot;</span>,</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                table-&gt;isa, MPS2KT(table-&gt;mach));</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        }</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        avl_insert(&amp;isa-&gt;by_mach, table, where);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;isa-&gt;by_mach, table, where);</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
@@ -563,7 +563,7 @@ $(function() {
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;perf_tables_find_spd(<a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a> *isa, <span class="keywordtype">double</span> spd, bool_t is_mach,</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <a class="code" href="structperf__table__t.html">perf_table_t</a> **t_min_p, <a class="code" href="structperf__table__t.html">perf_table_t</a> **t_max_p)</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;{</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <a class="code" href="structperf__table__t.html">perf_table_t</a> srch;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <a class="code" href="structperf__table__t.html">perf_table_t</a> *t_min, *t_max;</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    avl_tree_t *tree;</div>
@@ -579,27 +579,27 @@ $(function() {
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        srch.ias = spd;</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        tree = &amp;isa-&gt;by_ias;</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    }</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(avl_numnodes(tree) != 0);</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    t_min = avl_find(tree, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(tree) != 0);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    t_min = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(tree, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keywordflow">if</span> (t_min != NULL) {</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        t_max = t_min;</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        t_min = avl_nearest(tree, where, AVL_BEFORE);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        t_max = avl_nearest(tree, where, AVL_AFTER);</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        t_min = <a class="code" href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a>(tree, where, <a class="code" href="avl_8h.html#af6054cfc4f01e5c9c76b1c8fc1e84d77">AVL_BEFORE</a>);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        t_max = <a class="code" href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a>(tree, where, <a class="code" href="avl_8h.html#a8a0c78a84ea4ad6bfa343261e0e5dde3">AVL_AFTER</a>);</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(t_min != NULL || t_max != NULL);</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">if</span> (t_min == NULL) {</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="keywordflow">if</span> (AVL_NEXT(tree, t_max) != NULL) {</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(tree, t_max) != NULL) {</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                t_min = t_max;</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                t_max = AVL_NEXT(tree, t_max);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                t_max = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(tree, t_max);</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                t_min = t_max;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            }</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        }</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="keywordflow">if</span> (t_max == NULL) {</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            <span class="keywordflow">if</span> (AVL_PREV(tree, t_min) != NULL) {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a3ded3016bcc84cd55c7877c162b20706">AVL_PREV</a>(tree, t_min) != NULL) {</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                t_max = t_min;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                t_min = AVL_PREV(tree, t_min);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                t_min = <a class="code" href="avl_8h.html#a3ded3016bcc84cd55c7877c162b20706">AVL_PREV</a>(tree, t_min);</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                t_max = t_min;</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            }</div>
@@ -618,7 +618,7 @@ $(function() {
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <a class="code" href="structperf__table__t.html">perf_table_t</a> **isa0_min, <a class="code" href="structperf__table__t.html">perf_table_t</a> **isa0_max,</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="structperf__table__t.html">perf_table_t</a> **isa1_min, <a class="code" href="structperf__table__t.html">perf_table_t</a> **isa1_max)</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;{</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a> srch = { .isa = isadev };</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a> *isa0, *isa1;</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
@@ -628,10 +628,10 @@ $(function() {
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(isa1_min != NULL);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(isa1_max != NULL);</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="keywordflow">if</span> (avl_numnodes(&amp;ts-&gt;by_isa) == 0)</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;ts-&gt;by_isa) == 0)</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    isa0 = avl_find(&amp;ts-&gt;by_isa, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    isa0 = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;ts-&gt;by_isa, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordflow">if</span> (isa0 != NULL) {</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="comment">/* Exact hit */</span></div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        isa1 = isa0;</div>
@@ -640,25 +640,25 @@ $(function() {
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="comment">         * Try to find nearest two data points and interpolate, or</span></div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="comment">         * even extrapolate from the nearest two data points.</span></div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        isa0 = avl_nearest(&amp;ts-&gt;by_isa, where, AVL_BEFORE);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        isa1 = avl_nearest(&amp;ts-&gt;by_isa, where, AVL_AFTER);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        isa0 = <a class="code" href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a>(&amp;ts-&gt;by_isa, where, <a class="code" href="avl_8h.html#af6054cfc4f01e5c9c76b1c8fc1e84d77">AVL_BEFORE</a>);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        isa1 = <a class="code" href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a>(&amp;ts-&gt;by_isa, where, <a class="code" href="avl_8h.html#a8a0c78a84ea4ad6bfa343261e0e5dde3">AVL_AFTER</a>);</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(isa0 != NULL || isa1 != NULL);</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="comment">         * We are at the edge of the data range. If we have more than</span></div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="comment">         * one adjacent table to either side, we can try extrapolating.</span></div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <span class="keywordflow">if</span> (isa0 == NULL) {</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="keywordflow">if</span> (AVL_NEXT(&amp;ts-&gt;by_isa, isa1) != NULL) {</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;ts-&gt;by_isa, isa1) != NULL) {</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                isa0 = isa1;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                isa1 = AVL_NEXT(&amp;ts-&gt;by_isa, isa1);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                isa1 = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;ts-&gt;by_isa, isa1);</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                isa0 = isa1;</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            }</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        }</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;        <span class="keywordflow">if</span> (isa1 == NULL) {</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <span class="keywordflow">if</span> (AVL_PREV(&amp;ts-&gt;by_isa, isa0) != NULL) {</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a3ded3016bcc84cd55c7877c162b20706">AVL_PREV</a>(&amp;ts-&gt;by_isa, isa0) != NULL) {</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                isa1 = isa0;</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                isa0 = AVL_PREV(&amp;ts-&gt;by_isa, isa0);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                isa0 = <a class="code" href="avl_8h.html#a3ded3016bcc84cd55c7877c162b20706">AVL_PREV</a>(&amp;ts-&gt;by_isa, isa0);</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                isa1 = isa0;</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            }</div>
@@ -2933,6 +2933,19 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00190">assert.h:190</a></div></div>
 <div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00131">assert.h:131</a></div></div>
+<div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_a3ded3016bcc84cd55c7877c162b20706"><div class="ttname"><a href="avl_8h.html#a3ded3016bcc84cd55c7877c162b20706">AVL_PREV</a></div><div class="ttdeci">#define AVL_PREV(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00218">avl.h:218</a></div></div>
+<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6d5eb3519617f16b6f58dc6169d237fc"><div class="ttname"><a href="avl_8h.html#a6d5eb3519617f16b6f58dc6169d237fc">avl_nearest</a></div><div class="ttdeci">API_EXPORT void * avl_nearest(const avl_tree_t *tree, avl_index_t where, int direction)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00215">avl.c:215</a></div></div>
+<div class="ttc" id="aavl_8h_html_a8a0c78a84ea4ad6bfa343261e0e5dde3"><div class="ttname"><a href="avl_8h.html#a8a0c78a84ea4ad6bfa343261e0e5dde3">AVL_AFTER</a></div><div class="ttdeci">#define AVL_AFTER</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00129">avl.h:129</a></div></div>
+<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
+<div class="ttc" id="aavl_8h_html_aab5a7519e632d4d99a2698234a80e4b7"><div class="ttname"><a href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a></div><div class="ttdeci">API_EXPORT unsigned long avl_numnodes(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00903">avl.c:903</a></div></div>
+<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_ad886c4acb2da4a7e86e6b94f50cc9b6b"><div class="ttname"><a href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a></div><div class="ttdeci">#define AVL_NEXT(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00212">avl.h:212</a></div></div>
+<div class="ttc" id="aavl_8h_html_af6054cfc4f01e5c9c76b1c8fc1e84d77"><div class="ttname"><a href="avl_8h.html#af6054cfc4f01e5c9c76b1c8fc1e84d77">AVL_BEFORE</a></div><div class="ttdeci">#define AVL_BEFORE</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00125">avl.h:125</a></div></div>
 <div class="ttc" id="acore_8h_html_a0fa6d0c5d486260d0230d134e9c9a9a3"><div class="ttname"><a href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free</a></div><div class="ttdeci">API_EXPORT void lacf_free(void *buf)</div><div class="ttdef"><b>Definition:</b> <a href="core_8c_source.html#l00049">core.c:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

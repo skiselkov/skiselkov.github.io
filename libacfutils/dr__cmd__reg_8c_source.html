@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;acfutils/avl.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;acfutils/dr_cmd_reg.h&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
@@ -144,9 +144,9 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!inited);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    inited = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    avl_create(&amp;drs, reg_dr_compar, <span class="keyword">sizeof</span> (<a class="code" href="structreg__dr__t.html">reg_dr_t</a>),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;drs, reg_dr_compar, <span class="keyword">sizeof</span> (<a class="code" href="structreg__dr__t.html">reg_dr_t</a>),</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        offsetof(<a class="code" href="structreg__dr__t.html">reg_dr_t</a>, node));</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    avl_create(&amp;cmds, reg_cmd_compar, <span class="keyword">sizeof</span> (<a class="code" href="structreg__cmd__t.html">reg_cmd_t</a>),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;cmds, reg_cmd_compar, <span class="keyword">sizeof</span> (<a class="code" href="structreg__cmd__t.html">reg_cmd_t</a>),</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        offsetof(<a class="code" href="structreg__cmd__t.html">reg_cmd_t</a>, node));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
@@ -162,19 +162,19 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    inited = B_FALSE;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">while</span> ((rdr = avl_destroy_nodes(&amp;drs, &amp;cookie)) != NULL) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">while</span> ((rdr = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;drs, &amp;cookie)) != NULL) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        dr_delete(&amp;rdr-&gt;dr);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        free(rdr);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    avl_destroy(&amp;drs);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;drs);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">while</span> ((cmd = avl_destroy_nodes(&amp;cmds, &amp;cookie)) != NULL) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">while</span> ((cmd = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;cmds, &amp;cookie)) != NULL) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        XPLMUnregisterCommandHandler(cmd-&gt;cmd, cmd-&gt;cb, cmd-&gt;before,</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            cmd-&gt;refcon);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        free(cmd);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    avl_destroy(&amp;cmds);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;cmds);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">void</span> *</div>
@@ -196,16 +196,16 @@ $(function() {
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;dcr_insert_rdr(<span class="keywordtype">void</span> *token)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="structreg__dr__t.html">reg_dr_t</a> *rdr;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(inited);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(token != NULL);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    rdr = token;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(rdr-&gt;dr.dr != NULL);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(avl_find(&amp;drs, rdr, &amp;where) == NULL,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;drs, rdr, &amp;where) == NULL,</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="stringliteral">&quot;Duplicate dataref registration for dr %s\n&quot;</span>, rdr-&gt;dr.name);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    avl_insert(&amp;drs, rdr, where);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;drs, rdr, where);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;XPLMCommandRef</div>
@@ -228,7 +228,7 @@ $(function() {
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">char</span> *cmdname;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="structreg__cmd__t.html">reg_cmd_t</a> *cmd;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(inited);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(fmt != NULL);</div>
@@ -248,10 +248,10 @@ $(function() {
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    XPLMRegisterCommandHandler(cmd-&gt;cmd, cb, before, refcon);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(avl_find(&amp;cmds, cmd, &amp;where) == NULL,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;cmds, cmd, &amp;where) == NULL,</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="stringliteral">&quot;Found duplicate registration of command %s with cb: %p  &quot;</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="stringliteral">&quot;before: %d,  refcon: %p&quot;</span>, cmdname, cb, before, refcon);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    avl_insert(&amp;cmds, cmd, where);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;cmds, cmd, where);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    free(cmdname);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
@@ -307,6 +307,13 @@ $(function() {
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad157a1a262c174b8a8744896359009b7"><div class="ttname"><a href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a></div><div class="ttdeci">#define VERIFY_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00086">assert.h:86</a></div></div>
+<div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
+<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructreg__cmd__t_html"><div class="ttname"><a href="structreg__cmd__t.html">reg_cmd_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00030">dr_cmd_reg.c:30</a></div></div>

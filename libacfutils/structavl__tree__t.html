@@ -62,46 +62,30 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">avl_tree_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for avl_tree_t:</div>
-<div class="dyncontent">
-<div class="center"><img src="structavl__tree__coll__graph.png" border="0" usemap="#aavl__tree__t_coll__map" alt="Collaboration graph"/></div>
-<map name="aavl__tree__t_coll__map" id="aavl__tree__t_coll__map">
-<area shape="rect" title=" " alt="" coords="9,97,95,124"/>
-<area shape="rect" href="structavl__node.html" title=" " alt="" coords="5,7,99,33"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a8fc1257a44e56bcc21c3855f8ac78834"><td class="memItemLeft" align="right" valign="top"><a id="a8fc1257a44e56bcc21c3855f8ac78834"></a>
-struct <a class="el" href="structavl__node.html">avl_node</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>avl_root</b></td></tr>
-<tr class="separator:a8fc1257a44e56bcc21c3855f8ac78834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62be7d83b5840f6dc95a7bca9c4d854d"><td class="memItemLeft" align="right" valign="top"><a id="a62be7d83b5840f6dc95a7bca9c4d854d"></a>
-int(*&#160;</td><td class="memItemRight" valign="bottom"><b>avl_compar</b> )(const void *, const void *)</td></tr>
-<tr class="separator:a62be7d83b5840f6dc95a7bca9c4d854d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbb05a7e374ff6d951ec006463203ba1"><td class="memItemLeft" align="right" valign="top"><a id="abbb05a7e374ff6d951ec006463203ba1"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>avl_offset</b></td></tr>
-<tr class="separator:abbb05a7e374ff6d951ec006463203ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acebcbb03ab0831554ea2de01c4a929f4"><td class="memItemLeft" align="right" valign="top"><a id="acebcbb03ab0831554ea2de01c4a929f4"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>avl_numnodes</b></td></tr>
-<tr class="separator:acebcbb03ab0831554ea2de01c4a929f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef48fc2af7af0240c10b4a56074c732"><td class="memItemLeft" align="right" valign="top"><a id="a4ef48fc2af7af0240c10b4a56074c732"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>avl_size</b></td></tr>
-<tr class="separator:a4ef48fc2af7af0240c10b4a56074c732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Type used for the root of the AVL tree. </p>
-
-<p class="definition">Definition at line <a class="el" href="avl__impl_8h_source.html#l00149">149</a> of file <a class="el" href="avl__impl_8h_source.html">avl_impl.h</a>.</p>
+<div class="textblock"><p>of a list header) and the individual nodes will have a field of type "avl_node_t" (corresponding to list pointers).</p>
+<p>The type avl_index_t is used to indicate a position in the list for certain calls.</p>
+<p>The usage scenario is generally:</p>
+<ol type="1">
+<li>Create the list/tree with: avl_create()</li>
+</ol>
+<p>followed by any mixture of:</p>
+<p>2a. Insert nodes with: avl_add(), or avl_find() and avl_insert()</p>
+<p>2b. Visited elements with: avl_first() - returns the lowest valued node avl_last() - returns the highest valued node AVL_NEXT() - given a node go to next higher one AVL_PREV() - given a node go to previous lower one</p>
+<p>2c. Find the node with the closest value either less than or greater than a given value with avl_nearest().</p>
+<p>2d. Remove individual nodes from the list/tree with avl_remove().</p>
+<p>and finally when the list is being destroyed</p>
+<ol type="1">
+<li>Use avl_destroy_nodes() to quickly process/free up any remaining nodes. Note that once you use avl_destroy_nodes(), you can no longer use any routine except avl_destroy_nodes() and avl_destoy().</li>
+<li>Use avl_destroy() to destroy the AVL tree itself.</li>
+</ol>
+<p>Any locking for multiple thread access is up to the user to provide, just as is needed for any linked list implementation. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/diablos/NextDev/libacfutils-dll/src/acfutils/<a class="el" href="avl__impl_8h_source.html">avl_impl.h</a></li>
+<li>/home/diablos/NextDev/libacfutils-dll/src/acfutils/<a class="el" href="avl_8h_source.html">avl.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

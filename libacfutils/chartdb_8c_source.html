@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* APL */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;acfutils/avl.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;acfutils/chartdb.h&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
@@ -261,9 +261,9 @@ $(function() {
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    chart_t *chart;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">while</span> ((chart = avl_destroy_nodes(&amp;arpt-&gt;charts, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">while</span> ((chart = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;arpt-&gt;charts, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        chartdb_chart_destroy(chart);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    avl_destroy(&amp;arpt-&gt;charts);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;arpt-&gt;charts);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    free(arpt-&gt;name);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    free(arpt-&gt;city);</div>
@@ -338,10 +338,10 @@ $(function() {
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;loader_purge(chartdb_t *cdb)</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (chart_arpt_t *arpt = avl_first(&amp;cdb-&gt;arpts); arpt != NULL;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        arpt = AVL_NEXT(&amp;cdb-&gt;arpts, arpt)) {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (chart_t *chart = avl_first(&amp;arpt-&gt;charts); chart != NULL;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            chart = AVL_NEXT(&amp;arpt-&gt;charts, chart)) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (chart_arpt_t *arpt = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;cdb-&gt;arpts); arpt != NULL;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;cdb-&gt;arpts, arpt)) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (chart_t *chart = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;charts); chart != NULL;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            chart = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;charts, chart)) {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (chart-&gt;surf != NULL) {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                cairo_surface_destroy(chart-&gt;surf);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                chart-&gt;surf = NULL;</div>
@@ -362,24 +362,24 @@ $(function() {
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *city_name, <span class="keyword">const</span> <span class="keywordtype">char</span> *state_id)</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    chart_arpt_t *arpt, srch;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    lacf_strlcpy(srch.icao, icao, sizeof (srch.icao));</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    arpt = avl_find(&amp;cdb-&gt;arpts, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    arpt = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;cdb-&gt;arpts, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL) {</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        arpt = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*arpt));</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        avl_create(&amp;arpt-&gt;charts, chart_name_compar, sizeof (chart_t),</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;arpt-&gt;charts, chart_name_compar, sizeof (chart_t),</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            offsetof(chart_t, node));</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        lacf_strlcpy(arpt-&gt;icao, icao, sizeof (arpt-&gt;icao));</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        arpt-&gt;name = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(name);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        arpt-&gt;city = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(city_name);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        lacf_strlcpy(arpt-&gt;state, state_id, sizeof (arpt-&gt;state));</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        arpt-&gt;db = cdb;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        avl_insert(&amp;cdb-&gt;arpts, arpt, where);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;cdb-&gt;arpts, arpt, where);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    mutex_exit(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
@@ -389,17 +389,17 @@ $(function() {
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;bool_t</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;chartdb_add_chart(chart_arpt_t *arpt, chart_t *chart)</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;{</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    chartdb_t *cdb = arpt-&gt;db;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (avl_find(&amp;arpt-&gt;charts, chart, &amp;where) != NULL) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;arpt-&gt;charts, chart, &amp;where) != NULL) {</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        mutex_exit(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    avl_insert(&amp;arpt-&gt;charts, chart, where);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;arpt-&gt;charts, chart, where);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    chart-&gt;arpt = arpt;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    chart-&gt;num_pages = -1;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    arpt-&gt;load_complete = B_TRUE;</div>
@@ -1303,7 +1303,7 @@ $(function() {
 <div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160; </div>
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;    cdb = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*cdb));</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;    mutex_init(&amp;cdb-&gt;lock);</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    avl_create(&amp;cdb-&gt;arpts, arpt_compar, sizeof (chart_arpt_t),</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;cdb-&gt;arpts, arpt_compar, sizeof (chart_arpt_t),</div>
 <div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        offsetof(chart_arpt_t, node));</div>
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    cdb-&gt;path = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(cache_path);</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    <span class="keywordflow">if</span> (pdftoppm_path != NULL)</div>
@@ -1350,9 +1350,9 @@ $(function() {
 <div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;    list_destroy(&amp;cdb-&gt;loader_arpt_queue);</div>
 <div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160; </div>
 <div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;    <span class="keywordflow">while</span> ((arpt = avl_destroy_nodes(&amp;cdb-&gt;arpts, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;    <span class="keywordflow">while</span> ((arpt = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;cdb-&gt;arpts, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;        arpt_destroy(arpt);</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;    avl_destroy(&amp;cdb-&gt;arpts);</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;cdb-&gt;arpts);</div>
 <div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;    mutex_destroy(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160; </div>
 <div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;    free(cdb-&gt;proxy);</div>
@@ -1477,8 +1477,8 @@ $(function() {
 <div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;        *num_charts = 0;</div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;    }</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    <span class="keywordflow">for</span> (chart = avl_first(&amp;arpt-&gt;charts), num = 0; chart != NULL;</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;        chart = AVL_NEXT(&amp;arpt-&gt;charts, chart)) {</div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    <span class="keywordflow">for</span> (chart = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;charts), num = 0; chart != NULL;</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;        chart = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;charts, chart)) {</div>
 <div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;        <span class="keywordflow">if</span> ((chart-&gt;type &amp; type) != 0)</div>
 <div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;            num++;</div>
 <div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    }</div>
@@ -1488,8 +1488,8 @@ $(function() {
 <div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    }</div>
 <div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;    charts = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(num, <span class="keyword">sizeof</span> (*charts));</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    <span class="keywordflow">for</span> (chart = avl_first(&amp;arpt-&gt;charts), i = 0; chart != NULL;</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;        chart = AVL_NEXT(&amp;arpt-&gt;charts, chart)) {</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    <span class="keywordflow">for</span> (chart = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;charts), i = 0; chart != NULL;</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;        chart = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;charts, chart)) {</div>
 <div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;        <span class="keywordflow">if</span> ((chart-&gt;type &amp; type) != 0) {</div>
 <div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;            <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(i, &lt;, num);</div>
 <div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;            <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(chart-&gt;name[0] != <span class="charliteral">&#39;\0&#39;</span>);</div>
@@ -1541,7 +1541,7 @@ $(function() {
 <div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;        lacf_strlcpy(srch.icao, icao, sizeof (srch.icao));</div>
 <div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;    }</div>
-<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;    arpt = avl_find(&amp;cdb-&gt;arpts, &amp;srch, NULL);</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;    arpt = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;cdb-&gt;arpts, &amp;srch, NULL);</div>
 <div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL &amp;&amp; prov[cdb-&gt;prov].arpt_lazy_discover != NULL)</div>
 <div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;        arpt = prov[cdb-&gt;prov].arpt_lazy_discover(cdb, icao);</div>
 <div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;    <span class="keywordflow">return</span> (arpt);</div>
@@ -1554,7 +1554,7 @@ $(function() {
 <div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;    chart_t srch_chart = { .name = (<span class="keywordtype">char</span> *)chart_name };</div>
 <div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL)</div>
 <div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;    <span class="keywordflow">return</span> (avl_find(&amp;arpt-&gt;charts, &amp;srch_chart, NULL));</div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;arpt-&gt;charts, &amp;srch_chart, NULL));</div>
 <div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;}</div>
 <div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160; </div>
 <div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;<span class="keywordtype">char</span> *</div>
@@ -1951,6 +1951,15 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00189">assert.h:189</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6af8c1b69457cc43c64b3546561b77d8"><div class="ttname"><a href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a></div><div class="ttdeci">API_EXPORT void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
+<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_ad886c4acb2da4a7e86e6b94f50cc9b6b"><div class="ttname"><a href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a></div><div class="ttdeci">#define AVL_NEXT(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00212">avl.h:212</a></div></div>
 <div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00134">core.h:134</a></div></div>
 <div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>

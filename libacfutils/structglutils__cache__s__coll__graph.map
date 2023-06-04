@@ -1,7 +1,4 @@
-<map id="glutils_cache_s" name="glutils_cache_s">
-<area shape="rect" id="node1" title=" " alt="" coords="84,187,205,213"/>
-<area shape="rect" id="node2" href="$structavl__tree.html" title=" " alt="" coords="66,97,141,124"/>
-<area shape="rect" id="node3" href="$structavl__node.html" title=" " alt="" coords="5,7,87,33"/>
-<area shape="rect" id="node4" href="$structlist.html" title=" " alt="" coords="179,97,222,124"/>
-<area shape="rect" id="node5" href="$structlist__node.html" title=" " alt="" coords="204,7,285,33"/>
+<map id="glutils_cache_t" name="glutils_cache_t">
+<area shape="rect" id="node1" title=" " alt="" coords="5,95,124,121"/>
+<area shape="rect" id="node2" href="$structavl__tree__t.html" title=" " alt="" coords="21,5,108,32"/>
 </map>

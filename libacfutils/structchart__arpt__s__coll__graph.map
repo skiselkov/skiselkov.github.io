@@ -1,16 +1,4 @@
-<map id="chart_arpt_s" name="chart_arpt_s">
-<area shape="rect" id="node1" title=" " alt="" coords="167,191,269,217"/>
-<area shape="rect" id="node8" href="$structchart__s.html" title=" " alt="" coords="522,302,591,329"/>
-<area shape="rect" id="node2" href="$structavl__node.html" title=" " alt="" coords="133,7,215,33"/>
-<area shape="rect" id="node4" href="$structavl__tree.html" title=" " alt="" coords="51,99,126,125"/>
-<area shape="rect" id="node3" href="$structlist__node.html" title=" " alt="" coords="293,99,375,125"/>
-<area shape="rect" id="node14" href="$structlist.html" title=" " alt="" coords="318,243,361,269"/>
-<area shape="rect" id="node5" href="$structchartdb__s.html" title=" " alt="" coords="154,429,239,456"/>
-<area shape="rect" id="node6" href="$structworker__t.html" title=" " alt="" coords="29,302,108,329"/>
-<area shape="rect" id="node7" href="$structmutex__t.html" title=" " alt="" coords="47,191,123,217"/>
-<area shape="rect" id="node9" href="$structchart__procs__t.html" title=" " alt="" coords="685,191,794,217"/>
-<area shape="rect" id="node10" href="$structchart__georef__t.html" title=" " alt="" coords="819,191,935,217"/>
-<area shape="rect" id="node11" href="$structgeo__pos2__t.html" title=" " alt="" coords="886,99,982,125"/>
-<area shape="rect" id="node12" href="$structchart__bbox__t.html" title=" " alt="" coords="663,99,770,125"/>
-<area shape="rect" id="node13" href="$structvect2__s.html" title=" " alt="" coords="731,7,803,33"/>
+<map id="chart_arpt_t" name="chart_arpt_t">
+<area shape="rect" id="node1" title=" " alt="" coords="5,95,105,121"/>
+<area shape="rect" id="node2" href="$structavl__tree__t.html" title=" " alt="" coords="12,5,99,32"/>
 </map>

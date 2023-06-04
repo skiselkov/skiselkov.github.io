@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="airportdb_8h.html">acfutils/airportdb.h</a>&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;acfutils/avl.h&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;acfutils/conf.h&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;acfutils/geom.h&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
@@ -552,18 +552,18 @@ $(function() {
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    bool_t created = B_FALSE;</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <a class="code" href="structtile__t.html">tile_t</a> srch = { .pos = pos };</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <a class="code" href="structtile__t.html">tile_t</a> *tile;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!IS_NULL_GEO_POS(pos));</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    tile = avl_find(&amp;db-&gt;geo_table, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    tile = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;db-&gt;geo_table, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keywordflow">if</span> (tile == NULL &amp;&amp; create) {</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        tile = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(<span class="keyword">sizeof</span> (*tile));</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        tile-&gt;pos = pos;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        avl_create(&amp;tile-&gt;arpts, airport_compar, sizeof (airport_t),</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;tile-&gt;arpts, airport_compar, sizeof (airport_t),</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            offsetof(airport_t, tile_node));</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        avl_insert(&amp;db-&gt;geo_table, tile, where);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;db-&gt;geo_table, tile, where);</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        created = B_TRUE;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    }</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keywordflow">if</span> (created_p != NULL)</div>
@@ -662,7 +662,7 @@ $(function() {
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    lacf_strlcpy(search.ident, ident, sizeof (search.ident));</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    strtoupper(search.ident);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    result = avl_find(&amp;db-&gt;apt_dat, &amp;search, NULL);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    result = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;db-&gt;apt_dat, &amp;search, NULL);</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keywordflow">if</span> (result != NULL)</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        load_airport(result);</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
@@ -672,11 +672,11 @@ $(function() {
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;apt_dat_insert(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, airport_t *arpt)</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;{</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(avl_find(&amp;db-&gt;apt_dat, arpt, &amp;where) == NULL);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    avl_insert(&amp;db-&gt;apt_dat, arpt, where);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;db-&gt;apt_dat, arpt, &amp;where) == NULL);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;db-&gt;apt_dat, arpt, where);</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;}</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="comment">/*</span></div>
@@ -688,15 +688,15 @@ $(function() {
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;geo_link_airport(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, airport_t *arpt)</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;{</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="structtile__t.html">tile_t</a> *tile;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    tile = geo_table_get_tile(db, GEO3_TO_GEO2(arpt-&gt;refpt), B_TRUE, NULL);</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!arpt-&gt;geo_linked);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(avl_find(&amp;tile-&gt;arpts, arpt, &amp;where) == NULL);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    avl_insert(&amp;tile-&gt;arpts, arpt, where);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;tile-&gt;arpts, arpt, &amp;where) == NULL);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;tile-&gt;arpts, arpt, where);</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    arpt-&gt;geo_linked = B_TRUE;</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;}</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
@@ -712,8 +712,8 @@ $(function() {
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt-&gt;geo_linked);</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    tile = geo_table_get_tile(db, GEO3_TO_GEO2(arpt-&gt;refpt), B_TRUE, NULL);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(avl_find(&amp;tile-&gt;arpts, arpt, NULL) == arpt);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    avl_remove(&amp;tile-&gt;arpts, arpt);</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;tile-&gt;arpts, arpt, NULL) == arpt);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <a class="code" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a>(&amp;tile-&gt;arpts, arpt);</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    arpt-&gt;geo_linked = B_FALSE;</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;}</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
@@ -731,7 +731,7 @@ $(function() {
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    rwy = avl_first(&amp;arpt-&gt;rwys);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys);</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(isnan(arpt-&gt;refpt.lat) &amp;&amp; isnan(arpt-&gt;refpt.lon));</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!arpt-&gt;load_complete);</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!arpt-&gt;geo_linked);</div>
@@ -840,7 +840,7 @@ $(function() {
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL)</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <span class="keywordflow">if</span> (avl_numnodes(&amp;arpt-&gt;rwys) != 0) {</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;arpt-&gt;rwys) != 0) {</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(arpt-&gt;refpt.lat) &amp;&amp; !isnan(arpt-&gt;refpt.lon));</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        apt_dat_insert(db, arpt);</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        geo_link_airport(db, arpt);</div>
@@ -941,7 +941,7 @@ $(function() {
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    }</div>
 <div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;    arpt = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*arpt));</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;    avl_create(&amp;arpt-&gt;rwys, runway_compar, sizeof (runway_t),</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;arpt-&gt;rwys, runway_compar, sizeof (runway_t),</div>
 <div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        offsetof(runway_t, node));</div>
 <div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    list_create(&amp;arpt-&gt;freqs, sizeof (<a class="code" href="structfreq__info__t.html">freq_info_t</a>),</div>
 <div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;        offsetof(<a class="code" href="structfreq__info__t.html">freq_info_t</a>, node));</div>
@@ -954,7 +954,7 @@ $(function() {
 <div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;    strlcpy(arpt-&gt;icao, arpt-&gt;ident, sizeof (arpt-&gt;icao));</div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160; </div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    avl_create(&amp;arpt-&gt;ramp_starts, ramp_start_compar,</div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;arpt-&gt;ramp_starts, ramp_start_compar,</div>
 <div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        sizeof (<a class="code" href="structramp__start__t.html">ramp_start_t</a>), offsetof(<a class="code" href="structramp__start__t.html">ramp_start_t</a>, node));</div>
 <div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160; </div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;    <span class="comment">/*</span></div>
@@ -1040,8 +1040,8 @@ $(function() {
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;<span class="comment">     * check that the sense of the displacement is kept (left</span></div>
 <div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;<span class="comment">     * PAPI on the left side of the runway and vice versa).</span></div>
 <div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    <span class="keywordflow">for</span> (runway_t *crwy = avl_first(&amp;arpt-&gt;rwys); crwy != NULL;</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        crwy = AVL_NEXT(&amp;arpt-&gt;rwys, crwy)) {</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    <span class="keywordflow">for</span> (runway_t *crwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); crwy != NULL;</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        crwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, crwy)) {</div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        <span class="keywordtype">double</span> displ;</div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;        <span class="keywordflow">if</span> ((displ = runway_vgsi_fuzzy_match(crwy, 0,</div>
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;            type, pos_v, true_hdg)) &lt; max_displ) {</div>
@@ -1105,8 +1105,8 @@ $(function() {
 <div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;<span class="comment">     * Locate the associated runway. The VGSI line should denote which</span></div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;<span class="comment">     * runway it belongs to.</span></div>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;    <span class="keywordflow">for</span> (rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy)) {</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;    <span class="keywordflow">for</span> (rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy)) {</div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;        <span class="keywordflow">if</span> (strcmp(rwy-&gt;ends[0].id, rwy_id) == 0) {</div>
 <div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;            re = &amp;rwy-&gt;ends[0];</div>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;            ore = &amp;rwy-&gt;ends[1];</div>
@@ -1274,7 +1274,7 @@ $(function() {
 <div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    <span class="keywordtype">char</span> **comps;</div>
 <div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;    <span class="keywordtype">size_t</span> ncomps;</div>
 <div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    runway_t *rwy;</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;    <span class="keywordtype">char</span> error_descr[128];</div>
 <div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160; </div>
 <div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
@@ -1357,11 +1357,11 @@ $(function() {
 <div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    }</div>
 <div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="comment">/* Duplicate runway present? */</span></div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <span class="keywordflow">if</span> (avl_find(&amp;arpt-&gt;rwys, rwy, &amp;where) != NULL) {</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;arpt-&gt;rwys, rwy, &amp;where) != NULL) {</div>
 <div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;        free(rwy);</div>
 <div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    }</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    avl_insert(&amp;arpt-&gt;rwys, rwy, where);</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;arpt-&gt;rwys, rwy, where);</div>
 <div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    <span class="keywordflow">if</span> (arpt-&gt;load_complete) {</div>
 <div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        <span class="comment">/* do a supplemental runway info load */</span></div>
 <div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;        load_rwy_info(rwy);</div>
@@ -1397,7 +1397,7 @@ $(function() {
 <div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    <span class="keywordtype">size_t</span> n_comps;</div>
 <div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;    <a class="code" href="structramp__start__t.html">ramp_start_t</a> srch = {};</div>
 <div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    <a class="code" href="structramp__start__t.html">ramp_start_t</a> *rs = NULL;</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    avl_index_t where;</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160; </div>
 <div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
 <div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(line != NULL);</div>
@@ -1428,7 +1428,7 @@ $(function() {
 <div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;        <span class="keywordflow">if</span> (srch.<a class="code" href="structramp__start__t.html#abc1e86d7c344fe34ff09e72d4595ab7e">name</a>[0] == <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;            <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    }</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;    rs = avl_find(&amp;arpt-&gt;ramp_starts, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;    rs = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;arpt-&gt;ramp_starts, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;    <span class="keywordflow">if</span> (rs != NULL)</div>
 <div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    rs = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*rs));</div>
@@ -1449,7 +1449,7 @@ $(function() {
 <div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        rs-&gt;<a class="code" href="structramp__start__t.html#a91fa7c7fdb63ff9346366e8b2c920e08">type</a> = RAMP_START_MISC;</div>
 <div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160; </div>
-<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    avl_insert(&amp;arpt-&gt;ramp_starts, rs, where);</div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;arpt-&gt;ramp_starts, rs, where);</div>
 <div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;out:</div>
 <div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;    free_strlist(comps, n_comps);</div>
 <div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;}</div>
@@ -1776,8 +1776,8 @@ $(function() {
 <div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;1302 transition_level %.0f\n&quot;</span>, arpt-&gt;TL);</div>
 <div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;    <span class="keywordflow">if</span> (*arpt-&gt;cc != 0)</div>
 <div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;1302 region_code %s\n&quot;</span>, arpt-&gt;cc);</div>
-<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> runway_t *rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;        rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy)) {</div>
+<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> runway_t *rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;        rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy)) {</div>
 <div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(rwy-&gt;ends[0].gpa));</div>
 <div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(rwy-&gt;ends[1].gpa));</div>
 <div class="line"><a name="l01810"></a><span class="lineno"> 1810</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(rwy-&gt;ends[0].tch));</div>
@@ -1800,8 +1800,8 @@ $(function() {
 <div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160;            rwy-&gt;ends[0].tch, rwy-&gt;ends[1].tch,</div>
 <div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;            rwy-&gt;ends[0].thr.elev, rwy-&gt;ends[1].thr.elev);</div>
 <div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;    }</div>
-<div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structramp__start__t.html">ramp_start_t</a> *rs = avl_first(&amp;arpt-&gt;ramp_starts);</div>
-<div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;        rs != NULL; rs = AVL_NEXT(&amp;arpt-&gt;ramp_starts, rs)) {</div>
+<div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structramp__start__t.html">ramp_start_t</a> *rs = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;ramp_starts);</div>
+<div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;        rs != NULL; rs = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;ramp_starts, rs)) {</div>
 <div class="line"><a name="l01832"></a><span class="lineno"> 1832</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *type2name[] = {</div>
 <div class="line"><a name="l01833"></a><span class="lineno"> 1833</span>&#160;            [RAMP_START_GATE] = <span class="stringliteral">&quot;gate&quot;</span>,</div>
 <div class="line"><a name="l01834"></a><span class="lineno"> 1834</span>&#160;            [RAMP_START_HANGAR] = <span class="stringliteral">&quot;hangar&quot;</span>,</div>
@@ -1879,8 +1879,8 @@ $(function() {
 <div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;<span class="comment">             * negative (i.e. &quot;3.5 degrees&quot; is &quot;-350&quot; in the DB).</span></div>
 <div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;<span class="comment">             */</span></div>
 <div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;            gpa /= -100.0;</div>
-<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;            <span class="keywordflow">for</span> (rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;                rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy)) {</div>
+<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;            <span class="keywordflow">for</span> (rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;                rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy)) {</div>
 <div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;                runway_end_t *re;</div>
 <div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160; </div>
 <div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;                <span class="keywordflow">if</span> (strcmp(rwy-&gt;ends[0].id, rwy_id) == 0)</div>
@@ -1917,8 +1917,8 @@ $(function() {
 <div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;            <span class="keywordflow">if</span> (strstr(comps[0], <span class="stringliteral">&quot;RW&quot;</span>) != comps[0])</div>
 <div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160;                <span class="keywordflow">goto</span> out_rwy;</div>
 <div class="line"><a name="l01946"></a><span class="lineno"> 1946</span>&#160;            copy_rwy_ID(comps[0] + 2, rwy_id);</div>
-<div class="line"><a name="l01947"></a><span class="lineno"> 1947</span>&#160;            <span class="keywordflow">for</span> (rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l01948"></a><span class="lineno"> 1948</span>&#160;                rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy)) {</div>
+<div class="line"><a name="l01947"></a><span class="lineno"> 1947</span>&#160;            <span class="keywordflow">for</span> (rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l01948"></a><span class="lineno"> 1948</span>&#160;                rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy)) {</div>
 <div class="line"><a name="l01949"></a><span class="lineno"> 1949</span>&#160;                runway_end_t *re;</div>
 <div class="line"><a name="l01950"></a><span class="lineno"> 1950</span>&#160;                <span class="keywordtype">int</span> telev, tch;</div>
 <div class="line"><a name="l01951"></a><span class="lineno"> 1951</span>&#160; </div>
@@ -2295,8 +2295,8 @@ $(function() {
 <div class="line"><a name="l02333"></a><span class="lineno"> 2333</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l02334"></a><span class="lineno"> 2334</span>&#160;        lacf_strlcpy(idx-&gt;<a class="code" href="structarpt__index__t.html#a5ca03f1ee3f90b535ae2bfb4bdfb3b21">cc</a>, <span class="stringliteral">&quot;-&quot;</span>, sizeof (idx-&gt;<a class="code" href="structarpt__index__t.html#a5ca03f1ee3f90b535ae2bfb4bdfb3b21">cc</a>));</div>
 <div class="line"><a name="l02335"></a><span class="lineno"> 2335</span>&#160;    idx-&gt;<a class="code" href="structarpt__index__t.html#aeb9fc903d7a8534b3cd04d48b493c82e">pos</a> = TO_GEO3_32(arpt-&gt;refpt);</div>
-<div class="line"><a name="l02336"></a><span class="lineno"> 2336</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> runway_t *rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;        rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy)) {</div>
+<div class="line"><a name="l02336"></a><span class="lineno"> 2336</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> runway_t *rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;        rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy)) {</div>
 <div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160;        <span class="keywordflow">if</span> (rwy_is_hard(rwy-&gt;surf)) {</div>
 <div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160;            idx-&gt;<a class="code" href="structarpt__index__t.html#ad424f11341f132d3b7f97c03a97ddbc7">max_rwy_len</a> = MAX(idx-&gt;<a class="code" href="structarpt__index__t.html#ad424f11341f132d3b7f97c03a97ddbc7">max_rwy_len</a>,</div>
 <div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;                MET2FEET(rwy-&gt;ends[0].land_len));</div>
@@ -2307,7 +2307,7 @@ $(function() {
 <div class="line"><a name="l02345"></a><span class="lineno"> 2345</span>&#160;    idx-&gt;<a class="code" href="structarpt__index__t.html#a6de7751205cef4ffcce610399a030892">TA</a> = arpt-&gt;TA;</div>
 <div class="line"><a name="l02346"></a><span class="lineno"> 2346</span>&#160;    idx-&gt;<a class="code" href="structarpt__index__t.html#a941028aee96d2fcf9dfee3583d0d14da">TL</a> = arpt-&gt;TL;</div>
 <div class="line"><a name="l02347"></a><span class="lineno"> 2347</span>&#160; </div>
-<div class="line"><a name="l02348"></a><span class="lineno"> 2348</span>&#160;    avl_add(&amp;db-&gt;arpt_index, idx);</div>
+<div class="line"><a name="l02348"></a><span class="lineno"> 2348</span>&#160;    <a class="code" href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a>(&amp;db-&gt;arpt_index, idx);</div>
 <div class="line"><a name="l02349"></a><span class="lineno"> 2349</span>&#160;    <span class="keywordflow">if</span> (idx-&gt;<a class="code" href="structarpt__index__t.html#a22d3b8c776836433a51ff697c69a89df">icao</a>[0] != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><a name="l02350"></a><span class="lineno"> 2350</span>&#160;        htbl_set(&amp;db-&gt;icao_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a22d3b8c776836433a51ff697c69a89df">icao</a>, idx);</div>
 <div class="line"><a name="l02351"></a><span class="lineno"> 2351</span>&#160;    <span class="keywordflow">if</span> (idx-&gt;<a class="code" href="structarpt__index__t.html#a874f6d5115242644c48cb4fafa99dd70">iata</a>[0] != <span class="charliteral">&#39;\0&#39;</span>)</div>
@@ -2354,7 +2354,7 @@ $(function() {
 <div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160; </div>
 <div class="line"><a name="l02393"></a><span class="lineno"> 2393</span>&#160;    <span class="keywordflow">while</span> (lacf_getline(&amp;line, &amp;line_cap, index_file) &gt; 0) {</div>
 <div class="line"><a name="l02394"></a><span class="lineno"> 2394</span>&#160;        <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*idx));</div>
-<div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;        avl_index_t where;</div>
+<div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;        <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l02396"></a><span class="lineno"> 2396</span>&#160; </div>
 <div class="line"><a name="l02397"></a><span class="lineno"> 2397</span>&#160;        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;%7s %7s %3s %2s %f %f %f %hu %hu %hu&quot;</span>,</div>
 <div class="line"><a name="l02398"></a><span class="lineno"> 2398</span>&#160;            idx-&gt;<a class="code" href="structarpt__index__t.html#a604226589dd324e7789494082300b9b4">ident</a>, idx-&gt;<a class="code" href="structarpt__index__t.html#a22d3b8c776836433a51ff697c69a89df">icao</a>, idx-&gt;<a class="code" href="structarpt__index__t.html#a874f6d5115242644c48cb4fafa99dd70">iata</a>, idx-&gt;<a class="code" href="structarpt__index__t.html#a5ca03f1ee3f90b535ae2bfb4bdfb3b21">cc</a>,</div>
@@ -2363,8 +2363,8 @@ $(function() {
 <div class="line"><a name="l02401"></a><span class="lineno"> 2401</span>&#160;            free(idx);</div>
 <div class="line"><a name="l02402"></a><span class="lineno"> 2402</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l02403"></a><span class="lineno"> 2403</span>&#160;        }</div>
-<div class="line"><a name="l02404"></a><span class="lineno"> 2404</span>&#160;        <span class="keywordflow">if</span> (avl_find(&amp;db-&gt;arpt_index, idx, &amp;where) == NULL) {</div>
-<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;            avl_insert(&amp;db-&gt;arpt_index, idx, where);</div>
+<div class="line"><a name="l02404"></a><span class="lineno"> 2404</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;db-&gt;arpt_index, idx, &amp;where) == NULL) {</div>
+<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;            <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;db-&gt;arpt_index, idx, where);</div>
 <div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;            htbl_set(&amp;db-&gt;icao_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a22d3b8c776836433a51ff697c69a89df">icao</a>, idx);</div>
 <div class="line"><a name="l02407"></a><span class="lineno"> 2407</span>&#160;            <span class="keywordflow">if</span> (strcmp(idx-&gt;<a class="code" href="structarpt__index__t.html#a874f6d5115242644c48cb4fafa99dd70">iata</a>, <span class="stringliteral">&quot;-&quot;</span>) != 0)</div>
 <div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;                htbl_set(&amp;db-&gt;iata_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a874f6d5115242644c48cb4fafa99dd70">iata</a>, idx);</div>
@@ -2504,7 +2504,7 @@ $(function() {
 <div class="line"><a name="l02575"></a><span class="lineno"> 2575</span>&#160;        success = B_FALSE;</div>
 <div class="line"><a name="l02576"></a><span class="lineno"> 2576</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l02577"></a><span class="lineno"> 2577</span>&#160;    }</div>
-<div class="line"><a name="l02578"></a><span class="lineno"> 2578</span>&#160;    <span class="keywordflow">if</span> (avl_numnodes(&amp;db-&gt;apt_dat) == 0) {</div>
+<div class="line"><a name="l02578"></a><span class="lineno"> 2578</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;db-&gt;apt_dat) == 0) {</div>
 <div class="line"><a name="l02579"></a><span class="lineno"> 2579</span>&#160;        logMsg(<span class="stringliteral">&quot;navdata error: it appears your simulator&#39;s &quot;</span></div>
 <div class="line"><a name="l02580"></a><span class="lineno"> 2580</span>&#160;            <span class="stringliteral">&quot;navigation database is broken, or your simulator &quot;</span></div>
 <div class="line"><a name="l02581"></a><span class="lineno"> 2581</span>&#160;            <span class="stringliteral">&quot;contains no airport scenery. Please reinstall the &quot;</span></div>
@@ -2525,10 +2525,10 @@ $(function() {
 <div class="line"><a name="l02596"></a><span class="lineno"> 2596</span>&#160;        success = B_FALSE;</div>
 <div class="line"><a name="l02597"></a><span class="lineno"> 2597</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l02598"></a><span class="lineno"> 2598</span>&#160;    }</div>
-<div class="line"><a name="l02599"></a><span class="lineno"> 2599</span>&#160;    recreate_icao_iata_tables(db, avl_numnodes(&amp;db-&gt;apt_dat));</div>
-<div class="line"><a name="l02600"></a><span class="lineno"> 2600</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = avl_first(&amp;db-&gt;apt_dat), *next_arpt;</div>
+<div class="line"><a name="l02599"></a><span class="lineno"> 2599</span>&#160;    recreate_icao_iata_tables(db, <a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;db-&gt;apt_dat));</div>
+<div class="line"><a name="l02600"></a><span class="lineno"> 2600</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;db-&gt;apt_dat), *next_arpt;</div>
 <div class="line"><a name="l02601"></a><span class="lineno"> 2601</span>&#160;        arpt != NULL; arpt = next_arpt) {</div>
-<div class="line"><a name="l02602"></a><span class="lineno"> 2602</span>&#160;        next_arpt = AVL_NEXT(&amp;db-&gt;apt_dat, arpt);</div>
+<div class="line"><a name="l02602"></a><span class="lineno"> 2602</span>&#160;        next_arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;db-&gt;apt_dat, arpt);</div>
 <div class="line"><a name="l02603"></a><span class="lineno"> 2603</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt-&gt;geo_linked);</div>
 <div class="line"><a name="l02604"></a><span class="lineno"> 2604</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l02605"></a><span class="lineno"> 2605</span>&#160;<span class="comment">         * If the airport isn&#39;t in Airports.txt, we want to dump the</span></div>
@@ -2537,19 +2537,19 @@ $(function() {
 <div class="line"><a name="l02608"></a><span class="lineno"> 2608</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l02609"></a><span class="lineno"> 2609</span>&#160;        <span class="keywordflow">if</span> (!arpt-&gt;have_iaps &amp;&amp; db-&gt;ifr_only) {</div>
 <div class="line"><a name="l02610"></a><span class="lineno"> 2610</span>&#160;            geo_unlink_airport(db, arpt);</div>
-<div class="line"><a name="l02611"></a><span class="lineno"> 2611</span>&#160;            avl_remove(&amp;db-&gt;apt_dat, arpt);</div>
+<div class="line"><a name="l02611"></a><span class="lineno"> 2611</span>&#160;            <a class="code" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a>(&amp;db-&gt;apt_dat, arpt);</div>
 <div class="line"><a name="l02612"></a><span class="lineno"> 2612</span>&#160;            free_airport(arpt);</div>
 <div class="line"><a name="l02613"></a><span class="lineno"> 2613</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l02614"></a><span class="lineno"> 2614</span>&#160;            <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = create_arpt_index(db, arpt);</div>
 <div class="line"><a name="l02615"></a><span class="lineno"> 2615</span>&#160;            write_index_dat(idx, index_file);</div>
 <div class="line"><a name="l02616"></a><span class="lineno"> 2616</span>&#160;        }</div>
 <div class="line"><a name="l02617"></a><span class="lineno"> 2617</span>&#160;    }</div>
-<div class="line"><a name="l02618"></a><span class="lineno"> 2618</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = avl_first(&amp;db-&gt;apt_dat); arpt != NULL;</div>
-<div class="line"><a name="l02619"></a><span class="lineno"> 2619</span>&#160;        arpt = AVL_NEXT(&amp;db-&gt;apt_dat, arpt)) {</div>
+<div class="line"><a name="l02618"></a><span class="lineno"> 2618</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;db-&gt;apt_dat); arpt != NULL;</div>
+<div class="line"><a name="l02619"></a><span class="lineno"> 2619</span>&#160;        arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;db-&gt;apt_dat, arpt)) {</div>
 <div class="line"><a name="l02620"></a><span class="lineno"> 2620</span>&#160;        <span class="keywordtype">char</span> *dirname;</div>
 <div class="line"><a name="l02621"></a><span class="lineno"> 2621</span>&#160; </div>
 <div class="line"><a name="l02622"></a><span class="lineno"> 2622</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt-&gt;geo_linked);</div>
-<div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(avl_numnodes(&amp;arpt-&gt;rwys) != 0);</div>
+<div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;arpt-&gt;rwys) != 0);</div>
 <div class="line"><a name="l02624"></a><span class="lineno"> 2624</span>&#160; </div>
 <div class="line"><a name="l02625"></a><span class="lineno"> 2625</span>&#160;        dirname = apt_dat_cache_dir(db, GEO3_TO_GEO2(arpt-&gt;refpt),</div>
 <div class="line"><a name="l02626"></a><span class="lineno"> 2626</span>&#160;            NULL);</div>
@@ -2642,8 +2642,8 @@ $(function() {
 <div class="line"><a name="l02713"></a><span class="lineno"> 2713</span>&#160;    <span class="keywordflow">if</span> (strlen(end-&gt;id) &gt;= 3) {</div>
 <div class="line"><a name="l02714"></a><span class="lineno"> 2714</span>&#160;        <span class="keywordtype">int</span> my_num_id = atoi(end-&gt;id);</div>
 <div class="line"><a name="l02715"></a><span class="lineno"> 2715</span>&#160; </div>
-<div class="line"><a name="l02716"></a><span class="lineno"> 2716</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> runway_t *orwy = avl_first(&amp;rwy-&gt;arpt-&gt;rwys);</div>
-<div class="line"><a name="l02717"></a><span class="lineno"> 2717</span>&#160;            orwy != NULL; orwy = AVL_NEXT(&amp;rwy-&gt;arpt-&gt;rwys, orwy)) {</div>
+<div class="line"><a name="l02716"></a><span class="lineno"> 2716</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> runway_t *orwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;rwy-&gt;arpt-&gt;rwys);</div>
+<div class="line"><a name="l02717"></a><span class="lineno"> 2717</span>&#160;            orwy != NULL; orwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;rwy-&gt;arpt-&gt;rwys, orwy)) {</div>
 <div class="line"><a name="l02718"></a><span class="lineno"> 2718</span>&#160;            <span class="keyword">const</span> runway_end_t *orwy_end;</div>
 <div class="line"><a name="l02719"></a><span class="lineno"> 2719</span>&#160;            <a class="code" href="structvect2__t.html">vect2_t</a> othr_v, v;</div>
 <div class="line"><a name="l02720"></a><span class="lineno"> 2720</span>&#160;            <span class="keywordtype">double</span> a, dist;</div>
@@ -2825,8 +2825,8 @@ $(function() {
 <div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160;        B_FALSE);</div>
 <div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;    arpt-&gt;ecef = geo2ecef_ft(arpt-&gt;refpt, &amp;wgs84);</div>
 <div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160; </div>
-<div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;    <span class="keywordflow">for</span> (runway_t *rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;        rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy))</div>
+<div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160;    <span class="keywordflow">for</span> (runway_t *rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;        rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy))</div>
 <div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;        load_rwy_info(rwy);</div>
 <div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160; </div>
 <div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
@@ -2838,8 +2838,8 @@ $(function() {
 <div class="line"><a name="l02909"></a><span class="lineno"> 2909</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt != NULL);</div>
 <div class="line"><a name="l02910"></a><span class="lineno"> 2910</span>&#160;    <span class="keywordflow">if</span> (!arpt-&gt;load_complete)</div>
 <div class="line"><a name="l02911"></a><span class="lineno"> 2911</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;    <span class="keywordflow">for</span> (runway_t *rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;        rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy))</div>
+<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;    <span class="keywordflow">for</span> (runway_t *rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;        rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy))</div>
 <div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;        unload_rwy_info(rwy);</div>
 <div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;    arpt-&gt;load_complete = B_FALSE;</div>
 <div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;}</div>
@@ -2857,14 +2857,14 @@ $(function() {
 <div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;        unload_airport(arpt);</div>
 <div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160; </div>
 <div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;    <span class="keywordflow">while</span> ((rs = avl_destroy_nodes(&amp;arpt-&gt;ramp_starts, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;    <span class="keywordflow">while</span> ((rs = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;arpt-&gt;ramp_starts, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;        free(rs);</div>
-<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;    avl_destroy(&amp;arpt-&gt;ramp_starts);</div>
+<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;arpt-&gt;ramp_starts);</div>
 <div class="line"><a name="l02934"></a><span class="lineno"> 2934</span>&#160; </div>
 <div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;    <span class="keywordflow">while</span> ((rwy = avl_destroy_nodes(&amp;arpt-&gt;rwys, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;    <span class="keywordflow">while</span> ((rwy = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;arpt-&gt;rwys, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l02937"></a><span class="lineno"> 2937</span>&#160;        free(rwy);</div>
-<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;    avl_destroy(&amp;arpt-&gt;rwys);</div>
+<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;arpt-&gt;rwys);</div>
 <div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160; </div>
 <div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;    <span class="keywordflow">while</span> ((freq = list_remove_head(&amp;arpt-&gt;freqs)) != NULL)</div>
 <div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160;        free(freq);</div>
@@ -2888,8 +2888,8 @@ $(function() {
 <div class="line"><a name="l02963"></a><span class="lineno"> 2963</span>&#160; </div>
 <div class="line"><a name="l02964"></a><span class="lineno"> 2964</span>&#160;    <span class="keywordflow">if</span> (tile == NULL)</div>
 <div class="line"><a name="l02965"></a><span class="lineno"> 2965</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l02966"></a><span class="lineno"> 2966</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = avl_first(&amp;tile-&gt;arpts); arpt != NULL;</div>
-<div class="line"><a name="l02967"></a><span class="lineno"> 2967</span>&#160;        arpt = AVL_NEXT(&amp;tile-&gt;arpts, arpt)) {</div>
+<div class="line"><a name="l02966"></a><span class="lineno"> 2966</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;tile-&gt;arpts); arpt != NULL;</div>
+<div class="line"><a name="l02967"></a><span class="lineno"> 2967</span>&#160;        arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;tile-&gt;arpts, arpt)) {</div>
 <div class="line"><a name="l02968"></a><span class="lineno"> 2968</span>&#160;        <a class="code" href="structvect3__t.html">vect3_t</a> arpt_ecef = geo2ecef_ft(arpt-&gt;refpt, &amp;wgs84);</div>
 <div class="line"><a name="l02969"></a><span class="lineno"> 2969</span>&#160;        <span class="keywordflow">if</span> (vect3_abs(vect3_sub(ecef, arpt_ecef)) &lt; db-&gt;load_limit) {</div>
 <div class="line"><a name="l02970"></a><span class="lineno"> 2970</span>&#160;            list_insert_tail(l, arpt);</div>
@@ -2962,14 +2962,14 @@ $(function() {
 <div class="line"><a name="l03064"></a><span class="lineno"> 3064</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l03065"></a><span class="lineno"> 3065</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(tile != NULL);</div>
 <div class="line"><a name="l03066"></a><span class="lineno"> 3066</span>&#160; </div>
-<div class="line"><a name="l03067"></a><span class="lineno"> 3067</span>&#160;    <span class="keywordflow">while</span> ((arpt = avl_destroy_nodes(&amp;tile-&gt;arpts, &amp;cookie)) != NULL) {</div>
-<div class="line"><a name="l03068"></a><span class="lineno"> 3068</span>&#160;        avl_remove(&amp;db-&gt;apt_dat, arpt);</div>
+<div class="line"><a name="l03067"></a><span class="lineno"> 3067</span>&#160;    <span class="keywordflow">while</span> ((arpt = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;tile-&gt;arpts, &amp;cookie)) != NULL) {</div>
+<div class="line"><a name="l03068"></a><span class="lineno"> 3068</span>&#160;        <a class="code" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a>(&amp;db-&gt;apt_dat, arpt);</div>
 <div class="line"><a name="l03069"></a><span class="lineno"> 3069</span>&#160;        free_airport(arpt);</div>
 <div class="line"><a name="l03070"></a><span class="lineno"> 3070</span>&#160;    }</div>
-<div class="line"><a name="l03071"></a><span class="lineno"> 3071</span>&#160;    avl_destroy(&amp;tile-&gt;arpts);</div>
+<div class="line"><a name="l03071"></a><span class="lineno"> 3071</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;tile-&gt;arpts);</div>
 <div class="line"><a name="l03072"></a><span class="lineno"> 3072</span>&#160; </div>
 <div class="line"><a name="l03073"></a><span class="lineno"> 3073</span>&#160;    <span class="keywordflow">if</span> (do_remove)</div>
-<div class="line"><a name="l03074"></a><span class="lineno"> 3074</span>&#160;        avl_remove(&amp;db-&gt;geo_table, tile);</div>
+<div class="line"><a name="l03074"></a><span class="lineno"> 3074</span>&#160;        <a class="code" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a>(&amp;db-&gt;geo_table, tile);</div>
 <div class="line"><a name="l03075"></a><span class="lineno"> 3075</span>&#160;    <a class="code" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>(tile);</div>
 <div class="line"><a name="l03076"></a><span class="lineno"> 3076</span>&#160;}</div>
 <div class="line"><a name="l03077"></a><span class="lineno"> 3077</span>&#160; </div>
@@ -3023,14 +3023,14 @@ $(function() {
 <div class="line"><a name="l03158"></a><span class="lineno"> 3158</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l03159"></a><span class="lineno"> 3159</span>&#160;    <span class="comment">/* my_pos can be NULL_GEO_POS2 */</span></div>
 <div class="line"><a name="l03160"></a><span class="lineno"> 3160</span>&#160; </div>
-<div class="line"><a name="l03161"></a><span class="lineno"> 3161</span>&#160;    <span class="keywordflow">for</span> (tile = avl_first(&amp;db-&gt;geo_table); tile != NULL; tile = next_tile) {</div>
-<div class="line"><a name="l03162"></a><span class="lineno"> 3162</span>&#160;        next_tile = AVL_NEXT(&amp;db-&gt;geo_table, tile);</div>
+<div class="line"><a name="l03161"></a><span class="lineno"> 3161</span>&#160;    <span class="keywordflow">for</span> (tile = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;db-&gt;geo_table); tile != NULL; tile = next_tile) {</div>
+<div class="line"><a name="l03162"></a><span class="lineno"> 3162</span>&#160;        next_tile = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;db-&gt;geo_table, tile);</div>
 <div class="line"><a name="l03163"></a><span class="lineno"> 3163</span>&#160;        unload_distant_airport_tiles_i(db, tile, my_pos);</div>
 <div class="line"><a name="l03164"></a><span class="lineno"> 3164</span>&#160;    }</div>
 <div class="line"><a name="l03165"></a><span class="lineno"> 3165</span>&#160; </div>
 <div class="line"><a name="l03166"></a><span class="lineno"> 3166</span>&#160;    <span class="keywordflow">if</span> (IS_NULL_GEO_POS(my_pos)) {</div>
-<div class="line"><a name="l03167"></a><span class="lineno"> 3167</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(avl_numnodes(&amp;db-&gt;geo_table) == 0);</div>
-<div class="line"><a name="l03168"></a><span class="lineno"> 3168</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(avl_numnodes(&amp;db-&gt;apt_dat) == 0);</div>
+<div class="line"><a name="l03167"></a><span class="lineno"> 3167</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;db-&gt;geo_table) == 0);</div>
+<div class="line"><a name="l03168"></a><span class="lineno"> 3168</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;db-&gt;apt_dat) == 0);</div>
 <div class="line"><a name="l03169"></a><span class="lineno"> 3169</span>&#160;    }</div>
 <div class="line"><a name="l03170"></a><span class="lineno"> 3170</span>&#160;}</div>
 <div class="line"><a name="l03171"></a><span class="lineno"> 3171</span>&#160; </div>
@@ -3063,11 +3063,11 @@ $(function() {
 <div class="line"><a name="l03206"></a><span class="lineno"> 3206</span>&#160; </div>
 <div class="line"><a name="l03207"></a><span class="lineno"> 3207</span>&#160;    mutex_init(&amp;db-&gt;lock);</div>
 <div class="line"><a name="l03208"></a><span class="lineno"> 3208</span>&#160; </div>
-<div class="line"><a name="l03209"></a><span class="lineno"> 3209</span>&#160;    avl_create(&amp;db-&gt;apt_dat, airport_compar, sizeof (airport_t),</div>
+<div class="line"><a name="l03209"></a><span class="lineno"> 3209</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;db-&gt;apt_dat, airport_compar, sizeof (airport_t),</div>
 <div class="line"><a name="l03210"></a><span class="lineno"> 3210</span>&#160;        offsetof(airport_t, apt_dat_node));</div>
-<div class="line"><a name="l03211"></a><span class="lineno"> 3211</span>&#160;    avl_create(&amp;db-&gt;geo_table, tile_compar, sizeof (<a class="code" href="structtile__t.html">tile_t</a>),</div>
+<div class="line"><a name="l03211"></a><span class="lineno"> 3211</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;db-&gt;geo_table, tile_compar, sizeof (<a class="code" href="structtile__t.html">tile_t</a>),</div>
 <div class="line"><a name="l03212"></a><span class="lineno"> 3212</span>&#160;        offsetof(<a class="code" href="structtile__t.html">tile_t</a>, node));</div>
-<div class="line"><a name="l03213"></a><span class="lineno"> 3213</span>&#160;    avl_create(&amp;db-&gt;arpt_index, arpt_index_compar,</div>
+<div class="line"><a name="l03213"></a><span class="lineno"> 3213</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;db-&gt;arpt_index, arpt_index_compar,</div>
 <div class="line"><a name="l03214"></a><span class="lineno"> 3214</span>&#160;        sizeof (<a class="code" href="structarpt__index__t.html">arpt_index_t</a>), offsetof(<a class="code" href="structarpt__index__t.html">arpt_index_t</a>, node));</div>
 <div class="line"><a name="l03215"></a><span class="lineno"> 3215</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l03216"></a><span class="lineno"> 3216</span>&#160;<span class="comment">     * Just some defaults - we&#39;ll resize the tables later when</span></div>
@@ -3089,16 +3089,16 @@ $(function() {
 <div class="line"><a name="l03236"></a><span class="lineno"> 3236</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l03237"></a><span class="lineno"> 3237</span>&#160; </div>
 <div class="line"><a name="l03238"></a><span class="lineno"> 3238</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l03239"></a><span class="lineno"> 3239</span>&#160;    <span class="keywordflow">while</span> ((idx = avl_destroy_nodes(&amp;db-&gt;arpt_index, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l03239"></a><span class="lineno"> 3239</span>&#160;    <span class="keywordflow">while</span> ((idx = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;db-&gt;arpt_index, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l03240"></a><span class="lineno"> 3240</span>&#160;        free(idx);</div>
-<div class="line"><a name="l03241"></a><span class="lineno"> 3241</span>&#160;    avl_destroy(&amp;db-&gt;arpt_index);</div>
+<div class="line"><a name="l03241"></a><span class="lineno"> 3241</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;db-&gt;arpt_index);</div>
 <div class="line"><a name="l03242"></a><span class="lineno"> 3242</span>&#160; </div>
 <div class="line"><a name="l03243"></a><span class="lineno"> 3243</span>&#160;    <span class="comment">/* airports are freed in the free_tile function */</span></div>
 <div class="line"><a name="l03244"></a><span class="lineno"> 3244</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l03245"></a><span class="lineno"> 3245</span>&#160;    <span class="keywordflow">while</span> ((tile = avl_destroy_nodes(&amp;db-&gt;geo_table, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l03245"></a><span class="lineno"> 3245</span>&#160;    <span class="keywordflow">while</span> ((tile = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;db-&gt;geo_table, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l03246"></a><span class="lineno"> 3246</span>&#160;        free_tile(db, tile, B_FALSE);</div>
-<div class="line"><a name="l03247"></a><span class="lineno"> 3247</span>&#160;    avl_destroy(&amp;db-&gt;geo_table);</div>
-<div class="line"><a name="l03248"></a><span class="lineno"> 3248</span>&#160;    avl_destroy(&amp;db-&gt;apt_dat);</div>
+<div class="line"><a name="l03247"></a><span class="lineno"> 3247</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;db-&gt;geo_table);</div>
+<div class="line"><a name="l03248"></a><span class="lineno"> 3248</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;db-&gt;apt_dat);</div>
 <div class="line"><a name="l03249"></a><span class="lineno"> 3249</span>&#160; </div>
 <div class="line"><a name="l03250"></a><span class="lineno"> 3250</span>&#160;    htbl_empty(&amp;db-&gt;icao_index, NULL, NULL);</div>
 <div class="line"><a name="l03251"></a><span class="lineno"> 3251</span>&#160;    htbl_destroy(&amp;db-&gt;icao_index);</div>
@@ -3136,7 +3136,7 @@ $(function() {
 <div class="line"><a name="l03306"></a><span class="lineno"> 3306</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ident != NULL);</div>
 <div class="line"><a name="l03307"></a><span class="lineno"> 3307</span>&#160; </div>
 <div class="line"><a name="l03308"></a><span class="lineno"> 3308</span>&#160;    lacf_strlcpy(srch.<a class="code" href="structarpt__index__t.html#a604226589dd324e7789494082300b9b4">ident</a>, ident, sizeof (srch.<a class="code" href="structarpt__index__t.html#a604226589dd324e7789494082300b9b4">ident</a>));</div>
-<div class="line"><a name="l03309"></a><span class="lineno"> 3309</span>&#160;    idx = avl_find(&amp;db-&gt;arpt_index, &amp;srch, NULL);</div>
+<div class="line"><a name="l03309"></a><span class="lineno"> 3309</span>&#160;    idx = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;db-&gt;arpt_index, &amp;srch, NULL);</div>
 <div class="line"><a name="l03310"></a><span class="lineno"> 3310</span>&#160;    <span class="keywordflow">if</span> (idx == NULL)</div>
 <div class="line"><a name="l03311"></a><span class="lineno"> 3311</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l03312"></a><span class="lineno"> 3312</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="airportdb_8c.html#a67f35d46aba65f22cc7bfba3de8bc69b">adb_airport_lookup</a>(db, ident, TO_GEO2(idx-&gt;<a class="code" href="structarpt__index__t.html#aeb9fc903d7a8534b3cd04d48b493c82e">pos</a>)));</div>
@@ -3251,13 +3251,13 @@ $(function() {
 <div class="line"><a name="l03482"></a><span class="lineno"> 3482</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l03483"></a><span class="lineno"> 3483</span>&#160; </div>
 <div class="line"><a name="l03484"></a><span class="lineno"> 3484</span>&#160;    <span class="keywordflow">if</span> (found_cb != NULL) {</div>
-<div class="line"><a name="l03485"></a><span class="lineno"> 3485</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = avl_first(&amp;db-&gt;arpt_index);</div>
-<div class="line"><a name="l03486"></a><span class="lineno"> 3486</span>&#160;            idx != NULL; idx = AVL_NEXT(&amp;db-&gt;arpt_index, idx)) {</div>
+<div class="line"><a name="l03485"></a><span class="lineno"> 3485</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;db-&gt;arpt_index);</div>
+<div class="line"><a name="l03486"></a><span class="lineno"> 3486</span>&#160;            idx != NULL; idx = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;db-&gt;arpt_index, idx)) {</div>
 <div class="line"><a name="l03487"></a><span class="lineno"> 3487</span>&#160;            found_cb(idx, userinfo);</div>
 <div class="line"><a name="l03488"></a><span class="lineno"> 3488</span>&#160;        }</div>
 <div class="line"><a name="l03489"></a><span class="lineno"> 3489</span>&#160;    }</div>
 <div class="line"><a name="l03490"></a><span class="lineno"> 3490</span>&#160; </div>
-<div class="line"><a name="l03491"></a><span class="lineno"> 3491</span>&#160;    <span class="keywordflow">return</span> (avl_numnodes(&amp;db-&gt;arpt_index));</div>
+<div class="line"><a name="l03491"></a><span class="lineno"> 3491</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a>(&amp;db-&gt;arpt_index));</div>
 <div class="line"><a name="l03492"></a><span class="lineno"> 3492</span>&#160;}</div>
 <div class="line"><a name="l03493"></a><span class="lineno"> 3493</span>&#160; </div>
 <div class="line"><a name="l03512"></a><span class="lineno"> 3512</span>&#160;bool_t</div>
@@ -3270,8 +3270,8 @@ $(function() {
 <div class="line"><a name="l03519"></a><span class="lineno"> 3519</span>&#160;    *rwy_p = NULL;</div>
 <div class="line"><a name="l03520"></a><span class="lineno"> 3520</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(end_p != NULL);</div>
 <div class="line"><a name="l03521"></a><span class="lineno"> 3521</span>&#160; </div>
-<div class="line"><a name="l03522"></a><span class="lineno"> 3522</span>&#160;    <span class="keywordflow">for</span> (runway_t *rwy = avl_first(&amp;arpt-&gt;rwys); rwy != NULL;</div>
-<div class="line"><a name="l03523"></a><span class="lineno"> 3523</span>&#160;        rwy = AVL_NEXT(&amp;arpt-&gt;rwys, rwy)) {</div>
+<div class="line"><a name="l03522"></a><span class="lineno"> 3522</span>&#160;    <span class="keywordflow">for</span> (runway_t *rwy = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;rwys); rwy != NULL;</div>
+<div class="line"><a name="l03523"></a><span class="lineno"> 3523</span>&#160;        rwy = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;rwys, rwy)) {</div>
 <div class="line"><a name="l03524"></a><span class="lineno"> 3524</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; 2; i++) {</div>
 <div class="line"><a name="l03525"></a><span class="lineno"> 3525</span>&#160;            <span class="keywordflow">if</span> (strcmp(rwy-&gt;ends[i].id, rwy_id) == 0) {</div>
 <div class="line"><a name="l03526"></a><span class="lineno"> 3526</span>&#160;                *rwy_p = rwy;</div>
@@ -3300,8 +3300,8 @@ $(function() {
 <div class="line"><a name="l03549"></a><span class="lineno"> 3549</span>&#160;    <span class="keywordflow">if</span> (tile == NULL)</div>
 <div class="line"><a name="l03550"></a><span class="lineno"> 3550</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l03551"></a><span class="lineno"> 3551</span>&#160; </div>
-<div class="line"><a name="l03552"></a><span class="lineno"> 3552</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = avl_first(&amp;tile-&gt;arpts); arpt != NULL;</div>
-<div class="line"><a name="l03553"></a><span class="lineno"> 3553</span>&#160;        arpt = AVL_NEXT(&amp;tile-&gt;arpts, arpt)) {</div>
+<div class="line"><a name="l03552"></a><span class="lineno"> 3552</span>&#160;    <span class="keywordflow">for</span> (airport_t *arpt = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;tile-&gt;arpts); arpt != NULL;</div>
+<div class="line"><a name="l03553"></a><span class="lineno"> 3553</span>&#160;        arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;tile-&gt;arpts, arpt)) {</div>
 <div class="line"><a name="l03554"></a><span class="lineno"> 3554</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l03555"></a><span class="lineno"> 3555</span>&#160;<span class="comment">         * Because the passed in ICAO code might be invalid or of an</span></div>
 <div class="line"><a name="l03556"></a><span class="lineno"> 3556</span>&#160;<span class="comment">         * unknown country, if that is the case and we can&#39;t extract</span></div>
@@ -3338,6 +3338,18 @@ $(function() {
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6af8c1b69457cc43c64b3546561b77d8"><div class="ttname"><a href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a></div><div class="ttdeci">API_EXPORT void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
+<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
+<div class="ttc" id="aavl_8h_html_aab5a7519e632d4d99a2698234a80e4b7"><div class="ttname"><a href="avl_8h.html#aab5a7519e632d4d99a2698234a80e4b7">avl_numnodes</a></div><div class="ttdeci">API_EXPORT unsigned long avl_numnodes(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00903">avl.c:903</a></div></div>
+<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_ad886c4acb2da4a7e86e6b94f50cc9b6b"><div class="ttname"><a href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a></div><div class="ttdeci">#define AVL_NEXT(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00212">avl.h:212</a></div></div>
+<div class="ttc" id="aavl_8h_html_afd58378e694bc9edc9fb9a83fea2a569"><div class="ttname"><a href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a></div><div class="ttdeci">API_EXPORT void avl_remove(avl_tree_t *tree, void *node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00660">avl.c:660</a></div></div>
+<div class="ttc" id="aavl_8h_html_afddd03eaf0ef4acfdadf298b2041c484"><div class="ttname"><a href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a></div><div class="ttdeci">API_EXPORT void avl_add(avl_tree_t *tree, void *node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00621">avl.c:621</a></div></div>
 <div class="ttc" id="acore_8h_html_a0fa6d0c5d486260d0230d134e9c9a9a3"><div class="ttname"><a href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free</a></div><div class="ttdeci">API_EXPORT void lacf_free(void *buf)</div><div class="ttdef"><b>Definition:</b> <a href="core_8c_source.html#l00049">core.c:49</a></div></div>
 <div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00134">core.h:134</a></div></div>
 <div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
