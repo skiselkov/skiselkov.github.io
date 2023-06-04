@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['zero_5ffree_597',['ZERO_FREE',['../safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797',1,'safe_alloc.h']]],
-  ['zero_5ffree_5fn_598',['ZERO_FREE_N',['../safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc',1,'safe_alloc.h']]]
+  ['unused_679',['UNUSED',['../core_8h.html#a86d500a34c624c2cae56bc25a31b12f3',1,'core.h']]],
+  ['unused_5fattr_680',['UNUSED_ATTR',['../core_8h.html#ab58a705ceeb200925bb0a7e302959982',1,'core.h']]]
 ];

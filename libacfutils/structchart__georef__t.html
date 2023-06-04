@@ -68,6 +68,8 @@ $(function() {
 <div class="title">chart_georef_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="chartdb_8h_source.html">chartdb.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for chart_georef_t:</div>
 <div class="dyncontent">
@@ -82,8 +84,7 @@ Collaboration diagram for chart_georef_t:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a8e398d9a28a80055b9f3408408a85cf6"><td class="memItemLeft" align="right" valign="top"><a id="a8e398d9a28a80055b9f3408408a85cf6"></a>
-bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>present</b></td></tr>
+<tr class="memitem:a8e398d9a28a80055b9f3408408a85cf6"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchart__georef__t.html#a8e398d9a28a80055b9f3408408a85cf6">present</a></td></tr>
 <tr class="separator:a8e398d9a28a80055b9f3408408a85cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9309dc142d7e4b4ac7ca1ab76a87f431"><td class="memItemLeft" align="right" valign="top"><a id="a9309dc142d7e4b4ac7ca1ab76a87f431"></a>
 <a class="el" href="structvect2__t.html">vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pixels</b> [2]</td></tr>
@@ -91,17 +92,56 @@ bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>present</b></td></t
 <tr class="memitem:a7c87fc2cca4551c0c83ce960ab303630"><td class="memItemLeft" align="right" valign="top"><a id="a7c87fc2cca4551c0c83ce960ab303630"></a>
 <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pos</b> [2]</td></tr>
 <tr class="separator:a7c87fc2cca4551c0c83ce960ab303630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab42b9744fa52cb37a6203b6fd6ef2bf7"><td class="memItemLeft" align="right" valign="top"><a id="ab42b9744fa52cb37a6203b6fd6ef2bf7"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>n_insets</b></td></tr>
+<tr class="memitem:ab42b9744fa52cb37a6203b6fd6ef2bf7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchart__georef__t.html#ab42b9744fa52cb37a6203b6fd6ef2bf7">n_insets</a></td></tr>
 <tr class="separator:ab42b9744fa52cb37a6203b6fd6ef2bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e98aafc1b47c0539f4c3bc40c505ccd"><td class="memItemLeft" align="right" valign="top"><a id="a6e98aafc1b47c0539f4c3bc40c505ccd"></a>
 <a class="el" href="structchart__bbox__t.html">chart_bbox_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>insets</b> [MAX_CHART_INSETS]</td></tr>
 <tr class="separator:a6e98aafc1b47c0539f4c3bc40c505ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00071">71</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Chart geo-referencing data. This data consists of two sets of data points</p><ul>
+<li>two pixel coordinate points in the <code>pixels</code> field</li>
+<li>two geographic coordinate points in the <code>pos</code> field The points are meant to overlay each other, so <code>pixels[0]</code> gives the graphical position of geographic coordinate <code>pos[0]</code> and same for index 1.</li>
+</ul>
+<p>In addition, there's an optional number of chart insets, which are boxes on the chart (their two corners given in pixel coordinates), for which the georeferencing data is invalid. Those are typically things like overlaid legends, or not-to-scale regions. You prevent an airplane symbol from appearing in those insets, as it might confuse the crew as to the position of the aircraft. </p>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00128">128</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="ab42b9744fa52cb37a6203b6fd6ef2bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42b9744fa52cb37a6203b6fd6ef2bf7">&#9670;&nbsp;</a></span>n_insets</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t n_insets</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of elements in <code>insets</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00132">132</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+
+</div>
+</div>
+<a id="a8e398d9a28a80055b9f3408408a85cf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e398d9a28a80055b9f3408408a85cf6">&#9670;&nbsp;</a></span>present</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool_t present</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Is this georef data valid? </p>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00129">129</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/diablos/NextDev/libacfutils-dll/src/acfutils/<a class="el" href="chartdb_8h_source.html">chartdb.h</a></li>
 </ul>
 </div><!-- contents -->

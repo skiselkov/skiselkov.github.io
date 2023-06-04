@@ -1,20 +1,8 @@
 var searchData=
 [
-  ['earth_5fgravity_5faccurate_3120',['earth_gravity_accurate',['../perf_8c.html#ada45f48c1fb06262ae3a0f0881aaf290',1,'earth_gravity_accurate(double lat, double alt):&#160;perf.c'],['../perf_8h.html#a7a9506fd0647e7e5450cb1e0085634f7',1,'earth_gravity_accurate(double lat, double alt):&#160;perf.c']]],
-  ['ecef2ecmi_3121',['ecef2ecmi',['../geom_8h.html#a3be8e33fedb1e7b6ff1dd228ea25baed',1,'ecef2ecmi(vect3_t ecef, double delta_t) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#ad49f864849777181872b0a1bd27d7597',1,'ecef2ecmi(vect3_t pos, double delta_t):&#160;geom.c']]],
-  ['ecef2geo_3122',['ecef2geo',['../geom_8h.html#a2354721a9770376f03d032e8fbc013ec',1,'ecef2geo(vect3_t pos, const ellip_t *ellip) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#ad1bf0d32b4a6a328d11deccac00e997c',1,'ecef2geo(vect3_t pos, const ellip_t *ellip):&#160;geom.c']]],
-  ['ecef2gl_3123',['ecef2gl',['../geom_8h.html#a4e07a522267d18591d83f4bdc3804534',1,'ecef2gl(vect3_t ecmi) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#a51c9be2fb2d40f43a38525de8a93cd19',1,'ecef2gl(vect3_t ecef):&#160;geom.c']]],
-  ['ecef2gl_5fl_3124',['ecef2gl_l',['../geom_8h.html#a8b90019a08cc9d844ec257d52663d130',1,'ecef2gl_l(vect3l_t ecmi) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#a47c23ab3c21910453e8603c3fa8e2b71',1,'ecef2gl_l(vect3l_t ecef):&#160;geom.c']]],
-  ['ecef2sph_3125',['ecef2sph',['../geom_8h.html#ab996f07385bf0eee435749dcecf411ed',1,'ecef2sph(vect3_t v) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#afee522681459f11e649f66dc6ac91e47',1,'ecef2sph(vect3_t v):&#160;geom.c']]],
-  ['ecmi2ecef_3126',['ecmi2ecef',['../geom_8h.html#a14b773d63f7235886a1a18c6ddd7bf1f',1,'ecmi2ecef(vect3_t ecmi, double delta_t) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#a16e61a4886fec8c6f2e7748536a710d3',1,'ecmi2ecef(vect3_t pos, double delta_t):&#160;geom.c']]],
-  ['ecmi2geo_3127',['ecmi2geo',['../geom_8c.html#a0e3d28a8b2b18416a7f7d9eddf7f54c4',1,'ecmi2geo(vect3_t pos, double delta_t, const ellip_t *ellip):&#160;geom.c'],['../geom_8h.html#aa9e6737403560fad015a5850db40911c',1,'ecmi2geo(vect3_t pos, double delta_t, const ellip_t *ellip) PURE_ATTR:&#160;geom.c']]],
-  ['ecmi2sph_3128',['ecmi2sph',['../geom_8h.html#af81cb5246f80b3827b5f041dc362bbbc',1,'ecmi2sph(vect3_t pos, double delta_t) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#a862f92e06b0c7c15c331b4073c8113a5',1,'ecmi2sph(vect3_t pos, double delta_t):&#160;geom.c']]],
-  ['ellip_5finit_3129',['ellip_init',['../geom_8h.html#a95f61aa7057b61288fea4728be5e1048',1,'ellip_init(double semi_major, double semi_minor, double flattening):&#160;geom.c'],['../geom_8c.html#a7b9795e2c33cfc8f6cc844edf10f4d79',1,'ellip_init(double semi_major, double semi_minor, double flattening):&#160;geom.c']]],
-  ['eng_5fget_5fmin_5fthr_3130',['eng_get_min_thr',['../perf_8c.html#ae47e3bad2726f398cb70b5ddd32c741b',1,'perf.c']]],
-  ['eng_5fget_5fthrust_3131',['eng_get_thrust',['../perf_8c.html#a0b72db8ddf8dcd8641c390de1c5b928b',1,'perf.c']]],
-  ['eng_5fmax_5fthr_5favg_3132',['eng_max_thr_avg',['../perf_8h.html#aa26cc124c1ea6c953df0236f1cf1c600',1,'eng_max_thr_avg(const flt_perf_t *flt, const acft_perf_t *acft, double alt1, double alt2, double ktas, double qnh, double isadev, double tp_alt):&#160;perf.c'],['../perf_8c.html#a73a8b2adc75909ca4f11e12a8867d7c6',1,'eng_max_thr_avg(const flt_perf_t *flt, const acft_perf_t *acft, double alt1, double alt2, double ktas, double qnh, double isadev, double tp_alt):&#160;perf.c']]],
-  ['except_5ffini_3133',['except_fini',['../except_8c.html#a219c7bfc0b03e17ce76bb1c7b7697a69',1,'except.c']]],
-  ['except_5finit_3134',['except_init',['../except_8c.html#abece350a52da35e60605fe3ad6d1afdf',1,'except.c']]],
-  ['explode_5fline_3135',['explode_line',['../helpers_8h.html#a163691ca3c1f48ad345528dc9a8d0447',1,'explode_line(char *line, char delim, char **comps, size_t capacity):&#160;helpers.c'],['../helpers_8c.html#a3cb4d21bba429e71025889e0aea7b1d6',1,'explode_line(char *line, char delim, char **comps, size_t capacity):&#160;helpers.c']]],
-  ['extract_5ficao_5fcountry_5fcode_3136',['extract_icao_country_code',['../helpers_8h.html#a66acb5bdd52e9e3ba36e292c64134130',1,'extract_icao_country_code(const char *icao):&#160;helpers.c'],['../helpers_8c.html#a88cfba22243cc7fac93e890adfd16adb',1,'extract_icao_country_code(const char *icao):&#160;helpers.c']]]
+  ['safe_5fappend_5frealloc_574',['safe_append_realloc',['../safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e',1,'safe_alloc.h']]],
+  ['safe_5fcalloc_575',['safe_calloc',['../safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1',1,'safe_alloc.h']]],
+  ['safe_5fmalloc_576',['safe_malloc',['../safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74',1,'safe_alloc.h']]],
+  ['safe_5frealloc_577',['safe_realloc',['../safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658',1,'safe_alloc.h']]],
+  ['safe_5fstrdup_578',['safe_strdup',['../safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a',1,'safe_alloc.h']]]
 ];

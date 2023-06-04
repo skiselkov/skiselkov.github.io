@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lacf_5fdestroy_584',['LACF_DESTROY',['../core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e',1,'core.h']]]
+  ['cairo_5fsurface_5fdestroy_674',['CAIRO_SURFACE_DESTROY',['../cairo__utils_8h.html#a670dd8ad0c506a8c84e30e0d26367372',1,'cairo_utils.h']]]
 ];

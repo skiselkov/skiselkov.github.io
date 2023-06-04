@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    bool_t result = B_FALSE;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    snprintf(url, <span class="keyword">sizeof</span> (url), INDEX_URL, cdb-&gt;airac);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    result = chart_download(cdb, url, index_path, cdb-&gt;prov_info,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    result = chart_download(cdb, url, index_path, cdb-&gt;prov_login,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="stringliteral">&quot;Error downloading chart index&quot;</span>, NULL);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (!result &amp;&amp; file_exists(index_path, NULL)) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        logMsg(<span class="stringliteral">&quot;WARNING: failed to contact FAA servers to refresh &quot;</span></div>
@@ -402,7 +402,7 @@ $(function() {
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    filepath = chartdb_mkpath(chart);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    snprintf(url, <span class="keyword">sizeof</span> (url), CHART_URL, cdb-&gt;airac, chart-&gt;filename);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    result = chart_download(cdb, url, filepath, cdb-&gt;prov_info,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    result = chart_download(cdb, url, filepath, cdb-&gt;prov_login,</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="stringliteral">&quot;Error downloading chart&quot;</span>, NULL);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (!result &amp;&amp; file_exists(filepath, NULL)) {</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        logMsg(<span class="stringliteral">&quot;WARNING: failed to contact FAA servers to refresh &quot;</span></div>

@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="apps_8h.html">acfutils/apps.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;acfutils/base64.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base64_8h.html">acfutils/base64.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;acfutils/conf.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;acfutils/osrand.h&quot;</span></div>
@@ -316,8 +316,8 @@ $(function() {
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="structchart__dl__info__t.html">chart_dl_info_t</a> dl_info;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb-&gt;prov_info != NULL);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    login = cdb-&gt;prov_info;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb-&gt;prov_login != NULL);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    login = cdb-&gt;prov_login;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(nav != NULL);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    chart_dl_info_init(&amp;dl_info, cdb, DEV_AUTH_ENDPT);</div>
@@ -329,7 +329,7 @@ $(function() {
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot generate auth request: osrand() failed&quot;</span>);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    len = lacf_base64_encode(code_verifier, <span class="keyword">sizeof</span> (code_verifier),</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    len = <a class="code" href="base64_8h.html#a7e1a75952f0142eaaaf320b7e99b8869">lacf_base64_encode</a>(code_verifier, <span class="keyword">sizeof</span> (code_verifier),</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        (uint8_t *)nav-&gt;code_verifier);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(len, ==, 44);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    nav-&gt;code_verifier[len] = <span class="charliteral">&#39;\0&#39;</span>;</div>
@@ -339,14 +339,14 @@ $(function() {
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">     * it again and send it over the wire.</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    sha256(nav-&gt;code_verifier, 43, chlg_raw);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    len = lacf_base64_encode(chlg_raw, <span class="keyword">sizeof</span> (chlg_raw),</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    len = <a class="code" href="base64_8h.html#a7e1a75952f0142eaaaf320b7e99b8869">lacf_base64_encode</a>(chlg_raw, <span class="keyword">sizeof</span> (chlg_raw),</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        (uint8_t *)chlg_enc);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    chlg_enc[len] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    conv_base64_to_url(chlg_enc);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    snprintf(post_body, <span class="keyword">sizeof</span> (post_body), <span class="stringliteral">&quot;client_id=%s&amp;&quot;</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="stringliteral">&quot;client_secret=%s&amp;code_challenge=%s&amp;code_challenge_method=S256&quot;</span>,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        login-&gt;username, login-&gt;password, chlg_enc);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">username</a>, login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">password</a>, chlg_enc);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_URL, DEV_AUTH_ENDPT);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_POST, 1L);</div>
@@ -465,8 +465,8 @@ $(function() {
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(nav != NULL);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb-&gt;prov_info != NULL);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    login = cdb-&gt;prov_info;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb-&gt;prov_login != NULL);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    login = cdb-&gt;prov_login;</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    chart_dl_info_init(&amp;dl_info, cdb, TOKEN_ENDPT);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
@@ -489,7 +489,7 @@ $(function() {
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            <span class="stringliteral">&quot;refresh&quot;</span>);</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        snprintf(post_body, <span class="keyword">sizeof</span> (post_body),</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="stringliteral">&quot;grant_type=refresh_token&amp;client_id=%s&amp;client_secret=%s&amp;&quot;</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <span class="stringliteral">&quot;refresh_token=%s&quot;</span>, login-&gt;username, login-&gt;password,</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <span class="stringliteral">&quot;refresh_token=%s&quot;</span>, login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">username</a>, login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">password</a>,</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            nav-&gt;refresh_token);</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        NAV_DBG_LOG(<span class="stringliteral">&quot;no tokens, expecting both a refresh_token &quot;</span></div>
@@ -498,8 +498,8 @@ $(function() {
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="stringliteral">&quot;grant_type=urn:ietf:params:oauth:grant-type:device_code&amp;&quot;</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="stringliteral">&quot;device_code=%s&amp;code_verifier=%s&amp;client_id=%s&amp;&quot;</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <span class="stringliteral">&quot;client_secret=%s&amp;scope=openid charts offline_access&quot;</span>,</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            nav-&gt;dev_code, nav-&gt;code_verifier, login-&gt;username,</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            login-&gt;password);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            nav-&gt;dev_code, nav-&gt;code_verifier, login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">username</a>,</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">password</a>);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    }</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_URL, TOKEN_ENDPT);</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_POST, 1L);</div>
@@ -817,11 +817,11 @@ $(function() {
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(cdb-&gt;prov_info != NULL);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    login = cdb-&gt;prov_info;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;username != NULL);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;password != NULL);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;cainfo != NULL);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(cdb-&gt;prov_login != NULL);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    login = cdb-&gt;prov_login;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">username</a> != NULL);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">password</a> != NULL);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a7447ce3105ae6a8ebf124713156553d1">cainfo</a> != NULL);</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    path = mkpathname(cdb-&gt;path, <span class="stringliteral">&quot;navigraph-tokens.cache&quot;</span>, NULL);</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <a class="code" href="structconf.html">conf</a> = conf_read_file(path, NULL);</div>
@@ -842,7 +842,7 @@ $(function() {
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_ACCEPT_ENCODING, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_NOSIGNAL, 1L);</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_FOLLOWLOCATION, 1L);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_CAINFO, login-&gt;cainfo);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    curl_easy_setopt(nav-&gt;curl, CURLOPT_CAINFO, login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a7447ce3105ae6a8ebf124713156553d1">cainfo</a>);</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="keywordflow">if</span> (cdb-&gt;proxy != NULL)</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        curl_easy_setopt(nav-&gt;curl, CURLOPT_PROXY, cdb-&gt;proxy);</div>
@@ -1044,7 +1044,7 @@ $(function() {
 <div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        <span class="stringliteral">&quot;bounding_boxes/planview/latlng/lng2&quot;</span>, lon2, <span class="keyword">sizeof</span> (lon2), i)) {</div>
 <div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    }</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    georef-&gt;present = B_TRUE;</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    georef-&gt;<a class="code" href="structchart__georef__t.html#a8e398d9a28a80055b9f3408408a85cf6">present</a> = B_TRUE;</div>
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    georef-&gt;pixels[0] = VECT2(atoi(x1), atoi(y1));</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    georef-&gt;pixels[1] = VECT2(atoi(x2), atoi(y2));</div>
 <div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;    georef-&gt;pos[0] = GEO_POS2(atof(lat1), atof(lon1));</div>
@@ -1053,8 +1053,8 @@ $(function() {
 <div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;    insets = jsmn_path_lookup_format(json, toks, n_toks,</div>
 <div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;        <span class="stringliteral">&quot;charts/[%d]/bounding_boxes/insets&quot;</span>, i);</div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; insets != NULL &amp;&amp; j &lt; insets-&gt;size &amp;&amp;</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;        georef-&gt;n_insets &lt; <a class="code" href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a>(georef-&gt;insets); j++) {</div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        <a class="code" href="structchart__bbox__t.html">chart_bbox_t</a> *bbox = &amp;georef-&gt;insets[georef-&gt;n_insets];</div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;        georef-&gt;<a class="code" href="structchart__georef__t.html#ab42b9744fa52cb37a6203b6fd6ef2bf7">n_insets</a> &lt; <a class="code" href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a>(georef-&gt;insets); j++) {</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        <a class="code" href="structchart__bbox__t.html">chart_bbox_t</a> *bbox = &amp;georef-&gt;insets[georef-&gt;<a class="code" href="structchart__georef__t.html#ab42b9744fa52cb37a6203b6fd6ef2bf7">n_insets</a>];</div>
 <div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;        <span class="keywordflow">if</span> (!jsmn_get_tok_data_path_format(json, toks, n_toks,</div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;            <span class="stringliteral">&quot;charts/[%d]/bounding_boxes/insets/[%d]/pixels/x1&quot;</span>,</div>
 <div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;            x1, <span class="keyword">sizeof</span> (x1), i, j) ||</div>
@@ -1071,19 +1071,19 @@ $(function() {
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        }</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;        bbox-&gt;pts[0] = VECT2(atoi(x1), atoi(y1));</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;        bbox-&gt;pts[1] = VECT2(atoi(x2), atoi(y2));</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;        georef-&gt;n_insets++;</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;        georef-&gt;<a class="code" href="structchart__georef__t.html#ab42b9744fa52cb37a6203b6fd6ef2bf7">n_insets</a>++;</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    }</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;}</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160; </div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;parse_chart_view_data(<span class="keyword">const</span> <span class="keywordtype">void</span> *json, <span class="keyword">const</span> jsmntok_t *toks, <span class="keywordtype">int</span> n_toks,</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    chart_t *chart, <span class="keywordtype">int</span> i, chart_view_t view)</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    chart_t *chart, <span class="keywordtype">int</span> i, <a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view)</div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;{</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *view_names[] = {</div>
-<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;        [CHART_VIEW_HEADER] = <span class="stringliteral">&quot;header&quot;</span>,</div>
-<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;        [CHART_VIEW_PLANVIEW] = <span class="stringliteral">&quot;planview&quot;</span>,</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        [CHART_VIEW_PROFILE] = <span class="stringliteral">&quot;profile&quot;</span>,</div>
-<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;        [CHART_VIEW_MINIMUMS] = <span class="stringliteral">&quot;minimums&quot;</span></div>
+<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;        [<a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810aed054733ab9219f7c6c7edccbfc712e2">CHART_VIEW_HEADER</a>] = <span class="stringliteral">&quot;header&quot;</span>,</div>
+<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;        [<a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810a9fe9e3369382621b4095b850b0bac0b0">CHART_VIEW_PLANVIEW</a>] = <span class="stringliteral">&quot;planview&quot;</span>,</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        [<a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810afea9d2303a3492f3bbd87b86c41fe8f1">CHART_VIEW_PROFILE</a>] = <span class="stringliteral">&quot;profile&quot;</span>,</div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;        [<a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810ae44ee0346949e35279e6a936c84a8f82">CHART_VIEW_MINIMUMS</a>] = <span class="stringliteral">&quot;minimums&quot;</span></div>
 <div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;    };</div>
 <div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;    CTASSERT(<a class="code" href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a>(view_names) == NUM_CHART_VIEWS);</div>
 <div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *name;</div>
@@ -1200,7 +1200,7 @@ $(function() {
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;            }</div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;        }</div>
 <div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;        parse_chart_georef_data(json, toks, n_toks, chart, i);</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;        <span class="keywordflow">for</span> (chart_view_t view = 0; view &lt; NUM_CHART_VIEWS; view++) {</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view = 0; view &lt; NUM_CHART_VIEWS; view++) {</div>
 <div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;            parse_chart_view_data(json, toks, n_toks, chart, i,</div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;                view);</div>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;        }</div>
@@ -1280,6 +1280,13 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00189">assert.h:189</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="abase64_8h_html"><div class="ttname"><a href="base64_8h.html">base64.h</a></div></div>
+<div class="ttc" id="abase64_8h_html_a7e1a75952f0142eaaaf320b7e99b8869"><div class="ttname"><a href="base64_8h.html#a7e1a75952f0142eaaaf320b7e99b8869">lacf_base64_encode</a></div><div class="ttdeci">API_EXPORT size_t lacf_base64_encode(const uint8_t *raw, size_t raw_size, uint8_t *encoded)</div><div class="ttdef"><b>Definition:</b> <a href="base64_8c_source.html#l00093">base64.c:93</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a8a510d804b8fc6228417a81dcc58a810"><div class="ttname"><a href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a></div><div class="ttdeci">chart_view_t</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00141">chartdb.h:141</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a8a510d804b8fc6228417a81dcc58a810a9fe9e3369382621b4095b850b0bac0b0"><div class="ttname"><a href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810a9fe9e3369382621b4095b850b0bac0b0">CHART_VIEW_PLANVIEW</a></div><div class="ttdeci">@ CHART_VIEW_PLANVIEW</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00143">chartdb.h:143</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a8a510d804b8fc6228417a81dcc58a810ae44ee0346949e35279e6a936c84a8f82"><div class="ttname"><a href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810ae44ee0346949e35279e6a936c84a8f82">CHART_VIEW_MINIMUMS</a></div><div class="ttdeci">@ CHART_VIEW_MINIMUMS</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00145">chartdb.h:145</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a8a510d804b8fc6228417a81dcc58a810aed054733ab9219f7c6c7edccbfc712e2"><div class="ttname"><a href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810aed054733ab9219f7c6c7edccbfc712e2">CHART_VIEW_HEADER</a></div><div class="ttdeci">@ CHART_VIEW_HEADER</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00142">chartdb.h:142</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a8a510d804b8fc6228417a81dcc58a810afea9d2303a3492f3bbd87b86c41fe8f1"><div class="ttname"><a href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810afea9d2303a3492f3bbd87b86c41fe8f1">CHART_VIEW_PROFILE</a></div><div class="ttdeci">@ CHART_VIEW_PROFILE</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00144">chartdb.h:144</a></div></div>
 <div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00134">core.h:134</a></div></div>
 <div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
 <div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
@@ -1288,10 +1295,15 @@ $(function() {
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_af641f79c2c4a711aa6baa4fb3b0d72cc"><div class="ttname"><a href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">ZERO_FREE_N</a></div><div class="ttdeci">#define ZERO_FREE_N(ptr, num)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00157">safe_alloc.h:157</a></div></div>
-<div class="ttc" id="astructchart__bbox__t_html"><div class="ttname"><a href="structchart__bbox__t.html">chart_bbox_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00063">chartdb.h:63</a></div></div>
+<div class="ttc" id="astructchart__bbox__t_html"><div class="ttname"><a href="structchart__bbox__t.html">chart_bbox_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00109">chartdb.h:109</a></div></div>
 <div class="ttc" id="astructchart__dl__info__t_html"><div class="ttname"><a href="structchart__dl__info__t.html">chart_dl_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__common_8h_source.html#l00039">chart_prov_common.h:39</a></div></div>
-<div class="ttc" id="astructchart__georef__t_html"><div class="ttname"><a href="structchart__georef__t.html">chart_georef_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00071">chartdb.h:71</a></div></div>
-<div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00057">chartdb.h:57</a></div></div>
+<div class="ttc" id="astructchart__georef__t_html"><div class="ttname"><a href="structchart__georef__t.html">chart_georef_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00128">chartdb.h:128</a></div></div>
+<div class="ttc" id="astructchart__georef__t_html_a8e398d9a28a80055b9f3408408a85cf6"><div class="ttname"><a href="structchart__georef__t.html#a8e398d9a28a80055b9f3408408a85cf6">chart_georef_t::present</a></div><div class="ttdeci">bool_t present</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00129">chartdb.h:129</a></div></div>
+<div class="ttc" id="astructchart__georef__t_html_ab42b9744fa52cb37a6203b6fd6ef2bf7"><div class="ttname"><a href="structchart__georef__t.html#ab42b9744fa52cb37a6203b6fd6ef2bf7">chart_georef_t::n_insets</a></div><div class="ttdeci">size_t n_insets</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00132">chartdb.h:132</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00075">chartdb.h:75</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html_a59460a3ff2c12443d1022e5cc0fba85c"><div class="ttname"><a href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">chart_prov_info_login_t::password</a></div><div class="ttdeci">char * password</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00091">chartdb.h:91</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html_a7447ce3105ae6a8ebf124713156553d1"><div class="ttname"><a href="structchart__prov__info__login__t.html#a7447ce3105ae6a8ebf124713156553d1">chart_prov_info_login_t::cainfo</a></div><div class="ttdeci">char * cainfo</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00101">chartdb.h:101</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html_a9b20c006bd90a09e1465fb668700e81d"><div class="ttname"><a href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">chart_prov_info_login_t::username</a></div><div class="ttdeci">char * username</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00083">chartdb.h:83</a></div></div>
 <div class="ttc" id="astructconf_html"><div class="ttname"><a href="structconf.html">conf</a></div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00057">conf.c:57</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 <div class="ttc" id="astructnavigraph__t_html"><div class="ttname"><a href="structnavigraph__t.html">navigraph_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__navigraph_8c_source.html#l00060">chart_prov_navigraph.c:60</a></div></div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freq_5ftype_5ft_563',['freq_type_t',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82d',1,'airportdb.h']]]
+  ['chart_5fview_5ft_646',['chart_view_t',['../chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810',1,'chartdb.h']]]
 ];

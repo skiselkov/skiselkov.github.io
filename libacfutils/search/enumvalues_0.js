@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['freq_5ftype_5fapp_564',['FREQ_TYPE_APP',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da3009f58ed68eab5c989e05f9d12b084a',1,'airportdb.h']]],
-  ['freq_5ftype_5fclnc_565',['FREQ_TYPE_CLNC',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82dac19ef224a369c31b9f0f6b1bdc3ecbf5',1,'airportdb.h']]],
-  ['freq_5ftype_5fctaf_566',['FREQ_TYPE_CTAF',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82daca8bccd19e755ae55f9333cb87231557',1,'airportdb.h']]],
-  ['freq_5ftype_5fdep_567',['FREQ_TYPE_DEP',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da2bbb45d874d6b5378c297520d1626760',1,'airportdb.h']]],
-  ['freq_5ftype_5fgnd_568',['FREQ_TYPE_GND',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da3b6e9f168a549e74573a7f2919a552e2',1,'airportdb.h']]],
-  ['freq_5ftype_5frec_569',['FREQ_TYPE_REC',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82da23ade366d635e2a6554dffe905521ce2',1,'airportdb.h']]],
-  ['freq_5ftype_5ftwr_570',['FREQ_TYPE_TWR',['../airportdb_8h.html#a0dc635063fe51e8847a3226e5c17b82daeeebb930b938f691855804e67f1491e8',1,'airportdb.h']]]
+  ['chart_5fview_5fheader_648',['CHART_VIEW_HEADER',['../chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810aed054733ab9219f7c6c7edccbfc712e2',1,'chartdb.h']]],
+  ['chart_5fview_5fminimums_649',['CHART_VIEW_MINIMUMS',['../chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810ae44ee0346949e35279e6a936c84a8f82',1,'chartdb.h']]],
+  ['chart_5fview_5fplanview_650',['CHART_VIEW_PLANVIEW',['../chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810a9fe9e3369382621b4095b850b0bac0b0',1,'chartdb.h']]],
+  ['chart_5fview_5fprofile_651',['CHART_VIEW_PROFILE',['../chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810afea9d2303a3492f3bbd87b86c41fe8f1',1,'chartdb.h']]]
 ];

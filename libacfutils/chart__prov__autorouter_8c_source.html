@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    bool_t (*cb)(chartdb_t *cdb, CURL *curl, <span class="keyword">const</span> <span class="keywordtype">char</span> *href))</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="structchart__dl__info__t.html">chart_dl_info_t</a> dl = { .cdb = NULL };</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *login = cdb-&gt;prov_info;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *login = cdb-&gt;prov_login;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    xmlDoc *doc = NULL;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    xmlXPathContext *xpath_ctx = NULL;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    xmlXPathObject *xpath_obj = NULL;</div>
@@ -449,11 +449,11 @@ $(function() {
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;bool_t</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;chart_autorouter_init(chartdb_t *cdb)</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *login = cdb-&gt;prov_info;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *login = cdb-&gt;prov_login;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(cdb-&gt;prov_info != NULL);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;username != NULL);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;password != NULL);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(cdb-&gt;prov_login != NULL);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">username</a> != NULL);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(login-&gt;<a class="code" href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">password</a> != NULL);</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">if</span> (!update_index(cdb))</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
@@ -480,13 +480,13 @@ $(function() {
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    bool_t result;</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordtype">char</span> url[512];</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    CURL *curl = NULL;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *login;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *login;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(chart-&gt;arpt != NULL);</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    arpt = chart-&gt;arpt;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(arpt-&gt;db != NULL);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    cdb = arpt-&gt;db;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    login = cdb-&gt;prov_info;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    login = cdb-&gt;prov_login;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(login != NULL);</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    filepath = chartdb_mkpath(chart);</div>
@@ -539,7 +539,9 @@ $(function() {
 <div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructchart__dl__info__t_html"><div class="ttname"><a href="structchart__dl__info__t.html">chart_dl_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__common_8h_source.html#l00039">chart_prov_common.h:39</a></div></div>
-<div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00057">chartdb.h:57</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00075">chartdb.h:75</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html_a59460a3ff2c12443d1022e5cc0fba85c"><div class="ttname"><a href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">chart_prov_info_login_t::password</a></div><div class="ttdeci">char * password</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00091">chartdb.h:91</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html_a9b20c006bd90a09e1465fb668700e81d"><div class="ttname"><a href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">chart_prov_info_login_t::username</a></div><div class="ttdeci">char * username</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00083">chartdb.h:83</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

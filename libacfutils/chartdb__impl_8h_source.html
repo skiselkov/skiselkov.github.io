@@ -95,7 +95,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;acfutils/chartdb.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chartdb_8h.html">acfutils/chartdb.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;acfutils/thread.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;acfutils/worker.h&quot;</span></div>
@@ -190,9 +190,9 @@ $(function() {
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    int     (*chart_sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">/* private to chart provider */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span>        *prov_info;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span>        *prov_priv;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    bool_t      init_complete;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *prov_login;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span>            *prov_priv;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    bool_t          init_complete;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">/* protected by `lock&#39; */</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    list_t      loader_queue;</div>
@@ -243,11 +243,12 @@ $(function() {
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _CHARTDB_IMPL_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
+<div class="ttc" id="achartdb_8h_html"><div class="ttname"><a href="chartdb_8h.html">chartdb.h</a></div></div>
 <div class="ttc" id="astructchart__arpt__s_html"><div class="ttname"><a href="structchart__arpt__s.html">chart_arpt_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00081">chartdb_impl.h:81</a></div></div>
-<div class="ttc" id="astructchart__bbox__t_html"><div class="ttname"><a href="structchart__bbox__t.html">chart_bbox_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00063">chartdb.h:63</a></div></div>
-<div class="ttc" id="astructchart__georef__t_html"><div class="ttname"><a href="structchart__georef__t.html">chart_georef_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00071">chartdb.h:71</a></div></div>
-<div class="ttc" id="astructchart__procs__t_html"><div class="ttname"><a href="structchart__procs__t.html">chart_procs_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00091">chartdb.h:91</a></div></div>
-<div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00057">chartdb.h:57</a></div></div>
+<div class="ttc" id="astructchart__bbox__t_html"><div class="ttname"><a href="structchart__bbox__t.html">chart_bbox_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00109">chartdb.h:109</a></div></div>
+<div class="ttc" id="astructchart__georef__t_html"><div class="ttname"><a href="structchart__georef__t.html">chart_georef_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00128">chartdb.h:128</a></div></div>
+<div class="ttc" id="astructchart__procs__t_html"><div class="ttname"><a href="structchart__procs__t.html">chart_procs_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00156">chartdb.h:156</a></div></div>
+<div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00075">chartdb.h:75</a></div></div>
 <div class="ttc" id="astructchart__prov__t_html"><div class="ttname"><a href="structchart__prov__t.html">chart_prov_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00139">chartdb_impl.h:139</a></div></div>
 <div class="ttc" id="astructchart__s_html"><div class="ttname"><a href="structchart__s.html">chart_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00047">chartdb_impl.h:47</a></div></div>
 <div class="ttc" id="astructchartdb__s_html"><div class="ttname"><a href="structchartdb__s.html">chartdb_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00100">chartdb_impl.h:100</a></div></div>

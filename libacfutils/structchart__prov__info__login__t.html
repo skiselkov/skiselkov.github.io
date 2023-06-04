@@ -68,23 +68,84 @@ $(function() {
 <div class="title">chart_prov_info_login_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="chartdb_8h_source.html">chartdb.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a9b20c006bd90a09e1465fb668700e81d"><td class="memItemLeft" align="right" valign="top"><a id="a9b20c006bd90a09e1465fb668700e81d"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>username</b></td></tr>
+<tr class="memitem:a9b20c006bd90a09e1465fb668700e81d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">username</a></td></tr>
 <tr class="separator:a9b20c006bd90a09e1465fb668700e81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59460a3ff2c12443d1022e5cc0fba85c"><td class="memItemLeft" align="right" valign="top"><a id="a59460a3ff2c12443d1022e5cc0fba85c"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>password</b></td></tr>
+<tr class="memitem:a59460a3ff2c12443d1022e5cc0fba85c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchart__prov__info__login__t.html#a59460a3ff2c12443d1022e5cc0fba85c">password</a></td></tr>
 <tr class="separator:a59460a3ff2c12443d1022e5cc0fba85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7447ce3105ae6a8ebf124713156553d1"><td class="memItemLeft" align="right" valign="top"><a id="a7447ce3105ae6a8ebf124713156553d1"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>cainfo</b></td></tr>
+<tr class="memitem:a7447ce3105ae6a8ebf124713156553d1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchart__prov__info__login__t.html#a7447ce3105ae6a8ebf124713156553d1">cainfo</a></td></tr>
 <tr class="separator:a7447ce3105ae6a8ebf124713156553d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00057">57</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Specifies login and security information for chart providers. This data is supplied during a call to <a class="el" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init()</a> and is mandatory for the Autorouter and Navigraph providers, and optional for the Aeronav provider. </p>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00075">75</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a7447ce3105ae6a8ebf124713156553d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7447ce3105ae6a8ebf124713156553d1">&#9670;&nbsp;</a></span>cainfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* cainfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is used by all providers to supply a list of trusted CA certificates for HTTPS server host verification. This must point to a file on disk which contains a list of CA certificates generated from the cURL source repository using the "make
+ca-bundle" command. This generates a file named "ca-bundle.crt", which you should ship with your addon and then provide a path to it in this field. </p>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00101">101</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+
+</div>
+</div>
+<a id="a59460a3ff2c12443d1022e5cc0fba85c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59460a3ff2c12443d1022e5cc0fba85c">&#9670;&nbsp;</a></span>password</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* password</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li>For Navigraph, must contain the client secret supplied to you by Navigraph as part of authorizing API access.</li>
+<li>For Autorouter, must contain the end user's autorouter account password.</li>
+<li>For Aeronav, this field is ignored. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00091">91</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b20c006bd90a09e1465fb668700e81d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b20c006bd90a09e1465fb668700e81d">&#9670;&nbsp;</a></span>username</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* username</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<ul>
+<li>For Navigraph, must contain the client ID supplied to you by Navigraph as part of authorizing API access.</li>
+<li>For Autorouter, must contain the end user's autorouter account username.</li>
+<li>For Aeronav, this field is ignored. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="chartdb_8h_source.html#l00083">83</a> of file <a class="el" href="chartdb_8h_source.html">chartdb.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/diablos/NextDev/libacfutils-dll/src/acfutils/<a class="el" href="chartdb_8h_source.html">chartdb.h</a></li>
 </ul>
 </div><!-- contents -->
