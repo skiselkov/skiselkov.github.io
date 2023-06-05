@@ -132,7 +132,7 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="structxlate__ent__t.html">xlate_ent_t</a> *e = NULL;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!acfutils_xlate_inited);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;tbl, xlate_compar, <span class="keyword">sizeof</span> (<a class="code" href="structxlate__ent__t.html">xlate_ent_t</a>),</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;tbl, xlate_compar, <span class="keyword">sizeof</span> (<a class="code" href="structxlate__ent__t.html">xlate_ent_t</a>),</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        offsetof(<a class="code" href="structxlate__ent__t.html">xlate_ent_t</a>, node));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    fp = fopen(po_file, <span class="stringliteral">&quot;r&quot;</span>);</div>
@@ -198,7 +198,7 @@ $(function() {
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        free(e-&gt;msgstr);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        free(e);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        <a class="code" href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a>(&amp;tbl, e);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                        <a class="code" href="avl_8h.html#a817ce6aeb0cf331b4fd8b76aca67043a">avl_add</a>(&amp;tbl, e);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                e = calloc(1, <span class="keyword">sizeof</span> (*e));</div>
@@ -235,7 +235,7 @@ $(function() {
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            free(e-&gt;msgstr);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            free(e);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a>(&amp;tbl, e);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="avl_8h.html#a817ce6aeb0cf331b4fd8b76aca67043a">avl_add</a>(&amp;tbl, e);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
@@ -262,12 +262,12 @@ $(function() {
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (!acfutils_xlate_inited)</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">while</span> ((ent = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;tbl, &amp;cookie)) != NULL) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">while</span> ((ent = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;tbl, &amp;cookie)) != NULL) {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        free(ent-&gt;msgid);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        free(ent-&gt;msgstr);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        free(ent);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;tbl);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;tbl);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    acfutils_xlate_inited = B_FALSE;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
@@ -281,7 +281,7 @@ $(function() {
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">if</span> (!acfutils_xlate_inited)</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> (msgid);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    ent = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;tbl, &amp;srch, NULL);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    ent = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;tbl, &amp;srch, NULL);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (ent == NULL)</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">return</span> (msgid);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">else</span></div>
@@ -320,11 +320,11 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00120">assert.h:120</a></div></div>
 <div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
-<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
-<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
-<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
-<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
-<div class="ttc" id="aavl_8h_html_afddd03eaf0ef4acfdadf298b2041c484"><div class="ttname"><a href="avl_8h.html#afddd03eaf0ef4acfdadf298b2041c484">avl_add</a></div><div class="ttdeci">API_EXPORT void avl_add(avl_tree_t *tree, void *node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00621">avl.c:621</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0dabf1a0262850aedd21dcb01df8a48e"><div class="ttname"><a href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a></div><div class="ttdeci">void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a817ce6aeb0cf331b4fd8b76aca67043a"><div class="ttname"><a href="avl_8h.html#a817ce6aeb0cf331b4fd8b76aca67043a">avl_add</a></div><div class="ttdeci">void avl_add(avl_tree_t *tree, void *node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00621">avl.c:621</a></div></div>
+<div class="ttc" id="aavl_8h_html_a86bad92bbbcbf451c56929f1f23fadde"><div class="ttname"><a href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a></div><div class="ttdeci">void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_ac65a3472303f2a3ee479f57f6c816cab"><div class="ttname"><a href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a></div><div class="ttdeci">void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_af07adf796c231b360ea20c33dde96ea6"><div class="ttname"><a href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a></div><div class="ttdeci">void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
 <div class="ttc" id="astructxlate__ent__t_html"><div class="ttname"><a href="structxlate__ent__t.html">xlate_ent_t</a></div><div class="ttdef"><b>Definition:</b> <a href="intl_8c_source.html#l00035">intl.c:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

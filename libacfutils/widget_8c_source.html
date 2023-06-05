@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;XPStandardWidgets.h&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;acfutils/dr.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/geom.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
@@ -695,10 +695,10 @@ $(function() {
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="keywordflow">if</span> (!dr_looked_up) {</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        dr_looked_up = B_TRUE;</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        fdr_find(&amp;VR_enabled, <span class="stringliteral">&quot;sim/graphics/VR/enabled&quot;</span>);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <a class="code" href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a>(&amp;VR_enabled, <span class="stringliteral">&quot;sim/graphics/VR/enabled&quot;</span>);</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    }</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keywordflow">return</span> (dr_geti(&amp;VR_enabled) != 0);</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="dr_8h.html#a599f879367b9e1c70f5c6f45786f6f44">dr_geti</a>(&amp;VR_enabled) != 0);</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;}</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;bool_t</div>
@@ -805,8 +805,8 @@ $(function() {
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="comment">     * outside of the snapping region, we reset the snapping behavior,</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="comment">     * to allow us to snap to the normal size again.</span></div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    delay_line_init(&amp;ctl-&gt;snap_hold_delay, SEC2USEC(0.75));</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    delay_line_push_imm_u64(&amp;ctl-&gt;snap_hold_delay, B_TRUE);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <a class="code" href="delay__line_8h.html#a96268d5410ea7891ed1117ca8aff3de8">delay_line_init</a>(&amp;ctl-&gt;snap_hold_delay, SEC2USEC(0.75));</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <a class="code" href="delay__line_8h.html#a1fd1ad2d37548ca04a28a6d702a917cf">delay_line_push_imm_u64</a>(&amp;ctl-&gt;snap_hold_delay, B_TRUE);</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;}</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
@@ -831,7 +831,7 @@ $(function() {
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        <span class="keywordtype">double</span> scale;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <span class="keywordflow">if</span> (fabs(w / (<span class="keywordtype">double</span>)ctl-&gt;norm_w - 1.0) &lt; 0.05) {</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            <span class="keywordflow">if</span> (!delay_line_push_u64(&amp;ctl-&gt;snap_hold_delay,</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="delay__line_8h.html#a2e7625eb9f8fe070739571b6e7039e8c">delay_line_push_u64</a>(&amp;ctl-&gt;snap_hold_delay,</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                B_TRUE)) {</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                scale = ctl-&gt;norm_w / (double)w;</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                *right_p = grav_pt.x +</div>
@@ -840,7 +840,7 @@ $(function() {
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                new_h = ctl-&gt;norm_h;</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;            }</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            delay_line_push_imm_u64(&amp;ctl-&gt;snap_hold_delay, B_FALSE);</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            <a class="code" href="delay__line_8h.html#a1fd1ad2d37548ca04a28a6d702a917cf">delay_line_push_imm_u64</a>(&amp;ctl-&gt;snap_hold_delay, B_FALSE);</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        }</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        scale = new_h / (double)h;</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        *top_p = grav_pt.y + (top - grav_pt.y) * scale;</div>
@@ -850,7 +850,7 @@ $(function() {
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        <span class="keywordtype">double</span> scale;</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keywordflow">if</span> (fabs(h / (<span class="keywordtype">double</span>)ctl-&gt;norm_h - 1.0) &lt; 0.05) {</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            <span class="keywordflow">if</span> (!delay_line_push_u64(&amp;ctl-&gt;snap_hold_delay,</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="delay__line_8h.html#a2e7625eb9f8fe070739571b6e7039e8c">delay_line_push_u64</a>(&amp;ctl-&gt;snap_hold_delay,</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                B_TRUE)) {</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                scale = ctl-&gt;norm_h / (double)h;</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                *top_p = grav_pt.y + (top - grav_pt.y) * scale;</div>
@@ -858,7 +858,7 @@ $(function() {
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                new_w = ctl-&gt;norm_w;</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            }</div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            delay_line_push_imm_u64(&amp;ctl-&gt;snap_hold_delay, B_FALSE);</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            <a class="code" href="delay__line_8h.html#a1fd1ad2d37548ca04a28a6d702a917cf">delay_line_push_imm_u64</a>(&amp;ctl-&gt;snap_hold_delay, B_FALSE);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        }</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        scale = new_w / (double)w;</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        *right_p = grav_pt.x + (right - grav_pt.x) * scale;</div>
@@ -957,6 +957,12 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00190">assert.h:190</a></div></div>
 <div class="ttc" id="acairo__utils_8h_html_a92f38a971249e9fe1b226b07661b802d"><div class="ttname"><a href="cairo__utils_8h.html#a92f38a971249e9fe1b226b07661b802d">mt_cairo_render_rounded_rectangle</a></div><div class="ttdeci">#define mt_cairo_render_rounded_rectangle</div><div class="ttdef"><b>Definition:</b> <a href="cairo__utils_8h_source.html#l00054">cairo_utils.h:54</a></div></div>
 <div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
+<div class="ttc" id="adelay__line_8h_html_a1fd1ad2d37548ca04a28a6d702a917cf"><div class="ttname"><a href="delay__line_8h.html#a1fd1ad2d37548ca04a28a6d702a917cf">delay_line_push_imm_u64</a></div><div class="ttdeci">static uint64_t delay_line_push_imm_u64(delay_line_t *line, uint64_t value)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00331">delay_line.h:331</a></div></div>
+<div class="ttc" id="adelay__line_8h_html_a2e7625eb9f8fe070739571b6e7039e8c"><div class="ttname"><a href="delay__line_8h.html#a2e7625eb9f8fe070739571b6e7039e8c">delay_line_push_u64</a></div><div class="ttdeci">static uint64_t delay_line_push_u64(delay_line_t *line, uint64_t value)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00308">delay_line.h:308</a></div></div>
+<div class="ttc" id="adelay__line_8h_html_a96268d5410ea7891ed1117ca8aff3de8"><div class="ttname"><a href="delay__line_8h.html#a96268d5410ea7891ed1117ca8aff3de8">delay_line_init</a></div><div class="ttdeci">static void delay_line_init(delay_line_t *line, uint64_t delay_us)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00089">delay_line.h:89</a></div></div>
+<div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
+<div class="ttc" id="adr_8h_html_a32f91305d231135bf3b71e37d9a42fcd"><div class="ttname"><a href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a></div><div class="ttdeci">#define fdr_find(dr,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00194">dr.h:194</a></div></div>
+<div class="ttc" id="adr_8h_html_a599f879367b9e1c70f5c6f45786f6f44"><div class="ttname"><a href="dr_8h.html#a599f879367b9e1c70f5c6f45786f6f44">dr_geti</a></div><div class="ttdeci">#define dr_geti(__dr)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00224">dr.h:224</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>

@@ -172,7 +172,7 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structvlc__t.html">  102</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>_vlc {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">int</span> bits;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">  104</a></span>&#160;    VLC_TYPE (*table)[2]; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">  104</a></span>&#160;    VLC_TYPE (*table)[2]; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> table_size, table_allocated;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <a class="code" href="structvlc__t.html">vlc_t</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
@@ -999,8 +999,8 @@ $(function() {
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    vlc-&gt;table_size += size;</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;    <span class="keywordflow">if</span> (vlc-&gt;table_size &gt; vlc-&gt;table_allocated) {</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;        vlc-&gt;table_allocated += (1 &lt;&lt; vlc-&gt;bits);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a> = libc_realloc(vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>, <span class="keyword">sizeof</span>(VLC_TYPE) * 2 * vlc-&gt;table_allocated);</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        <span class="keywordflow">if</span> (!vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>)</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a> = libc_realloc(vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>, <span class="keyword">sizeof</span>(VLC_TYPE) * 2 * vlc-&gt;table_allocated);</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        <span class="keywordflow">if</span> (!vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>)</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    }</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <span class="keywordflow">return</span> index;</div>
@@ -1021,7 +1021,7 @@ $(function() {
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;    table_index = alloc_table(vlc, table_size);</div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;    <span class="keywordflow">if</span> (table_index &lt; 0)</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;    table = &amp;vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>[table_index];</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;    table = &amp;vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>[table_index];</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160; </div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;table_size;i++) {</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        table[i][1] = 0; <span class="comment">//bits</span></div>
@@ -1072,7 +1072,7 @@ $(function() {
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;                                n_prefix + table_nb_bits);</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            <span class="keywordflow">if</span> (index &lt; 0)</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;            table = &amp;vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>[table_index];</div>
+<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;            table = &amp;vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>[table_index];</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;            table[i][0] = index; <span class="comment">//code</span></div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;        }</div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;    }</div>
@@ -1089,7 +1089,7 @@ $(function() {
 <div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;                    bits, bits_wrap, bits_size,</div>
 <div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;                    codes, codes_wrap, codes_size,</div>
 <div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;                    0, 0) &lt; 0) {</div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        libc_free(vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>);</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        libc_free(vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>);</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;    }</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;    <span class="keywordflow">return</span> 0;</div>
@@ -1489,7 +1489,7 @@ $(function() {
 <div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;                <span class="keywordflow">if</span>(pos &gt;= end_pos)</div>
 <div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;                    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;            }</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;            y = get_vlc2(&amp;s-&gt;gb, vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>, 7, 3);</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;            y = get_vlc2(&amp;s-&gt;gb, vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>, 7, 3);</div>
 <div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160; </div>
 <div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;            <span class="keywordflow">if</span>(!y){</div>
 <div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;                g-&gt;sb_hybrid[s_index  ] =</div>
@@ -1560,7 +1560,7 @@ $(function() {
 <div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;        }</div>
 <div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;        last_pos= pos;</div>
 <div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160; </div>
-<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;        code = get_vlc2(&amp;s-&gt;gb, vlc-&gt;<a class="code" href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">table</a>, vlc-&gt;bits, 1);</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;        code = get_vlc2(&amp;s-&gt;gb, vlc-&gt;<a class="code" href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">table</a>, vlc-&gt;bits, 1);</div>
 <div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;        g-&gt;sb_hybrid[s_index+0]=</div>
 <div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;        g-&gt;sb_hybrid[s_index+1]=</div>
 <div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;        g-&gt;sb_hybrid[s_index+2]=</div>
@@ -2733,7 +2733,7 @@ $(function() {
 <div class="ttc" id="astructmp3__context__t_html"><div class="ttname"><a href="structmp3__context__t.html">mp3_context_t</a></div><div class="ttdef"><b>Definition:</b> <a href="minimp3_8c_source.html#l00108">minimp3.c:108</a></div></div>
 <div class="ttc" id="astructmp3__info__t_html"><div class="ttname"><a href="structmp3__info__t.html">mp3_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="minimp3_8h_source.html#l00006">minimp3.h:6</a></div></div>
 <div class="ttc" id="astructvlc__t_html"><div class="ttname"><a href="structvlc__t.html">vlc_t</a></div><div class="ttdef"><b>Definition:</b> <a href="minimp3_8c_source.html#l00102">minimp3.c:102</a></div></div>
-<div class="ttc" id="astructvlc__t_html_a70fc3b59cb45425571a8a5519831dc8d"><div class="ttname"><a href="structvlc__t.html#a70fc3b59cb45425571a8a5519831dc8d">vlc_t::table</a></div><div class="ttdeci">VLC_TYPE(* table)[2]</div><div class="ttdoc">code, bits</div><div class="ttdef"><b>Definition:</b> <a href="minimp3_8c_source.html#l00104">minimp3.c:104</a></div></div>
+<div class="ttc" id="astructvlc__t_html_ad8e00b7c220f9574c55392e4bdb2e55e"><div class="ttname"><a href="structvlc__t.html#ad8e00b7c220f9574c55392e4bdb2e55e">vlc_t::table</a></div><div class="ttdeci">int16_t(* table)[2]</div><div class="ttdoc">code, bits</div><div class="ttdef"><b>Definition:</b> <a href="minimp3_8c_source.html#l00104">minimp3.c:104</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

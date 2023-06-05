@@ -95,7 +95,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;acfutils/dr.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define DRE_MSG_ADD_DATAREF 0x01000000</span></div>
@@ -112,7 +112,7 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">static</span> XPLMPluginID drt_plug = XPLM_NO_PLUGIN_ID;   <span class="comment">/* DataRefTool */</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;bool_t</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;dr_find(dr_t *dr, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="dr_8h.html#a5e3caf0d39d1309e111430ce2acdcf44">   43</a></span>&#160;<a class="code" href="dr_8h.html#a5e3caf0d39d1309e111430ce2acdcf44">dr_find</a>(dr_t *dr, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
@@ -137,13 +137,13 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;bool_t</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;dr_writable(dr_t *dr)</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="dr_8h.html#afaad3ee4337ea2056ef4d90aa3349e91">   68</a></span>&#160;<a class="code" href="dr_8h.html#afaad3ee4337ea2056ef4d90aa3349e91">dr_writable</a>(dr_t *dr)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> (dr-&gt;writable);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;dr_geti_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="dr_8h.html#a6097745087a220f6b5878a719b210193">dr_geti_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (dr-&gt;type &amp; xplmType_Int)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> (XPLMGetDatai(dr-&gt;dr));</div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (dr-&gt;type &amp; (xplmType_FloatArray | xplmType_IntArray |</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        xplmType_Data)) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a>(dr_getvi_impl(dr, filename, line, varname, &amp;i, 0, 1),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a>(<a class="code" href="dr_8h.html#a1b872e2e73159f32c08786aa5214a391">dr_getvi_impl</a>(dr, filename, line, varname, &amp;i, 0, 1),</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ==, 1);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> (i);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
@@ -163,7 +163,7 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;dr_seti_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">int</span> i)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<a class="code" href="dr_8h.html#a427cb66919db974271143da8e56f3261">dr_seti_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">int</span> i)</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    DR_WRITE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (dr-&gt;type &amp; xplmType_Int) {</div>
@@ -174,7 +174,7 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        XPLMSetDatad(dr-&gt;dr, i);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dr-&gt;type &amp; (xplmType_FloatArray | xplmType_IntArray |</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        xplmType_Data)) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        dr_setvi_impl(dr, filename, line, varname, &amp;i, 0, 1);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="dr_8h.html#a23f74452bb721edae022f40008f82776">dr_setvi_impl</a>(dr, filename, line, varname, &amp;i, 0, 1);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(0, <span class="stringliteral">&quot;dataref \&quot;%s\&quot; has bad type %x (%s:%d: %s)&quot;</span>,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            dr-&gt;name, dr-&gt;type, filename, line, varname);</div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">double</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;dr_getf_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<a class="code" href="dr_8h.html#a089d374f1a2ceeb56b1226e712c499e7">dr_getf_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (dr-&gt;type &amp; xplmType_Double)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> (XPLMGetDatad(dr-&gt;dr));</div>
@@ -193,7 +193,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (dr-&gt;type &amp; (xplmType_FloatArray | xplmType_IntArray |</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        xplmType_Data)) {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">double</span> f;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(dr_getvf_impl(dr, filename, line, varname, &amp;f, 0, 1),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(<a class="code" href="dr_8h.html#acf26f6eaee81ead41da6aee34d7517eb">dr_getvf_impl</a>(dr, filename, line, varname, &amp;f, 0, 1),</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            ==, 1);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> (f);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
@@ -202,7 +202,7 @@ $(function() {
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;dr_setf_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">double</span> f)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<a class="code" href="dr_8h.html#a14ad06faf3ea4202c63f9d5862733d4e">dr_setf_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">double</span> f)</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    DR_WRITE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(!isnan(f), <span class="stringliteral">&quot;%s (%s%d: %s)&quot;</span>, dr-&gt;name, filename, line,</div>
@@ -217,14 +217,14 @@ $(function() {
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        XPLMSetDatai(dr-&gt;dr, f);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dr-&gt;type &amp; (xplmType_FloatArray | xplmType_IntArray |</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        xplmType_Data))</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        dr_setvf_impl(dr, filename, line, varname, &amp;f, 0, 1);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="dr_8h.html#a2a2c64c7473e7b1f8ba4e56f0d726748">dr_setvf_impl</a>(dr, filename, line, varname, &amp;f, 0, 1);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(0, <span class="stringliteral">&quot;dataref \&quot;%s\&quot; has bad type %x (%s:%d: %s)&quot;</span>,</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            dr-&gt;name, dr-&gt;type, filename, line, varname);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;dr_getvi_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">int</span> *i, <span class="keywordtype">unsigned</span> off, <span class="keywordtype">unsigned</span> num)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<a class="code" href="dr_8h.html#a1b872e2e73159f32c08786aa5214a391">dr_getvi_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">int</span> *i, <span class="keywordtype">unsigned</span> off, <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(i != NULL || num == 0);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
@@ -254,12 +254,12 @@ $(function() {
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="stringliteral">&quot;offset other than 0 (%d) (%s%d: %s)&quot;</span>, dr-&gt;name, dr-&gt;type, off,</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        filename, line, varname);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span> (num != 0)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        i[0] = dr_geti_impl(dr, filename, line, varname);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        i[0] = <a class="code" href="dr_8h.html#a6097745087a220f6b5878a719b210193">dr_geti_impl</a>(dr, filename, line, varname);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> (1);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;dr_setvi_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">int</span> *i, <span class="keywordtype">unsigned</span> off, <span class="keywordtype">unsigned</span> num)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<a class="code" href="dr_8h.html#a23f74452bb721edae022f40008f82776">dr_setvi_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">int</span> *i, <span class="keywordtype">unsigned</span> off, <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(i != NULL);</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    DR_WRITE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>);</div>
@@ -281,12 +281,12 @@ $(function() {
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(off == 0, <span class="stringliteral">&quot;Attempted write scalar dataref %s &quot;</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="stringliteral">&quot;(type: %x) at offset other than 0 (%d) (%s:%d: %s)&quot;</span>,</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            dr-&gt;name, dr-&gt;type, off, filename, line, varname);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        dr_seti_impl(dr, filename, line, varname, i[0]);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="dr_8h.html#a427cb66919db974271143da8e56f3261">dr_seti_impl</a>(dr, filename, line, varname, i[0]);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;dr_getvf_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">double</span> *df, <span class="keywordtype">unsigned</span> off,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<a class="code" href="dr_8h.html#acf26f6eaee81ead41da6aee34d7517eb">dr_getvf_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">double</span> *df, <span class="keywordtype">unsigned</span> off,</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(df != NULL || num == 0);</div>
@@ -325,12 +325,12 @@ $(function() {
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="stringliteral">&quot;offset other than 0 (%d) (%s:%d: %s)&quot;</span>, dr-&gt;name, dr-&gt;type, off,</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        filename, line, varname);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (num != 0)</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        df[0] = dr_getf_impl(dr, filename, line, varname);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        df[0] = <a class="code" href="dr_8h.html#a089d374f1a2ceeb56b1226e712c499e7">dr_getf_impl</a>(dr, filename, line, varname);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> (1);</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;dr_getvf32_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">float</span> *ff, <span class="keywordtype">unsigned</span> off,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<a class="code" href="dr_8h.html#aea829d220603c4894eee14aea1dea4c9">dr_getvf32_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">float</span> *ff, <span class="keywordtype">unsigned</span> off,</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ff != NULL || num == 0);</div>
@@ -363,12 +363,12 @@ $(function() {
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="stringliteral">&quot;offset other than 0 (%d) (%s:%d: %s)&quot;</span>, dr-&gt;name, dr-&gt;type, off,</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        filename, line, varname);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span> (num != 0)</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        ff[0] = dr_getf_impl(dr, filename, line, varname);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        ff[0] = <a class="code" href="dr_8h.html#a089d374f1a2ceeb56b1226e712c499e7">dr_getf_impl</a>(dr, filename, line, varname);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">return</span> (1);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;dr_setvf_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">double</span> *df, <span class="keywordtype">unsigned</span> off,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<a class="code" href="dr_8h.html#a2a2c64c7473e7b1f8ba4e56f0d726748">dr_setvf_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">double</span> *df, <span class="keywordtype">unsigned</span> off,</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(df != NULL);</div>
@@ -399,12 +399,12 @@ $(function() {
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(off == 0, <span class="stringliteral">&quot;Attempted write scalar dataref %s &quot;</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="stringliteral">&quot;(type: %x) at offset other than 0 (%d) (%s:%d: %s)&quot;</span>,</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            dr-&gt;name, dr-&gt;type, off, filename, line, varname);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        dr_setf_impl(dr, filename, line, varname, df[0]);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="dr_8h.html#a14ad06faf3ea4202c63f9d5862733d4e">dr_setf_impl</a>(dr, filename, line, varname, df[0]);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;dr_setvf32_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">float</span> *ff, <span class="keywordtype">unsigned</span> off,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<a class="code" href="dr_8h.html#a398f6010b981f83ed8e1b8b9fdfca676">dr_setvf32_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">float</span> *ff, <span class="keywordtype">unsigned</span> off,</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;{</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ff != NULL);</div>
@@ -431,12 +431,12 @@ $(function() {
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(off == 0, <span class="stringliteral">&quot;Attempted write scalar dataref %s &quot;</span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="stringliteral">&quot;(type: %x) at offset other than 0 (%d) (%s:%d: %s)&quot;</span>,</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            dr-&gt;name, dr-&gt;type, off, filename, line, varname);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        dr_setf_impl(dr, filename, line, varname, ff[0]);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="dr_8h.html#a14ad06faf3ea4202c63f9d5862733d4e">dr_setf_impl</a>(dr, filename, line, varname, ff[0]);</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;dr_gets_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">char</span> *str, <span class="keywordtype">size_t</span> cap)</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<a class="code" href="dr_8h.html#ae6abd000522cf5a5cfcca10a15511e84">dr_gets_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">char</span> *str, <span class="keywordtype">size_t</span> cap)</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;{</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">int</span> n;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
@@ -449,7 +449,7 @@ $(function() {
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;dr_sets_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">char</span> *str)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<a class="code" href="dr_8h.html#a928b6b4d27448de83f2747baf032c70e">dr_sets_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">char</span> *str)</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;{</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    DR_TYPE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>, xplmType_Data);</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    DR_WRITE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>);</div>
@@ -457,7 +457,7 @@ $(function() {
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;dr_getbytes_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">void</span> *data, <span class="keywordtype">unsigned</span> off,</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<a class="code" href="dr_8h.html#ab6fbdebe956f843f1e57337a3ea581b4">dr_getbytes_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">void</span> *data, <span class="keywordtype">unsigned</span> off,</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;{</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    DR_TYPE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>, xplmType_Data);</div>
@@ -465,7 +465,7 @@ $(function() {
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;dr_setbytes_impl(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">void</span> *data, <span class="keywordtype">unsigned</span> off,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<a class="code" href="dr_8h.html#a9468ec4c4ce30debc6f6e02468072616">dr_setbytes_impl</a>(<span class="keyword">const</span> dr_t *dr, DR_DEBUG_VARS, <span class="keywordtype">void</span> *data, <span class="keywordtype">unsigned</span> off,</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordtype">unsigned</span> num)</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;{</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    DR_TYPE_CHECK(<a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>, xplmType_Data);</div>
@@ -695,7 +695,7 @@ $(function() {
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;}</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;dr_array_set_stride(dr_t *dr, <span class="keywordtype">size_t</span> stride)</div>
+<div class="line"><a name="l00626"></a><span class="lineno"><a class="line" href="dr_8h.html#a172587282e14ac4993b8a0b3e19c8de8">  626</a></span>&#160;<a class="code" href="dr_8h.html#a172587282e14ac4993b8a0b3e19c8de8">dr_array_set_stride</a>(dr_t *dr, <span class="keywordtype">size_t</span> stride)</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;{</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(dr != NULL);</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    dr-&gt;stride = stride;</div>
@@ -754,7 +754,7 @@ $(function() {
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="comment"> * an int*.</span></div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;dr_create_i(dr_t *dr, <span class="keywordtype">int</span> *value, bool_t writable, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00685"></a><span class="lineno"><a class="line" href="dr_8h.html#a4253b3a97f42825c512f671f0bee1b74">  685</a></span>&#160;<a class="code" href="dr_8h.html#a4253b3a97f42825c512f671f0bee1b74">dr_create_i</a>(dr_t *dr, <span class="keywordtype">int</span> *value, bool_t writable, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;{</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    va_start(ap, fmt);</div>
@@ -768,7 +768,7 @@ $(function() {
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;<span class="comment"> * a float*.</span></div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;dr_create_f(dr_t *dr, <span class="keywordtype">float</span> *value, bool_t writable, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00699"></a><span class="lineno"><a class="line" href="dr_8h.html#a4abf4b54bd666bcbab8e3da34bfd0e9f">  699</a></span>&#160;<a class="code" href="dr_8h.html#a4abf4b54bd666bcbab8e3da34bfd0e9f">dr_create_f</a>(dr_t *dr, <span class="keywordtype">float</span> *value, bool_t writable, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;{</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    va_start(ap, fmt);</div>
@@ -782,7 +782,7 @@ $(function() {
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;<span class="comment"> * a double*.</span></div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;dr_create_f64(dr_t *dr, <span class="keywordtype">double</span> *value, bool_t writable, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00713"></a><span class="lineno"><a class="line" href="dr_8h.html#a600142fc0b553d0caf3b479c7158c3bc">  713</a></span>&#160;<a class="code" href="dr_8h.html#a600142fc0b553d0caf3b479c7158c3bc">dr_create_f64</a>(dr_t *dr, <span class="keywordtype">double</span> *value, bool_t writable, <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;{</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    va_start(ap, fmt);</div>
@@ -792,7 +792,7 @@ $(function() {
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;}</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;dr_create_vi(dr_t *dr, <span class="keywordtype">int</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00723"></a><span class="lineno"><a class="line" href="dr_8h.html#a90d36bb2a66923953a3e6dad8364a818">  723</a></span>&#160;<a class="code" href="dr_8h.html#a90d36bb2a66923953a3e6dad8364a818">dr_create_vi</a>(dr_t *dr, <span class="keywordtype">int</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;{</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    va_list ap;</div>
@@ -803,7 +803,7 @@ $(function() {
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;dr_create_vf(dr_t *dr, <span class="keywordtype">float</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00734"></a><span class="lineno"><a class="line" href="dr_8h.html#a44eb04eec6d611a8c95a7cb4313c6cd2">  734</a></span>&#160;<a class="code" href="dr_8h.html#a44eb04eec6d611a8c95a7cb4313c6cd2">dr_create_vf</a>(dr_t *dr, <span class="keywordtype">float</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;{</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    va_list ap;</div>
@@ -814,7 +814,7 @@ $(function() {
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;}</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;dr_create_vf64(dr_t *dr, <span class="keywordtype">double</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00745"></a><span class="lineno"><a class="line" href="dr_8h.html#ab7b89b093cce6117ce6628a25f78b504">  745</a></span>&#160;<a class="code" href="dr_8h.html#ab7b89b093cce6117ce6628a25f78b504">dr_create_vf64</a>(dr_t *dr, <span class="keywordtype">double</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;{</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    va_list ap;</div>
@@ -825,7 +825,7 @@ $(function() {
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;}</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;dr_create_vi_autoscalar(dr_t *dr, <span class="keywordtype">int</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00756"></a><span class="lineno"><a class="line" href="dr_8h.html#a739a0c2b5ebda2deeb49c4a019b25617">  756</a></span>&#160;<a class="code" href="dr_8h.html#a739a0c2b5ebda2deeb49c4a019b25617">dr_create_vi_autoscalar</a>(dr_t *dr, <span class="keywordtype">int</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;{</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    va_list ap;</div>
@@ -836,7 +836,7 @@ $(function() {
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;}</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;dr_create_vf_autoscalar(dr_t *dr, <span class="keywordtype">float</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00767"></a><span class="lineno"><a class="line" href="dr_8h.html#a5e869aa9a5ba36046b5460dbc9e8f5e2">  767</a></span>&#160;<a class="code" href="dr_8h.html#a5e869aa9a5ba36046b5460dbc9e8f5e2">dr_create_vf_autoscalar</a>(dr_t *dr, <span class="keywordtype">float</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;{</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    va_list ap;</div>
@@ -847,7 +847,7 @@ $(function() {
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;}</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;dr_create_vf64_autoscalar(dr_t *dr, <span class="keywordtype">double</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00778"></a><span class="lineno"><a class="line" href="dr_8h.html#a53aaae1bd9d43fb7e3ef221d88f7e652">  778</a></span>&#160;<a class="code" href="dr_8h.html#a53aaae1bd9d43fb7e3ef221d88f7e652">dr_create_vf64_autoscalar</a>(dr_t *dr, <span class="keywordtype">double</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;{</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    va_list ap;</div>
@@ -858,7 +858,7 @@ $(function() {
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;}</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;dr_create_b(dr_t *dr, <span class="keywordtype">void</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
+<div class="line"><a name="l00789"></a><span class="lineno"><a class="line" href="dr_8h.html#a635f826f4328ad622db9979b2b84196b">  789</a></span>&#160;<a class="code" href="dr_8h.html#a635f826f4328ad622db9979b2b84196b">dr_create_b</a>(dr_t *dr, <span class="keywordtype">void</span> *value, <span class="keywordtype">size_t</span> n, bool_t writable,</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;{</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    va_list ap;</div>
@@ -872,7 +872,7 @@ $(function() {
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;<span class="comment"> * Destroys a dataref previously set up using dr_intf_add_{i,f}.</span></div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;dr_delete(dr_t *dr)</div>
+<div class="line"><a name="l00803"></a><span class="lineno"><a class="line" href="dr_8h.html#a8fec23dfb6dc7eb1dfd49c300e3406f3">  803</a></span>&#160;<a class="code" href="dr_8h.html#a8fec23dfb6dc7eb1dfd49c300e3406f3">dr_delete</a>(dr_t *dr)</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;{</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keywordflow">if</span> (dr-&gt;dr != NULL) {</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        XPLMUnregisterDataAccessor(dr-&gt;dr);</div>
@@ -886,6 +886,35 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00120">assert.h:120</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad157a1a262c174b8a8744896359009b7"><div class="ttname"><a href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a></div><div class="ttdeci">#define VERIFY_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00086">assert.h:86</a></div></div>
 <div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00131">assert.h:131</a></div></div>
+<div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
+<div class="ttc" id="adr_8h_html_a089d374f1a2ceeb56b1226e712c499e7"><div class="ttname"><a href="dr_8h.html#a089d374f1a2ceeb56b1226e712c499e7">dr_getf_impl</a></div><div class="ttdeci">double dr_getf_impl(const dr_t *dr, const char *filename, int line, const char *varname)</div></div>
+<div class="ttc" id="adr_8h_html_a14ad06faf3ea4202c63f9d5862733d4e"><div class="ttname"><a href="dr_8h.html#a14ad06faf3ea4202c63f9d5862733d4e">dr_setf_impl</a></div><div class="ttdeci">void dr_setf_impl(const dr_t *dr, const char *filename, int line, const char *varname, double f)</div></div>
+<div class="ttc" id="adr_8h_html_a172587282e14ac4993b8a0b3e19c8de8"><div class="ttname"><a href="dr_8h.html#a172587282e14ac4993b8a0b3e19c8de8">dr_array_set_stride</a></div><div class="ttdeci">void dr_array_set_stride(dr_t *dr, size_t stride)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00626">dr.c:626</a></div></div>
+<div class="ttc" id="adr_8h_html_a1b872e2e73159f32c08786aa5214a391"><div class="ttname"><a href="dr_8h.html#a1b872e2e73159f32c08786aa5214a391">dr_getvi_impl</a></div><div class="ttdeci">int dr_getvi_impl(const dr_t *dr, const char *filename, int line, const char *varname, int *i, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_a23f74452bb721edae022f40008f82776"><div class="ttname"><a href="dr_8h.html#a23f74452bb721edae022f40008f82776">dr_setvi_impl</a></div><div class="ttdeci">void dr_setvi_impl(const dr_t *dr, const char *filename, int line, const char *varname, int *i, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_a2a2c64c7473e7b1f8ba4e56f0d726748"><div class="ttname"><a href="dr_8h.html#a2a2c64c7473e7b1f8ba4e56f0d726748">dr_setvf_impl</a></div><div class="ttdeci">void dr_setvf_impl(const dr_t *dr, const char *filename, int line, const char *varname, double *df, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_a398f6010b981f83ed8e1b8b9fdfca676"><div class="ttname"><a href="dr_8h.html#a398f6010b981f83ed8e1b8b9fdfca676">dr_setvf32_impl</a></div><div class="ttdeci">void dr_setvf32_impl(const dr_t *dr, const char *filename, int line, const char *varname, float *ff, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_a4253b3a97f42825c512f671f0bee1b74"><div class="ttname"><a href="dr_8h.html#a4253b3a97f42825c512f671f0bee1b74">dr_create_i</a></div><div class="ttdeci">void dr_create_i(dr_t *dr, int *value, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00685">dr.c:685</a></div></div>
+<div class="ttc" id="adr_8h_html_a427cb66919db974271143da8e56f3261"><div class="ttname"><a href="dr_8h.html#a427cb66919db974271143da8e56f3261">dr_seti_impl</a></div><div class="ttdeci">void dr_seti_impl(const dr_t *dr, const char *filename, int line, const char *varname, int i)</div></div>
+<div class="ttc" id="adr_8h_html_a44eb04eec6d611a8c95a7cb4313c6cd2"><div class="ttname"><a href="dr_8h.html#a44eb04eec6d611a8c95a7cb4313c6cd2">dr_create_vf</a></div><div class="ttdeci">void dr_create_vf(dr_t *dr, float *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00734">dr.c:734</a></div></div>
+<div class="ttc" id="adr_8h_html_a4abf4b54bd666bcbab8e3da34bfd0e9f"><div class="ttname"><a href="dr_8h.html#a4abf4b54bd666bcbab8e3da34bfd0e9f">dr_create_f</a></div><div class="ttdeci">void dr_create_f(dr_t *dr, float *value, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00699">dr.c:699</a></div></div>
+<div class="ttc" id="adr_8h_html_a53aaae1bd9d43fb7e3ef221d88f7e652"><div class="ttname"><a href="dr_8h.html#a53aaae1bd9d43fb7e3ef221d88f7e652">dr_create_vf64_autoscalar</a></div><div class="ttdeci">void dr_create_vf64_autoscalar(dr_t *dr, double *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00778">dr.c:778</a></div></div>
+<div class="ttc" id="adr_8h_html_a5e3caf0d39d1309e111430ce2acdcf44"><div class="ttname"><a href="dr_8h.html#a5e3caf0d39d1309e111430ce2acdcf44">dr_find</a></div><div class="ttdeci">bool_t dr_find(dr_t *dr, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00043">dr.c:43</a></div></div>
+<div class="ttc" id="adr_8h_html_a5e869aa9a5ba36046b5460dbc9e8f5e2"><div class="ttname"><a href="dr_8h.html#a5e869aa9a5ba36046b5460dbc9e8f5e2">dr_create_vf_autoscalar</a></div><div class="ttdeci">void dr_create_vf_autoscalar(dr_t *dr, float *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00767">dr.c:767</a></div></div>
+<div class="ttc" id="adr_8h_html_a600142fc0b553d0caf3b479c7158c3bc"><div class="ttname"><a href="dr_8h.html#a600142fc0b553d0caf3b479c7158c3bc">dr_create_f64</a></div><div class="ttdeci">void dr_create_f64(dr_t *dr, double *value, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00713">dr.c:713</a></div></div>
+<div class="ttc" id="adr_8h_html_a6097745087a220f6b5878a719b210193"><div class="ttname"><a href="dr_8h.html#a6097745087a220f6b5878a719b210193">dr_geti_impl</a></div><div class="ttdeci">int dr_geti_impl(const dr_t *dr, const char *filename, int line, const char *varname)</div></div>
+<div class="ttc" id="adr_8h_html_a635f826f4328ad622db9979b2b84196b"><div class="ttname"><a href="dr_8h.html#a635f826f4328ad622db9979b2b84196b">dr_create_b</a></div><div class="ttdeci">void dr_create_b(dr_t *dr, void *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00789">dr.c:789</a></div></div>
+<div class="ttc" id="adr_8h_html_a739a0c2b5ebda2deeb49c4a019b25617"><div class="ttname"><a href="dr_8h.html#a739a0c2b5ebda2deeb49c4a019b25617">dr_create_vi_autoscalar</a></div><div class="ttdeci">void dr_create_vi_autoscalar(dr_t *dr, int *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00756">dr.c:756</a></div></div>
+<div class="ttc" id="adr_8h_html_a8fec23dfb6dc7eb1dfd49c300e3406f3"><div class="ttname"><a href="dr_8h.html#a8fec23dfb6dc7eb1dfd49c300e3406f3">dr_delete</a></div><div class="ttdeci">void dr_delete(dr_t *dr)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00803">dr.c:803</a></div></div>
+<div class="ttc" id="adr_8h_html_a90d36bb2a66923953a3e6dad8364a818"><div class="ttname"><a href="dr_8h.html#a90d36bb2a66923953a3e6dad8364a818">dr_create_vi</a></div><div class="ttdeci">void dr_create_vi(dr_t *dr, int *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00723">dr.c:723</a></div></div>
+<div class="ttc" id="adr_8h_html_a928b6b4d27448de83f2747baf032c70e"><div class="ttname"><a href="dr_8h.html#a928b6b4d27448de83f2747baf032c70e">dr_sets_impl</a></div><div class="ttdeci">void dr_sets_impl(const dr_t *dr, const char *filename, int line, const char *varname, char *str)</div></div>
+<div class="ttc" id="adr_8h_html_a9468ec4c4ce30debc6f6e02468072616"><div class="ttname"><a href="dr_8h.html#a9468ec4c4ce30debc6f6e02468072616">dr_setbytes_impl</a></div><div class="ttdeci">void dr_setbytes_impl(const dr_t *dr, const char *filename, int line, const char *varname, void *data, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_ab6fbdebe956f843f1e57337a3ea581b4"><div class="ttname"><a href="dr_8h.html#ab6fbdebe956f843f1e57337a3ea581b4">dr_getbytes_impl</a></div><div class="ttdeci">int dr_getbytes_impl(const dr_t *dr, const char *filename, int line, const char *varname, void *data, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_ab7b89b093cce6117ce6628a25f78b504"><div class="ttname"><a href="dr_8h.html#ab7b89b093cce6117ce6628a25f78b504">dr_create_vf64</a></div><div class="ttdeci">void dr_create_vf64(dr_t *dr, double *value, size_t n, bool_t writable, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00745">dr.c:745</a></div></div>
+<div class="ttc" id="adr_8h_html_acf26f6eaee81ead41da6aee34d7517eb"><div class="ttname"><a href="dr_8h.html#acf26f6eaee81ead41da6aee34d7517eb">dr_getvf_impl</a></div><div class="ttdeci">int dr_getvf_impl(const dr_t *dr, const char *filename, int line, const char *varname, double *df, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_ae6abd000522cf5a5cfcca10a15511e84"><div class="ttname"><a href="dr_8h.html#ae6abd000522cf5a5cfcca10a15511e84">dr_gets_impl</a></div><div class="ttdeci">int dr_gets_impl(const dr_t *dr, const char *filename, int line, const char *varname, char *str, size_t cap)</div></div>
+<div class="ttc" id="adr_8h_html_aea829d220603c4894eee14aea1dea4c9"><div class="ttname"><a href="dr_8h.html#aea829d220603c4894eee14aea1dea4c9">dr_getvf32_impl</a></div><div class="ttdeci">int dr_getvf32_impl(const dr_t *dr, const char *filename, int line, const char *varname, float *ff, unsigned off, unsigned num)</div></div>
+<div class="ttc" id="adr_8h_html_afaad3ee4337ea2056ef4d90aa3349e91"><div class="ttname"><a href="dr_8h.html#afaad3ee4337ea2056ef4d90aa3349e91">dr_writable</a></div><div class="ttdeci">bool_t dr_writable(dr_t *dr)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8c_source.html#l00068">dr.c:68</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

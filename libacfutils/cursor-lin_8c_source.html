@@ -90,8 +90,8 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;X11/Xcursor/Xcursor.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;acfutils/cursor.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;acfutils/dr.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cursor_8h.html">acfutils/cursor.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;acfutils/png.h&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> Display  *dpy = NULL;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;cursor_t *</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;cursor_read_from_file(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename_png)</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">   39</a></span>&#160;<a class="code" href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">cursor_read_from_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename_png)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    cursor_t *cursor;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint8_t *buf;</div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;cursor_free(cursor_t *cursor)</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">   76</a></span>&#160;<a class="code" href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">cursor_free</a>(cursor_t *cursor)</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (cursor == NULL)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -163,7 +163,7 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;cursor_make_current(cursor_t *cursor)</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="cursor_8h.html#a91ac05499288670934cf201e3cd0934a">   94</a></span>&#160;<a class="code" href="cursor_8h.html#a91ac05499288670934cf201e3cd0934a">cursor_make_current</a>(cursor_t *cursor)</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    dr_t system_window_dr;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> win_ptr[2];</div>
@@ -171,8 +171,8 @@ $(function() {
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cursor != NULL);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(dpy != NULL);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    fdr_find(&amp;system_window_dr, <span class="stringliteral">&quot;sim/operation/windows/system_window_64&quot;</span>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a>(dr_getvi(&amp;system_window_dr, win_ptr, 0, 2), ==, 2);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a>(&amp;system_window_dr, <span class="stringliteral">&quot;sim/operation/windows/system_window_64&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a>(<a class="code" href="dr_8h.html#ad1214b61e97a8dab7a3469656e925804">dr_getvi</a>(&amp;system_window_dr, win_ptr, 0, 2), ==, 2);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    memcpy(&amp;win, win_ptr, <span class="keyword">sizeof</span> (<span class="keywordtype">void</span> *));</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    XDefineCursor(dpy, win, cursor-&gt;crs);</div>
@@ -181,6 +181,13 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_a63557ec6fbf04170cda1183151e62e64"><div class="ttname"><a href="assert_8h.html#a63557ec6fbf04170cda1183151e62e64">ASSERT3S</a></div><div class="ttdeci">#define ASSERT3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00188">assert.h:188</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00120">assert.h:120</a></div></div>
+<div class="ttc" id="acursor_8h_html"><div class="ttname"><a href="cursor_8h.html">cursor.h</a></div></div>
+<div class="ttc" id="acursor_8h_html_a43b86dc754607c20f3dcbd66924755a0"><div class="ttname"><a href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">cursor_read_from_file</a></div><div class="ttdeci">cursor_t * cursor_read_from_file(const char *filename_png)</div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00039">cursor-lin.c:39</a></div></div>
+<div class="ttc" id="acursor_8h_html_a91ac05499288670934cf201e3cd0934a"><div class="ttname"><a href="cursor_8h.html#a91ac05499288670934cf201e3cd0934a">cursor_make_current</a></div><div class="ttdeci">void cursor_make_current(cursor_t *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00094">cursor-lin.c:94</a></div></div>
+<div class="ttc" id="acursor_8h_html_af5c4a65800934da71b6259085b41025a"><div class="ttname"><a href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">cursor_free</a></div><div class="ttdeci">void cursor_free(cursor_t *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00076">cursor-lin.c:76</a></div></div>
+<div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
+<div class="ttc" id="adr_8h_html_a32f91305d231135bf3b71e37d9a42fcd"><div class="ttname"><a href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a></div><div class="ttdeci">#define fdr_find(dr,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00194">dr.h:194</a></div></div>
+<div class="ttc" id="adr_8h_html_ad1214b61e97a8dab7a3469656e925804"><div class="ttname"><a href="dr_8h.html#ad1214b61e97a8dab7a3469656e925804">dr_getvi</a></div><div class="ttdeci">#define dr_getvi(__dr, __i, __off, __num)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00302">dr.h:302</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructcursor__s_html"><div class="ttname"><a href="structcursor__s.html">cursor_s</a></div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00027">cursor-lin.c:27</a></div></div>

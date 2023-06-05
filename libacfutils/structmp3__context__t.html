@@ -80,9 +80,9 @@ Collaboration diagram for mp3_context_t:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ab04e62abaff77dac8edbc4ac1ea14d1f"><td class="memItemLeft" align="right" valign="top"><a id="ab04e62abaff77dac8edbc4ac1ea14d1f"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>last_buf</b> [2 *BACKSTEP_SIZE+EXTRABYTES]</td></tr>
-<tr class="separator:ab04e62abaff77dac8edbc4ac1ea14d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea1a70f987413b413895e8110d7a97d"><td class="memItemLeft" align="right" valign="top"><a id="a2ea1a70f987413b413895e8110d7a97d"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>last_buf</b> [2 *512+24]</td></tr>
+<tr class="separator:a2ea1a70f987413b413895e8110d7a97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7f46821423d7427585e88eb65125336"><td class="memItemLeft" align="right" valign="top"><a id="ab7f46821423d7427585e88eb65125336"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>last_buf_size</b></td></tr>
 <tr class="separator:ab7f46821423d7427585e88eb65125336"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,18 +122,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>mode_ext</b></td></tr>
 <tr class="memitem:a7928f16a5f769d696bcf59afe38e2fe4"><td class="memItemLeft" align="right" valign="top"><a id="a7928f16a5f769d696bcf59afe38e2fe4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>lsf</b></td></tr>
 <tr class="separator:a7928f16a5f769d696bcf59afe38e2fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf72af6aa6742b6d7ca75ea588c31bc"><td class="memItemLeft" align="right" valign="top"><a id="aecf72af6aa6742b6d7ca75ea588c31bc"></a>
-int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>synth_buf</b> [MP3_MAX_CHANNELS][512 *2]</td></tr>
-<tr class="separator:aecf72af6aa6742b6d7ca75ea588c31bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1963befc051ff01f9bb091de64ab8b1"><td class="memItemLeft" align="right" valign="top"><a id="ab1963befc051ff01f9bb091de64ab8b1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>synth_buf_offset</b> [MP3_MAX_CHANNELS]</td></tr>
-<tr class="separator:ab1963befc051ff01f9bb091de64ab8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab133b0cf0d98fbb4102233512cdad8e3"><td class="memItemLeft" align="right" valign="top"><a id="ab133b0cf0d98fbb4102233512cdad8e3"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>sb_samples</b> [MP3_MAX_CHANNELS][36][SBLIMIT]</td></tr>
-<tr class="separator:ab133b0cf0d98fbb4102233512cdad8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63bceecd70209c4fa4dad8393c9dfaa3"><td class="memItemLeft" align="right" valign="top"><a id="a63bceecd70209c4fa4dad8393c9dfaa3"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mdct_buf</b> [MP3_MAX_CHANNELS][SBLIMIT *18]</td></tr>
-<tr class="separator:a63bceecd70209c4fa4dad8393c9dfaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a721981a854c7d2410468dfada712805d"><td class="memItemLeft" align="right" valign="top"><a id="a721981a854c7d2410468dfada712805d"></a>
+int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>synth_buf</b> [2][512 *2]</td></tr>
+<tr class="separator:a721981a854c7d2410468dfada712805d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b9a7fc268062423ffac6ac177bb927"><td class="memItemLeft" align="right" valign="top"><a id="a18b9a7fc268062423ffac6ac177bb927"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>synth_buf_offset</b> [2]</td></tr>
+<tr class="separator:a18b9a7fc268062423ffac6ac177bb927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b4a419f15387422a69cbe1e64aa3f2f"><td class="memItemLeft" align="right" valign="top"><a id="a4b4a419f15387422a69cbe1e64aa3f2f"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>sb_samples</b> [2][36][32]</td></tr>
+<tr class="separator:a4b4a419f15387422a69cbe1e64aa3f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82792bc9387dad408a3dbfe012ea6c1d"><td class="memItemLeft" align="right" valign="top"><a id="a82792bc9387dad408a3dbfe012ea6c1d"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mdct_buf</b> [2][32 *18]</td></tr>
+<tr class="separator:a82792bc9387dad408a3dbfe012ea6c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15fe70c2edf5dd9771e768fd98a25ee7"><td class="memItemLeft" align="right" valign="top"><a id="a15fe70c2edf5dd9771e768fd98a25ee7"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>dither_state</b></td></tr>
 <tr class="separator:a15fe70c2edf5dd9771e768fd98a25ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>

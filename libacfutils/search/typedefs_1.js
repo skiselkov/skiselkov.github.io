@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bool_5ft_4291',['bool_t',['../types_8h.html#a7e838849f6686c3c903f6ff955a433f5',1,'types.h']]]
+  ['delay_5fline_5ftime_5ffunc_5ft_980',['delay_line_time_func_t',['../delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227',1,'delay_line.h']]]
 ];

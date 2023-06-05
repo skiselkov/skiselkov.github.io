@@ -81,7 +81,7 @@ Include dependency graph for cursor.h:</div>
 <area shape="rect" title=" " alt="" coords="5,5,180,61"/>
 <area shape="rect" href="core_8h.html" title=" " alt="" coords="61,109,124,136"/>
 <area shape="rect" title=" " alt="" coords="5,184,76,211"/>
-<area shape="rect" href="libconfig_8h.html" title=" " alt="" coords="101,184,191,211"/>
+<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="101,184,191,211"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -90,9 +90,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="cursor_8h__dep__incl.png" border="0" usemap="#a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2cursor_8hdep" alt=""/></div>
 <map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2cursor_8hdep" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2cursor_8hdep">
 <area shape="rect" title=" " alt="" coords="204,5,379,61"/>
-<area shape="rect" href="cursor-lin_8c.html" title=" " alt="" coords="5,109,180,165"/>
-<area shape="rect" href="cursor-mac_8m.html" title=" " alt="" coords="204,109,379,165"/>
-<area shape="rect" href="cursor-win_8c.html" title=" " alt="" coords="403,109,577,165"/>
+<area shape="rect" href="cursor-lin_8c_source.html" title=" " alt="" coords="5,109,180,165"/>
+<area shape="rect" href="cursor-mac_8m_source.html" title=" " alt="" coords="204,109,379,165"/>
+<area shape="rect" href="cursor-win_8c_source.html" title=" " alt="" coords="403,109,577,165"/>
 </map>
 </div>
 </div>
@@ -100,22 +100,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a37a697522fa7381368928be52806cb33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> cursor_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cursor_8h.html#a37a697522fa7381368928be52806cb33">cursor_read_from_file</a> (const char *filename_png)</td></tr>
-<tr class="separator:a37a697522fa7381368928be52806cb33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cdf8bcacf0b50a084dfbe57828712e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cursor_8h.html#a6cdf8bcacf0b50a084dfbe57828712e7">cursor_free</a> (cursor_t *cursor)</td></tr>
-<tr class="separator:a6cdf8bcacf0b50a084dfbe57828712e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb089d1ea4b88fb2663bb30dc62e6c8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cursor_8h.html#acb089d1ea4b88fb2663bb30dc62e6c8a">cursor_make_current</a> (cursor_t *cursor)</td></tr>
-<tr class="separator:acb089d1ea4b88fb2663bb30dc62e6c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b86dc754607c20f3dcbd66924755a0"><td class="memItemLeft" align="right" valign="top">cursor_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">cursor_read_from_file</a> (const char *filename_png)</td></tr>
+<tr class="separator:a43b86dc754607c20f3dcbd66924755a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c4a65800934da71b6259085b41025a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">cursor_free</a> (cursor_t *cursor)</td></tr>
+<tr class="separator:af5c4a65800934da71b6259085b41025a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ac05499288670934cf201e3cd0934a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cursor_8h.html#a91ac05499288670934cf201e3cd0934a">cursor_make_current</a> (cursor_t *cursor)</td></tr>
+<tr class="separator:a91ac05499288670934cf201e3cd0934a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a6cdf8bcacf0b50a084dfbe57828712e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cdf8bcacf0b50a084dfbe57828712e7">&#9670;&nbsp;</a></span>cursor_free()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Generic implementation to let you directly set the OS-provided mouse cursor. For Mac &amp; Linux, you need a PNG of your cursor. The cursor image is assumed to be symmetrical with its hotspot in the center of the image. For Windows, the provided filename's '.png' extension is automatically replcated with '.cur' and you must provide a cursor in Windows .cur cursor format. Simply place both the PNG and CUR versions of the cursor side-by-side and the library will select the correct one depending on the host platform. </p>
+
+<p class="definition">Definition in file <a class="el" href="cursor_8h_source.html">cursor.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="af5c4a65800934da71b6259085b41025a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c4a65800934da71b6259085b41025a">&#9670;&nbsp;</a></span>cursor_free()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void cursor_free </td>
+          <td class="memname">void cursor_free </td>
           <td>(</td>
           <td class="paramtype">cursor_t *&#160;</td>
           <td class="paramname"><em>cursor</em></td><td>)</td>
@@ -123,19 +127,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Frees a cursor previously created using <a class="el" href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">cursor_read_from_file()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="cursor-lin_8c_source.html#l00076">76</a> of file <a class="el" href="cursor-lin_8c_source.html">cursor-lin.c</a>.</p>
 
 </div>
 </div>
-<a id="acb089d1ea4b88fb2663bb30dc62e6c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb089d1ea4b88fb2663bb30dc62e6c8a">&#9670;&nbsp;</a></span>cursor_make_current()</h2>
+<a id="a91ac05499288670934cf201e3cd0934a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ac05499288670934cf201e3cd0934a">&#9670;&nbsp;</a></span>cursor_make_current()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void cursor_make_current </td>
+          <td class="memname">void cursor_make_current </td>
           <td>(</td>
           <td class="paramtype">cursor_t *&#160;</td>
           <td class="paramname"><em>cursor</em></td><td>)</td>
@@ -143,19 +148,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the cursor to be the current cursor. Be sure to ask X-Plane not to draw its own cursor. This function should be called in the window mouse cursor handler callback. </p>
 
 <p class="definition">Definition at line <a class="el" href="cursor-lin_8c_source.html#l00094">94</a> of file <a class="el" href="cursor-lin_8c_source.html">cursor-lin.c</a>.</p>
 
 </div>
 </div>
-<a id="a37a697522fa7381368928be52806cb33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37a697522fa7381368928be52806cb33">&#9670;&nbsp;</a></span>cursor_read_from_file()</h2>
+<a id="a43b86dc754607c20f3dcbd66924755a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b86dc754607c20f3dcbd66924755a0">&#9670;&nbsp;</a></span>cursor_read_from_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> cursor_t* cursor_read_from_file </td>
+          <td class="memname">cursor_t* cursor_read_from_file </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename_png</em></td><td>)</td>
@@ -163,6 +169,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loads a cursor from a PNG file. The cursor hotspot is assumed to be directly in the center of the image. On Windows, the PNG extension is automatically replaced by '.cur', so you need to provide both a PNG and CUR version of your cursor.</p>
+<p>You must free the returned cursor object using <a class="el" href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">cursor_free()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="cursor-lin_8c_source.html#l00039">39</a> of file <a class="el" href="cursor-lin_8c_source.html">cursor-lin.c</a>.</p>
 

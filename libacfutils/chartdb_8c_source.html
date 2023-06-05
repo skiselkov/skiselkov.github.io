@@ -261,9 +261,9 @@ $(function() {
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    chart_t *chart;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">while</span> ((chart = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;arpt-&gt;charts, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">while</span> ((chart = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;arpt-&gt;charts, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        chartdb_chart_destroy(chart);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;arpt-&gt;charts);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;arpt-&gt;charts);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    free(arpt-&gt;name);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    free(arpt-&gt;city);</div>
@@ -338,9 +338,9 @@ $(function() {
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;loader_purge(chartdb_t *cdb)</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (chart_arpt_t *arpt = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;cdb-&gt;arpts); arpt != NULL;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (chart_arpt_t *arpt = <a class="code" href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a>(&amp;cdb-&gt;arpts); arpt != NULL;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;cdb-&gt;arpts, arpt)) {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (chart_t *chart = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;charts); chart != NULL;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (chart_t *chart = <a class="code" href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a>(&amp;arpt-&gt;charts); chart != NULL;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            chart = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;charts, chart)) {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (chart-&gt;surf != NULL) {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                cairo_surface_destroy(chart-&gt;surf);</div>
@@ -369,17 +369,17 @@ $(function() {
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    lacf_strlcpy(srch.icao, icao, sizeof (srch.icao));</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    arpt = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;cdb-&gt;arpts, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    arpt = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;cdb-&gt;arpts, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL) {</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        arpt = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*arpt));</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;arpt-&gt;charts, chart_name_compar, sizeof (chart_t),</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;arpt-&gt;charts, chart_name_compar, sizeof (chart_t),</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            offsetof(chart_t, node));</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        lacf_strlcpy(arpt-&gt;icao, icao, sizeof (arpt-&gt;icao));</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        arpt-&gt;name = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(name);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        arpt-&gt;city = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(city_name);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        lacf_strlcpy(arpt-&gt;state, state_id, sizeof (arpt-&gt;state));</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        arpt-&gt;db = cdb;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;cdb-&gt;arpts, arpt, where);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;cdb-&gt;arpts, arpt, where);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    mutex_exit(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
@@ -395,11 +395,11 @@ $(function() {
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;arpt-&gt;charts, chart, &amp;where) != NULL) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;arpt-&gt;charts, chart, &amp;where) != NULL) {</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        mutex_exit(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;arpt-&gt;charts, chart, where);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;arpt-&gt;charts, chart, where);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    chart-&gt;arpt = arpt;</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    chart-&gt;num_pages = -1;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    arpt-&gt;load_complete = B_TRUE;</div>
@@ -1281,7 +1281,7 @@ $(function() {
 <div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;}</div>
 <div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160; </div>
 <div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;chartdb_t *</div>
-<div class="line"><a name="l01212"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a"> 1212</a></span>&#160;<a class="code" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cache_path, <span class="keyword">const</span> <span class="keywordtype">char</span> *pdftoppm_path,</div>
+<div class="line"><a name="l01212"></a><span class="lineno"><a class="line" href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae"> 1212</a></span>&#160;<a class="code" href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae">chartdb_init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cache_path, <span class="keyword">const</span> <span class="keywordtype">char</span> *pdftoppm_path,</div>
 <div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *pdfinfo_path, <span class="keywordtype">unsigned</span> airac, <span class="keyword">const</span> <span class="keywordtype">char</span> *provider_name,</div>
 <div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;    <span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *provider_login)</div>
 <div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;{</div>
@@ -1303,7 +1303,7 @@ $(function() {
 <div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160; </div>
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;    cdb = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*cdb));</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;    mutex_init(&amp;cdb-&gt;lock);</div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;cdb-&gt;arpts, arpt_compar, sizeof (chart_arpt_t),</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;cdb-&gt;arpts, arpt_compar, sizeof (chart_arpt_t),</div>
 <div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        offsetof(chart_arpt_t, node));</div>
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    cdb-&gt;path = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(cache_path);</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    <span class="keywordflow">if</span> (pdftoppm_path != NULL)</div>
@@ -1347,7 +1347,7 @@ $(function() {
 <div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;}</div>
 <div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160; </div>
 <div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01278"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aa48651afcfb197a29d757eaab2f8c258"> 1278</a></span>&#160;<a class="code" href="chartdb_8h.html#aa48651afcfb197a29d757eaab2f8c258">chartdb_fini</a>(chartdb_t *cdb)</div>
+<div class="line"><a name="l01278"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a6766ff7ff84d6e3e21ed52a7a24ba4f6"> 1278</a></span>&#160;<a class="code" href="chartdb_8h.html#a6766ff7ff84d6e3e21ed52a7a24ba4f6">chartdb_fini</a>(chartdb_t *cdb)</div>
 <div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;{</div>
 <div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    <span class="keywordtype">void</span> *cookie;</div>
 <div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;    chart_arpt_t *arpt;</div>
@@ -1365,9 +1365,9 @@ $(function() {
 <div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;    list_destroy(&amp;cdb-&gt;loader_arpt_queue);</div>
 <div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
 <div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;    <span class="keywordflow">while</span> ((arpt = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;cdb-&gt;arpts, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;    <span class="keywordflow">while</span> ((arpt = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;cdb-&gt;arpts, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;        arpt_destroy(arpt);</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;cdb-&gt;arpts);</div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;cdb-&gt;arpts);</div>
 <div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    mutex_destroy(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160; </div>
 <div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    free(cdb-&gt;proxy);</div>
@@ -1393,14 +1393,14 @@ $(function() {
 <div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;}</div>
 <div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160; </div>
 <div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;bool_t</div>
-<div class="line"><a name="l01324"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a5cef8a8b8fc80b5e22f7ebc5312e910f"> 1324</a></span>&#160;<a class="code" href="chartdb_8h.html#a5cef8a8b8fc80b5e22f7ebc5312e910f">chartdb_test_connection</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *provider_name,</div>
+<div class="line"><a name="l01324"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a997c72ac56df4c822db53bbb55a1419c"> 1324</a></span>&#160;<a class="code" href="chartdb_8h.html#a997c72ac56df4c822db53bbb55a1419c">chartdb_test_connection</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *provider_name,</div>
 <div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;    <span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds)</div>
 <div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;{</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2</a>(provider_name, creds, NULL));</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3">chartdb_test_connection2</a>(provider_name, creds, NULL));</div>
 <div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;}</div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160; </div>
 <div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;bool_t</div>
-<div class="line"><a name="l01331"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f"> 1331</a></span>&#160;<a class="code" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *provider_name,</div>
+<div class="line"><a name="l01331"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3"> 1331</a></span>&#160;<a class="code" href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3">chartdb_test_connection2</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *provider_name,</div>
 <div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;    <span class="keyword">const</span> <a class="code" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds, <span class="keyword">const</span> <span class="keywordtype">char</span> *proxy)</div>
 <div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;{</div>
 <div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(provider_name != NULL);</div>
@@ -1418,7 +1418,7 @@ $(function() {
 <div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;}</div>
 <div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160; </div>
 <div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01349"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a3f377030ec3ce9e6ab1e61d9319a5f73"> 1349</a></span>&#160;<a class="code" href="chartdb_8h.html#a3f377030ec3ce9e6ab1e61d9319a5f73">chartdb_set_load_limit</a>(chartdb_t *cdb, uint64_t bytes)</div>
+<div class="line"><a name="l01349"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aaca54f9c9c733f40d6f68596f3ad80cd"> 1349</a></span>&#160;<a class="code" href="chartdb_8h.html#aaca54f9c9c733f40d6f68596f3ad80cd">chartdb_set_load_limit</a>(chartdb_t *cdb, uint64_t bytes)</div>
 <div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;{</div>
 <div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    bytes = MAX(bytes, 16 &lt;&lt; 20);</div>
 <div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    <span class="keywordflow">if</span> (cdb-&gt;load_limit != bytes) {</div>
@@ -1428,7 +1428,7 @@ $(function() {
 <div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;}</div>
 <div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160; </div>
 <div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01359"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a2bc95b0fd54759fd9b4223383d51c5f9"> 1359</a></span>&#160;<a class="code" href="chartdb_8h.html#a2bc95b0fd54759fd9b4223383d51c5f9">chartdb_purge</a>(chartdb_t *cdb)</div>
+<div class="line"><a name="l01359"></a><span class="lineno"><a class="line" href="chartdb_8h.html#adb2d12a5f614646edb061f878a5e0094"> 1359</a></span>&#160;<a class="code" href="chartdb_8h.html#adb2d12a5f614646edb061f878a5e0094">chartdb_purge</a>(chartdb_t *cdb)</div>
 <div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;{</div>
 <div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
 <div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160; </div>
@@ -1442,7 +1442,7 @@ $(function() {
 <div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;}</div>
 <div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160; </div>
 <div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01373"></a><span class="lineno"><a class="line" href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f"> 1373</a></span>&#160;<a class="code" href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f">chartdb_set_proxy</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *proxy)</div>
+<div class="line"><a name="l01373"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aa3ef9f3c29826452d88d3b296e99aa65"> 1373</a></span>&#160;<a class="code" href="chartdb_8h.html#aa3ef9f3c29826452d88d3b296e99aa65">chartdb_set_proxy</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *proxy)</div>
 <div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;{</div>
 <div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160; </div>
@@ -1454,7 +1454,7 @@ $(function() {
 <div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;}</div>
 <div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
 <div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;<span class="keywordtype">size_t</span></div>
-<div class="line"><a name="l01385"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a728f0afa8db46da279a55aa311b0d507"> 1385</a></span>&#160;<a class="code" href="chartdb_8h.html#a728f0afa8db46da279a55aa311b0d507">chartdb_get_proxy</a>(chartdb_t *cdb, <span class="keywordtype">char</span> *proxy, <span class="keywordtype">size_t</span> cap)</div>
+<div class="line"><a name="l01385"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a6e59a752e9e38da4c1fbe335d9690565"> 1385</a></span>&#160;<a class="code" href="chartdb_8h.html#a6e59a752e9e38da4c1fbe335d9690565">chartdb_get_proxy</a>(chartdb_t *cdb, <span class="keywordtype">char</span> *proxy, <span class="keywordtype">size_t</span> cap)</div>
 <div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;{</div>
 <div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <span class="keywordtype">size_t</span> len;</div>
 <div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160; </div>
@@ -1475,7 +1475,7 @@ $(function() {
 <div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;}</div>
 <div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160; </div>
 <div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;<span class="keywordtype">char</span> **</div>
-<div class="line"><a name="l01406"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee"> 1406</a></span>&#160;<a class="code" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao, chart_type_t type,</div>
+<div class="line"><a name="l01406"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1"> 1406</a></span>&#160;<a class="code" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao, chart_type_t type,</div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;    <span class="keywordtype">size_t</span> *num_charts)</div>
 <div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;{</div>
 <div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    chart_arpt_t *arpt;</div>
@@ -1507,7 +1507,7 @@ $(function() {
 <div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;        *num_charts = 0;</div>
 <div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;    }</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;    <span class="keywordflow">for</span> (chart = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;charts), num = 0; chart != NULL;</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;    <span class="keywordflow">for</span> (chart = <a class="code" href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a>(&amp;arpt-&gt;charts), num = 0; chart != NULL;</div>
 <div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;        chart = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;charts, chart)) {</div>
 <div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;        <span class="keywordflow">if</span> ((chart-&gt;type &amp; type) != 0)</div>
 <div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;            num++;</div>
@@ -1518,7 +1518,7 @@ $(function() {
 <div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    }</div>
 <div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;    charts = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(num, <span class="keyword">sizeof</span> (*charts));</div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;    <span class="keywordflow">for</span> (chart = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;arpt-&gt;charts), i = 0; chart != NULL;</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;    <span class="keywordflow">for</span> (chart = <a class="code" href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a>(&amp;arpt-&gt;charts), i = 0; chart != NULL;</div>
 <div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;        chart = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;arpt-&gt;charts, chart)) {</div>
 <div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;        <span class="keywordflow">if</span> ((chart-&gt;type &amp; type) != 0) {</div>
 <div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;            <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(i, &lt;, num);</div>
@@ -1540,7 +1540,7 @@ $(function() {
 <div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;}</div>
 <div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160; </div>
 <div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01471"></a><span class="lineno"><a class="line" href="chartdb_8h.html#ad5766b5880cce50c1a60e53e08547419"> 1471</a></span>&#160;<a class="code" href="chartdb_8h.html#ad5766b5880cce50c1a60e53e08547419">chartdb_free_str_list</a>(<span class="keywordtype">char</span> **l, <span class="keywordtype">size_t</span> num)</div>
+<div class="line"><a name="l01471"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a90c234ec299a393efa9ea1eb7f64dbf2"> 1471</a></span>&#160;<a class="code" href="chartdb_8h.html#a90c234ec299a393efa9ea1eb7f64dbf2">chartdb_free_str_list</a>(<span class="keywordtype">char</span> **l, <span class="keywordtype">size_t</span> num)</div>
 <div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;{</div>
 <div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;    free_strlist(l, num);</div>
 <div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;}</div>
@@ -1571,7 +1571,7 @@ $(function() {
 <div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;        lacf_strlcpy(srch.icao, icao, sizeof (srch.icao));</div>
 <div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;    }</div>
-<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;    arpt = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;cdb-&gt;arpts, &amp;srch, NULL);</div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;    arpt = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;cdb-&gt;arpts, &amp;srch, NULL);</div>
 <div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL &amp;&amp; prov[cdb-&gt;prov].arpt_lazy_discover != NULL)</div>
 <div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;        arpt = prov[cdb-&gt;prov].arpt_lazy_discover(cdb, icao);</div>
 <div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;    <span class="keywordflow">return</span> (arpt);</div>
@@ -1584,11 +1584,11 @@ $(function() {
 <div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;    chart_t srch_chart = { .name = (<span class="keywordtype">char</span> *)chart_name };</div>
 <div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;    <span class="keywordflow">if</span> (arpt == NULL)</div>
 <div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;arpt-&gt;charts, &amp;srch_chart, NULL));</div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;arpt-&gt;charts, &amp;srch_chart, NULL));</div>
 <div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;}</div>
 <div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160; </div>
 <div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01519"></a><span class="lineno"><a class="line" href="chartdb_8h.html#af9663bd021340922774fe2e2822e8190"> 1519</a></span>&#160;<a class="code" href="chartdb_8h.html#af9663bd021340922774fe2e2822e8190">chartdb_get_chart_codename</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
+<div class="line"><a name="l01519"></a><span class="lineno"><a class="line" href="chartdb_8h.html#ae498b51f39d3e8e8b6984dd43ad2baea"> 1519</a></span>&#160;<a class="code" href="chartdb_8h.html#ae498b51f39d3e8e8b6984dd43ad2baea">chartdb_get_chart_codename</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name)</div>
 <div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;{</div>
 <div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;    chart_t *chart;</div>
@@ -1613,7 +1613,7 @@ $(function() {
 <div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;}</div>
 <div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160; </div>
 <div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;chart_type_t</div>
-<div class="line"><a name="l01544"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a509ac9c07c651d1624cb867b42fab445"> 1544</a></span>&#160;<a class="code" href="chartdb_8h.html#a509ac9c07c651d1624cb867b42fab445">chartdb_get_chart_type</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao, <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name)</div>
+<div class="line"><a name="l01544"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a6d95009c1b5dcddaae5cae0cfb8b83e0"> 1544</a></span>&#160;<a class="code" href="chartdb_8h.html#a6d95009c1b5dcddaae5cae0cfb8b83e0">chartdb_get_chart_type</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao, <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name)</div>
 <div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;{</div>
 <div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;    chart_t *chart;</div>
 <div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;    chart_type_t type;</div>
@@ -1635,7 +1635,7 @@ $(function() {
 <div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;}</div>
 <div class="line"><a name="l01564"></a><span class="lineno"> 1564</span>&#160; </div>
 <div class="line"><a name="l01565"></a><span class="lineno"> 1565</span>&#160;<a class="code" href="structchart__georef__t.html">chart_georef_t</a></div>
-<div class="line"><a name="l01566"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a8977fb53dc67bd10972e1574366a8571"> 1566</a></span>&#160;<a class="code" href="chartdb_8h.html#a8977fb53dc67bd10972e1574366a8571">chartdb_get_chart_georef</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
+<div class="line"><a name="l01566"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a3a18485ab2656de82d45ffd247ab71f9"> 1566</a></span>&#160;<a class="code" href="chartdb_8h.html#a3a18485ab2656de82d45ffd247ab71f9">chartdb_get_chart_georef</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
 <div class="line"><a name="l01567"></a><span class="lineno"> 1567</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name)</div>
 <div class="line"><a name="l01568"></a><span class="lineno"> 1568</span>&#160;{</div>
 <div class="line"><a name="l01569"></a><span class="lineno"> 1569</span>&#160;    chart_t *chart;</div>
@@ -1658,7 +1658,7 @@ $(function() {
 <div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;}</div>
 <div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160; </div>
 <div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;<a class="code" href="structchart__bbox__t.html">chart_bbox_t</a></div>
-<div class="line"><a name="l01589"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a82077f17e5af3fba328f7fb659328897"> 1589</a></span>&#160;<a class="code" href="chartdb_8h.html#a82077f17e5af3fba328f7fb659328897">chartdb_get_chart_view</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
+<div class="line"><a name="l01589"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a6b500eda0d31a98209f0b9e76a2e7b86"> 1589</a></span>&#160;<a class="code" href="chartdb_8h.html#a6b500eda0d31a98209f0b9e76a2e7b86">chartdb_get_chart_view</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
 <div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name, <a class="code" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view)</div>
 <div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160;{</div>
 <div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;    chart_t *chart;</div>
@@ -1682,7 +1682,7 @@ $(function() {
 <div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;}</div>
 <div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160; </div>
 <div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;<a class="code" href="structchart__procs__t.html">chart_procs_t</a></div>
-<div class="line"><a name="l01613"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a67d7deb216e75ecce8f1fde3eb2630b2"> 1613</a></span>&#160;<a class="code" href="chartdb_8h.html#a67d7deb216e75ecce8f1fde3eb2630b2">chartdb_get_chart_procs</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
+<div class="line"><a name="l01613"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aa24084a9a6b6dcc2a7c8c1d9b3e2a03d"> 1613</a></span>&#160;<a class="code" href="chartdb_8h.html#aa24084a9a6b6dcc2a7c8c1d9b3e2a03d">chartdb_get_chart_procs</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
 <div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name)</div>
 <div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;{</div>
 <div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;    chart_t *chart;</div>
@@ -1705,7 +1705,7 @@ $(function() {
 <div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;}</div>
 <div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160; </div>
 <div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;bool_t</div>
-<div class="line"><a name="l01636"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a866c12785f0eb162dcb123bc1a039c7a"> 1636</a></span>&#160;<a class="code" href="chartdb_8h.html#a866c12785f0eb162dcb123bc1a039c7a">chartdb_get_chart_surface</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
+<div class="line"><a name="l01636"></a><span class="lineno"><a class="line" href="chartdb_8h.html#afebdf2e1ff16e52de24142a4bc3ecc4a"> 1636</a></span>&#160;<a class="code" href="chartdb_8h.html#afebdf2e1ff16e52de24142a4bc3ecc4a">chartdb_get_chart_surface</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
 <div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *chart_name, <span class="keywordtype">int</span> page, <span class="keywordtype">double</span> zoom, bool_t night,</div>
 <div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;    cairo_surface_t **surf, <span class="keywordtype">int</span> *num_pages)</div>
 <div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;{</div>
@@ -1820,7 +1820,7 @@ $(function() {
 <div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;}</div>
 <div class="line"><a name="l01749"></a><span class="lineno"> 1749</span>&#160; </div>
 <div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;bool_t</div>
-<div class="line"><a name="l01751"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aa0360b67dc55ef7e33f3c615fca0d5a6"> 1751</a></span>&#160;<a class="code" href="chartdb_8h.html#aa0360b67dc55ef7e33f3c615fca0d5a6">chartdb_is_ready</a>(chartdb_t *cdb)</div>
+<div class="line"><a name="l01751"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a4fe990180b9aeddb610ea285f183cf30"> 1751</a></span>&#160;<a class="code" href="chartdb_8h.html#a4fe990180b9aeddb610ea285f183cf30">chartdb_is_ready</a>(chartdb_t *cdb)</div>
 <div class="line"><a name="l01752"></a><span class="lineno"> 1752</span>&#160;{</div>
 <div class="line"><a name="l01753"></a><span class="lineno"> 1753</span>&#160;    bool_t init_complete;</div>
 <div class="line"><a name="l01754"></a><span class="lineno"> 1754</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
@@ -1830,7 +1830,7 @@ $(function() {
 <div class="line"><a name="l01758"></a><span class="lineno"> 1758</span>&#160;}</div>
 <div class="line"><a name="l01759"></a><span class="lineno"> 1759</span>&#160; </div>
 <div class="line"><a name="l01760"></a><span class="lineno"> 1760</span>&#160;bool_t</div>
-<div class="line"><a name="l01761"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a9e4383b5d7f0833ca741aaa11ed58c92"> 1761</a></span>&#160;<a class="code" href="chartdb_8h.html#a9e4383b5d7f0833ca741aaa11ed58c92">chartdb_is_arpt_known</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l01761"></a><span class="lineno"><a class="line" href="chartdb_8h.html#ab033b2672b84d49a51b5e0c0caeca091"> 1761</a></span>&#160;<a class="code" href="chartdb_8h.html#ab033b2672b84d49a51b5e0c0caeca091">chartdb_is_arpt_known</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l01762"></a><span class="lineno"> 1762</span>&#160;{</div>
 <div class="line"><a name="l01763"></a><span class="lineno"> 1763</span>&#160;    chart_arpt_t *arpt;</div>
 <div class="line"><a name="l01764"></a><span class="lineno"> 1764</span>&#160;    mutex_enter(&amp;cdb-&gt;lock);</div>
@@ -1855,31 +1855,31 @@ $(function() {
 <div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;<span class="preprocessor">    } while (0)</span></div>
 <div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160; </div>
 <div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01786"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aae669e938b07f3d5f77cb1048d21c1ae"> 1786</a></span>&#160;<a class="code" href="chartdb_8h.html#aae669e938b07f3d5f77cb1048d21c1ae">chartdb_get_arpt_name</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l01786"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a4038e6d367706870c85235bb5148cd8d"> 1786</a></span>&#160;<a class="code" href="chartdb_8h.html#a4038e6d367706870c85235bb5148cd8d">chartdb_get_arpt_name</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;{</div>
 <div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;    ARPT_GET_COMMON(name);</div>
 <div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160;}</div>
 <div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160; </div>
 <div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01792"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a1eef7300d9e81bd57fc2de23e4a1aa19"> 1792</a></span>&#160;<a class="code" href="chartdb_8h.html#a1eef7300d9e81bd57fc2de23e4a1aa19">chartdb_get_arpt_city</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l01792"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a76ce88890f15fc21b62e59b801af58ed"> 1792</a></span>&#160;<a class="code" href="chartdb_8h.html#a76ce88890f15fc21b62e59b801af58ed">chartdb_get_arpt_city</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;{</div>
 <div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;    ARPT_GET_COMMON(city);</div>
 <div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160;}</div>
 <div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160; </div>
 <div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01798"></a><span class="lineno"><a class="line" href="chartdb_8h.html#aaab9e8fabd05b99156690634b89d6d77"> 1798</a></span>&#160;<a class="code" href="chartdb_8h.html#aaab9e8fabd05b99156690634b89d6d77">chartdb_get_arpt_state</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l01798"></a><span class="lineno"><a class="line" href="chartdb_8h.html#ac7d10e4178a10d5bc41cea5faa09729c"> 1798</a></span>&#160;<a class="code" href="chartdb_8h.html#ac7d10e4178a10d5bc41cea5faa09729c">chartdb_get_arpt_state</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160;{</div>
 <div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;    ARPT_GET_COMMON(state);</div>
 <div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;}</div>
 <div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160; </div>
 <div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01804"></a><span class="lineno"><a class="line" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97"> 1804</a></span>&#160;<a class="code" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l01804"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a91469e3ba7b844a0390f886afd1e1730"> 1804</a></span>&#160;<a class="code" href="chartdb_8h.html#a91469e3ba7b844a0390f886afd1e1730">chartdb_get_metar</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;{</div>
 <div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;    <span class="keywordflow">return</span> (get_metar_taf_common(cdb, icao, B_TRUE));</div>
 <div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;}</div>
 <div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160; </div>
 <div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01810"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df"> 1810</a></span>&#160;<a class="code" href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df">chartdb_get_taf</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
+<div class="line"><a name="l01810"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a90538e1a18ec46e71f9497ef452050dd"> 1810</a></span>&#160;<a class="code" href="chartdb_8h.html#a90538e1a18ec46e71f9497ef452050dd">chartdb_get_taf</a>(chartdb_t *cdb, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao)</div>
 <div class="line"><a name="l01811"></a><span class="lineno"> 1811</span>&#160;{</div>
 <div class="line"><a name="l01812"></a><span class="lineno"> 1812</span>&#160;    <span class="keywordflow">return</span> (get_metar_taf_common(cdb, icao, B_FALSE));</div>
 <div class="line"><a name="l01813"></a><span class="lineno"> 1813</span>&#160;}</div>
@@ -1978,7 +1978,7 @@ $(function() {
 <div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;}</div>
 <div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160; </div>
 <div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;bool_t</div>
-<div class="line"><a name="l01909"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a77d28e397082a14cb2a39ab96aa9e443"> 1909</a></span>&#160;<a class="code" href="chartdb_8h.html#a77d28e397082a14cb2a39ab96aa9e443">chartdb_pending_ext_account_setup</a>(chartdb_t *cdb)</div>
+<div class="line"><a name="l01909"></a><span class="lineno"><a class="line" href="chartdb_8h.html#a0ac24f220a23165e087fde75f163528d"> 1909</a></span>&#160;<a class="code" href="chartdb_8h.html#a0ac24f220a23165e087fde75f163528d">chartdb_pending_ext_account_setup</a>(chartdb_t *cdb)</div>
 <div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;{</div>
 <div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cdb != NULL);</div>
 <div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;    <span class="keywordflow">if</span> (prov[cdb-&gt;prov].pending_ext_account_setup != NULL)</div>
@@ -1991,41 +1991,41 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00189">assert.h:189</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
-<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
-<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0dabf1a0262850aedd21dcb01df8a48e"><div class="ttname"><a href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a></div><div class="ttdeci">void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
 <div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
-<div class="ttc" id="aavl_8h_html_a6af8c1b69457cc43c64b3546561b77d8"><div class="ttname"><a href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a></div><div class="ttdeci">API_EXPORT void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
-<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
-<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
-<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_a625e2d0427ee540475f8699f4c906af9"><div class="ttname"><a href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a></div><div class="ttdeci">void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
+<div class="ttc" id="aavl_8h_html_a86bad92bbbcbf451c56929f1f23fadde"><div class="ttname"><a href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a></div><div class="ttdeci">void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_aac87d204842ec758616e9f16f56d9d36"><div class="ttname"><a href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a></div><div class="ttdeci">void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_ac65a3472303f2a3ee479f57f6c816cab"><div class="ttname"><a href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a></div><div class="ttdeci">void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
 <div class="ttc" id="aavl_8h_html_ad886c4acb2da4a7e86e6b94f50cc9b6b"><div class="ttname"><a href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a></div><div class="ttdeci">#define AVL_NEXT(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00212">avl.h:212</a></div></div>
+<div class="ttc" id="aavl_8h_html_af07adf796c231b360ea20c33dde96ea6"><div class="ttname"><a href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a></div><div class="ttdeci">void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
 <div class="ttc" id="acairo__utils_8h_html_a670dd8ad0c506a8c84e30e0d26367372"><div class="ttname"><a href="cairo__utils_8h.html#a670dd8ad0c506a8c84e30e0d26367372">CAIRO_SURFACE_DESTROY</a></div><div class="ttdeci">#define CAIRO_SURFACE_DESTROY(surf)</div><div class="ttdef"><b>Definition:</b> <a href="cairo__utils_8h_source.html#l00045">cairo_utils.h:45</a></div></div>
 <div class="ttc" id="achartdb_8h_html"><div class="ttname"><a href="chartdb_8h.html">chartdb.h</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a01af7850d24a5f0c8c958588f091534a"><div class="ttname"><a href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init</a></div><div class="ttdeci">API_EXPORT chartdb_t * chartdb_init(const char *cache_path, const char *pdftoppm_path, const char *pdfinfo_path, unsigned airac, const char *provider_name, const chart_prov_info_login_t *provider_login)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01212">chartdb.c:1212</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a1cdbd565ab6cddf240333d362cc8017f"><div class="ttname"><a href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2</a></div><div class="ttdeci">API_EXPORT bool_t chartdb_test_connection2(const char *provider_name, const chart_prov_info_login_t *creds, const char *proxy)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01331">chartdb.c:1331</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a1eef7300d9e81bd57fc2de23e4a1aa19"><div class="ttname"><a href="chartdb_8h.html#a1eef7300d9e81bd57fc2de23e4a1aa19">chartdb_get_arpt_city</a></div><div class="ttdeci">API_EXPORT char * chartdb_get_arpt_city(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01792">chartdb.c:1792</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a27e2d5a171fcb09694ba05dcd1a163df"><div class="ttname"><a href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df">chartdb_get_taf</a></div><div class="ttdeci">API_EXPORT char * chartdb_get_taf(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01810">chartdb.c:1810</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a2bc95b0fd54759fd9b4223383d51c5f9"><div class="ttname"><a href="chartdb_8h.html#a2bc95b0fd54759fd9b4223383d51c5f9">chartdb_purge</a></div><div class="ttdeci">API_EXPORT void chartdb_purge(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01359">chartdb.c:1359</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a3f377030ec3ce9e6ab1e61d9319a5f73"><div class="ttname"><a href="chartdb_8h.html#a3f377030ec3ce9e6ab1e61d9319a5f73">chartdb_set_load_limit</a></div><div class="ttdeci">API_EXPORT void chartdb_set_load_limit(chartdb_t *cdb, uint64_t bytes)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01349">chartdb.c:1349</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a509ac9c07c651d1624cb867b42fab445"><div class="ttname"><a href="chartdb_8h.html#a509ac9c07c651d1624cb867b42fab445">chartdb_get_chart_type</a></div><div class="ttdeci">API_EXPORT chart_type_t chartdb_get_chart_type(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01544">chartdb.c:1544</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a5cef8a8b8fc80b5e22f7ebc5312e910f"><div class="ttname"><a href="chartdb_8h.html#a5cef8a8b8fc80b5e22f7ebc5312e910f">chartdb_test_connection</a></div><div class="ttdeci">API_EXPORT bool_t chartdb_test_connection(const char *provider_name, const chart_prov_info_login_t *creds)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01324">chartdb.c:1324</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a67d7deb216e75ecce8f1fde3eb2630b2"><div class="ttname"><a href="chartdb_8h.html#a67d7deb216e75ecce8f1fde3eb2630b2">chartdb_get_chart_procs</a></div><div class="ttdeci">API_EXPORT chart_procs_t chartdb_get_chart_procs(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01613">chartdb.c:1613</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a728f0afa8db46da279a55aa311b0d507"><div class="ttname"><a href="chartdb_8h.html#a728f0afa8db46da279a55aa311b0d507">chartdb_get_proxy</a></div><div class="ttdeci">API_EXPORT size_t chartdb_get_proxy(chartdb_t *cdb, char *proxy, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01385">chartdb.c:1385</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a77d28e397082a14cb2a39ab96aa9e443"><div class="ttname"><a href="chartdb_8h.html#a77d28e397082a14cb2a39ab96aa9e443">chartdb_pending_ext_account_setup</a></div><div class="ttdeci">API_EXPORT bool_t chartdb_pending_ext_account_setup(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01909">chartdb.c:1909</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a7ccf654a37baae3bbb3fc3dc629dffee"><div class="ttname"><a href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names</a></div><div class="ttdeci">API_EXPORT char ** chartdb_get_chart_names(chartdb_t *cdb, const char *icao, chart_type_t type, size_t *num_charts)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01406">chartdb.c:1406</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a82077f17e5af3fba328f7fb659328897"><div class="ttname"><a href="chartdb_8h.html#a82077f17e5af3fba328f7fb659328897">chartdb_get_chart_view</a></div><div class="ttdeci">API_EXPORT chart_bbox_t chartdb_get_chart_view(chartdb_t *cdb, const char *icao, const char *chart_name, chart_view_t view)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01589">chartdb.c:1589</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a866c12785f0eb162dcb123bc1a039c7a"><div class="ttname"><a href="chartdb_8h.html#a866c12785f0eb162dcb123bc1a039c7a">chartdb_get_chart_surface</a></div><div class="ttdeci">API_EXPORT bool_t chartdb_get_chart_surface(chartdb_t *cdb, const char *icao, const char *chart_name, int page, double zoom, bool_t night, cairo_surface_t **surf, int *num_pages)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01636">chartdb.c:1636</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a8977fb53dc67bd10972e1574366a8571"><div class="ttname"><a href="chartdb_8h.html#a8977fb53dc67bd10972e1574366a8571">chartdb_get_chart_georef</a></div><div class="ttdeci">API_EXPORT chart_georef_t chartdb_get_chart_georef(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01566">chartdb.c:1566</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a04f522583a4d6d9a8700838ea68773a1"><div class="ttname"><a href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names</a></div><div class="ttdeci">char ** chartdb_get_chart_names(chartdb_t *cdb, const char *icao, chart_type_t type, size_t *num_charts)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01406">chartdb.c:1406</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a0ac24f220a23165e087fde75f163528d"><div class="ttname"><a href="chartdb_8h.html#a0ac24f220a23165e087fde75f163528d">chartdb_pending_ext_account_setup</a></div><div class="ttdeci">bool_t chartdb_pending_ext_account_setup(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01909">chartdb.c:1909</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a3a18485ab2656de82d45ffd247ab71f9"><div class="ttname"><a href="chartdb_8h.html#a3a18485ab2656de82d45ffd247ab71f9">chartdb_get_chart_georef</a></div><div class="ttdeci">chart_georef_t chartdb_get_chart_georef(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01566">chartdb.c:1566</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a3e23af4bd4b75bc192703d79c3aef2e3"><div class="ttname"><a href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3">chartdb_test_connection2</a></div><div class="ttdeci">bool_t chartdb_test_connection2(const char *provider_name, const chart_prov_info_login_t *creds, const char *proxy)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01331">chartdb.c:1331</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a4038e6d367706870c85235bb5148cd8d"><div class="ttname"><a href="chartdb_8h.html#a4038e6d367706870c85235bb5148cd8d">chartdb_get_arpt_name</a></div><div class="ttdeci">char * chartdb_get_arpt_name(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01786">chartdb.c:1786</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a4fe990180b9aeddb610ea285f183cf30"><div class="ttname"><a href="chartdb_8h.html#a4fe990180b9aeddb610ea285f183cf30">chartdb_is_ready</a></div><div class="ttdeci">bool_t chartdb_is_ready(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01751">chartdb.c:1751</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a6766ff7ff84d6e3e21ed52a7a24ba4f6"><div class="ttname"><a href="chartdb_8h.html#a6766ff7ff84d6e3e21ed52a7a24ba4f6">chartdb_fini</a></div><div class="ttdeci">void chartdb_fini(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01278">chartdb.c:1278</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a6b500eda0d31a98209f0b9e76a2e7b86"><div class="ttname"><a href="chartdb_8h.html#a6b500eda0d31a98209f0b9e76a2e7b86">chartdb_get_chart_view</a></div><div class="ttdeci">chart_bbox_t chartdb_get_chart_view(chartdb_t *cdb, const char *icao, const char *chart_name, chart_view_t view)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01589">chartdb.c:1589</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a6d95009c1b5dcddaae5cae0cfb8b83e0"><div class="ttname"><a href="chartdb_8h.html#a6d95009c1b5dcddaae5cae0cfb8b83e0">chartdb_get_chart_type</a></div><div class="ttdeci">chart_type_t chartdb_get_chart_type(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01544">chartdb.c:1544</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a6e59a752e9e38da4c1fbe335d9690565"><div class="ttname"><a href="chartdb_8h.html#a6e59a752e9e38da4c1fbe335d9690565">chartdb_get_proxy</a></div><div class="ttdeci">size_t chartdb_get_proxy(chartdb_t *cdb, char *proxy, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01385">chartdb.c:1385</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a76ce88890f15fc21b62e59b801af58ed"><div class="ttname"><a href="chartdb_8h.html#a76ce88890f15fc21b62e59b801af58ed">chartdb_get_arpt_city</a></div><div class="ttdeci">char * chartdb_get_arpt_city(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01792">chartdb.c:1792</a></div></div>
 <div class="ttc" id="achartdb_8h_html_a8a510d804b8fc6228417a81dcc58a810"><div class="ttname"><a href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a></div><div class="ttdeci">chart_view_t</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00141">chartdb.h:141</a></div></div>
-<div class="ttc" id="achartdb_8h_html_a9e4383b5d7f0833ca741aaa11ed58c92"><div class="ttname"><a href="chartdb_8h.html#a9e4383b5d7f0833ca741aaa11ed58c92">chartdb_is_arpt_known</a></div><div class="ttdeci">API_EXPORT bool_t chartdb_is_arpt_known(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01761">chartdb.c:1761</a></div></div>
-<div class="ttc" id="achartdb_8h_html_aa0360b67dc55ef7e33f3c615fca0d5a6"><div class="ttname"><a href="chartdb_8h.html#aa0360b67dc55ef7e33f3c615fca0d5a6">chartdb_is_ready</a></div><div class="ttdeci">API_EXPORT bool_t chartdb_is_ready(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01751">chartdb.c:1751</a></div></div>
-<div class="ttc" id="achartdb_8h_html_aa48651afcfb197a29d757eaab2f8c258"><div class="ttname"><a href="chartdb_8h.html#aa48651afcfb197a29d757eaab2f8c258">chartdb_fini</a></div><div class="ttdeci">API_EXPORT void chartdb_fini(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01278">chartdb.c:1278</a></div></div>
-<div class="ttc" id="achartdb_8h_html_aaab9e8fabd05b99156690634b89d6d77"><div class="ttname"><a href="chartdb_8h.html#aaab9e8fabd05b99156690634b89d6d77">chartdb_get_arpt_state</a></div><div class="ttdeci">API_EXPORT char * chartdb_get_arpt_state(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01798">chartdb.c:1798</a></div></div>
-<div class="ttc" id="achartdb_8h_html_aae669e938b07f3d5f77cb1048d21c1ae"><div class="ttname"><a href="chartdb_8h.html#aae669e938b07f3d5f77cb1048d21c1ae">chartdb_get_arpt_name</a></div><div class="ttdeci">API_EXPORT char * chartdb_get_arpt_name(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01786">chartdb.c:1786</a></div></div>
-<div class="ttc" id="achartdb_8h_html_ab95f98a2172e600cdd0d8f3fcdc8c57f"><div class="ttname"><a href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f">chartdb_set_proxy</a></div><div class="ttdeci">API_EXPORT void chartdb_set_proxy(chartdb_t *cdb, const char *proxy)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01373">chartdb.c:1373</a></div></div>
-<div class="ttc" id="achartdb_8h_html_ad5766b5880cce50c1a60e53e08547419"><div class="ttname"><a href="chartdb_8h.html#ad5766b5880cce50c1a60e53e08547419">chartdb_free_str_list</a></div><div class="ttdeci">API_EXPORT void chartdb_free_str_list(char **name_list, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01471">chartdb.c:1471</a></div></div>
-<div class="ttc" id="achartdb_8h_html_af9663bd021340922774fe2e2822e8190"><div class="ttname"><a href="chartdb_8h.html#af9663bd021340922774fe2e2822e8190">chartdb_get_chart_codename</a></div><div class="ttdeci">API_EXPORT char * chartdb_get_chart_codename(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01519">chartdb.c:1519</a></div></div>
-<div class="ttc" id="achartdb_8h_html_afe6f688ed76d41caa1dc8c2720228b97"><div class="ttname"><a href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar</a></div><div class="ttdeci">API_EXPORT char * chartdb_get_metar(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01804">chartdb.c:1804</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a90538e1a18ec46e71f9497ef452050dd"><div class="ttname"><a href="chartdb_8h.html#a90538e1a18ec46e71f9497ef452050dd">chartdb_get_taf</a></div><div class="ttdeci">char * chartdb_get_taf(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01810">chartdb.c:1810</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a90c234ec299a393efa9ea1eb7f64dbf2"><div class="ttname"><a href="chartdb_8h.html#a90c234ec299a393efa9ea1eb7f64dbf2">chartdb_free_str_list</a></div><div class="ttdeci">void chartdb_free_str_list(char **name_list, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01471">chartdb.c:1471</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a91469e3ba7b844a0390f886afd1e1730"><div class="ttname"><a href="chartdb_8h.html#a91469e3ba7b844a0390f886afd1e1730">chartdb_get_metar</a></div><div class="ttdeci">char * chartdb_get_metar(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01804">chartdb.c:1804</a></div></div>
+<div class="ttc" id="achartdb_8h_html_a997c72ac56df4c822db53bbb55a1419c"><div class="ttname"><a href="chartdb_8h.html#a997c72ac56df4c822db53bbb55a1419c">chartdb_test_connection</a></div><div class="ttdeci">bool_t chartdb_test_connection(const char *provider_name, const chart_prov_info_login_t *creds)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01324">chartdb.c:1324</a></div></div>
+<div class="ttc" id="achartdb_8h_html_aa24084a9a6b6dcc2a7c8c1d9b3e2a03d"><div class="ttname"><a href="chartdb_8h.html#aa24084a9a6b6dcc2a7c8c1d9b3e2a03d">chartdb_get_chart_procs</a></div><div class="ttdeci">chart_procs_t chartdb_get_chart_procs(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01613">chartdb.c:1613</a></div></div>
+<div class="ttc" id="achartdb_8h_html_aa3ef9f3c29826452d88d3b296e99aa65"><div class="ttname"><a href="chartdb_8h.html#aa3ef9f3c29826452d88d3b296e99aa65">chartdb_set_proxy</a></div><div class="ttdeci">void chartdb_set_proxy(chartdb_t *cdb, const char *proxy)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01373">chartdb.c:1373</a></div></div>
+<div class="ttc" id="achartdb_8h_html_aaca54f9c9c733f40d6f68596f3ad80cd"><div class="ttname"><a href="chartdb_8h.html#aaca54f9c9c733f40d6f68596f3ad80cd">chartdb_set_load_limit</a></div><div class="ttdeci">void chartdb_set_load_limit(chartdb_t *cdb, uint64_t bytes)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01349">chartdb.c:1349</a></div></div>
+<div class="ttc" id="achartdb_8h_html_ab033b2672b84d49a51b5e0c0caeca091"><div class="ttname"><a href="chartdb_8h.html#ab033b2672b84d49a51b5e0c0caeca091">chartdb_is_arpt_known</a></div><div class="ttdeci">bool_t chartdb_is_arpt_known(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01761">chartdb.c:1761</a></div></div>
+<div class="ttc" id="achartdb_8h_html_ab2bca4186ad5dd2460b574fc12f613ae"><div class="ttname"><a href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae">chartdb_init</a></div><div class="ttdeci">chartdb_t * chartdb_init(const char *cache_path, const char *pdftoppm_path, const char *pdfinfo_path, unsigned airac, const char *provider_name, const chart_prov_info_login_t *provider_login)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01212">chartdb.c:1212</a></div></div>
+<div class="ttc" id="achartdb_8h_html_ac7d10e4178a10d5bc41cea5faa09729c"><div class="ttname"><a href="chartdb_8h.html#ac7d10e4178a10d5bc41cea5faa09729c">chartdb_get_arpt_state</a></div><div class="ttdeci">char * chartdb_get_arpt_state(chartdb_t *cdb, const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01798">chartdb.c:1798</a></div></div>
+<div class="ttc" id="achartdb_8h_html_adb2d12a5f614646edb061f878a5e0094"><div class="ttname"><a href="chartdb_8h.html#adb2d12a5f614646edb061f878a5e0094">chartdb_purge</a></div><div class="ttdeci">void chartdb_purge(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01359">chartdb.c:1359</a></div></div>
+<div class="ttc" id="achartdb_8h_html_ae498b51f39d3e8e8b6984dd43ad2baea"><div class="ttname"><a href="chartdb_8h.html#ae498b51f39d3e8e8b6984dd43ad2baea">chartdb_get_chart_codename</a></div><div class="ttdeci">char * chartdb_get_chart_codename(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01519">chartdb.c:1519</a></div></div>
+<div class="ttc" id="achartdb_8h_html_afebdf2e1ff16e52de24142a4bc3ecc4a"><div class="ttname"><a href="chartdb_8h.html#afebdf2e1ff16e52de24142a4bc3ecc4a">chartdb_get_chart_surface</a></div><div class="ttdeci">bool_t chartdb_get_chart_surface(chartdb_t *cdb, const char *icao, const char *chart_name, int page, double zoom, bool_t night, cairo_surface_t **surf, int *num_pages)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01636">chartdb.c:1636</a></div></div>
 <div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00134">core.h:134</a></div></div>
 <div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>

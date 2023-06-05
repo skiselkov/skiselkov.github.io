@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unused_679',['UNUSED',['../core_8h.html#a86d500a34c624c2cae56bc25a31b12f3',1,'core.h']]],
-  ['unused_5fattr_680',['UNUSED_ATTR',['../core_8h.html#ab58a705ceeb200925bb0a7e302959982',1,'core.h']]]
+  ['packed_5fattr_1041',['PACKED_ATTR',['../core_8h.html#acf3209f083788b8c9ebfabd7a1fdb48c',1,'core.h']]]
 ];

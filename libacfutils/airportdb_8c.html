@@ -93,7 +93,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="airportdb_8h_source.html">acfutils/airportdb.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="assert_8h_source.html">acfutils/assert.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="avl_8h_source.html">acfutils/avl.h</a>&quot;</code><br />
-<code>#include &quot;acfutils/conf.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="conf_8h_source.html">acfutils/conf.h</a>&quot;</code><br />
 <code>#include &quot;acfutils/geom.h&quot;</code><br />
 <code>#include &quot;acfutils/helpers.h&quot;</code><br />
 <code>#include &quot;acfutils/list.h&quot;</code><br />
@@ -128,7 +128,7 @@ Include dependency graph for airportdb.c:</div>
 <area shape="rect" href="list_8h_source.html" title=" " alt="" coords="1843,259,1898,285"/>
 <area shape="rect" href="helpers_8h_source.html" title=" " alt="" coords="1177,259,1260,285"/>
 <area shape="rect" href="safe__alloc_8h.html" title=" " alt="" coords="674,408,774,435"/>
-<area shape="rect" href="conf_8h_source.html" title=" " alt="" coords="1543,184,1657,211"/>
+<area shape="rect" href="conf_8h.html" title=" " alt="" coords="1543,184,1657,211"/>
 <area shape="rect" href="perf_8h_source.html" title=" " alt="" coords="195,184,306,211"/>
 <area shape="rect" href="math__core_8h_source.html" title=" " alt="" coords="547,408,650,435"/>
 <area shape="rect" href="log_8h_source.html" title=" " alt="" coords="733,557,787,584"/>
@@ -406,8 +406,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>free_tile</b> 
 <tr class="separator:ad407cf1b33037933854e6d83e8500cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c8782d6e1d3e1cd6216293d16a43e88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="airportdb_8c.html#a6c8782d6e1d3e1cd6216293d16a43e88">adb_set_airport_load_limit</a> (<a class="el" href="structairportdb__t.html">airportdb_t</a> *db, double limit)</td></tr>
 <tr class="separator:a6c8782d6e1d3e1cd6216293d16a43e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c6bacf3810e2f9f007bc5f024f7a11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="airportdb_8c.html#a57c6bacf3810e2f9f007bc5f024f7a11">load_nearest_airport_tiles</a> (<a class="el" href="structairportdb__t.html">airportdb_t</a> *db, <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> my_pos)</td></tr>
-<tr class="separator:a57c6bacf3810e2f9f007bc5f024f7a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ab54aa9f06a48c98a98d6225718c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="airportdb_8c.html#ae2ab54aa9f06a48c98a98d6225718c22">adb_load_nearest_airport_tiles</a> (<a class="el" href="structairportdb__t.html">airportdb_t</a> *db, <a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> my_pos)</td></tr>
+<tr class="separator:ae2ab54aa9f06a48c98a98d6225718c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3708973316cb7d7ed577fd2f6623bc5b"><td class="memItemLeft" align="right" valign="top"><a id="a3708973316cb7d7ed577fd2f6623bc5b"></a>
 static double&#160;</td><td class="memItemRight" valign="bottom"><b>lon_delta</b> (double x, double y)</td></tr>
 <tr class="separator:a3708973316cb7d7ed577fd2f6623bc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -926,6 +926,44 @@ When using an <a class="el" href="structairportdb__t.html">airportdb_t</a> from 
 
 </div>
 </div>
+<a id="ae2ab54aa9f06a48c98a98d6225718c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ab54aa9f06a48c98a98d6225718c22">&#9670;&nbsp;</a></span>adb_load_nearest_airport_tiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adb_load_nearest_airport_tiles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structairportdb__t.html">airportdb_t</a> *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td>
+          <td class="paramname"><em>my_pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Performs a load of all airports within the distance load limit of a given position. The distance limit is set using <a class="el" href="airportdb_8c.html#a6c8782d6e1d3e1cd6216293d16a43e88">adb_set_airport_load_limit()</a>. A loaded airport has all its information resolved, such as the ECEF positions of the threshold, all bounding boxes constructed, etc.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>The database for which to perform the load. </td></tr>
+    <tr><td class="paramname">my_pos</td><td>The 2-space geographic position around which to perform the load. This MUST be a valid geographic coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="airportdb_8c_source.html#l03106">3106</a> of file <a class="el" href="airportdb_8c_source.html">airportdb.c</a>.</p>
+
+</div>
+</div>
 <a id="a3c4d09bb57a5959f93f56fc98157bcb0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c4d09bb57a5959f93f56fc98157bcb0">&#9670;&nbsp;</a></span>adb_recreate_cache()</h2>
 
@@ -1191,44 +1229,6 @@ When using an <a class="el" href="structairportdb__t.html">airportdb_t</a> from 
 <p>The actual worker function for adb_find_nearest_airports. Performs the search in a specified geo_table tile. Position is a 3-space ECEF vector. </p>
 
 <p class="definition">Definition at line <a class="el" href="airportdb_8c_source.html#l02955">2955</a> of file <a class="el" href="airportdb_8c_source.html">airportdb.c</a>.</p>
-
-</div>
-</div>
-<a id="a57c6bacf3810e2f9f007bc5f024f7a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57c6bacf3810e2f9f007bc5f024f7a11">&#9670;&nbsp;</a></span>load_nearest_airport_tiles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void load_nearest_airport_tiles </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structairportdb__t.html">airportdb_t</a> *&#160;</td>
-          <td class="paramname"><em>db</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a>&#160;</td>
-          <td class="paramname"><em>my_pos</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Performs a load of all airports within the distance load limit of a given position. The distance limit is set using <a class="el" href="airportdb_8c.html#a6c8782d6e1d3e1cd6216293d16a43e88">adb_set_airport_load_limit()</a>. A loaded airport has all its information resolved, such as the ECEF positions of the threshold, all bounding boxes constructed, etc.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">db</td><td>The database for which to perform the load. </td></tr>
-    <tr><td class="paramname">my_pos</td><td>The 2-space geographic position around which to perform the load. This MUST be a valid geographic coordinate. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="airportdb_8c_source.html#l03106">3106</a> of file <a class="el" href="airportdb_8c_source.html">airportdb.c</a>.</p>
 
 </div>
 </div>

@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;acfutils/cmd.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cmd_8h.html">acfutils/cmd.h</a>&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">static</span> XPLMCommandRef</div>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;cmd_find(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="cmd_8h.html#a7d7301e0b9d9a6a9db0bd69de1927707">   48</a></span>&#160;<a class="code" href="cmd_8h.html#a7d7301e0b9d9a6a9db0bd69de1927707">cmd_find</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    XPLMCommandRef ref;</div>
@@ -130,7 +130,7 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;fcmd_find(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="cmd_8h.html#a2111d60af5cf971966d4ed9ebdee40ac">   61</a></span>&#160;<a class="code" href="cmd_8h.html#a2111d60af5cf971966d4ed9ebdee40ac">fcmd_find</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, ...)</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    XPLMCommandRef ref;</div>
@@ -143,19 +143,19 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;cmd_find_v(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, va_list ap)</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="cmd_8h.html#afdbc0bdc8a1ad4bb438a538cf68ae266">   74</a></span>&#160;<a class="code" href="cmd_8h.html#afdbc0bdc8a1ad4bb438a538cf68ae266">cmd_find_v</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, va_list ap)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> (cmd_find_v_impl(fmt, ap, B_FALSE));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;fcmd_find_v(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, va_list ap)</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="cmd_8h.html#a62eb27ed89b798ba641a5b08cc98131e">   80</a></span>&#160;<a class="code" href="cmd_8h.html#a62eb27ed89b798ba641a5b08cc98131e">fcmd_find_v</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, va_list ap)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> (cmd_find_v_impl(fmt, ap, B_TRUE));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;cmd_bind_v(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon,</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">   86</a></span>&#160;<a class="code" href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">cmd_bind_v</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    va_list ap)</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    XPLMCommandRef ref;</div>
@@ -179,26 +179,26 @@ $(function() {
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;cmd_bind(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">  110</a></span>&#160;<a class="code" href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">cmd_bind</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    XPLMCommandRef ref;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    va_start(ap, refcon);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    ref = cmd_bind_v(fmt, cb, before, refcon, ap);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    ref = <a class="code" href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">cmd_bind_v</a>(fmt, cb, before, refcon, ap);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    va_end(ap);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> (ref);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;API_EXPORT XPLMCommandRef</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;fcmd_bind(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="cmd_8h.html#a912cc2bac092a5033e5421afdc4edbac">  123</a></span>&#160;<a class="code" href="cmd_8h.html#a912cc2bac092a5033e5421afdc4edbac">fcmd_bind</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    XPLMCommandRef ref;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    va_start(ap, refcon);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ref = cmd_bind_v(fmt, cb, before, refcon, ap);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ref = <a class="code" href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">cmd_bind_v</a>(fmt, cb, before, refcon, ap);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    va_end(ap);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (ref == NULL) {</div>
@@ -213,7 +213,7 @@ $(function() {
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;API_EXPORT bool_t</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;cmd_unbind_v(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon,</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="cmd_8h.html#ae09036769c8aafc13ee952503ff908c9">  144</a></span>&#160;<a class="code" href="cmd_8h.html#ae09036769c8aafc13ee952503ff908c9">cmd_unbind_v</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon,</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    va_list ap)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    XPLMCommandRef ref;</div>
@@ -240,26 +240,26 @@ $(function() {
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;API_EXPORT bool_t</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;cmd_unbind(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="cmd_8h.html#a8a5283372ea3751a075910d98230a872">  171</a></span>&#160;<a class="code" href="cmd_8h.html#a8a5283372ea3751a075910d98230a872">cmd_unbind</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    bool_t res;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    va_start(ap, refcon);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    res = cmd_unbind_v(fmt, cb, before, refcon, ap);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    res = <a class="code" href="cmd_8h.html#ae09036769c8aafc13ee952503ff908c9">cmd_unbind_v</a>(fmt, cb, before, refcon, ap);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    va_end(ap);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> (res);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;API_EXPORT <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;fcmd_unbind(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="cmd_8h.html#a68b5a972b5c415ea6acd4dbc210b09dd">  184</a></span>&#160;<a class="code" href="cmd_8h.html#a68b5a972b5c415ea6acd4dbc210b09dd">fcmd_unbind</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt, cmd_cb_t cb, bool_t before, <span class="keywordtype">void</span> *refcon, ...)</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    va_list ap;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    bool_t res;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    va_start(ap, refcon);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    res = cmd_unbind_v(fmt, cb, before, refcon, ap);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    res = <a class="code" href="cmd_8h.html#ae09036769c8aafc13ee952503ff908c9">cmd_unbind_v</a>(fmt, cb, before, refcon, ap);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    va_end(ap);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (!res) {</div>
@@ -273,6 +273,17 @@ $(function() {
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00120">assert.h:120</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad157a1a262c174b8a8744896359009b7"><div class="ttname"><a href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a></div><div class="ttdeci">#define VERIFY_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00086">assert.h:86</a></div></div>
+<div class="ttc" id="acmd_8h_html"><div class="ttname"><a href="cmd_8h.html">cmd.h</a></div></div>
+<div class="ttc" id="acmd_8h_html_a12ca1a33952791438c88203e11c140aa"><div class="ttname"><a href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">cmd_bind</a></div><div class="ttdeci">XPLMCommandRef cmd_bind(const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00110">cmd.c:110</a></div></div>
+<div class="ttc" id="acmd_8h_html_a2111d60af5cf971966d4ed9ebdee40ac"><div class="ttname"><a href="cmd_8h.html#a2111d60af5cf971966d4ed9ebdee40ac">fcmd_find</a></div><div class="ttdeci">XPLMCommandRef fcmd_find(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00061">cmd.c:61</a></div></div>
+<div class="ttc" id="acmd_8h_html_a62eb27ed89b798ba641a5b08cc98131e"><div class="ttname"><a href="cmd_8h.html#a62eb27ed89b798ba641a5b08cc98131e">fcmd_find_v</a></div><div class="ttdeci">XPLMCommandRef fcmd_find_v(const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00080">cmd.c:80</a></div></div>
+<div class="ttc" id="acmd_8h_html_a68b5a972b5c415ea6acd4dbc210b09dd"><div class="ttname"><a href="cmd_8h.html#a68b5a972b5c415ea6acd4dbc210b09dd">fcmd_unbind</a></div><div class="ttdeci">void fcmd_unbind(const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00184">cmd.c:184</a></div></div>
+<div class="ttc" id="acmd_8h_html_a7d7301e0b9d9a6a9db0bd69de1927707"><div class="ttname"><a href="cmd_8h.html#a7d7301e0b9d9a6a9db0bd69de1927707">cmd_find</a></div><div class="ttdeci">XPLMCommandRef cmd_find(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00048">cmd.c:48</a></div></div>
+<div class="ttc" id="acmd_8h_html_a81c95707b2821e1e9353a6db5d8af255"><div class="ttname"><a href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">cmd_bind_v</a></div><div class="ttdeci">XPLMCommandRef cmd_bind_v(const char *fmt, cmd_cb_t cb, bool_t before, void *refcon, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00086">cmd.c:86</a></div></div>
+<div class="ttc" id="acmd_8h_html_a8a5283372ea3751a075910d98230a872"><div class="ttname"><a href="cmd_8h.html#a8a5283372ea3751a075910d98230a872">cmd_unbind</a></div><div class="ttdeci">bool_t cmd_unbind(const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00171">cmd.c:171</a></div></div>
+<div class="ttc" id="acmd_8h_html_a912cc2bac092a5033e5421afdc4edbac"><div class="ttname"><a href="cmd_8h.html#a912cc2bac092a5033e5421afdc4edbac">fcmd_bind</a></div><div class="ttdeci">XPLMCommandRef fcmd_bind(const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00123">cmd.c:123</a></div></div>
+<div class="ttc" id="acmd_8h_html_ae09036769c8aafc13ee952503ff908c9"><div class="ttname"><a href="cmd_8h.html#ae09036769c8aafc13ee952503ff908c9">cmd_unbind_v</a></div><div class="ttdeci">bool_t cmd_unbind_v(const char *fmt, cmd_cb_t cb, bool_t before, void *refcon, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00144">cmd.c:144</a></div></div>
+<div class="ttc" id="acmd_8h_html_afdbc0bdc8a1ad4bb438a538cf68ae266"><div class="ttname"><a href="cmd_8h.html#afdbc0bdc8a1ad4bb438a538cf68ae266">cmd_find_v</a></div><div class="ttdeci">XPLMCommandRef cmd_find_v(const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="cmd_8c_source.html#l00074">cmd.c:74</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

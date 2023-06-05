@@ -471,7 +471,7 @@ $(function() {
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cap_bytes != 0);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;cache-&gt;tree, cache_compar, sizeof (<a class="code" href="structcache__entry__t.html">cache_entry_t</a>),</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;cache-&gt;tree, cache_compar, sizeof (<a class="code" href="structcache__entry__t.html">cache_entry_t</a>),</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        offsetof(<a class="code" href="structcache__entry__t.html">cache_entry_t</a>, tree_node));</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    list_create(&amp;cache-&gt;lru, sizeof (<a class="code" href="structcache__entry__t.html">cache_entry_t</a>),</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        offsetof(<a class="code" href="structcache__entry__t.html">cache_entry_t</a>, lru_node));</div>
@@ -523,9 +523,9 @@ $(function() {
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    list_destroy(&amp;cache-&gt;lru);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordflow">while</span> ((ce = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;cache-&gt;tree, &amp;cookie)) != NULL)</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordflow">while</span> ((ce = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;cache-&gt;tree, &amp;cookie)) != NULL)</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        free_cache_entry(ce);</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;cache-&gt;tree);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;cache-&gt;tree);</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    free(cache);</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;}</div>
@@ -546,7 +546,7 @@ $(function() {
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (ce == NULL)</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <a class="code" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a>(&amp;cache-&gt;tree, ce);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <a class="code" href="avl_8h.html#a503c91cf12249f4f6bc020c0f14081f0">avl_remove</a>(&amp;cache-&gt;tree, ce);</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(cache-&gt;sz, &gt;=, ce-&gt;buf_sz[0] + ce-&gt;buf_sz[1]);</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        cache-&gt;sz -= (ce-&gt;buf_sz[0] + ce-&gt;buf_sz[1]);</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        free_cache_entry(ce);</div>
@@ -590,7 +590,7 @@ $(function() {
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(0);</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    }</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;cache-&gt;tree, ce, where);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;cache-&gt;tree, ce, where);</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    list_insert_head(&amp;cache-&gt;lru, ce);</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">return</span> (ce);</div>
@@ -618,7 +618,7 @@ $(function() {
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(p != NULL);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(num_pts != 0);</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    ce = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;cache-&gt;tree, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    ce = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;cache-&gt;tree, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="keywordflow">if</span> (ce == NULL) {</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        trim_cache(cache, bytes);</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        ce = cache_add_entry(cache, where, type, p, srch.buf_sz[0],</div>
@@ -763,7 +763,7 @@ $(function() {
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    texsz.inited = B_TRUE;</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    mutex_init(&amp;texsz.lock);</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    texsz.bytes = 0;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;texsz.allocs, texsz_alloc_compar,</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;texsz.allocs, texsz_alloc_compar,</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        sizeof (<a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a>), offsetof(<a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a>, node));</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;}</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
@@ -777,13 +777,13 @@ $(function() {
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    mutex_destroy(&amp;texsz.lock);</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    cookie = NULL;</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordflow">while</span> ((ta = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;texsz.allocs, &amp;cookie)) != NULL) {</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordflow">while</span> ((ta = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;texsz.allocs, &amp;cookie)) != NULL) {</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <span class="keywordtype">void</span> *cookie2 = NULL;</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <a class="code" href="structtexsz__instance__t.html">texsz_instance_t</a> *ti;</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ta-&gt;token != NULL);</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keywordflow">if</span> (ta-&gt;bytes != 0) {</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            <span class="keywordflow">for</span> (ti = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;ta-&gt;instances); ti != NULL;</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            <span class="keywordflow">for</span> (ti = <a class="code" href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a>(&amp;ta-&gt;instances); ti != NULL;</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                ti = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;ta-&gt;instances, ti)) {</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                logMsg(<span class="stringliteral">&quot;%s:  %p  %ld  (at: %s)\n&quot;</span>, ta-&gt;token,</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                    ti-&gt;instance, (<span class="keywordtype">long</span>)ti-&gt;bytes,</div>
@@ -793,13 +793,13 @@ $(function() {
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                <span class="stringliteral">&quot;%s leaked %ld bytes&quot;</span>, ta-&gt;token, (<span class="keywordtype">long</span>)ta-&gt;bytes);</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        }</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        cookie2 = NULL;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="keywordflow">while</span> ((ti = <a class="code" href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a>(&amp;ta-&gt;instances, &amp;cookie2)) !=</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="keywordflow">while</span> ((ti = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;ta-&gt;instances, &amp;cookie2)) !=</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            NULL)</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            free(ti);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;ta-&gt;instances);</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;ta-&gt;instances);</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        free(ta);</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    }</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <a class="code" href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a>(&amp;texsz.allocs);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;texsz.allocs);</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
@@ -815,14 +815,14 @@ $(function() {
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(texsz.bytes + bytes &gt;= 0, <span class="stringliteral">&quot;Texture size accounting error &quot;</span></div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="stringliteral">&quot;(incr %ld bytes)&quot;</span>, (<span class="keywordtype">long</span>)bytes);</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    texsz.bytes += bytes;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    ta = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;texsz.allocs, &amp;srch, &amp;where);</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    ta = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;texsz.allocs, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keywordflow">if</span> (ta == NULL) {</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        ta = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ta));</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        ta-&gt;token = token;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <a class="code" href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a>(&amp;ta-&gt;instances, texsz_instance_compar,</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;ta-&gt;instances, texsz_instance_compar,</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            sizeof (<a class="code" href="structtexsz__instance__t.html">texsz_instance_t</a>),</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;            offsetof(<a class="code" href="structtexsz__instance__t.html">texsz_instance_t</a>, node));</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;texsz.allocs, ta, where);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;texsz.allocs, ta, where);</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    }</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(ta-&gt;bytes + bytes &gt;= 0, <span class="stringliteral">&quot;Texture size accounting zone &quot;</span></div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        <span class="stringliteral">&quot;underflow error (incr %ld bytes in zone %s instance %p)&quot;</span>,</div>
@@ -834,7 +834,7 @@ $(function() {
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <a class="code" href="structtexsz__instance__t.html">texsz_instance_t</a> *ti;</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where_ti;</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        ti = <a class="code" href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a>(&amp;ta-&gt;instances, &amp;srch_ti, &amp;where_ti);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        ti = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;ta-&gt;instances, &amp;srch_ti, &amp;where_ti);</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;        <span class="keywordflow">if</span> (ti == NULL) {</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(bytes &gt;= 0, <span class="stringliteral">&quot;Texture size accounting error &quot;</span></div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                <span class="stringliteral">&quot;(incr %ld bytes in zone %s instance %p, but &quot;</span></div>
@@ -842,7 +842,7 @@ $(function() {
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                instance);</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            ti = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ti));</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            ti-&gt;instance = instance;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <a class="code" href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a>(&amp;ta-&gt;instances, ti, where_ti);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;ta-&gt;instances, ti, where_ti);</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        }</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(ti-&gt;bytes + bytes &gt;= 0, <span class="stringliteral">&quot;Texture size accounting &quot;</span></div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            <span class="stringliteral">&quot;instance underflow error (incr %ld bytes in zone %s &quot;</span></div>
@@ -857,7 +857,7 @@ $(function() {
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                <span class="stringliteral">&quot;%s:%d&quot;</span>, &amp;filename[off], line);</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        }</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keywordflow">if</span> (ti-&gt;bytes == 0) {</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <a class="code" href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a>(&amp;ta-&gt;instances, ti);</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <a class="code" href="avl_8h.html#a503c91cf12249f4f6bc020c0f14081f0">avl_remove</a>(&amp;ta-&gt;instances, ti);</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            free(ti);</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        }</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    }</div>
@@ -957,7 +957,7 @@ $(function() {
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;{</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cb != NULL);</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a> *ta = <a class="code" href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a>(&amp;texsz.allocs); ta != NULL;</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a> *ta = <a class="code" href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a>(&amp;texsz.allocs); ta != NULL;</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        ta = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;texsz.allocs, ta)) {</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        cb(ta-&gt;token, ta-&gt;bytes, userinfo);</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;    }</div>
@@ -1235,15 +1235,15 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_acc45baee07ce65ad601c26de805ffc40"><div class="ttname"><a href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a></div><div class="ttdeci">#define ASSERT0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad157a1a262c174b8a8744896359009b7"><div class="ttname"><a href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a></div><div class="ttdeci">#define VERIFY_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00086">assert.h:86</a></div></div>
 <div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
-<div class="ttc" id="aavl_8h_html_a0053b8f527f8323531da8684c3d5ce6a"><div class="ttname"><a href="avl_8h.html#a0053b8f527f8323531da8684c3d5ce6a">avl_find</a></div><div class="ttdeci">API_EXPORT void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
-<div class="ttc" id="aavl_8h_html_a3e2c4bafe7ae937f2bbd6ad2aa43e7cd"><div class="ttname"><a href="avl_8h.html#a3e2c4bafe7ae937f2bbd6ad2aa43e7cd">avl_destroy_nodes</a></div><div class="ttdeci">API_EXPORT void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
+<div class="ttc" id="aavl_8h_html_a0dabf1a0262850aedd21dcb01df8a48e"><div class="ttname"><a href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a></div><div class="ttdeci">void * avl_destroy_nodes(avl_tree_t *tree, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00938">avl.c:938</a></div></div>
 <div class="ttc" id="aavl_8h_html_a4be84537145752bd25b72bfa9c2df176"><div class="ttname"><a href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a></div><div class="ttdeci">uintptr_t avl_index_t</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00119">avl.h:119</a></div></div>
-<div class="ttc" id="aavl_8h_html_a6af8c1b69457cc43c64b3546561b77d8"><div class="ttname"><a href="avl_8h.html#a6af8c1b69457cc43c64b3546561b77d8">avl_first</a></div><div class="ttdeci">API_EXPORT void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
-<div class="ttc" id="aavl_8h_html_a6ce45828c27903812f9d0d888bc5eeac"><div class="ttname"><a href="avl_8h.html#a6ce45828c27903812f9d0d888bc5eeac">avl_insert</a></div><div class="ttdeci">API_EXPORT void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
-<div class="ttc" id="aavl_8h_html_a9cf3b775ff89ad265184470d5b0c65f0"><div class="ttname"><a href="avl_8h.html#a9cf3b775ff89ad265184470d5b0c65f0">avl_destroy</a></div><div class="ttdeci">API_EXPORT void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
-<div class="ttc" id="aavl_8h_html_aba404e030d36c4822ace9fa12d021d4f"><div class="ttname"><a href="avl_8h.html#aba404e030d36c4822ace9fa12d021d4f">avl_create</a></div><div class="ttdeci">API_EXPORT void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
+<div class="ttc" id="aavl_8h_html_a503c91cf12249f4f6bc020c0f14081f0"><div class="ttname"><a href="avl_8h.html#a503c91cf12249f4f6bc020c0f14081f0">avl_remove</a></div><div class="ttdeci">void avl_remove(avl_tree_t *tree, void *node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00660">avl.c:660</a></div></div>
+<div class="ttc" id="aavl_8h_html_a625e2d0427ee540475f8699f4c906af9"><div class="ttname"><a href="avl_8h.html#a625e2d0427ee540475f8699f4c906af9">avl_first</a></div><div class="ttdeci">void * avl_first(const avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00172">avl.c:172</a></div></div>
+<div class="ttc" id="aavl_8h_html_a86bad92bbbcbf451c56929f1f23fadde"><div class="ttname"><a href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a></div><div class="ttdeci">void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
+<div class="ttc" id="aavl_8h_html_aac87d204842ec758616e9f16f56d9d36"><div class="ttname"><a href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a></div><div class="ttdeci">void avl_insert(avl_tree_t *tree, void *node, avl_index_t where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00471">avl.c:471</a></div></div>
+<div class="ttc" id="aavl_8h_html_ac65a3472303f2a3ee479f57f6c816cab"><div class="ttname"><a href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a></div><div class="ttdeci">void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
 <div class="ttc" id="aavl_8h_html_ad886c4acb2da4a7e86e6b94f50cc9b6b"><div class="ttname"><a href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a></div><div class="ttdeci">#define AVL_NEXT(tree, node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00212">avl.h:212</a></div></div>
-<div class="ttc" id="aavl_8h_html_afd58378e694bc9edc9fb9a83fea2a569"><div class="ttname"><a href="avl_8h.html#afd58378e694bc9edc9fb9a83fea2a569">avl_remove</a></div><div class="ttdeci">API_EXPORT void avl_remove(avl_tree_t *tree, void *node)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00660">avl.c:660</a></div></div>
+<div class="ttc" id="aavl_8h_html_af07adf796c231b360ea20c33dde96ea6"><div class="ttname"><a href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a></div><div class="ttdeci">void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

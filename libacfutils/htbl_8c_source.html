@@ -99,14 +99,14 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;acfutils/crc64.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crc64_8h.html">acfutils/crc64.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/htbl.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;H(<span class="keyword">const</span> <span class="keywordtype">void</span> *p, <span class="keywordtype">size_t</span> l)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> (crc64(p, l));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64</a>(p, l));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span></div>
@@ -359,6 +359,8 @@ $(function() {
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> (result);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="acrc64_8h_html"><div class="ttname"><a href="crc64_8h.html">crc64.h</a></div></div>
+<div class="ttc" id="acrc64_8h_html_a60436d6eee70fc3a9a8689e62e56c9da"><div class="ttname"><a href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64</a></div><div class="ttdeci">API_EXPORT uint64_t crc64(const void *input, size_t sz)</div><div class="ttdef"><b>Definition:</b> <a href="crc64_8c_source.html#l00055">crc64.c:55</a></div></div>
 <div class="ttc" id="astructhtbl__bucket__item__t_html"><div class="ttname"><a href="structhtbl__bucket__item__t.html">htbl_bucket_item_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00047">htbl.h:47</a></div></div>
 <div class="ttc" id="astructhtbl__multi__value__t_html"><div class="ttname"><a href="structhtbl__multi__value__t.html">htbl_multi_value_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00041">htbl.h:41</a></div></div>
 <div class="ttc" id="astructhtbl__t_html"><div class="ttname"><a href="structhtbl__t.html">htbl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00059">htbl.h:59</a></div></div>

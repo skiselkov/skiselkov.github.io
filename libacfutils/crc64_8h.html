@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">crc64.h File Reference</div>  </div>
@@ -76,22 +75,23 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="assert_8h_source.html">acfutils/assert.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="core_8h_source.html">acfutils/core.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for crc64.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="crc64_8h__incl.png" border="0" usemap="#a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2crc64_8h" alt=""/></div>
 <map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2crc64_8h" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2crc64_8h">
-<area shape="rect" title=" " alt="" coords="38,5,213,61"/>
-<area shape="rect" title=" " alt="" coords="29,483,99,509"/>
-<area shape="rect" title=" " alt="" coords="326,408,397,435"/>
-<area shape="rect" href="assert_8h.html" title=" " alt="" coords="62,109,189,136"/>
-<area shape="rect" href="log_8h.html" title=" " alt="" coords="163,184,218,211"/>
-<area shape="rect" href="sysmacros_8h.html" title=" " alt="" coords="107,259,211,285"/>
-<area shape="rect" title=" " alt="" coords="235,259,309,285"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="141,333,211,360"/>
-<area shape="rect" title=" " alt="" coords="231,408,302,435"/>
-<area shape="rect" href="core_8h.html" title=" " alt="" coords="145,408,207,435"/>
-<area shape="rect" href="libconfig_8h.html" title=" " alt="" coords="131,483,221,509"/>
+<area shape="rect" title=" " alt="" coords="182,5,357,61"/>
+<area shape="rect" title=" " alt="" coords="46,483,117,509"/>
+<area shape="rect" title=" " alt="" coords="338,408,409,435"/>
+<area shape="rect" href="assert_8h.html" title=" " alt="" coords="113,109,239,136"/>
+<area shape="rect" href="core_8h.html" title=" " alt="" coords="239,408,302,435"/>
+<area shape="rect" href="log_8h_source.html" title=" " alt="" coords="183,184,238,211"/>
+<area shape="rect" href="sysmacros_8h_source.html" title=" " alt="" coords="93,259,197,285"/>
+<area shape="rect" title=" " alt="" coords="221,259,296,285"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="145,333,215,360"/>
+<area shape="rect" title=" " alt="" coords="145,408,215,435"/>
+<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="225,483,316,509"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -101,162 +101,44 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2crc64_8hdep" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2crc64_8hdep">
 <area shape="rect" title=" " alt="" coords="749,5,924,61"/>
 <area shape="rect" href="delay__line_8h.html" title=" " alt="" coords="551,109,725,165"/>
-<area shape="rect" href="crc64_8c.html" title=" " alt="" coords="749,109,924,165"/>
-<area shape="rect" href="htbl_8c.html" title=" " alt="" coords="948,109,1123,165"/>
-<area shape="rect" href="shader_8h.html" title=" " alt="" coords="403,213,577,269"/>
-<area shape="rect" href="widget_8h.html" title=" " alt="" coords="700,213,875,269"/>
-<area shape="rect" href="glutils_8c.html" title=" " alt="" coords="5,317,180,373"/>
-<area shape="rect" href="lacf__gl__pic_8c.html" title=" " alt="" coords="204,317,379,373"/>
-<area shape="rect" href="mt__cairo__render_8c.html" title=" " alt="" coords="403,317,577,373"/>
-<area shape="rect" href="shader_8c.html" title=" " alt="" coords="601,317,776,373"/>
-<area shape="rect" href="widget_8c.html" title=" " alt="" coords="800,317,975,373"/>
+<area shape="rect" href="crc64_8c_source.html" title=" " alt="" coords="749,109,924,165"/>
+<area shape="rect" href="htbl_8c_source.html" title=" " alt="" coords="948,109,1123,165"/>
+<area shape="rect" href="shader_8h_source.html" title=" " alt="" coords="403,213,577,269"/>
+<area shape="rect" href="widget_8h_source.html" title=" " alt="" coords="700,213,875,269"/>
+<area shape="rect" href="glutils_8c_source.html" title=" " alt="" coords="5,317,180,373"/>
+<area shape="rect" href="lacf__gl__pic_8c_source.html" title=" " alt="" coords="204,317,379,373"/>
+<area shape="rect" href="mt__cairo__render_8c_source.html" title=" " alt="" coords="403,317,577,373"/>
+<area shape="rect" href="shader_8c_source.html" title=" " alt="" coords="601,317,776,373"/>
+<area shape="rect" href="widget_8c_source.html" title=" " alt="" coords="800,317,975,373"/>
 </map>
 </div>
 </div>
 <p><a href="crc64_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a4d9983bd67a69e1b1db09a4f2dff33c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a4d9983bd67a69e1b1db09a4f2dff33c1">crc64_init</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_init)</td></tr>
-<tr class="separator:a4d9983bd67a69e1b1db09a4f2dff33c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5698683ccd90c09cba01a1c40c20650"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#ae5698683ccd90c09cba01a1c40c20650">crc64_append</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_append)</td></tr>
-<tr class="separator:ae5698683ccd90c09cba01a1c40c20650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f8be56f870f3ed9ae6163bfe911257"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a05f8be56f870f3ed9ae6163bfe911257">crc64</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64)</td></tr>
-<tr class="separator:a05f8be56f870f3ed9ae6163bfe911257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee40d9daa8aa5845d3bb9c783a3966e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#adee40d9daa8aa5845d3bb9c783a3966e">crc64_srand</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_srand)</td></tr>
-<tr class="separator:adee40d9daa8aa5845d3bb9c783a3966e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb40bb46cf161636f75e9f153ee508d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#acb40bb46cf161636f75e9f153ee508d7">crc64_rand</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_rand)</td></tr>
-<tr class="separator:acb40bb46cf161636f75e9f153ee508d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9efcd2e3826a212cca86042a5dddd882"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a9efcd2e3826a212cca86042a5dddd882">crc64_rand_fract</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_rand_fract)</td></tr>
-<tr class="separator:a9efcd2e3826a212cca86042a5dddd882"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2ff3590965aa308ffe38b79996717f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a8a2ff3590965aa308ffe38b79996717f">crc64_rand_normal</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_rand_normal)</td></tr>
-<tr class="separator:a8a2ff3590965aa308ffe38b79996717f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acd624f08037d4fdbe491126fc29c6951"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#acd624f08037d4fdbe491126fc29c6951">crc64_append</a> (uint64_t crc, const void *input, size_t sz)</td></tr>
+<tr class="memitem:a5dc2cf1a92b4e13cac81b60d77bf340f"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a5dc2cf1a92b4e13cac81b60d77bf340f">crc64_init</a> ()</td></tr>
+<tr class="separator:a5dc2cf1a92b4e13cac81b60d77bf340f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8061aa6ff1ee778c467bcd8cedc0a7e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#ae8061aa6ff1ee778c467bcd8cedc0a7e">crc64_state_init</a> (uint64_t *crc)</td></tr>
+<tr class="separator:ae8061aa6ff1ee778c467bcd8cedc0a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd624f08037d4fdbe491126fc29c6951"><td class="memItemLeft" align="right" valign="top">API_EXPORT uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#acd624f08037d4fdbe491126fc29c6951">crc64_append</a> (uint64_t crc, const void *input, size_t sz)</td></tr>
 <tr class="separator:acd624f08037d4fdbe491126fc29c6951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60436d6eee70fc3a9a8689e62e56c9da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64</a> (const void *input, size_t sz)</td></tr>
+<tr class="memitem:a60436d6eee70fc3a9a8689e62e56c9da"><td class="memItemLeft" align="right" valign="top">API_EXPORT uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64</a> (const void *input, size_t sz)</td></tr>
 <tr class="separator:a60436d6eee70fc3a9a8689e62e56c9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d224126126162ecac69d2b2bd239377"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a8d224126126162ecac69d2b2bd239377">crc64_srand</a> (uint64_t seed)</td></tr>
+<tr class="memitem:a8d224126126162ecac69d2b2bd239377"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#a8d224126126162ecac69d2b2bd239377">crc64_srand</a> (uint64_t seed)</td></tr>
 <tr class="separator:a8d224126126162ecac69d2b2bd239377"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb9e41ae12e0a875b906e6703eb89b1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#adb9e41ae12e0a875b906e6703eb89b1e">crc64_rand_normal</a> (double sigma)</td></tr>
+<tr class="memitem:aeacd1f6059387729559e797473dffc39"><td class="memItemLeft" align="right" valign="top">API_EXPORT uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#aeacd1f6059387729559e797473dffc39">crc64_rand</a> (void)</td></tr>
+<tr class="separator:aeacd1f6059387729559e797473dffc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedeb8be29ec5e969d77b4287ef6b3af0"><td class="memItemLeft" align="right" valign="top">API_EXPORT double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#aedeb8be29ec5e969d77b4287ef6b3af0">crc64_rand_fract</a> (void)</td></tr>
+<tr class="separator:aedeb8be29ec5e969d77b4287ef6b3af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb9e41ae12e0a875b906e6703eb89b1e"><td class="memItemLeft" align="right" valign="top">API_EXPORT double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crc64_8h.html#adb9e41ae12e0a875b906e6703eb89b1e">crc64_rand_normal</a> (double sigma)</td></tr>
 <tr class="separator:adb9e41ae12e0a875b906e6703eb89b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a05f8be56f870f3ed9ae6163bfe911257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05f8be56f870f3ed9ae6163bfe911257">&#9670;&nbsp;</a></span>crc64</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A generic CRC64 implementation from OpenSolaris. Be sure to call <a class="el" href="crc64_8h.html#a5dc2cf1a92b4e13cac81b60d77bf340f">crc64_init()</a> before using it. Then just call <a class="el" href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64()</a> and pass it the data you want checksummed. Also includes a fast &amp; light-weight portable pseudo random number generator. </p>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define crc64&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00042">42</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<a id="ae5698683ccd90c09cba01a1c40c20650"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5698683ccd90c09cba01a1c40c20650">&#9670;&nbsp;</a></span>crc64_append</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define crc64_append&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_append)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00040">40</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<a id="a4d9983bd67a69e1b1db09a4f2dff33c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d9983bd67a69e1b1db09a4f2dff33c1">&#9670;&nbsp;</a></span>crc64_init</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void crc64_init&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_init)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00031">31</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<a id="acb40bb46cf161636f75e9f153ee508d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb40bb46cf161636f75e9f153ee508d7">&#9670;&nbsp;</a></span>crc64_rand</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> uint64_t crc64_rand&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_rand)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00047">47</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<a id="a9efcd2e3826a212cca86042a5dddd882"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9efcd2e3826a212cca86042a5dddd882">&#9670;&nbsp;</a></span>crc64_rand_fract</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double crc64_rand_fract&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_rand_fract)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00049">49</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<a id="a8a2ff3590965aa308ffe38b79996717f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a2ff3590965aa308ffe38b79996717f">&#9670;&nbsp;</a></span>crc64_rand_normal</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define crc64_rand_normal&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_rand_normal)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00051">51</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<a id="adee40d9daa8aa5845d3bb9c783a3966e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adee40d9daa8aa5845d3bb9c783a3966e">&#9670;&nbsp;</a></span>crc64_srand</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define crc64_srand&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(crc64_srand)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00045">45</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+<p class="definition">Definition in file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a60436d6eee70fc3a9a8689e62e56c9da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60436d6eee70fc3a9a8689e62e56c9da">&#9670;&nbsp;</a></span>crc64()</h2>
 
@@ -264,7 +146,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> uint64_t crc64 </td>
+          <td class="memname">API_EXPORT uint64_t crc64 </td>
           <td>(</td>
           <td class="paramtype">const void *&#160;</td>
           <td class="paramname"><em>input</em>, </td>
@@ -282,8 +164,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Computes the CRC64 checksum of a block of input data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input data block for which the CRC64 checksum should be computed. </td></tr>
+    <tr><td class="paramname">sz</td><td>Number of bytes in <code>input</code> to be checksummed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>64-bit CRC64 checksum of the input data. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00053">53</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00055">55</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
 
 </div>
 </div>
@@ -294,7 +184,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> uint64_t crc64_append </td>
+          <td class="memname">API_EXPORT uint64_t crc64_append </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>crc</em>, </td>
@@ -318,8 +208,81 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This is similar to <a class="el" href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64()</a>, but allows you to compute the checksum in pieces. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">crc</td><td>Previous state of the checksum. On first call, you must initialize this using <a class="el" href="crc64_8h.html#ae8061aa6ff1ee778c467bcd8cedc0a7e">crc64_state_init()</a>. Then, pass the previous output of <a class="el" href="crc64_8h.html#acd624f08037d4fdbe491126fc29c6951">crc64_append()</a> here, gradually updating it as the checksum process proceeds. </td></tr>
+    <tr><td class="paramname">input</td><td>The input data block for which the CRC64 checksum should be computed. </td></tr>
+    <tr><td class="paramname">sz</td><td>Number of bytes in <code>input</code> to be checksummed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>64-bit CRC64 checksum of the input data. If you plan on appending more data to this checksum, pass this return value in the <code>crc</code> argument of the next <a class="el" href="crc64_8h.html#acd624f08037d4fdbe491126fc29c6951">crc64_append()</a> call. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00062">62</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00078">78</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+
+</div>
+</div>
+<a id="a5dc2cf1a92b4e13cac81b60d77bf340f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc2cf1a92b4e13cac81b60d77bf340f">&#9670;&nbsp;</a></span>crc64_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">API_EXPORT void crc64_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initializes the CRC64 tables. Must be called before calling any CRC64-related functions. </p>
+
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00037">37</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+
+</div>
+</div>
+<a id="aeacd1f6059387729559e797473dffc39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeacd1f6059387729559e797473dffc39">&#9670;&nbsp;</a></span>crc64_rand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">API_EXPORT uint64_t crc64_rand </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Grabs a random 64-bit number from the PRNG. This function isn't thread-safe, so take care not to rely on its output being super-duper unpredictable in multi-threade apps. You shouldn't be relying on it for anything more than lightweight randomness duties which need to be fast above everything else.</p>
+<p>DO NOT use this for cryptographically secure randomness operations (e.g. generating encryption key material). See <a class="el" href="osrand_8h_source.html">osrand.h</a> for a high-quality PRNG. </p>
+
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00113">113</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+
+</div>
+</div>
+<a id="aedeb8be29ec5e969d77b4287ef6b3af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedeb8be29ec5e969d77b4287ef6b3af0">&#9670;&nbsp;</a></span>crc64_rand_fract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">API_EXPORT double crc64_rand_fract </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A random number from the PRNG, but instead of returning a 64-bit integer between 0 and UINT64_MAX, this function returns a double value from 0.0 to 1.0 (inclusive). The distribution is linear. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00125">125</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
 
 </div>
 </div>
@@ -330,7 +293,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> double crc64_rand_normal </td>
+          <td class="memname">API_EXPORT double crc64_rand_normal </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>sigma</em></td><td>)</td>
@@ -338,8 +301,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A random double-precision floating point number using a normal distribution instead of a linear 0-1 distribution like <a class="el" href="crc64_8h.html#aedeb8be29ec5e969d77b4287ef6b3af0">crc64_rand_fract()</a>. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sigma</td><td>standard deviation of the normal distribution. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00118">118</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00137">137</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
 
 </div>
 </div>
@@ -350,7 +320,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void crc64_srand </td>
+          <td class="memname">API_EXPORT void crc64_srand </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>seed</em></td><td>)</td>
@@ -358,8 +328,43 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the CRC64-based pseudo random number generator. Obviously you only want to call this once in your app. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>The random seed for the PRNG (e.g. current microclock() usually does nicely). </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00079">79</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="crc64_8c_source.html#l00096">96</a> of file <a class="el" href="crc64_8c_source.html">crc64.c</a>.</p>
+
+</div>
+</div>
+<a id="ae8061aa6ff1ee778c467bcd8cedc0a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8061aa6ff1ee778c467bcd8cedc0a7e">&#9670;&nbsp;</a></span>crc64_state_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void crc64_state_init </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>crc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the starting CRC64 value for subsequent calls to <a class="el" href="crc64_8h.html#acd624f08037d4fdbe491126fc29c6951">crc64_append()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crc64_8h_source.html#l00048">48</a> of file <a class="el" href="crc64_8h_source.html">crc64.h</a>.</p>
 
 </div>
 </div>

@@ -70,7 +70,7 @@ $(function() {
 <div class="title">cursor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="cursor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -92,56 +92,34 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * CDDL HEADER END</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Copyright 2020 Saso Kiselkov. All rights reserved.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Copyright 2023 Saso Kiselkov. All rights reserved.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef _ACF_UTILS_CURSOR_H_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define _ACF_UTILS_CURSOR_H_</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">core.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Generic implementation to let you directly set the OS-provided mouse</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * cursor. For Mac &amp; Linux, you need a PNG of your cursor. The cursor</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * image is assumed to be symmetrical with its hotspot in the center of</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * the image. For Windows, the provided filename&#39;s &#39;.png&#39; extension is</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * automatically replcated with &#39;.cur&#39; (and you must provide a cursor</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * in Windows .cur cursor format). Simply place bot the PNG and CUR</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * versions of the cursor side-by-side and the library will select the</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * correct one depending on the host platform.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcursor__s.html">cursor_s</a> cursor_t;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * Loads a cursor from a PNG file. The cursor hotspot is assumed to be</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * directly in the center of the image. On Windows, the PNG extension</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * is automatically replaced by &#39;.cur&#39;, so you need to provide both a</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * PNG and CUR version of your cursor.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;API_EXPORT cursor_t *cursor_read_from_file(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename_png);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * Frees a cursor previously created using cursor_read_from_file.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;API_EXPORT <span class="keywordtype">void</span> cursor_free(cursor_t *cursor);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * Sets the cursor to be the current cursor. Be sure to ask X-Plane not</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * to draw its own cursor. This function should be called in the window</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> * mouse cursor handler callback.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;API_EXPORT <span class="keywordtype">void</span> cursor_make_current(cursor_t *cursor);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_CURSOR_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef _ACF_UTILS_CURSOR_H_</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define _ACF_UTILS_CURSOR_H_</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">core.h</a>&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcursor__s.html">cursor_s</a> cursor_t;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;API_EXPORT cursor_t *<a class="code" href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">cursor_read_from_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename_png);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">cursor_free</a>(cursor_t *cursor);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="cursor_8h.html#a91ac05499288670934cf201e3cd0934a">cursor_make_current</a>(cursor_t *cursor);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_CURSOR_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
+<div class="ttc" id="acursor_8h_html_a43b86dc754607c20f3dcbd66924755a0"><div class="ttname"><a href="cursor_8h.html#a43b86dc754607c20f3dcbd66924755a0">cursor_read_from_file</a></div><div class="ttdeci">cursor_t * cursor_read_from_file(const char *filename_png)</div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00039">cursor-lin.c:39</a></div></div>
+<div class="ttc" id="acursor_8h_html_a91ac05499288670934cf201e3cd0934a"><div class="ttname"><a href="cursor_8h.html#a91ac05499288670934cf201e3cd0934a">cursor_make_current</a></div><div class="ttdeci">void cursor_make_current(cursor_t *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00094">cursor-lin.c:94</a></div></div>
+<div class="ttc" id="acursor_8h_html_af5c4a65800934da71b6259085b41025a"><div class="ttname"><a href="cursor_8h.html#af5c4a65800934da71b6259085b41025a">cursor_free</a></div><div class="ttdeci">void cursor_free(cursor_t *cursor)</div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00076">cursor-lin.c:76</a></div></div>
 <div class="ttc" id="astructcursor__s_html"><div class="ttname"><a href="structcursor__s.html">cursor_s</a></div><div class="ttdef"><b>Definition:</b> <a href="cursor-lin_8c_source.html#l00027">cursor-lin.c:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

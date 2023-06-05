@@ -173,60 +173,60 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a01af7850d24a5f0c8c958588f091534a"><td class="memItemLeft" align="right" valign="top">API_EXPORT chartdb_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init</a> (const char *cache_path, const char *pdftoppm_path, const char *pdfinfo_path, unsigned airac, const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *provider_login)</td></tr>
-<tr class="separator:a01af7850d24a5f0c8c958588f091534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa48651afcfb197a29d757eaab2f8c258"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa48651afcfb197a29d757eaab2f8c258">chartdb_fini</a> (chartdb_t *cdb)</td></tr>
-<tr class="separator:aa48651afcfb197a29d757eaab2f8c258"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cef8a8b8fc80b5e22f7ebc5312e910f"><td class="memItemLeft" align="right" valign="top">API_EXPORT bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a5cef8a8b8fc80b5e22f7ebc5312e910f">chartdb_test_connection</a> (const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds)</td></tr>
-<tr class="separator:a5cef8a8b8fc80b5e22f7ebc5312e910f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cdbd565ab6cddf240333d362cc8017f"><td class="memItemLeft" align="right" valign="top">API_EXPORT bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2</a> (const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds, const char *proxy)</td></tr>
-<tr class="separator:a1cdbd565ab6cddf240333d362cc8017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f377030ec3ce9e6ab1e61d9319a5f73"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a3f377030ec3ce9e6ab1e61d9319a5f73">chartdb_set_load_limit</a> (chartdb_t *cdb, uint64_t bytes)</td></tr>
-<tr class="separator:a3f377030ec3ce9e6ab1e61d9319a5f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc95b0fd54759fd9b4223383d51c5f9"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a2bc95b0fd54759fd9b4223383d51c5f9">chartdb_purge</a> (chartdb_t *cdb)</td></tr>
-<tr class="separator:a2bc95b0fd54759fd9b4223383d51c5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab95f98a2172e600cdd0d8f3fcdc8c57f"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f">chartdb_set_proxy</a> (chartdb_t *cdb, const char *proxy)</td></tr>
-<tr class="separator:ab95f98a2172e600cdd0d8f3fcdc8c57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728f0afa8db46da279a55aa311b0d507"><td class="memItemLeft" align="right" valign="top">API_EXPORT size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a728f0afa8db46da279a55aa311b0d507">chartdb_get_proxy</a> (chartdb_t *cdb, char *proxy, size_t cap)</td></tr>
-<tr class="separator:a728f0afa8db46da279a55aa311b0d507"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ccf654a37baae3bbb3fc3dc629dffee"><td class="memItemLeft" align="right" valign="top">API_EXPORT char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names</a> (chartdb_t *cdb, const char *icao, chart_type_t type, size_t *num_charts)</td></tr>
-<tr class="separator:a7ccf654a37baae3bbb3fc3dc629dffee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5766b5880cce50c1a60e53e08547419"><td class="memItemLeft" align="right" valign="top">API_EXPORT void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ad5766b5880cce50c1a60e53e08547419">chartdb_free_str_list</a> (char **name_list, size_t num)</td></tr>
-<tr class="separator:ad5766b5880cce50c1a60e53e08547419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9663bd021340922774fe2e2822e8190"><td class="memItemLeft" align="right" valign="top">API_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#af9663bd021340922774fe2e2822e8190">chartdb_get_chart_codename</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
-<tr class="separator:af9663bd021340922774fe2e2822e8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509ac9c07c651d1624cb867b42fab445"><td class="memItemLeft" align="right" valign="top">API_EXPORT chart_type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a509ac9c07c651d1624cb867b42fab445">chartdb_get_chart_type</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
-<tr class="separator:a509ac9c07c651d1624cb867b42fab445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8977fb53dc67bd10972e1574366a8571"><td class="memItemLeft" align="right" valign="top">API_EXPORT <a class="el" href="structchart__georef__t.html">chart_georef_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a8977fb53dc67bd10972e1574366a8571">chartdb_get_chart_georef</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
-<tr class="separator:a8977fb53dc67bd10972e1574366a8571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82077f17e5af3fba328f7fb659328897"><td class="memItemLeft" align="right" valign="top">API_EXPORT <a class="el" href="structchart__bbox__t.html">chart_bbox_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a82077f17e5af3fba328f7fb659328897">chartdb_get_chart_view</a> (chartdb_t *cdb, const char *icao, const char *chart_name, <a class="el" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view)</td></tr>
-<tr class="separator:a82077f17e5af3fba328f7fb659328897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67d7deb216e75ecce8f1fde3eb2630b2"><td class="memItemLeft" align="right" valign="top">API_EXPORT <a class="el" href="structchart__procs__t.html">chart_procs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a67d7deb216e75ecce8f1fde3eb2630b2">chartdb_get_chart_procs</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
-<tr class="separator:a67d7deb216e75ecce8f1fde3eb2630b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a866c12785f0eb162dcb123bc1a039c7a"><td class="memItemLeft" align="right" valign="top">API_EXPORT bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a866c12785f0eb162dcb123bc1a039c7a">chartdb_get_chart_surface</a> (chartdb_t *cdb, const char *icao, const char *chart_name, int page, double zoom, bool_t night, cairo_surface_t **surf, int *num_pages)</td></tr>
-<tr class="separator:a866c12785f0eb162dcb123bc1a039c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0360b67dc55ef7e33f3c615fca0d5a6"><td class="memItemLeft" align="right" valign="top">API_EXPORT bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa0360b67dc55ef7e33f3c615fca0d5a6">chartdb_is_ready</a> (chartdb_t *cdb)</td></tr>
-<tr class="separator:aa0360b67dc55ef7e33f3c615fca0d5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4383b5d7f0833ca741aaa11ed58c92"><td class="memItemLeft" align="right" valign="top">API_EXPORT bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a9e4383b5d7f0833ca741aaa11ed58c92">chartdb_is_arpt_known</a> (chartdb_t *cdb, const char *icao)</td></tr>
-<tr class="separator:a9e4383b5d7f0833ca741aaa11ed58c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae669e938b07f3d5f77cb1048d21c1ae"><td class="memItemLeft" align="right" valign="top">API_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aae669e938b07f3d5f77cb1048d21c1ae">chartdb_get_arpt_name</a> (chartdb_t *cdb, const char *icao)</td></tr>
-<tr class="separator:aae669e938b07f3d5f77cb1048d21c1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eef7300d9e81bd57fc2de23e4a1aa19"><td class="memItemLeft" align="right" valign="top">API_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a1eef7300d9e81bd57fc2de23e4a1aa19">chartdb_get_arpt_city</a> (chartdb_t *cdb, const char *icao)</td></tr>
-<tr class="separator:a1eef7300d9e81bd57fc2de23e4a1aa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaab9e8fabd05b99156690634b89d6d77"><td class="memItemLeft" align="right" valign="top">API_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aaab9e8fabd05b99156690634b89d6d77">chartdb_get_arpt_state</a> (chartdb_t *cdb, const char *icao)</td></tr>
-<tr class="separator:aaab9e8fabd05b99156690634b89d6d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe6f688ed76d41caa1dc8c2720228b97"><td class="memItemLeft" align="right" valign="top">API_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar</a> (chartdb_t *cdb, const char *icao)</td></tr>
-<tr class="separator:afe6f688ed76d41caa1dc8c2720228b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e2d5a171fcb09694ba05dcd1a163df"><td class="memItemLeft" align="right" valign="top">API_EXPORT char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df">chartdb_get_taf</a> (chartdb_t *cdb, const char *icao)</td></tr>
-<tr class="separator:a27e2d5a171fcb09694ba05dcd1a163df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d28e397082a14cb2a39ab96aa9e443"><td class="memItemLeft" align="right" valign="top">API_EXPORT bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a77d28e397082a14cb2a39ab96aa9e443">chartdb_pending_ext_account_setup</a> (chartdb_t *cdb)</td></tr>
-<tr class="separator:a77d28e397082a14cb2a39ab96aa9e443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bca4186ad5dd2460b574fc12f613ae"><td class="memItemLeft" align="right" valign="top">chartdb_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae">chartdb_init</a> (const char *cache_path, const char *pdftoppm_path, const char *pdfinfo_path, unsigned airac, const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *provider_login)</td></tr>
+<tr class="separator:ab2bca4186ad5dd2460b574fc12f613ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6766ff7ff84d6e3e21ed52a7a24ba4f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a6766ff7ff84d6e3e21ed52a7a24ba4f6">chartdb_fini</a> (chartdb_t *cdb)</td></tr>
+<tr class="separator:a6766ff7ff84d6e3e21ed52a7a24ba4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997c72ac56df4c822db53bbb55a1419c"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a997c72ac56df4c822db53bbb55a1419c">chartdb_test_connection</a> (const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds)</td></tr>
+<tr class="separator:a997c72ac56df4c822db53bbb55a1419c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e23af4bd4b75bc192703d79c3aef2e3"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3">chartdb_test_connection2</a> (const char *provider_name, const <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> *creds, const char *proxy)</td></tr>
+<tr class="separator:a3e23af4bd4b75bc192703d79c3aef2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca54f9c9c733f40d6f68596f3ad80cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aaca54f9c9c733f40d6f68596f3ad80cd">chartdb_set_load_limit</a> (chartdb_t *cdb, uint64_t bytes)</td></tr>
+<tr class="separator:aaca54f9c9c733f40d6f68596f3ad80cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2d12a5f614646edb061f878a5e0094"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#adb2d12a5f614646edb061f878a5e0094">chartdb_purge</a> (chartdb_t *cdb)</td></tr>
+<tr class="separator:adb2d12a5f614646edb061f878a5e0094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ef9f3c29826452d88d3b296e99aa65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa3ef9f3c29826452d88d3b296e99aa65">chartdb_set_proxy</a> (chartdb_t *cdb, const char *proxy)</td></tr>
+<tr class="separator:aa3ef9f3c29826452d88d3b296e99aa65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e59a752e9e38da4c1fbe335d9690565"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a6e59a752e9e38da4c1fbe335d9690565">chartdb_get_proxy</a> (chartdb_t *cdb, char *proxy, size_t cap)</td></tr>
+<tr class="separator:a6e59a752e9e38da4c1fbe335d9690565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f522583a4d6d9a8700838ea68773a1"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names</a> (chartdb_t *cdb, const char *icao, chart_type_t type, size_t *num_charts)</td></tr>
+<tr class="separator:a04f522583a4d6d9a8700838ea68773a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c234ec299a393efa9ea1eb7f64dbf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a90c234ec299a393efa9ea1eb7f64dbf2">chartdb_free_str_list</a> (char **name_list, size_t num)</td></tr>
+<tr class="separator:a90c234ec299a393efa9ea1eb7f64dbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae498b51f39d3e8e8b6984dd43ad2baea"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ae498b51f39d3e8e8b6984dd43ad2baea">chartdb_get_chart_codename</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="separator:ae498b51f39d3e8e8b6984dd43ad2baea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d95009c1b5dcddaae5cae0cfb8b83e0"><td class="memItemLeft" align="right" valign="top">chart_type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a6d95009c1b5dcddaae5cae0cfb8b83e0">chartdb_get_chart_type</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="separator:a6d95009c1b5dcddaae5cae0cfb8b83e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a18485ab2656de82d45ffd247ab71f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structchart__georef__t.html">chart_georef_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a3a18485ab2656de82d45ffd247ab71f9">chartdb_get_chart_georef</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="separator:a3a18485ab2656de82d45ffd247ab71f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b500eda0d31a98209f0b9e76a2e7b86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structchart__bbox__t.html">chart_bbox_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a6b500eda0d31a98209f0b9e76a2e7b86">chartdb_get_chart_view</a> (chartdb_t *cdb, const char *icao, const char *chart_name, <a class="el" href="chartdb_8h.html#a8a510d804b8fc6228417a81dcc58a810">chart_view_t</a> view)</td></tr>
+<tr class="separator:a6b500eda0d31a98209f0b9e76a2e7b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24084a9a6b6dcc2a7c8c1d9b3e2a03d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structchart__procs__t.html">chart_procs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#aa24084a9a6b6dcc2a7c8c1d9b3e2a03d">chartdb_get_chart_procs</a> (chartdb_t *cdb, const char *icao, const char *chart_name)</td></tr>
+<tr class="separator:aa24084a9a6b6dcc2a7c8c1d9b3e2a03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afebdf2e1ff16e52de24142a4bc3ecc4a"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#afebdf2e1ff16e52de24142a4bc3ecc4a">chartdb_get_chart_surface</a> (chartdb_t *cdb, const char *icao, const char *chart_name, int page, double zoom, bool_t night, cairo_surface_t **surf, int *num_pages)</td></tr>
+<tr class="separator:afebdf2e1ff16e52de24142a4bc3ecc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe990180b9aeddb610ea285f183cf30"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a4fe990180b9aeddb610ea285f183cf30">chartdb_is_ready</a> (chartdb_t *cdb)</td></tr>
+<tr class="separator:a4fe990180b9aeddb610ea285f183cf30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab033b2672b84d49a51b5e0c0caeca091"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ab033b2672b84d49a51b5e0c0caeca091">chartdb_is_arpt_known</a> (chartdb_t *cdb, const char *icao)</td></tr>
+<tr class="separator:ab033b2672b84d49a51b5e0c0caeca091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4038e6d367706870c85235bb5148cd8d"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a4038e6d367706870c85235bb5148cd8d">chartdb_get_arpt_name</a> (chartdb_t *cdb, const char *icao)</td></tr>
+<tr class="separator:a4038e6d367706870c85235bb5148cd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ce88890f15fc21b62e59b801af58ed"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a76ce88890f15fc21b62e59b801af58ed">chartdb_get_arpt_city</a> (chartdb_t *cdb, const char *icao)</td></tr>
+<tr class="separator:a76ce88890f15fc21b62e59b801af58ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d10e4178a10d5bc41cea5faa09729c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#ac7d10e4178a10d5bc41cea5faa09729c">chartdb_get_arpt_state</a> (chartdb_t *cdb, const char *icao)</td></tr>
+<tr class="separator:ac7d10e4178a10d5bc41cea5faa09729c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91469e3ba7b844a0390f886afd1e1730"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a91469e3ba7b844a0390f886afd1e1730">chartdb_get_metar</a> (chartdb_t *cdb, const char *icao)</td></tr>
+<tr class="separator:a91469e3ba7b844a0390f886afd1e1730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90538e1a18ec46e71f9497ef452050dd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a90538e1a18ec46e71f9497ef452050dd">chartdb_get_taf</a> (chartdb_t *cdb, const char *icao)</td></tr>
+<tr class="separator:a90538e1a18ec46e71f9497ef452050dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac24f220a23165e087fde75f163528d"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chartdb_8h.html#a0ac24f220a23165e087fde75f163528d">chartdb_pending_ext_account_setup</a> (chartdb_t *cdb)</td></tr>
+<tr class="separator:a0ac24f220a23165e087fde75f163528d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This facility provides the ability to load charts from the following online chart providers:</p><ul>
 <li>Navigraph - requires a developer API key from Navigraph, as well as a user subscription to the service.</li>
 <li>Aeronav - a free service covering all of the United States as well as FAA-governed regions.</li>
-<li>Autorouter - a service requiring a free user account, covering most of Europe and some other countries. <dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init()</a> </dd></dl>
+<li>Autorouter - a service requiring a free user account, covering most of Europe and some other countries. <dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae">chartdb_init()</a> </dd></dl>
 </li>
 </ul>
 
@@ -260,14 +260,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa48651afcfb197a29d757eaab2f8c258"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa48651afcfb197a29d757eaab2f8c258">&#9670;&nbsp;</a></span>chartdb_fini()</h2>
+<a id="a6766ff7ff84d6e3e21ed52a7a24ba4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6766ff7ff84d6e3e21ed52a7a24ba4f6">&#9670;&nbsp;</a></span>chartdb_fini()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT void chartdb_fini </td>
+          <td class="memname">void chartdb_fini </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
@@ -275,20 +275,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frees and shuts down a chart database object, previously returned from <a class="el" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init()</a>. </p>
+<p>Frees and shuts down a chart database object, previously returned from <a class="el" href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae">chartdb_init()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01278">1278</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="ad5766b5880cce50c1a60e53e08547419"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5766b5880cce50c1a60e53e08547419">&#9670;&nbsp;</a></span>chartdb_free_str_list()</h2>
+<a id="a90c234ec299a393efa9ea1eb7f64dbf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c234ec299a393efa9ea1eb7f64dbf2">&#9670;&nbsp;</a></span>chartdb_free_str_list()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT void chartdb_free_str_list </td>
+          <td class="memname">void chartdb_free_str_list </td>
           <td>(</td>
           <td class="paramtype">char **&#160;</td>
           <td class="paramname"><em>name_list</em>, </td>
@@ -306,9 +306,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frees a list of charts returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Frees a list of charts returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name_list</td><td>The list of chart names returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">name_list</td><td>The list of chart names returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
     <tr><td class="paramname">num</td><td>Number of items in the chart ID list. </td></tr>
   </table>
   </dd>
@@ -318,14 +318,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1eef7300d9e81bd57fc2de23e4a1aa19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1eef7300d9e81bd57fc2de23e4a1aa19">&#9670;&nbsp;</a></span>chartdb_get_arpt_city()</h2>
+<a id="a76ce88890f15fc21b62e59b801af58ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ce88890f15fc21b62e59b801af58ed">&#9670;&nbsp;</a></span>chartdb_get_arpt_city()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char* chartdb_get_arpt_city </td>
+          <td class="memname">char* chartdb_get_arpt_city </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -349,20 +349,20 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The city name associated with the airport, or <code>NULL</code> if unknown. You must free the returned string using <a class="el" href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free()</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The city name associated with the airport, or <code>NULL</code> if unknown. You must free the returned string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01792">1792</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="aae669e938b07f3d5f77cb1048d21c1ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae669e938b07f3d5f77cb1048d21c1ae">&#9670;&nbsp;</a></span>chartdb_get_arpt_name()</h2>
+<a id="a4038e6d367706870c85235bb5148cd8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4038e6d367706870c85235bb5148cd8d">&#9670;&nbsp;</a></span>chartdb_get_arpt_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char* chartdb_get_arpt_name </td>
+          <td class="memname">char* chartdb_get_arpt_name </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -386,20 +386,20 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The airport name associated with the airport, or <code>NULL</code> unknown. You must free the returned string using <a class="el" href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free()</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The airport name associated with the airport, or <code>NULL</code> unknown. You must free the returned string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01786">1786</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="aaab9e8fabd05b99156690634b89d6d77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaab9e8fabd05b99156690634b89d6d77">&#9670;&nbsp;</a></span>chartdb_get_arpt_state()</h2>
+<a id="ac7d10e4178a10d5bc41cea5faa09729c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d10e4178a10d5bc41cea5faa09729c">&#9670;&nbsp;</a></span>chartdb_get_arpt_state()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char* chartdb_get_arpt_state </td>
+          <td class="memname">char* chartdb_get_arpt_state </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -423,20 +423,20 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The state name associated with the airport, or <code>NULL</code> unknown. You must free the returned string using <a class="el" href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free()</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The state name associated with the airport, or <code>NULL</code> unknown. You must free the returned string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01798">1798</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="af9663bd021340922774fe2e2822e8190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9663bd021340922774fe2e2822e8190">&#9670;&nbsp;</a></span>chartdb_get_chart_codename()</h2>
+<a id="ae498b51f39d3e8e8b6984dd43ad2baea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae498b51f39d3e8e8b6984dd43ad2baea">&#9670;&nbsp;</a></span>chartdb_get_chart_codename()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char* chartdb_get_chart_codename </td>
+          <td class="memname">char* chartdb_get_chart_codename </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -466,11 +466,11 @@ Functions</h2></td></tr>
 <li>for Autorouter, this field is not defined. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icao</td><td>The ICAO code of the airport for which the chart exists. </td></tr>
-    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A copy of the chart codename, or NULL if no value is defined. You must free the returned string using <a class="el" href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free()</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the chart codename, or NULL if no value is defined. You must free the returned string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 </li>
 </ul>
 
@@ -478,14 +478,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8977fb53dc67bd10972e1574366a8571"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8977fb53dc67bd10972e1574366a8571">&#9670;&nbsp;</a></span>chartdb_get_chart_georef()</h2>
+<a id="a3a18485ab2656de82d45ffd247ab71f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a18485ab2656de82d45ffd247ab71f9">&#9670;&nbsp;</a></span>chartdb_get_chart_georef()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT <a class="el" href="structchart__georef__t.html">chart_georef_t</a> chartdb_get_chart_georef </td>
+          <td class="memname"><a class="el" href="structchart__georef__t.html">chart_georef_t</a> chartdb_get_chart_georef </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -513,7 +513,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icao</td><td>The ICAO code of the airport for which the chart exists. </td></tr>
-    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -522,14 +522,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7ccf654a37baae3bbb3fc3dc629dffee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ccf654a37baae3bbb3fc3dc629dffee">&#9670;&nbsp;</a></span>chartdb_get_chart_names()</h2>
+<a id="a04f522583a4d6d9a8700838ea68773a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f522583a4d6d9a8700838ea68773a1">&#9670;&nbsp;</a></span>chartdb_get_chart_names()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char** chartdb_get_chart_names </td>
+          <td class="memname">char** chartdb_get_chart_names </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -569,20 +569,20 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of strings containing the unique chart names which match the search criteria. These chart names are used in other chart database queries to retrieve information about a particular chart. The number of charts in this list will be returned in <code>num_charts</code>. If no charts match the search criteria, this function returns NULL and sets <code>num_charts</code> to 0. </dd>
 <dd>
-You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766b5880cce50c1a60e53e08547419">chartdb_free_str_list()</a>. </dd></dl>
+You must free the returned list using <a class="el" href="chartdb_8h.html#a90c234ec299a393efa9ea1eb7f64dbf2">chartdb_free_str_list()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01406">1406</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="a67d7deb216e75ecce8f1fde3eb2630b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67d7deb216e75ecce8f1fde3eb2630b2">&#9670;&nbsp;</a></span>chartdb_get_chart_procs()</h2>
+<a id="aa24084a9a6b6dcc2a7c8c1d9b3e2a03d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24084a9a6b6dcc2a7c8c1d9b3e2a03d">&#9670;&nbsp;</a></span>chartdb_get_chart_procs()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT <a class="el" href="structchart__procs__t.html">chart_procs_t</a> chartdb_get_chart_procs </td>
+          <td class="memname"><a class="el" href="structchart__procs__t.html">chart_procs_t</a> chartdb_get_chart_procs </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -610,7 +610,7 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icao</td><td>The ICAO code of the airport for which the chart exists. </td></tr>
-    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -619,14 +619,14 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 
 </div>
 </div>
-<a id="a866c12785f0eb162dcb123bc1a039c7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a866c12785f0eb162dcb123bc1a039c7a">&#9670;&nbsp;</a></span>chartdb_get_chart_surface()</h2>
+<a id="afebdf2e1ff16e52de24142a4bc3ecc4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afebdf2e1ff16e52de24142a4bc3ecc4a">&#9670;&nbsp;</a></span>chartdb_get_chart_surface()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT bool_t chartdb_get_chart_surface </td>
+          <td class="memname">bool_t chartdb_get_chart_surface </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -680,11 +680,11 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retrieves chart pixel data. Please note that while this function can initiate a background chart download and rasterization, it will never block. If the chart is not yet ready, the function will return <code>B_FALSE</code> to let you know that the chart isn't ready. You should keep retrying for a certain amount of time (e.g. 20 seconds) before giving up and presenting an error message to the user. Charts returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a> <em>should</em> exist and be retrievable, so long as there are no network or disk access errors. If any of the <code>page</code>, <code>zoom</code> or <code>night</code> parameters changes, the database will load a new image surface and return that instead. You shouldn't need to cache the returned image data in your application, the chart database takes care of all caching needs automatically.</p>
+<p>Retrieves chart pixel data. Please note that while this function can initiate a background chart download and rasterization, it will never block. If the chart is not yet ready, the function will return <code>B_FALSE</code> to let you know that the chart isn't ready. You should keep retrying for a certain amount of time (e.g. 20 seconds) before giving up and presenting an error message to the user. Charts returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a> <em>should</em> exist and be retrievable, so long as there are no network or disk access errors. If any of the <code>page</code>, <code>zoom</code> or <code>night</code> parameters changes, the database will load a new image surface and return that instead. You shouldn't need to cache the returned image data in your application, the chart database takes care of all caching needs automatically.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icao</td><td>The ICAO code of the airport for which the chart exists. </td></tr>
-    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
     <tr><td class="paramname">page</td><td>If the chart is a PDF with multiple pages, this specifies the page number to return (starting at 0 and up to <code>num_pages</code> - see below). </td></tr>
     <tr><td class="paramname">zoom</td><td>Relative zoom value to use when rasterizing vector image charts (PDFs), in the range of 0.1 - 10. A zoom value of 1.0 corresponds to roughly 72 DPI. This has no effect when dealing with raster charts (Navigraph). </td></tr>
     <tr><td class="paramname">night</td><td>Specifies whether to return a day-light or night-light optimized chart. For chart providers which supply different charts for day and night operations (Navigraph), this retrieves the appropriate chart image. Otherwise, the chart database automatically inverts the colors on the chart to reduce the overall brightness of black-on-white charts. </td></tr>
@@ -699,14 +699,14 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 
 </div>
 </div>
-<a id="a509ac9c07c651d1624cb867b42fab445"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a509ac9c07c651d1624cb867b42fab445">&#9670;&nbsp;</a></span>chartdb_get_chart_type()</h2>
+<a id="a6d95009c1b5dcddaae5cae0cfb8b83e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d95009c1b5dcddaae5cae0cfb8b83e0">&#9670;&nbsp;</a></span>chartdb_get_chart_type()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT chart_type_t chartdb_get_chart_type </td>
+          <td class="memname">chart_type_t chartdb_get_chart_type </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -734,7 +734,7 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icao</td><td>The ICAO code of the airport for which the chart exists. </td></tr>
-    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -743,14 +743,14 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 
 </div>
 </div>
-<a id="a82077f17e5af3fba328f7fb659328897"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82077f17e5af3fba328f7fb659328897">&#9670;&nbsp;</a></span>chartdb_get_chart_view()</h2>
+<a id="a6b500eda0d31a98209f0b9e76a2e7b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b500eda0d31a98209f0b9e76a2e7b86">&#9670;&nbsp;</a></span>chartdb_get_chart_view()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT <a class="el" href="structchart__bbox__t.html">chart_bbox_t</a> chartdb_get_chart_view </td>
+          <td class="memname"><a class="el" href="structchart__bbox__t.html">chart_bbox_t</a> chartdb_get_chart_view </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -784,7 +784,7 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">icao</td><td>The ICAO code of the airport for which the chart exists. </td></tr>
-    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a>. </td></tr>
+    <tr><td class="paramname">chart_name</td><td>The name of the chart as returned from <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a>. </td></tr>
     <tr><td class="paramname">view</td><td>The chart view which to retrieve. </td></tr>
   </table>
   </dd>
@@ -794,14 +794,14 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 
 </div>
 </div>
-<a id="afe6f688ed76d41caa1dc8c2720228b97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe6f688ed76d41caa1dc8c2720228b97">&#9670;&nbsp;</a></span>chartdb_get_metar()</h2>
+<a id="a91469e3ba7b844a0390f886afd1e1730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91469e3ba7b844a0390f886afd1e1730">&#9670;&nbsp;</a></span>chartdb_get_metar()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char* chartdb_get_metar </td>
+          <td class="memname">char* chartdb_get_metar </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -828,21 +828,21 @@ You must free the returned list using <a class="el" href="chartdb_8h.html#ad5766
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The raw METAR text data. If the download hasn't succeeded yet (e.g. due to not being available, being in progress, or due to a network error), this function returns <code>NULL</code> instead. You should keep calling this function at regular intervals, to retry the download. Also, regular calls should be being made even if the download succeded, as a new METAR might have been issued in the mean time. The downloader implements an automatic rate limiter to prevent overloading the network server with continuous requests. </dd>
 <dd>
-The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0c5d486260d0230d134e9c9a9a3">lacf_free()</a>. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#a27e2d5a171fcb09694ba05dcd1a163df">chartdb_get_taf()</a> </dd></dl>
+The returned string must be freed using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#a90538e1a18ec46e71f9497ef452050dd">chartdb_get_taf()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01804">1804</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="a728f0afa8db46da279a55aa311b0d507"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a728f0afa8db46da279a55aa311b0d507">&#9670;&nbsp;</a></span>chartdb_get_proxy()</h2>
+<a id="a6e59a752e9e38da4c1fbe335d9690565"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e59a752e9e38da4c1fbe335d9690565">&#9670;&nbsp;</a></span>chartdb_get_proxy()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT size_t chartdb_get_proxy </td>
+          <td class="memname">size_t chartdb_get_proxy </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -879,14 +879,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="a27e2d5a171fcb09694ba05dcd1a163df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27e2d5a171fcb09694ba05dcd1a163df">&#9670;&nbsp;</a></span>chartdb_get_taf()</h2>
+<a id="a90538e1a18ec46e71f9497ef452050dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90538e1a18ec46e71f9497ef452050dd">&#9670;&nbsp;</a></span>chartdb_get_taf()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT char* chartdb_get_taf </td>
+          <td class="memname">char* chartdb_get_taf </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -904,20 +904,20 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Same as <a class="el" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar()</a>, but retrieves TAF data from the <a href="https://aviationweather.gov/taf">aviationweather.gov/taf</a> service. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#afe6f688ed76d41caa1dc8c2720228b97">chartdb_get_metar()</a> </dd></dl>
+<p>Same as <a class="el" href="chartdb_8h.html#a91469e3ba7b844a0390f886afd1e1730">chartdb_get_metar()</a>, but retrieves TAF data from the <a href="https://aviationweather.gov/taf">aviationweather.gov/taf</a> service. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#a91469e3ba7b844a0390f886afd1e1730">chartdb_get_metar()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01810">1810</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="a01af7850d24a5f0c8c958588f091534a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01af7850d24a5f0c8c958588f091534a">&#9670;&nbsp;</a></span>chartdb_init()</h2>
+<a id="ab2bca4186ad5dd2460b574fc12f613ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bca4186ad5dd2460b574fc12f613ae">&#9670;&nbsp;</a></span>chartdb_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT chartdb_t* chartdb_init </td>
+          <td class="memname">chartdb_t* chartdb_init </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>cache_path</em>, </td>
@@ -972,7 +972,7 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 <li>"navigraph.com" </li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">provider_login</td><td>When using the Navigraph or Autorouter providers this MUST be a pointer to a <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> structure. When using the Aeronav provider, this is optional. You may free the memory associated with this structure after calling <a class="el" href="chartdb_8h.html#a01af7850d24a5f0c8c958588f091534a">chartdb_init()</a>. </td></tr>
+    <tr><td class="paramname">provider_login</td><td>When using the Navigraph or Autorouter providers this MUST be a pointer to a <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> structure. When using the Aeronav provider, this is optional. You may free the memory associated with this structure after calling <a class="el" href="chartdb_8h.html#ab2bca4186ad5dd2460b574fc12f613ae">chartdb_init()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -983,14 +983,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="a9e4383b5d7f0833ca741aaa11ed58c92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e4383b5d7f0833ca741aaa11ed58c92">&#9670;&nbsp;</a></span>chartdb_is_arpt_known()</h2>
+<a id="ab033b2672b84d49a51b5e0c0caeca091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab033b2672b84d49a51b5e0c0caeca091">&#9670;&nbsp;</a></span>chartdb_is_arpt_known()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT bool_t chartdb_is_arpt_known </td>
+          <td class="memname">bool_t chartdb_is_arpt_known </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -1014,20 +1014,20 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if the given airport has at least one chart available, <code>B_FALSE</code> otherwise. If this returns true, you can use <a class="el" href="chartdb_8h.html#a7ccf654a37baae3bbb3fc3dc629dffee">chartdb_get_chart_names()</a> to retrieve the list of available charts for this airport. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if the given airport has at least one chart available, <code>B_FALSE</code> otherwise. If this returns true, you can use <a class="el" href="chartdb_8h.html#a04f522583a4d6d9a8700838ea68773a1">chartdb_get_chart_names()</a> to retrieve the list of available charts for this airport. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01761">1761</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="aa0360b67dc55ef7e33f3c615fca0d5a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0360b67dc55ef7e33f3c615fca0d5a6">&#9670;&nbsp;</a></span>chartdb_is_ready()</h2>
+<a id="a4fe990180b9aeddb610ea285f183cf30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe990180b9aeddb610ea285f183cf30">&#9670;&nbsp;</a></span>chartdb_is_ready()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT bool_t chartdb_is_ready </td>
+          <td class="memname">bool_t chartdb_is_ready </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
@@ -1041,14 +1041,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="a77d28e397082a14cb2a39ab96aa9e443"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77d28e397082a14cb2a39ab96aa9e443">&#9670;&nbsp;</a></span>chartdb_pending_ext_account_setup()</h2>
+<a id="a0ac24f220a23165e087fde75f163528d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac24f220a23165e087fde75f163528d">&#9670;&nbsp;</a></span>chartdb_pending_ext_account_setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT bool_t chartdb_pending_ext_account_setup </td>
+          <td class="memname">bool_t chartdb_pending_ext_account_setup </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
@@ -1062,14 +1062,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="a2bc95b0fd54759fd9b4223383d51c5f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bc95b0fd54759fd9b4223383d51c5f9">&#9670;&nbsp;</a></span>chartdb_purge()</h2>
+<a id="adb2d12a5f614646edb061f878a5e0094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2d12a5f614646edb061f878a5e0094">&#9670;&nbsp;</a></span>chartdb_purge()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT void chartdb_purge </td>
+          <td class="memname">void chartdb_purge </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em></td><td>)</td>
@@ -1083,14 +1083,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="a3f377030ec3ce9e6ab1e61d9319a5f73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f377030ec3ce9e6ab1e61d9319a5f73">&#9670;&nbsp;</a></span>chartdb_set_load_limit()</h2>
+<a id="aaca54f9c9c733f40d6f68596f3ad80cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca54f9c9c733f40d6f68596f3ad80cd">&#9670;&nbsp;</a></span>chartdb_set_load_limit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT void chartdb_set_load_limit </td>
+          <td class="memname">void chartdb_set_load_limit </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -1119,14 +1119,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="ab95f98a2172e600cdd0d8f3fcdc8c57f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab95f98a2172e600cdd0d8f3fcdc8c57f">&#9670;&nbsp;</a></span>chartdb_set_proxy()</h2>
+<a id="aa3ef9f3c29826452d88d3b296e99aa65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ef9f3c29826452d88d3b296e99aa65">&#9670;&nbsp;</a></span>chartdb_set_proxy()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT void chartdb_set_proxy </td>
+          <td class="memname">void chartdb_set_proxy </td>
           <td>(</td>
           <td class="paramtype">chartdb_t *&#160;</td>
           <td class="paramname"><em>cdb</em>, </td>
@@ -1156,14 +1156,14 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
 
 </div>
 </div>
-<a id="a5cef8a8b8fc80b5e22f7ebc5312e910f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cef8a8b8fc80b5e22f7ebc5312e910f">&#9670;&nbsp;</a></span>chartdb_test_connection()</h2>
+<a id="a997c72ac56df4c822db53bbb55a1419c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a997c72ac56df4c822db53bbb55a1419c">&#9670;&nbsp;</a></span>chartdb_test_connection()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT bool_t chartdb_test_connection </td>
+          <td class="memname">bool_t chartdb_test_connection </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>provider_name</em>, </td>
@@ -1181,20 +1181,20 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Front-end to <a class="el" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2()</a> with a NULL proxy. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#a1cdbd565ab6cddf240333d362cc8017f">chartdb_test_connection2()</a> </dd></dl>
+<p>Front-end to <a class="el" href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3">chartdb_test_connection2()</a> with a NULL proxy. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="chartdb_8h.html#a3e23af4bd4b75bc192703d79c3aef2e3">chartdb_test_connection2()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="chartdb_8c_source.html#l01324">1324</a> of file <a class="el" href="chartdb_8c_source.html">chartdb.c</a>.</p>
 
 </div>
 </div>
-<a id="a1cdbd565ab6cddf240333d362cc8017f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cdbd565ab6cddf240333d362cc8017f">&#9670;&nbsp;</a></span>chartdb_test_connection2()</h2>
+<a id="a3e23af4bd4b75bc192703d79c3aef2e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e23af4bd4b75bc192703d79c3aef2e3">&#9670;&nbsp;</a></span>chartdb_test_connection2()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">API_EXPORT bool_t chartdb_test_connection2 </td>
+          <td class="memname">bool_t chartdb_test_connection2 </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>provider_name</em>, </td>
@@ -1222,7 +1222,7 @@ The returned string must be freed using <a class="el" href="core_8h.html#a0fa6d0
   <table class="params">
     <tr><td class="paramname">provider_name</td><td>The chart provider to use for the connection test. Currently this must always be "autorouter.aero". </td></tr>
     <tr><td class="paramname">creds</td><td>The login credentials to use for the connection test. All fields of the structure must be populated. See <a class="el" href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a> for more information. </td></tr>
-    <tr><td class="paramname">proxy</td><td>An optional field specifying a proxy to use for the connection test. See <a class="el" href="chartdb_8h.html#ab95f98a2172e600cdd0d8f3fcdc8c57f">chartdb_set_proxy()</a> for information on the format of the proxy specification expected here. </td></tr>
+    <tr><td class="paramname">proxy</td><td>An optional field specifying a proxy to use for the connection test. See <a class="el" href="chartdb_8h.html#aa3ef9f3c29826452d88d3b296e99aa65">chartdb_set_proxy()</a> for information on the format of the proxy specification expected here. </td></tr>
   </table>
   </dd>
 </dl>

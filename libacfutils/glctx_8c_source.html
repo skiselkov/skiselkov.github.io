@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* APL */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;acfutils/dr.h&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;acfutils/glctx.h&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;acfutils/glutils_zink.h&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
@@ -361,8 +361,8 @@ $(function() {
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> win_i[2];</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    HWND xp_window;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    fdr_find(&amp;win_dr, <span class="stringliteral">&quot;sim/operation/windows/system_window_64&quot;</span>);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(dr_getvi(&amp;win_dr, (<span class="keywordtype">int</span> *)win_i, 0, 2), ==, 2);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a>(&amp;win_dr, <span class="stringliteral">&quot;sim/operation/windows/system_window_64&quot;</span>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(<a class="code" href="dr_8h.html#ad1214b61e97a8dab7a3469656e925804">dr_getvi</a>(&amp;win_dr, (<span class="keywordtype">int</span> *)win_i, 0, 2), ==, 2);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    xp_window = (HWND)((uintptr_t)win_i[1] &lt;&lt; 32 | (uintptr_t)win_i[0]);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(xp_window != INVALID_HANDLE_VALUE);</div>
@@ -642,6 +642,9 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00131">assert.h:131</a></div></div>
 <div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
+<div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
+<div class="ttc" id="adr_8h_html_a32f91305d231135bf3b71e37d9a42fcd"><div class="ttname"><a href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a></div><div class="ttdeci">#define fdr_find(dr,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00194">dr.h:194</a></div></div>
+<div class="ttc" id="adr_8h_html_ad1214b61e97a8dab7a3469656e925804"><div class="ttname"><a href="dr_8h.html#ad1214b61e97a8dab7a3469656e925804">dr_getvi</a></div><div class="ttdeci">#define dr_getvi(__dr, __i, __off, __num)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00302">dr.h:302</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructglctx__s_html"><div class="ttname"><a href="structglctx__s.html">glctx_s</a></div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00055">glctx.c:55</a></div></div>

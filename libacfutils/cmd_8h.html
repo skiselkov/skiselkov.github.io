@@ -75,7 +75,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
 <code>#include &lt;XPLMUtilities.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="sysmacros_8h_source.html">sysmacros.h</a>&quot;</code><br />
+<code>#include &quot;sysmacros.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for cmd.h:</div>
 <div class="dyncontent">
@@ -84,13 +84,13 @@ Include dependency graph for cmd.h:</div>
 <area shape="rect" title=" " alt="" coords="78,5,253,61"/>
 <area shape="rect" title=" " alt="" coords="5,109,80,136"/>
 <area shape="rect" title=" " alt="" coords="105,109,226,136"/>
-<area shape="rect" href="sysmacros_8h.html" title=" " alt="" coords="251,109,355,136"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="267,184,338,211"/>
+<area shape="rect" href="sysmacros_8h_source.html" title=" " alt="" coords="251,109,355,136"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="267,184,338,211"/>
 <area shape="rect" title=" " alt="" coords="158,259,229,285"/>
 <area shape="rect" title=" " alt="" coords="261,333,331,360"/>
 <area shape="rect" title=" " alt="" coords="305,259,375,285"/>
 <area shape="rect" href="core_8h.html" title=" " alt="" coords="399,259,462,285"/>
-<area shape="rect" href="libconfig_8h.html" title=" " alt="" coords="385,333,476,360"/>
+<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="385,333,476,360"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -100,8 +100,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2cmd_8hdep" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2cmd_8hdep">
 <area shape="rect" title=" " alt="" coords="105,5,280,61"/>
 <area shape="rect" href="dr__cmd__reg_8h.html" title=" " alt="" coords="5,109,180,165"/>
-<area shape="rect" href="cmd_8c.html" title=" " alt="" coords="204,117,381,158"/>
-<area shape="rect" href="dr__cmd__reg_8c.html" title=" " alt="" coords="5,213,180,269"/>
+<area shape="rect" href="cmd_8c_source.html" title=" " alt="" coords="204,117,381,158"/>
+<area shape="rect" href="dr__cmd__reg_8c_source.html" title=" " alt="" coords="5,213,180,269"/>
 </map>
 </div>
 </div>
@@ -109,72 +109,60 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a9a41d01cfbb61de595147c7f75029b34"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>) (XPLMCommandRef ref, XPLMCommandPhase phase, void *refcon)</td></tr>
+<tr class="memitem:a9a41d01cfbb61de595147c7f75029b34"><td class="memItemLeft" align="right" valign="top"><a id="a9a41d01cfbb61de595147c7f75029b34"></a>
+typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><b>cmd_cb_t</b>) (XPLMCommandRef ref, XPLMCommandPhase phase, void *refcon)</td></tr>
 <tr class="separator:a9a41d01cfbb61de595147c7f75029b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba4fc936941c39f76306c26e210f8b26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aba4fc936941c39f76306c26e210f8b26">cmd_find</a> (<a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(1)</td></tr>
-<tr class="separator:aba4fc936941c39f76306c26e210f8b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96f0eb734e06926c4d07f5fbff47a6d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a96f0eb734e06926c4d07f5fbff47a6d3">fcmd_find</a> (<a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt),...) <a class="el" href="sysmacros_8h.html#a39fa215449b135e088bd036795ba85a1">PRINTF_ATTR</a>(1)</td></tr>
-<tr class="separator:a96f0eb734e06926c4d07f5fbff47a6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af747f13c5cbcb3b1d988f591c32edb11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#af747f13c5cbcb3b1d988f591c32edb11">cmd_find_v</a> (const char *fmt, va_list ap)</td></tr>
-<tr class="separator:af747f13c5cbcb3b1d988f591c32edb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f27c4d084df86e5f40b9dae2cc45c79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a0f27c4d084df86e5f40b9dae2cc45c79">fcmd_find_v</a> (const char *fmt, va_list ap)</td></tr>
-<tr class="separator:a0f27c4d084df86e5f40b9dae2cc45c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6d1f6a4f8cc6366812afdf6133a7850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ad6d1f6a4f8cc6366812afdf6133a7850">cmd_bind</a> (<a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt), <a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a> cb, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> before, void *refcon,...) <a class="el" href="sysmacros_8h.html#a53a492b42745f60852e0aa7fa34d44c8">PRINTF_ATTR2</a>(1</td></tr>
-<tr class="separator:ad6d1f6a4f8cc6366812afdf6133a7850"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc99ff8858261b467ab572cad489cb15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#adc99ff8858261b467ab572cad489cb15">cmd_bind_v</a> (const char *fmt, <a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a> cb, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> before, void *refcon, va_list ap)</td></tr>
-<tr class="separator:adc99ff8858261b467ab572cad489cb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc2d124aae5a7cea83ba6e17f3d68bfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#abc2d124aae5a7cea83ba6e17f3d68bfd">fcmd_bind</a> (const char *fmt, <a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a> cb, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> before, void *refcon,...) <a class="el" href="sysmacros_8h.html#a53a492b42745f60852e0aa7fa34d44c8">PRINTF_ATTR2</a>(1</td></tr>
-<tr class="separator:abc2d124aae5a7cea83ba6e17f3d68bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb0a40f3e911a6cbb2a54a2368dc2081"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#abb0a40f3e911a6cbb2a54a2368dc2081">cmd_unbind</a> (<a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt), <a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a> cb, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> before, void *refcon,...) <a class="el" href="sysmacros_8h.html#a53a492b42745f60852e0aa7fa34d44c8">PRINTF_ATTR2</a>(1</td></tr>
-<tr class="separator:abb0a40f3e911a6cbb2a54a2368dc2081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa277f7c5d3be5564a823dab0e74753ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa277f7c5d3be5564a823dab0e74753ad">cmd_unbind_v</a> (const char *fmt, <a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a> cb, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> before, void *refcon, va_list ap)</td></tr>
-<tr class="separator:aa277f7c5d3be5564a823dab0e74753ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c804d3ac414b6d9530a4e09be2c31f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a65c804d3ac414b6d9530a4e09be2c31f">fcmd_unbind</a> (<a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt), <a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a> cb, <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> before, void *refcon,...) <a class="el" href="sysmacros_8h.html#a53a492b42745f60852e0aa7fa34d44c8">PRINTF_ATTR2</a>(1</td></tr>
-<tr class="separator:a65c804d3ac414b6d9530a4e09be2c31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7301e0b9d9a6a9db0bd69de1927707"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a7d7301e0b9d9a6a9db0bd69de1927707">cmd_find</a> (const char *fmt,...)</td></tr>
+<tr class="separator:a7d7301e0b9d9a6a9db0bd69de1927707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2111d60af5cf971966d4ed9ebdee40ac"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a2111d60af5cf971966d4ed9ebdee40ac">fcmd_find</a> (const char *fmt,...)</td></tr>
+<tr class="separator:a2111d60af5cf971966d4ed9ebdee40ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdbc0bdc8a1ad4bb438a538cf68ae266"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#afdbc0bdc8a1ad4bb438a538cf68ae266">cmd_find_v</a> (const char *fmt, va_list ap)</td></tr>
+<tr class="separator:afdbc0bdc8a1ad4bb438a538cf68ae266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62eb27ed89b798ba641a5b08cc98131e"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a62eb27ed89b798ba641a5b08cc98131e">fcmd_find_v</a> (const char *fmt, va_list ap)</td></tr>
+<tr class="separator:a62eb27ed89b798ba641a5b08cc98131e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ca1a33952791438c88203e11c140aa"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">cmd_bind</a> (const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</td></tr>
+<tr class="separator:a12ca1a33952791438c88203e11c140aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c95707b2821e1e9353a6db5d8af255"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">cmd_bind_v</a> (const char *fmt, cmd_cb_t cb, bool_t before, void *refcon, va_list ap)</td></tr>
+<tr class="separator:a81c95707b2821e1e9353a6db5d8af255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912cc2bac092a5033e5421afdc4edbac"><td class="memItemLeft" align="right" valign="top">XPLMCommandRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a912cc2bac092a5033e5421afdc4edbac">fcmd_bind</a> (const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</td></tr>
+<tr class="separator:a912cc2bac092a5033e5421afdc4edbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a5283372ea3751a075910d98230a872"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a8a5283372ea3751a075910d98230a872">cmd_unbind</a> (const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</td></tr>
+<tr class="separator:a8a5283372ea3751a075910d98230a872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae09036769c8aafc13ee952503ff908c9"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ae09036769c8aafc13ee952503ff908c9">cmd_unbind_v</a> (const char *fmt, cmd_cb_t cb, bool_t before, void *refcon, va_list ap)</td></tr>
+<tr class="separator:ae09036769c8aafc13ee952503ff908c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b5a972b5c415ea6acd4dbc210b09dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a68b5a972b5c415ea6acd4dbc210b09dd">fcmd_unbind</a> (const char *fmt, cmd_cb_t cb, bool_t before, void *refcon,...)</td></tr>
+<tr class="separator:a68b5a972b5c415ea6acd4dbc210b09dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a9a41d01cfbb61de595147c7f75029b34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a41d01cfbb61de595147c7f75029b34">&#9670;&nbsp;</a></span>cmd_cb_t</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file contains convenience functions to interact with X-Plane's command handling machinery. </p>
+
+<p class="definition">Definition in file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a12ca1a33952791438c88203e11c140aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ca1a33952791438c88203e11c140aa">&#9670;&nbsp;</a></span>cmd_bind()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* cmd_cb_t) (XPLMCommandRef ref, XPLMCommandPhase phase, void *refcon)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="cmd_8h_source.html#l00032">32</a> of file <a class="el" href="cmd_8h_source.html">cmd.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ad6d1f6a4f8cc6366812afdf6133a7850"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6d1f6a4f8cc6366812afdf6133a7850">&#9670;&nbsp;</a></span>cmd_bind()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef cmd_bind </td>
+          <td class="memname">XPLMCommandRef cmd_bind </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt)&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>&#160;</td>
+          <td class="paramtype">cmd_cb_t&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td>
+          <td class="paramtype">bool_t&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -196,17 +184,30 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Performs a combination of an <code>XPLMFindCommand</code> followed by an <code>XPLMRegisterCommandHandler</code>, with support for printf-style command name construction. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>A printf-style format string that specifies the command name to search for. The variadic arguments must comply with the format string's format specifiers. </td></tr>
+    <tr><td class="paramname">cb</td><td>The callback to register for the command handler. </td></tr>
+    <tr><td class="paramname">before</td><td>Specifies whether the callback should be invoked before X-Plane handles the command, or after. </td></tr>
+    <tr><td class="paramname">refcon</td><td>Reference constant that will be passed by X-Plane to the command handler every time <code>cb</code> is called. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The XPLMCommandRef for the command, if it was found, otherwise <code>NULL</code>. If the command doesn't exist, no callback registration takes place. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://www.man7.org/linux/man-pages/man3/printf.3.html">https://www.man7.org/linux/man-pages/man3/printf.3.html</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00110">110</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="adc99ff8858261b467ab572cad489cb15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc99ff8858261b467ab572cad489cb15">&#9670;&nbsp;</a></span>cmd_bind_v()</h2>
+<a id="a81c95707b2821e1e9353a6db5d8af255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c95707b2821e1e9353a6db5d8af255">&#9670;&nbsp;</a></span>cmd_bind_v()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef cmd_bind_v </td>
+          <td class="memname">XPLMCommandRef cmd_bind_v </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -214,13 +215,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>&#160;</td>
+          <td class="paramtype">cmd_cb_t&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td>
+          <td class="paramtype">bool_t&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -242,22 +243,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">cmd_bind()</a>, but takes a <code>va_list</code> for the format arguments, instead of being variadic. </p>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00086">86</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="aba4fc936941c39f76306c26e210f8b26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba4fc936941c39f76306c26e210f8b26">&#9670;&nbsp;</a></span>cmd_find()</h2>
+<a id="a7d7301e0b9d9a6a9db0bd69de1927707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7301e0b9d9a6a9db0bd69de1927707">&#9670;&nbsp;</a></span>cmd_find()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef cmd_find </td>
+          <td class="memname">XPLMCommandRef cmd_find </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt)&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -272,17 +274,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Performs the equivalent of XPLMFindCommand(), but with printf-style auto-formatting support for the command name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>A printf-style format string that specifies the command name to search for. The remaining arguments must comply with the format string's format specifiers. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The XPLMCommandRef for the command, if it was found, otherwise <code>NULL</code>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="https://www.man7.org/linux/man-pages/man3/printf.3.html">https://www.man7.org/linux/man-pages/man3/printf.3.html</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00048">48</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="af747f13c5cbcb3b1d988f591c32edb11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af747f13c5cbcb3b1d988f591c32edb11">&#9670;&nbsp;</a></span>cmd_find_v()</h2>
+<a id="afdbc0bdc8a1ad4bb438a538cf68ae266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdbc0bdc8a1ad4bb438a538cf68ae266">&#9670;&nbsp;</a></span>cmd_find_v()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef cmd_find_v </td>
+          <td class="memname">XPLMCommandRef cmd_find_v </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -300,33 +312,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a7d7301e0b9d9a6a9db0bd69de1927707">cmd_find()</a>, but takes a <code>va_list</code> for the format arguments, instead of being variadic. </p>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00074">74</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="abb0a40f3e911a6cbb2a54a2368dc2081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb0a40f3e911a6cbb2a54a2368dc2081">&#9670;&nbsp;</a></span>cmd_unbind()</h2>
+<a id="a8a5283372ea3751a075910d98230a872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5283372ea3751a075910d98230a872">&#9670;&nbsp;</a></span>cmd_unbind()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> cmd_unbind </td>
+          <td class="memname">bool_t cmd_unbind </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt)&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>&#160;</td>
+          <td class="paramtype">cmd_cb_t&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td>
+          <td class="paramtype">bool_t&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -348,17 +361,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">cmd_bind()</a>, but instead of registering the callback, unregisters it. </p>
+
+<p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00171">171</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="aa277f7c5d3be5564a823dab0e74753ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa277f7c5d3be5564a823dab0e74753ad">&#9670;&nbsp;</a></span>cmd_unbind_v()</h2>
+<a id="ae09036769c8aafc13ee952503ff908c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09036769c8aafc13ee952503ff908c9">&#9670;&nbsp;</a></span>cmd_unbind_v()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> <a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> cmd_unbind_v </td>
+          <td class="memname">bool_t cmd_unbind_v </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -366,13 +382,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>&#160;</td>
+          <td class="paramtype">cmd_cb_t&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td>
+          <td class="paramtype">bool_t&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -394,19 +410,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a81c95707b2821e1e9353a6db5d8af255">cmd_bind_v()</a>, but instead of registering the callback, unregisters it. </p>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00144">144</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="abc2d124aae5a7cea83ba6e17f3d68bfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc2d124aae5a7cea83ba6e17f3d68bfd">&#9670;&nbsp;</a></span>fcmd_bind()</h2>
+<a id="a912cc2bac092a5033e5421afdc4edbac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912cc2bac092a5033e5421afdc4edbac">&#9670;&nbsp;</a></span>fcmd_bind()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef fcmd_bind </td>
+          <td class="memname">XPLMCommandRef fcmd_bind </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -414,13 +431,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>&#160;</td>
+          <td class="paramtype">cmd_cb_t&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td>
+          <td class="paramtype">bool_t&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -442,20 +459,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a12ca1a33952791438c88203e11c140aa">cmd_bind()</a>, but if the command doesn't exist, causes an assertion failure ("f" prefix meaning "force"). </p>
+
+<p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00123">123</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="a96f0eb734e06926c4d07f5fbff47a6d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96f0eb734e06926c4d07f5fbff47a6d3">&#9670;&nbsp;</a></span>fcmd_find()</h2>
+<a id="a2111d60af5cf971966d4ed9ebdee40ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2111d60af5cf971966d4ed9ebdee40ac">&#9670;&nbsp;</a></span>fcmd_find()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef fcmd_find </td>
+          <td class="memname">XPLMCommandRef fcmd_find </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt)&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -470,17 +490,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a7d7301e0b9d9a6a9db0bd69de1927707">cmd_find()</a>, but if the command doesn't exist, causes an assertion failure ("f" prefix meaning "force"). </p>
+
+<p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00061">61</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="a0f27c4d084df86e5f40b9dae2cc45c79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f27c4d084df86e5f40b9dae2cc45c79">&#9670;&nbsp;</a></span>fcmd_find_v()</h2>
+<a id="a62eb27ed89b798ba641a5b08cc98131e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62eb27ed89b798ba641a5b08cc98131e">&#9670;&nbsp;</a></span>fcmd_find_v()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> XPLMCommandRef fcmd_find_v </td>
+          <td class="memname">XPLMCommandRef fcmd_find_v </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -498,33 +521,34 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a2111d60af5cf971966d4ed9ebdee40ac">fcmd_find()</a>, but takes a <code>va_list</code> for the format arguments, instead of being variadic. </p>
 
 <p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00080">80</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
-<a id="a65c804d3ac414b6d9530a4e09be2c31f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65c804d3ac414b6d9530a4e09be2c31f">&#9670;&nbsp;</a></span>fcmd_unbind()</h2>
+<a id="a68b5a972b5c415ea6acd4dbc210b09dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b5a972b5c415ea6acd4dbc210b09dd">&#9670;&nbsp;</a></span>fcmd_unbind()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> void fcmd_unbind </td>
+          <td class="memname">void fcmd_unbind </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="sysmacros_8h.html#a2482b4824c0a48a0d3b58f6dd5126d1b">PRINTF_FORMAT</a>(const char *fmt)&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="cmd_8h.html#a9a41d01cfbb61de595147c7f75029b34">cmd_cb_t</a>&#160;</td>
+          <td class="paramtype">cmd_cb_t&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td>
+          <td class="paramtype">bool_t&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -546,6 +570,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Same as <a class="el" href="cmd_8h.html#a912cc2bac092a5033e5421afdc4edbac">fcmd_bind()</a>, but instead of registering the callback, unregisters it. </p>
+
+<p class="definition">Definition at line <a class="el" href="cmd_8c_source.html#l00184">184</a> of file <a class="el" href="cmd_8c_source.html">cmd.c</a>.</p>
 
 </div>
 </div>
