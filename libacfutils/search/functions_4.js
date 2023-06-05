@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['lacf_5fbase64_5fdecode_886',['lacf_base64_decode',['../base64_8h.html#af2956b6b6ba4c010b7c2cf6240014529',1,'base64.c']]],
-  ['lacf_5fbase64_5fdecode2_887',['lacf_base64_decode2',['../base64_8h.html#aff77e2cb4aeb3fb4f880cdaaa4d9a759',1,'base64.c']]],
-  ['lacf_5fbase64_5fencode_888',['lacf_base64_encode',['../base64_8h.html#a941643c1ff15a4ed96a845edf95c2aee',1,'base64.c']]],
-  ['lacf_5fbase64_5fencode2_889',['lacf_base64_encode2',['../base64_8h.html#a3e5de2db2559e0d7ee6b0628c0d8153b',1,'base64.c']]],
-  ['lacf_5ffree_890',['lacf_free',['../core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85',1,'lacf_free(void *buf):&#160;core.c'],['../core_8c.html#a8f9ec45dfcbfb9fbab71c05303821c85',1,'lacf_free(void *buf):&#160;core.c']]],
-  ['lacf_5fmalloc_891',['lacf_malloc',['../core_8h.html#a14eef1047ed46909f05063d421b5f56c',1,'lacf_malloc(size_t n):&#160;core.c'],['../core_8c.html#a14eef1047ed46909f05063d421b5f56c',1,'lacf_malloc(size_t n):&#160;core.c']]],
-  ['lacf_5fopen_5furl_892',['lacf_open_URL',['../apps_8h.html#a4be870e47611c712f2dac7ad7fb57f38',1,'apps.h']]]
+  ['ecef2ecmi_1057',['ecef2ecmi',['../geom_8h.html#a70e6561670e083f889bb7cea6af7392c',1,'geom.c']]],
+  ['ecef2geo_1058',['ecef2geo',['../geom_8h.html#ad1bf0d32b4a6a328d11deccac00e997c',1,'geom.c']]],
+  ['ecef2gl_1059',['ecef2gl',['../geom_8h.html#a2b38fbbfa25511df2dd73357d51c3b94',1,'geom.c']]],
+  ['ecef2gl_5fl_1060',['ecef2gl_l',['../geom_8h.html#a61a949844f5578567c41e1c63911af1e',1,'geom.c']]],
+  ['ecef2sph_1061',['ecef2sph',['../geom_8h.html#afee522681459f11e649f66dc6ac91e47',1,'geom.c']]],
+  ['ecmi2ecef_1062',['ecmi2ecef',['../geom_8h.html#a43b8c37d2d8c6894aa4285f3329e1a5c',1,'geom.c']]],
+  ['ecmi2geo_1063',['ecmi2geo',['../geom_8h.html#a0e3d28a8b2b18416a7f7d9eddf7f54c4',1,'geom.c']]],
+  ['ecmi2sph_1064',['ecmi2sph',['../geom_8h.html#a862f92e06b0c7c15c331b4073c8113a5',1,'geom.c']]],
+  ['ellip_5finit_1065',['ellip_init',['../geom_8h.html#a7b9795e2c33cfc8f6cc844edf10f4d79',1,'geom.c']]],
+  ['except_5ffini_1066',['except_fini',['../except_8h.html#a219c7bfc0b03e17ce76bb1c7b7697a69',1,'except.c']]],
+  ['except_5finit_1067',['except_init',['../except_8h.html#abece350a52da35e60605fe3ad6d1afdf',1,'except.c']]]
 ];

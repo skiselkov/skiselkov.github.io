@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/test/dsfdump.c Source File</title>
+<title>libacfutils: test/dsfdump.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_120ed4da3e3217b1e7fc0b4f48568e79.html">test</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;acfutils/dsf.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="dsf_8h.html">acfutils/dsf.h</a>&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;acfutils/math.h&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/png.h&gt;</span></div>
@@ -119,7 +119,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(arg);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (!(uintptr_t)parser-&gt;userinfo) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        printf(<span class="stringliteral">&quot;cmd: %s (%x)\n&quot;</span>, dsf_cmd2str(cmd),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        printf(<span class="stringliteral">&quot;cmd: %s (%x)\n&quot;</span>, <a class="code" href="dsf_8h.html#a1f9b460be650d90d80fbdd30803d9168">dsf_cmd2str</a>(cmd),</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            (<span class="keywordtype">int</span>)parser-&gt;cmd_file_off);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
@@ -226,10 +226,10 @@ $(function() {
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    uint8_t *buf;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">double</span> rat_x, rat_y;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    demi_land = dsf_lookup(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMI, 0, 0);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    demd_land = dsf_lookup(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMD, 0, 0);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    demi_water = dsf_lookup(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMI, 1, 0);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    demd_water = dsf_lookup(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMD, 1, 0);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    demi_land = <a class="code" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a>(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMI, 0, 0);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    demd_land = <a class="code" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a>(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMD, 0, 0);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    demi_water = <a class="code" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a>(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMI, 1, 0);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    demd_water = <a class="code" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a>(dsf, DSF_ATOM_DEMS, 0, DSF_ATOM_DEMD, 1, 0);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> (demi_land == NULL || demd_land == NULL ||</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        demi_water == NULL || demd_water == NULL) {</div>
@@ -318,17 +318,17 @@ $(function() {
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        exit(EXIT_FAILURE);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    dsf = dsf_init(argv[optind]);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    dsf = <a class="code" href="dsf_8h.html#af05ef9bfea12bedc30721cb46e34331d">dsf_init</a>(argv[optind]);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (dsf == NULL)</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">return</span> (1);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    dump = dsf_dump(dsf);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    dump = <a class="code" href="dsf_8h.html#ab5810257773e926de2b92852d66791bb">dsf_dump</a>(dsf);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (!quiet)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        puts(dump);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    free(dump);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (dump_cmds &amp;&amp;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        !dsf_parse_cmds(dsf, cmd_cbs, (<span class="keywordtype">void</span> *)(uintptr_t)quiet, reason)) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        !<a class="code" href="dsf_8h.html#a4e452ee0334b9c59260e18bb197c76bb">dsf_parse_cmds</a>(dsf, cmd_cbs, (<span class="keywordtype">void</span> *)(uintptr_t)quiet, reason)) {</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;Error parsing DSF commands: %s\n&quot;</span>, reason);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (do_dump_dem) {</div>
@@ -336,9 +336,9 @@ $(function() {
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *demd;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            (demi = dsf_lookup(dsf, DSF_ATOM_DEMS, 0,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            (demi = <a class="code" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a>(dsf, DSF_ATOM_DEMS, 0,</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            DSF_ATOM_DEMI, i, 0)) != NULL &amp;&amp;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            (demd = dsf_lookup(dsf, DSF_ATOM_DEMS, 0,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            (demd = <a class="code" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a>(dsf, DSF_ATOM_DEMS, 0,</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            DSF_ATOM_DEMD, i, 0)) != NULL &amp;&amp; i &lt; 2; i++) {</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            dump_dem(demi, demd, i);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
@@ -346,7 +346,7 @@ $(function() {
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (do_water_mask)</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        water_mask(dsf);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    dsf_fini(dsf);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="dsf_8h.html#aeb3f349298118b5a41e8fa7ad34152da">dsf_fini</a>(dsf);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
@@ -354,9 +354,16 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00189">assert.h:189</a></div></div>
 <div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
-<div class="ttc" id="astructdsf__atom__t_html"><div class="ttname"><a href="structdsf__atom__t.html">dsf_atom_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00133">dsf.h:133</a></div></div>
-<div class="ttc" id="astructdsf__cmd__parser__t_html"><div class="ttname"><a href="structdsf__cmd__parser__t.html">dsf_cmd_parser_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00197">dsf.h:197</a></div></div>
-<div class="ttc" id="astructdsf__t_html"><div class="ttname"><a href="structdsf__t.html">dsf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00150">dsf.h:150</a></div></div>
+<div class="ttc" id="adsf_8h_html"><div class="ttname"><a href="dsf_8h.html">dsf.h</a></div></div>
+<div class="ttc" id="adsf_8h_html_a1f9b460be650d90d80fbdd30803d9168"><div class="ttname"><a href="dsf_8h.html#a1f9b460be650d90d80fbdd30803d9168">dsf_cmd2str</a></div><div class="ttdeci">const char * dsf_cmd2str(dsf_cmd_t cmd)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l01144">dsf.c:1144</a></div></div>
+<div class="ttc" id="adsf_8h_html_a28bac78fffc85e20efcdc5bd5f019404"><div class="ttname"><a href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a></div><div class="ttdeci">const dsf_atom_t * dsf_lookup(const dsf_t *dsf,...)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00955">dsf.c:955</a></div></div>
+<div class="ttc" id="adsf_8h_html_a4e452ee0334b9c59260e18bb197c76bb"><div class="ttname"><a href="dsf_8h.html#a4e452ee0334b9c59260e18bb197c76bb">dsf_parse_cmds</a></div><div class="ttdeci">bool_t dsf_parse_cmds(const dsf_t *dsf, dsf_cmd_cb_t user_cbs[NUM_DSF_CMDS], void *userinfo, char reason[DSF_REASON_SZ])</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l01073">dsf.c:1073</a></div></div>
+<div class="ttc" id="adsf_8h_html_ab5810257773e926de2b92852d66791bb"><div class="ttname"><a href="dsf_8h.html#ab5810257773e926de2b92852d66791bb">dsf_dump</a></div><div class="ttdeci">char * dsf_dump(const dsf_t *dsf)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00914">dsf.c:914</a></div></div>
+<div class="ttc" id="adsf_8h_html_aeb3f349298118b5a41e8fa7ad34152da"><div class="ttname"><a href="dsf_8h.html#aeb3f349298118b5a41e8fa7ad34152da">dsf_fini</a></div><div class="ttdeci">void dsf_fini(dsf_t *dsf)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00787">dsf.c:787</a></div></div>
+<div class="ttc" id="adsf_8h_html_af05ef9bfea12bedc30721cb46e34331d"><div class="ttname"><a href="dsf_8h.html#af05ef9bfea12bedc30721cb46e34331d">dsf_init</a></div><div class="ttdeci">dsf_t * dsf_init(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00173">dsf.c:173</a></div></div>
+<div class="ttc" id="astructdsf__atom__t_html"><div class="ttname"><a href="structdsf__atom__t.html">dsf_atom_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00139">dsf.h:139</a></div></div>
+<div class="ttc" id="astructdsf__cmd__parser__t_html"><div class="ttname"><a href="structdsf__cmd__parser__t.html">dsf_cmd_parser_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00203">dsf.h:203</a></div></div>
+<div class="ttc" id="astructdsf__t_html"><div class="ttname"><a href="structdsf__t.html">dsf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00156">dsf.h:156</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

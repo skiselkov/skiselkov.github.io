@@ -1,8 +1,15 @@
 var searchData=
 [
-  ['safe_5fappend_5frealloc_893',['safe_append_realloc',['../safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e',1,'safe_alloc.h']]],
-  ['safe_5fcalloc_894',['safe_calloc',['../safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1',1,'safe_alloc.h']]],
-  ['safe_5fmalloc_895',['safe_malloc',['../safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74',1,'safe_alloc.h']]],
-  ['safe_5frealloc_896',['safe_realloc',['../safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658',1,'safe_alloc.h']]],
-  ['safe_5fstrdup_897',['safe_strdup',['../safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a',1,'safe_alloc.h']]]
+  ['f_5fdcr_5ffind_5fcmd_1068',['f_dcr_find_cmd',['../dr__cmd__reg_8h.html#ad98b3993964ab1bd58d78f1eb804c164',1,'dr_cmd_reg.c']]],
+  ['f_5fdcr_5ffind_5fcmd_5fv_1069',['f_dcr_find_cmd_v',['../dr__cmd__reg_8h.html#a6d4f7edb8625e652b216e8b438ee36c0',1,'dr_cmd_reg.c']]],
+  ['fcmd_5fbind_1070',['fcmd_bind',['../cmd_8h.html#a912cc2bac092a5033e5421afdc4edbac',1,'cmd.c']]],
+  ['fcmd_5ffind_1071',['fcmd_find',['../cmd_8h.html#a2111d60af5cf971966d4ed9ebdee40ac',1,'cmd.c']]],
+  ['fcmd_5ffind_5fv_1072',['fcmd_find_v',['../cmd_8h.html#a62eb27ed89b798ba641a5b08cc98131e',1,'cmd.c']]],
+  ['fcmd_5funbind_1073',['fcmd_unbind',['../cmd_8h.html#a68b5a972b5c415ea6acd4dbc210b09dd',1,'cmd.c']]],
+  ['font_5futils_5fft_5ferr2str_1074',['font_utils_ft_err2str',['../font__utils_8h.html#acc1b949b883e41c47ba0684b5235cb31',1,'font_utils.h']]],
+  ['font_5futils_5ftry_5fload_5ffont_1075',['font_utils_try_load_font',['../font__utils_8h.html#a237e3eec4cc7d7e4bd65ffea11948726',1,'font_utils.h']]],
+  ['fpp2geo_1076',['fpp2geo',['../geom_8h.html#a6829cbbdbc79c4cb5f918ae0b85d6521',1,'geom.c']]],
+  ['fpp_5fget_5fscale_1077',['fpp_get_scale',['../geom_8h.html#a0ba8e0c6cc7f5584c2f9cc166eb0a94d',1,'geom.c']]],
+  ['fpp_5finit_1078',['fpp_init',['../geom_8h.html#a68f5b69a233eba3adc5b5f7407966e4c',1,'geom.c']]],
+  ['fpp_5fset_5fscale_1079',['fpp_set_scale',['../geom_8h.html#a62d175a340701c1341bdb08b51a3687b',1,'geom.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['safe_5fbzero_1042',['SAFE_BZERO',['../safe__alloc_8h.html#a601bef5ebbd768105bdf40337a884b35',1,'safe_alloc.h']]]
+  ['lacf_5fdestroy_1344',['LACF_DESTROY',['../core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e',1,'core.h']]]
 ];

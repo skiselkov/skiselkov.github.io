@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/mt_cairo_render.c Source File</title>
+<title>libacfutils: mt_cairo_render.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,6 +46,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +61,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">mt_cairo_render.c</div>  </div>
@@ -106,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;acfutils/geom.h&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;acfutils/glctx.h&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;acfutils/glew.h&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
@@ -299,7 +295,7 @@ $(function() {
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(mtcr != NULL);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(rs != NULL);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    cr_fmt = (!IS_NULL_VECT(mtcr-&gt;monochrome) ? CAIRO_FORMAT_A8 :</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    cr_fmt = (!<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome) ? CAIRO_FORMAT_A8 :</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        CAIRO_FORMAT_ARGB32);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    rs-&gt;surf = cairo_image_surface_create(cr_fmt, mtcr-&gt;w, mtcr-&gt;h);</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    rs-&gt;cr = cairo_create(rs-&gt;surf);</div>
@@ -374,7 +370,7 @@ $(function() {
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    cairo_format_t cr_fmt;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(mtcr != NULL);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    cr_fmt = (!IS_NULL_VECT(mtcr-&gt;monochrome) ? CAIRO_FORMAT_A8 :</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    cr_fmt = (!<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome) ? CAIRO_FORMAT_A8 :</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        CAIRO_FORMAT_ARGB32);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> (cairo_format_stride_for_width(cr_fmt, mtcr-&gt;w) * mtcr-&gt;h);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
@@ -614,7 +610,7 @@ $(function() {
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordflow">if</span> (mtcr-&gt;vtx_buf != 0) {</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        glDeleteBuffers(1, &amp;mtcr-&gt;vtx_buf);</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        mtcr-&gt;vtx_buf = 0;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        mtcr-&gt;last_draw.pos = NULL_VECT2;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        mtcr-&gt;last_draw.pos = <a class="code" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>;</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordflow">if</span> (mtcr-&gt;idx_buf != 0) {</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        glDeleteBuffers(1, &amp;mtcr-&gt;idx_buf);</div>
@@ -662,7 +658,7 @@ $(function() {
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;{</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(mtcr != NULL);</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">return</span> (IBM &amp;&amp; !mtcr-&gt;shader_is_custom &amp;&amp;</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        IS_NULL_VECT(mtcr-&gt;monochrome) &amp;&amp;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome) &amp;&amp;</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        curthread_id == mtcr_main_thread &amp;&amp; glutils_in_zink_mode() &amp;&amp;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        strstr((<span class="keyword">const</span> <span class="keywordtype">char</span> *)glGetString(GL_RENDERER), <span class="stringliteral">&quot;Radeon&quot;</span>) != NULL);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
@@ -710,9 +706,9 @@ $(function() {
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    mtcr-&gt;fini_cb = fini_cb;</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    mtcr-&gt;userinfo = userinfo;</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    mtcr-&gt;fps = fps;</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    mtcr-&gt;monochrome = NULL_VECT3;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    mtcr-&gt;monochrome = <a class="code" href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a>;</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    mtcr-&gt;filter = GL_LINEAR;</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    mtcr-&gt;last_draw.pos = NULL_VECT2;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    mtcr-&gt;last_draw.pos = <a class="code" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>;</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    mutex_init(&amp;mtcr-&gt;lock);</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    cv_init(&amp;mtcr-&gt;cv);</div>
@@ -840,7 +836,7 @@ $(function() {
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        <span class="comment">/* Reinstall our standard shader */</span></div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;        mtcr-&gt;shader_is_custom = B_FALSE;</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        <span class="keywordflow">if</span> (GLEW_VERSION_4_1) {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *frag_shader_text = (IS_NULL_VECT(</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *frag_shader_text = (<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                mtcr-&gt;monochrome) ? frag_shader410 :</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                frag_shader410_mono);</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
@@ -848,7 +844,7 @@ $(function() {
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                <span class="stringliteral">&quot;mt_cairo_render_shader&quot;</span>,</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                vert_shader410, frag_shader_text, NULL);</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *frag_shader_text = (IS_NULL_VECT(</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *frag_shader_text = (<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                mtcr-&gt;monochrome) ? frag_shader :</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                frag_shader_mono);</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
@@ -903,7 +899,7 @@ $(function() {
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;<span class="comment">     * If the monochrome status hasn&#39;t changed, there&#39;s no need to</span></div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;<span class="comment">     * rebuild the surface. Just store the potentially new color.</span></div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="keywordflow">if</span> (IS_NULL_VECT(mtcr-&gt;monochrome) == IS_NULL_VECT(color)) {</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome) == <a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(color)) {</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        mtcr-&gt;monochrome = color;</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    }</div>
@@ -1003,7 +999,7 @@ $(function() {
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(intfmt != NULL);</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(format != NULL);</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="keywordflow">if</span> (!IS_NULL_VECT(mtcr-&gt;monochrome)) {</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome)) {</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        *intfmt = GL_R8;</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;        *format = GL_RED;</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -1137,8 +1133,8 @@ $(function() {
 <div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(mtcr != NULL);</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(buf != NULL);</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    <span class="keywordflow">if</span> (VECT2_EQ(mtcr-&gt;last_draw.pos, pos) &amp;&amp;</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        VECT2_EQ(mtcr-&gt;last_draw.size, size) &amp;&amp;</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="geom_8h.html#a5bd5c276ea3b805aa69d6e70af89e58d">VECT2_EQ</a>(mtcr-&gt;last_draw.pos, pos) &amp;&amp;</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        <a class="code" href="geom_8h.html#a5bd5c276ea3b805aa69d6e70af89e58d">VECT2_EQ</a>(mtcr-&gt;last_draw.size, size) &amp;&amp;</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;        mtcr-&gt;last_draw.x1 == x1 &amp;&amp; mtcr-&gt;last_draw.x2 == x2 &amp;&amp;</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        mtcr-&gt;last_draw.y1 == y1 &amp;&amp; mtcr-&gt;last_draw.y2 == y2 &amp;&amp;</div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        !mtcr-&gt;use_ffp) {</div>
@@ -1196,14 +1192,14 @@ $(function() {
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;mt_cairo_render_draw(mt_cairo_render_t *mtcr, <a class="code" href="structvect2__t.html">vect2_t</a> pos, <a class="code" href="structvect2__t.html">vect2_t</a> size)</div>
 <div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;{</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    mt_cairo_render_draw_subrect(mtcr, ZERO_VECT2, VECT2(1, 1), pos, size);</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    mt_cairo_render_draw_subrect(mtcr, <a class="code" href="geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d">ZERO_VECT2</a>, <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(1, 1), pos, size);</div>
 <div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;}</div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160; </div>
 <div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;mt_cairo_render_draw_pvm(mt_cairo_render_t *mtcr, <a class="code" href="structvect2__t.html">vect2_t</a> pos, <a class="code" href="structvect2__t.html">vect2_t</a> size,</div>
 <div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    <span class="keyword">const</span> GLfloat *pvm)</div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;{</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;    mt_cairo_render_draw_subrect_pvm(mtcr, ZERO_VECT2, VECT2(1, 1), pos,</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;    mt_cairo_render_draw_subrect_pvm(mtcr, <a class="code" href="geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d">ZERO_VECT2</a>, <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(1, 1), pos,</div>
 <div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        size, pvm);</div>
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;}</div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160; </div>
@@ -1308,7 +1304,7 @@ $(function() {
 <div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        glUniformMatrix4fv(mtcr-&gt;shader_loc_pvm,</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;            1, GL_FALSE, (<span class="keyword">const</span> GLfloat *)pvm);</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        glUniform1i(mtcr-&gt;shader_loc_tex, 0);</div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        <span class="keywordflow">if</span> (!IS_NULL_VECT(mtcr-&gt;monochrome)) {</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome)) {</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;            glUniform3f(mtcr-&gt;shader_loc_color_in,</div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;                mtcr-&gt;monochrome.x, mtcr-&gt;monochrome.y,</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;                mtcr-&gt;monochrome.z);</div>
@@ -1765,6 +1761,13 @@ $(function() {
 <div class="ttc" id="adr_8h_html_a32f91305d231135bf3b71e37d9a42fcd"><div class="ttname"><a href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a></div><div class="ttdeci">#define fdr_find(dr,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00194">dr.h:194</a></div></div>
 <div class="ttc" id="adr_8h_html_a599f879367b9e1c70f5c6f45786f6f44"><div class="ttname"><a href="dr_8h.html#a599f879367b9e1c70f5c6f45786f6f44">dr_geti</a></div><div class="ttdeci">#define dr_geti(__dr)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00224">dr.h:224</a></div></div>
 <div class="ttc" id="adr_8h_html_ad1214b61e97a8dab7a3469656e925804"><div class="ttname"><a href="dr_8h.html#ad1214b61e97a8dab7a3469656e925804">dr_getvi</a></div><div class="ttdeci">#define dr_getvi(__dr, __i, __off, __num)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00302">dr.h:302</a></div></div>
+<div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
+<div class="ttc" id="ageom_8h_html_a200e879824b017925f05b0dddf6b2224"><div class="ttname"><a href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a></div><div class="ttdeci">#define NULL_VECT3</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00216">geom.h:216</a></div></div>
+<div class="ttc" id="ageom_8h_html_a5bd5c276ea3b805aa69d6e70af89e58d"><div class="ttname"><a href="geom_8h.html#a5bd5c276ea3b805aa69d6e70af89e58d">VECT2_EQ</a></div><div class="ttdeci">#define VECT2_EQ(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00196">geom.h:196</a></div></div>
+<div class="ttc" id="ageom_8h_html_a5e6f3b1fce0dfbb0d6ae2388a818da7f"><div class="ttname"><a href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a></div><div class="ttdeci">#define IS_NULL_VECT(a)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00224">geom.h:224</a></div></div>
+<div class="ttc" id="ageom_8h_html_adf6bffc23ef733c49b9e9ac84f1616ef"><div class="ttname"><a href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a></div><div class="ttdeci">#define NULL_VECT2</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00214">geom.h:214</a></div></div>
+<div class="ttc" id="ageom_8h_html_aef4d45b6cf4232c04f4344da5a57fc2d"><div class="ttname"><a href="geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d">ZERO_VECT2</a></div><div class="ttdeci">#define ZERO_VECT2</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00208">geom.h:208</a></div></div>
+<div class="ttc" id="ageom_8h_html_aef9ee3b0deac953bb9bb8f5fdba178af"><div class="ttname"><a href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a></div><div class="ttdeci">#define VECT2(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00190">geom.h:190</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
@@ -1772,8 +1775,8 @@ $(function() {
 <div class="ttc" id="astructmt__cairo__uploader__s_html"><div class="ttname"><a href="structmt__cairo__uploader__s.html">mt_cairo_uploader_s</a></div><div class="ttdef"><b>Definition:</b> <a href="mt__cairo__render_8c_source.html#l00138">mt_cairo_render.c:138</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 <div class="ttc" id="astructrender__surf__t_html"><div class="ttname"><a href="structrender__surf__t.html">render_surf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="mt__cairo__render_8c_source.html#l00074">mt_cairo_render.c:74</a></div></div>
-<div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00104">geom.h:104</a></div></div>
-<div class="ttc" id="astructvect3__t_html"><div class="ttname"><a href="structvect3__t.html">vect3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00079">geom.h:79</a></div></div>
+<div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00116">geom.h:116</a></div></div>
+<div class="ttc" id="astructvect3__t_html"><div class="ttname"><a href="structvect3__t.html">vect3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00089">geom.h:89</a></div></div>
 <div class="ttc" id="astructvtx__t_html"><div class="ttname"><a href="structvtx__t.html">vtx_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00048">glutils.c:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

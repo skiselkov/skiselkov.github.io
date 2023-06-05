@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/acfutils/font_utils.h File Reference</title>
+<title>libacfutils: acfutils/font_utils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cdea18c75d458e25ba82341f56fc5239.html">acfutils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_2f18166f86af4fcbeaddefb60d5355e9.html">acfutils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -76,36 +76,24 @@ $(function() {
 <div class="textblock"><code>#include &lt;cairo.h&gt;</code><br />
 <code>#include &lt;cairo-ft.h&gt;</code><br />
 <code>#include &lt;ft2build.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+<code>#include &lt;FT_FREETYPE_H&gt;</code><br />
+<code>#include &quot;types.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for font_utils.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="font__utils_8h__incl.png" border="0" usemap="#a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2font__utils_8h" alt=""/></div>
-<map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2font__utils_8h" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2font__utils_8h">
-<area shape="rect" title=" " alt="" coords="103,5,278,61"/>
-<area shape="rect" title=" " alt="" coords="5,109,72,136"/>
-<area shape="rect" title=" " alt="" coords="97,109,178,136"/>
-<area shape="rect" title=" " alt="" coords="202,109,286,136"/>
-<area shape="rect" href="types_8h.html" title=" " alt="" coords="310,109,381,136"/>
-<area shape="rect" title=" " alt="" coords="199,184,270,211"/>
-<area shape="rect" title=" " alt="" coords="302,259,373,285"/>
-<area shape="rect" title=" " alt="" coords="346,184,417,211"/>
-<area shape="rect" href="core_8h.html" title=" " alt="" coords="441,184,503,211"/>
-<area shape="rect" href="libconfig_8h.html" title=" " alt="" coords="427,259,517,285"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="font__utils_8h__dep__incl.png" border="0" usemap="#a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2font__utils_8hdep" alt=""/></div>
-<map name="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2font__utils_8hdep" id="a_2home_2diablos_2_next_dev_2libacfutils-dll_2src_2acfutils_2font__utils_8hdep">
-<area shape="rect" title=" " alt="" coords="297,5,472,61"/>
-<area shape="rect" href="mt__cairo__render_8h.html" title=" " alt="" coords="183,109,379,165"/>
-<area shape="rect" href="font__utils_8c.html" title=" " alt="" coords="403,109,577,165"/>
-<area shape="rect" href="widget_8h.html" title=" " alt="" coords="5,213,180,269"/>
-<area shape="rect" href="widget_8c.html" title=" " alt="" coords="68,317,243,373"/>
-<area shape="rect" href="chartdb_8c.html" title=" " alt="" coords="256,213,431,269"/>
-<area shape="rect" href="mt__cairo__render_8c.html" title=" " alt="" coords="455,213,629,269"/>
+<div class="center"><img src="font__utils_8h__incl.png" border="0" usemap="#aacfutils_2font__utils_8h" alt=""/></div>
+<map name="aacfutils_2font__utils_8h" id="aacfutils_2font__utils_8h">
+<area shape="rect" title=" " alt="" coords="171,5,317,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" title=" " alt="" coords="97,80,178,107"/>
+<area shape="rect" title=" " alt="" coords="202,80,286,107"/>
+<area shape="rect" title=" " alt="" coords="310,80,437,107"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="461,80,531,107"/>
+<area shape="rect" title=" " alt="" coords="350,155,421,181"/>
+<area shape="rect" title=" " alt="" coords="453,229,523,256"/>
+<area shape="rect" title=" " alt="" coords="497,155,567,181"/>
+<area shape="rect" href="core_8h.html" title=" " alt="" coords="591,155,654,181"/>
+<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="577,229,668,256"/>
 </map>
 </div>
 </div>
@@ -113,19 +101,23 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a01bae0f61c15f59758ad3cc18a0ef216"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216">ft_err2str</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(ft_err2str)</td></tr>
+<tr class="memitem:a01bae0f61c15f59758ad3cc18a0ef216"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216">ft_err2str</a>&#160;&#160;&#160;<a class="el" href="font__utils_8h.html#acc1b949b883e41c47ba0684b5235cb31">font_utils_ft_err2str</a></td></tr>
 <tr class="separator:a01bae0f61c15f59758ad3cc18a0ef216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6cf431e4e0556a544d7c35f19947658"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#ad6cf431e4e0556a544d7c35f19947658">try_load_font</a>&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(try_load_font)</td></tr>
+<tr class="memitem:ad6cf431e4e0556a544d7c35f19947658"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#ad6cf431e4e0556a544d7c35f19947658">try_load_font</a>&#160;&#160;&#160;<a class="el" href="font__utils_8h.html#a237e3eec4cc7d7e4bd65ffea11948726">font_utils_try_load_font</a></td></tr>
 <tr class="separator:ad6cf431e4e0556a544d7c35f19947658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3d91eedf03d79dfe82ad61ffca9b5fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#a3d91eedf03d79dfe82ad61ffca9b5fcc">ft_err2str</a> (FT_Error err)</td></tr>
-<tr class="separator:a3d91eedf03d79dfe82ad61ffca9b5fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa15fb126e09c5009c59e37c1928d4ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#aa15fb126e09c5009c59e37c1928d4ffd">try_load_font</a> (const char *fontdir, const char *fontfile, FT_Library ft, FT_Face *font, cairo_font_face_t **cr_font)</td></tr>
-<tr class="separator:aa15fb126e09c5009c59e37c1928d4ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1b949b883e41c47ba0684b5235cb31"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#acc1b949b883e41c47ba0684b5235cb31">font_utils_ft_err2str</a> (FT_Error err)</td></tr>
+<tr class="separator:acc1b949b883e41c47ba0684b5235cb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a237e3eec4cc7d7e4bd65ffea11948726"><td class="memItemLeft" align="right" valign="top">bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font__utils_8h.html#a237e3eec4cc7d7e4bd65ffea11948726">font_utils_try_load_font</a> (const char *fontdir, const char *fontfile, FT_Library ft, FT_Face *font, cairo_font_face_t **cr_font)</td></tr>
+<tr class="separator:a237e3eec4cc7d7e4bd65ffea11948726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file contains support utilities to help with font handling and Cairo font operations. </p>
+
+<p class="definition">Definition in file <a class="el" href="font__utils_8h_source.html">font_utils.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a01bae0f61c15f59758ad3cc18a0ef216"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01bae0f61c15f59758ad3cc18a0ef216">&#9670;&nbsp;</a></span>ft_err2str</h2>
 
@@ -133,12 +125,13 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ft_err2str&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(ft_err2str)</td>
+          <td class="memname">#define ft_err2str&#160;&#160;&#160;<a class="el" href="font__utils_8h.html#acc1b949b883e41c47ba0684b5235cb31">font_utils_ft_err2str</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>For backwards compatibility with older code </p>
 
-<p class="definition">Definition at line <a class="el" href="font__utils_8h_source.html#l00040">40</a> of file <a class="el" href="font__utils_8h_source.html">font_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="font__utils_8h_source.html#l00046">46</a> of file <a class="el" href="font__utils_8h_source.html">font_utils.h</a>.</p>
 
 </div>
 </div>
@@ -149,24 +142,25 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define try_load_font&#160;&#160;&#160;<a class="el" href="core_8h.html#ab83cc83b0ae0d87c4236894ff86a3600">ACFSYM</a>(try_load_font)</td>
+          <td class="memname">#define try_load_font&#160;&#160;&#160;<a class="el" href="font__utils_8h.html#a237e3eec4cc7d7e4bd65ffea11948726">font_utils_try_load_font</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>For backwards compatibility with older code </p>
 
-<p class="definition">Definition at line <a class="el" href="font__utils_8h_source.html#l00042">42</a> of file <a class="el" href="font__utils_8h_source.html">font_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="font__utils_8h_source.html#l00053">53</a> of file <a class="el" href="font__utils_8h_source.html">font_utils.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3d91eedf03d79dfe82ad61ffca9b5fcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d91eedf03d79dfe82ad61ffca9b5fcc">&#9670;&nbsp;</a></span>ft_err2str()</h2>
+<a id="acc1b949b883e41c47ba0684b5235cb31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1b949b883e41c47ba0684b5235cb31">&#9670;&nbsp;</a></span>font_utils_ft_err2str()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> const char* ft_err2str </td>
+          <td class="memname">const char* font_utils_ft_err2str </td>
           <td>(</td>
           <td class="paramtype">FT_Error&#160;</td>
           <td class="paramname"><em>err</em></td><td>)</td>
@@ -174,17 +168,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Translates an <code>FT_Error</code> error code into a human-readable string. </p>
 
 </div>
 </div>
-<a id="aa15fb126e09c5009c59e37c1928d4ffd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa15fb126e09c5009c59e37c1928d4ffd">&#9670;&nbsp;</a></span>try_load_font()</h2>
+<a id="a237e3eec4cc7d7e4bd65ffea11948726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a237e3eec4cc7d7e4bd65ffea11948726">&#9670;&nbsp;</a></span>font_utils_try_load_font()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="core_8h.html#a5e3652cae8b48c1ad174f0b06bbd06d0">API_EXPORT</a> <a class="el" href="types_8h.html#a7e838849f6686c3c903f6ff955a433f5">bool_t</a> try_load_font </td>
+          <td class="memname">bool_t font_utils_try_load_font </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fontdir</em>, </td>
@@ -220,6 +215,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Simple font loading front-end.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fontdir</td><td>A path to the directory from which to load the font. </td></tr>
+    <tr><td class="paramname">fontfile</td><td>A font file name. This is concatenated onto the fontdir with a path separator. If you only want to provide one string with a full path to the font file, pass that in fontdir and set fontfile = NULL. </td></tr>
+    <tr><td class="paramname">ft</td><td>FreeType library handle. </td></tr>
+    <tr><td class="paramname">font</td><td>Return FreeType font face object pointer. Release this after the cairo font face object using FT_DoneFace. </td></tr>
+    <tr><td class="paramname">cr_font</td><td>Return cairo font face object pointer. Release this before the freetype font face using cairo_font_face_destroy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if loading the font was successfull, <code>B_FALSE</code> otherwise. In case of error, the reason is logged using logMsg. </dd></dl>
 
 </div>
 </div>

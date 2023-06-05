@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/widget.c Source File</title>
+<title>libacfutils: widget.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,6 +46,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +61,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">widget.c</div>  </div>
@@ -101,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/geom.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/mt_cairo_render.h&quot;</span></div>
@@ -167,8 +163,8 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cur_tt_mtcr != NULL);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    XPLMGetWindowGeometry(win, &amp;left, &amp;top, &amp;right, &amp;bottom);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    mt_cairo_render_draw(cur_tt_mtcr, VECT2(left, bottom),</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        VECT2(right - left, top - bottom));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    mt_cairo_render_draw(cur_tt_mtcr, <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(left, bottom),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(right - left, top - bottom));</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
@@ -821,7 +817,7 @@ $(function() {
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(top_p != NULL);</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(right_p != NULL);</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(bottom_p != NULL);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!IS_NULL_VECT(grav_pt));</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!<a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(grav_pt));</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    w = *right_p - *left_p;</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    h = *top_p - *bottom_p;</div>
@@ -896,42 +892,42 @@ $(function() {
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="comment">/* Resizing from top left corner, lock to lower right corner */</span></div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            VECT2(right, bottom), B_TRUE);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(right, bottom), B_TRUE);</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (left != ctl-&gt;left &amp;&amp; bottom != ctl-&gt;bottom) {</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        <span class="comment">/* Resizing from bottom left corner, lock to upper right */</span></div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            VECT2(right, top), B_TRUE);</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(right, top), B_TRUE);</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right != ctl-&gt;right &amp;&amp; top != ctl-&gt;top) {</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        <span class="comment">/* Resizing from top right corner, lock to lower left */</span></div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            VECT2(left, bottom), B_TRUE);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(left, bottom), B_TRUE);</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right != ctl-&gt;right &amp;&amp; bottom != ctl-&gt;bottom) {</div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        <span class="comment">/* Resizing from bottom right corner, lock to upper left */</span></div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            VECT2(left, top), B_TRUE);</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(left, top), B_TRUE);</div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (left != ctl-&gt;left &amp;&amp; right == ctl-&gt;right) {</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        <span class="comment">/* Resizing from bottom left edge, lock to right edge center */</span></div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;            VECT2(right, AVG(top, bottom)), B_TRUE);</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(right, AVG(top, bottom)), B_TRUE);</div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right != ctl-&gt;right &amp;&amp; left == ctl-&gt;left) {</div>
 <div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <span class="comment">/* Resizing from bottom right edge, lock to left edge center */</span></div>
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            VECT2(left, AVG(top, bottom)), B_TRUE);</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(left, AVG(top, bottom)), B_TRUE);</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (top != ctl-&gt;top &amp;&amp; bottom == ctl-&gt;bottom) {</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;        <span class="comment">/* Resizing from top edge, lock to bottom edge center */</span></div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            VECT2(AVG(left, right), bottom), B_FALSE);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(AVG(left, right), bottom), B_FALSE);</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bottom != ctl-&gt;bottom &amp;&amp; top == ctl-&gt;top) {</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        <span class="comment">/* Resizing from bottom edge, lock to top edge center */</span></div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        calc_resize_geometry(ctl, top, right,</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            &amp;new_left, &amp;new_top, &amp;new_right, &amp;new_bottom,</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            VECT2(AVG(left, right), top), B_FALSE);</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(AVG(left, right), top), B_FALSE);</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        <span class="comment">/* Horizontal/vertical window movement along a single axis. */</span></div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        ctl-&gt;left = new_left = left;</div>
@@ -963,6 +959,9 @@ $(function() {
 <div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
 <div class="ttc" id="adr_8h_html_a32f91305d231135bf3b71e37d9a42fcd"><div class="ttname"><a href="dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd">fdr_find</a></div><div class="ttdeci">#define fdr_find(dr,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00194">dr.h:194</a></div></div>
 <div class="ttc" id="adr_8h_html_a599f879367b9e1c70f5c6f45786f6f44"><div class="ttname"><a href="dr_8h.html#a599f879367b9e1c70f5c6f45786f6f44">dr_geti</a></div><div class="ttdeci">#define dr_geti(__dr)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00224">dr.h:224</a></div></div>
+<div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
+<div class="ttc" id="ageom_8h_html_a5e6f3b1fce0dfbb0d6ae2388a818da7f"><div class="ttname"><a href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a></div><div class="ttdeci">#define IS_NULL_VECT(a)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00224">geom.h:224</a></div></div>
+<div class="ttc" id="ageom_8h_html_aef9ee3b0deac953bb9bb8f5fdba178af"><div class="ttname"><a href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a></div><div class="ttdeci">#define VECT2(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00190">geom.h:190</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
@@ -971,7 +970,7 @@ $(function() {
 <div class="ttc" id="astructmonitor__t_html"><div class="ttname"><a href="structmonitor__t.html">monitor_t</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8h_source.html#l00054">widget.h:54</a></div></div>
 <div class="ttc" id="astructtooltip__set_html"><div class="ttname"><a href="structtooltip__set.html">tooltip_set</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8c_source.html#l00055">widget.c:55</a></div></div>
 <div class="ttc" id="astructtooltip__t_html"><div class="ttname"><a href="structtooltip__t.html">tooltip_t</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8c_source.html#l00049">widget.c:49</a></div></div>
-<div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00104">geom.h:104</a></div></div>
+<div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00116">geom.h:116</a></div></div>
 <div class="ttc" id="astructwin__resize__ctl__t_html"><div class="ttname"><a href="structwin__resize__ctl__t.html">win_resize_ctl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8h_source.html#l00042">widget.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

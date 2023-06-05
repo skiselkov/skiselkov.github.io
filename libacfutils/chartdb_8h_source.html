@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/acfutils/chartdb.h Source File</title>
+<title>libacfutils: acfutils/chartdb.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cdea18c75d458e25ba82341f56fc5239.html">acfutils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_2f18166f86af4fcbeaddefb60d5355e9.html">acfutils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;cairo.h&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;geom.h&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
@@ -228,6 +228,7 @@ $(function() {
 <div class="ttc" id="achartdb_8h_html_adb2d12a5f614646edb061f878a5e0094"><div class="ttname"><a href="chartdb_8h.html#adb2d12a5f614646edb061f878a5e0094">chartdb_purge</a></div><div class="ttdeci">void chartdb_purge(chartdb_t *cdb)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01359">chartdb.c:1359</a></div></div>
 <div class="ttc" id="achartdb_8h_html_ae498b51f39d3e8e8b6984dd43ad2baea"><div class="ttname"><a href="chartdb_8h.html#ae498b51f39d3e8e8b6984dd43ad2baea">chartdb_get_chart_codename</a></div><div class="ttdeci">char * chartdb_get_chart_codename(chartdb_t *cdb, const char *icao, const char *chart_name)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01519">chartdb.c:1519</a></div></div>
 <div class="ttc" id="achartdb_8h_html_afebdf2e1ff16e52de24142a4bc3ecc4a"><div class="ttname"><a href="chartdb_8h.html#afebdf2e1ff16e52de24142a4bc3ecc4a">chartdb_get_chart_surface</a></div><div class="ttdeci">bool_t chartdb_get_chart_surface(chartdb_t *cdb, const char *icao, const char *chart_name, int page, double zoom, bool_t night, cairo_surface_t **surf, int *num_pages)</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8c_source.html#l01636">chartdb.c:1636</a></div></div>
+<div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
 <div class="ttc" id="astructchart__bbox__t_html"><div class="ttname"><a href="structchart__bbox__t.html">chart_bbox_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00109">chartdb.h:109</a></div></div>
 <div class="ttc" id="astructchart__georef__t_html"><div class="ttname"><a href="structchart__georef__t.html">chart_georef_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00128">chartdb.h:128</a></div></div>
 <div class="ttc" id="astructchart__georef__t_html_a8e398d9a28a80055b9f3408408a85cf6"><div class="ttname"><a href="structchart__georef__t.html#a8e398d9a28a80055b9f3408408a85cf6">chart_georef_t::present</a></div><div class="ttdeci">bool_t present</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00129">chartdb.h:129</a></div></div>
@@ -238,8 +239,8 @@ $(function() {
 <div class="ttc" id="astructchart__prov__info__login__t_html_a7447ce3105ae6a8ebf124713156553d1"><div class="ttname"><a href="structchart__prov__info__login__t.html#a7447ce3105ae6a8ebf124713156553d1">chart_prov_info_login_t::cainfo</a></div><div class="ttdeci">char * cainfo</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00101">chartdb.h:101</a></div></div>
 <div class="ttc" id="astructchart__prov__info__login__t_html_a9b20c006bd90a09e1465fb668700e81d"><div class="ttname"><a href="structchart__prov__info__login__t.html#a9b20c006bd90a09e1465fb668700e81d">chart_prov_info_login_t::username</a></div><div class="ttdeci">char * username</div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00083">chartdb.h:83</a></div></div>
 <div class="ttc" id="astructchartdb__s_html"><div class="ttname"><a href="structchartdb__s.html">chartdb_s</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb__impl_8h_source.html#l00100">chartdb_impl.h:100</a></div></div>
-<div class="ttc" id="astructgeo__pos2__t_html"><div class="ttname"><a href="structgeo__pos2__t.html">geo_pos2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00044">geom.h:44</a></div></div>
-<div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00104">geom.h:104</a></div></div>
+<div class="ttc" id="astructgeo__pos2__t_html"><div class="ttname"><a href="structgeo__pos2__t.html">geo_pos2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00049">geom.h:49</a></div></div>
+<div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00116">geom.h:116</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

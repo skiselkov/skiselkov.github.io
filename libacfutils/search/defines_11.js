@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['quad_5fbezier_5ffunc_5157',['quad_bezier_func',['../geom_8h.html#a654a75b63bc512c4cb245188bb9ad895',1,'geom.h']]],
-  ['quad_5fbezier_5ffunc_5finv_5158',['quad_bezier_func_inv',['../geom_8h.html#a1fc3d52c75efb7ff7d4341c1284fe865',1,'geom.h']]],
-  ['quadratic_5fsolve_5159',['quadratic_solve',['../math_8h.html#ac54dfabb7c1fc293fac3ab3a89cd5a51',1,'math.h']]]
+  ['zero_5ffree_1380',['ZERO_FREE',['../safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797',1,'safe_alloc.h']]],
+  ['zero_5ffree_5fn_1381',['ZERO_FREE_N',['../safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc',1,'safe_alloc.h']]],
+  ['zero_5fvect2_1382',['ZERO_VECT2',['../geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d',1,'geom.h']]],
+  ['zero_5fvect3_1383',['ZERO_VECT3',['../geom_8h.html#a3c6d95bea5158d98bbb68a119f7472d8',1,'geom.h']]],
+  ['zero_5fvect3l_1384',['ZERO_VECT3L',['../geom_8h.html#a610be6b44f33d3693436e770385c6b37',1,'geom.h']]]
 ];

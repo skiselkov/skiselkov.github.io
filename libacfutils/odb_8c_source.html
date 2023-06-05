@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/odb.c Source File</title>
+<title>libacfutils: odb.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,6 +46,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +61,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">odb.c</div>  </div>
@@ -326,11 +322,11 @@ $(function() {
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        amsl = FEET2MET(atof(comps[12]));</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        type = dof2type(comps[9]);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        light = dof2light(comps[13]);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        pos.lat = atof(comps[5]);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        pos.lon = atof(comps[6]);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        pos.elev = amsl - agl;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        pos.<a class="code" href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a> = atof(comps[5]);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a> = atof(comps[6]);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        pos.<a class="code" href="structgeo__pos3__t.html#a8dda1d2ff84ad30e50a542bfd0cac21e">elev</a> = amsl - agl;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (!is_valid_lat(pos.lat) || !is_valid_lon(pos.lon) ||</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (!is_valid_lat(pos.<a class="code" href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>) || !is_valid_lon(pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>) ||</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            agl &lt; 0 || !is_valid_alt_m(agl) || !is_valid_alt_m(amsl) ||</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            quant == 0)</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">goto</span> next;</div>
@@ -529,9 +525,9 @@ $(function() {
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structobst__t.html">obst_t</a> *obst = list_head(&amp;tile-&gt;obst); obst != NULL;</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        obst = list_next(&amp;tile-&gt;obst, obst)) {</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;,,US,,,%f,%f,,,%s,%d,%.0f,%.0f,%c,1A,,,,\n&quot;</span>,</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            obst-&gt;pos.lat, obst-&gt;pos.lon, type2dof(obst-&gt;type),</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            obst-&gt;pos.<a class="code" href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>, obst-&gt;pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>, type2dof(obst-&gt;type),</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            obst-&gt;quant, MET2FEET(obst-&gt;agl),</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            MET2FEET(obst-&gt;pos.elev + obst-&gt;agl),</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            MET2FEET(obst-&gt;pos.<a class="code" href="structgeo__pos3__t.html#a8dda1d2ff84ad30e50a542bfd0cac21e">elev</a> + obst-&gt;agl),</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            light2dof(obst-&gt;light));</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
@@ -731,7 +727,7 @@ $(function() {
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    odb = userinfo;</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; </div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    mutex_enter(&amp;odb-&gt;tiles_lock);</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    tile = load_tile(odb, floor(pos.lat), floor(pos.lon), B_FALSE);</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    tile = load_tile(odb, floor(pos.<a class="code" href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>), floor(pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>), B_FALSE);</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    add_tile_obst(type, pos, agl, light, quant, tile);</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    mutex_exit(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;}</div>
@@ -864,7 +860,10 @@ $(function() {
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>
 <div class="ttc" id="astructdl__info__t_html"><div class="ttname"><a href="structdl__info__t.html">dl_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="odb_8c_source.html#l00053">odb.c:53</a></div></div>
-<div class="ttc" id="astructgeo__pos3__t_html"><div class="ttname"><a href="structgeo__pos3__t.html">geo_pos3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00035">geom.h:35</a></div></div>
+<div class="ttc" id="astructgeo__pos3__t_html"><div class="ttname"><a href="structgeo__pos3__t.html">geo_pos3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00040">geom.h:40</a></div></div>
+<div class="ttc" id="astructgeo__pos3__t_html_a7972334534f68166121a6e51b0aac2d6"><div class="ttname"><a href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">geo_pos3_t::lat</a></div><div class="ttdeci">double lat</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00041">geom.h:41</a></div></div>
+<div class="ttc" id="astructgeo__pos3__t_html_a8dda1d2ff84ad30e50a542bfd0cac21e"><div class="ttname"><a href="structgeo__pos3__t.html#a8dda1d2ff84ad30e50a542bfd0cac21e">geo_pos3_t::elev</a></div><div class="ttdeci">double elev</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00043">geom.h:43</a></div></div>
+<div class="ttc" id="astructgeo__pos3__t_html_aa96391e04b5977c50b96d77bea86a01d"><div class="ttname"><a href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">geo_pos3_t::lon</a></div><div class="ttdeci">double lon</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00042">geom.h:42</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 <div class="ttc" id="astructobst__t_html"><div class="ttname"><a href="structobst__t.html">obst_t</a></div><div class="ttdef"><b>Definition:</b> <a href="odb_8c_source.html#l00060">odb.c:60</a></div></div>
 <div class="ttc" id="astructodb__s_html"><div class="ttname"><a href="structodb__s.html">odb_s</a></div><div class="ttdef"><b>Definition:</b> <a href="odb_8c_source.html#l00078">odb.c:78</a></div></div>

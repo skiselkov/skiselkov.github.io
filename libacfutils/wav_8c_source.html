@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/wav.c Source File</title>
+<title>libacfutils: wav.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,6 +46,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +61,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">wav.c</div>  </div>
@@ -806,7 +802,7 @@ $(function() {
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;wav_get_position(<a class="code" href="structwav__t.html">wav_t</a> *wav)</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;{</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keywordflow">if</span> (wav == NULL)</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordflow">return</span> (NULL_VECT3);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a>);</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordflow">return</span> (wav-&gt;pos);</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
@@ -821,7 +817,7 @@ $(function() {
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;wav_get_velocity(<a class="code" href="structwav__t.html">wav_t</a> *wav)</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;{</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordflow">if</span> (wav == NULL)</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <span class="keywordflow">return</span> (NULL_VECT3);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a>);</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">return</span> (wav-&gt;vel);</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;}</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160; </div>
@@ -879,7 +875,7 @@ $(function() {
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;wav_set_dir(<a class="code" href="structwav__t.html">wav_t</a> *wav, <a class="code" href="structvect3__t.html">vect3_t</a> dir)</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;{</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keywordflow">if</span> (wav != NULL &amp;&amp; !VECT3_EQ(wav-&gt;dir, dir)) {</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    <span class="keywordflow">if</span> (wav != NULL &amp;&amp; !<a class="code" href="geom_8h.html#a63bd56b7a9baef06cda42973a3e914d4">VECT3_EQ</a>(wav-&gt;dir, dir)) {</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        WAV_SET_PARAM(alSource3f, AL_DIRECTION, dir.x, dir.y, dir.z);</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        wav-&gt;dir = dir;</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    }</div>
@@ -1006,16 +1002,16 @@ $(function() {
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;alc_listener_get_pos(alc_t *<a class="code" href="structalc.html">alc</a>)</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;{</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    ALfloat x, y, z;</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    LISTENER_OP_PARAM(alGetListener3f, AL_POSITION, NULL_VECT3, &amp;x, &amp;y, &amp;z);</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="keywordflow">return</span> (VECT3(x, y, z));</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    LISTENER_OP_PARAM(alGetListener3f, AL_POSITION, <a class="code" href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a>, &amp;x, &amp;y, &amp;z);</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="geom_8h.html#a4ea373e309a07e638ee6ecbb087987c6">VECT3</a>(x, y, z));</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;}</div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160; </div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;alc_listener_set_orient(alc_t *<a class="code" href="structalc.html">alc</a>, <a class="code" href="structvect3__t.html">vect3_t</a> orient)</div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;{</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <a class="code" href="structvect3__t.html">vect3_t</a> at = vect3_rot(vect3_rot(VECT3(0, 0, -1), orient.x, 0),</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <a class="code" href="structvect3__t.html">vect3_t</a> at = <a class="code" href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a>(<a class="code" href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a>(<a class="code" href="geom_8h.html#a4ea373e309a07e638ee6ecbb087987c6">VECT3</a>(0, 0, -1), orient.x, 0),</div>
 <div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        orient.y, 1);</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    <a class="code" href="structvect3__t.html">vect3_t</a> up = vect3_rot(vect3_rot(vect3_rot(VECT3(0, 1, 0),</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    <a class="code" href="structvect3__t.html">vect3_t</a> up = <a class="code" href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a>(<a class="code" href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a>(<a class="code" href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a>(<a class="code" href="geom_8h.html#a4ea373e309a07e638ee6ecbb087987c6">VECT3</a>(0, 1, 0),</div>
 <div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        orient.x, 0), orient.z, 2), orient.y, 1);</div>
 <div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    ALfloat v[6] = { at.x, at.y, at.z, up.x, up.y, up.z };</div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    LISTENER_SET_PARAM(alListenerfv, AL_ORIENTATION, v);</div>
@@ -1051,13 +1047,17 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00120">assert.h:120</a></div></div>
 <div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00131">assert.h:131</a></div></div>
+<div class="ttc" id="ageom_8h_html_a200e879824b017925f05b0dddf6b2224"><div class="ttname"><a href="geom_8h.html#a200e879824b017925f05b0dddf6b2224">NULL_VECT3</a></div><div class="ttdeci">#define NULL_VECT3</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00216">geom.h:216</a></div></div>
+<div class="ttc" id="ageom_8h_html_a4ea373e309a07e638ee6ecbb087987c6"><div class="ttname"><a href="geom_8h.html#a4ea373e309a07e638ee6ecbb087987c6">VECT3</a></div><div class="ttdeci">#define VECT3(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00192">geom.h:192</a></div></div>
+<div class="ttc" id="ageom_8h_html_a63bd56b7a9baef06cda42973a3e914d4"><div class="ttname"><a href="geom_8h.html#a63bd56b7a9baef06cda42973a3e914d4">VECT3_EQ</a></div><div class="ttdeci">#define VECT3_EQ(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00198">geom.h:198</a></div></div>
+<div class="ttc" id="ageom_8h_html_a8f5d3edf01f5686988bab56bcb53e177"><div class="ttname"><a href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a></div><div class="ttdeci">vect3_t vect3_rot(vect3_t v, double angle, unsigned axis)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l00477">geom.c:477</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructalc_html"><div class="ttname"><a href="structalc.html">alc</a></div><div class="ttdef"><b>Definition:</b> <a href="wav_8c_source.html#l00096">wav.c:96</a></div></div>
 <div class="ttc" id="astructmp3__info__t_html"><div class="ttname"><a href="structmp3__info__t.html">mp3_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="minimp3_8h_source.html#l00006">minimp3.h:6</a></div></div>
 <div class="ttc" id="astructriff__chunk__t_html"><div class="ttname"><a href="structriff__chunk__t.html">riff_chunk_t</a></div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00050">riff.h:50</a></div></div>
-<div class="ttc" id="astructvect3__t_html"><div class="ttname"><a href="structvect3__t.html">vect3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00079">geom.h:79</a></div></div>
+<div class="ttc" id="astructvect3__t_html"><div class="ttname"><a href="structvect3__t.html">vect3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00089">geom.h:89</a></div></div>
 <div class="ttc" id="astructwav__fmt__hdr__t_html"><div class="ttname"><a href="structwav__fmt__hdr__t.html">wav_fmt_hdr_t</a></div><div class="ttdef"><b>Definition:</b> <a href="wav_8h_source.html#l00042">wav.h:42</a></div></div>
 <div class="ttc" id="astructwav__t_html"><div class="ttname"><a href="structwav__t.html">wav_t</a></div><div class="ttdef"><b>Definition:</b> <a href="wav_8h_source.html#l00051">wav.h:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

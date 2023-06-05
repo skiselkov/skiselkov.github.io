@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['kcas2ktas_3251',['kcas2ktas',['../perf_8h.html#ac0c1625a0012c73d5e0b9603ada77b1b',1,'kcas2ktas(double kcas, double pressure, double oat):&#160;perf.c'],['../perf_8c.html#ab46dc7730db9acf424b8fe2b8656ecb9',1,'kcas2ktas(double kcas, double pressure, double oat):&#160;perf.c']]],
-  ['kcas2mach_3252',['kcas2mach',['../perf_8h.html#ab5cc90b6e89b9e9b0fc3169000608fae',1,'kcas2mach(double kcas, double alt_ft, double qnh, double oat):&#160;perf.c'],['../perf_8c.html#a6781a14f7bc3b1c50580aaebea828497',1,'kcas2mach(double kcas, double alt_ft, double qnh, double oat):&#160;perf.c']]],
-  ['keas2mach_3253',['keas2mach',['../perf_8h.html#ab3bc61388a0172ab9e97952453d1beb8',1,'keas2mach(double keas, double press):&#160;perf.c'],['../perf_8c.html#a0aea812475b260a05afde50a684ea29f',1,'keas2mach(double keas, double press):&#160;perf.c']]],
-  ['ktas2kcas_3254',['ktas2kcas',['../perf_8h.html#aeadfc405e9720137a3fd87f2f2747822',1,'ktas2kcas(double ktas, double pressure, double oat):&#160;perf.c'],['../perf_8c.html#af3a0c043b157cb74d06e32b2e11a1d21',1,'ktas2kcas(double ktas, double pressure, double oat):&#160;perf.c']]],
-  ['ktas2mach_3255',['ktas2mach',['../perf_8h.html#aab2172cd93d25f5861ecce6fc0bb5000',1,'ktas2mach(double ktas, double oat):&#160;perf.c'],['../perf_8c.html#a13857f717c849aa2f61c44d4a948447e',1,'ktas2mach(double ktas, double oat):&#160;perf.c']]]
+  ['lacf_5fbase64_5fdecode_1097',['lacf_base64_decode',['../base64_8h.html#af2956b6b6ba4c010b7c2cf6240014529',1,'base64.c']]],
+  ['lacf_5fbase64_5fdecode2_1098',['lacf_base64_decode2',['../base64_8h.html#aff77e2cb4aeb3fb4f880cdaaa4d9a759',1,'base64.c']]],
+  ['lacf_5fbase64_5fencode_1099',['lacf_base64_encode',['../base64_8h.html#a941643c1ff15a4ed96a845edf95c2aee',1,'base64.c']]],
+  ['lacf_5fbase64_5fencode2_1100',['lacf_base64_encode2',['../base64_8h.html#a3e5de2db2559e0d7ee6b0628c0d8153b',1,'base64.c']]],
+  ['lacf_5ffree_1101',['lacf_free',['../core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85',1,'lacf_free(void *buf):&#160;core.c'],['../core_8c.html#a8f9ec45dfcbfb9fbab71c05303821c85',1,'lacf_free(void *buf):&#160;core.c']]],
+  ['lacf_5fmalloc_1102',['lacf_malloc',['../core_8h.html#a14eef1047ed46909f05063d421b5f56c',1,'lacf_malloc(size_t n):&#160;core.c'],['../core_8c.html#a14eef1047ed46909f05063d421b5f56c',1,'lacf_malloc(size_t n):&#160;core.c']]],
+  ['lacf_5fopen_5furl_1103',['lacf_open_URL',['../apps_8h.html#a4be870e47611c712f2dac7ad7fb57f38',1,'apps.h']]],
+  ['lcc_5finit_1104',['lcc_init',['../geom_8h.html#ae8e8e83ea197e1c54c27aca2c1b28baa',1,'geom.c']]]
 ];

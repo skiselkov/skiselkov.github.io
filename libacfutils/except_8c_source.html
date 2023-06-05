@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: /home/diablos/NextDev/libacfutils-dll/src/except.c Source File</title>
+<title>libacfutils: except.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,6 +46,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +61,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">except.c</div>  </div>
@@ -92,7 +88,7 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * CDDL HEADER END</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Copyright 2018 Saso Kiselkov. All rights reserved.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Copyright 2023 Saso Kiselkov. All rights reserved.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -106,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !APL &amp;&amp; !LIN */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;acfutils/except.h&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="except_8h.html">acfutils/except.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
@@ -368,36 +364,39 @@ $(function() {
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* APL || LIN */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;except_init(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!inited);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    inited = B_TRUE;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#if LIN || APL</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    signal_handler_init();</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    prev_windows_except_handler =</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        SetUnhandledExceptionFilter(handle_windows_exception);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;except_fini(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (!inited)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    inited = B_FALSE;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#if LIN || APL</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    signal_handler_fini();</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    SetUnhandledExceptionFilter(prev_windows_except_handler);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="except_8h.html#abece350a52da35e60605fe3ad6d1afdf">  304</a></span>&#160;<a class="code" href="except_8h.html#abece350a52da35e60605fe3ad6d1afdf">except_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!inited);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    inited = B_TRUE;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#if LIN || APL</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    signal_handler_init();</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    prev_windows_except_handler =</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        SetUnhandledExceptionFilter(handle_windows_exception);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="except_8h.html#a219c7bfc0b03e17ce76bb1c7b7697a69">  322</a></span>&#160;<a class="code" href="except_8h.html#a219c7bfc0b03e17ce76bb1c7b7697a69">except_fini</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (!inited)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    inited = B_FALSE;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">#if LIN || APL</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    signal_handler_fini();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    SetUnhandledExceptionFilter(prev_windows_except_handler);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !LIN &amp;&amp; !APL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a4bb880dc20444723fd13922d72d79937"><div class="ttname"><a href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a></div><div class="ttdeci">#define VERIFY0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00149">assert.h:149</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
+<div class="ttc" id="aexcept_8h_html"><div class="ttname"><a href="except_8h.html">except.h</a></div></div>
+<div class="ttc" id="aexcept_8h_html_a219c7bfc0b03e17ce76bb1c7b7697a69"><div class="ttname"><a href="except_8h.html#a219c7bfc0b03e17ce76bb1c7b7697a69">except_fini</a></div><div class="ttdeci">void except_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="except_8c_source.html#l00322">except.c:322</a></div></div>
+<div class="ttc" id="aexcept_8h_html_abece350a52da35e60605fe3ad6d1afdf"><div class="ttname"><a href="except_8h.html#abece350a52da35e60605fe3ad6d1afdf">except_init</a></div><div class="ttdeci">void except_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="except_8c_source.html#l00304">except.c:304</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

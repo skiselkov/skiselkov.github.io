@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['zlib_5fcompress_899',['zlib_compress',['../compress_8h.html#a935ac026a0a2c0e9e7fd13f8b45c2e98',1,'compress_zlib.c']]],
-  ['zlib_5fdecompress_900',['zlib_decompress',['../compress_8h.html#a6176508ee1e8fba42a96cd306f183b97',1,'compress_zlib.c']]],
-  ['zlib_5ftest_901',['zlib_test',['../compress_8h.html#a391b4bb1ca71c5fb6befffafd0a69253',1,'compress_zlib.c']]]
+  ['hdg2dir_1095',['hdg2dir',['../geom_8h.html#afef5027f89205069f5db70e3ed4460e0',1,'geom.c']]]
 ];

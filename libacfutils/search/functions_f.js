@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['rec_5fcb_3409',['rec_cb',['../compress__zip_8c.html#a3dd9f4b558d9f941aad8d6423c05ba51',1,'compress_zip.c']]],
-  ['rel_5fangle_3410',['rel_angle',['../geom_8h.html#a95524074f1f51b7c7332fab9964da9b7',1,'rel_angle(double a1, double a2) PURE_ATTR:&#160;geom.c'],['../geom_8c.html#acae90c48cb9c26a1a95e97ab6a18b6c9',1,'rel_angle(double a1, double a2):&#160;geom.c']]],
-  ['rel_5fhdg_5fimpl_3411',['rel_hdg_impl',['../helpers_8h.html#a97c92876bf548ebe198fac19378a93ef',1,'rel_hdg_impl(double hdg1, double hdg2, const char *file, int line):&#160;helpers.c'],['../helpers_8c.html#aab2e0b814c99c025f8f9f104fbc2524b',1,'rel_hdg_impl(double hdg1, double hdg2, const char *file, int line):&#160;helpers.c']]],
-  ['remove_5fdirectory_3412',['remove_directory',['../helpers_8h.html#aa229ebeac14d63bb501bdd32320f2a0b',1,'remove_directory(const char *dirname):&#160;helpers.c'],['../helpers_8c.html#a3b91113e3a9b25ab00175dbe5d7301af',1,'remove_directory(const char *dirname):&#160;helpers.c']]],
-  ['remove_5ffile_3413',['remove_file',['../helpers_8c.html#ac0e3a3ed39b38189fa9e7c99c536eec7',1,'remove_file(const char *filename, bool_t notfound_ok):&#160;helpers.c'],['../helpers_8h.html#acd0dc9ca74a97088a1c7bcbe2099e637',1,'remove_file(const char *filename, bool_t notfound_ok):&#160;helpers.c']]],
-  ['riff_5fdump_3414',['riff_dump',['../riff_8h.html#afb1d2f3451fa16c0f51f2189df31a670',1,'riff_dump(const riff_chunk_t *topchunk):&#160;riff.c'],['../riff_8c.html#a646a9cff159ba6abb1de726bf54ef322',1,'riff_dump(const riff_chunk_t *topchunk):&#160;riff.c']]],
-  ['riff_5ffind_5fchunk_3415',['riff_find_chunk',['../riff_8h.html#a13c5c97612d7b05fbf0f86e7e43d4f3c',1,'riff_find_chunk(riff_chunk_t *topchunk,...):&#160;riff.c'],['../riff_8c.html#a42ed08edbc0484e940d2016e7fc2169e',1,'riff_find_chunk(riff_chunk_t *topchunk,...):&#160;riff.c']]],
-  ['riff_5ffree_5fchunk_3416',['riff_free_chunk',['../riff_8h.html#aa0b2c4b88e021031ce26e1e9de176b17',1,'riff_free_chunk(riff_chunk_t *c):&#160;riff.c'],['../riff_8c.html#adad0194e533af1c3f496801422ff2a52',1,'riff_free_chunk(riff_chunk_t *c):&#160;riff.c']]],
-  ['riff_5fparse_3417',['riff_parse',['../riff_8h.html#af9f031cc5599493b430960c03a645142',1,'riff_parse(uint32_t filetype, uint8_t *buf, size_t bufsz):&#160;riff.c'],['../riff_8c.html#a078a465858b4382fe7fb0a9a567cf6bc',1,'riff_parse(uint32_t filetype, uint8_t *buf, size_t bufsz):&#160;riff.c']]]
+  ['safe_5fappend_5frealloc_1112',['safe_append_realloc',['../safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e',1,'safe_alloc.h']]],
+  ['safe_5fcalloc_1113',['safe_calloc',['../safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1',1,'safe_alloc.h']]],
+  ['safe_5fmalloc_1114',['safe_malloc',['../safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74',1,'safe_alloc.h']]],
+  ['safe_5frealloc_1115',['safe_realloc',['../safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658',1,'safe_alloc.h']]],
+  ['safe_5fstrdup_1116',['safe_strdup',['../safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a',1,'safe_alloc.h']]],
+  ['sph2ecef_1117',['sph2ecef',['../geom_8h.html#a68c240a440e56b2c31f8f7748e3b2af0',1,'geom.c']]],
+  ['sph2ecmi_1118',['sph2ecmi',['../geom_8h.html#acddd60d3ea495cec8655be1cfc459dfd',1,'geom.c']]],
+  ['sph_5fxlate_1119',['sph_xlate',['../geom_8h.html#a723ffc427ca85abc1002dc96095f02ce',1,'geom.c']]],
+  ['sph_5fxlate_5finit_1120',['sph_xlate_init',['../geom_8h.html#a64fd8a0e813ab24cfc8f15144d0dde4a',1,'geom.c']]],
+  ['sph_5fxlate_5fvect_1121',['sph_xlate_vect',['../geom_8h.html#ad7e49e720e5ff4d2a2df30f80948fd06',1,'geom.c']]],
+  ['stereo_5ffpp_5finit_1122',['stereo_fpp_init',['../geom_8h.html#a83caa3e6874080fef88ade04fdb3c2d9',1,'geom.c']]]
 ];

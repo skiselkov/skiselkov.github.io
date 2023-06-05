@@ -106,7 +106,7 @@ $(function() {
 <p>A further complication of the absence of an Airports.txt is that this file contained both the GPA and TCH for each runway and although it did sometimes require some fuzzy matching to account for outdated scenery not exactly matching the navdata, we could obtain this information from one place.</p>
 <p>So for X-Plane 11, we've implemented a new method of obtaining this information. By default, if a runway has an instrument approach (unless ifr_only=B_FALSE), it will have an entry in CIFP. Runway entries in APPCH-type procedures specify the TCH and GPA in columns 24 and 29 (ARINC 424 fields 4.1.9.1.85-89 and 4.1.9.1.103-106). We only use the first such occurence. If there are multiple approaches to the runway, they should all end up with the same TCH and GPA. This should cover pretty much every case. In the rare case where we <em>don't</em> get the TCH and GPA this way, we try a fallback mechanism. Almost every instrument approach runway has some kind of visual glideslope indication (VGSI) right next to it. We can extract the location of those from the apt.dat file. These VGSIs are located in the exact touchdown point and have a fixed GPA. So we simply look for a VGSI close to the runway's centerline and that is aligned with the runway, compute the longitudinal displacement of this indicator from the runway threshold and using the indicator's GPA compute the optimal TCH. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/diablos/NextDev/libacfutils-dll/src/<a class="el" href="airportdb_8c_source.html">airportdb.c</a></li>
+<li><a class="el" href="airportdb_8c_source.html">airportdb.c</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

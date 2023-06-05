@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lacf_5fdestroy_1039',['LACF_DESTROY',['../core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e',1,'core.h']]]
+  ['fdr_5ffind_1322',['fdr_find',['../dr_8h.html#a32f91305d231135bf3b71e37d9a42fcd',1,'dr.h']]],
+  ['ft_5ferr2str_1323',['ft_err2str',['../font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216',1,'font_utils.h']]]
 ];

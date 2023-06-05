@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['verify_1045',['VERIFY',['../assert_8h.html#a3675cf895544424c921cf6f8f5e91887',1,'assert.h']]],
-  ['verify0_1046',['VERIFY0',['../assert_8h.html#a4bb880dc20444723fd13922d72d79937',1,'assert.h']]],
-  ['verify3f_1047',['VERIFY3F',['../assert_8h.html#aa7b7913ad7c89dabd993f7fa9e3fee66',1,'assert.h']]],
-  ['verify3p_1048',['VERIFY3P',['../assert_8h.html#aa8e88c2594c1da253f4d4669f7e70482',1,'assert.h']]],
-  ['verify3s_1049',['VERIFY3S',['../assert_8h.html#ad1382f354d22108a9b483f437eac5536',1,'assert.h']]],
-  ['verify3u_1050',['VERIFY3U',['../assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12',1,'assert.h']]],
-  ['verify_5ffail_1051',['VERIFY_FAIL',['../assert_8h.html#a1b4c500b49dd44bf70ee464d5b5391fa',1,'assert.h']]],
-  ['verify_5fmsg_1052',['VERIFY_MSG',['../assert_8h.html#ad157a1a262c174b8a8744896359009b7',1,'assert.h']]]
+  ['null_5fgeo_5fpos2_1346',['NULL_GEO_POS2',['../geom_8h.html#a61e7e17bb959afeaf8b3b01eb6774115',1,'geom.h']]],
+  ['null_5fgeo_5fpos3_1347',['NULL_GEO_POS3',['../geom_8h.html#ab7ca06c097ab7c1bc6a9506212199bba',1,'geom.h']]],
+  ['null_5fvect2_1348',['NULL_VECT2',['../geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef',1,'geom.h']]],
+  ['null_5fvect3_1349',['NULL_VECT3',['../geom_8h.html#a200e879824b017925f05b0dddf6b2224',1,'geom.h']]],
+  ['null_5fvect3l_1350',['NULL_VECT3L',['../geom_8h.html#a0c164dd294e71617d1bd5d2dfff7e6a3',1,'geom.h']]]
 ];
