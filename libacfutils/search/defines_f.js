@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['unused_1378',['UNUSED',['../core_8h.html#a86d500a34c624c2cae56bc25a31b12f3',1,'core.h']]],
-  ['unused_5fattr_1379',['UNUSED_ATTR',['../core_8h.html#ab58a705ceeb200925bb0a7e302959982',1,'core.h']]]
+  ['texsz_5falloc_1503',['TEXSZ_ALLOC',['../glutils_8h.html#a6f4e701382c1ee3a6160ec50b47d1fb6',1,'glutils.h']]],
+  ['texsz_5falloc_5fbytes_1504',['TEXSZ_ALLOC_BYTES',['../glutils_8h.html#a5d6e37572080537ccdf23dc85b2460e7',1,'glutils.h']]],
+  ['texsz_5falloc_5fbytes_5finstance_1505',['TEXSZ_ALLOC_BYTES_INSTANCE',['../glutils_8h.html#a209f481518743f3159d158b8805e7733',1,'glutils.h']]],
+  ['texsz_5falloc_5finstance_1506',['TEXSZ_ALLOC_INSTANCE',['../glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b',1,'glutils.h']]],
+  ['texsz_5fdecl_5ftoken_5fglob_1507',['TEXSZ_DECL_TOKEN_GLOB',['../glutils_8h.html#a331e95ce12a47bb1cafc77658a2a1aa3',1,'glutils.h']]],
+  ['texsz_5fdef_5ftoken_5fglob_1508',['TEXSZ_DEF_TOKEN_GLOB',['../glutils_8h.html#a06ce8d766b9a0f782d49f2705f5ad8c7',1,'glutils.h']]],
+  ['texsz_5ffree_1509',['TEXSZ_FREE',['../glutils_8h.html#a86b5c5defca6d5706e810517e2797d48',1,'glutils.h']]],
+  ['texsz_5ffree_5fbytes_1510',['TEXSZ_FREE_BYTES',['../glutils_8h.html#ac443ec1febad527b7469632f2903a568',1,'glutils.h']]],
+  ['texsz_5ffree_5fbytes_5finstance_1511',['TEXSZ_FREE_BYTES_INSTANCE',['../glutils_8h.html#a00052b9fc0634a676498596e0f36a64d',1,'glutils.h']]],
+  ['texsz_5ffree_5finstance_1512',['TEXSZ_FREE_INSTANCE',['../glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a',1,'glutils.h']]],
+  ['texsz_5fmk_5ftoken_1513',['TEXSZ_MK_TOKEN',['../glutils_8h.html#a5c80f51fb1c1221033597328becf2112',1,'glutils.h']]],
+  ['to_5fgeo2_1514',['TO_GEO2',['../geom_8h.html#acb345612c61c17e2295a2cf2ddaa1b06',1,'geom.h']]],
+  ['to_5fgeo2_5f32_1515',['TO_GEO2_32',['../geom_8h.html#ab51bc790ffda01f243abf3e193594463',1,'geom.h']]],
+  ['to_5fgeo3_1516',['TO_GEO3',['../geom_8h.html#abc904dca3c93536cf04de3956a28b90e',1,'geom.h']]],
+  ['to_5fgeo3_5f32_1517',['TO_GEO3_32',['../geom_8h.html#af8492b4914e60cbc3e2c685147b537e2',1,'geom.h']]],
+  ['try_5fload_5ffont_1518',['try_load_font',['../font__utils_8h.html#ad6cf431e4e0556a544d7c35f19947658',1,'font_utils.h']]]
 ];

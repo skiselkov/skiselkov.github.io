@@ -104,11 +104,11 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glctx_8h.html">acfutils/glctx.h</a>&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;acfutils/glew.h&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glew_8h.html">acfutils/glew.h</a>&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;acfutils/mt_cairo_render.h&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;acfutils/glutils.h&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glutils_8h.html">acfutils/glutils.h</a>&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;acfutils/shader.h&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;acfutils/thread.h&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;acfutils/time.h&quot;</span></div>
@@ -131,8 +131,8 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">            logMsg(__VA_ARGS__); \</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">    } while (0)</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;TEXSZ_MK_TOKEN(mt_cairo_render_tex);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;TEXSZ_MK_TOKEN(mt_cairo_render_pbo);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="glutils_8h.html#a5c80f51fb1c1221033597328becf2112">TEXSZ_MK_TOKEN</a>(mt_cairo_render_tex);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="glutils_8h.html#a5c80f51fb1c1221033597328becf2112">TEXSZ_MK_TOKEN</a>(mt_cairo_render_pbo);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    GLfloat     pos[3];</div>
@@ -540,13 +540,13 @@ $(function() {
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; !on_main_thread) {</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        glBindBuffer(GL_ARRAY_BUFFER, mtcr-&gt;vtx_buf);</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        glutils_enable_vtx_attr_ptr(VTX_ATTRIB_POS, 3, GL_FLOAT,</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <a class="code" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a>(VTX_ATTRIB_POS, 3, GL_FLOAT,</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            GL_FALSE, <span class="keyword">sizeof</span> (<a class="code" href="structvtx__t.html">vtx_t</a>), offsetof(<a class="code" href="structvtx__t.html">vtx_t</a>, pos));</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        glutils_enable_vtx_attr_ptr(VTX_ATTRIB_TEX0, 2, GL_FLOAT,</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <a class="code" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a>(VTX_ATTRIB_TEX0, 2, GL_FLOAT,</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            GL_FALSE, <span class="keyword">sizeof</span> (<a class="code" href="structvtx__t.html">vtx_t</a>), offsetof(<a class="code" href="structvtx__t.html">vtx_t</a>, tex0));</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    }</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    mtcr-&gt;idx_buf = glutils_make_quads_IBO(4);</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    mtcr-&gt;idx_buf = <a class="code" href="glutils_8h.html#aa9f099f343d02ac76f20a68fa8ddc57d">glutils_make_quads_IBO</a>(4);</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; !on_main_thread)</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        glBindVertexArray(old_vao);</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);</div>
@@ -555,7 +555,7 @@ $(function() {
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    glGenBuffers(1, &amp;mtcr-&gt;pbo);</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(mtcr-&gt;pbo != 0);</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    mtcr_gl_formats(mtcr, &amp;intfmt, &amp;gl_fmt);</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    IF_TEXSZ(TEXSZ_ALLOC_INSTANCE(mt_cairo_render_pbo,</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <a class="code" href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">IF_TEXSZ</a>(<a class="code" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">TEXSZ_ALLOC_INSTANCE</a>(mt_cairo_render_pbo,</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        mtcr, mtcr-&gt;init_filename, mtcr-&gt;init_line, gl_fmt,</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        GL_UNSIGNED_BYTE, mtcr-&gt;w, mtcr-&gt;h));</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
@@ -585,7 +585,7 @@ $(function() {
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="keywordflow">if</span> (on_main_thread)</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        XPLMBindTexture2d(0, 0);</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    IF_TEXSZ(TEXSZ_ALLOC_INSTANCE(mt_cairo_render_tex, mtcr,</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <a class="code" href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">IF_TEXSZ</a>(<a class="code" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">TEXSZ_ALLOC_INSTANCE</a>(mt_cairo_render_tex, mtcr,</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        mtcr-&gt;init_filename, mtcr-&gt;init_line, gl_fmt,</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        GL_UNSIGNED_BYTE, mtcr-&gt;w, mtcr-&gt;h));</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    mtcr-&gt;texed = B_FALSE;</div>
@@ -620,7 +620,7 @@ $(function() {
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <span class="keywordflow">if</span> (mtcr-&gt;tex != 0) {</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        glDeleteTextures(1, &amp;mtcr-&gt;tex);</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        mtcr-&gt;tex = 0;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        IF_TEXSZ(TEXSZ_FREE_INSTANCE(mt_cairo_render_tex, mtcr,</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <a class="code" href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">IF_TEXSZ</a>(<a class="code" href="glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a">TEXSZ_FREE_INSTANCE</a>(mt_cairo_render_tex, mtcr,</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            format, GL_UNSIGNED_BYTE, mtcr-&gt;w, mtcr-&gt;h));</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    }</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keywordflow">if</span> (mtcr-&gt;pbo != 0) {</div>
@@ -632,7 +632,7 @@ $(function() {
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        }</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        glDeleteBuffers(1, &amp;mtcr-&gt;pbo);</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        mtcr-&gt;pbo = 0;</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        IF_TEXSZ(TEXSZ_FREE_INSTANCE(mt_cairo_render_pbo, mtcr,</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        <a class="code" href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">IF_TEXSZ</a>(<a class="code" href="glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a">TEXSZ_FREE_INSTANCE</a>(mt_cairo_render_pbo, mtcr,</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            format, GL_UNSIGNED_BYTE, mtcr-&gt;w, mtcr-&gt;h));</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    }</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keywordflow">if</span> (mtcr-&gt;sync != NULL) {</div>
@@ -1291,9 +1291,9 @@ $(function() {
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;        glBindBuffer(GL_ARRAY_BUFFER, mtcr-&gt;vtx_buf);</div>
 <div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mtcr-&gt;idx_buf);</div>
 <div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160; </div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        glutils_enable_vtx_attr_ptr(mtcr-&gt;shader_loc_vtx_pos, 3,</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <a class="code" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a>(mtcr-&gt;shader_loc_vtx_pos, 3,</div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;            GL_FLOAT, GL_FALSE, sizeof (<a class="code" href="structvtx__t.html">vtx_t</a>), offsetof(<a class="code" href="structvtx__t.html">vtx_t</a>, pos));</div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        glutils_enable_vtx_attr_ptr(mtcr-&gt;shader_loc_vtx_tex0, 2,</div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        <a class="code" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a>(mtcr-&gt;shader_loc_vtx_tex0, 2,</div>
 <div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;            GL_FLOAT, GL_FALSE, sizeof (<a class="code" href="structvtx__t.html">vtx_t</a>), offsetof(<a class="code" href="structvtx__t.html">vtx_t</a>, tex0));</div>
 <div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    }</div>
 <div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    prepare_vtx_buffer(mtcr, pos, size, x1, x2, y1, y2, vtx_buf);</div>
@@ -1332,8 +1332,8 @@ $(function() {
 <div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        glDisableClientState(GL_COLOR_ARRAY);</div>
 <div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        XPLMBindTexture2d(0, 0);</div>
 <div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;        glutils_disable_vtx_attr_ptr(mtcr-&gt;shader_loc_vtx_pos);</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        glutils_disable_vtx_attr_ptr(mtcr-&gt;shader_loc_vtx_tex0);</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;        <a class="code" href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a>(mtcr-&gt;shader_loc_vtx_pos);</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;        <a class="code" href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a>(mtcr-&gt;shader_loc_vtx_tex0);</div>
 <div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;<span class="comment">         * X-Plane needs to know that we have unbound the texture</span></div>
 <div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;<span class="comment">         * previously bound in slot #0. Otherwise we can cause</span></div>
@@ -1747,14 +1747,14 @@ $(function() {
 <div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;    <a class="code" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>(mtul);</div>
 <div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="aassert_8h_html_a1ab9388cd7eb3262e94ea7f08073ea53"><div class="ttname"><a href="assert_8h.html#a1ab9388cd7eb3262e94ea7f08073ea53">ASSERT3P</a></div><div class="ttdeci">#define ASSERT3P(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00191">assert.h:191</a></div></div>
+<div class="ttc" id="aassert_8h_html_a1ab9388cd7eb3262e94ea7f08073ea53"><div class="ttname"><a href="assert_8h.html#a1ab9388cd7eb3262e94ea7f08073ea53">ASSERT3P</a></div><div class="ttdeci">#define ASSERT3P(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00196">assert.h:196</a></div></div>
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
-<div class="ttc" id="aassert_8h_html_a63557ec6fbf04170cda1183151e62e64"><div class="ttname"><a href="assert_8h.html#a63557ec6fbf04170cda1183151e62e64">ASSERT3S</a></div><div class="ttdeci">#define ASSERT3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00188">assert.h:188</a></div></div>
-<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00187">assert.h:187</a></div></div>
-<div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00190">assert.h:190</a></div></div>
-<div class="ttc" id="aassert_8h_html_acc45baee07ce65ad601c26de805ffc40"><div class="ttname"><a href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a></div><div class="ttdeci">#define ASSERT0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
-<div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00120">assert.h:120</a></div></div>
-<div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00131">assert.h:131</a></div></div>
+<div class="ttc" id="aassert_8h_html_a63557ec6fbf04170cda1183151e62e64"><div class="ttname"><a href="assert_8h.html#a63557ec6fbf04170cda1183151e62e64">ASSERT3S</a></div><div class="ttdeci">#define ASSERT3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00193">assert.h:193</a></div></div>
+<div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
+<div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00195">assert.h:195</a></div></div>
+<div class="ttc" id="aassert_8h_html_acc45baee07ce65ad601c26de805ffc40"><div class="ttname"><a href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a></div><div class="ttdeci">#define ASSERT0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00197">assert.h:197</a></div></div>
+<div class="ttc" id="aassert_8h_html_ad1382f354d22108a9b483f437eac5536"><div class="ttname"><a href="assert_8h.html#ad1382f354d22108a9b483f437eac5536">VERIFY3S</a></div><div class="ttdeci">#define VERIFY3S(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00125">assert.h:125</a></div></div>
+<div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00136">assert.h:136</a></div></div>
 <div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00134">core.h:134</a></div></div>
 <div class="ttc" id="adr_8h_html"><div class="ttname"><a href="dr_8h.html">dr.h</a></div></div>
 <div class="ttc" id="adr_8h_html_a148d32be3eb17ff7477544126552b7d0"><div class="ttname"><a href="dr_8h.html#a148d32be3eb17ff7477544126552b7d0">dr_getvf32</a></div><div class="ttdeci">#define dr_getvf32(__dr, __ff, __off, __num)</div><div class="ttdef"><b>Definition:</b> <a href="dr_8h_source.html#l00349">dr.h:349</a></div></div>
@@ -1775,6 +1775,15 @@ $(function() {
 <div class="ttc" id="aglctx_8h_html_a9b796c929954d0439c50e8cf572442e6"><div class="ttname"><a href="glctx_8h.html#a9b796c929954d0439c50e8cf572442e6">glctx_get_xplane_win_ptr</a></div><div class="ttdeci">API_EXPORT void * glctx_get_xplane_win_ptr(void)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00361">glctx.c:361</a></div></div>
 <div class="ttc" id="aglctx_8h_html_ac854d8fc8cb1a3852cc12d0a718a6ab2"><div class="ttname"><a href="glctx_8h.html#ac854d8fc8cb1a3852cc12d0a718a6ab2">glctx_is_current</a></div><div class="ttdeci">API_EXPORT bool_t glctx_is_current(glctx_t *ctx)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00415">glctx.c:415</a></div></div>
 <div class="ttc" id="aglctx_8h_html_aec924da8e43a699fd146c7941ff7a02f"><div class="ttname"><a href="glctx_8h.html#aec924da8e43a699fd146c7941ff7a02f">glctx_make_current</a></div><div class="ttdeci">API_EXPORT bool_t glctx_make_current(glctx_t *ctx)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00440">glctx.c:440</a></div></div>
+<div class="ttc" id="aglew_8h_html"><div class="ttname"><a href="glew_8h.html">glew.h</a></div></div>
+<div class="ttc" id="aglutils_8h_html"><div class="ttname"><a href="glutils_8h.html">glutils.h</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a13acd5e6e0df4ad8acc545627f25795f"><div class="ttname"><a href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_disable_vtx_attr_ptr(GLint index)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00643">glutils.h:643</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a3516f7d5b021b1ab3573995655b19f1a"><div class="ttname"><a href="glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a">TEXSZ_FREE_INSTANCE</a></div><div class="ttdeci">#define TEXSZ_FREE_INSTANCE(__token_id, __instance, __format, __type, __w, __h)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00367">glutils.h:367</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a5c80f51fb1c1221033597328becf2112"><div class="ttname"><a href="glutils_8h.html#a5c80f51fb1c1221033597328becf2112">TEXSZ_MK_TOKEN</a></div><div class="ttdeci">#define TEXSZ_MK_TOKEN(name)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00290">glutils.h:290</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a970d748d35b29dbb2451c1e339ba8b8b"><div class="ttname"><a href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">TEXSZ_ALLOC_INSTANCE</a></div><div class="ttdeci">#define TEXSZ_ALLOC_INSTANCE(__token_id, __instance, __filename, __line, __format, __type, __w, __h)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00355">glutils.h:355</a></div></div>
+<div class="ttc" id="aglutils_8h_html_aa6bbd5e3639e02b43daaa5219a781e3a"><div class="ttname"><a href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">IF_TEXSZ</a></div><div class="ttdeci">#define IF_TEXSZ(__xxx)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00428">glutils.h:428</a></div></div>
+<div class="ttc" id="aglutils_8h_html_aa9f099f343d02ac76f20a68fa8ddc57d"><div class="ttname"><a href="glutils_8h.html#aa9f099f343d02ac76f20a68fa8ddc57d">glutils_make_quads_IBO</a></div><div class="ttdeci">GLuint glutils_make_quads_IBO(size_t num_vtx)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00176">glutils.c:176</a></div></div>
+<div class="ttc" id="aglutils_8h_html_ab158cb78d23b47392ca58e01afd275fb"><div class="ttname"><a href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_enable_vtx_attr_ptr(GLint index, GLint size, GLenum type, GLboolean normalized, size_t stride, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00625">glutils.h:625</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

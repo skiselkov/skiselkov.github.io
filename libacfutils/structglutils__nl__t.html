@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: nl_vtx_data_t Struct Reference</title>
+<title>libacfutils: glutils_nl_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,28 +62,21 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">nl_vtx_data_t Struct Reference</div>  </div>
+<div class="title">glutils_nl_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:aad96935972d0da0a86441b64c978d864"><td class="memItemLeft" align="right" valign="top"><a id="aad96935972d0da0a86441b64c978d864"></a>
-vec3&#160;</td><td class="memItemRight" valign="bottom"><b>seg_here</b></td></tr>
-<tr class="separator:aad96935972d0da0a86441b64c978d864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ababd51f55dcf8c19d4f4ff12274e57fe"><td class="memItemLeft" align="right" valign="top"><a id="ababd51f55dcf8c19d4f4ff12274e57fe"></a>
-vec3&#160;</td><td class="memItemRight" valign="bottom"><b>seg_start</b></td></tr>
-<tr class="separator:ababd51f55dcf8c19d4f4ff12274e57fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac70c60f6a50fd30b0312970360e08dfb"><td class="memItemLeft" align="right" valign="top"><a id="ac70c60f6a50fd30b0312970360e08dfb"></a>
-vec3&#160;</td><td class="memItemRight" valign="bottom"><b>seg_end</b></td></tr>
-<tr class="separator:ac70c60f6a50fd30b0312970360e08dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="glutils_8c_source.html#l01126">1126</a> of file <a class="el" href="glutils_8c_source.html">glutils.c</a>.</p>
+<div class="textblock"><p>This is a replacement for the obsolete <code>GL_LINES</code> rendering type in OpenGL, using new OpenGL core profile features only. The <code>nl</code> in the name means "new lines" (to differentiate it from the deprecated <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a>, which relied on outdated <code>GL_LINE_STRIP</code> functionality in the OpenGL driver).</p>
+<p>To set up a <code><a class="el" href="structglutils__nl__t.html">glutils_nl_t</a></code>, use <a class="el" href="glutils_8h.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D()</a> or <a class="el" href="glutils_8h.html#a4060c897ae5664012f2f0b3502d51ddf">glutils_nl_alloc_3D()</a>, with a series of 2D or 3D points, which will form the end points of the lines. You can then use <a class="el" href="glutils_8h.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw()</a> to make the lines render. Finally, to free the vertex buffers associated with the lines, use <a class="el" href="glutils_8h.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free()</a>.</p>
+<p>Please note that the points you pass are treated as separate line segments, rather a single continuous line strip. For example, if you want to draw a line strip consisting of two line segments, you will need to pass <em>four</em> points, not three.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="glutils_8h.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D()</a> </dd>
+<dd>
+<a class="el" href="glutils_8h.html#a4060c897ae5664012f2f0b3502d51ddf">glutils_nl_alloc_3D()</a> </dd>
+<dd>
+<a class="el" href="glutils_8h.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw()</a> </dd>
+<dd>
+<a class="el" href="glutils_8h.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free()</a> </dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="glutils_8c_source.html">glutils.c</a></li>
 </ul>
