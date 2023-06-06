@@ -515,7 +515,7 @@ $(function() {
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="comment">     * to sometimes require main thread progress before a background</span></div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="comment">     * thread&#39;s buffer mapping request can succeed.</span></div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    coherent = ((want_coherent_mem || glutils_in_zink_mode()) &amp;&amp;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    coherent = ((want_coherent_mem || <a class="code" href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a>()) &amp;&amp;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        GLEW_ARB_buffer_storage);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    glob_inited = B_TRUE;</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
@@ -659,7 +659,7 @@ $(function() {
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(mtcr != NULL);</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">return</span> (IBM &amp;&amp; !mtcr-&gt;shader_is_custom &amp;&amp;</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a>(mtcr-&gt;monochrome) &amp;&amp;</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        curthread_id == mtcr_main_thread &amp;&amp; glutils_in_zink_mode() &amp;&amp;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        curthread_id == mtcr_main_thread &amp;&amp; <a class="code" href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a>() &amp;&amp;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        strstr((<span class="keyword">const</span> <span class="keywordtype">char</span> *)glGetString(GL_RENDERER), <span class="stringliteral">&quot;Radeon&quot;</span>) != NULL);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
@@ -723,7 +723,7 @@ $(function() {
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(cr_init(mtcr, &amp;mtcr-&gt;rs[1]));</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    mt_cairo_render_set_shader(mtcr, 0);</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keywordflow">if</span> (!glutils_in_zink_mode())</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a>())</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        mtcr-&gt;create_ctx = <a class="code" href="glctx_8h.html#a717d8deaa1f5f8f84117ee7d1ab3efc4">glctx_get_current</a>();</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    mtcr-&gt;use_ffp = check_use_ffp(mtcr);</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
@@ -1784,6 +1784,7 @@ $(function() {
 <div class="ttc" id="aglutils_8h_html_aa6bbd5e3639e02b43daaa5219a781e3a"><div class="ttname"><a href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">IF_TEXSZ</a></div><div class="ttdeci">#define IF_TEXSZ(__xxx)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00428">glutils.h:428</a></div></div>
 <div class="ttc" id="aglutils_8h_html_aa9f099f343d02ac76f20a68fa8ddc57d"><div class="ttname"><a href="glutils_8h.html#aa9f099f343d02ac76f20a68fa8ddc57d">glutils_make_quads_IBO</a></div><div class="ttdeci">GLuint glutils_make_quads_IBO(size_t num_vtx)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00176">glutils.c:176</a></div></div>
 <div class="ttc" id="aglutils_8h_html_ab158cb78d23b47392ca58e01afd275fb"><div class="ttname"><a href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_enable_vtx_attr_ptr(GLint index, GLint size, GLenum type, GLboolean normalized, size_t stride, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00625">glutils.h:625</a></div></div>
+<div class="ttc" id="aglutils__zink_8h_html_ab9a62c7ec15480fa223d74517ac863b3"><div class="ttname"><a href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a></div><div class="ttdeci">bool_t glutils_in_zink_mode(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01441">glutils.c:1441</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

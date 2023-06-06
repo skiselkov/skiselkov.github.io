@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glctx_8h.html">acfutils/glctx.h</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;acfutils/glutils_zink.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glutils__zink_8h.html">acfutils/glutils_zink.h</a>&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;acfutils/thread.h&quot;</span></div>
@@ -522,7 +522,7 @@ $(function() {
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(glXMakeContextCurrentARB != NULL);</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    }</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">if</span> (ctx != NULL) {</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        GLXDrawable tgt = (glutils_in_zink_mode() ? None :</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        GLXDrawable tgt = (<a class="code" href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a>() ? None :</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            DefaultRootWindow(ctx-&gt;dpy));</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ctx-&gt;dpy != NULL);</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ctx-&gt;glc != NULL);</div>
@@ -650,6 +650,8 @@ $(function() {
 <div class="ttc" id="aglctx_8h_html_a9b796c929954d0439c50e8cf572442e6"><div class="ttname"><a href="glctx_8h.html#a9b796c929954d0439c50e8cf572442e6">glctx_get_xplane_win_ptr</a></div><div class="ttdeci">API_EXPORT void * glctx_get_xplane_win_ptr(void)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00361">glctx.c:361</a></div></div>
 <div class="ttc" id="aglctx_8h_html_ac854d8fc8cb1a3852cc12d0a718a6ab2"><div class="ttname"><a href="glctx_8h.html#ac854d8fc8cb1a3852cc12d0a718a6ab2">glctx_is_current</a></div><div class="ttdeci">API_EXPORT bool_t glctx_is_current(glctx_t *ctx)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00415">glctx.c:415</a></div></div>
 <div class="ttc" id="aglctx_8h_html_aec924da8e43a699fd146c7941ff7a02f"><div class="ttname"><a href="glctx_8h.html#aec924da8e43a699fd146c7941ff7a02f">glctx_make_current</a></div><div class="ttdeci">API_EXPORT bool_t glctx_make_current(glctx_t *ctx)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00440">glctx.c:440</a></div></div>
+<div class="ttc" id="aglutils__zink_8h_html"><div class="ttname"><a href="glutils__zink_8h.html">glutils_zink.h</a></div></div>
+<div class="ttc" id="aglutils__zink_8h_html_ab9a62c7ec15480fa223d74517ac863b3"><div class="ttname"><a href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a></div><div class="ttdeci">bool_t glutils_in_zink_mode(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01441">glutils.c:1441</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructglctx__s_html"><div class="ttname"><a href="structglctx__s.html">glctx_s</a></div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00055">glctx.c:55</a></div></div>
