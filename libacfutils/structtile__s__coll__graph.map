@@ -1,6 +1,0 @@
-<map id="tile_s" name="tile_s">
-<area shape="rect" id="node1" title=" " alt="" coords="95,187,152,213"/>
-<area shape="rect" id="node2" href="$structavl__node.html" title=" " alt="" coords="5,7,87,33"/>
-<area shape="rect" id="node4" href="$structavl__tree.html" title=" " alt="" coords="86,97,161,124"/>
-<area shape="rect" id="node3" href="$structgeo__pos2__t.html" title=" " alt="" coords="185,97,281,124"/>
-</map>

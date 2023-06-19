@@ -1,9 +1,0 @@
-<map id="odb_tile_t" name="odb_tile_t">
-<area shape="rect" id="node1" title=" " alt="" coords="117,308,204,335"/>
-<area shape="rect" id="node2" href="$structavl__node.html" title=" " alt="" coords="5,7,87,33"/>
-<area shape="rect" id="node4" href="$structavl__tree.html" title=" " alt="" coords="62,99,137,125"/>
-<area shape="rect" id="node3" href="$structodb__s.html" title=" " alt="" coords="131,219,191,245"/>
-<area shape="rect" id="node5" href="$structmutex__t.html" title=" " alt="" coords="161,99,237,125"/>
-<area shape="rect" id="node6" href="$structlist.html" title=" " alt="" coords="257,219,299,245"/>
-<area shape="rect" id="node7" href="$structlist__node.html" title=" " alt="" coords="265,99,347,125"/>
-</map>

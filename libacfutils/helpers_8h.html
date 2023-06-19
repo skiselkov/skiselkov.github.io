@@ -81,7 +81,7 @@ $(function() {
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &quot;lacf_getline_impl.h&quot;</code><br />
-<code>#include &quot;parser_funcs.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="parser__funcs_8h_source.html">parser_funcs.h</a>&quot;</code><br />
 <code>#include &quot;math_core.h&quot;</code><br />
 <code>#include &quot;sysmacros.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>&quot;</code><br />
@@ -104,7 +104,7 @@ Include dependency graph for helpers.h:</div>
 <area shape="rect" href="time_8h_source.html" title=" " alt="" coords="208,155,272,181"/>
 <area shape="rect" href="lacf__getline__impl_8h_source.html" title=" " alt="" coords="600,80,747,107"/>
 <area shape="rect" href="safe__alloc_8h.html" title=" " alt="" coords="550,155,650,181"/>
-<area shape="rect" href="parser__funcs_8h_source.html" title=" " alt="" coords="821,80,939,107"/>
+<area shape="rect" href="parser__funcs_8h.html" title=" " alt="" coords="821,80,939,107"/>
 <area shape="rect" href="assert_8h.html" title=" " alt="" coords="368,229,443,256"/>
 <area shape="rect" href="geom_8h.html" title=" " alt="" coords="123,304,194,331"/>
 <area shape="rect" title=" " alt="" coords="426,603,497,629"/>
@@ -323,7 +323,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Invokes the <a class="el" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist()</a> function on the macro arguments and then sets both arguments to <code>NULL</code> and <code>0</code> respectively, to help prevent inadvertent reuse. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00404">404</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00413">413</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -398,7 +398,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd><code>x</code> rounded up to the nearest power-of-2. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00674">674</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00683">683</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -497,12 +497,12 @@ Example</h3>
 <div class="line"><span class="comment">// feature_flags will now be 0x3 (FOO_FEATURE_FLAG | BAR_FEATURE_FLAG)</span></div>
 <div class="line"><a class="code" href="helpers_8h.html#acec283ba2b5fca576867be025844b208">SET_BITFIELD_1</a>(feature_flags, FOO_FEATURE_FLAG, B_FALSE);</div>
 <div class="line"><span class="comment">// feature_flags will now be 0x2 (BAR_FEATURE_FLAG)</span></div>
-<div class="ttc" id="ahelpers_8h_html_acec283ba2b5fca576867be025844b208"><div class="ttname"><a href="helpers_8h.html#acec283ba2b5fca576867be025844b208">SET_BITFIELD_1</a></div><div class="ttdeci">#define SET_BITFIELD_1(out_var, bit_mask, bit_value)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00717">helpers.h:717</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_acec283ba2b5fca576867be025844b208"><div class="ttname"><a href="helpers_8h.html#acec283ba2b5fca576867be025844b208">SET_BITFIELD_1</a></div><div class="ttdeci">#define SET_BITFIELD_1(out_var, bit_mask, bit_value)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00726">helpers.h:726</a></div></div>
 </div><!-- fragment --><p> A more natural way to use this macro is to use the return value of a check function the third argument: </p><div class="fragment"><div class="line"><a class="code" href="helpers_8h.html#acec283ba2b5fca576867be025844b208">SET_BITFIELD_1</a>(feature_flags, FOO_FEATURE_FLAG, foo_feature_is_on());</div>
 <div class="line"><span class="comment">// feature_flags will now either have FOO_FEATURE_FLAG bit set or</span></div>
 <div class="line"><span class="comment">// cleared, depending on the return value of foo_feature_is_on().</span></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00717">717</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00726">726</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -1106,9 +1106,9 @@ Example:</h3>
 <p>For numbers greater than 9999, the final number will have more than 4 digits. Use the <a class="el" href="helpers_8h.html#a020d059ff458bbefd22ec75936ca111c">fixed_decimals()</a> function to achieve the above effect in a printf format as follows: </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> foo = 1.1;</div>
 <div class="line">printf(<span class="stringliteral">&quot;The number is %.*f\n&quot;</span>, <a class="code" href="helpers_8h.html#a020d059ff458bbefd22ec75936ca111c">fixed_decimals</a>(foo, 4), foo);</div>
 <div class="line"><span class="comment">// this prints &quot;The number is 1.10&quot;</span></div>
-<div class="ttc" id="ahelpers_8h_html_a020d059ff458bbefd22ec75936ca111c"><div class="ttname"><a href="helpers_8h.html#a020d059ff458bbefd22ec75936ca111c">fixed_decimals</a></div><div class="ttdeci">static int fixed_decimals(double x, int digits)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00656">helpers.h:656</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a020d059ff458bbefd22ec75936ca111c"><div class="ttname"><a href="helpers_8h.html#a020d059ff458bbefd22ec75936ca111c">fixed_decimals</a></div><div class="ttdeci">static int fixed_decimals(double x, int digits)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00665">helpers.h:665</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00656">656</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00665">665</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -1147,7 +1147,7 @@ Example:</h3>
 </div><div class="memdoc">
 <p>Rounds <code>x</code> DOWN to the nearest multiple of <code>y</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00683">683</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00692">692</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -1787,7 +1787,7 @@ Example:</h3>
 <dd>
 <a href="https://linux.die.net/man/3/basename">basename()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00444">444</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00453">453</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -1853,7 +1853,7 @@ Example:</h3>
 </div><div class="memdoc">
 <p>Portable version of the POSIX getline() function. </p><dl class="section see"><dt>See also</dt><dd><a href="https://linux.die.net/man/3/getline">getline()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00464">464</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00473">473</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -1902,7 +1902,7 @@ Example:</h3>
 <dl class="section return"><dt>Returns</dt><dd>True if the underlying gmtime_r() call succeeded. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="https://linux.die.net/man/3/gmtime">gmtime()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00784">784</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00793">793</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -1992,7 +1992,7 @@ Example:</h3>
 <dd>
 <a href="https://linux.die.net/man/3/strcasecmp">strcasecmp()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00546">546</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00555">555</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2031,7 +2031,7 @@ Example:</h3>
 </div><div class="memdoc">
 <p>Portable version of BSD &amp; POSIX strcasestr(). This is a case-insensitive variant strstr(). </p><dl class="section see"><dt>See also</dt><dd><a href="https://linux.die.net/man/3/strstr">strstr() and strcasestr()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00585">585</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00594">594</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2226,7 +2226,7 @@ Example:</h3>
 </div><div class="memdoc">
 <p>Converts all whitespace in a string into plain ASCII space characters. This allows for easier splitting of a string at whitespace boundaries using functions such as <a class="el" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit()</a>. First run the input to be split through <a class="el" href="helpers_8h.html#ab5d83609c7056d3e704130c1be9af798">normalize_whitespace()</a> to make sure that any tabs are converted into plain ASCII spaces first and then use <a class="el" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit()</a> to separate the line using the " " separator as the field delimeter. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00388">388</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00397">397</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2275,19 +2275,23 @@ Example:</h3>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Grabs the next non-empty, non-comment line from a file, having stripped away all leading and trailing whitespace. Any tab characters are also replaced with spaces.</p>
+<p>Grabs the next non-empty, non-comment line from a file, having stripped away all leading and trailing whitespace. Any tab characters are also replaced with spaces. Comments are lines that start with a '#' character. Also, any text following a '#' on a line is stripped away and considered a comment.</p>
+<p>This function is useful for writing a custom config file parser. It can also be used to consume X-Plane OBJ and similar files, or generally any text-based data file which uses '#' for comments. See also <a class="el" href="conf_8h.html#ab16f33643c43aaa20ad81ba86af62b41">conf_create_empty()</a>, <a class="el" href="conf_8h.html#aa6a85ef02aca4749e30c08f5c193af86">conf_read_file()</a> and the <a class="el" href="conf_8h.html">conf.h</a> file for a fully-featured config system already included with libacfutils.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fp</td><td>File from which to retrieve the line. </td></tr>
     <tr><td class="paramname">linep</td><td>Line buffer which will hold the new line. If the buffer pointer is set to NULL, it will be allocated. If it is not long enough, it will be expanded. </td></tr>
     <tr><td class="paramname">linecap</td><td>The capacity of *linep. If set to zero a new buffer is allocated. </td></tr>
-    <tr><td class="paramname">linenum</td><td>The current line number. Will be advanced by 1 for each new line read.</td></tr>
+    <tr><td class="paramname">linenum</td><td>The current line number. Will be advanced by 1 for each new line read. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of characters in the line (after stripping whitespace) without the terminating NUL. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="conf_8h.html#ab16f33643c43aaa20ad81ba86af62b41">conf_create_empty()</a> </dd>
+<dd>
+<a class="el" href="conf_8h.html#aa6a85ef02aca4749e30c08f5c193af86">conf_read_file()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00341">341</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00350">350</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2314,9 +2318,9 @@ Example:</h3>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Legacy bridge to parser_get_next_quoted_str2() function without the optional second argument. </p><dl class="section see"><dt>See also</dt><dd>parser_get_next_quoted_str2() </dd></dl>
+<p>Legacy bridge to <a class="el" href="parser__funcs_8h.html#a67421394e8c77a1f0ad9941e722bf804">parser_get_next_quoted_str2()</a> function without the optional second argument. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="parser__funcs_8h.html#a67421394e8c77a1f0ad9941e722bf804">parser_get_next_quoted_str2()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00370">370</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00379">379</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2564,7 +2568,7 @@ Example:</h3>
 </div><div class="memdoc">
 <p>Rounds <code>x</code> to the nearest multiple of <code>y</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00677">677</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00686">686</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2609,7 +2613,7 @@ Example:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A newly allocated string holding the result of the printf operation. Please note that the allocation is done using the caller's heap allocator, so you should use the normal free() function to free the associated memory, NOT <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00525">525</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00534">534</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
@@ -2831,7 +2835,7 @@ Example:</h3>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A newly allocated string holding the result of the printf operation. Please note that the allocation is done using the caller's heap allocator, so you should use the normal free() function to free the associated memory, NOT <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00493">493</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00502">502</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>
