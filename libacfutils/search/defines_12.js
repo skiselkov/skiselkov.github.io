@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['zero_5ffree_1543',['ZERO_FREE',['../safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797',1,'safe_alloc.h']]],
-  ['zero_5ffree_5fn_1544',['ZERO_FREE_N',['../safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc',1,'safe_alloc.h']]],
-  ['zero_5fvect2_1545',['ZERO_VECT2',['../geom_8h.html#aef4d45b6cf4232c04f4344da5a57fc2d',1,'geom.h']]],
-  ['zero_5fvect3_1546',['ZERO_VECT3',['../geom_8h.html#a3c6d95bea5158d98bbb68a119f7472d8',1,'geom.h']]],
-  ['zero_5fvect3l_1547',['ZERO_VECT3L',['../geom_8h.html#a610be6b44f33d3693436e770385c6b37',1,'geom.h']]]
+  ['warn_5funused_5fres_5fattr_1706',['WARN_UNUSED_RES_ATTR',['../core_8h.html#ac9d75ac9ad4ec7ac47087f77969b2b36',1,'core.h']]]
 ];

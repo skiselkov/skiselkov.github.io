@@ -103,8 +103,12 @@ Include dependency graph for safe_alloc.h:</div>
 Macros</h2></td></tr>
 <tr class="memitem:a578aada848ef29ecdcdd7f9650475797"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>(ptr)</td></tr>
 <tr class="separator:a578aada848ef29ecdcdd7f9650475797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c55bb2cb4b61fa3ea111470c047c43d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#a5c55bb2cb4b61fa3ea111470c047c43d">DESTROY_FREE</a>(ptr)</td></tr>
+<tr class="separator:a5c55bb2cb4b61fa3ea111470c047c43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af641f79c2c4a711aa6baa4fb3b0d72cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">ZERO_FREE_N</a>(ptr,  num)</td></tr>
 <tr class="separator:af641f79c2c4a711aa6baa4fb3b0d72cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13fdc07e3264a73dfdd0b329565ac2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#af13fdc07e3264a73dfdd0b329565ac2f">DESTROY_FREE_N</a>(ptr,  num)</td></tr>
+<tr class="separator:af13fdc07e3264a73dfdd0b329565ac2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a759a8fa73a1f7f859edf775dd6d76dde"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#a759a8fa73a1f7f859edf775dd6d76dde">BZERO</a>(data)&#160;&#160;&#160;memset((data), 0, sizeof (*(data)))</td></tr>
 <tr class="separator:a759a8fa73a1f7f859edf775dd6d76dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601bef5ebbd768105bdf40337a884b35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#a601bef5ebbd768105bdf40337a884b35">SAFE_BZERO</a>(data)</td></tr>
@@ -141,7 +145,67 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Performs a zeroing of the <code>data</code> buffer. Please note that <code>sizeof</code> must return the correct size of the data to be zeroed. Thus this is intended to be used fixed-size arrays. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00170">170</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00186">186</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c55bb2cb4b61fa3ea111470c047c43d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c55bb2cb4b61fa3ea111470c047c43d">&#9670;&nbsp;</a></span>DESTROY_FREE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DESTROY_FREE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ptr</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">        ZERO_FREE(ptr); \</div>
+<div class="line">        (ptr) = NULL; \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE()</a>, but also sets <code>ptr</code> to NULL after freeing. </p>
+
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00154">154</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+
+</div>
+</div>
+<a id="af13fdc07e3264a73dfdd0b329565ac2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13fdc07e3264a73dfdd0b329565ac2f">&#9670;&nbsp;</a></span>DESTROY_FREE_N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DESTROY_FREE_N</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">num&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">        ZERO_FREE_N((ptr), (num)); \</div>
+<div class="line">        (ptr) = NULL; \</div>
+<div class="line">    while (0)</div>
+</div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">ZERO_FREE_N()</a>, but also sets <code>ptr</code> to NULL after freeing. </p>
+
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00175">175</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -166,7 +230,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>If <code>data</code> is not <code>NULL</code>, performs a <a class="el" href="safe__alloc_8h.html#a759a8fa73a1f7f859edf775dd6d76dde">BZERO</a> on the data. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00175">175</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00191">191</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -232,7 +296,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>, but takes an explicit array element count argument. This is the variant of the <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a> macro to be used on arrays of objects, rather than single objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00157">157</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00165">165</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>

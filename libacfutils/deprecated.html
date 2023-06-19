@@ -67,22 +67,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
+<dt>Global <a class="el" href="helpers_8h.html#a3cb4d21bba429e71025889e0aea7b1d6">explode_line</a>  (char *line, char delim, char **comps, size_t capacity)</dt>
+<dd><a class="anchor" id="_deprecated000011"></a>Use <a class="el" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit()</a> instead. </dd>
+<dt>Global <a class="el" href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a>  (const char *comp,...)</dt>
+<dd><a class="anchor" id="_deprecated000012"></a>Use <a class="el" href="helpers_8h.html#af294bc5fff778bf59115d89b14602678">file2str_name()</a> instead.  </dd>
+<dt>Global <a class="el" href="helpers_8h.html#a403fe95f9f653cc5fc830eacf6fda88f">file2str_ext</a>  (long *len_p, const char *comp,...)</dt>
+<dd><a class="anchor" id="_deprecated000013"></a>Use <a class="el" href="helpers_8h.html#af294bc5fff778bf59115d89b14602678">file2str_name()</a> instead.  </dd>
 <dt>Global <a class="el" href="glutils_8h.html#a405718f3727a5d4a2add700603cbb07e">glutils_cache_get_3D_lines</a>  (glutils_cache_t *cache, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, size_t num_pts)</dt>
-<dd><a class="anchor" id="_deprecated000005"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
+<dd><a class="anchor" id="_deprecated000006"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
 <dt>Global <a class="el" href="glutils_8h.html#a674dbcf0965551e2b169e1850b2d2e55">glutils_destroy_lines</a>  (<a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> *lines)</dt>
-<dd><a class="anchor" id="_deprecated000008"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
+<dd><a class="anchor" id="_deprecated000009"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
 <dt>Global <a class="el" href="glutils_8h.html#ac0b31b8b31f800a47432fa4355938bc3">glutils_disable_all_client_state</a>  (void)</dt>
-<dd><a class="anchor" id="_deprecated000003"></a>This function shouldn't be used for modern OpenGL contexts, as it uses the deprecated glDisableClientState() GL function.  </dd>
+<dd><a class="anchor" id="_deprecated000004"></a>This function shouldn't be used for modern OpenGL contexts, as it uses the deprecated glDisableClientState() GL function.  </dd>
 <dt>Global <a class="el" href="glutils_8h.html#a75759de190aea90da64dc7697b19770b">glutils_disable_all_vtx_attrs</a>  (void)</dt>
-<dd><a class="anchor" id="_deprecated000004"></a>This function shouldn't be used for modern OpenGL contexts. You should only disable vertex attributes you've previously enabled.  </dd>
+<dd><a class="anchor" id="_deprecated000005"></a>This function shouldn't be used for modern OpenGL contexts. You should only disable vertex attributes you've previously enabled.  </dd>
 <dt>Global <a class="el" href="glutils_8h.html#a1d76d99eb0319a0afc8f95fed45640f8">glutils_draw_lines</a>  (<a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> *lines, GLint prog)</dt>
-<dd><a class="anchor" id="_deprecated000007"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
+<dd><a class="anchor" id="_deprecated000008"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
 <dt>Global <a class="el" href="glutils_8h.html#a73651a7f8853c2473f6f5302bdff2f92">glutils_init_3D_lines</a>  (__lines, __p, __num_pts)</dt>
 <dd><a class="anchor" id="_deprecated000002"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
 <dt>Global <a class="el" href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a>  (<a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> *lines, const char *filename, int line, const <a class="el" href="structvect3__t.html">vect3_t</a> *p, size_t num_pts)</dt>
-<dd><a class="anchor" id="_deprecated000006"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
+<dd><a class="anchor" id="_deprecated000007"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
 <dt>Class <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a>  </dt>
-<dd><a class="anchor" id="_deprecated000001"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd>
+<dd><a class="anchor" id="_deprecated000001"></a>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement. </dd>
+<dt>Global <a class="el" href="helpers_8h.html#ad3614af495bba0389705c97f51002bee">is_valid_lat_polar</a>  (double lat)</dt>
+<dd><a class="anchor" id="_deprecated000003"></a> Synonym for <a class="el" href="helpers_8h.html#abf9f714923d7634a28ebbce30efa763a">is_valid_lat()</a>.  </dd>
+<dt>Global <a class="el" href="helpers_8h.html#a8f87ba6dc040d945474f832594982717">is_valid_tacan_freq</a>  (double freq_mhz)</dt>
+<dd><a class="anchor" id="_deprecated000010"></a> Rough guess for whether <code>freq_mhz</code> is a valid TACAN frequency. </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

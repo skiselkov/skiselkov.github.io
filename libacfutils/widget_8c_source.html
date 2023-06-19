@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/mt_cairo_render.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
@@ -371,7 +371,7 @@ $(function() {
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        cur_tt_mtcr = NULL;</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        XPLMDestroyWindow(cur_tt_win);</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        cur_tt_win = NULL;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        free_strlist(cur_tt_lines, n_cur_tt_lines);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(cur_tt_lines, n_cur_tt_lines);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        cur_tt_lines = NULL;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        n_cur_tt_lines = 0;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        cur_tt = NULL;</div>
@@ -496,7 +496,7 @@ $(function() {
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">if</span> (width &gt; max_width || *sp_prev == <span class="charliteral">&#39;\n&#39;</span>) {</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            lines = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(lines, (n + 1) * <span class="keyword">sizeof</span> (*lines));</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            lines[n] = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(sp_prev - start + 1);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            lacf_strlcpy(lines[n], start, sp_prev - start + 1);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(lines[n], start, sp_prev - start + 1);</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            n++;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            start = sp_prev + 1;</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        }</div>
@@ -507,7 +507,7 @@ $(function() {
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordflow">if</span> (start &lt; end) {</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        lines = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(lines, (n + 1) * <span class="keyword">sizeof</span> (*lines));</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        lines[n] = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(end - start + 1);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        lacf_strlcpy(lines[n], start, end - start + 1);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(lines[n], start, end - start + 1);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        n++;</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    }</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    *n_lines = n;</div>
@@ -952,7 +952,7 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00195">assert.h:195</a></div></div>
 <div class="ttc" id="acairo__utils_8h_html_a92f38a971249e9fe1b226b07661b802d"><div class="ttname"><a href="cairo__utils_8h.html#a92f38a971249e9fe1b226b07661b802d">mt_cairo_render_rounded_rectangle</a></div><div class="ttdeci">#define mt_cairo_render_rounded_rectangle</div><div class="ttdef"><b>Definition:</b> <a href="cairo__utils_8h_source.html#l00054">cairo_utils.h:54</a></div></div>
-<div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
+<div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00088">core.h:88</a></div></div>
 <div class="ttc" id="adelay__line_8h_html_a1fd1ad2d37548ca04a28a6d702a917cf"><div class="ttname"><a href="delay__line_8h.html#a1fd1ad2d37548ca04a28a6d702a917cf">delay_line_push_imm_u64</a></div><div class="ttdeci">static uint64_t delay_line_push_imm_u64(delay_line_t *line, uint64_t value)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00331">delay_line.h:331</a></div></div>
 <div class="ttc" id="adelay__line_8h_html_a2e7625eb9f8fe070739571b6e7039e8c"><div class="ttname"><a href="delay__line_8h.html#a2e7625eb9f8fe070739571b6e7039e8c">delay_line_push_u64</a></div><div class="ttdeci">static uint64_t delay_line_push_u64(delay_line_t *line, uint64_t value)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00308">delay_line.h:308</a></div></div>
 <div class="ttc" id="adelay__line_8h_html_a96268d5410ea7891ed1117ca8aff3de8"><div class="ttname"><a href="delay__line_8h.html#a96268d5410ea7891ed1117ca8aff3de8">delay_line_init</a></div><div class="ttdeci">static void delay_line_init(delay_line_t *line, uint64_t delay_us)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00089">delay_line.h:89</a></div></div>
@@ -962,6 +962,9 @@ $(function() {
 <div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
 <div class="ttc" id="ageom_8h_html_a5e6f3b1fce0dfbb0d6ae2388a818da7f"><div class="ttname"><a href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a></div><div class="ttdeci">#define IS_NULL_VECT(a)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00224">geom.h:224</a></div></div>
 <div class="ttc" id="ageom_8h_html_aef9ee3b0deac953bb9bb8f5fdba178af"><div class="ttname"><a href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a></div><div class="ttdeci">#define VECT2(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00190">geom.h:190</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>

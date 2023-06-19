@@ -95,7 +95,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">acfutils/core.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="font__utils_8h.html">acfutils/font_utils.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * This weird macro construct is needed to implement freetype error code</span></div>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    FT_Library ft, </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    FT_Face *font, cairo_font_face_t **cr_font)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">char</span> *fontpath = mkpathname(fontdir, fontfile, NULL);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">char</span> *fontpath = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(fontdir, fontfile, NULL);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    FT_Error err;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> ((err = FT_New_Face(ft, fontpath, 0, font)) != 0) {</div>
@@ -147,6 +147,8 @@ $(function() {
 <div class="ttc" id="afont__utils_8h_html_a01bae0f61c15f59758ad3cc18a0ef216"><div class="ttname"><a href="font__utils_8h.html#a01bae0f61c15f59758ad3cc18a0ef216">ft_err2str</a></div><div class="ttdeci">#define ft_err2str</div><div class="ttdef"><b>Definition:</b> <a href="font__utils_8h_source.html#l00046">font_utils.h:46</a></div></div>
 <div class="ttc" id="afont__utils_8h_html_a237e3eec4cc7d7e4bd65ffea11948726"><div class="ttname"><a href="font__utils_8h.html#a237e3eec4cc7d7e4bd65ffea11948726">font_utils_try_load_font</a></div><div class="ttdeci">bool_t font_utils_try_load_font(const char *fontdir, const char *fontfile, FT_Library ft, FT_Face *font, cairo_font_face_t **cr_font)</div></div>
 <div class="ttc" id="afont__utils_8h_html_acc1b949b883e41c47ba0684b5235cb31"><div class="ttname"><a href="font__utils_8h.html#acc1b949b883e41c47ba0684b5235cb31">font_utils_ft_err2str</a></div><div class="ttdeci">const char * font_utils_ft_err2str(FT_Error err)</div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a3fe5d016401fc4e043366ff82a8c5297"><div class="ttname"><a href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a></div><div class="ttdeci">char * mkpathname(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00833">helpers.c:833</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

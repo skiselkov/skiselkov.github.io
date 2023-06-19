@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="compress_8h.html">acfutils/compress.h</a>&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="dsf_8h.html">acfutils/dsf.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/helpers.h&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define DSF_MAX_VERSION 1</span></div>
@@ -233,7 +233,7 @@ $(function() {
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="structdsf__t.html">dsf_t</a> *dsf = NULL;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    uint8_t *buf = NULL;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    ssize_t bufsz = filesz(filename);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    ssize_t bufsz = <a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a>(filename);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    ssize_t readsz = 0;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    FILE *fp = fopen(filename, <span class="stringliteral">&quot;rb&quot;</span>);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">char</span> reason[DSF_REASON_SZ];</div>
@@ -849,7 +849,7 @@ $(function() {
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structdsf__prop__t.html">dsf_prop_t</a> *prop = list_head(&amp;atom-&gt;prop_atom.props); prop != NULL;</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        prop = list_next(&amp;atom-&gt;prop_atom.props, prop)) {</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        append_format(str, len, <span class="stringliteral">&quot;%s\&quot;%s\&quot; = \&quot;%s\&quot;\n&quot;</span>,</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(str, len, <span class="stringliteral">&quot;%s\&quot;%s\&quot; = \&quot;%s\&quot;\n&quot;</span>,</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            indent, prop-&gt;name, prop-&gt;value);</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    }</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;}</div>
@@ -862,7 +862,7 @@ $(function() {
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    memset(indent, <span class="charliteral">&#39; &#39;</span>, depth * INDENT_DEPTH);</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    indent[depth * INDENT_DEPTH] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    append_format(str, len, <span class="stringliteral">&quot;%sdata type: %s\n&quot;</span></div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(str, len, <span class="stringliteral">&quot;%sdata type: %s\n&quot;</span></div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="stringliteral">&quot;%snum items: %d\n&quot;</span></div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="stringliteral">&quot;%snum planes: %d\n&quot;</span>,</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        indent, data_type2str(atom-&gt;planar_atom.data_type),</div>
@@ -894,7 +894,7 @@ $(function() {
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    }</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160; </div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    append_format(str, len,</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(str, len,</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        <span class="stringliteral">&quot;%sversion: %d\n&quot;</span></div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        <span class="stringliteral">&quot;%sbpp: %d\n&quot;</span></div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="stringliteral">&quot;%stype: %s\n&quot;</span></div>
@@ -923,7 +923,7 @@ $(function() {
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    memset(indent, <span class="charliteral">&#39; &#39;</span>, depth * INDENT_DEPTH);</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    indent[depth * INDENT_DEPTH] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    append_format(str, len,</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(str, len,</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        <span class="stringliteral">&quot;%s%c%c%c%c\t%lx\n&quot;</span>,</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        indent,</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        (atom-&gt;id &amp; 0xff000000) &gt;&gt; 24,</div>
@@ -952,7 +952,7 @@ $(function() {
 <div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;    <span class="keywordtype">char</span> *str = NULL;</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;    <span class="keywordtype">size_t</span> len = 0;</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160; </div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    append_format(&amp;str, &amp;len,</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;str, &amp;len,</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        <span class="stringliteral">&quot;Version: %d\n&quot;</span></div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        <span class="stringliteral">&quot;Size: %lx\n&quot;</span></div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        <span class="stringliteral">&quot;MD5: %02x%02x%02x%02x%02x%02x%02x%02x&quot;</span></div>
@@ -1604,6 +1604,9 @@ $(function() {
 <div class="ttc" id="adsf_8h_html_ac4d659f053e178e93a62637bcda133b1"><div class="ttname"><a href="dsf_8h.html#ac4d659f053e178e93a62637bcda133b1">dsf_lookup_v</a></div><div class="ttdeci">const dsf_atom_t * dsf_lookup_v(const dsf_t *dsf, const dsf_lookup_t *lookup)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00998">dsf.c:998</a></div></div>
 <div class="ttc" id="adsf_8h_html_aeb3f349298118b5a41e8fa7ad34152da"><div class="ttname"><a href="dsf_8h.html#aeb3f349298118b5a41e8fa7ad34152da">dsf_fini</a></div><div class="ttdeci">void dsf_fini(dsf_t *dsf)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00787">dsf.c:787</a></div></div>
 <div class="ttc" id="adsf_8h_html_af05ef9bfea12bedc30721cb46e34331d"><div class="ttname"><a href="dsf_8h.html#af05ef9bfea12bedc30721cb46e34331d">dsf_init</a></div><div class="ttdeci">dsf_t * dsf_init(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00173">dsf.c:173</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a0c07f2f2f59a36c95df998f2f459b924"><div class="ttname"><a href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a></div><div class="ttdeci">ssize_t filesz(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01171">helpers.c:1171</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa8cb08867675f56a6dd9b290eb8df21f"><div class="ttname"><a href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a></div><div class="ttdeci">void append_format(char **str, size_t *sz, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00731">helpers.c:731</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

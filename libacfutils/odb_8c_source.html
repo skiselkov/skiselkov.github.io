@@ -307,12 +307,12 @@ $(function() {
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        line_end = strchr(line_start, <span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">if</span> (line_end == NULL)</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            line_end = buf + len;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        lacf_strlcpy(line, line_start, MIN((<span class="keywordtype">int</span>)<span class="keyword">sizeof</span> (line),</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(line, line_start, MIN((<span class="keywordtype">int</span>)<span class="keyword">sizeof</span> (line),</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            (line_end - line_start) + 1));</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        strip_space(line);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        comps = strsplit(line, <span class="stringliteral">&quot;,&quot;</span>, B_FALSE, &amp;n_comps);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(line, <span class="stringliteral">&quot;,&quot;</span>, B_FALSE, &amp;n_comps);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">if</span> (n_comps &lt; 19 || strcmp(comps[0], <span class="stringliteral">&quot;OAS&quot;</span>) == 0)</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">goto</span> next;</div>
@@ -326,14 +326,14 @@ $(function() {
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a> = atof(comps[6]);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        pos.<a class="code" href="structgeo__pos3__t.html#a8dda1d2ff84ad30e50a542bfd0cac21e">elev</a> = amsl - agl;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (!is_valid_lat(pos.<a class="code" href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>) || !is_valid_lon(pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>) ||</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            agl &lt; 0 || !is_valid_alt_m(agl) || !is_valid_alt_m(amsl) ||</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#abf9f714923d7634a28ebbce30efa763a">is_valid_lat</a>(pos.<a class="code" href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>) || !<a class="code" href="helpers_8h.html#aeb87d1191ba9b3cb27e1cad43e06ee5f">is_valid_lon</a>(pos.<a class="code" href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>) ||</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            agl &lt; 0 || !<a class="code" href="helpers_8h.html#ac8f3cb8fb5fd1127287e0d17c4631d37">is_valid_alt_m</a>(agl) || !<a class="code" href="helpers_8h.html#ac8f3cb8fb5fd1127287e0d17c4631d37">is_valid_alt_m</a>(amsl) ||</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            quant == 0)</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">goto</span> next;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        cb(type, pos, agl, light, quant, userinfo);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;next:</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
@@ -346,7 +346,7 @@ $(function() {
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    bool_t res;</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(path != NULL);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    str = file2str(path, NULL);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    str = <a class="code" href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a>(path, NULL);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (str == NULL)</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
@@ -377,7 +377,7 @@ $(function() {
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(xpdir != NULL);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    odb-&gt;cache_dir = mkpathname(xpdir, <span class="stringliteral">&quot;Output&quot;</span>, <span class="stringliteral">&quot;caches&quot;</span>,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    odb-&gt;cache_dir = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(xpdir, <span class="stringliteral">&quot;Output&quot;</span>, <span class="stringliteral">&quot;caches&quot;</span>,</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="stringliteral">&quot;obstacle.db&quot;</span>, NULL);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (cainfo != NULL)</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        odb-&gt;cainfo = strdup(cainfo);</div>
@@ -440,7 +440,7 @@ $(function() {
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(strlen(cc) == 2 &amp;&amp; strchr(cc, DIRSEP) == NULL,</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="stringliteral">&quot;invalid country code \&quot;%s\&quot; passed&quot;</span>, cc);</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    str = file2str(odb-&gt;cache_dir, cc, <span class="stringliteral">&quot;refresh.txt&quot;</span>, NULL);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    str = <a class="code" href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a>(odb-&gt;cache_dir, cc, <span class="stringliteral">&quot;refresh.txt&quot;</span>, NULL);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (str != NULL) {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        res = atoll(str);</div>
@@ -505,7 +505,7 @@ $(function() {
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cc != NULL);</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    latlon2path(tile-&gt;lat, tile-&gt;lon, subpath);</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    path = mkpathname(odb-&gt;cache_dir, cc, subpath, NULL);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    path = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(odb-&gt;cache_dir, cc, subpath, NULL);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    dirpath = strdup(path);</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(dirpath != NULL);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
@@ -514,7 +514,7 @@ $(function() {
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(p != NULL);</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    *p = 0;</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordflow">if</span> (!create_directory_recursive(dirpath))</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a>(dirpath))</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    fp = fopen(path, <span class="stringliteral">&quot;wb&quot;</span>);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
@@ -579,7 +579,7 @@ $(function() {
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(odb-&gt;cache_dir != NULL);</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cc != NULL);</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    path = mkpathname(odb-&gt;cache_dir, cc, <span class="stringliteral">&quot;refresh.txt&quot;</span>, NULL);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    path = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(odb-&gt;cache_dir, cc, <span class="stringliteral">&quot;refresh.txt&quot;</span>, NULL);</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    fp = fopen(path, <span class="stringliteral">&quot;wb&quot;</span>);</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing obstacle database refresh file %s: %s&quot;</span>,</div>
@@ -629,7 +629,7 @@ $(function() {
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <span class="keywordtype">void</span> *buf = <a class="code" href="compress_8h.html#a8305cb1b912ee9c97cd976449c7ef1cb">decompress_zip</a>(dl_info.buf, dl_info.bufsz, &amp;len);</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">if</span> (buf != NULL) {</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="keywordtype">char</span> *subpath = mkpathname(odb-&gt;cache_dir, <span class="stringliteral">&quot;US&quot;</span>, NULL);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="keywordtype">char</span> *subpath = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(odb-&gt;cache_dir, <span class="stringliteral">&quot;US&quot;</span>, NULL);</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <span class="comment">/*</span></div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="comment">             * The downloaded DOF is HUUUGE, so DON&#39;T lock here.</span></div>
@@ -640,9 +640,9 @@ $(function() {
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            mutex_enter(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">if</span> (file_exists(subpath, NULL))</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                remove_directory(subpath);</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            create_directory_recursive(odb-&gt;cache_dir);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(subpath, NULL))</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <a class="code" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a>(subpath);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            <a class="code" href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a>(odb-&gt;cache_dir);</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            odb_write_tiles(odb, <span class="stringliteral">&quot;US&quot;</span>);</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            odb_flush_tiles(odb);</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            write_odb_refresh_date(odb, <span class="stringliteral">&quot;US&quot;</span>);</div>
@@ -742,7 +742,7 @@ $(function() {
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(tile != NULL);</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    latlon2path(tile-&gt;lat, tile-&gt;lon, tilepath);</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    path = mkpathname(odb-&gt;cache_dir, <span class="stringliteral">&quot;US&quot;</span>, tilepath, NULL);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    path = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(odb-&gt;cache_dir, <span class="stringliteral">&quot;US&quot;</span>, tilepath, NULL);</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    odb_proc_us_dof(path, add_tile_obst, tile);</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <a class="code" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free</a>(path);</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;}</div>
@@ -829,10 +829,10 @@ $(function() {
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    mutex_enter(&amp;odb-&gt;proxy_lock);</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keywordflow">if</span> (odb-&gt;proxy != NULL) {</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        lacf_strlcpy(proxy, odb-&gt;proxy, cap);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(proxy, odb-&gt;proxy, cap);</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        len = strlen(odb-&gt;proxy) + 1;</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        lacf_strlcpy(proxy, <span class="stringliteral">&quot;&quot;</span>, cap);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(proxy, <span class="stringliteral">&quot;&quot;</span>, cap);</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        len = 0;</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    }</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    mutex_exit(&amp;odb-&gt;proxy_lock);</div>
@@ -855,7 +855,18 @@ $(function() {
 <div class="ttc" id="acompress_8h_html"><div class="ttname"><a href="compress_8h.html">compress.h</a></div></div>
 <div class="ttc" id="acompress_8h_html_a8305cb1b912ee9c97cd976449c7ef1cb"><div class="ttname"><a href="compress_8h.html#a8305cb1b912ee9c97cd976449c7ef1cb">decompress_zip</a></div><div class="ttdeci">void * decompress_zip(void *in_buf, size_t len, size_t *out_len)</div><div class="ttdef"><b>Definition:</b> <a href="compress__zip_8c_source.html#l00161">compress_zip.c:161</a></div></div>
 <div class="ttc" id="acore_8h_html_a8f9ec45dfcbfb9fbab71c05303821c85"><div class="ttname"><a href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free</a></div><div class="ttdeci">void lacf_free(void *buf)</div><div class="ttdef"><b>Definition:</b> <a href="core_8c_source.html#l00049">core.c:49</a></div></div>
-<div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
+<div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00132">core.h:132</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a3b91113e3a9b25ab00175dbe5d7301af"><div class="ttname"><a href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a></div><div class="ttdeci">bool_t remove_directory(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01371">helpers.c:1371</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a3fe5d016401fc4e043366ff82a8c5297"><div class="ttname"><a href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a></div><div class="ttdeci">char * mkpathname(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00833">helpers.c:833</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa012c69005867de5d490f681f69bdc32"><div class="ttname"><a href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a></div><div class="ttdeci">char * file2str(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01033">helpers.c:1033</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ab09eb47db95844e4213f4329b64ede9f"><div class="ttname"><a href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a></div><div class="ttdeci">bool_t create_directory_recursive(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01285">helpers.c:1285</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_abf9f714923d7634a28ebbce30efa763a"><div class="ttname"><a href="helpers_8h.html#abf9f714923d7634a28ebbce30efa763a">is_valid_lat</a></div><div class="ttdeci">static bool_t is_valid_lat(double lat)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00093">helpers.h:93</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ac8f3cb8fb5fd1127287e0d17c4631d37"><div class="ttname"><a href="helpers_8h.html#ac8f3cb8fb5fd1127287e0d17c4631d37">is_valid_alt_m</a></div><div class="ttdeci">static bool_t is_valid_alt_m(double alt_m)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00149">helpers.h:149</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aeb87d1191ba9b3cb27e1cad43e06ee5f"><div class="ttname"><a href="helpers_8h.html#aeb87d1191ba9b3cb27e1cad43e06ee5f">is_valid_lon</a></div><div class="ttdeci">static bool_t is_valid_lon(double lon)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00111">helpers.h:111</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>

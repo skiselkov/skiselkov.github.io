@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;opusfile.h&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;acfutils/helpers.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;acfutils/list.h&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;acfutils/riff.h&gt;</span></div>
@@ -508,7 +508,7 @@ $(function() {
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    mp3_decoder_t mp3;</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <a class="code" href="structmp3__info__t.html">mp3_info_t</a> info;</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordtype">long</span> len;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordtype">char</span> *contents = file2str_name(&amp;len, filename);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordtype">char</span> *contents = <a class="code" href="helpers_8h.html#af294bc5fff778bf59115d89b14602678">file2str_name</a>(&amp;len, filename);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    int16_t *pcm = NULL;</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordtype">int</span> bytes, n_bytes, audio_bytes;</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
@@ -575,7 +575,7 @@ $(function() {
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <a class="code" href="structwav__t.html">wav_t</a> *wav = NULL;</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    FILE *fp;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordtype">size_t</span> filesz;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a>;</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *riff = NULL;</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    uint8_t *filebuf = NULL;</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *chunk;</div>
@@ -588,17 +588,17 @@ $(function() {
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    }</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    fseek(fp, 0, SEEK_END);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    filesz = ftell(fp);</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a> = ftell(fp);</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    fseek(fp, 0, SEEK_SET);</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="keywordflow">if</span> ((wav = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*wav))) == NULL)</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    wav-&gt;alc = <a class="code" href="structalc.html">alc</a>;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">if</span> ((filebuf = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(filesz)) == NULL)</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">if</span> ((filebuf = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(<a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a>)) == NULL)</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordflow">if</span> (fread(filebuf, 1, filesz, fp) != filesz)</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordflow">if</span> (fread(filebuf, 1, <a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a>, fp) != <a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a>)</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keywordflow">if</span> ((riff = riff_parse(WAVE_ID, filebuf, filesz)) == NULL) {</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keywordflow">if</span> ((riff = riff_parse(WAVE_ID, filebuf, <a class="code" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a>)) == NULL) {</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        logMsg(<span class="stringliteral">&quot;Error loading WAV file \&quot;%s\&quot;: file doesn&#39;t appear &quot;</span></div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            <span class="stringliteral">&quot;to be valid RIFF.&quot;</span>, filename);</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
@@ -1051,6 +1051,9 @@ $(function() {
 <div class="ttc" id="ageom_8h_html_a4ea373e309a07e638ee6ecbb087987c6"><div class="ttname"><a href="geom_8h.html#a4ea373e309a07e638ee6ecbb087987c6">VECT3</a></div><div class="ttdeci">#define VECT3(x, y, z)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00192">geom.h:192</a></div></div>
 <div class="ttc" id="ageom_8h_html_a63bd56b7a9baef06cda42973a3e914d4"><div class="ttname"><a href="geom_8h.html#a63bd56b7a9baef06cda42973a3e914d4">VECT3_EQ</a></div><div class="ttdeci">#define VECT3_EQ(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00198">geom.h:198</a></div></div>
 <div class="ttc" id="ageom_8h_html_a8f5d3edf01f5686988bab56bcb53e177"><div class="ttname"><a href="geom_8h.html#a8f5d3edf01f5686988bab56bcb53e177">vect3_rot</a></div><div class="ttdeci">vect3_t vect3_rot(vect3_t v, double angle, unsigned axis)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l00477">geom.c:477</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a0c07f2f2f59a36c95df998f2f459b924"><div class="ttname"><a href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a></div><div class="ttdeci">ssize_t filesz(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01171">helpers.c:1171</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_af294bc5fff778bf59115d89b14602678"><div class="ttname"><a href="helpers_8h.html#af294bc5fff778bf59115d89b14602678">file2str_name</a></div><div class="ttdeci">char * file2str_name(long *len_p, const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01084">helpers.c:1084</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

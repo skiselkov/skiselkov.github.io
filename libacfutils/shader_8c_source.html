@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glutils_8h.html">acfutils/glutils.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/shader.h&quot;</span></div>
@@ -185,7 +185,7 @@ $(function() {
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(new_ext != NULL);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    new_ext++;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    strcpy(new_ext, alt_ext);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> (!loaded &amp;&amp; file_exists(alt_filename, &amp;is_dir) &amp;&amp; !is_dir) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> (!loaded &amp;&amp; <a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(alt_filename, &amp;is_dir) &amp;&amp; !is_dir) {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        shader = shader_from_file(shader_type, alt_filename,</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            NULL, spec_const);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        loaded = (shader != 0);</div>
@@ -210,7 +210,7 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    TEST_GLSL_VERSION(GLEW_VERSION_4_0, <span class="stringliteral">&quot;glsl400&quot;</span>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (!loaded) {</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        strcpy(new_ext, <span class="stringliteral">&quot;glsl&quot;</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (file_exists(alt_filename, &amp;is_dir) &amp;&amp; !is_dir) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(alt_filename, &amp;is_dir) &amp;&amp; !is_dir) {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            shader = shader_from_file(shader_type,</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                alt_filename, NULL, spec_const);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            loaded = (shader != 0);</div>
@@ -332,7 +332,7 @@ $(function() {
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        spec_values[i] = spec_const[i].val;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    buf = file2buf(filename, &amp;bufsz);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    buf = <a class="code" href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf</a>(filename, &amp;bufsz);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> (buf == NULL) {</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
@@ -409,7 +409,7 @@ $(function() {
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">return</span> (shader_from_spirv(shader_type, filename,</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            entry_pt, spec_const));</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    shader_text = file2str(filename, NULL);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    shader_text = <a class="code" href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a>(filename, NULL);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">if</span> (shader_text == NULL) {</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">return</span> (0);</div>
@@ -441,7 +441,7 @@ $(function() {
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    }</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    *shader_proc = mod_text;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    *defines = sprintf_alloc(</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    *defines = <a class="code" href="helpers_8h.html#a5fb11f4a6bbbf275b2f2889f21624fec">sprintf_alloc</a>(</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="stringliteral">&quot;#version %d\n&quot;</span></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="stringliteral">&quot;#define IBM=%d\n&quot;</span></div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="stringliteral">&quot;#define APL=%d\n&quot;</span></div>
@@ -454,16 +454,16 @@ $(function() {
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        sc != NULL &amp;&amp; !sc-&gt;is_last; sc++) {</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">if</span> (sc-&gt;is_float) {</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordtype">float</span> *value = (<span class="keywordtype">float</span> *)&amp;sc-&gt;val;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            append_format(defines, &amp;len,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(defines, &amp;len,</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <span class="stringliteral">&quot;#define SPIRV_CROSS_CONSTANT_ID_%d %f\n&quot;</span>,</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                sc-&gt;idx, *value);</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            append_format(defines, &amp;len,</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(defines, &amp;len,</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="stringliteral">&quot;#define SPIRV_CROSS_CONSTANT_ID_%d %d\n&quot;</span>,</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                sc-&gt;idx, sc-&gt;val);</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        }</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    append_format(defines, &amp;len, <span class="stringliteral">&quot;#line 0\n&quot;</span>);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(defines, &amp;len, <span class="stringliteral">&quot;#line 0\n&quot;</span>);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">/*</span></div>
@@ -681,7 +681,7 @@ $(function() {
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(shader_info-&gt;filename != NULL || shader_info-&gt;glsl != NULL);</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="keywordflow">if</span> (shader_info-&gt;filename != NULL) {</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        <span class="keywordtype">char</span> *path = mkpathname(dirpath, shader_info-&gt;filename, NULL);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        <span class="keywordtype">char</span> *path = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(dirpath, shader_info-&gt;filename, NULL);</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        <a class="code" href="assert_8h.html#a1ab9388cd7eb3262e94ea7f08073ea53">ASSERT3P</a>(shader_info-&gt;glsl, ==, NULL);</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        *shader = shader_from_file(shader_type, path,</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            shader_info-&gt;entry_pt, shader_info-&gt;spec_const);</div>
@@ -911,7 +911,7 @@ $(function() {
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160; </div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(obj != NULL);</div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(info != NULL);</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    filepath = mkpathname(obj-&gt;dirpath, info-&gt;filename, NULL);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    filepath = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(obj-&gt;dirpath, info-&gt;filename, NULL);</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
 <div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    <span class="keywordflow">if</span> (stat(filepath, &amp;st) &lt; 0) {</div>
 <div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <a class="code" href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a>(filepath);</div>
@@ -949,15 +949,22 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00194">assert.h:194</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad157a1a262c174b8a8744896359009b7"><div class="ttname"><a href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a></div><div class="ttdeci">#define VERIFY_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00091">assert.h:91</a></div></div>
-<div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00134">core.h:134</a></div></div>
+<div class="ttc" id="acore_8h_html_a775a7cd7eb7b06d86073619061ccb470"><div class="ttname"><a href="core_8h.html#a775a7cd7eb7b06d86073619061ccb470">ARRAY_NUM_ELEM</a></div><div class="ttdeci">#define ARRAY_NUM_ELEM(_array)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00145">core.h:145</a></div></div>
 <div class="ttc" id="acore_8h_html_a8f9ec45dfcbfb9fbab71c05303821c85"><div class="ttname"><a href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free</a></div><div class="ttdeci">void lacf_free(void *buf)</div><div class="ttdef"><b>Definition:</b> <a href="core_8c_source.html#l00049">core.c:49</a></div></div>
-<div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00121">core.h:121</a></div></div>
+<div class="ttc" id="acore_8h_html_a9e8d01ecc8e8522304b7aa1e2cd2be7e"><div class="ttname"><a href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a></div><div class="ttdeci">#define LACF_DESTROY(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00132">core.h:132</a></div></div>
 <div class="ttc" id="adelay__line_8h_html_a67cb409cfc3cce1b17ababc587b2be83"><div class="ttname"><a href="delay__line_8h.html#a67cb409cfc3cce1b17ababc587b2be83">DELAY_LINE_PUSH</a></div><div class="ttdeci">#define DELAY_LINE_PUSH(line, value)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00369">delay_line.h:369</a></div></div>
 <div class="ttc" id="adelay__line_8h_html_a6acb91fd216c5d35c81c434cc2689e6a"><div class="ttname"><a href="delay__line_8h.html#a6acb91fd216c5d35c81c434cc2689e6a">DELAY_LINE_PUSH_IMM</a></div><div class="ttdeci">#define DELAY_LINE_PUSH_IMM(line, value)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00371">delay_line.h:371</a></div></div>
 <div class="ttc" id="adelay__line_8h_html_a96268d5410ea7891ed1117ca8aff3de8"><div class="ttname"><a href="delay__line_8h.html#a96268d5410ea7891ed1117ca8aff3de8">delay_line_init</a></div><div class="ttdeci">static void delay_line_init(delay_line_t *line, uint64_t delay_us)</div><div class="ttdef"><b>Definition:</b> <a href="delay__line_8h_source.html#l00089">delay_line.h:89</a></div></div>
 <div class="ttc" id="aglutils_8h_html"><div class="ttname"><a href="glutils_8h.html">glutils.h</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a30182f04d046b525751e08d94b0861fd"><div class="ttname"><a href="glutils_8h.html#a30182f04d046b525751e08d94b0861fd">glutils_nsight_debugger_present</a></div><div class="ttdeci">bool_t glutils_nsight_debugger_present(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01071">glutils.c:1071</a></div></div>
 <div class="ttc" id="aglutils__zink_8h_html_ab9a62c7ec15480fa223d74517ac863b3"><div class="ttname"><a href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a></div><div class="ttdeci">bool_t glutils_in_zink_mode(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01441">glutils.c:1441</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a3fe5d016401fc4e043366ff82a8c5297"><div class="ttname"><a href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a></div><div class="ttdeci">char * mkpathname(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00833">helpers.c:833</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a5fb11f4a6bbbf275b2f2889f21624fec"><div class="ttname"><a href="helpers_8h.html#a5fb11f4a6bbbf275b2f2889f21624fec">sprintf_alloc</a></div><div class="ttdeci">static char * sprintf_alloc(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00525">helpers.h:525</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa012c69005867de5d490f681f69bdc32"><div class="ttname"><a href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a></div><div class="ttdeci">char * file2str(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01033">helpers.c:1033</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa8cb08867675f56a6dd9b290eb8df21f"><div class="ttname"><a href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a></div><div class="ttdeci">void append_format(char **str, size_t *sz, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00731">helpers.c:731</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_af5575547211f8f53991140618173d08a"><div class="ttname"><a href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf</a></div><div class="ttdeci">void * file2buf(const char *filename, size_t *bufsz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01131">helpers.c:1131</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>

@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['safe_5fappend_5frealloc_1249',['safe_append_realloc',['../safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e',1,'safe_alloc.h']]],
-  ['safe_5fcalloc_1250',['safe_calloc',['../safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1',1,'safe_alloc.h']]],
-  ['safe_5fmalloc_1251',['safe_malloc',['../safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74',1,'safe_alloc.h']]],
-  ['safe_5frealloc_1252',['safe_realloc',['../safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658',1,'safe_alloc.h']]],
-  ['safe_5fstrdup_1253',['safe_strdup',['../safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a',1,'safe_alloc.h']]],
-  ['sph2ecef_1254',['sph2ecef',['../geom_8h.html#a68c240a440e56b2c31f8f7748e3b2af0',1,'geom.c']]],
-  ['sph2ecmi_1255',['sph2ecmi',['../geom_8h.html#acddd60d3ea495cec8655be1cfc459dfd',1,'geom.c']]],
-  ['sph_5fxlate_1256',['sph_xlate',['../geom_8h.html#a723ffc427ca85abc1002dc96095f02ce',1,'geom.c']]],
-  ['sph_5fxlate_5finit_1257',['sph_xlate_init',['../geom_8h.html#a64fd8a0e813ab24cfc8f15144d0dde4a',1,'geom.c']]],
-  ['sph_5fxlate_5fvect_1258',['sph_xlate_vect',['../geom_8h.html#ad7e49e720e5ff4d2a2df30f80948fd06',1,'geom.c']]],
-  ['stereo_5ffpp_5finit_1259',['stereo_fpp_init',['../geom_8h.html#a83caa3e6874080fef88ade04fdb3c2d9',1,'geom.c']]]
+  ['rel_5fangle_1391',['rel_angle',['../geom_8h.html#acae90c48cb9c26a1a95e97ab6a18b6c9',1,'geom.c']]],
+  ['rel_5fhdg_5fimpl_1392',['rel_hdg_impl',['../helpers_8h.html#aab2e0b814c99c025f8f9f104fbc2524b',1,'helpers.c']]],
+  ['remove_5fdirectory_1393',['remove_directory',['../helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af',1,'helpers.c']]],
+  ['remove_5ffile_1394',['remove_file',['../helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7',1,'helpers.c']]],
+  ['roundmul_1395',['roundmul',['../helpers_8h.html#ad76ba691fb06f9a6973d4abc371399ca',1,'helpers.h']]]
 ];

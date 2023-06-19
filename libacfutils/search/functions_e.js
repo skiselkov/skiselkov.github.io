@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rel_5fangle_1248',['rel_angle',['../geom_8h.html#acae90c48cb9c26a1a95e97ab6a18b6c9',1,'geom.c']]]
+  ['quad_5fbezier_5ffunc_1389',['quad_bezier_func',['../geom_8h.html#a8519be29c2a174f6cd24382305c60dc3',1,'geom.c']]],
+  ['quad_5fbezier_5ffunc_5finv_1390',['quad_bezier_func_inv',['../geom_8h.html#a1d18c6a5f9af8a5606d55794c4473add',1,'geom.c']]]
 ];

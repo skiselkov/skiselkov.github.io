@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base64_8h.html">acfutils/base64.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="conf_8h.html">acfutils/conf.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -318,7 +318,7 @@ $(function() {
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    srch.key = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(strlen(line) + 1);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    srch.type = type;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    strcpy(srch.key, line);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    strtolower(srch.key);   <span class="comment">/* keys are case-insensitive */</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a>(srch.key);   <span class="comment">/* keys are case-insensitive */</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    ck = <a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;<a class="code" href="structconf.html">conf</a>-&gt;tree, &amp;srch, &amp;where);</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">if</span> (ck == NULL) {</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="comment">/* if the key didn&#39;t exist yet, create a new one */</span></div>
@@ -335,7 +335,7 @@ $(function() {
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        ck-&gt;str = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(strlen(&amp;sep[1]) + 1);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        strcpy(ck-&gt;str, &amp;sep[1]);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">if</span> (unescape)</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            unescape_percent(ck-&gt;str);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(ck-&gt;str);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordtype">size_t</span> l = strlen(&amp;sep[1]);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        ssize_t sz_est = <a class="code" href="base64_8h.html#aac40bfc083e3855b310e18ed3b7738e1">BASE64_DEC_SIZE</a>(l);</div>
@@ -369,7 +369,7 @@ $(function() {
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> (parser_get_next_line(f_fp, &amp;line, &amp;linecap,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="helpers_8h.html#a649e61b3dc2430114cc3ff076f2cf847">parser_get_next_line</a>(f_fp, &amp;line, &amp;linecap,</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                &amp;linenum) &lt;= 0) {</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            }</div>
@@ -414,7 +414,7 @@ $(function() {
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment">     * Split at line breaks. If the file uses \r\n line terminators,</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment">     * a strip_space of each line gets rid of the trailing \r.</span></div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    lines = strsplit(instr, <span class="stringliteral">&quot;\n&quot;</span>, <span class="keyword">true</span>, &amp;n_lines);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    lines = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(instr, <span class="stringliteral">&quot;\n&quot;</span>, <span class="keyword">true</span>, &amp;n_lines);</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n_lines; i++) {</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordtype">char</span> *comment;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">/*</span></div>
@@ -435,12 +435,12 @@ $(function() {
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            }</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        }</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    }</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    free_strlist(lines, n_lines);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(lines, n_lines);</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">if</span> (tmpbuf != NULL)</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        free(tmpbuf);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="structconf.html">conf</a>);</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;errout:</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    free_strlist(lines, n_lines);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(lines, n_lines);</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">if</span> (tmpbuf != NULL)</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        free(tmpbuf);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <a class="code" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_free</a>(<a class="code" href="structconf.html">conf</a>);</div>
@@ -467,7 +467,7 @@ $(function() {
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">     * We when atomically replace the target file to avoid the possibility</span></div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">     * of writing an incomplete file.</span></div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    filename_tmp = sprintf_alloc(<span class="stringliteral">&quot;%s.tmp&quot;</span>, filename);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    filename_tmp = <a class="code" href="helpers_8h.html#a5fb11f4a6bbbf275b2f2889f21624fec">sprintf_alloc</a>(<span class="stringliteral">&quot;%s.tmp&quot;</span>, filename);</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160; </div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">if</span> (!compressed) {</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        FILE *fp = fopen(filename_tmp, <span class="stringliteral">&quot;wb&quot;</span>);</div>
@@ -494,7 +494,7 @@ $(function() {
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="comment">         * Windows needs special handling, because it doesn&#39;t let us</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="comment">         * use rename for the replace operation.</span></div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <span class="keywordflow">if</span> (file_exists(filename, NULL)) {</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(filename, NULL)) {</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            <span class="keywordflow">if</span> (!ReplaceFileA(filename, filename_tmp, NULL,</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                REPLACEFILE_IGNORE_MERGE_ERRORS |</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                REPLACEFILE_IGNORE_ACL_ERRORS, NULL, NULL)) {</div>
@@ -656,8 +656,8 @@ $(function() {
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;{</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="keywordtype">char</span> buf[strlen(key) + 1];</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keyword">const</span> <a class="code" href="structconf__key__t.html">conf_key_t</a> srch = { .key = buf };</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    lacf_strlcpy(buf, key, <span class="keyword">sizeof</span> (buf));</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    strtolower(buf);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(buf, key, <span class="keyword">sizeof</span> (buf));</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <a class="code" href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a>(buf);</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;<a class="code" href="structconf.html">conf</a>-&gt;tree, &amp;srch, where));</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;}</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
@@ -838,7 +838,7 @@ $(function() {
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        ck = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ck));</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;        ck-&gt;key = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(key);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        strtolower(ck-&gt;key);</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        <a class="code" href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a>(ck-&gt;key);</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;<a class="code" href="structconf.html">conf</a>-&gt;tree, ck, where);</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;    }</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    ck_free_value(ck);</div>
@@ -870,7 +870,7 @@ $(function() {
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="keywordflow">if</span> (ck == NULL) {</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        ck = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ck));</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        ck-&gt;key = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(key);</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        strtolower(ck-&gt;key);</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        <a class="code" href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a>(ck-&gt;key);</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;        <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;<a class="code" href="structconf.html">conf</a>-&gt;tree, ck, where);</div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        ck_free_value(ck);</div>
@@ -990,7 +990,7 @@ $(function() {
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="keywordflow">if</span> (ck == NULL) {</div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        ck = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ck));</div>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        ck-&gt;key = <a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(key);</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        strtolower(ck-&gt;key);</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        <a class="code" href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a>(ck-&gt;key);</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;        <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;<a class="code" href="structconf.html">conf</a>-&gt;tree, ck, where);</div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;        ck_free_value(ck);</div>
@@ -1283,6 +1283,15 @@ $(function() {
 <div class="ttc" id="aconf_8h_html_af5046ccebaddedc3b678647327943e5c"><div class="ttname"><a href="conf_8h.html#af5046ccebaddedc3b678647327943e5c">conf_get_data</a></div><div class="ttdeci">size_t conf_get_data(const conf_t *conf, const char *key, void *buf, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00894">conf.c:894</a></div></div>
 <div class="ttc" id="aconf_8h_html_af60d28d2ab4b5d5f02733645136c0278"><div class="ttname"><a href="conf_8h.html#af60d28d2ab4b5d5f02733645136c0278">conf_write_buf</a></div><div class="ttdeci">size_t conf_write_buf(const conf_t *conf, void *buf, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00539">conf.c:539</a></div></div>
 <div class="ttc" id="aconf_8h_html_af9141de6ec91a5b2703e760f5b85ff8d"><div class="ttname"><a href="conf_8h.html#af9141de6ec91a5b2703e760f5b85ff8d">conf_set_lli</a></div><div class="ttdeci">void conf_set_lli(conf_t *conf, const char *key, long long value)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00996">conf.c:996</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a0f84d5cead8589f53c0df8e5a5ff8af7"><div class="ttname"><a href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a></div><div class="ttdeci">void unescape_percent(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00753">helpers.c:753</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a5fb11f4a6bbbf275b2f2889f21624fec"><div class="ttname"><a href="helpers_8h.html#a5fb11f4a6bbbf275b2f2889f21624fec">sprintf_alloc</a></div><div class="ttdeci">static char * sprintf_alloc(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00525">helpers.h:525</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a649e61b3dc2430114cc3ff076f2cf847"><div class="ttname"><a href="helpers_8h.html#a649e61b3dc2430114cc3ff076f2cf847">parser_get_next_line</a></div><div class="ttdeci">static ssize_t parser_get_next_line(FILE *fp, char **linep, size_t *linecap, unsigned *linenum)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00341">helpers.h:341</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_abafc800336b18c55464e9db4c1710a8a"><div class="ttname"><a href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a></div><div class="ttdeci">void strtolower(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00773">helpers.c:773</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

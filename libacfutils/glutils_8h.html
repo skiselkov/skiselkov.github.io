@@ -1423,7 +1423,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
 <p>Same as <a class="el" href="glutils_8h.html#a9098d7a8b37da6e2999ebbce6da2dd7a">glutils_cache_get_3D_quads()</a>, but for <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> objects. </p>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8c_source.html#l00648">648</a> of file <a class="el" href="glutils_8c_source.html">glutils.c</a>.</p>
@@ -1607,7 +1607,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
 <p>Destroys a <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> object which you have previously initialized using <a class="el" href="glutils_8h.html#a73651a7f8853c2473f6f5302bdff2f92">glutils_init_3D_lines()</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8c_source.html#l00737">737</a> of file <a class="el" href="glutils_8c_source.html">glutils.c</a>.</p>
@@ -1651,7 +1651,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Kills all OpenGL client state arrays. Call this before enabling the OpenGL client arrays you will need to draw, as otherwise you don't know if some other plugin left them in some misconfigured state.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>This function shouldn't be used for modern OpenGL contexts, as it uses the deprecated glDisableClientState() GL function. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>This function shouldn't be used for modern OpenGL contexts, as it uses the deprecated glDisableClientState() GL function. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8c_source.html#l00128">128</a> of file <a class="el" href="glutils_8c_source.html">glutils.c</a>.</p>
 
@@ -1673,7 +1673,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Disables all (but at most 32) vertex attribute arrays. This should be used to make sure all OpenGL state is clean at the start of an X-Plane draw callback when using shared vertex array objects.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>This function shouldn't be used for modern OpenGL contexts. You should only disable vertex attributes you've previously enabled. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>This function shouldn't be used for modern OpenGL contexts. You should only disable vertex attributes you've previously enabled. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8c_source.html#l00158">158</a> of file <a class="el" href="glutils_8c_source.html">glutils.c</a>.</p>
 
@@ -1735,7 +1735,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
 <p>Draws a <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> object, using a custom shader program. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lines</td><td>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> object which you've previously initialized using <a class="el" href="glutils_8h.html#a73651a7f8853c2473f6f5302bdff2f92">glutils_init_3D_lines()</a>. </td></tr>
@@ -1959,7 +1959,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
 <p>Implementation of the <a class="el" href="glutils_8h.html#a73651a7f8853c2473f6f5302bdff2f92">glutils_init_3D_lines()</a> macro. Don't call directly. </p>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8c_source.html#l00662">662</a> of file <a class="el" href="glutils_8c_source.html">glutils.c</a>.</p>

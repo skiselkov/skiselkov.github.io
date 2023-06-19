@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['zlib_5fcompress_1307',['zlib_compress',['../compress_8h.html#a935ac026a0a2c0e9e7fd13f8b45c2e98',1,'compress_zlib.c']]],
-  ['zlib_5fdecompress_1308',['zlib_decompress',['../compress_8h.html#a6176508ee1e8fba42a96cd306f183b97',1,'compress_zlib.c']]],
-  ['zlib_5ftest_1309',['zlib_test',['../compress_8h.html#a391b4bb1ca71c5fb6befffafd0a69253',1,'compress_zlib.c']]]
+  ['unescape_5fpercent_1412',['unescape_percent',['../helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7',1,'helpers.c']]],
+  ['utf8_5fchar_5fget_5fnum_5fbytes_1413',['utf8_char_get_num_bytes',['../helpers_8h.html#aadcb2d470c0aefd94e21311289597719',1,'helpers.c']]],
+  ['utf8_5fget_5fnum_5fchars_1414',['utf8_get_num_chars',['../helpers_8h.html#a509c1118b11292f78ef2897b5257c4d3',1,'helpers.c']]]
 ];

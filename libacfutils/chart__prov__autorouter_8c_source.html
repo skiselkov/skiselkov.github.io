@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/thread.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;chartdb_impl.h&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;chart_prov_autorouter.h&quot;</span></div>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">char</span> airac_nr[8];</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    snprintf(airac_nr, <span class="keyword">sizeof</span> (airac_nr), <span class="stringliteral">&quot;%d&quot;</span>, cdb-&gt;airac);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> (mkpathname(cdb-&gt;path, cdb-&gt;prov_name, airac_nr, <span class="stringliteral">&quot;index.xml&quot;</span>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(cdb-&gt;path, cdb-&gt;prov_name, airac_nr, <span class="stringliteral">&quot;index.xml&quot;</span>,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        NULL));</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    snprintf(airac_nr, <span class="keyword">sizeof</span> (airac_nr), <span class="stringliteral">&quot;%d&quot;</span>, cdb-&gt;airac);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    snprintf(fname, <span class="keyword">sizeof</span> (fname), <span class="stringliteral">&quot;%s.xml&quot;</span>, country_name);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> (mkpathname(cdb-&gt;path, cdb-&gt;prov_name, airac_nr, fname, NULL));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(cdb-&gt;path, cdb-&gt;prov_name, airac_nr, fname, NULL));</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keywordtype">char</span> *</div>
@@ -140,7 +140,7 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (category == NULL)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        category = <span class="stringliteral">&quot;index&quot;</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    snprintf(fname, <span class="keyword">sizeof</span> (fname), <span class="stringliteral">&quot;%s.xml&quot;</span>, category);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> (mkpathname(cdb-&gt;path, cdb-&gt;prov_name, airac_nr, icao,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(cdb-&gt;path, cdb-&gt;prov_name, airac_nr, icao,</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        fname, NULL));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
@@ -158,7 +158,7 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    snprintf(url, <span class="keyword">sizeof</span>(url), <span class="stringliteral">&quot;%s%s&quot;</span>, BASE_URL, path);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (!file_exists(cachefile, NULL) ||</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(cachefile, NULL) ||</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        (doc = xmlParseFile(cachefile)) == NULL) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        bool_t result = chart_download_multi(&amp;curl, cdb, url,</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            cachefile, <span class="stringliteral">&quot;PROPFIND&quot;</span>, login, -1,</div>
@@ -253,7 +253,7 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        NULL    <span class="comment">/* list terminator */</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    };</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    strtoupper(name);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="helpers_8h.html#a28aa317f1047b42c1c77a71e03fada94">strtoupper</a>(name);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    word_subst(name, subst);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">/* Kill any leading or trailing whitespace */</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    strip_space(name);</div>
@@ -285,20 +285,20 @@ $(function() {
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(curl);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    comps = strsplit(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">if</span> (n_comps &lt; 5)</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    unescape_percent(comps[1]);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[1]);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    country = comps[1];</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    unescape_percent(comps[2]);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[2]);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (strlen(comps[2]) &lt; 8)</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">goto</span> out;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    lacf_strlcpy(icao, comps[2], 5);    <span class="comment">/* first 4 chars is ICAO */</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(icao, comps[2], 5);    <span class="comment">/* first 4 chars is ICAO */</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    arpt_name = &amp;(comps[2][7]);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    unescape_percent(comps[3]);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[3]);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">typename</span> = comps[3];</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> (strcmp(<span class="keyword">typename</span>, <span class="stringliteral">&quot;Airport&quot;</span>) == 0 || strcmp(<span class="keyword">typename</span>, <span class="stringliteral">&quot;VFR&quot;</span>) == 0)</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        chart_type = CHART_TYPE_APD;</div>
@@ -315,7 +315,7 @@ $(function() {
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    filename = strdup(comps[4]);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    snprintf(common_prefix, <span class="keyword">sizeof</span> (common_prefix), <span class="stringliteral">&quot;AD 2 %s &quot;</span>, icao);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    unescape_percent(comps[4]);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[4]);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    chartname = comps[4];</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">if</span> (strncmp(chartname, common_prefix, strlen(common_prefix)) == 0) {</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordtype">int</span> l = strlen(common_prefix);</div>
@@ -336,7 +336,7 @@ $(function() {
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        free(chart);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;out:</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
@@ -349,26 +349,26 @@ $(function() {
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">size_t</span> n_comps;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">char</span> icao[8];</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    comps = strsplit(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span> (n_comps &lt; 4) {</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        logMsg(<span class="stringliteral">&quot;Malformed chart category dir listing: %s&quot;</span>, path);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    unescape_percent(comps[2]);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[2]);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (strlen(comps[2]) &lt; 8) {</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        logMsg(<span class="stringliteral">&quot;Malformed chart category dir listing: %s&quot;</span>, path);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    lacf_strlcpy(icao, comps[2], 5);    <span class="comment">/* first 4 chars is ICAO */</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    unescape_percent(comps[3]);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(icao, comps[2], 5);    <span class="comment">/* first 4 chars is ICAO */</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[3]);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    cachefile = mk_arpt_cache_path(cdb, icao, comps[3]);</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    result = webdav_foreach_dirlist(cdb, curl, path, cachefile,</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        parse_chart);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    free(cachefile);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> (result);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
@@ -385,21 +385,21 @@ $(function() {
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(curl);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    comps = strsplit(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (n_comps &lt; 3)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    unescape_percent(comps[1]);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[1]);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    country = comps[1];</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    unescape_percent(comps[2]);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[2]);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (strlen(comps[2]) &lt; 8)</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">goto</span> out;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    lacf_strlcpy(icao, comps[2], 5);    <span class="comment">/* first 4 chars is ICAO */</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(icao, comps[2], 5);    <span class="comment">/* first 4 chars is ICAO */</span></div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    arpt_name = &amp;(comps[2][7]);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    arpt = chartdb_add_arpt(cdb, icao, arpt_name, country, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    arpt-&gt;codename = strdup(path);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;out:</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
@@ -411,17 +411,17 @@ $(function() {
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">char</span> **comps;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordtype">size_t</span> n_comps;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    comps = strsplit(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (n_comps &lt; 2) {</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        logMsg(<span class="stringliteral">&quot;Malformed country index \&quot;%s\&quot; in response from server&quot;</span>,</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            path);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    cachefile = mk_country_cache_path(cdb, comps[1]);</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    result = webdav_foreach_dirlist(cdb, curl, path, cachefile,</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        parse_airport);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    free_strlist(comps, n_comps);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span> (result);</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
@@ -489,7 +489,7 @@ $(function() {
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    snprintf(url, <span class="keyword">sizeof</span> (url), <span class="stringliteral">&quot;%s%s&quot;</span>, BASE_URL, chart-&gt;codename);</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    result = chart_download_multi(&amp;curl, cdb, url, filepath, NULL,</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        login, -1, <span class="stringliteral">&quot;Error downloading chart index&quot;</span>, NULL);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">if</span> (!result &amp;&amp; file_exists(filepath, NULL)) {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">if</span> (!result &amp;&amp; <a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(filepath, NULL)) {</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        logMsg(<span class="stringliteral">&quot;WARNING: failed to contact autorouter servers to &quot;</span></div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="stringliteral">&quot;refresh chart \&quot;%s\&quot;. However, we appear to still have &quot;</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="stringliteral">&quot;a locally cached copy of this chart available, so I &quot;</span></div>
@@ -532,7 +532,15 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_a4bb880dc20444723fd13922d72d79937"><div class="ttname"><a href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a></div><div class="ttdeci">#define VERIFY0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00154">assert.h:154</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aavl_8h_html"><div class="ttname"><a href="avl_8h.html">avl.h</a></div></div>
-<div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00077">core.h:77</a></div></div>
+<div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00088">core.h:88</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a0f84d5cead8589f53c0df8e5a5ff8af7"><div class="ttname"><a href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a></div><div class="ttdeci">void unescape_percent(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00753">helpers.c:753</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a28aa317f1047b42c1c77a71e03fada94"><div class="ttname"><a href="helpers_8h.html#a28aa317f1047b42c1c77a71e03fada94">strtoupper</a></div><div class="ttdeci">void strtoupper(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00783">helpers.c:783</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a3fe5d016401fc4e043366ff82a8c5297"><div class="ttname"><a href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a></div><div class="ttdeci">char * mkpathname(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00833">helpers.c:833</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructchart__dl__info__t_html"><div class="ttname"><a href="structchart__dl__info__t.html">chart_dl_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__common_8h_source.html#l00039">chart_prov_common.h:39</a></div></div>
 <div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00075">chartdb.h:75</a></div></div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_5fin_5fpoly_1245',['point_in_poly',['../geom_8h.html#a66a0de8f857a5c3cabce75a97805b35a',1,'geom.c']]]
+  ['ortho_5ffpp_5finit_1381',['ortho_fpp_init',['../geom_8h.html#adcba205507a17912d90c72036ca4e59b',1,'geom.c']]]
 ];

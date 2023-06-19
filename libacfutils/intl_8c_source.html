@@ -95,7 +95,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;acfutils/intl.h&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;acfutils/helpers.h&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">static</span> avl_tree_t tbl;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> bool_t acfutils_xlate_inited = B_FALSE;</div>
@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            } <span class="keywordflow">while</span> (c != <span class="charliteral">&#39;\n&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;\r&#39;</span> &amp;&amp; c != EOF);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">case</span> <span class="charliteral">&#39;&quot;&#39;</span>: {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">char</span> *str = parser_get_next_quoted_str(fp);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">char</span> *str = <a class="code" href="helpers_8h.html#add0d2e9b6f64f8b3d0ac4a7fb52fc191">parser_get_next_quoted_str</a>(fp);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (e == NULL) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                logMsg(<span class="stringliteral">&quot;malformed po file %s: out of place &quot;</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="stringliteral">&quot;quoted string found&quot;</span>, po_file);</div>
@@ -321,6 +321,8 @@ $(function() {
 <div class="ttc" id="aavl_8h_html_a86bad92bbbcbf451c56929f1f23fadde"><div class="ttname"><a href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a></div><div class="ttdeci">void * avl_find(const avl_tree_t *tree, const void *node, avl_index_t *where)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00244">avl.c:244</a></div></div>
 <div class="ttc" id="aavl_8h_html_ac65a3472303f2a3ee479f57f6c816cab"><div class="ttname"><a href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a></div><div class="ttdeci">void avl_create(avl_tree_t *tree, int(*compar)(const void *, const void *), size_t size, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00867">avl.c:867</a></div></div>
 <div class="ttc" id="aavl_8h_html_af07adf796c231b360ea20c33dde96ea6"><div class="ttname"><a href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a></div><div class="ttdeci">void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_add0d2e9b6f64f8b3d0ac4a7fb52fc191"><div class="ttname"><a href="helpers_8h.html#add0d2e9b6f64f8b3d0ac4a7fb52fc191">parser_get_next_quoted_str</a></div><div class="ttdeci">static char * parser_get_next_quoted_str(FILE *fp)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00370">helpers.h:370</a></div></div>
 <div class="ttc" id="astructxlate__ent__t_html"><div class="ttname"><a href="structxlate__ent__t.html">xlate_ent_t</a></div><div class="ttdef"><b>Definition:</b> <a href="intl_8c_source.html#l00035">intl.c:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

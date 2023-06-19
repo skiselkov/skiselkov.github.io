@@ -93,6 +93,8 @@ Include dependency graph for core.h:</div>
 Macros</h2></td></tr>
 <tr class="memitem:ab58a705ceeb200925bb0a7e302959982"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8h.html#ab58a705ceeb200925bb0a7e302959982">UNUSED_ATTR</a></td></tr>
 <tr class="separator:ab58a705ceeb200925bb0a7e302959982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d75ac9ad4ec7ac47087f77969b2b36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8h.html#ac9d75ac9ad4ec7ac47087f77969b2b36">WARN_UNUSED_RES_ATTR</a></td></tr>
+<tr class="separator:ac9d75ac9ad4ec7ac47087f77969b2b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf3209f083788b8c9ebfabd7a1fdb48c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8h.html#acf3209f083788b8c9ebfabd7a1fdb48c">PACKED_ATTR</a></td></tr>
 <tr class="separator:acf3209f083788b8c9ebfabd7a1fdb48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d500a34c624c2cae56bc25a31b12f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)&#160;&#160;&#160;(void)(x)</td></tr>
@@ -147,7 +149,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Given a fixed-size array, evaluates to the number of elements in the array. Useful for automatically determining the capacity of an array for functions which take a count-of-elements argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00134">134</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00145">145</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>
@@ -174,7 +176,7 @@ Variables</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Calls <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a> on <code>ptr</code> and also then sets the pointer to <code>NULL</code> to force a null-pointer-dereference and hard crash if an attempt is made to use the pointer after the <code>LACF_DESTROY</code> operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00121">121</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00132">132</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>
@@ -191,7 +193,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Attribute which marks a structure as having a packed memory layout (i.e. the compiler isn't allowed to insert padding). Place at the start of a structure definition, e.g. <code>PACKED_ATTR struct structName { ... };</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00075">75</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00086">86</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +214,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Attribute which stops a compiler from complaining when a variable isn't used. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00077">77</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00088">88</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +231,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Attribute which marks a function as unused. This is designed to avoid warnings &amp; errors from compiler code analyzers for unused static functions. Place this ahead of a function declaration or definition, to mark the function as purposely unused. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00074">74</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00084">84</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9d75ac9ad4ec7ac47087f77969b2b36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d75ac9ad4ec7ac47087f77969b2b36">&#9670;&nbsp;</a></span>WARN_UNUSED_RES_ATTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WARN_UNUSED_RES_ATTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Attribute which if used on a function, makes the compiler emit a warning if the return value of a function is ignored. </p>
+
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00085">85</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>

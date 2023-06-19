@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crc64_8h.html">acfutils/crc64.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;acfutils/helpers.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/htbl.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint64_t</div>
@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    memset(htbl, 0, <span class="keyword">sizeof</span> (*htbl));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/* round table size up to nearest multiple of 2 */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    htbl-&gt;tbl_sz = P2ROUNDUP(tbl_sz);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    htbl-&gt;tbl_sz = <a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(tbl_sz);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    htbl-&gt;buckets = malloc(<span class="keyword">sizeof</span> (*htbl-&gt;buckets) * htbl-&gt;tbl_sz);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(htbl-&gt;buckets != NULL);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; htbl-&gt;tbl_sz; i++)</div>
@@ -331,32 +331,35 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">char</span>    *result = NULL;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">size_t</span>  result_sz = 0;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;(%lu){\n&quot;</span>,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;(%lu){\n&quot;</span>,</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        (<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>)htbl-&gt;num_values);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; htbl-&gt;tbl_sz; i++) {</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        list_t *bucket = &amp;htbl-&gt;buckets[i];</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;  [%lu] =&quot;</span>,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;  [%lu] =&quot;</span>,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            (<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>)i);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">if</span> (list_head(bucket) == NULL)</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot; &lt;empty&gt;&quot;</span>);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot; &lt;empty&gt;&quot;</span>);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structhtbl__bucket__item__t.html">htbl_bucket_item_t</a> *item = list_head(bucket); item;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            item = list_next(bucket, item)) {</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> (printable_keys) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot; (%s) &quot;</span>,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot; (%s) &quot;</span>,</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    item-&gt;key);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot; (#BIN)&quot;</span>);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot; (#BIN)&quot;</span>);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            }</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    append_format(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(&amp;result, &amp;result_sz, <span class="stringliteral">&quot;}&quot;</span>);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> (result);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="acrc64_8h_html"><div class="ttname"><a href="crc64_8h.html">crc64.h</a></div></div>
 <div class="ttc" id="acrc64_8h_html_a60436d6eee70fc3a9a8689e62e56c9da"><div class="ttname"><a href="crc64_8h.html#a60436d6eee70fc3a9a8689e62e56c9da">crc64</a></div><div class="ttdeci">API_EXPORT uint64_t crc64(const void *input, size_t sz)</div><div class="ttdef"><b>Definition:</b> <a href="crc64_8c_source.html#l00055">crc64.c:55</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa8cb08867675f56a6dd9b290eb8df21f"><div class="ttname"><a href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a></div><div class="ttdeci">void append_format(char **str, size_t *sz, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00731">helpers.c:731</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_affbf3bc3071c56f0176da4018ca5c093"><div class="ttname"><a href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a></div><div class="ttdeci">#define P2ROUNDUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00674">helpers.h:674</a></div></div>
 <div class="ttc" id="astructhtbl__bucket__item__t_html"><div class="ttname"><a href="structhtbl__bucket__item__t.html">htbl_bucket_item_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00047">htbl.h:47</a></div></div>
 <div class="ttc" id="astructhtbl__multi__value__t_html"><div class="ttname"><a href="structhtbl__multi__value__t.html">htbl_multi_value_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00041">htbl.h:41</a></div></div>
 <div class="ttc" id="astructhtbl__t_html"><div class="ttname"><a href="structhtbl__t.html">htbl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00059">htbl.h:59</a></div></div>

@@ -230,7 +230,7 @@ $(function() {
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(fmt != NULL);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cb != NULL);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    cmdname = vsprintf_alloc(fmt, ap);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    cmdname = <a class="code" href="helpers_8h.html#ab7920070eec6089f660b9f987807e557">vsprintf_alloc</a>(fmt, ap);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    cmd = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*cmd));</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    cmd-&gt;cmd = XPLMFindCommand(cmdname);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (cmd-&gt;cmd == NULL) {</div>
@@ -280,7 +280,7 @@ $(function() {
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (ref == NULL) {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">/* No need to dealloc here, we&#39;ll be crashing anyway */</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(ref != NULL, <span class="stringliteral">&quot;Command %s not found&quot;</span>,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            vsprintf_alloc(fmt, ap2));</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <a class="code" href="helpers_8h.html#ab7920070eec6089f660b9f987807e557">vsprintf_alloc</a>(fmt, ap2));</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    va_end(ap2);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
@@ -322,6 +322,7 @@ $(function() {
 <div class="ttc" id="adr__cmd__reg_8h_html_ad98b3993964ab1bd58d78f1eb804c164"><div class="ttname"><a href="dr__cmd__reg_8h.html#ad98b3993964ab1bd58d78f1eb804c164">f_dcr_find_cmd</a></div><div class="ttdeci">XPLMCommandRef f_dcr_find_cmd(const char *fmt, XPLMCommandCallback_f cb, bool before, void *refcon,...)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00234">dr_cmd_reg.c:234</a></div></div>
 <div class="ttc" id="adr__cmd__reg_8h_html_ae4f8c071460141989398714883491b48"><div class="ttname"><a href="dr__cmd__reg_8h.html#ae4f8c071460141989398714883491b48">dcr_create_cmd</a></div><div class="ttdeci">XPLMCommandRef dcr_create_cmd(const char *cmdname, const char *cmddesc, XPLMCommandCallback_f cb, bool before, void *refcon)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00289">dr_cmd_reg.c:289</a></div></div>
 <div class="ttc" id="adr__cmd__reg_8h_html_aed569fccee99f4fd6092c9701a8213c9"><div class="ttname"><a href="dr__cmd__reg_8h.html#aed569fccee99f4fd6092c9701a8213c9">dcr_find_cmd_v</a></div><div class="ttdeci">XPLMCommandRef dcr_find_cmd_v(const char *fmt, XPLMCommandCallback_f cb, bool before, void *refcon, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00192">dr_cmd_reg.c:192</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ab7920070eec6089f660b9f987807e557"><div class="ttname"><a href="helpers_8h.html#ab7920070eec6089f660b9f987807e557">vsprintf_alloc</a></div><div class="ttdeci">static char * vsprintf_alloc(const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00493">helpers.h:493</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructreg__cmd__t_html"><div class="ttname"><a href="structreg__cmd__t.html">reg_cmd_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dr__cmd__reg_8c_source.html#l00030">dr_cmd_reg.c:30</a></div></div>

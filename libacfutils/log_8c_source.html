@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;acfutils/helpers.h&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;acfutils/thread.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
@@ -237,7 +237,7 @@ $(function() {
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    sep = strrchr(filename, DIRSEP);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (sep == NULL)</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    lacf_strlcpy(symstxtname, filename, MIN((uintptr_t)(sep - filename) + 1,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(symstxtname, filename, MIN((uintptr_t)(sep - filename) + 1,</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">sizeof</span> (symstxtname)));</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    strncat(symstxtname, DIRSEP_S <span class="stringliteral">&quot;syms.txt&quot;</span>, <span class="keyword">sizeof</span> (symstxtname));</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    fp = fopen(symstxtname, <span class="stringliteral">&quot;rb&quot;</span>);</div>
@@ -264,7 +264,7 @@ $(function() {
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        prevptr = ptr;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        lacf_strlcpy(prevsym, sym, <span class="keyword">sizeof</span> (prevsym));</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(prevsym, sym, <span class="keyword">sizeof</span> (prevsym));</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    fclose(fp);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
@@ -331,7 +331,7 @@ $(function() {
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    line-&gt;SizeOfStruct = <span class="keyword">sizeof</span> (*line);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    lacf_strlcpy(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> frame_nr = 0; frame_nr &lt; frames; frame_nr++) {</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keyword">static</span> DWORD64 address;</div>
@@ -451,7 +451,7 @@ $(function() {
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    lacf_strlcpy(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; num_stack_frames; i++) {</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> fill;</div>
@@ -517,6 +517,8 @@ $(function() {
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
+<div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
