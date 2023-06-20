@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define _LACF_GETLINE_INCLUDED</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;lacf_getline_impl.h&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lacf__getline__impl_8h.html">lacf_getline_impl.h</a>&quot;</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define _LACF_PARSER_FUNCS_INCLUDED</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parser__funcs_8h.html">parser_funcs.h</a>&quot;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;math_core.h&quot;</span></div>
@@ -305,7 +305,7 @@ $(function() {
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor">    do { \</span></div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor">        free_strlist((comps), (num)); \</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="preprocessor">        (comps) = NULL; \</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="preprocessor">        (len) = 0; \</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="preprocessor">        (num) = 0; \</span></div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">    } while (0)</span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(<span class="keywordtype">char</span> **comps, <span class="keywordtype">size_t</span> num);</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(<span class="keywordtype">char</span> *str);</div>
@@ -356,9 +356,9 @@ $(function() {
 <div class="line"><a name="l00473"></a><span class="lineno"><a class="line" href="helpers_8h.html#a1d146bcc9ca7354ce52753e0cffe8b72">  473</a></span>&#160;<a class="code" href="helpers_8h.html#a1d146bcc9ca7354ce52753e0cffe8b72">lacf_getline</a>(<span class="keywordtype">char</span> **lineptr, <span class="keywordtype">size_t</span> *n, FILE *stream)</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;{</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="preprocessor">#if defined(ACFUTILS_BUILD) || defined(ACFUTILS_GZIP_PARSER)</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordflow">return</span> (lacf_getline_impl(lineptr, n, stream, B_FALSE));</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="lacf__getline__impl_8h.html#a6b3293a7db11b9162f3a92528cfbbf80">lacf_getline_impl</a>(lineptr, n, stream, B_FALSE));</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keywordflow">return</span> (lacf_getline_impl(lineptr, n, stream));</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="lacf__getline__impl_8h.html#a6b3293a7db11b9162f3a92528cfbbf80">lacf_getline_impl</a>(lineptr, n, stream));</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;}</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
@@ -644,6 +644,8 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_af5575547211f8f53991140618173d08a"><div class="ttname"><a href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf</a></div><div class="ttdeci">void * file2buf(const char *filename, size_t *bufsz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01131">helpers.c:1131</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afdc68fd76dd295da42e7ccfaaf83ef06"><div class="ttname"><a href="helpers_8h.html#afdc68fd76dd295da42e7ccfaaf83ef06">is_valid_loc_freq_hz</a></div><div class="ttdeci">static bool_t is_valid_loc_freq_hz(uint32_t freq_hz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00285">helpers.h:285</a></div></div>
+<div class="ttc" id="alacf__getline__impl_8h_html"><div class="ttname"><a href="lacf__getline__impl_8h.html">lacf_getline_impl.h</a></div></div>
+<div class="ttc" id="alacf__getline__impl_8h_html_a6b3293a7db11b9162f3a92528cfbbf80"><div class="ttname"><a href="lacf__getline__impl_8h.html#a6b3293a7db11b9162f3a92528cfbbf80">lacf_getline_impl</a></div><div class="ttdeci">static ssize_t lacf_getline_impl(char **line_p, size_t *cap_p, void *fp)</div><div class="ttdef"><b>Definition:</b> <a href="lacf__getline__impl_8h_source.html#l00058">lacf_getline_impl.h:58</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html"><div class="ttname"><a href="parser__funcs_8h.html">parser_funcs.h</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a67421394e8c77a1f0ad9941e722bf804"><div class="ttname"><a href="parser__funcs_8h.html#a67421394e8c77a1f0ad9941e722bf804">parser_get_next_quoted_str2</a></div><div class="ttdeci">static char * parser_get_next_quoted_str2(FILE *fp, int *linep)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00143">parser_funcs.h:143</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_ae3a267e45a58bb1004d4b164e6a17dcb"><div class="ttname"><a href="parser__funcs_8h.html#ae3a267e45a58bb1004d4b164e6a17dcb">parser_get_next_line_impl</a></div><div class="ttdeci">static ssize_t parser_get_next_line_impl(void *fp, char **linep, size_t *linecap, unsigned *linenum)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00077">parser_funcs.h:77</a></div></div>

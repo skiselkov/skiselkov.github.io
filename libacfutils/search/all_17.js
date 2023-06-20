@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['xlate_5fent_5ft_888',['xlate_ent_t',['../structxlate__ent__t.html',1,'']]]
+  ['xlate_5fent_5ft_901',['xlate_ent_t',['../structxlate__ent__t.html',1,'']]],
+  ['xpjoy_5faxis_5ft_902',['xpjoy_axis_t',['../joystick_8h.html#ab7e81012fa7b93e829d88a6bd1f31415',1,'joystick.h']]]
 ];
