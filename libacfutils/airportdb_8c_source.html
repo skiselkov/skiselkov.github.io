@@ -437,14 +437,14 @@ $(function() {
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    htbl_empty(&amp;db-&gt;icao_index, NULL, NULL);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    htbl_destroy(&amp;db-&gt;icao_index);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    htbl_empty(&amp;db-&gt;iata_index, NULL, NULL);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    htbl_destroy(&amp;db-&gt;iata_index);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty</a>(&amp;db-&gt;icao_index, NULL, NULL);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <a class="code" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a>(&amp;db-&gt;icao_index);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <a class="code" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty</a>(&amp;db-&gt;iata_index, NULL, NULL);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a>(&amp;db-&gt;iata_index);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    htbl_create(&amp;db-&gt;icao_index, MAX(<a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(cap), 16),</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create</a>(&amp;db-&gt;icao_index, MAX(<a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(cap), 16),</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        AIRPORTDB_ICAO_LEN, B_TRUE);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    htbl_create(&amp;db-&gt;iata_index, MAX(<a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(cap), 16),</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <a class="code" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create</a>(&amp;db-&gt;iata_index, MAX(<a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(cap), 16),</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        AIRPORTDB_IATA_LEN, B_TRUE);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
@@ -2306,9 +2306,9 @@ $(function() {
 <div class="line"><a name="l02249"></a><span class="lineno"> 2249</span>&#160; </div>
 <div class="line"><a name="l02250"></a><span class="lineno"> 2250</span>&#160;    <a class="code" href="avl_8h.html#a817ce6aeb0cf331b4fd8b76aca67043a">avl_add</a>(&amp;db-&gt;arpt_index, idx);</div>
 <div class="line"><a name="l02251"></a><span class="lineno"> 2251</span>&#160;    <span class="keywordflow">if</span> (idx-&gt;<a class="code" href="structarpt__index__t.html#aaab7cdaa1d2b33459a4f05ae8a66141d">icao</a>[0] != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l02252"></a><span class="lineno"> 2252</span>&#160;        htbl_set(&amp;db-&gt;icao_index, idx-&gt;<a class="code" href="structarpt__index__t.html#aaab7cdaa1d2b33459a4f05ae8a66141d">icao</a>, idx);</div>
+<div class="line"><a name="l02252"></a><span class="lineno"> 2252</span>&#160;        <a class="code" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a>(&amp;db-&gt;icao_index, idx-&gt;<a class="code" href="structarpt__index__t.html#aaab7cdaa1d2b33459a4f05ae8a66141d">icao</a>, idx);</div>
 <div class="line"><a name="l02253"></a><span class="lineno"> 2253</span>&#160;    <span class="keywordflow">if</span> (idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>[0] != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l02254"></a><span class="lineno"> 2254</span>&#160;        htbl_set(&amp;db-&gt;iata_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, idx);</div>
+<div class="line"><a name="l02254"></a><span class="lineno"> 2254</span>&#160;        <a class="code" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a>(&amp;db-&gt;iata_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, idx);</div>
 <div class="line"><a name="l02255"></a><span class="lineno"> 2255</span>&#160; </div>
 <div class="line"><a name="l02256"></a><span class="lineno"> 2256</span>&#160;    <span class="keywordflow">return</span> (idx);</div>
 <div class="line"><a name="l02257"></a><span class="lineno"> 2257</span>&#160;}</div>
@@ -2362,9 +2362,9 @@ $(function() {
 <div class="line"><a name="l02305"></a><span class="lineno"> 2305</span>&#160;        }</div>
 <div class="line"><a name="l02306"></a><span class="lineno"> 2306</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;db-&gt;arpt_index, idx, &amp;where) == NULL) {</div>
 <div class="line"><a name="l02307"></a><span class="lineno"> 2307</span>&#160;            <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;db-&gt;arpt_index, idx, where);</div>
-<div class="line"><a name="l02308"></a><span class="lineno"> 2308</span>&#160;            htbl_set(&amp;db-&gt;icao_index, idx-&gt;<a class="code" href="structarpt__index__t.html#aaab7cdaa1d2b33459a4f05ae8a66141d">icao</a>, idx);</div>
+<div class="line"><a name="l02308"></a><span class="lineno"> 2308</span>&#160;            <a class="code" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a>(&amp;db-&gt;icao_index, idx-&gt;<a class="code" href="structarpt__index__t.html#aaab7cdaa1d2b33459a4f05ae8a66141d">icao</a>, idx);</div>
 <div class="line"><a name="l02309"></a><span class="lineno"> 2309</span>&#160;            <span class="keywordflow">if</span> (strcmp(idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, <span class="stringliteral">&quot;-&quot;</span>) != 0)</div>
-<div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;                htbl_set(&amp;db-&gt;iata_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, idx);</div>
+<div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;                <a class="code" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a>(&amp;db-&gt;iata_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, idx);</div>
 <div class="line"><a name="l02311"></a><span class="lineno"> 2311</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160;            logMsg(<span class="stringliteral">&quot;WARNING: found duplicate airport ident %s &quot;</span></div>
 <div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;                <span class="stringliteral">&quot;in index. Skipping it. This shouldn&#39;t happen &quot;</span></div>
@@ -3070,8 +3070,8 @@ $(function() {
 <div class="line"><a name="l03118"></a><span class="lineno"> 3118</span>&#160;<span class="comment">     * Just some defaults - we&#39;ll resize the tables later when</span></div>
 <div class="line"><a name="l03119"></a><span class="lineno"> 3119</span>&#160;<span class="comment">     * we actually read the index file.</span></div>
 <div class="line"><a name="l03120"></a><span class="lineno"> 3120</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l03121"></a><span class="lineno"> 3121</span>&#160;    htbl_create(&amp;db-&gt;icao_index, 16, AIRPORTDB_ICAO_LEN, B_TRUE);</div>
-<div class="line"><a name="l03122"></a><span class="lineno"> 3122</span>&#160;    htbl_create(&amp;db-&gt;iata_index, 16, AIRPORTDB_IATA_LEN, B_TRUE);</div>
+<div class="line"><a name="l03121"></a><span class="lineno"> 3121</span>&#160;    <a class="code" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create</a>(&amp;db-&gt;icao_index, 16, AIRPORTDB_ICAO_LEN, B_TRUE);</div>
+<div class="line"><a name="l03122"></a><span class="lineno"> 3122</span>&#160;    <a class="code" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create</a>(&amp;db-&gt;iata_index, 16, AIRPORTDB_IATA_LEN, B_TRUE);</div>
 <div class="line"><a name="l03123"></a><span class="lineno"> 3123</span>&#160;}</div>
 <div class="line"><a name="l03124"></a><span class="lineno"> 3124</span>&#160; </div>
 <div class="line"><a name="l03129"></a><span class="lineno"> 3129</span>&#160;<span class="keywordtype">void</span></div>
@@ -3097,10 +3097,10 @@ $(function() {
 <div class="line"><a name="l03149"></a><span class="lineno"> 3149</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;db-&gt;geo_table);</div>
 <div class="line"><a name="l03150"></a><span class="lineno"> 3150</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;db-&gt;apt_dat);</div>
 <div class="line"><a name="l03151"></a><span class="lineno"> 3151</span>&#160; </div>
-<div class="line"><a name="l03152"></a><span class="lineno"> 3152</span>&#160;    htbl_empty(&amp;db-&gt;icao_index, NULL, NULL);</div>
-<div class="line"><a name="l03153"></a><span class="lineno"> 3153</span>&#160;    htbl_destroy(&amp;db-&gt;icao_index);</div>
-<div class="line"><a name="l03154"></a><span class="lineno"> 3154</span>&#160;    htbl_empty(&amp;db-&gt;iata_index, NULL, NULL);</div>
-<div class="line"><a name="l03155"></a><span class="lineno"> 3155</span>&#160;    htbl_destroy(&amp;db-&gt;iata_index);</div>
+<div class="line"><a name="l03152"></a><span class="lineno"> 3152</span>&#160;    <a class="code" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty</a>(&amp;db-&gt;icao_index, NULL, NULL);</div>
+<div class="line"><a name="l03153"></a><span class="lineno"> 3153</span>&#160;    <a class="code" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a>(&amp;db-&gt;icao_index);</div>
+<div class="line"><a name="l03154"></a><span class="lineno"> 3154</span>&#160;    <a class="code" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty</a>(&amp;db-&gt;iata_index, NULL, NULL);</div>
+<div class="line"><a name="l03155"></a><span class="lineno"> 3155</span>&#160;    <a class="code" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a>(&amp;db-&gt;iata_index);</div>
 <div class="line"><a name="l03156"></a><span class="lineno"> 3156</span>&#160; </div>
 <div class="line"><a name="l03157"></a><span class="lineno"> 3157</span>&#160;    mutex_destroy(&amp;db-&gt;lock);</div>
 <div class="line"><a name="l03158"></a><span class="lineno"> 3158</span>&#160; </div>
@@ -3148,7 +3148,7 @@ $(function() {
 <div class="line"><a name="l03223"></a><span class="lineno"> 3223</span>&#160; </div>
 <div class="line"><a name="l03224"></a><span class="lineno"> 3224</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">void</span> *mv = list_head(<a class="code" href="structlist.html">list</a>); mv != NULL;</div>
 <div class="line"><a name="l03225"></a><span class="lineno"> 3225</span>&#160;        mv = list_next(<a class="code" href="structlist.html">list</a>, mv)) {</div>
-<div class="line"><a name="l03226"></a><span class="lineno"> 3226</span>&#160;        <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = HTBL_VALUE_MULTI(mv);</div>
+<div class="line"><a name="l03226"></a><span class="lineno"> 3226</span>&#160;        <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = <a class="code" href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a>(mv);</div>
 <div class="line"><a name="l03227"></a><span class="lineno"> 3227</span>&#160; </div>
 <div class="line"><a name="l03228"></a><span class="lineno"> 3228</span>&#160;        <span class="keywordflow">if</span> (found_cb != NULL) {</div>
 <div class="line"><a name="l03229"></a><span class="lineno"> 3229</span>&#160;            airport_t *apt = <a class="code" href="airportdb_8h.html#a67f35d46aba65f22cc7bfba3de8bc69b">adb_airport_lookup</a>(db, idx-&gt;<a class="code" href="structarpt__index__t.html#a5c1fc185f0c9e00ab4687bbbaf641bf7">ident</a>,</div>
@@ -3185,7 +3185,7 @@ $(function() {
 <div class="line"><a name="l03275"></a><span class="lineno"> 3275</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(icao != NULL);</div>
 <div class="line"><a name="l03276"></a><span class="lineno"> 3276</span>&#160; </div>
 <div class="line"><a name="l03277"></a><span class="lineno"> 3277</span>&#160;    strlcpy(icao_srch, icao, <span class="keyword">sizeof</span> (icao_srch));</div>
-<div class="line"><a name="l03278"></a><span class="lineno"> 3278</span>&#160;    <a class="code" href="structlist.html">list</a> = htbl_lookup_multi(&amp;db-&gt;icao_index, icao_srch);</div>
+<div class="line"><a name="l03278"></a><span class="lineno"> 3278</span>&#160;    <a class="code" href="structlist.html">list</a> = <a class="code" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a>(&amp;db-&gt;icao_index, icao_srch);</div>
 <div class="line"><a name="l03279"></a><span class="lineno"> 3279</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structlist.html">list</a> != NULL) {</div>
 <div class="line"><a name="l03280"></a><span class="lineno"> 3280</span>&#160;        airport_lookup_htbl_multi(db, <a class="code" href="structlist.html">list</a>, found_cb, userinfo);</div>
 <div class="line"><a name="l03281"></a><span class="lineno"> 3281</span>&#160;        <span class="keywordflow">return</span> (list_count(<a class="code" href="structlist.html">list</a>));</div>
@@ -3205,7 +3205,7 @@ $(function() {
 <div class="line"><a name="l03301"></a><span class="lineno"> 3301</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(iata != NULL);</div>
 <div class="line"><a name="l03302"></a><span class="lineno"> 3302</span>&#160; </div>
 <div class="line"><a name="l03303"></a><span class="lineno"> 3303</span>&#160;    strlcpy(iata_srch, iata, <span class="keyword">sizeof</span> (iata_srch));</div>
-<div class="line"><a name="l03304"></a><span class="lineno"> 3304</span>&#160;    <a class="code" href="structlist.html">list</a> = htbl_lookup_multi(&amp;db-&gt;iata_index, iata_srch);</div>
+<div class="line"><a name="l03304"></a><span class="lineno"> 3304</span>&#160;    <a class="code" href="structlist.html">list</a> = <a class="code" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a>(&amp;db-&gt;iata_index, iata_srch);</div>
 <div class="line"><a name="l03305"></a><span class="lineno"> 3305</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structlist.html">list</a> != NULL) {</div>
 <div class="line"><a name="l03306"></a><span class="lineno"> 3306</span>&#160;        airport_lookup_htbl_multi(db, <a class="code" href="structlist.html">list</a>, found_cb, userinfo);</div>
 <div class="line"><a name="l03307"></a><span class="lineno"> 3307</span>&#160;        <span class="keywordflow">return</span> (list_count(<a class="code" href="structlist.html">list</a>));</div>
@@ -3412,6 +3412,12 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_aef0696611004600a10d0ff68f92f235b"><div class="ttname"><a href="helpers_8h.html#aef0696611004600a10d0ff68f92f235b">is_valid_iata_code</a></div><div class="ttdeci">bool_t is_valid_iata_code(const char *iata)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00336">helpers.c:336</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_affbf3bc3071c56f0176da4018ca5c093"><div class="ttname"><a href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a></div><div class="ttdeci">#define P2ROUNDUP(x)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00683">helpers.h:683</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_a248883027609880b0caab6b6acb0fa07"><div class="ttname"><a href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a></div><div class="ttdeci">const list_t * htbl_lookup_multi(const htbl_t *htbl, const void *key)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00393">htbl.c:393</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_a3dfaf9e203e5b7b089c31b7821ba29d0"><div class="ttname"><a href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty</a></div><div class="ttdeci">void htbl_empty(htbl_t *htbl, void(*func)(void *value, void *userinfo), void *userinfo)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00155">htbl.c:155</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_a88d645f2bea53d9a6723c363794f4f54"><div class="ttname"><a href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a></div><div class="ttdeci">void htbl_set(htbl_t *htbl, const void *key, void *value)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00218">htbl.c:218</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_ab5b59d969356f69c1016f3dcc3ed72b3"><div class="ttname"><a href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a></div><div class="ttdeci">#define HTBL_VALUE_MULTI(x)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00088">htbl.h:88</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_abcfcd47ef71717b7b88bd20850592e3b"><div class="ttname"><a href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create</a></div><div class="ttdeci">void htbl_create(htbl_t *htbl, size_t tbl_sz, size_t key_sz, bool_t multi_value)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00080">htbl.c:80</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_aff88c3b81bd2226f60a9b3bbc9865c86"><div class="ttname"><a href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a></div><div class="ttdeci">void htbl_destroy(htbl_t *htbl)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00112">htbl.c:112</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>

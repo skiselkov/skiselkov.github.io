@@ -485,8 +485,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h3><a class="anchor" id="autotoc_md9"></a>
-Example</h3>
+<h4><a class="anchor" id="autotoc_md9"></a>
+Example</h4>
 <div class="fragment"><div class="line"><span class="preprocessor">#define FOO_FEATURE_FLAG 0x1</span></div>
 <div class="line"><span class="preprocessor">#define BAR_FEATURE_FLAG 0x2</span></div>
 <div class="line"><span class="keywordtype">int</span> feature_flags = 0;</div>
@@ -660,7 +660,9 @@ Example</h3>
 </div><div class="memdoc">
 <p>Appends a printf-like formatted string to the end of *str, reallocating the buffer as needed to contain it. The value of <code>*str</code> is modified to point to the appropriately reallocated buffer.</p>
 <p>You should free the string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a> when you are done.</p>
-<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *str = NULL;</div>
+<h4><a class="anchor" id="autotoc_md10"></a>
+Example</h4>
+<div class="fragment"><div class="line"><span class="keywordtype">char</span> *str = NULL;</div>
 <div class="line"><span class="keywordtype">size_t</span> sz = 0;</div>
 <div class="line"><span class="keywordtype">int</span> foo = 5;</div>
 <div class="line"><span class="keywordtype">float</span> bar = 10.5;</div>
@@ -1091,8 +1093,8 @@ Example</h3>
   </table>
   </dd>
 </dl>
-<h3><a class="anchor" id="autotoc_md8"></a>
-Example:</h3>
+<h4><a class="anchor" id="autotoc_md8"></a>
+Example:</h4>
 <p>Say we want a number to take up room for 4 digits, adding decimal digits after the point as necessary to padd the number:</p>
 <ul>
 <li>0.001 becomes "0.00" - rounding is applied as appropriate</li>
@@ -2158,8 +2160,8 @@ Example:</h3>
 </table>
 </div><div class="memdoc">
 <p>Renormalizes a heading value that lies outside of the 0-360 inclusive range. Basically this takes care of undoing "angle wrapping".</p>
-<h3><a class="anchor" id="autotoc_md7"></a>
-Example:</h3>
+<h4><a class="anchor" id="autotoc_md7"></a>
+Example:</h4>
 <div class="fragment"><div class="line"><a class="code" href="helpers_8h.html#aa1bb762c862124549ce016f6510196d4">normalize_hdg</a>(90)  =&gt; 90</div>
 <div class="line"><a class="code" href="helpers_8h.html#aa1bb762c862124549ce016f6510196d4">normalize_hdg</a>(-90) =&gt; 270</div>
 <div class="line"><a class="code" href="helpers_8h.html#aa1bb762c862124549ce016f6510196d4">normalize_hdg</a>(400) =&gt; 40</div>

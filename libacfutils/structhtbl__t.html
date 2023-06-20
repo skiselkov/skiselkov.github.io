@@ -68,6 +68,8 @@ $(function() {
 <div class="title">htbl_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="htbl_8h_source.html">htbl.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -83,13 +85,22 @@ list_t *&#160;</td><td class="memItemRight" valign="bottom"><b>buckets</b></td><
 <tr class="memitem:ac6e502c93b06488a31160deaf84d86be"><td class="memItemLeft" align="right" valign="top"><a id="ac6e502c93b06488a31160deaf84d86be"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>num_values</b></td></tr>
 <tr class="separator:ac6e502c93b06488a31160deaf84d86be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a763cbce60ac0018310d0b2bc1d9e8855"><td class="memItemLeft" align="right" valign="top"><a id="a763cbce60ac0018310d0b2bc1d9e8855"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>multi_value</b></td></tr>
-<tr class="separator:a763cbce60ac0018310d0b2bc1d9e8855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecf657745957f2c27eb49b00c10101d1"><td class="memItemLeft" align="right" valign="top"><a id="aecf657745957f2c27eb49b00c10101d1"></a>
+bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>multi_value</b></td></tr>
+<tr class="separator:aecf657745957f2c27eb49b00c10101d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00059">59</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
+<div class="textblock"><p>Hash table structure. This is the object you want to allocate and subsequently initialize using <a class="el" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create()</a>. Use <a class="el" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy()</a> to deinitialize a hash table. Use <a class="el" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set()</a>, <a class="el" href="htbl_8h.html#ac1b155e7115a03a19adca3c62120688c">htbl_remove()</a> and <a class="el" href="htbl_8h.html#a28bd05cab4bf9f4896317f19c574047e">htbl_lookup()</a> to respectively add, remove and look up hash table entries. The hash table supports storing duplicate entries for the same hash value. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create()</a> </dd>
+<dd>
+<a class="el" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy()</a> </dd>
+<dd>
+<a class="el" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set()</a> </dd>
+<dd>
+<a class="el" href="htbl_8h.html#ac1b155e7115a03a19adca3c62120688c">htbl_remove()</a> </dd>
+<dd>
+<a class="el" href="htbl_8h.html#a28bd05cab4bf9f4896317f19c574047e">htbl_lookup()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00060">60</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>acfutils/<a class="el" href="htbl_8h_source.html">htbl.h</a></li>
 </ul>
