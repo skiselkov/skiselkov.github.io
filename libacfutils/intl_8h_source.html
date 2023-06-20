@@ -70,7 +70,7 @@ $(function() {
 <div class="title">intl.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="intl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * CDDL HEADER START</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * The contents of this file are subject to the terms of the</span></div>
@@ -92,33 +92,36 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * CDDL HEADER END</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Copyright 2017 Saso Kiselkov. All rights reserved.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Copyright 2023 Saso Kiselkov. All rights reserved.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef _ACF_UTILS_INTL_H_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define _ACF_UTILS_INTL_H_</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define _(str)  acfutils_xlate(str)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;API_EXPORT bool_t acfutils_xlate_init(<span class="keyword">const</span> <span class="keywordtype">char</span> *po_file);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;API_EXPORT <span class="keywordtype">void</span> acfutils_xlate_fini(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;API_EXPORT <span class="keyword">const</span> <span class="keywordtype">char</span> *acfutils_xlate(<span class="keyword">const</span> <span class="keywordtype">char</span> *msgid);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;API_EXPORT <span class="keyword">const</span> <span class="keywordtype">char</span> *acfutils_xplang2code(<span class="keywordtype">int</span> lang);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_INTL_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef _ACF_UTILS_INTL_H_</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define _ACF_UTILS_INTL_H_</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">   61</a></span>&#160;<span class="preprocessor">#define _(str)  acfutils_xlate(str)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;API_EXPORT bool_t <a class="code" href="intl_8h.html#aa5891cad8ed3021149ce7143f71d89b5">acfutils_xlate_init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *po_file);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="intl_8h.html#a1870b8e03351ca70b3f0a5749dc55fbd">acfutils_xlate_fini</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;API_EXPORT <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="intl_8h.html#a7451750859b86b966dbfb17f7b640ff7">acfutils_xlate</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msgid);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;API_EXPORT <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="intl_8h.html#a7eee7179ec62145b40420786eaced6f5">acfutils_xplang2code</a>(<span class="keywordtype">int</span> lang);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_INTL_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aintl_8h_html_a1870b8e03351ca70b3f0a5749dc55fbd"><div class="ttname"><a href="intl_8h.html#a1870b8e03351ca70b3f0a5749dc55fbd">acfutils_xlate_fini</a></div><div class="ttdeci">void acfutils_xlate_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="intl_8c_source.html#l00213">intl.c:213</a></div></div>
+<div class="ttc" id="aintl_8h_html_a7451750859b86b966dbfb17f7b640ff7"><div class="ttname"><a href="intl_8h.html#a7451750859b86b966dbfb17f7b640ff7">acfutils_xlate</a></div><div class="ttdeci">const char * acfutils_xlate(const char *msgid)</div><div class="ttdef"><b>Definition:</b> <a href="intl_8c_source.html#l00249">intl.c:249</a></div></div>
+<div class="ttc" id="aintl_8h_html_a7eee7179ec62145b40420786eaced6f5"><div class="ttname"><a href="intl_8h.html#a7eee7179ec62145b40420786eaced6f5">acfutils_xplang2code</a></div><div class="ttdeci">const char * acfutils_xplang2code(int lang)</div><div class="ttdef"><b>Definition:</b> <a href="intl_8c_source.html#l00271">intl.c:271</a></div></div>
+<div class="ttc" id="aintl_8h_html_aa5891cad8ed3021149ce7143f71d89b5"><div class="ttname"><a href="intl_8h.html#aa5891cad8ed3021149ce7143f71d89b5">acfutils_xlate_init</a></div><div class="ttdeci">bool_t acfutils_xlate_init(const char *po_file)</div><div class="ttdef"><b>Definition:</b> <a href="intl_8c_source.html#l00079">intl.c:79</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
