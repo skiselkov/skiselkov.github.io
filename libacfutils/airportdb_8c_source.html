@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="conf_8h.html">acfutils/conf.h</a>&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">acfutils/list.h</a>&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;acfutils/math.h&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;acfutils/perf.h&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
@@ -164,7 +164,7 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <a class="code" href="structtile__t.html">tile_t</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structapt__dats__entry__t.html">   98</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    list_node_t node;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a> node;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">char</span>        *fname;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
@@ -775,7 +775,7 @@ $(function() {
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="comment"> * The apt.dat filenames are full filesystem paths.</span></div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;find_all_apt_dats(<span class="keyword">const</span> <a class="code" href="structairportdb__t.html">airportdb_t</a> *db, list_t *<a class="code" href="structlist.html">list</a>)</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;find_all_apt_dats(<span class="keyword">const</span> <a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a>)</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;{</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keywordtype">char</span> *fname;</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    FILE *scenery_packs_ini;</div>
@@ -808,7 +808,7 @@ $(function() {
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            e = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(<span class="keyword">sizeof</span> (*e));</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            e-&gt;fname = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;xpdir, scn_name,</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                <span class="stringliteral">&quot;Earth nav data&quot;</span>, <span class="stringliteral">&quot;apt.dat&quot;</span>, NULL);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            list_insert_tail(<a class="code" href="structlist.html">list</a>, e);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(<a class="code" href="structlist.html">list</a>, e);</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        }</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        fclose(scenery_packs_ini);</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        free(line);</div>
@@ -823,7 +823,7 @@ $(function() {
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        e-&gt;fname = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;xpdir, <span class="stringliteral">&quot;Global Scenery&quot;</span>,</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            <span class="stringliteral">&quot;Global Airports&quot;</span>, <span class="stringliteral">&quot;Earth nav data&quot;</span>, <span class="stringliteral">&quot;apt.dat&quot;</span>, NULL);</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    }</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    list_insert_tail(<a class="code" href="structlist.html">list</a>, e);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(<a class="code" href="structlist.html">list</a>, e);</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;}</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;<span class="comment">/*</span></div>
@@ -940,7 +940,7 @@ $(function() {
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    arpt = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*arpt));</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;arpt-&gt;rwys, runway_compar, sizeof (runway_t),</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        offsetof(runway_t, node));</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    list_create(&amp;arpt-&gt;freqs, sizeof (<a class="code" href="structfreq__info__t.html">freq_info_t</a>),</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;arpt-&gt;freqs, sizeof (<a class="code" href="structfreq__info__t.html">freq_info_t</a>),</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        offsetof(<a class="code" href="structfreq__info__t.html">freq_info_t</a>, node));</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(arpt-&gt;ident, new_ident, sizeof (arpt-&gt;ident));</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    <a class="code" href="helpers_8h.html#a28aa317f1047b42c1c77a71e03fada94">strtoupper</a>(arpt-&gt;ident);</div>
@@ -1250,7 +1250,7 @@ $(function() {
 <div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;        strncat(&amp;freq-&gt;<a class="code" href="structfreq__info__t.html#abc1e86d7c344fe34ff09e72d4595ab7e">name</a>[strlen(freq-&gt;<a class="code" href="structfreq__info__t.html#abc1e86d7c344fe34ff09e72d4595ab7e">name</a>)], comps[i],</div>
 <div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;            sizeof (freq-&gt;<a class="code" href="structfreq__info__t.html#abc1e86d7c344fe34ff09e72d4595ab7e">name</a>) - strlen(freq-&gt;<a class="code" href="structfreq__info__t.html#abc1e86d7c344fe34ff09e72d4595ab7e">name</a>));</div>
 <div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;    }</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    list_insert_tail(&amp;arpt-&gt;freqs, freq);</div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;arpt-&gt;freqs, freq);</div>
 <div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160; </div>
 <div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;out:</div>
 <div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;    <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, ncomps);</div>
@@ -1809,8 +1809,8 @@ $(function() {
 <div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;            rs-&gt;<a class="code" href="structramp__start__t.html#aad065e4c57ea3303a27916ec499f6e5b">pos</a>.<a class="code" href="structgeo__pos2__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>, rs-&gt;<a class="code" href="structramp__start__t.html#aad065e4c57ea3303a27916ec499f6e5b">pos</a>.<a class="code" href="structgeo__pos2__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>, rs-&gt;<a class="code" href="structramp__start__t.html#a035419fa0ac5df549e03fb7144c2f1f4">hdgt</a>,</div>
 <div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;            type2name[rs-&gt;<a class="code" href="structramp__start__t.html#a91fa7c7fdb63ff9346366e8b2c920e08">type</a>], rs-&gt;<a class="code" href="structramp__start__t.html#abc1e86d7c344fe34ff09e72d4595ab7e">name</a>);</div>
 <div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;    }</div>
-<div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structfreq__info__t.html">freq_info_t</a> *freq = list_head(&amp;arpt-&gt;freqs); freq != NULL;</div>
-<div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;        freq = list_next(&amp;arpt-&gt;freqs, freq)) {</div>
+<div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structfreq__info__t.html">freq_info_t</a> *freq = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;arpt-&gt;freqs); freq != NULL;</div>
+<div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;        freq = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;arpt-&gt;freqs, freq)) {</div>
 <div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;<span class="comment">         * We always emit the frequency info using the new</span></div>
 <div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;<span class="comment">         * 8.33kHz-aware row code format.</span></div>
@@ -2189,7 +2189,7 @@ $(function() {
 <div class="line"><a name="l02132"></a><span class="lineno"> 2132</span>&#160;}</div>
 <div class="line"><a name="l02133"></a><span class="lineno"> 2133</span>&#160; </div>
 <div class="line"><a name="l02134"></a><span class="lineno"> 2134</span>&#160;<span class="keyword">static</span> bool_t</div>
-<div class="line"><a name="l02135"></a><span class="lineno"> 2135</span>&#160;read_apt_dats_list(<span class="keyword">const</span> <a class="code" href="structairportdb__t.html">airportdb_t</a> *db, list_t *<a class="code" href="structlist.html">list</a>)</div>
+<div class="line"><a name="l02135"></a><span class="lineno"> 2135</span>&#160;read_apt_dats_list(<span class="keyword">const</span> <a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a>)</div>
 <div class="line"><a name="l02136"></a><span class="lineno"> 2136</span>&#160;{</div>
 <div class="line"><a name="l02137"></a><span class="lineno"> 2137</span>&#160;    FILE *fp;</div>
 <div class="line"><a name="l02138"></a><span class="lineno"> 2138</span>&#160;    <span class="keywordtype">char</span> *filename;</div>
@@ -2213,7 +2213,7 @@ $(function() {
 <div class="line"><a name="l02156"></a><span class="lineno"> 2156</span>&#160;        <a class="code" href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a>(line);</div>
 <div class="line"><a name="l02157"></a><span class="lineno"> 2157</span>&#160;        entry = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(<span class="keyword">sizeof</span> (*entry));</div>
 <div class="line"><a name="l02158"></a><span class="lineno"> 2158</span>&#160;        entry-&gt;fname = strdup(line);</div>
-<div class="line"><a name="l02159"></a><span class="lineno"> 2159</span>&#160;        list_insert_tail(<a class="code" href="structlist.html">list</a>, entry);</div>
+<div class="line"><a name="l02159"></a><span class="lineno"> 2159</span>&#160;        <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(<a class="code" href="structlist.html">list</a>, entry);</div>
 <div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160;    }</div>
 <div class="line"><a name="l02161"></a><span class="lineno"> 2161</span>&#160; </div>
 <div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;    free(line);</div>
@@ -2223,22 +2223,22 @@ $(function() {
 <div class="line"><a name="l02166"></a><span class="lineno"> 2166</span>&#160;}</div>
 <div class="line"><a name="l02167"></a><span class="lineno"> 2167</span>&#160; </div>
 <div class="line"><a name="l02168"></a><span class="lineno"> 2168</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;destroy_apt_dats_list(list_t *<a class="code" href="structlist.html">list</a>)</div>
+<div class="line"><a name="l02169"></a><span class="lineno"> 2169</span>&#160;destroy_apt_dats_list(<a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a>)</div>
 <div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;{</div>
 <div class="line"><a name="l02171"></a><span class="lineno"> 2171</span>&#160;    <a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a> *e;</div>
 <div class="line"><a name="l02172"></a><span class="lineno"> 2172</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="structlist.html">list</a> != NULL);</div>
-<div class="line"><a name="l02173"></a><span class="lineno"> 2173</span>&#160;    <span class="keywordflow">while</span> ((e = list_head(<a class="code" href="structlist.html">list</a>)) != NULL) {</div>
-<div class="line"><a name="l02174"></a><span class="lineno"> 2174</span>&#160;        list_remove(<a class="code" href="structlist.html">list</a>, e);</div>
+<div class="line"><a name="l02173"></a><span class="lineno"> 2173</span>&#160;    <span class="keywordflow">while</span> ((e = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(<a class="code" href="structlist.html">list</a>)) != NULL) {</div>
+<div class="line"><a name="l02174"></a><span class="lineno"> 2174</span>&#160;        <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(<a class="code" href="structlist.html">list</a>, e);</div>
 <div class="line"><a name="l02175"></a><span class="lineno"> 2175</span>&#160;        free(e-&gt;fname);</div>
 <div class="line"><a name="l02176"></a><span class="lineno"> 2176</span>&#160;        free(e);</div>
 <div class="line"><a name="l02177"></a><span class="lineno"> 2177</span>&#160;    }</div>
-<div class="line"><a name="l02178"></a><span class="lineno"> 2178</span>&#160;    list_destroy(<a class="code" href="structlist.html">list</a>);</div>
+<div class="line"><a name="l02178"></a><span class="lineno"> 2178</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(<a class="code" href="structlist.html">list</a>);</div>
 <div class="line"><a name="l02179"></a><span class="lineno"> 2179</span>&#160;}</div>
 <div class="line"><a name="l02180"></a><span class="lineno"> 2180</span>&#160; </div>
 <div class="line"><a name="l02181"></a><span class="lineno"> 2181</span>&#160;<span class="keyword">static</span> bool_t</div>
-<div class="line"><a name="l02182"></a><span class="lineno"> 2182</span>&#160;cache_up_to_date(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, list_t *xp_apt_dats, <span class="keywordtype">int</span> app_version)</div>
+<div class="line"><a name="l02182"></a><span class="lineno"> 2182</span>&#160;cache_up_to_date(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <a class="code" href="structlist__t.html">list_t</a> *xp_apt_dats, <span class="keywordtype">int</span> app_version)</div>
 <div class="line"><a name="l02183"></a><span class="lineno"> 2183</span>&#160;{</div>
-<div class="line"><a name="l02184"></a><span class="lineno"> 2184</span>&#160;    list_t db_apt_dats;</div>
+<div class="line"><a name="l02184"></a><span class="lineno"> 2184</span>&#160;    <a class="code" href="structlist__t.html">list_t</a> db_apt_dats;</div>
 <div class="line"><a name="l02185"></a><span class="lineno"> 2185</span>&#160;    bool_t result = B_TRUE;</div>
 <div class="line"><a name="l02186"></a><span class="lineno"> 2186</span>&#160;    <a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a> *xp_e, *db_e;</div>
 <div class="line"><a name="l02187"></a><span class="lineno"> 2187</span>&#160;    bool_t vers_ok, cycle_ok;</div>
@@ -2255,12 +2255,12 @@ $(function() {
 <div class="line"><a name="l02198"></a><span class="lineno"> 2198</span>&#160;    <span class="keywordflow">if</span> (!vers_ok || !cycle_ok)</div>
 <div class="line"><a name="l02199"></a><span class="lineno"> 2199</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l02200"></a><span class="lineno"> 2200</span>&#160; </div>
-<div class="line"><a name="l02201"></a><span class="lineno"> 2201</span>&#160;    list_create(&amp;db_apt_dats, <span class="keyword">sizeof</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>),</div>
+<div class="line"><a name="l02201"></a><span class="lineno"> 2201</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;db_apt_dats, <span class="keyword">sizeof</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>),</div>
 <div class="line"><a name="l02202"></a><span class="lineno"> 2202</span>&#160;        offsetof(<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>, node));</div>
 <div class="line"><a name="l02203"></a><span class="lineno"> 2203</span>&#160;    read_apt_dats_list(db, &amp;db_apt_dats);</div>
-<div class="line"><a name="l02204"></a><span class="lineno"> 2204</span>&#160;    <span class="keywordflow">for</span> (xp_e = list_head(xp_apt_dats), db_e = list_head(&amp;db_apt_dats);</div>
-<div class="line"><a name="l02205"></a><span class="lineno"> 2205</span>&#160;        xp_e != NULL &amp;&amp; db_e != NULL; xp_e = list_next(xp_apt_dats, xp_e),</div>
-<div class="line"><a name="l02206"></a><span class="lineno"> 2206</span>&#160;        db_e = list_next(&amp;db_apt_dats, db_e)) {</div>
+<div class="line"><a name="l02204"></a><span class="lineno"> 2204</span>&#160;    <span class="keywordflow">for</span> (xp_e = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(xp_apt_dats), db_e = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;db_apt_dats);</div>
+<div class="line"><a name="l02205"></a><span class="lineno"> 2205</span>&#160;        xp_e != NULL &amp;&amp; db_e != NULL; xp_e = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(xp_apt_dats, xp_e),</div>
+<div class="line"><a name="l02206"></a><span class="lineno"> 2206</span>&#160;        db_e = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;db_apt_dats, db_e)) {</div>
 <div class="line"><a name="l02207"></a><span class="lineno"> 2207</span>&#160;        <span class="keywordflow">if</span> (strcmp(xp_e-&gt;fname, db_e-&gt;fname) != 0) {</div>
 <div class="line"><a name="l02208"></a><span class="lineno"> 2208</span>&#160;            result = B_FALSE;</div>
 <div class="line"><a name="l02209"></a><span class="lineno"> 2209</span>&#160;            <span class="keywordflow">break</span>;</div>
@@ -2394,7 +2394,7 @@ $(function() {
 <div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;}</div>
 <div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160; </div>
 <div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160;<span class="keyword">static</span> bool_t</div>
-<div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;recreate_cache_skeleton(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, list_t *apt_dat_files, <span class="keywordtype">int</span> app_version)</div>
+<div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;recreate_cache_skeleton(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <a class="code" href="structlist__t.html">list_t</a> *apt_dat_files, <span class="keywordtype">int</span> app_version)</div>
 <div class="line"><a name="l02341"></a><span class="lineno"> 2341</span>&#160;{</div>
 <div class="line"><a name="l02342"></a><span class="lineno"> 2342</span>&#160;    <span class="keywordtype">char</span> *filename;</div>
 <div class="line"><a name="l02343"></a><span class="lineno"> 2343</span>&#160;    FILE *fp;</div>
@@ -2441,8 +2441,8 @@ $(function() {
 <div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;        free(filename);</div>
 <div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;    }</div>
-<div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a> *e = list_head(apt_dat_files); e != NULL;</div>
-<div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160;        e = list_next(apt_dat_files, e))</div>
+<div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a> *e = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(apt_dat_files); e != NULL;</div>
+<div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160;        e = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(apt_dat_files, e))</div>
 <div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;        fprintf(fp, <span class="stringliteral">&quot;%s\n&quot;</span>, e-&gt;fname);</div>
 <div class="line"><a name="l02390"></a><span class="lineno"> 2390</span>&#160;    fclose(fp);</div>
 <div class="line"><a name="l02391"></a><span class="lineno"> 2391</span>&#160;    free(filename);</div>
@@ -2464,7 +2464,7 @@ $(function() {
 <div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;bool_t</div>
 <div class="line"><a name="l02441"></a><span class="lineno"><a class="line" href="airportdb_8h.html#a3c4d09bb57a5959f93f56fc98157bcb0"> 2441</a></span>&#160;<a class="code" href="airportdb_8h.html#a3c4d09bb57a5959f93f56fc98157bcb0">adb_recreate_cache</a>(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <span class="keywordtype">int</span> app_version)</div>
 <div class="line"><a name="l02442"></a><span class="lineno"> 2442</span>&#160;{</div>
-<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;    list_t apt_dat_files;</div>
+<div class="line"><a name="l02443"></a><span class="lineno"> 2443</span>&#160;    <a class="code" href="structlist__t.html">list_t</a> apt_dat_files;</div>
 <div class="line"><a name="l02444"></a><span class="lineno"> 2444</span>&#160;    bool_t success = B_TRUE;</div>
 <div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;    <span class="keywordtype">char</span> *index_filename = NULL;</div>
 <div class="line"><a name="l02446"></a><span class="lineno"> 2446</span>&#160;    FILE *index_file = NULL;</div>
@@ -2473,7 +2473,7 @@ $(function() {
 <div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160; </div>
 <div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160; </div>
-<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;    list_create(&amp;apt_dat_files, <span class="keyword">sizeof</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>),</div>
+<div class="line"><a name="l02452"></a><span class="lineno"> 2452</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;apt_dat_files, <span class="keyword">sizeof</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>),</div>
 <div class="line"><a name="l02453"></a><span class="lineno"> 2453</span>&#160;        offsetof(<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a>, node));</div>
 <div class="line"><a name="l02454"></a><span class="lineno"> 2454</span>&#160;    find_all_apt_dats(db, &amp;apt_dat_files);</div>
 <div class="line"><a name="l02455"></a><span class="lineno"> 2455</span>&#160;    <span class="keywordflow">if</span> (cache_up_to_date(db, &amp;apt_dat_files, app_version) &amp;&amp;</div>
@@ -2487,9 +2487,9 @@ $(function() {
 <div class="line"><a name="l02463"></a><span class="lineno"> 2463</span>&#160;    setlocale(LC_CTYPE, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l02464"></a><span class="lineno"> 2464</span>&#160;    <span class="comment">/* First scan all the provided apt.dat files */</span></div>
 <div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;    cd = iconv_open(<span class="stringliteral">&quot;ASCII//TRANSLIT&quot;</span>, <span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
-<div class="line"><a name="l02466"></a><span class="lineno"> 2466</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a> *e = list_head(&amp;apt_dat_files); e != NULL;</div>
-<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;        e = list_next(&amp;apt_dat_files, e)) {</div>
-<div class="line"><a name="l02468"></a><span class="lineno"> 2468</span>&#160;        bool_t fill_in_dups = (list_next(&amp;apt_dat_files, e) == NULL);</div>
+<div class="line"><a name="l02466"></a><span class="lineno"> 2466</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structapt__dats__entry__t.html">apt_dats_entry_t</a> *e = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;apt_dat_files); e != NULL;</div>
+<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;        e = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;apt_dat_files, e)) {</div>
+<div class="line"><a name="l02468"></a><span class="lineno"> 2468</span>&#160;        bool_t fill_in_dups = (<a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;apt_dat_files, e) == NULL);</div>
 <div class="line"><a name="l02469"></a><span class="lineno"> 2469</span>&#160;        read_apt_dat(db, e-&gt;fname, B_TRUE, &amp;cd, fill_in_dups);</div>
 <div class="line"><a name="l02470"></a><span class="lineno"> 2470</span>&#160;    }</div>
 <div class="line"><a name="l02471"></a><span class="lineno"> 2471</span>&#160;    iconv_close(cd);</div>
@@ -2863,10 +2863,10 @@ $(function() {
 <div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;        free(rwy);</div>
 <div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;arpt-&gt;rwys);</div>
 <div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160; </div>
-<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;    <span class="keywordflow">while</span> ((freq = list_remove_head(&amp;arpt-&gt;freqs)) != NULL)</div>
+<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;    <span class="keywordflow">while</span> ((freq = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;arpt-&gt;freqs)) != NULL)</div>
 <div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;        free(freq);</div>
-<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;    list_destroy(&amp;arpt-&gt;freqs);</div>
-<div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!list_link_active(&amp;arpt-&gt;cur_arpts_node));</div>
+<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;arpt-&gt;freqs);</div>
+<div class="line"><a name="l02845"></a><span class="lineno"> 2845</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!<a class="code" href="list_8h.html#a25d2b11af3a53a2616b510339506560c">list_link_active</a>(&amp;arpt-&gt;cur_arpts_node));</div>
 <div class="line"><a name="l02846"></a><span class="lineno"> 2846</span>&#160;    <a class="code" href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a>(arpt-&gt;name_orig);</div>
 <div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160;    <a class="code" href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a>(arpt-&gt;city);</div>
 <div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160;    <a class="code" href="core_8h.html#a9e8d01ecc8e8522304b7aa1e2cd2be7e">LACF_DESTROY</a>(arpt-&gt;country);</div>
@@ -2875,7 +2875,7 @@ $(function() {
 <div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160; </div>
 <div class="line"><a name="l02856"></a><span class="lineno"> 2856</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l02857"></a><span class="lineno"> 2857</span>&#160;find_nearest_airports_tile(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <a class="code" href="structvect3__t.html">vect3_t</a> ecef,</div>
-<div class="line"><a name="l02858"></a><span class="lineno"> 2858</span>&#160;    <a class="code" href="structgeo__pos2__t.html">geo_pos2_t</a> tile_coord, list_t *l)</div>
+<div class="line"><a name="l02858"></a><span class="lineno"> 2858</span>&#160;    <a class="code" href="structgeo__pos2__t.html">geo_pos2_t</a> tile_coord, <a class="code" href="structlist__t.html">list_t</a> *l)</div>
 <div class="line"><a name="l02859"></a><span class="lineno"> 2859</span>&#160;{</div>
 <div class="line"><a name="l02860"></a><span class="lineno"> 2860</span>&#160;    <a class="code" href="structtile__t.html">tile_t</a> *tile;</div>
 <div class="line"><a name="l02861"></a><span class="lineno"> 2861</span>&#160; </div>
@@ -2889,24 +2889,24 @@ $(function() {
 <div class="line"><a name="l02869"></a><span class="lineno"> 2869</span>&#160;        arpt = <a class="code" href="avl_8h.html#ad886c4acb2da4a7e86e6b94f50cc9b6b">AVL_NEXT</a>(&amp;tile-&gt;arpts, arpt)) {</div>
 <div class="line"><a name="l02870"></a><span class="lineno"> 2870</span>&#160;        <a class="code" href="structvect3__t.html">vect3_t</a> arpt_ecef = <a class="code" href="geom_8h.html#aead9ab7360b724f7e6ce03eb93b90748">geo2ecef_ft</a>(arpt-&gt;refpt, &amp;<a class="code" href="geom_8h.html#add9c613a6212052b059ccc4fa473276a">wgs84</a>);</div>
 <div class="line"><a name="l02871"></a><span class="lineno"> 2871</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="geom_8h.html#ad958d3bec0ab0c497d9fe9522f8b7ac7">vect3_abs</a>(<a class="code" href="geom_8h.html#ab28479162e54b404ae464f8f4d78f3b2">vect3_sub</a>(ecef, arpt_ecef)) &lt; db-&gt;load_limit) {</div>
-<div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;            list_insert_tail(l, arpt);</div>
+<div class="line"><a name="l02872"></a><span class="lineno"> 2872</span>&#160;            <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(l, arpt);</div>
 <div class="line"><a name="l02873"></a><span class="lineno"> 2873</span>&#160;            <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(load_airport(arpt));</div>
 <div class="line"><a name="l02874"></a><span class="lineno"> 2874</span>&#160;        }</div>
 <div class="line"><a name="l02875"></a><span class="lineno"> 2875</span>&#160;    }</div>
 <div class="line"><a name="l02876"></a><span class="lineno"> 2876</span>&#160;}</div>
 <div class="line"><a name="l02877"></a><span class="lineno"> 2877</span>&#160; </div>
-<div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160;list_t *</div>
+<div class="line"><a name="l02894"></a><span class="lineno"> 2894</span>&#160;<a class="code" href="structlist__t.html">list_t</a> *</div>
 <div class="line"><a name="l02895"></a><span class="lineno"><a class="line" href="airportdb_8h.html#a3b4f8249650f05b1a8ee9613956e276c"> 2895</a></span>&#160;<a class="code" href="airportdb_8h.html#a3b4f8249650f05b1a8ee9613956e276c">adb_find_nearest_airports</a>(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <a class="code" href="structgeo__pos2__t.html">geo_pos2_t</a> my_pos)</div>
 <div class="line"><a name="l02896"></a><span class="lineno"> 2896</span>&#160;{</div>
 <div class="line"><a name="l02897"></a><span class="lineno"> 2897</span>&#160;    <a class="code" href="structvect3__t.html">vect3_t</a> ecef;</div>
-<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;    list_t *l;</div>
+<div class="line"><a name="l02898"></a><span class="lineno"> 2898</span>&#160;    <a class="code" href="structlist__t.html">list_t</a> *l;</div>
 <div class="line"><a name="l02899"></a><span class="lineno"> 2899</span>&#160; </div>
 <div class="line"><a name="l02900"></a><span class="lineno"> 2900</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!<a class="code" href="geom_8h.html#aa3c0f9aebad96544da07a09e2f5a9a86">IS_NULL_GEO_POS</a>(my_pos));</div>
 <div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;    ecef = <a class="code" href="geom_8h.html#aead9ab7360b724f7e6ce03eb93b90748">geo2ecef_ft</a>(<a class="code" href="geom_8h.html#a8781df3a2fe955519bac73a6d3c6f0ec">GEO_POS3</a>(my_pos.<a class="code" href="structgeo__pos2__t.html#a7972334534f68166121a6e51b0aac2d6">lat</a>, my_pos.<a class="code" href="structgeo__pos2__t.html#aa96391e04b5977c50b96d77bea86a01d">lon</a>, 0), &amp;<a class="code" href="geom_8h.html#add9c613a6212052b059ccc4fa473276a">wgs84</a>);</div>
 <div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160; </div>
 <div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;    l = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(<span class="keyword">sizeof</span> (*l));</div>
-<div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160;    list_create(l, <span class="keyword">sizeof</span> (airport_t), offsetof(airport_t, cur_arpts_node));</div>
+<div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(l, <span class="keyword">sizeof</span> (airport_t), offsetof(airport_t, cur_arpts_node));</div>
 <div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = -1; i &lt;= 1; i++) {</div>
 <div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = -1; j &lt;= 1; j++)</div>
 <div class="line"><a name="l02908"></a><span class="lineno"> 2908</span>&#160;            find_nearest_airports_tile(db, ecef,</div>
@@ -2917,11 +2917,11 @@ $(function() {
 <div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;}</div>
 <div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160; </div>
 <div class="line"><a name="l02926"></a><span class="lineno"> 2926</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l02927"></a><span class="lineno"><a class="line" href="airportdb_8h.html#a59ad0ed1cc0ebf83870d855e116da38d"> 2927</a></span>&#160;<a class="code" href="airportdb_8h.html#a59ad0ed1cc0ebf83870d855e116da38d">adb_free_nearest_airport_list</a>(list_t *l)</div>
+<div class="line"><a name="l02927"></a><span class="lineno"><a class="line" href="airportdb_8h.html#a59ad0ed1cc0ebf83870d855e116da38d"> 2927</a></span>&#160;<a class="code" href="airportdb_8h.html#a59ad0ed1cc0ebf83870d855e116da38d">adb_free_nearest_airport_list</a>(<a class="code" href="structlist__t.html">list_t</a> *l)</div>
 <div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;{</div>
 <div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(l != NULL);</div>
-<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;    <span class="keywordflow">for</span> (airport_t *a = list_head(l); a != NULL; a = list_head(l))</div>
-<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;        list_remove(l, a);</div>
+<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;    <span class="keywordflow">for</span> (airport_t *a = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(l); a != NULL; a = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(l))</div>
+<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;        <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(l, a);</div>
 <div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;    <a class="code" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>(l);</div>
 <div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;}</div>
 <div class="line"><a name="l02934"></a><span class="lineno"> 2934</span>&#160; </div>
@@ -3140,14 +3140,14 @@ $(function() {
 <div class="line"><a name="l03215"></a><span class="lineno"> 3215</span>&#160;}</div>
 <div class="line"><a name="l03216"></a><span class="lineno"> 3216</span>&#160; </div>
 <div class="line"><a name="l03217"></a><span class="lineno"> 3217</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l03218"></a><span class="lineno"> 3218</span>&#160;airport_lookup_htbl_multi(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <span class="keyword">const</span> list_t *<a class="code" href="structlist.html">list</a>,</div>
+<div class="line"><a name="l03218"></a><span class="lineno"> 3218</span>&#160;airport_lookup_htbl_multi(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <span class="keyword">const</span> <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a>,</div>
 <div class="line"><a name="l03219"></a><span class="lineno"> 3219</span>&#160;    <span class="keywordtype">void</span> (*found_cb)(airport_t *<a class="code" href="structairport.html">airport</a>, <span class="keywordtype">void</span> *userinfo), <span class="keywordtype">void</span> *userinfo)</div>
 <div class="line"><a name="l03220"></a><span class="lineno"> 3220</span>&#160;{</div>
 <div class="line"><a name="l03221"></a><span class="lineno"> 3221</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
 <div class="line"><a name="l03222"></a><span class="lineno"> 3222</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="structlist.html">list</a> != NULL);</div>
 <div class="line"><a name="l03223"></a><span class="lineno"> 3223</span>&#160; </div>
-<div class="line"><a name="l03224"></a><span class="lineno"> 3224</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">void</span> *mv = list_head(<a class="code" href="structlist.html">list</a>); mv != NULL;</div>
-<div class="line"><a name="l03225"></a><span class="lineno"> 3225</span>&#160;        mv = list_next(<a class="code" href="structlist.html">list</a>, mv)) {</div>
+<div class="line"><a name="l03224"></a><span class="lineno"> 3224</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">void</span> *mv = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(<a class="code" href="structlist.html">list</a>); mv != NULL;</div>
+<div class="line"><a name="l03225"></a><span class="lineno"> 3225</span>&#160;        mv = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(<a class="code" href="structlist.html">list</a>, mv)) {</div>
 <div class="line"><a name="l03226"></a><span class="lineno"> 3226</span>&#160;        <a class="code" href="structarpt__index__t.html">arpt_index_t</a> *idx = <a class="code" href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a>(mv);</div>
 <div class="line"><a name="l03227"></a><span class="lineno"> 3227</span>&#160; </div>
 <div class="line"><a name="l03228"></a><span class="lineno"> 3228</span>&#160;        <span class="keywordflow">if</span> (found_cb != NULL) {</div>
@@ -3178,7 +3178,7 @@ $(function() {
 <div class="line"><a name="l03268"></a><span class="lineno"><a class="line" href="airportdb_8h.html#ae38d00079aa14badd3aebd3c7e95d01a"> 3268</a></span>&#160;<a class="code" href="airportdb_8h.html#ae38d00079aa14badd3aebd3c7e95d01a">adb_airport_lookup_by_icao</a>(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <span class="keyword">const</span> <span class="keywordtype">char</span> *icao,</div>
 <div class="line"><a name="l03269"></a><span class="lineno"> 3269</span>&#160;    <span class="keywordtype">void</span> (*found_cb)(airport_t *<a class="code" href="structairport.html">airport</a>, <span class="keywordtype">void</span> *userinfo), <span class="keywordtype">void</span> *userinfo)</div>
 <div class="line"><a name="l03270"></a><span class="lineno"> 3270</span>&#160;{</div>
-<div class="line"><a name="l03271"></a><span class="lineno"> 3271</span>&#160;    <span class="keyword">const</span> list_t *<a class="code" href="structlist.html">list</a>;</div>
+<div class="line"><a name="l03271"></a><span class="lineno"> 3271</span>&#160;    <span class="keyword">const</span> <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a>;</div>
 <div class="line"><a name="l03272"></a><span class="lineno"> 3272</span>&#160;    <span class="keywordtype">char</span> icao_srch[AIRPORTDB_ICAO_LEN] = {};</div>
 <div class="line"><a name="l03273"></a><span class="lineno"> 3273</span>&#160; </div>
 <div class="line"><a name="l03274"></a><span class="lineno"> 3274</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
@@ -3188,7 +3188,7 @@ $(function() {
 <div class="line"><a name="l03278"></a><span class="lineno"> 3278</span>&#160;    <a class="code" href="structlist.html">list</a> = <a class="code" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a>(&amp;db-&gt;icao_index, icao_srch);</div>
 <div class="line"><a name="l03279"></a><span class="lineno"> 3279</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structlist.html">list</a> != NULL) {</div>
 <div class="line"><a name="l03280"></a><span class="lineno"> 3280</span>&#160;        airport_lookup_htbl_multi(db, <a class="code" href="structlist.html">list</a>, found_cb, userinfo);</div>
-<div class="line"><a name="l03281"></a><span class="lineno"> 3281</span>&#160;        <span class="keywordflow">return</span> (list_count(<a class="code" href="structlist.html">list</a>));</div>
+<div class="line"><a name="l03281"></a><span class="lineno"> 3281</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(<a class="code" href="structlist.html">list</a>));</div>
 <div class="line"><a name="l03282"></a><span class="lineno"> 3282</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l03283"></a><span class="lineno"> 3283</span>&#160;        <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l03284"></a><span class="lineno"> 3284</span>&#160;    }</div>
@@ -3198,7 +3198,7 @@ $(function() {
 <div class="line"><a name="l03294"></a><span class="lineno"><a class="line" href="airportdb_8h.html#a053f80da812019d886dc48eab317e6ff"> 3294</a></span>&#160;<a class="code" href="airportdb_8h.html#a053f80da812019d886dc48eab317e6ff">adb_airport_lookup_by_iata</a>(<a class="code" href="structairportdb__t.html">airportdb_t</a> *db, <span class="keyword">const</span> <span class="keywordtype">char</span> *iata,</div>
 <div class="line"><a name="l03295"></a><span class="lineno"> 3295</span>&#160;    <span class="keywordtype">void</span> (*found_cb)(airport_t *<a class="code" href="structairport.html">airport</a>, <span class="keywordtype">void</span> *userinfo), <span class="keywordtype">void</span> *userinfo)</div>
 <div class="line"><a name="l03296"></a><span class="lineno"> 3296</span>&#160;{</div>
-<div class="line"><a name="l03297"></a><span class="lineno"> 3297</span>&#160;    <span class="keyword">const</span> list_t *<a class="code" href="structlist.html">list</a>;</div>
+<div class="line"><a name="l03297"></a><span class="lineno"> 3297</span>&#160;    <span class="keyword">const</span> <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a>;</div>
 <div class="line"><a name="l03298"></a><span class="lineno"> 3298</span>&#160;    <span class="keywordtype">char</span> iata_srch[AIRPORTDB_IATA_LEN] = {};</div>
 <div class="line"><a name="l03299"></a><span class="lineno"> 3299</span>&#160; </div>
 <div class="line"><a name="l03300"></a><span class="lineno"> 3300</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(db != NULL);</div>
@@ -3208,7 +3208,7 @@ $(function() {
 <div class="line"><a name="l03304"></a><span class="lineno"> 3304</span>&#160;    <a class="code" href="structlist.html">list</a> = <a class="code" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a>(&amp;db-&gt;iata_index, iata_srch);</div>
 <div class="line"><a name="l03305"></a><span class="lineno"> 3305</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structlist.html">list</a> != NULL) {</div>
 <div class="line"><a name="l03306"></a><span class="lineno"> 3306</span>&#160;        airport_lookup_htbl_multi(db, <a class="code" href="structlist.html">list</a>, found_cb, userinfo);</div>
-<div class="line"><a name="l03307"></a><span class="lineno"> 3307</span>&#160;        <span class="keywordflow">return</span> (list_count(<a class="code" href="structlist.html">list</a>));</div>
+<div class="line"><a name="l03307"></a><span class="lineno"> 3307</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(<a class="code" href="structlist.html">list</a>));</div>
 <div class="line"><a name="l03308"></a><span class="lineno"> 3308</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l03309"></a><span class="lineno"> 3309</span>&#160;        <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l03310"></a><span class="lineno"> 3310</span>&#160;    }</div>
@@ -3418,6 +3418,16 @@ $(function() {
 <div class="ttc" id="ahtbl_8h_html_ab5b59d969356f69c1016f3dcc3ed72b3"><div class="ttname"><a href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a></div><div class="ttdeci">#define HTBL_VALUE_MULTI(x)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00088">htbl.h:88</a></div></div>
 <div class="ttc" id="ahtbl_8h_html_abcfcd47ef71717b7b88bd20850592e3b"><div class="ttname"><a href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create</a></div><div class="ttdeci">void htbl_create(htbl_t *htbl, size_t tbl_sz, size_t key_sz, bool_t multi_value)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00080">htbl.c:80</a></div></div>
 <div class="ttc" id="ahtbl_8h_html_aff88c3b81bd2226f60a9b3bbc9865c86"><div class="ttname"><a href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a></div><div class="ttdeci">void htbl_destroy(htbl_t *htbl)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00112">htbl.c:112</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="alist_8h_html_a19992f20adf9d4f271feffa6cbb532c1"><div class="ttname"><a href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a></div><div class="ttdeci">void * list_head(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00292">list.c:292</a></div></div>
+<div class="ttc" id="alist_8h_html_a25d2b11af3a53a2616b510339506560c"><div class="ttname"><a href="list_8h.html#a25d2b11af3a53a2616b510339506560c">list_link_active</a></div><div class="ttdeci">int list_link_active(const list_node_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00525">list.c:525</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a67938c91a36dbb8963d9a18ac2af1c22"><div class="ttname"><a href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a></div><div class="ttdeci">void * list_remove_head(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00251">list.c:251</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
+<div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
+<div class="ttc" id="alist_8h_html_adc65c68f9f4ff6ba3ccb7f417dc0e915"><div class="ttname"><a href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a></div><div class="ttdeci">size_t list_count(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00543">list.c:543</a></div></div>
+<div class="ttc" id="alist_8h_html_ae8e3f5504ba93e11090dd7b85013e9a6"><div class="ttname"><a href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a></div><div class="ttdeci">void list_remove(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00226">list.c:226</a></div></div>
+<div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
@@ -3452,7 +3462,9 @@ $(function() {
 <div class="ttc" id="astructgeo__pos3__t_html_a7972334534f68166121a6e51b0aac2d6"><div class="ttname"><a href="structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6">geo_pos3_t::lat</a></div><div class="ttdeci">double lat</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00041">geom.h:41</a></div></div>
 <div class="ttc" id="astructgeo__pos3__t_html_a8dda1d2ff84ad30e50a542bfd0cac21e"><div class="ttname"><a href="structgeo__pos3__t.html#a8dda1d2ff84ad30e50a542bfd0cac21e">geo_pos3_t::elev</a></div><div class="ttdeci">double elev</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00043">geom.h:43</a></div></div>
 <div class="ttc" id="astructgeo__pos3__t_html_aa96391e04b5977c50b96d77bea86a01d"><div class="ttname"><a href="structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d">geo_pos3_t::lon</a></div><div class="ttdeci">double lon</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00042">geom.h:42</a></div></div>
-<div class="ttc" id="astructlist_html"><div class="ttname"><a href="structlist.html">list</a></div><div class="ttdef"><b>Definition:</b> <a href="list__impl_8h_source.html#l00041">list_impl.h:41</a></div></div>
+<div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
+<div class="ttc" id="astructlist_html"><div class="ttname"><a href="structlist.html">list</a></div><div class="ttdef"><b>Definition:</b> <a href="list__impl_8h_source.html#l00048">list_impl.h:48</a></div></div>
 <div class="ttc" id="astructramp__start__t_html"><div class="ttname"><a href="structramp__start__t.html">ramp_start_t</a></div><div class="ttdef"><b>Definition:</b> <a href="airportdb_8h_source.html#l00179">airportdb.h:179</a></div></div>
 <div class="ttc" id="astructramp__start__t_html_a035419fa0ac5df549e03fb7144c2f1f4"><div class="ttname"><a href="structramp__start__t.html#a035419fa0ac5df549e03fb7144c2f1f4">ramp_start_t::hdgt</a></div><div class="ttdeci">float hdgt</div><div class="ttdef"><b>Definition:</b> <a href="airportdb_8h_source.html#l00182">airportdb.h:182</a></div></div>
 <div class="ttc" id="astructramp__start__t_html_a91fa7c7fdb63ff9346366e8b2c920e08"><div class="ttname"><a href="structramp__start__t.html#a91fa7c7fdb63ff9346366e8b2c920e08">ramp_start_t::type</a></div><div class="ttdeci">ramp_start_type_t type</div><div class="ttdef"><b>Definition:</b> <a href="airportdb_8h_source.html#l00183">airportdb.h:183</a></div></div>

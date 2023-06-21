@@ -1,8 +1,10 @@
 <map id="dsf_cmd_parser_t" name="dsf_cmd_parser_t">
-<area shape="rect" id="node1" title=" " alt="" coords="211,199,348,225"/>
-<area shape="rect" id="node2" href="$structdsf__atom__t.html" title=" " alt="" coords="183,95,277,121"/>
-<area shape="rect" id="node3" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="5,5,140,32"/>
-<area shape="rect" id="node4" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="165,5,295,32"/>
-<area shape="rect" id="node5" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="320,5,463,32"/>
-<area shape="rect" id="node6" href="$structdsf__t.html" title=" " alt="" coords="301,95,356,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="155,300,292,327"/>
+<area shape="rect" id="node2" href="$structdsf__atom__t.html" title=" " alt="" coords="291,196,385,223"/>
+<area shape="rect" id="node3" href="$structlist__t.html" title=" " alt="" coords="84,5,139,32"/>
+<area shape="rect" id="node5" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="46,95,177,121"/>
+<area shape="rect" id="node8" href="$structdsf__t.html" title=" " alt="" coords="5,145,60,172"/>
+<area shape="rect" id="node4" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="201,95,336,121"/>
+<area shape="rect" id="node6" href="$structlist__node__t.html" title=" " alt="" coords="361,95,454,121"/>
+<area shape="rect" id="node7" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="479,95,621,121"/>
 </map>

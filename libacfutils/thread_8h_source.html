@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;list.h&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;time.h&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;tls.h&quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">safe_alloc.h</a>&quot;</span></div>
@@ -203,7 +203,7 @@ $(function() {
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span>        *arg;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>  *filename;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">int</span>     linenum;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    list_node_t node;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a> node;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;} <a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a>;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">/*</span></div>
@@ -344,14 +344,14 @@ $(function() {
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="keyword">extern</span> bool_t   lacf_thread_list_inited;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">extern</span> <a class="code" href="structmutex__t.html">mutex_t</a>  lacf_thread_list_lock;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keyword">extern</span> list_t   lacf_thread_list;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keyword">extern</span> <a class="code" href="structlist__t.html">list_t</a>   lacf_thread_list;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;_lacf_thread_list_init(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (!lacf_thread_list_inited) {</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        mutex_init(&amp;lacf_thread_list_lock);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        list_create(&amp;lacf_thread_list, <span class="keyword">sizeof</span> (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a>),</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;lacf_thread_list, <span class="keyword">sizeof</span> (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a>),</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            offsetof(<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a>, node));</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        lacf_thread_list_inited = B_TRUE;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
@@ -362,8 +362,8 @@ $(function() {
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (lacf_thread_list_inited) {</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        mutex_enter(&amp;lacf_thread_list_lock);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">if</span> (list_count(&amp;lacf_thread_list) == 0) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            list_destroy(&amp;lacf_thread_list);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;lacf_thread_list) == 0) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;lacf_thread_list);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            mutex_exit(&amp;lacf_thread_list_lock);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            mutex_destroy(&amp;lacf_thread_list_lock);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            lacf_thread_list_inited = B_FALSE;</div>
@@ -379,7 +379,7 @@ $(function() {
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ti != NULL);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(lacf_thread_list_inited);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    mutex_enter(&amp;lacf_thread_list_lock);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    list_insert_tail(&amp;lacf_thread_list, ti);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;lacf_thread_list, ti);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    mutex_exit(&amp;lacf_thread_list_lock);</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
@@ -389,7 +389,7 @@ $(function() {
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ti != NULL);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(lacf_thread_list_inited);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    mutex_enter(&amp;lacf_thread_list_lock);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    list_remove(&amp;lacf_thread_list, ti);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(&amp;lacf_thread_list, ti);</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    mutex_exit(&amp;lacf_thread_list_lock);</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
@@ -408,12 +408,12 @@ $(function() {
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    mutex_enter(&amp;lacf_thread_list_lock);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *ti =</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *)list_head(&amp;lacf_thread_list); ti != NULL;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        ti = (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *)list_next(&amp;lacf_thread_list, ti)) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *)<a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;lacf_thread_list); ti != NULL;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        ti = (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *)<a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;lacf_thread_list, ti)) {</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        logMsg(<span class="stringliteral">&quot;Leaked thread, created here %s:%d&quot;</span>, ti-&gt;filename,</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            ti-&gt;linenum);</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a>(list_count(&amp;lacf_thread_list));</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a>(<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;lacf_thread_list));</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    mutex_exit(&amp;lacf_thread_list_lock);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    _lacf_thread_list_fini();</div>
@@ -713,9 +713,19 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="acore_8h_html_ab58a705ceeb200925bb0a7e302959982"><div class="ttname"><a href="core_8h.html#ab58a705ceeb200925bb0a7e302959982">UNUSED_ATTR</a></div><div class="ttdeci">#define UNUSED_ATTR</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00084">core.h:84</a></div></div>
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="alist_8h_html_a19992f20adf9d4f271feffa6cbb532c1"><div class="ttname"><a href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a></div><div class="ttdeci">void * list_head(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00292">list.c:292</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
+<div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
+<div class="ttc" id="alist_8h_html_adc65c68f9f4ff6ba3ccb7f417dc0e915"><div class="ttname"><a href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a></div><div class="ttdeci">size_t list_count(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00543">list.c:543</a></div></div>
+<div class="ttc" id="alist_8h_html_ae8e3f5504ba93e11090dd7b85013e9a6"><div class="ttname"><a href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a></div><div class="ttdeci">void list_remove(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00226">list.c:226</a></div></div>
+<div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructlacf__thread__info__t_html"><div class="ttname"><a href="structlacf__thread__info__t.html">lacf_thread_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00129">thread.h:129</a></div></div>
+<div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 <div class="ttc" id="astructrwmutex__t_html"><div class="ttname"><a href="structrwmutex__t.html">rwmutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00540">thread.h:540</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

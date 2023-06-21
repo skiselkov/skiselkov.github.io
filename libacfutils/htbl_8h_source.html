@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;list.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">list.h</a>&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structhtbl__t.html">   60</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">size_t</span>      tbl_sz;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">size_t</span>      key_sz;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    list_t      *buckets;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structlist__t.html">list_t</a>      *buckets;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">size_t</span>      num_values;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    bool_t      multi_value;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <a class="code" href="structhtbl__t.html">htbl_t</a>;</div>
@@ -130,7 +130,7 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    htbl_multi_value_t *list_item);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;API_EXPORT <span class="keywordtype">void</span> *<a class="code" href="htbl_8h.html#a28bd05cab4bf9f4896317f19c574047e">htbl_lookup</a>(<span class="keyword">const</span> <a class="code" href="structhtbl__t.html">htbl_t</a> *htbl, <span class="keyword">const</span> <span class="keywordtype">void</span> *key);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;API_EXPORT <span class="keyword">const</span> list_t *<a class="code" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a>(<span class="keyword">const</span> <a class="code" href="structhtbl__t.html">htbl_t</a> *htbl, <span class="keyword">const</span> <span class="keywordtype">void</span> *key);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;API_EXPORT <span class="keyword">const</span> <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a>(<span class="keyword">const</span> <a class="code" href="structhtbl__t.html">htbl_t</a> *htbl, <span class="keyword">const</span> <span class="keywordtype">void</span> *key);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;API_EXPORT <span class="keywordtype">void</span> *<a class="code" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a>(htbl_multi_value_t *mv);</div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">   88</a></span>&#160;<span class="preprocessor">#define HTBL_VALUE_MULTI(x) htbl_value_multi(x)</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
@@ -166,8 +166,10 @@ $(function() {
 <div class="ttc" id="ahtbl_8h_html_abf69b28398b68e98de60c76ca98f3c9b"><div class="ttname"><a href="htbl_8h.html#abf69b28398b68e98de60c76ca98f3c9b">htbl_count</a></div><div class="ttdeci">size_t htbl_count(const htbl_t *htbl)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00180">htbl.c:180</a></div></div>
 <div class="ttc" id="ahtbl_8h_html_ac1b155e7115a03a19adca3c62120688c"><div class="ttname"><a href="htbl_8h.html#ac1b155e7115a03a19adca3c62120688c">htbl_remove</a></div><div class="ttdeci">void htbl_remove(htbl_t *htbl, const void *key, bool_t nil_ok)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00266">htbl.c:266</a></div></div>
 <div class="ttc" id="ahtbl_8h_html_aff88c3b81bd2226f60a9b3bbc9865c86"><div class="ttname"><a href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a></div><div class="ttdeci">void htbl_destroy(htbl_t *htbl)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00112">htbl.c:112</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
 <div class="ttc" id="astructhtbl__multi__value__s_html"><div class="ttname"><a href="structhtbl__multi__value__s.html">htbl_multi_value_s</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00046">htbl.c:46</a></div></div>
 <div class="ttc" id="astructhtbl__t_html"><div class="ttname"><a href="structhtbl__t.html">htbl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00060">htbl.h:60</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

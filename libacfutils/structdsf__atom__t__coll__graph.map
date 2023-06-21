@@ -1,6 +1,8 @@
 <map id="dsf_atom_t" name="dsf_atom_t">
-<area shape="rect" id="node1" title=" " alt="" coords="183,95,277,121"/>
-<area shape="rect" id="node2" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="5,5,140,32"/>
-<area shape="rect" id="node3" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="165,5,295,32"/>
-<area shape="rect" id="node4" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="320,5,463,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="280,184,375,211"/>
+<area shape="rect" id="node2" href="$structlist__t.html" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node4" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="105,95,235,121"/>
+<area shape="rect" id="node3" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="260,95,395,121"/>
+<area shape="rect" id="node5" href="$structlist__node__t.html" title=" " alt="" coords="419,95,513,121"/>
+<area shape="rect" id="node6" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="537,95,680,121"/>
 </map>

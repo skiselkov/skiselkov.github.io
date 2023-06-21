@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="glutils_8h.html">acfutils/glutils.h</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/list.h&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">acfutils/list.h</a>&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;acfutils/shader.h&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;acfutils/thread.h&gt;</span></div>
@@ -154,12 +154,12 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span>            *buf[2];</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">size_t</span>          buf_sz[2];</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    avl_node_t      tree_node;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    list_node_t     lru_node;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a>     lru_node;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <a class="code" href="structcache__entry__t.html">cache_entry_t</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structglutils__cache__s.html">   92</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structglutils__cache__s.html">glutils_cache_s</a> {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    avl_tree_t  tree;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    list_t      lru;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="structlist__t.html">list_t</a>      lru;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">size_t</span>      sz;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">size_t</span>      cap;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
@@ -438,7 +438,7 @@ $(function() {
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;cache-&gt;tree, cache_compar, sizeof (<a class="code" href="structcache__entry__t.html">cache_entry_t</a>),</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        offsetof(<a class="code" href="structcache__entry__t.html">cache_entry_t</a>, tree_node));</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    list_create(&amp;cache-&gt;lru, sizeof (<a class="code" href="structcache__entry__t.html">cache_entry_t</a>),</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;cache-&gt;lru, sizeof (<a class="code" href="structcache__entry__t.html">cache_entry_t</a>),</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        offsetof(<a class="code" href="structcache__entry__t.html">cache_entry_t</a>, lru_node));</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    cache-&gt;cap = cap_bytes;</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
@@ -479,9 +479,9 @@ $(function() {
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160; </div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="comment">/* The entries are retained in the tree, so we&#39;ll just empty the lru */</span></div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordflow">while</span> ((ce = list_remove_head(&amp;cache-&gt;lru)) != NULL)</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordflow">while</span> ((ce = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;cache-&gt;lru)) != NULL)</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        ;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    list_destroy(&amp;cache-&gt;lru);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;cache-&gt;lru);</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    cookie = NULL;</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keywordflow">while</span> ((ce = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;cache-&gt;tree, &amp;cookie)) != NULL)</div>
@@ -503,7 +503,7 @@ $(function() {
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cache != NULL);</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">while</span> (cache-&gt;sz + extra_needed &gt; cache-&gt;cap) {</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <a class="code" href="structcache__entry__t.html">cache_entry_t</a> *ce = list_remove_tail(&amp;cache-&gt;lru);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <a class="code" href="structcache__entry__t.html">cache_entry_t</a> *ce = <a class="code" href="list_8h.html#aa815d7427f7d2acf9396c3a998ccedea">list_remove_tail</a>(&amp;cache-&gt;lru);</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        <span class="keywordflow">if</span> (ce == NULL)</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;            <span class="keywordflow">break</span>;</div>
@@ -552,7 +552,7 @@ $(function() {
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(0);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    }</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;cache-&gt;tree, ce, where);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    list_insert_head(&amp;cache-&gt;lru, ce);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <a class="code" href="list_8h.html#ab79859934c37c8c961b5b33cc007e1ce">list_insert_head</a>(&amp;cache-&gt;lru, ce);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keywordflow">return</span> (ce);</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;}</div>
@@ -585,8 +585,8 @@ $(function() {
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        ce = cache_add_entry(cache, where, type, p, srch.buf_sz[0],</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            t, srch.buf_sz[1], num_pts);</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        list_remove(&amp;cache-&gt;lru, ce);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        list_insert_head(&amp;cache-&gt;lru, ce);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(&amp;cache-&gt;lru, ce);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <a class="code" href="list_8h.html#ab79859934c37c8c961b5b33cc007e1ce">list_insert_head</a>(&amp;cache-&gt;lru, ce);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    }</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="keywordflow">if</span> (type &lt;= CACHE_ENTRY_3D_QUADS)</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="keywordflow">return</span> (&amp;ce-&gt;quads);</div>
@@ -1253,6 +1253,13 @@ $(function() {
 <div class="ttc" id="aglutils_8h_html_afdbc0e73ae574de9521e3a9392704ce7"><div class="ttname"><a href="glutils_8h.html#afdbc0e73ae574de9521e3a9392704ce7">glutils_vp2pvm</a></div><div class="ttdeci">void glutils_vp2pvm(GLfloat pvm[16])</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00757">glutils.c:757</a></div></div>
 <div class="ttc" id="aglutils_8h_html_afeac34bb8268a6a992b6d7aba8ae6a15"><div class="ttname"><a href="glutils_8h.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free</a></div><div class="ttdeci">void glutils_nl_free(glutils_nl_t *nl)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01236">glutils.c:1236</a></div></div>
 <div class="ttc" id="aglutils__zink_8h_html_ab9a62c7ec15480fa223d74517ac863b3"><div class="ttname"><a href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a></div><div class="ttdeci">bool_t glutils_in_zink_mode(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01441">glutils.c:1441</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a67938c91a36dbb8963d9a18ac2af1c22"><div class="ttname"><a href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a></div><div class="ttdeci">void * list_remove_head(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00251">list.c:251</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
+<div class="ttc" id="alist_8h_html_aa815d7427f7d2acf9396c3a998ccedea"><div class="ttname"><a href="list_8h.html#aa815d7427f7d2acf9396c3a998ccedea">list_remove_tail</a></div><div class="ttdeci">void * list_remove_tail(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00277">list.c:277</a></div></div>
+<div class="ttc" id="alist_8h_html_ab79859934c37c8c961b5b33cc007e1ce"><div class="ttname"><a href="list_8h.html#ab79859934c37c8c961b5b33cc007e1ce">list_insert_head</a></div><div class="ttdeci">void list_insert_head(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00199">list.c:199</a></div></div>
+<div class="ttc" id="alist_8h_html_ae8e3f5504ba93e11090dd7b85013e9a6"><div class="ttname"><a href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a></div><div class="ttdeci">void list_remove(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00226">list.c:226</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
@@ -1262,6 +1269,8 @@ $(function() {
 <div class="ttc" id="astructglutils__nl__s_html"><div class="ttname"><a href="structglutils__nl__s.html">glutils_nl_s</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01108">glutils.c:1108</a></div></div>
 <div class="ttc" id="astructglutils__nl__t_html"><div class="ttname"><a href="structglutils__nl__t.html">glutils_nl_t</a></div></div>
 <div class="ttc" id="astructglutils__quads__t_html"><div class="ttname"><a href="structglutils__quads__t.html">glutils_quads_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00073">glutils.h:73</a></div></div>
+<div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 <div class="ttc" id="astructnl__vtx__data__t_html"><div class="ttname"><a href="structnl__vtx__data__t.html">nl_vtx_data_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01126">glutils.c:1126</a></div></div>
 <div class="ttc" id="astructtexsz__alloc__t_html"><div class="ttname"><a href="structtexsz__alloc__t.html">texsz_alloc_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00060">glutils.c:60</a></div></div>

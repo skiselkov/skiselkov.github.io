@@ -94,7 +94,7 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">acfutils/list.h</a>&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;acfutils/taskq.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;acfutils/thread.h&quot;</span></div>
@@ -102,14 +102,14 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structtaskq__task__t.html">   35</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span>        *task;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    list_node_t node;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a> node;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <a class="code" href="structtaskq__task__t.html">taskq_task_t</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structtaskq__thr__t.html">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    taskq_t     *tq;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    thread_t    thr;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span>        *thr_info;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    list_node_t node;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a> node;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <a class="code" href="structtaskq__thr__t.html">taskq_thr_t</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structtaskq__s.html">   47</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structtaskq__s.html">taskq_s</a> {</div>
@@ -127,8 +127,8 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    uint64_t        thr_stop_delay_us;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    condvar_t       cv;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span>            shutdown;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    list_t          tasks;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    list_t          threads;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="structlist__t.html">list_t</a>          tasks;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structlist__t.html">list_t</a>          threads;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">unsigned</span>        num_thr_ready;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
@@ -167,13 +167,13 @@ $(function() {
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="structtaskq__task__t.html">taskq_task_t</a> *task;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">/* Too many threads spawned? Stop. */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (list_count(&amp;tq-&gt;threads) &gt; tq-&gt;num_threads_max)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;tq-&gt;threads) &gt; tq-&gt;num_threads_max)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        task = list_remove_head(&amp;tq-&gt;tasks);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        task = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;tq-&gt;tasks);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (task == NULL) {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="comment">/* No work to be done */</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> (task_wait_for_work(tq) ||</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                list_count(&amp;tq-&gt;threads) &lt;= tq-&gt;num_threads_min) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;tq-&gt;threads) &lt;= tq-&gt;num_threads_min) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">break</span>;</div>
@@ -200,9 +200,9 @@ $(function() {
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (tq-&gt;fini_func != NULL)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        tq-&gt;fini_func(tq-&gt;userinfo, thr-&gt;thr_info);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(list_link_active(&amp;thr-&gt;node));</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    list_remove(&amp;tq-&gt;threads, thr);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (list_count(&amp;tq-&gt;threads) == 0)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="list_8h.html#a25d2b11af3a53a2616b510339506560c">list_link_active</a>(&amp;thr-&gt;node));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(&amp;tq-&gt;threads, thr);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;tq-&gt;threads) == 0)</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        cv_broadcast(&amp;tq-&gt;cv);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">     * Mustn&#39;t touch `tq&#39; after this, as on a taskq_free, it can become</span></div>
@@ -229,9 +229,9 @@ $(function() {
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    mutex_init(&amp;tq-&gt;lock);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    cv_init(&amp;tq-&gt;cv);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    list_create(&amp;tq-&gt;tasks, sizeof (<a class="code" href="structtaskq__task__t.html">taskq_task_t</a>),</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;tq-&gt;tasks, sizeof (<a class="code" href="structtaskq__task__t.html">taskq_task_t</a>),</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        offsetof(<a class="code" href="structtaskq__task__t.html">taskq_task_t</a>, node));</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    list_create(&amp;tq-&gt;threads, sizeof (<a class="code" href="structtaskq__thr__t.html">taskq_thr_t</a>),</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;tq-&gt;threads, sizeof (<a class="code" href="structtaskq__thr__t.html">taskq_thr_t</a>),</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        offsetof(<a class="code" href="structtaskq__thr__t.html">taskq_thr_t</a>, node));</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    tq-&gt;num_threads_min = num_threads_min;</div>
@@ -259,21 +259,21 @@ $(function() {
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    mutex_enter(&amp;tq-&gt;lock);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    tq-&gt;shutdown = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">/* The worker threads will empty out the `tq-&gt;threads&#39; list */</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">while</span> (list_count(&amp;tq-&gt;threads) != 0) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;tq-&gt;threads) != 0) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        cv_broadcast(&amp;tq-&gt;cv);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        cv_wait(&amp;tq-&gt;cv, &amp;tq-&gt;lock);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    mutex_exit(&amp;tq-&gt;lock);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a>(list_count(&amp;tq-&gt;threads));</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    list_destroy(&amp;tq-&gt;threads);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a>(<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;tq-&gt;threads));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;tq-&gt;threads);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * Discard incomplete work.</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">while</span> ((task = list_remove_head(&amp;tq-&gt;tasks)) != NULL) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">while</span> ((task = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;tq-&gt;tasks)) != NULL) {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        tq-&gt;discard_func(tq-&gt;userinfo, task-&gt;task);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        free(task);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    list_destroy(&amp;tq-&gt;tasks);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;tq-&gt;tasks);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">     * Destroy threading primitives.</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">     */</span></div>
@@ -292,15 +292,15 @@ $(function() {
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    t-&gt;task = task;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    mutex_enter(&amp;tq-&gt;lock);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    list_insert_tail(&amp;tq-&gt;tasks, t);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;tq-&gt;tasks, t);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (tq-&gt;num_thr_ready != 0) {</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">/* Only wake up a single worker */</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        cv_signal(&amp;tq-&gt;cv);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (list_count(&amp;tq-&gt;threads) &lt; tq-&gt;num_threads_max) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a>(&amp;tq-&gt;threads) &lt; tq-&gt;num_threads_max) {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">/* No worker ready and we can still add more, spawn a new one */</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="structtaskq__thr__t.html">taskq_thr_t</a> *thr = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*thr));</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        thr-&gt;tq = tq;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        list_insert_tail(&amp;tq-&gt;threads, thr);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;tq-&gt;threads, thr);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(thread_create(&amp;thr-&gt;thr, taskq_worker, thr));</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    mutex_exit(&amp;tq-&gt;lock);</div>
@@ -380,8 +380,18 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00194">assert.h:194</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aassert_8h_html_acc45baee07ce65ad601c26de805ffc40"><div class="ttname"><a href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a></div><div class="ttdeci">#define ASSERT0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00197">assert.h:197</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="alist_8h_html_a25d2b11af3a53a2616b510339506560c"><div class="ttname"><a href="list_8h.html#a25d2b11af3a53a2616b510339506560c">list_link_active</a></div><div class="ttdeci">int list_link_active(const list_node_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00525">list.c:525</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a67938c91a36dbb8963d9a18ac2af1c22"><div class="ttname"><a href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a></div><div class="ttdeci">void * list_remove_head(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00251">list.c:251</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
+<div class="ttc" id="alist_8h_html_adc65c68f9f4ff6ba3ccb7f417dc0e915"><div class="ttname"><a href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a></div><div class="ttdeci">size_t list_count(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00543">list.c:543</a></div></div>
+<div class="ttc" id="alist_8h_html_ae8e3f5504ba93e11090dd7b85013e9a6"><div class="ttname"><a href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a></div><div class="ttdeci">void list_remove(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00226">list.c:226</a></div></div>
+<div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
+<div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 <div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
 <div class="ttc" id="astructtaskq__s_html"><div class="ttname"><a href="structtaskq__s.html">taskq_s</a></div><div class="ttdef"><b>Definition:</b> <a href="taskq_8c_source.html#l00047">taskq.c:47</a></div></div>
 <div class="ttc" id="astructtaskq__task__t_html"><div class="ttname"><a href="structtaskq__task__t.html">taskq_task_t</a></div><div class="ttdef"><b>Definition:</b> <a href="taskq_8c_source.html#l00035">taskq.c:35</a></div></div>

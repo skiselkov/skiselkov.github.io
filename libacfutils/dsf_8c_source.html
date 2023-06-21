@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">char</span> reason[DSF_REASON_SZ], uint64_t abs_off);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> free_atom(<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> bool_t parse_atom_list(<span class="keyword">const</span> uint8_t *buf, uint64_t bufsz,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    list_t *atoms, <span class="keywordtype">char</span> reason[DSF_REASON_SZ], uint64_t abs_off);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="structlist__t.html">list_t</a> *atoms, <span class="keywordtype">char</span> reason[DSF_REASON_SZ], uint64_t abs_off);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">static</span> bool_t parse_prop_atom(<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom, <span class="keywordtype">char</span> reason[DSF_REASON_SZ]);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> destroy_prop_atom(<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> destroy_planar_numeric_atom(<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom);</div>
@@ -298,7 +298,7 @@ $(function() {
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(atom-&gt;id, ==, DSF_ATOM_PROP);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    list_create(&amp;atom-&gt;prop_atom.props, sizeof (<a class="code" href="structdsf__prop__t.html">dsf_prop_t</a>),</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;atom-&gt;prop_atom.props, sizeof (<a class="code" href="structdsf__prop__t.html">dsf_prop_t</a>),</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        offsetof(<a class="code" href="structdsf__prop__t.html">dsf_prop_t</a>, prop_node));</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    atom-&gt;subtype_inited = B_TRUE;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
@@ -333,7 +333,7 @@ $(function() {
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        prop = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*prop));</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        prop-&gt;name = name;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        prop-&gt;value = value;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        list_insert_tail(&amp;atom-&gt;prop_atom.props, prop);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;atom-&gt;prop_atom.props, prop);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        name = value + value_len + 1;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
@@ -673,9 +673,9 @@ $(function() {
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(atom-&gt;id, ==, DSF_ATOM_PROP);</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(atom-&gt;subtype_inited);</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keywordflow">while</span> ((prop = list_remove_head(&amp;atom-&gt;prop_atom.props)) != NULL)</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keywordflow">while</span> ((prop = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;atom-&gt;prop_atom.props)) != NULL)</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        free(prop);</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    list_destroy(&amp;atom-&gt;prop_atom.props);</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;atom-&gt;prop_atom.props);</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;}</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;<span class="keyword">static</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *</div>
@@ -685,7 +685,7 @@ $(function() {
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*atom));</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(reason != NULL);</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    list_create(&amp;atom-&gt;subatoms, sizeof (<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a>),</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;atom-&gt;subatoms, sizeof (<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a>),</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        offsetof(<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a>, atom_list));</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">if</span> (bufsz &lt; 8)</div>
@@ -731,7 +731,7 @@ $(function() {
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;}</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="keyword">static</span> bool_t</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;parse_atom_list(<span class="keyword">const</span> uint8_t *buf, uint64_t bufsz, list_t *atoms,</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;parse_atom_list(<span class="keyword">const</span> uint8_t *buf, uint64_t bufsz, <a class="code" href="structlist__t.html">list_t</a> *atoms,</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keywordtype">char</span> reason[DSF_REASON_SZ], uint64_t abs_off)</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;{</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(reason != NULL);</div>
@@ -743,7 +743,7 @@ $(function() {
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <span class="keywordflow">if</span> (atom == NULL)</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        list_insert_tail(atoms, atom);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(atoms, atom);</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        atom_buf += atom-&gt;payload_sz + 8;</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    }</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
@@ -760,7 +760,7 @@ $(function() {
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(reason != NULL);</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    list_create(&amp;dsf-&gt;atoms, sizeof (<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a>),</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;dsf-&gt;atoms, sizeof (<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a>),</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        offsetof(<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a>, atom_list));</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="keywordflow">if</span> (bufsz &lt; 12 + 16) {</div>
@@ -800,9 +800,9 @@ $(function() {
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;{</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *subatom;</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="keywordflow">while</span> ((subatom = list_remove_head(&amp;atom-&gt;subatoms)) != NULL)</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="keywordflow">while</span> ((subatom = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;atom-&gt;subatoms)) != NULL)</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        free_atom(subatom);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    list_destroy(&amp;atom-&gt;subatoms);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;atom-&gt;subatoms);</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">if</span> (atom-&gt;subtype_inited) {</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        <span class="keywordflow">switch</span> (atom-&gt;id) {</div>
@@ -830,9 +830,9 @@ $(function() {
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;{</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom;</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="keywordflow">while</span> ((atom = list_remove_head(&amp;dsf-&gt;atoms)) != NULL)</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="keywordflow">while</span> ((atom = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;dsf-&gt;atoms)) != NULL)</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        free_atom(atom);</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    list_destroy(&amp;dsf-&gt;atoms);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;dsf-&gt;atoms);</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    free(dsf-&gt;data);</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    free(dsf);</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;}</div>
@@ -847,8 +847,8 @@ $(function() {
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    memset(indent, <span class="charliteral">&#39; &#39;</span>, depth * INDENT_DEPTH);</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    indent[depth * INDENT_DEPTH] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structdsf__prop__t.html">dsf_prop_t</a> *prop = list_head(&amp;atom-&gt;prop_atom.props); prop != NULL;</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        prop = list_next(&amp;atom-&gt;prop_atom.props, prop)) {</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structdsf__prop__t.html">dsf_prop_t</a> *prop = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;atom-&gt;prop_atom.props); prop != NULL;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        prop = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;atom-&gt;prop_atom.props, prop)) {</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <a class="code" href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a>(str, len, <span class="stringliteral">&quot;%s\&quot;%s\&quot; = \&quot;%s\&quot;\n&quot;</span>,</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            indent, prop-&gt;name, prop-&gt;value);</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    }</div>
@@ -941,8 +941,8 @@ $(function() {
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (atom-&gt;id == DSF_ATOM_DEMI)</div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        dump_demi_atom(atom, str, len, depth + 1);</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160; </div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *subatom = list_head(&amp;atom-&gt;subatoms); subatom != NULL;</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        subatom = list_next(&amp;atom-&gt;subatoms, subatom))</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *subatom = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;atom-&gt;subatoms); subatom != NULL;</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        subatom = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;atom-&gt;subatoms, subatom))</div>
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;        dump_atom(subatom, str, len, depth + 1);</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;}</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
@@ -963,8 +963,8 @@ $(function() {
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        dsf-&gt;md5sum[4], dsf-&gt;md5sum[5], dsf-&gt;md5sum[6], dsf-&gt;md5sum[7],</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        dsf-&gt;md5sum[8], dsf-&gt;md5sum[9], dsf-&gt;md5sum[10], dsf-&gt;md5sum[11],</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        dsf-&gt;md5sum[12], dsf-&gt;md5sum[13], dsf-&gt;md5sum[14], dsf-&gt;md5sum[15]);</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom = list_head(&amp;dsf-&gt;atoms); atom != NULL;</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        atom = list_next(&amp;dsf-&gt;atoms, atom)) {</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;dsf-&gt;atoms); atom != NULL;</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        atom = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;dsf-&gt;atoms, atom)) {</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;        dump_atom(atom, &amp;str, &amp;len, 1);</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;    }</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160; </div>
@@ -1008,15 +1008,15 @@ $(function() {
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;<span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *</div>
 <div class="line"><a name="l00998"></a><span class="lineno"><a class="line" href="dsf_8h.html#ac4d659f053e178e93a62637bcda133b1">  998</a></span>&#160;<a class="code" href="dsf_8h.html#ac4d659f053e178e93a62637bcda133b1">dsf_lookup_v</a>(<span class="keyword">const</span> <a class="code" href="structdsf__t.html">dsf_t</a> *dsf, <span class="keyword">const</span> <a class="code" href="structdsf__lookup__t.html">dsf_lookup_t</a> *lookup)</div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;{</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="keyword">const</span> list_t *<a class="code" href="structlist.html">list</a> = &amp;dsf-&gt;atoms;</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="keyword">const</span> <a class="code" href="structlist__t.html">list_t</a> *<a class="code" href="structlist.html">list</a> = &amp;dsf-&gt;atoms;</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom = NULL;</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160; </div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; lookup[i].atom_id != 0; i++) {</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;        <span class="keywordtype">unsigned</span> seen = 0;</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;        <span class="keyword">const</span> <a class="code" href="structdsf__lookup__t.html">dsf_lookup_t</a> *l = &amp;lookup[i];</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160; </div>
-<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;        <span class="keywordflow">for</span> (atom = list_head(<a class="code" href="structlist.html">list</a>); atom != NULL;</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;            atom = list_next(<a class="code" href="structlist.html">list</a>, atom)) {</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;        <span class="keywordflow">for</span> (atom = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(<a class="code" href="structlist.html">list</a>); atom != NULL;</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;            atom = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(<a class="code" href="structlist.html">list</a>, atom)) {</div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;            <span class="keywordflow">if</span> (atom-&gt;id == l-&gt;atom_id) {</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;                <span class="keywordflow">if</span> (l-&gt;idx == seen)</div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                    <span class="keywordflow">break</span>;</div>
@@ -1036,9 +1036,9 @@ $(function() {
 <div class="line"><a name="l01044"></a><span class="lineno"><a class="line" href="dsf_8h.html#a4bc2c1d7d227c94c9b5f171d44005527"> 1044</a></span>&#160;<a class="code" href="dsf_8h.html#a4bc2c1d7d227c94c9b5f171d44005527">dsf_iter</a>(<span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *parent, uint32_t atom_id, <span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *prev)</div>
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;{</div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structdsf__atom__t.html">dsf_atom_t</a> *atom = (prev != NULL ?</div>
-<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;        list_next(&amp;parent-&gt;subatoms, prev) :</div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;        list_head(&amp;parent-&gt;subatoms)); atom != NULL;</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        atom = list_next(&amp;parent-&gt;subatoms, atom)) {</div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;        <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;parent-&gt;subatoms, prev) :</div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;        <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;parent-&gt;subatoms)); atom != NULL;</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        atom = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;parent-&gt;subatoms, atom)) {</div>
 <div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;        <span class="keywordflow">if</span> (atom-&gt;id == atom_id)</div>
 <div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;            <span class="keywordflow">return</span> (atom);</div>
 <div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;    }</div>
@@ -1607,6 +1607,12 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a0c07f2f2f59a36c95df998f2f459b924"><div class="ttname"><a href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz</a></div><div class="ttdeci">ssize_t filesz(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01171">helpers.c:1171</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aa8cb08867675f56a6dd9b290eb8df21f"><div class="ttname"><a href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a></div><div class="ttdeci">void append_format(char **str, size_t *sz, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00731">helpers.c:731</a></div></div>
+<div class="ttc" id="alist_8h_html_a19992f20adf9d4f271feffa6cbb532c1"><div class="ttname"><a href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a></div><div class="ttdeci">void * list_head(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00292">list.c:292</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a67938c91a36dbb8963d9a18ac2af1c22"><div class="ttname"><a href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a></div><div class="ttdeci">void * list_remove_head(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00251">list.c:251</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
+<div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
+<div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
@@ -1624,7 +1630,8 @@ $(function() {
 <div class="ttc" id="astructdsf__poly__rng__arg__t_html"><div class="ttname"><a href="structdsf__poly__rng__arg__t.html">dsf_poly_rng_arg_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00245">dsf.h:245</a></div></div>
 <div class="ttc" id="astructdsf__prop__t_html"><div class="ttname"><a href="structdsf__prop__t.html">dsf_prop_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00094">dsf.h:94</a></div></div>
 <div class="ttc" id="astructdsf__t_html"><div class="ttname"><a href="structdsf__t.html">dsf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00156">dsf.h:156</a></div></div>
-<div class="ttc" id="astructlist_html"><div class="ttname"><a href="structlist.html">list</a></div><div class="ttdef"><b>Definition:</b> <a href="list__impl_8h_source.html#l00041">list_impl.h:41</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
+<div class="ttc" id="astructlist_html"><div class="ttname"><a href="structlist.html">list</a></div><div class="ttdef"><b>Definition:</b> <a href="list__impl_8h_source.html#l00048">list_impl.h:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

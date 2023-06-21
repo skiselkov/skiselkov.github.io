@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;acfutils/list.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="list_8h.html">acfutils/list.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/mt_cairo_render.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;acfutils/widget.h&quot;</span></div>
@@ -117,15 +117,15 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structtooltip__t.html">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span>     x, y, w, h;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>  *text;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    list_node_t node;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a> node;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <a class="code" href="structtooltip__t.html">tooltip_t</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structtooltip__set.html">   55</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structtooltip__set.html">tooltip_set</a> {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    XPLMWindowID        window;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span>         orig_w;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span>         orig_h;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    list_t          tooltips;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    list_node_t     node;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="structlist__t.html">list_t</a>          tooltips;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a>     node;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span>          display_delay;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">/* These are only used for text size measurement */</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    cairo_surface_t     *surf;</div>
@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define TT_BACKGROUND_RGBA  0, 0, 0, 0.85</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define TT_TEXT_RGBA        1, 1, 1, 1</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> list_t tooltip_sets;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">static</span> <a class="code" href="structlist__t.html">list_t</a> tooltip_sets;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> inited = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">static</span> <a class="code" href="structtooltip__t.html">tooltip_t</a> *cur_tt = NULL;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> tooltip_set_t *cur_tts = NULL;</div>
@@ -327,9 +327,9 @@ $(function() {
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    tooltip_set_t *tts = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(<span class="keyword">sizeof</span> (*tts));</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    tts-&gt;window = window;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    list_create(&amp;tts-&gt;tooltips, sizeof (<a class="code" href="structtooltip__t.html">tooltip_t</a>),</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;tts-&gt;tooltips, sizeof (<a class="code" href="structtooltip__t.html">tooltip_t</a>),</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        offsetof(<a class="code" href="structtooltip__t.html">tooltip_t</a>, node));</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    list_insert_tail(&amp;tooltip_sets, tts);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;tooltip_sets, tts);</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    XPLMGetWindowGeometry(window, &amp;left, &amp;top, &amp;right, &amp;bottom);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    tts-&gt;orig_w = right - left;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    tts-&gt;orig_h = top - bottom;</div>
@@ -383,14 +383,14 @@ $(function() {
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;tooltip_set_destroy(tooltip_set_t *tts)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;{</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="structtooltip__t.html">tooltip_t</a> *tt;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">while</span> ((tt = list_head(&amp;tts-&gt;tooltips)) != NULL) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">while</span> ((tt = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;tts-&gt;tooltips)) != NULL) {</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">if</span> (cur_tt == tt)</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            destroy_cur_tt();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        list_remove(&amp;tts-&gt;tooltips, tt);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(&amp;tts-&gt;tooltips, tt);</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        free(tt);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    list_destroy(&amp;tts-&gt;tooltips);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    list_remove(&amp;tooltip_sets, tts);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;tts-&gt;tooltips);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a>(&amp;tooltip_sets, tts);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    cairo_destroy(tts-&gt;cr);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    cairo_surface_destroy(tts-&gt;surf);</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>(tts);</div>
@@ -446,7 +446,7 @@ $(function() {
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    tt-&gt;w = w;</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    tt-&gt;h = h;</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    tt-&gt;text = text;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    list_insert_tail(&amp;tts-&gt;tooltips, tt);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a>(&amp;tts-&gt;tooltips, tt);</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;}</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *</div>
@@ -614,8 +614,8 @@ $(function() {
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordflow">if</span> (cur_tt != NULL)</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <span class="keywordflow">return</span> (TOOLTIP_INTVAL);</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordflow">for</span> (tooltip_set_t *tts = list_head(&amp;tooltip_sets); tts != NULL;</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        tts = list_next(&amp;tooltip_sets, tts)) {</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordflow">for</span> (tooltip_set_t *tts = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;tooltip_sets); tts != NULL;</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        tts = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;tooltip_sets, tts)) {</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keywordtype">int</span> wleft, wtop, wright, wbottom;</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <span class="keywordtype">double</span> scalex, scaley;</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
@@ -633,8 +633,8 @@ $(function() {
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        scalex = (wright - wleft) / (<span class="keywordtype">double</span>)tts-&gt;orig_w;</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        scaley = (wtop - wbottom) / (<span class="keywordtype">double</span>)tts-&gt;orig_h;</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="structtooltip__t.html">tooltip_t</a> *tt = list_head(&amp;tts-&gt;tooltips); tt != NULL;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            tt = list_next(&amp;tts-&gt;tooltips, tt)) {</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="structtooltip__t.html">tooltip_t</a> *tt = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;tts-&gt;tooltips); tt != NULL;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            tt = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;tts-&gt;tooltips, tt)) {</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <span class="keywordtype">int</span> x1 = wleft + tt-&gt;x * scalex;</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="keywordtype">int</span> x2 = wleft + (tt-&gt;x + tt-&gt;w) * scalex;</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="keywordtype">int</span> y1 = wtop - (tt-&gt;y + tt-&gt;h) * scaley;</div>
@@ -661,7 +661,7 @@ $(function() {
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!inited);</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    inited = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    list_create(&amp;tooltip_sets, <span class="keyword">sizeof</span> (tooltip_set_t),</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;tooltip_sets, <span class="keyword">sizeof</span> (tooltip_set_t),</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        offsetof(tooltip_set_t, node));</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    XPLMRegisterFlightLoopCallback(tooltip_floop_cb, TOOLTIP_INTVAL, NULL);</div>
@@ -676,9 +676,9 @@ $(function() {
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    inited = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="keywordflow">while</span> ((tts = list_head(&amp;tooltip_sets)) != NULL)</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="keywordflow">while</span> ((tts = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;tooltip_sets)) != NULL)</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        tooltip_set_destroy(tts);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    list_destroy(&amp;tooltip_sets);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;tooltip_sets);</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    XPLMUnregisterFlightLoopCallback(tooltip_floop_cb, NULL);</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;}</div>
@@ -965,11 +965,20 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="alist_8h_html_a19992f20adf9d4f271feffa6cbb532c1"><div class="ttname"><a href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a></div><div class="ttdeci">void * list_head(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00292">list.c:292</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
+<div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
+<div class="ttc" id="alist_8h_html_ae8e3f5504ba93e11090dd7b85013e9a6"><div class="ttname"><a href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a></div><div class="ttdeci">void list_remove(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00226">list.c:226</a></div></div>
+<div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a9f32a56587b5252c01a2304b3e44d658"><div class="ttname"><a href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a></div><div class="ttdeci">static void * safe_realloc(void *oldptr, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00077">safe_alloc.h:77</a></div></div>
 <div class="ttc" id="astructfind__window__t_html"><div class="ttname"><a href="structfind__window__t.html">find_window_t</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8c_source.html#l00652">widget.c:652</a></div></div>
+<div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 <div class="ttc" id="astructmonitor__t_html"><div class="ttname"><a href="structmonitor__t.html">monitor_t</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8h_source.html#l00054">widget.h:54</a></div></div>
 <div class="ttc" id="astructtooltip__set_html"><div class="ttname"><a href="structtooltip__set.html">tooltip_set</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8c_source.html#l00055">widget.c:55</a></div></div>
 <div class="ttc" id="astructtooltip__t_html"><div class="ttname"><a href="structtooltip__t.html">tooltip_t</a></div><div class="ttdef"><b>Definition:</b> <a href="widget_8c_source.html#l00049">widget.c:49</a></div></div>

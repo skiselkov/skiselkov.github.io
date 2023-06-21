@@ -1,4 +1,5 @@
 <map id="perf_table_t" name="perf_table_t">
-<area shape="rect" id="node1" title=" " alt="" coords="21,95,121,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="89,95,189,121"/>
 <area shape="rect" id="node2" href="$structperf__table__cell__t.html" title=" " alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node3" href="$structlist__node__t.html" title=" " alt="" coords="160,5,253,32"/>
 </map>

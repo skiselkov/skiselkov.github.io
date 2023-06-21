@@ -1,8 +1,9 @@
 <map id="chart_t" name="chart_t">
-<area shape="rect" id="node1" title=" " alt="" coords="164,273,231,300"/>
+<area shape="rect" id="node1" title=" " alt="" coords="237,288,304,315"/>
 <area shape="rect" id="node2" href="$structchart__procs__t.html" title=" " alt="" coords="5,184,115,211"/>
 <area shape="rect" id="node3" href="$structchart__georef__t.html" title=" " alt="" coords="139,184,255,211"/>
-<area shape="rect" id="node4" href="$structgeo__pos2__t.html" title=" " alt="" coords="48,95,144,121"/>
-<area shape="rect" id="node5" href="$structchart__bbox__t.html" title=" " alt="" coords="260,95,367,121"/>
-<area shape="rect" id="node6" href="$structvect2__t.html" title=" " alt="" coords="178,5,249,32"/>
+<area shape="rect" id="node4" href="$structgeo__pos2__t.html" title=" " alt="" coords="41,95,137,121"/>
+<area shape="rect" id="node5" href="$structchart__bbox__t.html" title=" " alt="" coords="253,95,360,121"/>
+<area shape="rect" id="node6" href="$structvect2__t.html" title=" " alt="" coords="171,5,242,32"/>
+<area shape="rect" id="node7" href="$structlist__node__t.html" title=" " alt="" coords="371,184,464,211"/>
 </map>

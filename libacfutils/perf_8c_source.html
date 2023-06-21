@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;acfutils/math.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;acfutils/list.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">acfutils/list.h</a>&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;acfutils/perf.h&gt;</span></div>
@@ -159,7 +159,7 @@ $(function() {
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    avl_node_t      ias_node;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    avl_node_t      mach_node;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    list_node_t     isa_node;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="structlist__node__t.html">list_node_t</a>     isa_node;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <a class="code" href="structperf__table__t.html">perf_table_t</a>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structperf__table__set__s.html">   97</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structperf__table__set__s.html">perf_table_set_s</a> {</div>
@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">double</span>      isa;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    avl_tree_t  by_ias;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    avl_tree_t  by_mach;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    list_t      tables;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="structlist__t.html">list_t</a>      tables;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    avl_node_t  ts_node;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <a class="code" href="structperf__table__isa__t.html">perf_table_isa_t</a>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
@@ -264,9 +264,9 @@ $(function() {
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">while</span> ((<a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;isa-&gt;by_mach, &amp;cookie2)) != NULL)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            ;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;isa-&gt;by_mach);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">while</span> ((table = list_remove_head(&amp;isa-&gt;tables)) != NULL)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">while</span> ((table = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;isa-&gt;tables)) != NULL)</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            perf_table_free(table);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        list_destroy(&amp;isa-&gt;tables);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a>(&amp;isa-&gt;tables);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        free(isa);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(&amp;ts-&gt;by_isa);</div>
@@ -478,7 +478,7 @@ $(function() {
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>), offsetof(<a class="code" href="structperf__table__t.html">perf_table_t</a>, ias_node));</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;isa-&gt;by_mach, perf_tables_mach_compar,</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>), offsetof(<a class="code" href="structperf__table__t.html">perf_table_t</a>, mach_node));</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        list_create(&amp;isa-&gt;tables, sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>),</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <a class="code" href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a>(&amp;isa-&gt;tables, sizeof (<a class="code" href="structperf__table__t.html">perf_table_t</a>),</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            offsetof(<a class="code" href="structperf__table__t.html">perf_table_t</a>, isa_node));</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <a class="code" href="avl_8h.html#aac87d204842ec758616e9f16f56d9d36">avl_insert</a>(&amp;ts-&gt;by_isa, isa, where);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
@@ -2957,11 +2957,17 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_a7c9d440c0119c02b39eaf28f902118e9"><div class="ttname"><a href="helpers_8h.html#a7c9d440c0119c02b39eaf28f902118e9">is_valid_hdg</a></div><div class="ttdeci">static bool_t is_valid_hdg(double hdg)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00169">helpers.h:169</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
+<div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
+<div class="ttc" id="alist_8h_html_a461c916fb70af664b31a7b3283d5d184"><div class="ttname"><a href="list_8h.html#a461c916fb70af664b31a7b3283d5d184">list_destroy</a></div><div class="ttdeci">void list_destroy(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00136">list.c:136</a></div></div>
+<div class="ttc" id="alist_8h_html_a67938c91a36dbb8963d9a18ac2af1c22"><div class="ttname"><a href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a></div><div class="ttdeci">void * list_remove_head(list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00251">list.c:251</a></div></div>
+<div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructacft__perf__t_html"><div class="ttname"><a href="structacft__perf__t.html">acft_perf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8h_source.html#l00156">perf.h:156</a></div></div>
 <div class="ttc" id="astructflt__perf__t_html"><div class="ttname"><a href="structflt__perf__t.html">flt_perf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8h_source.html#l00132">perf.h:132</a></div></div>
 <div class="ttc" id="astructflt__spd__lim__t_html"><div class="ttname"><a href="structflt__spd__lim__t.html">flt_spd_lim_t</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8h_source.html#l00125">perf.h:125</a></div></div>
+<div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
+<div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 <div class="ttc" id="astructperf__table__cell__t_html"><div class="ttname"><a href="structperf__table__cell__t.html">perf_table_cell_t</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8c_source.html#l00075">perf.c:75</a></div></div>
 <div class="ttc" id="astructperf__table__isa__t_html"><div class="ttname"><a href="structperf__table__isa__t.html">perf_table_isa_t</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8c_source.html#l00101">perf.c:101</a></div></div>
 <div class="ttc" id="astructperf__table__set__s_html"><div class="ttname"><a href="structperf__table__set__s.html">perf_table_set_s</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8c_source.html#l00097">perf.c:97</a></div></div>
