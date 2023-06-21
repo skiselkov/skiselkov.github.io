@@ -167,14 +167,14 @@ $(function() {
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        doc = xmlParseMemory((<span class="keywordtype">char</span> *)dl.buf, dl.bufsz);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (doc == NULL) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            logMsg(<span class="stringliteral">&quot;Error parsing chart index: &quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error parsing chart index: &quot;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="stringliteral">&quot;malformed WebDAV XML response from server&quot;</span>);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    xpath_ctx = xmlXPathNewContext(doc);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (xpath_ctx == NULL) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        logMsg(<span class="stringliteral">&quot;Error parsing chart index: error creating XPath &quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error parsing chart index: error creating XPath &quot;</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="stringliteral">&quot;context for XML&quot;</span>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
@@ -183,7 +183,7 @@ $(function() {
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    xpath_obj = xmlXPathEvalExpression(</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        (xmlChar *)<span class="stringliteral">&quot;/d:multistatus/d:response/d:href&quot;</span>, xpath_ctx);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (xpath_obj == NULL || xpath_obj-&gt;nodesetval-&gt;nodeNr &lt; 1) {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        logMsg(<span class="stringliteral">&quot;Error parsing chart index: malformed WebDAV dirlist &quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error parsing chart index: malformed WebDAV dirlist &quot;</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="stringliteral">&quot;%s %p.&quot;</span>, path, xpath_obj);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
@@ -191,7 +191,7 @@ $(function() {
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">const</span> xmlNode *href = xpath_obj-&gt;nodesetval-&gt;nodeTab[i];</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (href-&gt;children == NULL || href-&gt;children-&gt;content == NULL) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            logMsg(<span class="stringliteral">&quot;Error parsing chart index: directory list &quot;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error parsing chart index: directory list &quot;</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="stringliteral">&quot;entry was missing HREF content.&quot;</span>);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
@@ -351,13 +351,13 @@ $(function() {
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span> (n_comps &lt; 4) {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        logMsg(<span class="stringliteral">&quot;Malformed chart category dir listing: %s&quot;</span>, path);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Malformed chart category dir listing: %s&quot;</span>, path);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="helpers_8h.html#a0f84d5cead8589f53c0df8e5a5ff8af7">unescape_percent</a>(comps[2]);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (strlen(comps[2]) &lt; 8) {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        logMsg(<span class="stringliteral">&quot;Malformed chart category dir listing: %s&quot;</span>, path);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Malformed chart category dir listing: %s&quot;</span>, path);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
@@ -413,7 +413,7 @@ $(function() {
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    comps = <a class="code" href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a>(path, <span class="stringliteral">&quot;/&quot;</span>, B_TRUE, &amp;n_comps);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (n_comps &lt; 2) {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        logMsg(<span class="stringliteral">&quot;Malformed country index \&quot;%s\&quot; in response from server&quot;</span>,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Malformed country index \&quot;%s\&quot; in response from server&quot;</span>,</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            path);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
@@ -490,7 +490,7 @@ $(function() {
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    result = chart_download_multi(&amp;curl, cdb, url, filepath, NULL,</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        login, -1, <span class="stringliteral">&quot;Error downloading chart index&quot;</span>, NULL);</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">if</span> (!result &amp;&amp; <a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(filepath, NULL)) {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        logMsg(<span class="stringliteral">&quot;WARNING: failed to contact autorouter servers to &quot;</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;WARNING: failed to contact autorouter servers to &quot;</span></div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="stringliteral">&quot;refresh chart \&quot;%s\&quot;. However, we appear to still have &quot;</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="stringliteral">&quot;a locally cached copy of this chart available, so I &quot;</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <span class="stringliteral">&quot;will display that one instead.&quot;</span>, chart-&gt;codename);</div>
@@ -541,6 +541,7 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructchart__dl__info__t_html"><div class="ttname"><a href="structchart__dl__info__t.html">chart_dl_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__common_8h_source.html#l00039">chart_prov_common.h:39</a></div></div>

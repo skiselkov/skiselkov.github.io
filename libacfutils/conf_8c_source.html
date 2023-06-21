@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base64_8h.html">acfutils/base64.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="conf_8h.html">acfutils/conf.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">acfutils/log.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/* For conf_get_da and conf_set_da. */</span></div>
@@ -508,7 +508,7 @@ $(function() {
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        rename_err = rename(filename_tmp, filename);</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="keywordflow">if</span> (rename_err != 0) {</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            logMsg(<span class="stringliteral">&quot;Error writing %s: atomic rename failed: %s&quot;</span>,</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing %s: atomic rename failed: %s&quot;</span>,</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                filename, strerror(errno));</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            res = B_FALSE;</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        }</div>
@@ -1292,6 +1292,8 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_abafc800336b18c55464e9db4c1710a8a"><div class="ttname"><a href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a></div><div class="ttdeci">void strtolower(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00773">helpers.c:773</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>

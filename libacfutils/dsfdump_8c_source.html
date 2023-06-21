@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="dsf_8h.html">acfutils/dsf.h</a>&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;acfutils/math.h&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="log_8h.html">acfutils/log.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;acfutils/png.h&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> dsf_cmd_cb_t cmd_cbs[NUM_DSF_CMDS];</div>
@@ -287,7 +287,7 @@ $(function() {
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NUM_DSF_CMDS; i++)</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        cmd_cbs[i] = cmd_cb;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    log_init(logfunc, <span class="stringliteral">&quot;dsfdump&quot;</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <a class="code" href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a>(logfunc, <span class="stringliteral">&quot;dsfdump&quot;</span>);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">while</span> ((opt = getopt(argc, argv, <span class="stringliteral">&quot;hqcdw&quot;</span>)) != -1) {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">switch</span> (opt) {</div>
@@ -361,6 +361,8 @@ $(function() {
 <div class="ttc" id="adsf_8h_html_ab5810257773e926de2b92852d66791bb"><div class="ttname"><a href="dsf_8h.html#ab5810257773e926de2b92852d66791bb">dsf_dump</a></div><div class="ttdeci">char * dsf_dump(const dsf_t *dsf)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00914">dsf.c:914</a></div></div>
 <div class="ttc" id="adsf_8h_html_aeb3f349298118b5a41e8fa7ad34152da"><div class="ttname"><a href="dsf_8h.html#aeb3f349298118b5a41e8fa7ad34152da">dsf_fini</a></div><div class="ttdeci">void dsf_fini(dsf_t *dsf)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00787">dsf.c:787</a></div></div>
 <div class="ttc" id="adsf_8h_html_af05ef9bfea12bedc30721cb46e34331d"><div class="ttname"><a href="dsf_8h.html#af05ef9bfea12bedc30721cb46e34331d">dsf_init</a></div><div class="ttdeci">dsf_t * dsf_init(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00173">dsf.c:173</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="alog_8h_html_ad02cd0021647e725d93ac1ab07d9f5b0"><div class="ttname"><a href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a></div><div class="ttdeci">void log_init(logfunc_t func, const char *prefix)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00095">log.c:95</a></div></div>
 <div class="ttc" id="astructdsf__atom__t_html"><div class="ttname"><a href="structdsf__atom__t.html">dsf_atom_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00139">dsf.h:139</a></div></div>
 <div class="ttc" id="astructdsf__cmd__parser__t_html"><div class="ttname"><a href="structdsf__cmd__parser__t.html">dsf_cmd_parser_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00203">dsf.h:203</a></div></div>
 <div class="ttc" id="astructdsf__t_html"><div class="ttname"><a href="structdsf__t.html">dsf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00156">dsf.h:156</a></div></div>

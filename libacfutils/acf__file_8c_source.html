@@ -92,7 +92,7 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="acf__file_8h.html">acfutils/acf_file.h</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;acfutils/log.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="log_8h.html">acfutils/log.h</a>&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structacf__prop__t.html">   33</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    bool_t parsing_props = B_FALSE;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        logMsg(<span class="stringliteral">&quot;Error reading acf file %s: %s&quot;</span>, filename,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error reading acf file %s: %s&quot;</span>, filename,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            strerror(errno));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
@@ -150,7 +150,7 @@ $(function() {
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                acf-&gt;version = atoi(comps[0]);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (line_num == 3 &amp;&amp;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                strcmp(comps[0], <span class="stringliteral">&quot;ACF&quot;</span>) != 0) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                logMsg(<span class="stringliteral">&quot;Error reading acf file %s: missing &quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error reading acf file %s: missing &quot;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    <span class="stringliteral">&quot;file header. Are you sure this is an &quot;</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    <span class="stringliteral">&quot;ACF file?&quot;</span>, filename);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <a class="code" href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a>(comps, n_comps);</div>
@@ -171,7 +171,7 @@ $(function() {
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        name_end = strchr(&amp;line[2], <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (name_end == NULL) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            logMsg(<span class="stringliteral">&quot;Error reading acf file %s:%d: bad parameter &quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error reading acf file %s:%d: bad parameter &quot;</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="stringliteral">&quot;line.&quot;</span>, filename, line_num);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(prop-&gt;<a class="code" href="structacf__prop__t.html#a4e9aec275e566b978a3ccb4e043d8c61">value</a>, &amp;name_end[1], strlen(&amp;name_end[1]) +</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            1);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#a86bad92bbbcbf451c56929f1f23fadde">avl_find</a>(&amp;acf-&gt;props, prop, &amp;where) != NULL) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            logMsg(<span class="stringliteral">&quot;Error reading acf file %s:%d duplicate &quot;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error reading acf file %s:%d duplicate &quot;</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="stringliteral">&quot;property \&quot;%s\&quot; found.&quot;</span>, filename, line_num,</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                prop-&gt;<a class="code" href="structacf__prop__t.html#a5ac083a645d964373f022d03df4849c8">name</a>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            free(prop-&gt;<a class="code" href="structacf__prop__t.html#a5ac083a645d964373f022d03df4849c8">name</a>);</div>
@@ -250,6 +250,8 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01644">helpers.c:1644</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>

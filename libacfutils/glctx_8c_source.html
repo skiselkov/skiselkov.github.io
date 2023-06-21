@@ -112,7 +112,7 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dr_8h.html">acfutils/dr.h</a>&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glctx_8h.html">acfutils/glctx.h</a>&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glutils__zink_8h.html">acfutils/glutils_zink.h</a>&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">acfutils/log.h</a>&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;acfutils/thread.h&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/* open display */</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ctx-&gt;dpy = XOpenDisplay(win_ptr);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (ctx-&gt;dpy == NULL) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        logMsg(<span class="stringliteral">&quot;Failed to open display&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Failed to open display&quot;</span>);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">/* Get the function pointers */</span></div>
@@ -180,7 +180,7 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        glXGetProcAddress((GLubyte *)<span class="stringliteral">&quot;glXChooseFBConfig&quot;</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (glXCreateContextAttribsARB == NULL ||</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        glXChooseFBConfigARB == NULL) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        logMsg(<span class="stringliteral">&quot;Missing support for GLX_ARB_create_context&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Missing support for GLX_ARB_create_context&quot;</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">/*</span></div>
@@ -190,14 +190,14 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    fbc = glXChooseFBConfigARB(ctx-&gt;dpy, DefaultScreen(ctx-&gt;dpy),</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        visual_attribs, &amp;fbcount);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (fbc == NULL) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        logMsg(<span class="stringliteral">&quot;Failed to get FBConfig&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Failed to get FBConfig&quot;</span>);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">/* Create a context using glXCreateContextAttribsARB */</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ctx-&gt;glc = glXCreateContextAttribsARB(ctx-&gt;dpy, fbc[0],</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        share_ctx != NULL ? share_ctx-&gt;glc : NULL, True, context_attribs);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span> (ctx-&gt;glc == NULL) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        logMsg(<span class="stringliteral">&quot;Failed to create opengl context&quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Failed to create opengl context&quot;</span>);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    XFree(fbc);</div>
@@ -289,7 +289,7 @@ $(function() {
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    ctx-&gt;release_dc = B_TRUE;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    pixel_format = ChoosePixelFormat(ctx-&gt;dc, &amp;pfd);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span> (pixel_format == 0) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        logMsg(<span class="stringliteral">&quot;Couldn&#39;t find a suitable pixel format&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Couldn&#39;t find a suitable pixel format&quot;</span>);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">if</span> (!SetPixelFormat(ctx-&gt;dc, pixel_format, &amp;pfd)) {</div>
@@ -323,7 +323,7 @@ $(function() {
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    wglCreateContextAttribsARB = (wglCreateContextAttribsProc)</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        wglGetProcAddress(<span class="stringliteral">&quot;wglCreateContextAttribsARB&quot;</span>);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (wglCreateContextAttribsARB == NULL) {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        logMsg(<span class="stringliteral">&quot;Missing support for WGL_ARB_create_context&quot;</span>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Missing support for WGL_ARB_create_context&quot;</span>);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    ctx = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*ctx));</div>
@@ -407,7 +407,7 @@ $(function() {
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        GLint num;</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        error = CGLChoosePixelFormat(attrs, &amp;pix, &amp;num);</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">if</span> (error != kCGLNoError) {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            logMsg(<span class="stringliteral">&quot;CGLChoosePixelFormat failed with error %d&quot;</span>,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;CGLChoosePixelFormat failed with error %d&quot;</span>,</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                error);</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
@@ -415,7 +415,7 @@ $(function() {
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        CGLDestroyPixelFormat(pix);</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">if</span> (error != kCGLNoError) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        logMsg(<span class="stringliteral">&quot;CGLCreateContext failed with error %d&quot;</span>, error);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;CGLCreateContext failed with error %d&quot;</span>, error);</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
@@ -443,7 +443,7 @@ $(function() {
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="comment">/* open display */</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    ctx-&gt;dpy = XOpenDisplay(0);</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (ctx-&gt;dpy == NULL) {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        logMsg(<span class="stringliteral">&quot;Failed to open display&quot;</span>);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Failed to open display&quot;</span>);</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    }</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    ctx-&gt;glc = glXGetCurrentContext();</div>
@@ -464,7 +464,7 @@ $(function() {
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    ctx-&gt;dc = wglGetCurrentDC();</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (ctx-&gt;dc == NULL) {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        logMsg(<span class="stringliteral">&quot;Current context had no DC?!&quot;</span>);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Current context had no DC?!&quot;</span>);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <a class="code" href="glctx_8h.html#a4f426a91407c217aed4c35ed746c1516">glctx_destroy</a>(ctx);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
@@ -527,7 +527,7 @@ $(function() {
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ctx-&gt;dpy != NULL);</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ctx-&gt;glc != NULL);</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordflow">if</span> (!glXMakeContextCurrentARB(ctx-&gt;dpy, tgt, tgt, ctx-&gt;glc)) {</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            logMsg(<span class="stringliteral">&quot;Failed to make context current&quot;</span>);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Failed to make context current&quot;</span>);</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        }</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -552,7 +552,7 @@ $(function() {
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(ctx-&gt;cgl != NULL);</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        error = CGLSetCurrentContext(ctx-&gt;cgl);</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        <span class="keywordflow">if</span> (error != kCGLNoError) {</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            logMsg(<span class="stringliteral">&quot;CGLSetCurrentContext failed with error %d&quot;</span>,</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;CGLSetCurrentContext failed with error %d&quot;</span>,</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                error);</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        }</div>
@@ -652,6 +652,8 @@ $(function() {
 <div class="ttc" id="aglctx_8h_html_aec924da8e43a699fd146c7941ff7a02f"><div class="ttname"><a href="glctx_8h.html#aec924da8e43a699fd146c7941ff7a02f">glctx_make_current</a></div><div class="ttdeci">API_EXPORT bool_t glctx_make_current(glctx_t *ctx)</div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00440">glctx.c:440</a></div></div>
 <div class="ttc" id="aglutils__zink_8h_html"><div class="ttname"><a href="glutils__zink_8h.html">glutils_zink.h</a></div></div>
 <div class="ttc" id="aglutils__zink_8h_html_ab9a62c7ec15480fa223d74517ac863b3"><div class="ttname"><a href="glutils__zink_8h.html#ab9a62c7ec15480fa223d74517ac863b3">glutils_in_zink_mode</a></div><div class="ttdeci">bool_t glutils_in_zink_mode(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01441">glutils.c:1441</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructglctx__s_html"><div class="ttname"><a href="structglctx__s.html">glctx_s</a></div><div class="ttdef"><b>Definition:</b> <a href="glctx_8c_source.html#l00055">glctx.c:55</a></div></div>

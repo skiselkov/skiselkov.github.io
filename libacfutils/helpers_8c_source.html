@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">acfutils/log.h</a>&quot;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;acfutils/stat.h&quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;acfutils/time.h&quot;</span></div>
@@ -972,7 +972,7 @@ $(function() {
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;        NULL, err, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;        (LPSTR)&amp;win_msg, 0, NULL);</div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    <a class="code" href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a>(win_msg);</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    logMsg(<span class="stringliteral">&quot;%s: %s&quot;</span>, caller_msg, win_msg);</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;%s: %s&quot;</span>, caller_msg, win_msg);</div>
 <div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160; </div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    free(caller_msg);</div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;    LocalFree(win_msg);</div>
@@ -1004,7 +1004,7 @@ $(function() {
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;        *isdir = B_FALSE;</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;    <span class="keywordflow">if</span> (stat(filename, &amp;st) &lt; 0) {</div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        <span class="keywordflow">if</span> (errno != ENOENT)</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;            logMsg(<span class="stringliteral">&quot;Error checking if file %s exists: %s&quot;</span>,</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error checking if file %s exists: %s&quot;</span>,</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;                filename, strerror(errno));</div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    }</div>
@@ -1031,7 +1031,7 @@ $(function() {
 <div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;    }</div>
 <div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;    <span class="keywordflow">if</span> (mkdir(dirname, 0777) != 0 &amp;&amp; errno != EEXIST) {</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        logMsg(<span class="stringliteral">&quot;Error creating directory %s: %s&quot;</span>, dirname,</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error creating directory %s: %s&quot;</span>, dirname,</div>
 <div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;            strerror(errno));</div>
 <div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    }</div>
@@ -1135,7 +1135,7 @@ $(function() {
 <div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <span class="keyword">struct </span>dirent *de;</div>
 <div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160; </div>
 <div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    <span class="keywordflow">if</span> ((dp = opendir(dirname)) == NULL) {</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;        logMsg(<span class="stringliteral">&quot;Error removing directory %s: %s&quot;</span>, dirname,</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: %s&quot;</span>, dirname,</div>
 <div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;            strerror(errno));</div>
 <div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    }</div>
@@ -1150,12 +1150,12 @@ $(function() {
 <div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160; </div>
 <div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;        <span class="keywordflow">if</span> (snprintf(filename, <span class="keyword">sizeof</span> (filename), <span class="stringliteral">&quot;%s/%s&quot;</span>, dirname,</div>
 <div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            de-&gt;d_name) &gt;= (ssize_t)sizeof (filename)) {</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            logMsg(<span class="stringliteral">&quot;Error removing directory %s: path too long&quot;</span>,</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: path too long&quot;</span>,</div>
 <div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;                dirname);</div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        }</div>
 <div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        <span class="keywordflow">if</span> (lstat(filename, &amp;st) &lt; 0) {</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;            logMsg(<span class="stringliteral">&quot;Error removing directory %s: cannot stat &quot;</span></div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: cannot stat &quot;</span></div>
 <div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;                <span class="stringliteral">&quot;file %s: %s&quot;</span>, dirname, de-&gt;d_name,</div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;                strerror(errno));</div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
@@ -1168,14 +1168,14 @@ $(function() {
 <div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;            err = unlink(filename);</div>
 <div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;        }</div>
 <div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        <span class="keywordflow">if</span> (err != 0) {</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;            logMsg(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, filename,</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, filename,</div>
 <div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                strerror(errno));</div>
 <div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;        }</div>
 <div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;    }</div>
 <div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    closedir(dp);</div>
 <div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;    <span class="keywordflow">if</span> (rmdir(dirname) != 0) {</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;        logMsg(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, dirname, strerror(errno));</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, dirname, strerror(errno));</div>
 <div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    }</div>
 <div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
@@ -1202,7 +1202,7 @@ $(function() {
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
 <div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <span class="keywordflow">if</span> (unlink(filename) &lt; 0 &amp;&amp; (errno != ENOENT || !notfound_ok)) {</div>
-<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot remove file %s: %s&quot;</span>, filename, strerror(errno));</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot remove file %s: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    }</div>
 <div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
@@ -1283,7 +1283,7 @@ $(function() {
 <div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    bool_t      isdir;</div>
 <div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160; </div>
 <div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(pathname, &amp;isdir)) {</div>
-<div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot stat %s: no such file or directory&quot;</span>, pathname);</div>
+<div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot stat %s: no such file or directory&quot;</span>, pathname);</div>
 <div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160;        errno = ENOENT;</div>
 <div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
 <div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160;    }</div>
@@ -1443,6 +1443,8 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_af2aa6b29a29cf64c504bcb2bedb721b5"><div class="ttname"><a href="helpers_8h.html#af2aa6b29a29cf64c504bcb2bedb721b5">path_ext_subst</a></div><div class="ttdeci">char * path_ext_subst(const char *path, const char *ext)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00961">helpers.c:961</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_af5575547211f8f53991140618173d08a"><div class="ttname"><a href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf</a></div><div class="ttdeci">void * file2buf(const char *filename, size_t *bufsz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01131">helpers.c:1131</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_afa358d73bf071f3713f6787d56ce737d"><div class="ttname"><a href="helpers_8h.html#afa358d73bf071f3713f6787d56ce737d">strsplit</a></div><div class="ttdeci">char ** strsplit(const char *input, const char *sep, bool_t skip_empty, size_t *num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00650">helpers.c:650</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>

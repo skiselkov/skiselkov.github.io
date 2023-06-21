@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glutils_8h.html">acfutils/glutils.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;acfutils/log.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">acfutils/log.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;acfutils/shader.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;acfutils/stat.h&quot;</span></div>
@@ -215,7 +215,7 @@ $(function() {
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                alt_filename, NULL, spec_const);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            loaded = (shader != 0);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            logMsg(<span class="stringliteral">&quot;Error loading shader %s: SPIR-V shaders &quot;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error loading shader %s: SPIR-V shaders &quot;</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="stringliteral">&quot;not supported and no fallback shader found.&quot;</span>,</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                filename);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
@@ -266,7 +266,7 @@ $(function() {
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#if !APL</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; environ[i] != NULL; i++) {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (strncmp(environ[i], <span class="stringliteral">&quot;_LACF_SHADERS_FORCE_SPV&quot;</span>, 23) == 0) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            logMsg(<span class="stringliteral">&quot;SPIR-V force load&quot;</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;SPIR-V force load&quot;</span>);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">return</span> (B_TRUE);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
@@ -334,19 +334,19 @@ $(function() {
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    buf = <a class="code" href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf</a>(filename, &amp;bufsz);</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> (buf == NULL) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: %s&quot;</span>, filename, strerror(errno));</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    shader = glCreateShader(shader_type);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (shader == 0) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: glCreateShader failed with &quot;</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: glCreateShader failed with &quot;</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="stringliteral">&quot;error 0x%x&quot;</span>, filename, glGetError());</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    glShaderBinary(1, &amp;shader, GL_SHADER_BINARY_FORMAT_SPIR_V, buf, bufsz);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> ((err = glGetError()) != GL_NO_ERROR) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load SPIR-V %s: error %x&quot;</span>, filename, err);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load SPIR-V %s: error %x&quot;</span>, filename, err);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    glSpecializeShader(shader, entry_pt, n_spec, spec_indices, spec_values);</div>
@@ -359,7 +359,7 @@ $(function() {
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &amp;len);</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        buf = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(len + 1, <span class="keyword">sizeof</span> (*buf));</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        glGetShaderInfoLog(shader, len, NULL, buf);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: specialization error: %s&quot;</span>,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: specialization error: %s&quot;</span>,</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            filename, buf);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
@@ -399,7 +399,7 @@ $(function() {
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    ext = strrchr(filename, <span class="charliteral">&#39;.&#39;</span>);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">if</span> (ext == NULL) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: filename missing required &quot;</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: filename missing required &quot;</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="stringliteral">&quot;extension&quot;</span>, filename);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
@@ -411,7 +411,7 @@ $(function() {
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    shader_text = <a class="code" href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a>(filename, NULL);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">if</span> (shader_text == NULL) {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: %s&quot;</span>, filename, strerror(errno));</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    shader = shader_from_text(shader_type, shader_text, filename,</div>
@@ -488,7 +488,7 @@ $(function() {
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    shader = glCreateShader(shader_type);</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">if</span> (shader == 0) {</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: glCreateShader failed with &quot;</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: glCreateShader failed with &quot;</span></div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="stringliteral">&quot;error 0x%x&quot;</span>, filename, glGetError());</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
@@ -510,7 +510,7 @@ $(function() {
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &amp;len);</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        buf = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(len + 1, <span class="keyword">sizeof</span> (*buf));</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        glGetShaderInfoLog(shader, len, NULL, buf);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        logMsg(<span class="stringliteral">&quot;Cannot load shader %s: compile error: %s&quot;</span>, filename,</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot load shader %s: compile error: %s&quot;</span>, filename,</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            buf);</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        free(buf);</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
@@ -736,14 +736,14 @@ $(function() {
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keywordflow">if</span> (debugger) {</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        logMsg(<span class="stringliteral">&quot;loading %s  vert: %d  frag: %d  comp: %d&quot;</span>,</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;loading %s  vert: %d  frag: %d  comp: %d&quot;</span>,</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            info-&gt;progname, vert_shader, frag_shader, comp_shader);</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    }</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    prog = shaders2prog(info-&gt;progname, vert_shader, frag_shader,</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        comp_shader, info-&gt;attr_binds);</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keywordflow">if</span> (debugger &amp;&amp; prog != 0)</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        logMsg(<span class="stringliteral">&quot;loaded %s  progID: %d&quot;</span>, info-&gt;progname, prog);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;loaded %s  progID: %d&quot;</span>, info-&gt;progname, prog);</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keywordflow">return</span> (prog);</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;errout:</div>
@@ -798,7 +798,7 @@ $(function() {
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        glGetProgramiv(prog, GL_INFO_LOG_LENGTH, &amp;len);</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        buf = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(len + 1, <span class="keyword">sizeof</span> (*buf));</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        glGetProgramInfoLog(prog, len, NULL, buf);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        logMsg(<span class="stringliteral">&quot;Failed to link GLSL program %s: %s&quot;</span>, progname, buf);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Failed to link GLSL program %s: %s&quot;</span>, progname, buf);</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        free(buf);</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        glDeleteProgram(prog);</div>
@@ -965,6 +965,8 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_aa8cb08867675f56a6dd9b290eb8df21f"><div class="ttname"><a href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a></div><div class="ttdeci">void append_format(char **str, size_t *sz, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00731">helpers.c:731</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_af5575547211f8f53991140618173d08a"><div class="ttname"><a href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf</a></div><div class="ttdeci">void * file2buf(const char *filename, size_t *bufsz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01131">helpers.c:1131</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>

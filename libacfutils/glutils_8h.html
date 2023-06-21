@@ -80,7 +80,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="geom_8h_source.html">geom.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="glew_8h_source.html">glew.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="glutils__zink_8h_source.html">glutils_zink.h</a>&quot;</code><br />
-<code>#include &quot;log.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>&quot;</code><br />
 <code>#include &quot;sysmacros.h&quot;</code><br />
 <code>#include &lt;cglm/cglm.h&gt;</code><br />
@@ -92,7 +92,7 @@ Include dependency graph for glutils.h:</div>
 <area shape="rect" title=" " alt="" coords="383,5,510,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,72,107"/>
 <area shape="rect" href="assert_8h.html" title=" " alt="" coords="537,304,612,331"/>
-<area shape="rect" href="log_8h_source.html" title=" " alt="" coords="299,379,354,405"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="299,379,354,405"/>
 <area shape="rect" href="sysmacros_8h_source.html" title=" " alt="" coords="472,453,576,480"/>
 <area shape="rect" href="geom_8h.html" title=" " alt="" coords="338,80,409,107"/>
 <area shape="rect" href="glew_8h.html" title=" " alt="" coords="769,155,833,181"/>
@@ -508,9 +508,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a66a84246f6deb16bd4c6a2e5dabe3378">glutils_init_2D_quads_impl</a>((__quads), log_basename(__FILE__), \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a66a84246f6deb16bd4c6a2e5dabe3378">glutils_init_2D_quads_impl</a>((__quads), <a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), \</div>
 <div class="line">        __LINE__, (__p), (__t), (__num_pts))</div>
 <div class="ttc" id="aglutils_8h_html_a66a84246f6deb16bd4c6a2e5dabe3378"><div class="ttname"><a href="glutils_8h.html#a66a84246f6deb16bd4c6a2e5dabe3378">glutils_init_2D_quads_impl</a></div><div class="ttdeci">void glutils_init_2D_quads_impl(glutils_quads_t *quads, const char *filename, int line, const vect2_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00205">glutils.c:205</a></div></div>
+<div class="ttc" id="alog_8h_html_a02a8f73c9408ca73f31f9d97e872b150"><div class="ttname"><a href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a></div><div class="ttdeci">#define log_basename(f)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00072">log.h:72</a></div></div>
 </div><!-- fragment --><p>Same as <a class="el" href="glutils_8h.html#aab045abe822777157d02cc4c772ada2f">glutils_init_3D_quads()</a>, but expects an array of <a class="el" href="structvect2__t.html">vect2_t</a> points in the <code>__p</code> argument. The input data to the shader program will still be vec3's, but the Z coordinate will be zero. </p>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8h_source.html#l00138">138</a> of file <a class="el" href="glutils_8h_source.html">glutils.h</a>.</p>
@@ -548,7 +549,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a>((__lines), log_basename(__FILE__), \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a>((__lines), <a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), \</div>
 <div class="line">        __LINE__, (__p), (__num_pts))</div>
 <div class="ttc" id="aglutils_8h_html_a737ab40cb1580fe8f373d9541dc24f24"><div class="ttname"><a href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a></div><div class="ttdeci">void glutils_init_3D_lines_impl(glutils_lines_t *lines, const char *filename, int line, const vect3_t *p, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00662">glutils.c:662</a></div></div>
 </div><!-- fragment --><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>The <a class="el" href="structglutils__lines__t.html">glutils_lines_t</a> functionality is deprecated, as it relies on legacy <code>GL_LINE_STRIP</code> functionality of the OpenGL driver. See <a class="el" href="structglutils__nl__t.html">glutils_nl_t</a> for a modern replacement.</dd></dl>
@@ -607,7 +608,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a5940f30b071553e94fb8ad1207b7c343">glutils_init_3D_quads_impl</a>((__quads), log_basename(__FILE__), \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a5940f30b071553e94fb8ad1207b7c343">glutils_init_3D_quads_impl</a>((__quads), <a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), \</div>
 <div class="line">        __LINE__, (__p), (__t), (__num_pts))</div>
 <div class="ttc" id="aglutils_8h_html_a5940f30b071553e94fb8ad1207b7c343"><div class="ttname"><a href="glutils_8h.html#a5940f30b071553e94fb8ad1207b7c343">glutils_init_3D_quads_impl</a></div><div class="ttdeci">void glutils_init_3D_quads_impl(glutils_quads_t *quads, const char *filename, int line, const vect3_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00235">glutils.c:235</a></div></div>
 </div><!-- fragment --><p>Initializes a <a class="el" href="structglutils__quads__t.html">glutils_quads_t</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -682,7 +683,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a9e00724ddc243106d11e0215d759100f">glutils_update_2D_quads_impl</a>((__quads), log_basename(__FILE__), \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a9e00724ddc243106d11e0215d759100f">glutils_update_2D_quads_impl</a>((__quads), <a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), \</div>
 <div class="line">        __LINE__, (__p), (__t), (__num_pts))</div>
 <div class="ttc" id="aglutils_8h_html_a9e00724ddc243106d11e0215d759100f"><div class="ttname"><a href="glutils_8h.html#a9e00724ddc243106d11e0215d759100f">glutils_update_2D_quads_impl</a></div><div class="ttdeci">void glutils_update_2D_quads_impl(glutils_quads_t *quads, const char *filename, int line, const vect2_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00221">glutils.c:221</a></div></div>
 </div><!-- fragment --><p>Same as <a class="el" href="glutils_8h.html#a7665a2d627d1dfbc5cd45b015ad184ad">glutils_update_3D_quads()</a>, but expects 2D points. </p>
@@ -728,7 +729,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a443db2bcc87ce792a0cd21b45c2bcddc">glutils_update_3D_quads_impl</a>((__quads), log_basename(__FILE__), \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="glutils_8h.html#a443db2bcc87ce792a0cd21b45c2bcddc">glutils_update_3D_quads_impl</a>((__quads), <a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), \</div>
 <div class="line">        __LINE__, (__p), (__t), (__num_pts))</div>
 <div class="ttc" id="aglutils_8h_html_a443db2bcc87ce792a0cd21b45c2bcddc"><div class="ttname"><a href="glutils_8h.html#a443db2bcc87ce792a0cd21b45c2bcddc">glutils_update_3D_quads_impl</a></div><div class="ttdeci">void glutils_update_3D_quads_impl(glutils_quads_t *quads, const char *filename, int line, const vect3_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00266">glutils.c:266</a></div></div>
 </div><!-- fragment --><p>Updates the vertex data in a glutils_quad_t object, which was previously initialized using <a class="el" href="glutils_8h.html#aab045abe822777157d02cc4c772ada2f">glutils_init_3D_quads()</a>. This replaces all vertex data in the quads with the new data provided in the arguments here. The meaning of the arguments is exactly the same as in <a class="el" href="glutils_8h.html#aab045abe822777157d02cc4c772ada2f">glutils_init_3D_quads()</a>. </p>
@@ -1026,7 +1027,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>The filename should be shortened at build time using log_backtrace() to only contain the last portion of the filename of the call site. You should wrap your functions which use <a class="el" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">TEXSZ_ALLOC_INSTANCE()</a> into a macro and extract the call site information automatically using the <code>__FILE__</code> and <code>__LINE__</code> built-in pre-processor variables (see the <code>glutils_init_*_quads()</code> functions for an example on how to do that). With instancing, <a class="el" href="glutils_8h.html#ad643551de35a7aa418fe1e69c0f6ab63">glutils_texsz_fini()</a> will print a list of leaked instance pointers and call sites in your code where that resource was leaked.</p>
+<p>The filename should be shortened at build time using <a class="el" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace()</a> to only contain the last portion of the filename of the call site. You should wrap your functions which use <a class="el" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">TEXSZ_ALLOC_INSTANCE()</a> into a macro and extract the call site information automatically using the <code>__FILE__</code> and <code>__LINE__</code> built-in pre-processor variables (see the <code>glutils_init_*_quads()</code> functions for an example on how to do that). With instancing, <a class="el" href="glutils_8h.html#ad643551de35a7aa418fe1e69c0f6ab63">glutils_texsz_fini()</a> will print a list of leaked instance pointers and call sites in your code where that resource was leaked.</p>
 <p>Allocations registered using <a class="el" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">TEXSZ_ALLOC_INSTANCE()</a> must be freed using the <a class="el" href="glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a">TEXSZ_FREE_INSTANCE()</a> macro, with the original pointer used in the <code>__instance</code> argument. </p>
 
 <p class="definition">Definition at line <a class="el" href="glutils_8h_source.html#l00355">355</a> of file <a class="el" href="glutils_8h_source.html">glutils.h</a>.</p>

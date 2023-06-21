@@ -136,7 +136,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span> (dl_info-&gt;bufcap &lt; dl_info-&gt;bufsz + bytes) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        dl_info-&gt;bufcap += REALLOC_STEP;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (dl_info-&gt;bufcap &gt; MAX_DL_SIZE) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            logMsg(<span class="stringliteral">&quot;Error downloading %s: too much data received &quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error downloading %s: too much data received &quot;</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="stringliteral">&quot;(%ld bytes)&quot;</span>, dl_info-&gt;url, (<span class="keywordtype">long</span>)dl_info-&gt;bufcap);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    fp = fopen(filepath, <span class="stringliteral">&quot;wb&quot;</span>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        logMsg(<span class="stringliteral">&quot;%s %s: error writing disk file %s: %s&quot;</span>,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;%s %s: error writing disk file %s: %s&quot;</span>,</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            error_prefix, url, filepath, strerror(errno));</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
@@ -288,14 +288,14 @@ $(function() {
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (res != CURLE_OK) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            logMsg(<span class="stringliteral">&quot;%s %s: %s&quot;</span>, error_prefix, url,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;%s %s: %s&quot;</span>, error_prefix, url,</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                curl_easy_strerror(res));</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            result = B_FALSE;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (code != 304) {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">/*</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">             * Code `304&#39; indicates we have a cached good copy.</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">             */</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            logMsg(<span class="stringliteral">&quot;%s %s: HTTP error %ld&quot;</span>, error_prefix, url,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;%s %s: HTTP error %ld&quot;</span>, error_prefix, url,</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                code);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            result = B_FALSE;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
@@ -408,6 +408,7 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_ab5895711a627711af219cc53fe7dc7c9"><div class="ttname"><a href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9">lacf_dirname</a></div><div class="ttdeci">char * lacf_dirname(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01474">helpers.c:1474</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01219">helpers.c:1219</a></div></div>
 <div class="ttc" id="alist_8h_html_a19992f20adf9d4f271feffa6cbb532c1"><div class="ttname"><a href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a></div><div class="ttdeci">void * list_head(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00292">list.c:292</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>
 <div class="ttc" id="astructchart__dl__info__t_html"><div class="ttname"><a href="structchart__dl__info__t.html">chart_dl_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__prov__common_8h_source.html#l00039">chart_prov_common.h:39</a></div></div>
 <div class="ttc" id="astructchart__prov__info__login__t_html"><div class="ttname"><a href="structchart__prov__info__login__t.html">chart_prov_info_login_t</a></div><div class="ttdef"><b>Definition:</b> <a href="chartdb_8h_source.html#l00075">chartdb.h:75</a></div></div>

@@ -1592,7 +1592,7 @@ $(function() {
 <div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;    apt_dat_f = fopen(apt_dat_fname, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;    <span class="keywordflow">if</span> (apt_dat_f == NULL) {</div>
 <div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;        <span class="keywordflow">if</span> (!fail_ok)</div>
-<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;            logMsg(<span class="stringliteral">&quot;Can&#39;t open %s: %s&quot;</span>, apt_dat_fname,</div>
+<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Can&#39;t open %s: %s&quot;</span>, apt_dat_fname,</div>
 <div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;                strerror(errno));</div>
 <div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;    }</div>
@@ -1742,7 +1742,7 @@ $(function() {
 <div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;    exists = <a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(fname, NULL);</div>
 <div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;    fp = fopen(fname, <span class="stringliteral">&quot;a&quot;</span>);</div>
 <div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing file %s: %s&quot;</span>, fname, strerror(errno));</div>
+<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing file %s: %s&quot;</span>, fname, strerror(errno));</div>
 <div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;    }</div>
 <div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;    <span class="keywordflow">if</span> (!exists) {</div>
@@ -1842,7 +1842,7 @@ $(function() {
 <div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160; </div>
 <div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;    fp = fopen(filename, <span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;        logMsg(<span class="stringliteral">&quot;Can&#39;t open %s: %s&quot;</span>, filename, strerror(errno));</div>
+<div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Can&#39;t open %s: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
 <div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;    }</div>
 <div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160; </div>
@@ -2058,7 +2058,7 @@ $(function() {
 <div class="line"><a name="l01990"></a><span class="lineno"> 1990</span>&#160;    dirpath = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;xpdir, <span class="stringliteral">&quot;Custom Data&quot;</span>, <span class="stringliteral">&quot;CIFP&quot;</span>, NULL);</div>
 <div class="line"><a name="l01991"></a><span class="lineno"> 1991</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(dirpath, &amp;isdir) &amp;&amp; isdir) {</div>
 <div class="line"><a name="l01992"></a><span class="lineno"> 1992</span>&#160;        <span class="keywordflow">if</span> (!load_CIFP_dir(db, dirpath))</div>
-<div class="line"><a name="l01993"></a><span class="lineno"> 1993</span>&#160;            logMsg(<span class="stringliteral">&quot;%s: error parsing navdata, falling &quot;</span></div>
+<div class="line"><a name="l01993"></a><span class="lineno"> 1993</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;%s: error parsing navdata, falling &quot;</span></div>
 <div class="line"><a name="l01994"></a><span class="lineno"> 1994</span>&#160;                <span class="stringliteral">&quot;back to default data.&quot;</span>, dirpath);</div>
 <div class="line"><a name="l01995"></a><span class="lineno"> 1995</span>&#160;    }</div>
 <div class="line"><a name="l01996"></a><span class="lineno"> 1996</span>&#160;    free(dirpath);</div>
@@ -2067,7 +2067,7 @@ $(function() {
 <div class="line"><a name="l01999"></a><span class="lineno"> 1999</span>&#160;        NULL);</div>
 <div class="line"><a name="l02000"></a><span class="lineno"> 2000</span>&#160;    success = load_CIFP_dir(db, dirpath);</div>
 <div class="line"><a name="l02001"></a><span class="lineno"> 2001</span>&#160;    <span class="keywordflow">if</span> (!success) {</div>
-<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;        logMsg(<span class="stringliteral">&quot;%s: error parsing navdata, please check your install&quot;</span>,</div>
+<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;%s: error parsing navdata, please check your install&quot;</span>,</div>
 <div class="line"><a name="l02003"></a><span class="lineno"> 2003</span>&#160;            dirpath);</div>
 <div class="line"><a name="l02004"></a><span class="lineno"> 2004</span>&#160;    }</div>
 <div class="line"><a name="l02005"></a><span class="lineno"> 2005</span>&#160;    free(dirpath);</div>
@@ -2366,7 +2366,7 @@ $(function() {
 <div class="line"><a name="l02309"></a><span class="lineno"> 2309</span>&#160;            <span class="keywordflow">if</span> (strcmp(idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, <span class="stringliteral">&quot;-&quot;</span>) != 0)</div>
 <div class="line"><a name="l02310"></a><span class="lineno"> 2310</span>&#160;                <a class="code" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a>(&amp;db-&gt;iata_index, idx-&gt;<a class="code" href="structarpt__index__t.html#a396a2b83551258c158217939b1286ce3">iata</a>, idx);</div>
 <div class="line"><a name="l02311"></a><span class="lineno"> 2311</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160;            logMsg(<span class="stringliteral">&quot;WARNING: found duplicate airport ident %s &quot;</span></div>
+<div class="line"><a name="l02312"></a><span class="lineno"> 2312</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;WARNING: found duplicate airport ident %s &quot;</span></div>
 <div class="line"><a name="l02313"></a><span class="lineno"> 2313</span>&#160;                <span class="stringliteral">&quot;in index. Skipping it. This shouldn&#39;t happen &quot;</span></div>
 <div class="line"><a name="l02314"></a><span class="lineno"> 2314</span>&#160;                <span class="stringliteral">&quot;unless the index is damaged.&quot;</span>, idx-&gt;<a class="code" href="structarpt__index__t.html#a5c1fc185f0c9e00ab4687bbbaf641bf7">ident</a>);</div>
 <div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160;            free(idx);</div>
@@ -2412,7 +2412,7 @@ $(function() {
 <div class="line"><a name="l02355"></a><span class="lineno"> 2355</span>&#160;    filename = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;cachedir, <span class="stringliteral">&quot;version&quot;</span>, NULL);</div>
 <div class="line"><a name="l02356"></a><span class="lineno"> 2356</span>&#160;    fp = fopen(filename, <span class="stringliteral">&quot;w&quot;</span>);</div>
 <div class="line"><a name="l02357"></a><span class="lineno"> 2357</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing new airport database, can&#39;t open &quot;</span></div>
+<div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing new airport database, can&#39;t open &quot;</span></div>
 <div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;            <span class="stringliteral">&quot;%s for writing: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l02360"></a><span class="lineno"> 2360</span>&#160;        free(filename);</div>
 <div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
@@ -2424,7 +2424,7 @@ $(function() {
 <div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160;    filename = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;cachedir, <span class="stringliteral">&quot;airac_cycle&quot;</span>, NULL);</div>
 <div class="line"><a name="l02368"></a><span class="lineno"> 2368</span>&#160;    fp = fopen(filename, <span class="stringliteral">&quot;w&quot;</span>);</div>
 <div class="line"><a name="l02369"></a><span class="lineno"> 2369</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing new airport database, can&#39;t open &quot;</span></div>
+<div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing new airport database, can&#39;t open &quot;</span></div>
 <div class="line"><a name="l02371"></a><span class="lineno"> 2371</span>&#160;            <span class="stringliteral">&quot;%s for writing: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l02372"></a><span class="lineno"> 2372</span>&#160;        free(filename);</div>
 <div class="line"><a name="l02373"></a><span class="lineno"> 2373</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
@@ -2436,7 +2436,7 @@ $(function() {
 <div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;    filename = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;cachedir, <span class="stringliteral">&quot;apt_dats&quot;</span>, NULL);</div>
 <div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;    fp = fopen(filename, <span class="stringliteral">&quot;w&quot;</span>);</div>
 <div class="line"><a name="l02381"></a><span class="lineno"> 2381</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing new airport database, can&#39;t open &quot;</span></div>
+<div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing new airport database, can&#39;t open &quot;</span></div>
 <div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;            <span class="stringliteral">&quot;%s for writing: %s&quot;</span>, filename, strerror(errno));</div>
 <div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;        free(filename);</div>
 <div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
@@ -2502,7 +2502,7 @@ $(function() {
 <div class="line"><a name="l02478"></a><span class="lineno"> 2478</span>&#160;        <span class="keywordflow">goto</span> out;</div>
 <div class="line"><a name="l02479"></a><span class="lineno"> 2479</span>&#160;    }</div>
 <div class="line"><a name="l02480"></a><span class="lineno"> 2480</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="avl_8h.html#adf9dbfc2b0aac934205f7f347c5b0088">avl_numnodes</a>(&amp;db-&gt;apt_dat) == 0) {</div>
-<div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;        logMsg(<span class="stringliteral">&quot;navdata error: it appears your simulator&#39;s &quot;</span></div>
+<div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;navdata error: it appears your simulator&#39;s &quot;</span></div>
 <div class="line"><a name="l02482"></a><span class="lineno"> 2482</span>&#160;            <span class="stringliteral">&quot;navigation database is broken, or your simulator &quot;</span></div>
 <div class="line"><a name="l02483"></a><span class="lineno"> 2483</span>&#160;            <span class="stringliteral">&quot;contains no airport scenery. Please reinstall the &quot;</span></div>
 <div class="line"><a name="l02484"></a><span class="lineno"> 2484</span>&#160;            <span class="stringliteral">&quot;database and retry.&quot;</span>);</div>
@@ -2517,7 +2517,7 @@ $(function() {
 <div class="line"><a name="l02493"></a><span class="lineno"> 2493</span>&#160;    index_filename = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(db-&gt;cachedir, <span class="stringliteral">&quot;index.dat&quot;</span>, NULL);</div>
 <div class="line"><a name="l02494"></a><span class="lineno"> 2494</span>&#160;    index_file = fopen(index_filename, <span class="stringliteral">&quot;w&quot;</span>);</div>
 <div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;    <span class="keywordflow">if</span> (index_file == NULL) {</div>
-<div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160;        logMsg(<span class="stringliteral">&quot;Error creating airport database index file %s: %s&quot;</span>,</div>
+<div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error creating airport database index file %s: %s&quot;</span>,</div>
 <div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;            index_filename, strerror(errno));</div>
 <div class="line"><a name="l02498"></a><span class="lineno"> 2498</span>&#160;        success = B_FALSE;</div>
 <div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;        <span class="keywordflow">goto</span> out;</div>
@@ -2661,7 +2661,7 @@ $(function() {
 <div class="line"><a name="l02637"></a><span class="lineno"> 2637</span>&#160;            othr_v = <a class="code" href="geom_8h.html#a2d8f8788692befd2e107ea6d0c304b7e">geo2fpp</a>(<a class="code" href="geom_8h.html#ab05d51dc8aa7dbdc95e1945f4ada274a">GEO3_TO_GEO2</a>(orwy_end-&gt;thr), fpp);</div>
 <div class="line"><a name="l02638"></a><span class="lineno"> 2638</span>&#160;            v = <a class="code" href="geom_8h.html#a3b7520766159075e490c637e5908c065">vect2_sub</a>(othr_v, thr_v);</div>
 <div class="line"><a name="l02639"></a><span class="lineno"> 2639</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="geom_8h.html#a511b8c5993ddce3c80249540620afc4a">IS_ZERO_VECT2</a>(v)) {</div>
-<div class="line"><a name="l02640"></a><span class="lineno"> 2640</span>&#160;                logMsg(<span class="stringliteral">&quot;CAUTION: your nav DB is looking very &quot;</span></div>
+<div class="line"><a name="l02640"></a><span class="lineno"> 2640</span>&#160;                <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;CAUTION: your nav DB is looking very &quot;</span></div>
 <div class="line"><a name="l02641"></a><span class="lineno"> 2641</span>&#160;                    <span class="stringliteral">&quot;strange: runways %s and %s at %s are on &quot;</span></div>
 <div class="line"><a name="l02642"></a><span class="lineno"> 2642</span>&#160;                    <span class="stringliteral">&quot;top of each other (coords: %fx%f)&quot;</span>,</div>
 <div class="line"><a name="l02643"></a><span class="lineno"> 2643</span>&#160;                    end-&gt;id, orwy_end-&gt;id, rwy-&gt;arpt-&gt;icao,</div>
@@ -3164,7 +3164,7 @@ $(function() {
 <div class="line"><a name="l03239"></a><span class="lineno"> 3239</span>&#160;            <span class="keywordflow">if</span> (apt != NULL) {</div>
 <div class="line"><a name="l03240"></a><span class="lineno"> 3240</span>&#160;                found_cb(apt, userinfo);</div>
 <div class="line"><a name="l03241"></a><span class="lineno"> 3241</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l03242"></a><span class="lineno"> 3242</span>&#160;                logMsg(<span class="stringliteral">&quot;WARNING: airport database index is &quot;</span></div>
+<div class="line"><a name="l03242"></a><span class="lineno"> 3242</span>&#160;                <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;WARNING: airport database index is &quot;</span></div>
 <div class="line"><a name="l03243"></a><span class="lineno"> 3243</span>&#160;                    <span class="stringliteral">&quot;damaged: index contains ICAO %s, but &quot;</span></div>
 <div class="line"><a name="l03244"></a><span class="lineno"> 3244</span>&#160;                    <span class="stringliteral">&quot;the associated database tile doesn&#39;t &quot;</span></div>
 <div class="line"><a name="l03245"></a><span class="lineno"> 3245</span>&#160;                    <span class="stringliteral">&quot;appear to contain this airport.&quot;</span>,</div>
@@ -3428,6 +3428,7 @@ $(function() {
 <div class="ttc" id="alist_8h_html_adc65c68f9f4ff6ba3ccb7f417dc0e915"><div class="ttname"><a href="list_8h.html#adc65c68f9f4ff6ba3ccb7f417dc0e915">list_count</a></div><div class="ttdeci">size_t list_count(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00543">list.c:543</a></div></div>
 <div class="ttc" id="alist_8h_html_ae8e3f5504ba93e11090dd7b85013e9a6"><div class="ttname"><a href="list_8h.html#ae8e3f5504ba93e11090dd7b85013e9a6">list_remove</a></div><div class="ttdeci">void list_remove(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00226">list.c:226</a></div></div>
 <div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a578aada848ef29ecdcdd7f9650475797"><div class="ttname"><a href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a></div><div class="ttdeci">#define ZERO_FREE(ptr)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00143">safe_alloc.h:143</a></div></div>

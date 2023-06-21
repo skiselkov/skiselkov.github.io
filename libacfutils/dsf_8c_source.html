@@ -258,7 +258,7 @@ $(function() {
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            readsz += n;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (!feof(fp) &amp;&amp; readsz &lt; bufsz) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            logMsg(<span class="stringliteral">&quot;Error reading DSF %s: %s&quot;</span>, filename,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error reading DSF %s: %s&quot;</span>, filename,</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                strerror(errno));</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
@@ -277,7 +277,7 @@ $(function() {
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    dsf = <a class="code" href="dsf_8h.html#a3fc4fd736554a34727c0c03aa8d3c523">dsf_parse</a>(buf, bufsz, reason);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (dsf == NULL) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        logMsg(<span class="stringliteral">&quot;Error parsing DSF %s: %s&quot;</span>, filename, reason);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error parsing DSF %s: %s&quot;</span>, filename, reason);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">/* No need to release `buf&#39;, the dsf_t has taken ownership of it. */</span></div>
@@ -1613,6 +1613,7 @@ $(function() {
 <div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
 <div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
 <div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

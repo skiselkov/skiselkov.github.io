@@ -518,7 +518,7 @@ $(function() {
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    fp = fopen(path, <span class="stringliteral">&quot;wb&quot;</span>);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing obstacle database tile %s: %s&quot;</span>,</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing obstacle database tile %s: %s&quot;</span>,</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            path, strerror (errno));</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
@@ -582,7 +582,7 @@ $(function() {
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    path = <a class="code" href="helpers_8h.html#a3fe5d016401fc4e043366ff82a8c5297">mkpathname</a>(odb-&gt;cache_dir, cc, <span class="stringliteral">&quot;refresh.txt&quot;</span>, NULL);</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    fp = fopen(path, <span class="stringliteral">&quot;wb&quot;</span>);</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordflow">if</span> (fp == NULL) {</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        logMsg(<span class="stringliteral">&quot;Error writing obstacle database refresh file %s: %s&quot;</span>,</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error writing obstacle database refresh file %s: %s&quot;</span>,</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            path, strerror(errno));</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    }</div>
@@ -606,7 +606,7 @@ $(function() {
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    curl = curl_easy_init();</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(curl != NULL);</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    logMsg(<span class="stringliteral">&quot;Downloading new obstacle data from \&quot;%s\&quot; for region \&quot;US\&quot;&quot;</span>,</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Downloading new obstacle data from \&quot;%s\&quot; for region \&quot;US\&quot;&quot;</span>,</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        FAA_DOF_URL);</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    curl_easy_setopt(curl, CURLOPT_URL, FAA_DOF_URL);</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    chart_setup_curl(curl, odb-&gt;cainfo);</div>
@@ -652,14 +652,14 @@ $(function() {
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;            mutex_exit(&amp;odb-&gt;tiles_lock);</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            logMsg(<span class="stringliteral">&quot;Error updating obstacle database from %s: &quot;</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error updating obstacle database from %s: &quot;</span></div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                <span class="stringliteral">&quot;failed to decompress downloaded ZIP file&quot;</span>,</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                FAA_DOF_URL);</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            odb-&gt;refresh_times[ODB_REGION_US] = -1u;</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        }</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        free(buf);</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        logMsg(<span class="stringliteral">&quot;Error updating obstacle database from %s: %s&quot;</span>,</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error updating obstacle database from %s: %s&quot;</span>,</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            FAA_DOF_URL, curl_easy_strerror(res));</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        odb-&gt;refresh_times[ODB_REGION_US] = -1u;</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    }</div>
@@ -874,6 +874,7 @@ $(function() {
 <div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
 <div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
 <div class="ttc" id="alist_8h_html_afaa117e9763b09876a5ee6bcedd9b06a"><div class="ttname"><a href="list_8h.html#afaa117e9763b09876a5ee6bcedd9b06a">list_insert_tail</a></div><div class="ttdeci">void list_insert_tail(list_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00213">list.c:213</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 <div class="ttc" id="aparser__funcs_8h_html_a2f4f15764bfca53af9cb41224186e3c8"><div class="ttname"><a href="parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8">strip_space</a></div><div class="ttdeci">static void strip_space(char *line)</div><div class="ttdef"><b>Definition:</b> <a href="parser__funcs_8h_source.html#l00049">parser_funcs.h:49</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>

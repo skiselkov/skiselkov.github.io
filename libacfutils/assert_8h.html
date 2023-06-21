@@ -74,7 +74,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">assert.h</a>&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;log.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
 <code>#include &quot;sysmacros.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for assert.h:</div>
@@ -83,7 +83,7 @@ Include dependency graph for assert.h:</div>
 <map name="aacfutils_2assert_8h" id="aacfutils_2assert_8h">
 <area shape="rect" title=" " alt="" coords="29,7,155,33"/>
 <area shape="rect" title=" " alt="" coords="21,380,91,407"/>
-<area shape="rect" href="log_8h_source.html" title=" " alt="" coords="65,81,119,108"/>
+<area shape="rect" href="log_8h.html" title=" " alt="" coords="65,81,119,108"/>
 <area shape="rect" href="sysmacros_8h_source.html" title=" " alt="" coords="141,156,245,183"/>
 <area shape="rect" title=" " alt="" coords="43,156,117,183"/>
 <area shape="rect" href="types_8h_source.html" title=" " alt="" coords="158,231,229,257"/>
@@ -484,12 +484,13 @@ Macros</h2></td></tr>
 <div class="line">        type tmp_x = (type)(x); \</div>
 <div class="line">        type tmp_y = (type)(y); \</div>
 <div class="line">        if (COND_UNLIKELY(!(tmp_x op tmp_y))) { \</div>
-<div class="line">            log_impl(log_basename(__FILE__), __LINE__, \</div>
+<div class="line">            log_impl(<a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), __LINE__, \</div>
 <div class="line">                <span class="stringliteral">&quot;assertion %s %s %s failed (&quot;</span> fmt <span class="stringliteral">&quot; %s &quot;</span> \</div>
 <div class="line">                fmt <span class="stringliteral">&quot;)&quot;</span>, #x, #op, #y, tmp_x, #op, tmp_y); \</div>
 <div class="line">            LACF_CRASH(); \</div>
 <div class="line">        } \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="alog_8h_html_a02a8f73c9408ca73f31f9d97e872b150"><div class="ttname"><a href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a></div><div class="ttdeci">#define log_basename(f)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00072">log.h:72</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00100">100</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
 
@@ -661,7 +662,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
-<div class="line">        log_impl(log_basename(__FILE__), __LINE__, <span class="stringliteral">&quot;Internal error&quot;</span>); \</div>
+<div class="line">        log_impl(<a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), __LINE__, <span class="stringliteral">&quot;Internal error&quot;</span>); \</div>
 <div class="line">        LACF_CRASH(); \</div>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Hard-crash generator. This always crashes if it is reached. Use this to mark invalid branches of conditional/case statements. This will generate a log message that says "Internal error". </p>
@@ -703,7 +704,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
 <div class="line">        if (COND_UNLIKELY(!(x))) { \</div>
-<div class="line">            log_impl(log_basename(__FILE__), __LINE__, \</div>
+<div class="line">            log_impl(<a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), __LINE__, \</div>
 <div class="line">                <span class="stringliteral">&quot;assertion \&quot;%s\&quot; failed: &quot;</span> fmt, #x, __VA_ARGS__); \</div>
 <div class="line">            LACF_CRASH(); \</div>
 <div class="line">        } \</div>

@@ -135,8 +135,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>This macro is a shorthand for invoking <a class="el" href="intl_8h.html#a7451750859b86b966dbfb17f7b640ff7">acfutils_xlate()</a>. This provides a convenient in-line method to localize messages, e.g.: </p><div class="fragment"><div class="line"><span class="comment">// The message below will automatically be translated</span></div>
-<div class="line">logMsg(<a class="code" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_</a>(<span class="stringliteral">&quot;Hello World!&quot;</span>));</div>
+<div class="line"><a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<a class="code" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_</a>(<span class="stringliteral">&quot;Hello World!&quot;</span>));</div>
 <div class="ttc" id="aintl_8h_html_a6554a5ea005e85d0f84f2f34c11de938"><div class="ttname"><a href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_</a></div><div class="ttdeci">#define _(str)</div><div class="ttdef"><b>Definition:</b> <a href="intl_8h_source.html#l00061">intl.h:61</a></div></div>
+<div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00095">log.h:95</a></div></div>
 </div><!-- fragment --><p> If <a class="el" href="intl_8h.html#aa5891cad8ed3021149ce7143f71d89b5">acfutils_xlate_init()</a> was called and a suitable translation exists, the translated text will be printed. Otherwise, "Hello World!" will be printed. </p>
 
 <p class="definition">Definition at line <a class="el" href="intl_8h_source.html#l00061">61</a> of file <a class="el" href="intl_8h_source.html">intl.h</a>.</p>
@@ -160,7 +161,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Translates a message given a message ID string. This performs a lookup in the PO file parsed in <a class="el" href="intl_8h.html#aa5891cad8ed3021149ce7143f71d89b5">acfutils_xlate_init()</a> for a matching <code>msgid</code> stanza and returns the corresponding <code>msgstr</code> value. If no matching <code>msgid</code> is found in the file (or <a class="el" href="intl_8h.html#aa5891cad8ed3021149ce7143f71d89b5">acfutils_xlate_init()</a> was never called), the input msgid string is returned instead. </p><dl class="section note"><dt>Note</dt><dd>You can use the <code><a class="el" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_()</a></code> macro as a shorthand for a call to <a class="el" href="intl_8h.html#a7451750859b86b966dbfb17f7b640ff7">acfutils_xlate()</a>. This provides a convenient in-line method to localize messages, e.g.: <div class="fragment"><div class="line"><span class="comment">// The message below will automatically be translated</span></div>
-<div class="line">logMsg(<a class="code" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_</a>(<span class="stringliteral">&quot;Hello World!&quot;</span>));</div>
+<div class="line"><a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<a class="code" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_</a>(<span class="stringliteral">&quot;Hello World!&quot;</span>));</div>
 </div><!-- fragment --> If <a class="el" href="intl_8h.html#aa5891cad8ed3021149ce7143f71d89b5">acfutils_xlate_init()</a> was called and a suitable translation exists, the translated text will be printed. Otherwise, "Hello World!" will be printed. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="intl_8c_source.html#l00249">249</a> of file <a class="el" href="intl_8c_source.html">intl.c</a>.</p>
@@ -209,7 +210,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if the translation engine was initialized successfully, <code>B_FALSE</code> if not. Failures can happen only due to failure to read or parse the passed .po file. The exact error reason is dumped into the log file using logMsg(). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if the translation engine was initialized successfully, <code>B_FALSE</code> if not. Failures can happen only due to failure to read or parse the passed .po file. The exact error reason is dumped into the log file using <a class="el" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg()</a>. </dd></dl>
 <h4><a class="anchor" id="autotoc_md13"></a>
 Example PO File</h4>
 <div class="fragment"><div class="line"><span class="preprocessor"># This is a comment</span></div>

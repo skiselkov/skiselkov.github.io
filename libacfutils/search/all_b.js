@@ -31,7 +31,7 @@ var searchData=
   ['lacf_5fstrlcpy_632',['lacf_strlcpy',['../helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd',1,'helpers.c']]],
   ['lacf_5fthread_5finfo_5ft_633',['lacf_thread_info_t',['../structlacf__thread__info__t.html',1,'']]],
   ['land_5flen_634',['land_len',['../structrunway__end.html#a54a6290251d732d581f3fbdee5c60c40',1,'runway_end']]],
-  ['lat_635',['lat',['../structgeo__pos2__32__t.html#ae55f065c95e023aa6c2514b2b9ad4a22',1,'geo_pos2_32_t::lat()'],['../structgeo__pos3__32__t.html#ae55f065c95e023aa6c2514b2b9ad4a22',1,'geo_pos3_32_t::lat()'],['../structgeo__pos2__t.html#a7972334534f68166121a6e51b0aac2d6',1,'geo_pos2_t::lat()'],['../structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6',1,'geo_pos3_t::lat()']]],
+  ['lat_635',['lat',['../structgeo__pos3__t.html#a7972334534f68166121a6e51b0aac2d6',1,'geo_pos3_t::lat()'],['../structgeo__pos2__t.html#a7972334534f68166121a6e51b0aac2d6',1,'geo_pos2_t::lat()'],['../structgeo__pos3__32__t.html#ae55f065c95e023aa6c2514b2b9ad4a22',1,'geo_pos3_32_t::lat()'],['../structgeo__pos2__32__t.html#ae55f065c95e023aa6c2514b2b9ad4a22',1,'geo_pos2_32_t::lat()']]],
   ['lcc_5finit_636',['lcc_init',['../geom_8h.html#ae8e8e83ea197e1c54c27aca2c1b28baa',1,'geom.c']]],
   ['lcc_5ft_637',['lcc_t',['../structlcc__t.html',1,'']]],
   ['length_638',['length',['../structrunway.html#a928b11f5716331f0b89abe7d8d4124b4',1,'runway']]],
@@ -64,5 +64,15 @@ var searchData=
   ['list_5ft_665',['list_t',['../structlist__t.html',1,'']]],
   ['list_5ftail_666',['list_tail',['../list_8h.html#a364c3cdd1938f1a6613140ea030c0597',1,'list.c']]],
   ['load_5fcomplete_667',['load_complete',['../structairport.html#acafd34141a1624ac6f5e3a46e2d24626',1,'airport']]],
-  ['lon_668',['lon',['../structgeo__pos2__32__t.html#af59ee077fefdb65db12a1543dde1d21f',1,'geo_pos2_32_t::lon()'],['../structgeo__pos2__t.html#aa96391e04b5977c50b96d77bea86a01d',1,'geo_pos2_t::lon()'],['../structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d',1,'geo_pos3_t::lon()'],['../structgeo__pos3__32__t.html#af59ee077fefdb65db12a1543dde1d21f',1,'geo_pos3_32_t::lon()']]]
+  ['log_2eh_668',['log.h',['../log_8h.html',1,'']]],
+  ['log_5fbacktrace_669',['log_backtrace',['../log_8h.html#ad3222ede877663a8712ee41d15c1c0cf',1,'log.c']]],
+  ['log_5fbasename_670',['log_basename',['../log_8h.html#a02a8f73c9408ca73f31f9d97e872b150',1,'log.h']]],
+  ['log_5ffini_671',['log_fini',['../log_8h.html#ab764c12d013acf2af98b24058a4bb894',1,'log.c']]],
+  ['log_5fimpl_672',['log_impl',['../log_8h.html#a3f58a73e8891294c3a3df8a0ec520164',1,'log.c']]],
+  ['log_5fimpl_5fv_673',['log_impl_v',['../log_8h.html#a0e966ca3747ea0355fe786918b3f6345',1,'log.c']]],
+  ['log_5finit_674',['log_init',['../log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0',1,'log.c']]],
+  ['log_5fxplm_5fcb_675',['log_xplm_cb',['../log_8h.html#a75c1e7aa2f246f2b1796f2fa8f201c55',1,'log.c']]],
+  ['logmsg_676',['logMsg',['../log_8h.html#a34943dc7d05ecb5198fc5ec190346825',1,'log.h']]],
+  ['logmsg_5fv_677',['logMsg_v',['../log_8h.html#a5d041b28f0b8f778c39657573e60111b',1,'log.h']]],
+  ['lon_678',['lon',['../structgeo__pos2__32__t.html#af59ee077fefdb65db12a1543dde1d21f',1,'geo_pos2_32_t::lon()'],['../structgeo__pos3__32__t.html#af59ee077fefdb65db12a1543dde1d21f',1,'geo_pos3_32_t::lon()'],['../structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d',1,'geo_pos3_t::lon()'],['../structgeo__pos2__t.html#aa96391e04b5977c50b96d77bea86a01d',1,'geo_pos2_t::lon()']]]
 ];
