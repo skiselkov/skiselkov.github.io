@@ -71,7 +71,7 @@ var searchData=
   ['log_5fimpl_672',['log_impl',['../log_8h.html#a3f58a73e8891294c3a3df8a0ec520164',1,'log.c']]],
   ['log_5fimpl_5fv_673',['log_impl_v',['../log_8h.html#a0e966ca3747ea0355fe786918b3f6345',1,'log.c']]],
   ['log_5finit_674',['log_init',['../log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0',1,'log.c']]],
-  ['log_5fxplm_5fcb_675',['log_xplm_cb',['../log_8h.html#a75c1e7aa2f246f2b1796f2fa8f201c55',1,'log.c']]],
+  ['log_5fxplm_5fcb_675',['log_xplm_cb',['../log_8h.html#a07e79f7c74ad303ec28dab806f30e385',1,'log.h']]],
   ['logmsg_676',['logMsg',['../log_8h.html#a34943dc7d05ecb5198fc5ec190346825',1,'log.h']]],
   ['logmsg_5fv_677',['logMsg_v',['../log_8h.html#a5d041b28f0b8f778c39657573e60111b',1,'log.h']]],
   ['lon_678',['lon',['../structgeo__pos2__32__t.html#af59ee077fefdb65db12a1543dde1d21f',1,'geo_pos2_32_t::lon()'],['../structgeo__pos3__32__t.html#af59ee077fefdb65db12a1543dde1d21f',1,'geo_pos3_32_t::lon()'],['../structgeo__pos3__t.html#aa96391e04b5977c50b96d77bea86a01d',1,'geo_pos3_t::lon()'],['../structgeo__pos2__t.html#aa96391e04b5977c50b96d77bea86a01d',1,'geo_pos2_t::lon()']]]

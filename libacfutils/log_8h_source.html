@@ -92,54 +92,66 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;sysmacros.h&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifndef _LACF_WITHOUT_XPLM</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;XPLMUtilities.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;sysmacros.h&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * Before using any of the log_* functionality, be sure to properly</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * initialize it and pass it a logging function!</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">typedef</span> void (*logfunc_t)(<span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a>(logfunc_t func, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#a75c1e7aa2f246f2b1796f2fa8f201c55">log_xplm_cb</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#if defined(__GNUC__) || defined(__clang__)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define BUILTIN_STRRCHR __builtin_strrchr</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !defined(__GNUC__) &amp;&amp; !defined(__clang__) */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define BUILTIN_STRRCHR strrchr</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !defined(__GNUC__) &amp;&amp; !defined(__clang__) */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">   72</a></span>&#160;<span class="preprocessor">#define log_basename(f) \</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    (BUILTIN_STRRCHR(f, &#39;/&#39;) ? BUILTIN_STRRCHR(f, &#39;/&#39;) + 1 : \</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">        (BUILTIN_STRRCHR(f, &#39;\\&#39;) ? BUILTIN_STRRCHR(f, &#39;\\&#39;) + 1 : (f)))</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">   95</a></span>&#160;<span class="preprocessor">#define logMsg(...) \</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">    log_impl(log_basename(__FILE__), __LINE__, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="log_8h.html#a5d041b28f0b8f778c39657573e60111b">  102</a></span>&#160;<span class="preprocessor">#define logMsg_v(fmt, ap) \</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">    log_impl_v(log_basename(__FILE__), __LINE__, (fmt), (ap))</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    PRINTF_FORMAT(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt), ...) PRINTF_ATTR(3);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a>(const <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, const <span class="keywordtype">char</span> *fmt,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    va_list ap);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;API_EXPORT <span class="keywordtype">void</span> log_backtrace_sw64(PCONTEXT ctx);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_LOG_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="alog_8h_html_a0e966ca3747ea0355fe786918b3f6345"><div class="ttname"><a href="log_8h.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a></div><div class="ttdeci">void log_impl_v(const char *filename, int line, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00151">log.c:151</a></div></div>
-<div class="ttc" id="alog_8h_html_a3f58a73e8891294c3a3df8a0ec520164"><div class="ttname"><a href="log_8h.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a></div><div class="ttdeci">void log_impl(const char *filename, int line, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00138">log.c:138</a></div></div>
-<div class="ttc" id="alog_8h_html_a75c1e7aa2f246f2b1796f2fa8f201c55"><div class="ttname"><a href="log_8h.html#a75c1e7aa2f246f2b1796f2fa8f201c55">log_xplm_cb</a></div><div class="ttdeci">void log_xplm_cb(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00128">log.c:128</a></div></div>
-<div class="ttc" id="alog_8h_html_ab764c12d013acf2af98b24058a4bb894"><div class="ttname"><a href="log_8h.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a></div><div class="ttdeci">void log_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00113">log.c:113</a></div></div>
-<div class="ttc" id="alog_8h_html_ad02cd0021647e725d93ac1ab07d9f5b0"><div class="ttname"><a href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a></div><div class="ttdeci">void log_init(logfunc_t func, const char *prefix)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00095">log.c:95</a></div></div>
-<div class="ttc" id="alog_8h_html_ad3222ede877663a8712ee41d15c1c0cf"><div class="ttname"><a href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a></div><div class="ttdeci">void log_backtrace(int skip_frames)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00506">log.c:506</a></div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * Before using any of the log_* functionality, be sure to properly</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * initialize it and pass it a logging function!</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">typedef</span> void (*logfunc_t)(<span class="keyword">const</span> <span class="keywordtype">char</span> *);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a>(logfunc_t func, <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifndef _LACF_WITHOUT_XPLM</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<a class="code" href="core_8h.html#ab58a705ceeb200925bb0a7e302959982">UNUSED_ATTR</a> <span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="log_8h.html#a07e79f7c74ad303ec28dab806f30e385">   62</a></span>&#160;<a class="code" href="log_8h.html#a07e79f7c74ad303ec28dab806f30e385">log_xplm_cb</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    XPLMDebugString(str);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !defined(_LACF_WITHOUT_XPLM) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#if defined(__GNUC__) || defined(__clang__)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define BUILTIN_STRRCHR __builtin_strrchr</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !defined(__GNUC__) &amp;&amp; !defined(__clang__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define BUILTIN_STRRCHR strrchr</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !defined(__GNUC__) &amp;&amp; !defined(__clang__) */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">   88</a></span>&#160;<span class="preprocessor">#define log_basename(f) \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    (BUILTIN_STRRCHR(f, &#39;/&#39;) ? BUILTIN_STRRCHR(f, &#39;/&#39;) + 1 : \</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">        (BUILTIN_STRRCHR(f, &#39;\\&#39;) ? BUILTIN_STRRCHR(f, &#39;\\&#39;) + 1 : (f)))</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">  111</a></span>&#160;<span class="preprocessor">#define logMsg(...) \</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">    log_impl(log_basename(__FILE__), __LINE__, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="log_8h.html#a5d041b28f0b8f778c39657573e60111b">  118</a></span>&#160;<span class="preprocessor">#define logMsg_v(fmt, ap) \</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">    log_impl_v(log_basename(__FILE__), __LINE__, (fmt), (ap))</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    PRINTF_FORMAT(<span class="keyword">const</span> <span class="keywordtype">char</span> *fmt), ...) PRINTF_ATTR(3);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a>(const <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, const <span class="keywordtype">char</span> *fmt,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    va_list ap);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;API_EXPORT <span class="keywordtype">void</span> log_backtrace_sw64(PCONTEXT ctx);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_LOG_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="acore_8h_html_ab58a705ceeb200925bb0a7e302959982"><div class="ttname"><a href="core_8h.html#ab58a705ceeb200925bb0a7e302959982">UNUSED_ATTR</a></div><div class="ttdeci">#define UNUSED_ATTR</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00084">core.h:84</a></div></div>
+<div class="ttc" id="alog_8h_html_a07e79f7c74ad303ec28dab806f30e385"><div class="ttname"><a href="log_8h.html#a07e79f7c74ad303ec28dab806f30e385">log_xplm_cb</a></div><div class="ttdeci">static void log_xplm_cb(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00062">log.h:62</a></div></div>
+<div class="ttc" id="alog_8h_html_a0e966ca3747ea0355fe786918b3f6345"><div class="ttname"><a href="log_8h.html#a0e966ca3747ea0355fe786918b3f6345">log_impl_v</a></div><div class="ttdeci">void log_impl_v(const char *filename, int line, const char *fmt, va_list ap)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00142">log.c:142</a></div></div>
+<div class="ttc" id="alog_8h_html_a3f58a73e8891294c3a3df8a0ec520164"><div class="ttname"><a href="log_8h.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a></div><div class="ttdeci">void log_impl(const char *filename, int line, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00129">log.c:129</a></div></div>
+<div class="ttc" id="alog_8h_html_ab764c12d013acf2af98b24058a4bb894"><div class="ttname"><a href="log_8h.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a></div><div class="ttdeci">void log_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00115">log.c:115</a></div></div>
+<div class="ttc" id="alog_8h_html_ad02cd0021647e725d93ac1ab07d9f5b0"><div class="ttname"><a href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a></div><div class="ttdeci">void log_init(logfunc_t func, const char *prefix)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00097">log.c:97</a></div></div>
+<div class="ttc" id="alog_8h_html_ad3222ede877663a8712ee41d15c1c0cf"><div class="ttname"><a href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a></div><div class="ttdeci">void log_backtrace(int skip_frames)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00497">log.c:497</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

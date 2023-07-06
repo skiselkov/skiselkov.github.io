@@ -1,11 +1,12 @@
 <map id="acfutils/log.h" name="acfutils/log.h">
-<area shape="rect" id="node1" title=" " alt="" coords="45,5,152,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="112,5,219,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node3" href="$sysmacros_8h_source.html" title=" " alt="" coords="104,80,208,107"/>
-<area shape="rect" id="node4" href="$types_8h_source.html" title=" " alt="" coords="121,155,191,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="11,229,82,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="114,304,185,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="158,229,229,256"/>
-<area shape="rect" id="node8" href="$core_8h.html" title=" " alt="" coords="253,229,315,256"/>
-<area shape="rect" id="node9" href="$libconfig_8h_source.html" title=" " alt="" coords="239,304,329,331"/>
+<area shape="rect" id="node3" title=" " alt="" coords="105,80,226,107"/>
+<area shape="rect" id="node4" href="$sysmacros_8h_source.html" title=" " alt="" coords="251,80,355,107"/>
+<area shape="rect" id="node5" href="$types_8h_source.html" title=" " alt="" coords="267,155,338,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="158,229,229,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="261,304,331,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="305,229,375,256"/>
+<area shape="rect" id="node9" href="$core_8h.html" title=" " alt="" coords="399,229,462,256"/>
+<area shape="rect" id="node10" href="$libconfig_8h_source.html" title=" " alt="" coords="385,304,476,331"/>
 </map>
