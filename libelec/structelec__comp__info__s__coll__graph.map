@@ -1,0 +1,11 @@
+<map id="elec_comp_info_t" name="elec_comp_info_t">
+<area shape="rect" id="node1" title=" " alt="" coords="284,107,420,133"/>
+<area shape="rect" id="node2" href="$structelec__bus__info__t.html" title=" " alt="" coords="540,27,663,53"/>
+<area shape="rect" id="node4" href="$structelec__diode__info__t.html" title=" " alt="" coords="533,97,669,124"/>
+<area shape="rect" id="node8" href="$structelec__tru__info__t.html" title=" " alt="" coords="542,241,661,268"/>
+<area shape="rect" id="node3" href="$structelec__label__box__info__t.html" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node5" href="$structelec__cb__info__t.html" title=" " alt="" coords="29,56,144,83"/>
+<area shape="rect" id="node6" href="$structelec__gen__info__t.html" title=" " alt="" coords="25,107,149,133"/>
+<area shape="rect" id="node7" href="$structelec__load__info__t.html" title=" " alt="" coords="23,157,151,184"/>
+<area shape="rect" id="node9" href="$structelec__batt__info__t.html" title=" " alt="" coords="23,208,150,235"/>
+</map>
