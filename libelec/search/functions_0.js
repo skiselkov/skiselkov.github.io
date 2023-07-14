@@ -51,7 +51,7 @@ var searchData=
   ['libelec_5fsys_5fset_5ftime_5ffactor_244',['libelec_sys_set_time_factor',['../libelec_8h.html#a1dd482ab4f0bc8b029a4bd871f11f48d',1,'libelec.c']]],
   ['libelec_5fsys_5fstart_245',['libelec_sys_start',['../libelec_8h.html#ae89af50399d40bf3d501c44d6200d9aa',1,'libelec.c']]],
   ['libelec_5fsys_5fstop_246',['libelec_sys_stop',['../libelec_8h.html#a494c5d3d0246792f8fb1497572d646d2',1,'libelec.c']]],
-  ['libelec_5ftie_5fget_247',['libelec_tie_get',['../libelec_8h.html#a56f57c2e63aa880700c54b5d430d7fca',1,'libelec.c']]],
+  ['libelec_5ftie_5fget_247',['libelec_tie_get',['../libelec_8h.html#a7d6a4fd0ffa7fd5dba45d70b53954285',1,'libelec.c']]],
   ['libelec_5ftie_5fget_5fall_248',['libelec_tie_get_all',['../libelec_8h.html#aef200f9babf90f263acb7059d9e74077',1,'libelec.c']]],
   ['libelec_5ftie_5fget_5flist_249',['libelec_tie_get_list',['../libelec_8h.html#afb531d6f8002d401dc243e38d7590371',1,'libelec.c']]],
   ['libelec_5ftie_5fget_5fnum_5fbuses_250',['libelec_tie_get_num_buses',['../libelec_8h.html#a81aebc83ce320bc7c4e4b0eefd8a8353',1,'libelec.c']]],
