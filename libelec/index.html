@@ -127,9 +127,9 @@ Building Using CMake</h3>
 <li>Create a <code>build</code> subdirectory under <code>src</code> to hold the build products: <div class="fragment"><div class="line">$ mkdir src/build</div>
 <div class="line">$ cd src/build</div>
 </div><!-- fragment --></li>
-<li>Configure CMake. Please note that you will require the redistributable package of libacfutils installed somewhere (say at path <code>${LIBACFUTILS}</code>): <div class="fragment"><div class="line">$ cmake .. -DLIBACFUTILS=${LIBACFUTILS}</div>
+<li>Configure CMake. Please note that you will require the redistributable package of libacfutils installed somewhere (say at path <code>${LIBACFUTILS}</code>): <div class="fragment"><div class="line">$ cmake -DLIBACFUTILS=${LIBACFUTILS} ..</div>
 </div><!-- fragment --></li>
-<li>Now just run the build: <div class="fragment"><div class="line">$ make</div>
+<li>Now just run the build: <div class="fragment"><div class="line">$ cmake --build .</div>
 </div><!-- fragment --></li>
 </ol>
 <p>This will produce a static library named either <code>libelec.lib</code> (on Windows), or <code>libelec.a</code> (on macOS and Linux). On macOS, the built library will contain both the x86-64 and arm64 bits and can thus be used to build universal software. On Linux, you can cross-compile to Windows (MinGW) using the following CMake command instead (you will obviously also need to have the MinGW toolchain installed separately):</p>
