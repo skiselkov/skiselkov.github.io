@@ -67,7 +67,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>When initializing libelec using <a class="el" href="libelec_8h.html#a726d387a49134ed486ff6c85967beb79">libelec_new()</a>, you must supply a specially formatted configuration file, which defines the network components, their properties and how all components are interconnected. You can place comments into the file by prefixing them with the <code>#</code> character.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Limitations On Network Layout</h1>
 <p>While libelec can simulate a wide variety of electrical networks, it is not intended to be a highly accurate general-purpose electronics simulation system. Its primary purpose is to account for overall energy flows within an electrical system, which devices are powered and through which connections energy is flowing.</p>
 <p>With the design goals in mind, let's review the general design properties that your electrical network must follow:</p>
@@ -116,7 +116,7 @@ Limitations On Network Layout</h1>
 <li>DC components can be powered by more than one source of electrical energy at the same time. In that case, the current is split between the sources based on the ratio of the product of their voltages and the inverse of their internal resistance. This means that even if two sources are of equal voltage, the current draw can skew much more towards one, if its internal resistance is lower than the other.</li>
 <li>AC components must only ever have a single power source at any given time. This doesn't mean that a component could only ever be powered from a single AC source overall, only that at any single point in time, no more than one AC source may power a given component.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 General File Structure</h1>
 <p>The file is generally structured into two large sections:</p>
 <ol type="1">
@@ -124,7 +124,7 @@ General File Structure</h1>
 <li>The list of buses and their connections to the devices</li>
 </ol>
 <p>As the electrical network can get quite complicated, you are encouraged to keep a visual record of the network's layout using some 3rd party diagram program.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Component Types</h1>
 <p>Every component on the network has at least these two properties:</p>
 <ol type="1">
@@ -132,7 +132,7 @@ Component Types</h1>
 <li>A unique name. This is used to identify the component in the network definition file and form connections. Names cannot contain spaces. You are encouraged to use simple names, such as "GEN_1" or "MAIN_BATT".</li>
 </ol>
 <p>In addition, components can have other properties, which are type-specific.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Battery</h2>
 <p>A battery is a component which can hold a certain amount of energy. This energy can then either be discharged (when a load is connected to the battery), or recharged (when a generator or energy source of a higher voltage than the battery's output voltage is attached). The rate of recharge is controlled by the battery's charging resistance, while the rate of discharge is largely driven by the demands of the downstream loads. To simulate the effects of internal battery resistance to discharge, a battery will depress its output voltage as it approaches its power flow limits.</p>
 <p>Sample battery definition: </p><div class="fragment"><div class="line">BATT            MAIN_BATT</div>
@@ -149,7 +149,7 @@ Battery</h2>
 <li><code>CHG_R</code> (mandatory): the charging resistance in Ohms. The higher this number, the more slowly the battery will charge. This must be a positive number, typically in the range of a few hundred milliohms. Setting this too low will result in excessively large current draw from the battery charger, while setting it too high will cause the battery to hardly charge at all.</li>
 <li><code>INT_R</code> (mandatory): internal resistance of the battery in Ohms. This is used when calculating multi-source current distribution on a DC network. Current demand is distributed among current sources by the ratio of the voltage and the inverse of the internal resistance of each source.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Generator</h2>
 <p>A generator is a component which converts mechanical input energy into electrical output energy. You MUST supply a callback using <a class="el" href="libelec_8h.html#a1578efa53417a927d54861bee07e0dff">libelec_gen_set_rpm_cb()</a>, which informs libelec how fast the input shaft of the generator is turning. Please note that libelec doesn't impose any specific units for rotational speed. All you need to do is be consistent between the units being used throughout your network, since libelec uses them for lookups into the speed behavior tables.</p>
 <p>Sample generator definition: </p><div class="fragment"><div class="line">GEN             GEN_1</div>
@@ -198,7 +198,7 @@ Generator</h2>
 <p class="startli">Please note that due to the extrapolation nature, if you don't provide enough points and the power draw on the generator is extreme, the extrapolation might give a bad efficiency value, such as a negative number, or a number over 100%, which will cause a runtime assertion failure in libelec. You should terminate your functions with a flat linear segment to prevent this.</p>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Transformer-Rectifier Unit (TRU)</h2>
 <p>A Transformer-Rectifier Unit is a component which performs two tasks:</p>
 <ol type="1">
@@ -230,7 +230,7 @@ Transformer-Rectifier Unit (TRU)</h2>
 <p class="startli">Please note that due to the extrapolation nature, if you don't provide enough points and the power draw on the TRU is extreme, the extrapolation might give a bad efficiency value, such as a negative number, or a number over 100%, which will cause a runtime assertion failure in libelec. You should terminate your functions with a flat linear segment to prevent this.</p>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Inverter</h2>
 <p>An inverter is conceptually the opposite of a TRU. It changes DC power into AC power, and optionally also changes the input voltage to a different output voltage. Since a there are so many commonalities between TRUs and inverters, we will only cover the different configuration stanzas.</p>
 <div class="fragment"><div class="line">INV             INV_1</div>
@@ -253,7 +253,7 @@ Inverter</h2>
 <li><code>INV</code>: starts a new inverter definition block. The parameter of this config stanza is the name of the inverter.</li>
 <li><code>OUT_FREQ</code> (mandatory): defines the nominal output frequency of the inverter.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Load</h2>
 <p>A load is a consumer of electrical energy. This can be anything you need it to be. libelec tells you if the load is powered (and how much energy it is consuming), and you then implement your custom systems behaviors based on that energy usage. Loads can either have internal power supplies, or be simple unregulated energy consumers. You can customize all of this behavior to suit your needs.</p>
 <p>Loads come in several varieties of power demand, depending on your needs:</p>
@@ -298,7 +298,7 @@ Load</h2>
 <li><code>STD_LOAD</code> (optional): allows you to specify a "standard load" which is the demand that the load is generating on its input. This allows you to easily specify a load which always draws a known amount of current or power from its input, thus avoiding having to write callbacks for every single load on the network. If you do decide to provide a load demand callback by calling <a class="el" href="libelec_8h.html#a6e14c40eb12b728b5e7265a65380e69f">libelec_load_set_load_cb()</a>, this stanza will be ignored.</li>
 <li><code>INCAP</code> (optional): allows you specify the input capacitance behavior of the load's power supply. The two arguments of this stanza are the capacitance (in Farad) and the internal resistance for charging (in Ohms). If the input voltage into the power supply is higher than the capacitance voltage, the input capacitor will charge up, generating additional current demand on the input. The rate at which this capacitor charges depends on the voltage delta between the capacitor and the input, and the charging resistance. You should carefully set the resistance, to limit inrush current and prevent tripping breakers when you turn your electrical system on. Usually a value like 50-60 Ohms will produce a fairly modest inrush current (on a 28V system, this corresponds to an inrush current of of approximately half an Ampere). The length of time for this inrush current depends on the absolute capacitance. You should fine tune this to match the expected capacitance behavior of your load.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Circuit Breaker</h2>
 <p>Circuit breakers are devices which allow the passage of electrical current when closed. If open, current is not allowed to flow. A breaker can become open by either by manual pilot action, or automatically if the current flowing through the breaker exceeds the breaker's maximum rating. As such, circuit breakers are safety devices which prevent excessive current draw to protect the electrical network from damage due to faults or short-circuits.</p>
 <p>libelec assumes CBs as being specifically thermal circuit breakers, which are breakers where a small amount of energy is used to heat up an internal filament. This amount of energy loss is carefully callibrated such that when current flow through the breaker exceeds its rating, the filament deforms sufficiently to trigger an internal control circuit, which then opens the breaker. As such, thermal breakers have a certain amount of "inertia" before responding. If the current exceedance is very brief and/or not very high, the filament's thermal inertia might cause the breaker not to "trip." Conversely, when the breaker trips, the filament might remain very hot and must cool off - the operator must wait a few seconds before attempting to close the breaker again, to account for this cooling period.</p>
@@ -312,7 +312,7 @@ Circuit Breaker</h2>
 <li><code>LOCATION</code> (optional): textual description of the location of the circuit breaker on a breaker panel. This is only used for in the network visualization rendering and not for any physics calculations.</li>
 <li><code>FUSE</code> (optional): modifiers the visual depiction on the network visualization rendering to use the symbol for a fuse. You can still reset the fuse through a call to <a class="el" href="libelec_8h.html#af0950ae9c4b63eb37cc54334c1cdc91a">libelec_cb_set()</a>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Shunt</h2>
 <p>Shunts are current measuring devices inserted in-line with a circuit. In reality, shunts are very small, carefully callibrated resistors, which cause a small amount of voltage drop across their leads. This amount of voltage drop is then measured using a voltmeter and converted into a current measurement mathematically.</p>
 <p>Since a properly sized shunt is meant to only cause a very small voltage drop in the circuit, libelec shunts are idealized devices which cause no voltage drop at all. You can also use these idealized shunts to represent other current measuring devices, such as AC current clamps (which cause no voltage drop in the circuit).</p>
@@ -320,7 +320,7 @@ Shunt</h2>
 </div><!-- fragment --><ul>
 <li><code>SHUNT</code>: start a new shunt definition block, as well as the name of the shunt.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Tie</h2>
 <p>Ties are devices which connect two or more buses together. You can think of ties as a generalization of contactors and relays. Each of the endpoints of a tie has two possible states: tied or not tied. When tied, the endpoint allows current to pass (in any direction) to all other endpoints which are currently tied. Conceptually, the tie behaves as a single electrical node, with links to the outside world which can be dynamically connected and disconnected:</p>
 <div class="fragment"><div class="line">   4-pole tie fully open                B &amp; C tied, A &amp; D open</div>
@@ -351,14 +351,14 @@ Tie</h2>
 </div><!-- fragment --><ul>
 <li><code>TIE</code>: starts a new tie definition block and the name of the tie. Please note that the actual endpoints of the tie are specified later in a bus using the <code>ENDPT</code> stanza.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Diode</h2>
 <p>A diode is a component which prevents current flow opposite to the diode's forward sense. libelec's diode are DC-only devices and cannot be used on AC circuits. Use a component of type TRU to implement an AC-to-DC rectifier.</p>
 <div class="fragment"><div class="line">DIODE   FOO</div>
 </div><!-- fragment --><ul>
 <li><code>DIODE</code>: starts a new diode definition block and the name of the diode. Please note that the actual endpoints of the tie are specified later in a bus using the <code>ENDPT</code> stanza with an <code>IN</code> or <code>OUT</code> keyword following the diode name. See "Bus" below.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Bus</h2>
 <p>Buses are the interconnecting "tissue" of the libelec network. Every component on the network must connect to one or more buses, and the buses themselves serve to distribute energy flows throughout the network. libelec buses are idealized power distribution mechanisms with no internal resistance.</p>
 <div class="fragment"><div class="line">BUS             FOO     AC</div>

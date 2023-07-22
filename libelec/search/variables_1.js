@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['batt_266',['batt',['../structelec__comp__info__s.html#afcb75595f3ff028e966ea77be5cd4100',1,'elec_comp_info_s']]],
-  ['bus_267',['bus',['../structelec__comp__info__s.html#aef2b7d3b2bb041cefb4fbf60db56e477',1,'elec_comp_info_s']]]
+  ['batt_277',['batt',['../structelec__comp__info__s.html#afcb75595f3ff028e966ea77be5cd4100',1,'elec_comp_info_s']]],
+  ['bus_278',['bus',['../structelec__comp__info__s.html#aef2b7d3b2bb041cefb4fbf60db56e477',1,'elec_comp_info_s']]]
 ];
