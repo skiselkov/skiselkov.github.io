@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libacfutils: htbl_multi_value_t Struct Reference</title>
+<title>libacfutils: rwlock_waiter_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,27 +65,33 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">htbl_multi_value_t Struct Reference</div>  </div>
+<div class="title">rwlock_waiter_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for rwlock_waiter_t:</div>
+<div class="dyncontent">
+<div class="center"><img src="structrwlock__waiter__t__coll__graph.png" border="0" usemap="#arwlock__waiter__t_coll__map" alt="Collaboration graph"/></div>
+<map name="arwlock__waiter__t_coll__map" id="arwlock__waiter__t_coll__map">
+<area shape="rect" title=" " alt="" coords="5,95,131,121"/>
+<area shape="rect" href="structlist__node__t.html" title=" " alt="" coords="21,5,115,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a0f61d63b009d0880a89c843bd50d8d76"><td class="memItemLeft" align="right" valign="top"><a id="a0f61d63b009d0880a89c843bd50d8d76"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
-<tr class="separator:a0f61d63b009d0880a89c843bd50d8d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc05034f4c0a40e3e8ffc5fea7c78eb0"><td class="memItemLeft" align="right" valign="top"><a id="adc05034f4c0a40e3e8ffc5fea7c78eb0"></a>
+bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b></td></tr>
+<tr class="separator:adc05034f4c0a40e3e8ffc5fea7c78eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af895e0b212294c823f85b8c01fe80f80"><td class="memItemLeft" align="right" valign="top"><a id="af895e0b212294c823f85b8c01fe80f80"></a>
-list_node_t&#160;</td><td class="memItemRight" valign="bottom"><b>node</b></td></tr>
+<a class="el" href="structlist__node__t.html">list_node_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>node</b></td></tr>
 <tr class="separator:af895e0b212294c823f85b8c01fe80f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a083ec5bdd58d580f834a40ec8a7a9cfb"><td class="memItemLeft" align="right" valign="top"><a id="a083ec5bdd58d580f834a40ec8a7a9cfb"></a>
-struct htbl_bucket_item_s *&#160;</td><td class="memItemRight" valign="bottom"><b>item</b></td></tr>
-<tr class="separator:a083ec5bdd58d580f834a40ec8a7a9cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00049">49</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01036">1036</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>acfutils/<a class="el" href="htbl_8h_source.html">htbl.h</a></li>
+<li>acfutils/<a class="el" href="thread_8h_source.html">thread.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

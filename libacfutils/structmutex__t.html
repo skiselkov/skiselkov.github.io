@@ -68,6 +68,8 @@ $(function() {
 <div class="title">mutex_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="thread_8h_source.html">thread.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -79,8 +81,15 @@ CRITICAL_SECTION&#160;</td><td class="memItemRight" valign="bottom"><b>cs</b></t
 <tr class="separator:a61ab1bffdc20a3dde3d0c3098bca74f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00232">232</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<div class="textblock"><p>A mutual-exclusion lock. This can be initialized using <a class="el" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init()</a> and afterwards must be disposed of using <a class="el" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy()</a>. Mutexes are used to protect critical sections of code, where you want to prevent multiple threads from entering at the same time. Use the <a class="el" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter()</a> and <a class="el" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit()</a> functions for that. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init()</a> </dd>
+<dd>
+<a class="el" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy()</a> </dd>
+<dd>
+<a class="el" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter()</a> </dd>
+<dd>
+<a class="el" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00395">395</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>acfutils/<a class="el" href="thread_8h_source.html">thread.h</a></li>
 </ul>

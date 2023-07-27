@@ -1,19 +1,15 @@
 var searchData=
 [
-  ['safe_5fappend_5frealloc_1562',['safe_append_realloc',['../safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e',1,'safe_alloc.h']]],
-  ['safe_5fcalloc_1563',['safe_calloc',['../safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1',1,'safe_alloc.h']]],
-  ['safe_5fmalloc_1564',['safe_malloc',['../safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74',1,'safe_alloc.h']]],
-  ['safe_5frealloc_1565',['safe_realloc',['../safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658',1,'safe_alloc.h']]],
-  ['safe_5fstrdup_1566',['safe_strdup',['../safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a',1,'safe_alloc.h']]],
-  ['sph2ecef_1567',['sph2ecef',['../geom_8h.html#a68c240a440e56b2c31f8f7748e3b2af0',1,'geom.c']]],
-  ['sph2ecmi_1568',['sph2ecmi',['../geom_8h.html#acddd60d3ea495cec8655be1cfc459dfd',1,'geom.c']]],
-  ['sph_5fxlate_1569',['sph_xlate',['../geom_8h.html#a723ffc427ca85abc1002dc96095f02ce',1,'geom.c']]],
-  ['sph_5fxlate_5finit_1570',['sph_xlate_init',['../geom_8h.html#a64fd8a0e813ab24cfc8f15144d0dde4a',1,'geom.c']]],
-  ['sph_5fxlate_5fvect_1571',['sph_xlate_vect',['../geom_8h.html#ad7e49e720e5ff4d2a2df30f80948fd06',1,'geom.c']]],
-  ['sprintf_5falloc_1572',['sprintf_alloc',['../helpers_8h.html#a5fb11f4a6bbbf275b2f2889f21624fec',1,'helpers.h']]],
-  ['stereo_5ffpp_5finit_1573',['stereo_fpp_init',['../geom_8h.html#a83caa3e6874080fef88ade04fdb3c2d9',1,'geom.c']]],
-  ['strip_5fspace_1574',['strip_space',['../parser__funcs_8h.html#a2f4f15764bfca53af9cb41224186e3c8',1,'parser_funcs.h']]],
-  ['strsplit_1575',['strsplit',['../helpers_8h.html#afa358d73bf071f3713f6787d56ce737d',1,'helpers.c']]],
-  ['strtolower_1576',['strtolower',['../helpers_8h.html#abafc800336b18c55464e9db4c1710a8a',1,'helpers.c']]],
-  ['strtoupper_1577',['strtoupper',['../helpers_8h.html#a28aa317f1047b42c1c77a71e03fada94',1,'helpers.c']]]
+  ['rel_5fangle_1635',['rel_angle',['../geom_8h.html#acae90c48cb9c26a1a95e97ab6a18b6c9',1,'geom.c']]],
+  ['rel_5fhdg_5fimpl_1636',['rel_hdg_impl',['../helpers_8h.html#aab2e0b814c99c025f8f9f104fbc2524b',1,'helpers.c']]],
+  ['remove_5fdirectory_1637',['remove_directory',['../helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af',1,'helpers.c']]],
+  ['remove_5ffile_1638',['remove_file',['../helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7',1,'helpers.c']]],
+  ['roundmul_1639',['roundmul',['../helpers_8h.html#ad76ba691fb06f9a6973d4abc371399ca',1,'helpers.h']]],
+  ['rwmutex_5fcan_5fenter_5fimpl_1640',['rwmutex_can_enter_impl',['../thread_8h.html#a9445f660555e36865aeb606c614e2aba',1,'thread.h']]],
+  ['rwmutex_5fdestroy_1641',['rwmutex_destroy',['../thread_8h.html#a5bf1a60ece7f1aaa11c711c304f678fd',1,'thread.h']]],
+  ['rwmutex_5fenter_1642',['rwmutex_enter',['../thread_8h.html#a32eb36ceb0203220867021ceac4bc2ef',1,'thread.h']]],
+  ['rwmutex_5fexit_1643',['rwmutex_exit',['../thread_8h.html#ac83275c541a5fd2a13ecce03457e59ca',1,'thread.h']]],
+  ['rwmutex_5fheld_5fwrite_1644',['rwmutex_held_write',['../thread_8h.html#ab54461f822e127a882d6b144abcd9e1b',1,'thread.h']]],
+  ['rwmutex_5finit_1645',['rwmutex_init',['../thread_8h.html#a377021479ab80f7873fd382ae111222d',1,'thread.h']]],
+  ['rwmutex_5fupgrade_1646',['rwmutex_upgrade',['../thread_8h.html#af25b7a9564357bc92b2f89902ca175f1',1,'thread.h']]]
 ];

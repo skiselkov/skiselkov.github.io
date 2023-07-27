@@ -136,74 +136,76 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> *</div>
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">   93</a></span>&#160;<a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str2)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">char</span> *str = strdup(str2);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (str2 != NULL) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a>(str != NULL, <span class="stringliteral">&quot;Cannot allocate %lu bytes: &quot;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="stringliteral">&quot;out of memory&quot;</span>, (<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span>)strlen(str2) + 1);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> (str);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">  120</a></span>&#160;<a class="code" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc</a>(<span class="keywordtype">char</span> *buf, <span class="keyword">const</span> <span class="keywordtype">char</span> *str)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">char</span> *newbuf;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(str != NULL);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (buf == NULL)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(str));</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    newbuf = (<span class="keywordtype">char</span> *)<a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(buf, strlen(buf) + strlen(str) + 1);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    memcpy(&amp;newbuf[strlen(newbuf)], str, strlen(str) + 1);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (newbuf);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">  143</a></span>&#160;<span class="preprocessor">#define ZERO_FREE(ptr) \</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">        NOT_TYPE_ASSERT(ptr, void *); \</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">        NOT_TYPE_ASSERT(ptr, char *); \</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">        if ((ptr) != NULL) \</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">            memset((ptr), 0, sizeof (*(ptr))); \</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">        free(ptr); \</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a5c55bb2cb4b61fa3ea111470c047c43d">  154</a></span>&#160;<span class="preprocessor">#define DESTROY_FREE(ptr) \</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">        ZERO_FREE(ptr); \</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">        (ptr) = NULL; \</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">  165</a></span>&#160;<span class="preprocessor">#define ZERO_FREE_N(ptr, num) \</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">        NOT_TYPE_ASSERT(ptr, void *); \</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">        if ((ptr) != NULL) \</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">            memset((ptr), 0, sizeof (*(ptr)) * (num)); \</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">        free(ptr); \</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#af13fdc07e3264a73dfdd0b329565ac2f">  175</a></span>&#160;<span class="preprocessor">#define DESTROY_FREE_N(ptr, num) \</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">        ZERO_FREE_N((ptr), (num)); \</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">        (ptr) = NULL; \</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">    while (0)</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a759a8fa73a1f7f859edf775dd6d76dde">  186</a></span>&#160;<span class="preprocessor">#define BZERO(data) memset((data), 0, sizeof (*(data)))</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a601bef5ebbd768105bdf40337a884b35">  191</a></span>&#160;<span class="preprocessor">#define SAFE_BZERO(data) \</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">        if ((data) != NULL) \</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">            BZERO(data); \</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_SAFE_ALLOC_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">char</span> *str;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> l;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(str2 != NULL);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    l = strlen(str2);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    str = (<span class="keywordtype">char</span> *)<a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(l + 1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    memcpy(str, str2, l);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    str[l] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> (str);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> *</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">  122</a></span>&#160;<a class="code" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc</a>(<span class="keywordtype">char</span> *buf, <span class="keyword">const</span> <span class="keywordtype">char</span> *str)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">char</span> *newbuf;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(str != NULL);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (buf == NULL)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a>(str));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    newbuf = (<span class="keywordtype">char</span> *)<a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(buf, strlen(buf) + strlen(str) + 1);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    memcpy(&amp;newbuf[strlen(newbuf)], str, strlen(str) + 1);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> (newbuf);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">  145</a></span>&#160;<span class="preprocessor">#define ZERO_FREE(ptr) \</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">        NOT_TYPE_ASSERT(ptr, void *); \</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">        NOT_TYPE_ASSERT(ptr, char *); \</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">        if ((ptr) != NULL) \</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">            memset((ptr), 0, sizeof (*(ptr))); \</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">        free(ptr); \</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a5c55bb2cb4b61fa3ea111470c047c43d">  156</a></span>&#160;<span class="preprocessor">#define DESTROY_FREE(ptr) \</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">        ZERO_FREE(ptr); \</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">        (ptr) = NULL; \</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">  167</a></span>&#160;<span class="preprocessor">#define ZERO_FREE_N(ptr, num) \</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">        NOT_TYPE_ASSERT(ptr, void *); \</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">        if ((ptr) != NULL) \</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">            memset((ptr), 0, sizeof (*(ptr)) * (num)); \</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">        free(ptr); \</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#af13fdc07e3264a73dfdd0b329565ac2f">  177</a></span>&#160;<span class="preprocessor">#define DESTROY_FREE_N(ptr, num) \</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">        ZERO_FREE_N((ptr), (num)); \</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">        (ptr) = NULL; \</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">    while (0)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a759a8fa73a1f7f859edf775dd6d76dde">  188</a></span>&#160;<span class="preprocessor">#define BZERO(data) memset((data), 0, sizeof (*(data)))</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="safe__alloc_8h.html#a601bef5ebbd768105bdf40337a884b35">  193</a></span>&#160;<span class="preprocessor">#define SAFE_BZERO(data) \</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">        if ((data) != NULL) \</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">            BZERO(data); \</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_SAFE_ALLOC_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aassert_8h_html_ad157a1a262c174b8a8744896359009b7"><div class="ttname"><a href="assert_8h.html#ad157a1a262c174b8a8744896359009b7">VERIFY_MSG</a></div><div class="ttdeci">#define VERIFY_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00091">assert.h:91</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a9f32a56587b5252c01a2304b3e44d658"><div class="ttname"><a href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a></div><div class="ttdeci">static void * safe_realloc(void *oldptr, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00077">safe_alloc.h:77</a></div></div>
-<div class="ttc" id="asafe__alloc_8h_html_aaae1b664606ff3c5375676c0ec39152e"><div class="ttname"><a href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc</a></div><div class="ttdeci">static char * safe_append_realloc(char *buf, const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00120">safe_alloc.h:120</a></div></div>
+<div class="ttc" id="asafe__alloc_8h_html_aaae1b664606ff3c5375676c0ec39152e"><div class="ttname"><a href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc</a></div><div class="ttdeci">static char * safe_append_realloc(char *buf, const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00122">safe_alloc.h:122</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00093">safe_alloc.h:93</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

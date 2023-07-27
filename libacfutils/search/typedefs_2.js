@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['glutils_5ftexsz_5fenum_5fcb_5ft_1724',['glutils_texsz_enum_cb_t',['../glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d',1,'glutils.h']]]
+  ['delay_5fline_5ftime_5ffunc_5ft_1812',['delay_line_time_func_t',['../delay__line_8h.html#a54586d9dd755e38ff0675f1fa2b3e227',1,'delay_line.h']]]
 ];

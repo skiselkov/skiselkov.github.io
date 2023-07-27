@@ -202,7 +202,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h4><a class="anchor" id="autotoc_md14"></a>
+<h4><a class="anchor" id="autotoc_md17"></a>
 Example:</h4>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line">   <span class="keywordtype">int</span>         foo;</div>
@@ -565,7 +565,7 @@ Example:</h4>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The two objects must be of the same type and hold their <a class="el" href="structlist__node__t.html">list_node_t</a> at the exact same offset within the parent structure. This function is NOT meant to replace one type of object with a different type of object within the same list. </dd></dl>
-<h4><a class="anchor" id="autotoc_md19"></a>
+<h4><a class="anchor" id="autotoc_md22"></a>
 Example</h4>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line">   <span class="keywordtype">int</span>         foo;</div>
@@ -656,7 +656,7 @@ Example</h4>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The next object following <code>object</code> in the second argument. If there are no more objects following <code>object</code>, returns NULL instead. </dd></dl>
-<h4><a class="anchor" id="autotoc_md17"></a>
+<h4><a class="anchor" id="autotoc_md20"></a>
 Example</h4>
 <p>Iterating through a list forwards: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (my_data_t *data = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;my_list); data != NULL;</div>
 <div class="line">    data = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;my_list, data)) {</div>
@@ -713,7 +713,7 @@ Example</h4>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The nearest object preceding <code>object</code> in the second argument. If there are no more objects preceding <code>object</code>, returns NULL instead. </dd></dl>
-<h4><a class="anchor" id="autotoc_md18"></a>
+<h4><a class="anchor" id="autotoc_md21"></a>
 Example</h4>
 <p>Iterating through a list backwards: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (my_data_t *data = <a class="code" href="list_8h.html#a364c3cdd1938f1a6613140ea030c0597">list_tail</a>(&amp;my_list); data != NULL;</div>
 <div class="line">    data = <a class="code" href="list_8h.html#a45616756545f942cacb4824413033ee5">list_prev</a>(&amp;my_list, data)) {</div>
@@ -790,7 +790,7 @@ Example</h4>
       </table>
 </div><div class="memdoc">
 <p>Removes an object from the head (start) of the list. </p><dl class="section return"><dt>Returns</dt><dd>The object which was removed from the head of the list. If the list was already empty, returns NULL instead.</dd></dl>
-<h4><a class="anchor" id="autotoc_md15"></a>
+<h4><a class="anchor" id="autotoc_md18"></a>
 Example</h4>
 <p>This function is commonly used to empty out a list by removing all members, like this: </p><div class="fragment"><div class="line">my_data_t *data;</div>
 <div class="line"><span class="keywordflow">while</span> ((data = <a class="code" href="list_8h.html#a67938c91a36dbb8963d9a18ac2af1c22">list_remove_head</a>(&amp;my_list)) != NULL) {</div>
@@ -818,7 +818,7 @@ Example</h4>
       </table>
 </div><div class="memdoc">
 <p>Removes an object from the tail (end) of the list. </p><dl class="section return"><dt>Returns</dt><dd>The object which was removed from the tail of the list. If the list was already empty, returns NULL instead.</dd></dl>
-<h4><a class="anchor" id="autotoc_md16"></a>
+<h4><a class="anchor" id="autotoc_md19"></a>
 Example</h4>
 <p>This function is commonly used to empty out a list by removing all members, like this: </p><div class="fragment"><div class="line">my_data_t *data;</div>
 <div class="line"><span class="keywordflow">while</span> ((data = <a class="code" href="list_8h.html#aa815d7427f7d2acf9396c3a998ccedea">list_remove_tail</a>(&amp;my_list)) != NULL) {</div>

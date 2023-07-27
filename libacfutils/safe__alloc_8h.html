@@ -146,7 +146,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Performs a zeroing of the <code>data</code> buffer. Please note that <code>sizeof</code> must return the correct size of the data to be zeroed. Thus this is intended to be used fixed-size arrays. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00186">186</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00188">188</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE()</a>, but also sets <code>ptr</code> to NULL after freeing. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00154">154</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00156">156</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -206,7 +206,7 @@ Functions</h2></td></tr>
 <div class="line">    while (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">ZERO_FREE_N()</a>, but also sets <code>ptr</code> to NULL after freeing. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00175">175</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00177">177</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -231,7 +231,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>If <code>data</code> is not <code>NULL</code>, performs a <a class="el" href="safe__alloc_8h.html#a759a8fa73a1f7f859edf775dd6d76dde">BZERO</a> on the data. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00191">191</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00193">193</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -260,7 +260,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p>If <code>ptr</code> is not a <code>NULL</code> pointer, the contained data is first zeroed, and subsequently deallocated using free(). This is useful for making sure nothing remains of a buffer after freeing, thus preventing potentially attempting to read its contents and seeing valid data (use-after-free).</p>
 <p>N.B. this macro relies on <code>sizeof</code> returning the correct size of this data buffer, so it should only be used on single struct buffers, not arrays. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00143">143</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00145">145</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -297,7 +297,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>, but takes an explicit array element count argument. This is the variant of the <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a> macro to be used on arrays of objects, rather than single objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00165">165</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00167">167</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new combined buffer holding a concatenation of <code>buf</code> and <code>str</code>. Please note that since reallocation may occur, you must not reuse the old <code>buf</code> pointer value after calling <a class="el" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc()</a>. You should reassign the pointer using the return value of this function. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00120">120</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00122">122</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>

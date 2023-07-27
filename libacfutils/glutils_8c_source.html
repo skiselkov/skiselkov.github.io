@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">acfutils/list.h</a>&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;acfutils/shader.h&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;acfutils/thread.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="thread_8h.html">acfutils/thread.h</a>&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef  _USE_MATH_DEFINES</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#undef  _USE_MATH_DEFINES</span></div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">static</span> bool_t inited = B_FALSE;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">static</span> thread_id_t main_thread;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">static</span> <a class="code" href="thread_8h.html#a9a1cbe064d0b759f6e73df45d51488be">thread_id_t</a> main_thread;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">static</span> bool_t in_zink_mode = B_FALSE;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span></div>
@@ -173,7 +173,7 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (!inited) {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        inited = B_TRUE;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        main_thread = curthread_id;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        main_thread = <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        in_zink_mode = (strcmp((<span class="keywordtype">char</span> *)glGetString(GL_VENDOR), <span class="stringliteral">&quot;Mesa&quot;</span>)</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            == 0 &amp;&amp;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            strncmp((<span class="keywordtype">char</span> *)glGetString(GL_RENDERER), <span class="stringliteral">&quot;zink&quot;</span>, 4) == 0);</div>
@@ -277,7 +277,7 @@ $(function() {
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    memset(quads, 0, <span class="keyword">sizeof</span> (*quads));</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; curthread_id != main_thread) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> != main_thread) {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &amp;old_vao);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        glGenVertexArrays(1, &amp;quads-&gt;vao);</div>
@@ -290,7 +290,7 @@ $(function() {
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(quads-&gt;vbo != 0);</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="glutils_8h.html#a443db2bcc87ce792a0cd21b45c2bcddc">glutils_update_3D_quads_impl</a>(quads, filename, line, p, t, num_pts);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; curthread_id != main_thread)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> != main_thread)</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        glBindVertexArray(old_vao);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
@@ -632,7 +632,7 @@ $(function() {
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        vtx_data[i].pos[2] = p[i].z;</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    }</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; curthread_id != main_thread) {</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> != main_thread) {</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &amp;old_vao);</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        glGenVertexArrays(1, &amp;lines-&gt;vao);</div>
@@ -655,7 +655,7 @@ $(function() {
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            filename, line, lines-&gt;num_vtx * sizeof (<a class="code" href="structvtx__t.html">vtx_t</a>));</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    }</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; curthread_id != main_thread)</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> != main_thread)</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        glBindVertexArray(old_vao);</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
@@ -722,7 +722,7 @@ $(function() {
 <div class="line"><a name="l00809"></a><span class="lineno"><a class="line" href="glutils_8h.html#a12bc5f0f1fc81cc7d4561f6428f150a4">  809</a></span>&#160;<a class="code" href="glutils_8h.html#a12bc5f0f1fc81cc7d4561f6428f150a4">glutils_texsz_init</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;{</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    texsz.inited = B_TRUE;</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    mutex_init(&amp;texsz.lock);</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    <a class="code" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a>(&amp;texsz.lock);</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    texsz.bytes = 0;</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <a class="code" href="avl_8h.html#ac65a3472303f2a3ee479f57f6c816cab">avl_create</a>(&amp;texsz.allocs, texsz_alloc_compar,</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        sizeof (<a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a>), offsetof(<a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a>, node));</div>
@@ -736,7 +736,7 @@ $(function() {
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    <span class="keywordflow">if</span> (!texsz.inited)</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    mutex_destroy(&amp;texsz.lock);</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;    <a class="code" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a>(&amp;texsz.lock);</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    cookie = NULL;</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;    <span class="keywordflow">while</span> ((ta = <a class="code" href="avl_8h.html#a0dabf1a0262850aedd21dcb01df8a48e">avl_destroy_nodes</a>(&amp;texsz.allocs, &amp;cookie)) != NULL) {</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keywordtype">void</span> *cookie2 = NULL;</div>
@@ -771,7 +771,7 @@ $(function() {
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    <a class="code" href="structtexsz__alloc__t.html">texsz_alloc_t</a> *ta;</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    <a class="code" href="avl_8h.html#a4be84537145752bd25b72bfa9c2df176">avl_index_t</a> where;</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    mutex_enter(&amp;texsz.lock);</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;    <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;texsz.lock);</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(texsz.bytes + bytes &gt;= 0, <span class="stringliteral">&quot;Texture size accounting error &quot;</span></div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        <span class="stringliteral">&quot;(incr %ld bytes)&quot;</span>, (<span class="keywordtype">long</span>)bytes);</div>
@@ -823,7 +823,7 @@ $(function() {
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;        }</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    }</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160; </div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    mutex_exit(&amp;texsz.lock);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;texsz.lock);</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;}</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> int64_t</div>
@@ -1017,7 +1017,7 @@ $(function() {
 <div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    }</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160; </div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;    nl-&gt;num_pts = num_pts;</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; curthread_id != main_thread) {</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> != main_thread) {</div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        glGenVertexArrays(1, &amp;nl-&gt;vao);</div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;        <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(nl-&gt;vao != 0);</div>
 <div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;        glBindVertexArray(nl-&gt;vao);</div>
@@ -1036,7 +1036,7 @@ $(function() {
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;    nl-&gt;loc.seg_start = -1;</div>
 <div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    nl-&gt;loc.seg_end = -1;</div>
 <div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160; </div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; curthread_id != main_thread)</div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;    <span class="keywordflow">if</span> (GLEW_VERSION_3_0 &amp;&amp; <a class="code" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> != main_thread)</div>
 <div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;        glBindVertexArray(0);</div>
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
 <div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);</div>
@@ -1272,13 +1272,20 @@ $(function() {
 <div class="ttc" id="astructglutils__quads__t_html"><div class="ttname"><a href="structglutils__quads__t.html">glutils_quads_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00073">glutils.h:73</a></div></div>
 <div class="ttc" id="astructlist__node__t_html"><div class="ttname"><a href="structlist__node__t.html">list_node_t</a></div></div>
 <div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
-<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00232">thread.h:232</a></div></div>
+<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00395">thread.h:395</a></div></div>
 <div class="ttc" id="astructnl__vtx__data__t_html"><div class="ttname"><a href="structnl__vtx__data__t.html">nl_vtx_data_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01126">glutils.c:1126</a></div></div>
 <div class="ttc" id="astructtexsz__alloc__t_html"><div class="ttname"><a href="structtexsz__alloc__t.html">texsz_alloc_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00060">glutils.c:60</a></div></div>
 <div class="ttc" id="astructtexsz__instance__t_html"><div class="ttname"><a href="structtexsz__instance__t.html">texsz_instance_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00053">glutils.c:53</a></div></div>
 <div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00116">geom.h:116</a></div></div>
 <div class="ttc" id="astructvect3__t_html"><div class="ttname"><a href="structvect3__t.html">vect3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00089">geom.h:89</a></div></div>
 <div class="ttc" id="astructvtx__t_html"><div class="ttname"><a href="structvtx__t.html">vtx_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00048">glutils.c:48</a></div></div>
+<div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="athread_8h_html_a786e2308c77efa9600eaa81522c1ab32"><div class="ttname"><a href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a></div><div class="ttdeci">static void mutex_destroy(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00469">thread.h:469</a></div></div>
+<div class="ttc" id="athread_8h_html_a7c7c57534b154632f3ee43b3af22abe2"><div class="ttname"><a href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a></div><div class="ttdeci">static void mutex_enter(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00500">thread.h:500</a></div></div>
+<div class="ttc" id="athread_8h_html_a833ceaa5cf7a525bbd4f96f7fac6e223"><div class="ttname"><a href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a></div><div class="ttdeci">#define curthread_id</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00449">thread.h:449</a></div></div>
+<div class="ttc" id="athread_8h_html_a9147646b7eef9f977404c4192340442f"><div class="ttname"><a href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a></div><div class="ttdeci">static void mutex_exit(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00526">thread.h:526</a></div></div>
+<div class="ttc" id="athread_8h_html_a9a1cbe064d0b759f6e73df45d51488be"><div class="ttname"><a href="thread_8h.html#a9a1cbe064d0b759f6e73df45d51488be">thread_id_t</a></div><div class="ttdeci">DWORD thread_id_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00383">thread.h:383</a></div></div>
+<div class="ttc" id="athread_8h_html_ad740bab5dd6dd968f1b026c4b3cbc826"><div class="ttname"><a href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a></div><div class="ttdeci">static void mutex_init(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00458">thread.h:458</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

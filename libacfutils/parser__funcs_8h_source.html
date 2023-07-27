@@ -217,7 +217,7 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;7&#39;</span>) {</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    <span class="comment">/* 1-3 letter octal codes */</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    <span class="keywordtype">char</span> num[4];</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keywordtype">int</span> val = 0;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keywordtype">unsigned</span> val = 0;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    memset(num, 0, <span class="keyword">sizeof</span> (num));</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    num[0] = c;</div>
