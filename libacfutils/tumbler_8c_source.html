@@ -85,12 +85,12 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="math_8h.html">math.h</a>&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;acfutils/math.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="math_8h.html">acfutils/math.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;acfutils/tumbler.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span></div>
@@ -104,19 +104,19 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">while</span> (v &gt;= tumbler-&gt;mod)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        v -= tumbler-&gt;mod;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> (ABS(v));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(v));</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;handle_leading_chars(<span class="keyword">const</span> <a class="code" href="structtumbler__t.html">tumbler_t</a> *tumbler, <span class="keyword">const</span> <a class="code" href="structtumbler__t.html">tumbler_t</a> *prev_tumbler,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span> value, <span class="keywordtype">char</span> *out_str)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (*out_str == <span class="charliteral">&#39;0&#39;</span> &amp;&amp; ABS(value) &lt; tumbler-&gt;div)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (*out_str == <span class="charliteral">&#39;0&#39;</span> &amp;&amp; <a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(value) &lt; tumbler-&gt;div)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        *out_str = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (prev_tumbler != NULL &amp;&amp; value &lt; 0 &amp;&amp; *out_str == <span class="charliteral">&#39;\0&#39;</span> &amp;&amp;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ABS(value) &lt;= tumbler-&gt;div &amp;&amp;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ABS(value) &gt;= prev_tumbler-&gt;div) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(value) &lt;= tumbler-&gt;div &amp;&amp;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(value) &gt;= prev_tumbler-&gt;div) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        strlcpy(out_str, <span class="stringliteral">&quot;-&quot;</span>, TUMBLER_CAP);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">double</span> upper = nearest + tumbler-&gt;quant;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">double</span> upper2 = nearest + 2 * tumbler-&gt;quant;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        *fract = iter_fract(v, lower, nearest, B_FALSE) + 1;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        *fract = <a class="code" href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a>(v, lower, nearest, B_FALSE) + 1;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        lower2 = wrap(tumbler, lower2);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        lower = wrap(tumbler, lower);</div>
@@ -180,8 +180,8 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">         * rollover begin value and the rollover end, then calculate</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">         * the display</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (ABS(prev_v) &gt; prev_tumbler-&gt;mod * rollover_fract &amp;&amp;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            ABS(prev_v) &lt;= prev_tumbler-&gt;mod) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(prev_v) &gt; prev_tumbler-&gt;mod * rollover_fract &amp;&amp;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(prev_v) &lt;= prev_tumbler-&gt;mod) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (prev_fract &gt; 2.0)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                *fract = fmod(prev_fract, 1) + 1;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">else</span></div>
@@ -221,6 +221,9 @@ $(function() {
 <div class="ttc" id="aassert_8h_html_aca9c0d2dfaaf525f68ab974cb7587856"><div class="ttname"><a href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a></div><div class="ttdeci">#define ASSERT3F(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00195">assert.h:195</a></div></div>
 <div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
+<div class="ttc" id="amath_8h_html"><div class="ttname"><a href="math_8h.html">math.h</a></div></div>
+<div class="ttc" id="amath_8h_html_a6bc203af5e174f0106c6817954755ffa"><div class="ttname"><a href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a></div><div class="ttdeci">static double iter_fract(double x, double min_val, double max_val, bool_t clamp_output)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00110">math.h:110</a></div></div>
+<div class="ttc" id="amath_8h_html_a996f7be338ccb40d1a2a5abc1ad61759"><div class="ttname"><a href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a></div><div class="ttdeci">#define ABS(x)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00039">math.h:39</a></div></div>
 <div class="ttc" id="astructtumbler__t_html"><div class="ttname"><a href="structtumbler__t.html">tumbler_t</a></div><div class="ttdef"><b>Definition:</b> <a href="tumbler_8h_source.html#l00035">tumbler.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

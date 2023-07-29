@@ -99,14 +99,14 @@ What's included</h2>
 <li><code><a class="el" href="intl_8h.html">acfutils/intl.h</a></code>: a set of simple and portable internationalization functions. Simply supply a set of files in the <code>strings.po</code> format and you can use the <code><a class="el" href="intl_8h.html#a6554a5ea005e85d0f84f2f34c11de938">_()</a></code> macro to translate them on-the-fly.</li>
 <li><code><a class="el" href="list_8h.html">acfutils/list.h</a></code>: generic doubly-linked lists for storage of arbitrary data.</li>
 <li><code><a class="el" href="log_8h.html">acfutils/log.h</a></code>: convenience front-end to X-Plane <code>Log.txt</code> logging facility, with support for printf-style format strings and automatic appending of source code file names &amp; line numbers for easy debugging.</li>
-<li><code><a class="el" href="math_8h_source.html">acfutils/math.h</a></code>: a set of useful mathematical functions, such as:<ul>
+<li><code><a class="el" href="math_8h.html">acfutils/math.h</a></code>: a set of useful mathematical functions, such as:<ul>
 <li>a generic quadratic equation solver</li>
 <li>linear function extrapolation (both single- and multi-segment linear functions)</li>
 <li>weighted averages</li>
 <li>value clamping</li>
 </ul>
 </li>
-<li><code><a class="el" href="mt__cairo__render_8h_source.html">acfutils/mt_cairo_render.h</a></code>: a double-buffered multi-threaded Cairo canvas with automatic OpenGL compositing support. Simply supply a callback to draw the surface and tell it where to draw in your OpenGL output. You can configure rendering at a fixed FPS, or on-demand. Since the render takes place on a background thread, it doesn't interlock with X-Plane's OpenGL renderer. Also includes a convenience FreeType font loader function to simplify font handling.</li>
+<li><code><a class="el" href="mt__cairo__render_8h.html">acfutils/mt_cairo_render.h</a></code>: a double-buffered multi-threaded Cairo canvas with automatic OpenGL compositing support. Simply supply a callback to draw the surface and tell it where to draw in your OpenGL output. You can configure rendering at a fixed FPS, or on-demand. Since the render takes place on a background thread, it doesn't interlock with X-Plane's OpenGL renderer. Also includes a convenience FreeType font loader function to simplify font handling.</li>
 <li><code><a class="el" href="osrand_8h_source.html">acfutils/osrand.h</a></code>: a simple frontend to an OS-specific high quality random number generator. Use this to generate secure cryptographic keys. Uses <code>/dev/random</code> on Linux and macOS and <code>CryptGenRandom</code> on Windows.</li>
 <li><code><a class="el" href="paste_8h_source.html">acfutils/paste.h</a></code>: a platform-independent interface for cut-and-paste functionality on macOS, Windows and Linux.</li>
 <li><code><a class="el" href="perf_8h_source.html">acfutils/perf.h</a></code>: a large collection aerodynamics &amp; performance-calculation functions. Includes many common physical unit conversion macros, as well as functions to convert air data such as impact pressures into airspeeds, mach-to-TAS, TAT-to-SAT, etc.</li>

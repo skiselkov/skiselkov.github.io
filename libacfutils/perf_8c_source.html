@@ -93,14 +93,14 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="math_8h.html">math.h</a>&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">acfutils/assert.h</a>&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="avl_8h.html">acfutils/avl.h</a>&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="geom_8h.html">acfutils/geom.h</a>&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;acfutils/math.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="math_8h.html">acfutils/math.h</a>&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="list_8h.html">acfutils/list.h</a>&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="log_8h.html">acfutils/log.h</a>&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&gt;</span></div>
@@ -322,7 +322,7 @@ $(function() {
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    m2 = table-&gt;wts[last_data_col];</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    m = table-&gt;wts[col];</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> (fx_lin(m, m1, v1, m2, v2));</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#a2aca95baa9de5cb7872e22a02d76808a">fx_lin</a>(m, m1, v1, m2, v2));</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
@@ -682,7 +682,7 @@ $(function() {
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(field_offset, &lt;, <span class="keyword">sizeof</span> (<a class="code" href="structperf__table__cell__t.html">perf_table_cell_t</a>));</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">/* clamp the mass to our tabulated range */</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    mass = clamp(mass, table-&gt;wts[0], table-&gt;wts[table-&gt;num_wts - 1] - 1);</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    mass = <a class="code" href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a>(mass, table-&gt;wts[0], table-&gt;wts[table-&gt;num_wts - 1] - 1);</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160; </div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i + 1 &lt; table-&gt;num_wts; i++) {</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        <span class="keywordflow">if</span> (mass &gt;= table-&gt;wts[i] &amp;&amp; mass &lt;= table-&gt;wts[i + 1]) {</div>
@@ -696,7 +696,7 @@ $(function() {
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    v2 = *(<span class="keywordtype">double</span> *)((<span class="keywordtype">void</span> *)(&amp;row[col2]) + field_offset);</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">if</span> (col1 != col2)</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        v = fx_lin(mass, table-&gt;wts[col1], v1, table-&gt;wts[col2], v2);</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        v = <a class="code" href="math_8h.html#a2aca95baa9de5cb7872e22a02d76808a">fx_lin</a>(mass, table-&gt;wts[col1], v1, table-&gt;wts[col2], v2);</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        v = v1;</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(v));</div>
@@ -742,7 +742,7 @@ $(function() {
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        field_offset);</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    row2_val = perf_table_lookup_row(table, table-&gt;rows[row2], mass,</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        field_offset);</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    value = fx_lin(alt, table-&gt;alts[row1], row1_val, table-&gt;alts[row2],</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    value = <a class="code" href="math_8h.html#a2aca95baa9de5cb7872e22a02d76808a">fx_lin</a>(alt, table-&gt;alts[row1], row1_val, table-&gt;alts[row2],</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        row2_val);</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(value));</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
@@ -767,7 +767,7 @@ $(function() {
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordflow">if</span> (isa0_min != isa0_max) {</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <span class="keywordtype">double</span> x0 = (is_mach ? isa0_min-&gt;mach : isa0_min-&gt;ias);</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        <span class="keywordtype">double</span> x1 = (is_mach ? isa0_max-&gt;mach : isa0_max-&gt;ias);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <span class="keywordtype">double</span> rat = iter_fract(spd_mps_or_mach, x0, x1, B_FALSE);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <span class="keywordtype">double</span> rat = <a class="code" href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a>(spd_mps_or_mach, x0, x1, B_FALSE);</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        isa0_min_param = perf_table_lookup(isa0_min, mass, alt, offset);</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        isa0_max_param = perf_table_lookup(isa0_max, mass, alt, offset);</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="comment">/*</span></div>
@@ -775,8 +775,8 @@ $(function() {
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="comment">         * too much. There are drag-nonlinearities inherent in this,</span></div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<span class="comment">         * so we limit the estimator to reasonable ranges only.</span></div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        isa0_param = wavg2(isa0_min_param, isa0_max_param,</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            clamp(rat, -0.25, 2));</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        isa0_param = <a class="code" href="math_8h.html#aae614af2e112483ad83898d951ab4720">wavg2</a>(isa0_min_param, isa0_max_param,</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            <a class="code" href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a>(rat, -0.25, 2));</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(isa0_param));</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        isa0_param = perf_table_lookup(isa0_min, mass, alt, offset);</div>
@@ -784,20 +784,20 @@ $(function() {
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keywordflow">if</span> (isa1_min != isa1_max) {</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="keywordtype">double</span> x0 = (is_mach ? isa1_min-&gt;mach : isa1_min-&gt;ias);</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordtype">double</span> x1 = (is_mach ? isa1_max-&gt;mach : isa1_max-&gt;ias);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordtype">double</span> rat = iter_fract(spd_mps_or_mach, x0, x1, B_FALSE);</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordtype">double</span> rat = <a class="code" href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a>(spd_mps_or_mach, x0, x1, B_FALSE);</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        isa1_min_param = perf_table_lookup(isa1_min, mass, alt, offset);</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        isa1_max_param = perf_table_lookup(isa1_max, mass, alt, offset);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        isa1_param = wavg2(isa1_min_param, isa1_max_param,</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            clamp(rat, -0.25, 2));</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        isa1_param = <a class="code" href="math_8h.html#aae614af2e112483ad83898d951ab4720">wavg2</a>(isa1_min_param, isa1_max_param,</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            <a class="code" href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a>(rat, -0.25, 2));</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(!isnan(isa1_param));</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        isa1_param = perf_table_lookup(isa1_min, mass, alt, offset);</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    }</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordflow">if</span> (isa0_param != isa1_param) {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="keywordtype">double</span> rat = clamp(iter_fract(isadev, isa0_min-&gt;isa,</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="keywordtype">double</span> rat = <a class="code" href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a>(<a class="code" href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a>(isadev, isa0_min-&gt;isa,</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            isa1_min-&gt;isa, B_FALSE), -0.5, 1.5);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        param = wavg2(isa0_param, isa1_param, rat);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        param = <a class="code" href="math_8h.html#aae614af2e112483ad83898d951ab4720">wavg2</a>(isa0_param, isa1_param, rat);</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        param = isa0_param;</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    }</div>
@@ -1123,14 +1123,14 @@ $(function() {
 <div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;    D = air_density(Ps, isadev);</div>
 <div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;    dmod = D / ISA_SL_DENS;</div>
 <div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;    <span class="keywordflow">if</span> (acft-&gt;thr_dens_curve != NULL)</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        dmod *= fx_lin_multi(dmod, acft-&gt;thr_dens_curve, B_TRUE);</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        dmod *= <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(dmod, acft-&gt;thr_dens_curve, B_TRUE);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;    mach = ktas2mach(ktas, sat);</div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    mmod = fx_lin_multi(mach, acft-&gt;thr_mach_curve, B_TRUE);</div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    mmod = <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(mach, acft-&gt;thr_mach_curve, B_TRUE);</div>
 <div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160; </div>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    max_thr = num_eng * acft-&gt;eng_max_thr * dmod * mmod * flt-&gt;thr_derate;</div>
 <div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    min_thr = num_eng * acft-&gt;eng_min_thr * dmod * mmod * flt-&gt;thr_derate;</div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <span class="keywordflow">return</span> (wavg(min_thr, max_thr, throttle));</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(min_thr, max_thr, throttle));</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;}</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
 <div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;<span class="keywordtype">double</span></div>
@@ -1176,7 +1176,7 @@ $(function() {
 <div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;        isadev2sat(alt2_fl &lt; tp_fl ? alt2_fl : tp_fl, isadev));</div>
 <div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160; </div>
 <div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    mach = ktas2mach(ktas, avg_temp);</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    mmod = fx_lin_multi(mach, acft-&gt;thr_mach_curve, B_TRUE);</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    mmod = <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(mach, acft-&gt;thr_mach_curve, B_TRUE);</div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <span class="comment">/* Ps is the average static air pressure between alt1 and alt2. */</span></div>
 <div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    Ps = alt2press(avg_alt, qnh);</div>
 <div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;    <span class="comment">/*</span></div>
@@ -1186,7 +1186,7 @@ $(function() {
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    D = air_density(Ps, isadev);</div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    dmod = D / ISA_SL_DENS;</div>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <span class="keywordflow">if</span> (acft-&gt;thr_dens_curve != NULL)</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        dmod *= fx_lin_multi(dmod, acft-&gt;thr_dens_curve, B_TRUE);</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        dmod *= <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(dmod, acft-&gt;thr_dens_curve, B_TRUE);</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;<span class="comment">     * Derive engine performance.</span></div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;<span class="comment">     */</span></div>
@@ -1212,7 +1212,7 @@ $(function() {
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="keywordtype">double</span> aoa = 5, *candidates;</div>
 <div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    <span class="keywordtype">size_t</span> n;</div>
 <div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160; </div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    candidates = fx_lin_multi_inv(Cl, curve, &amp;n);</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    candidates = <a class="code" href="math_8h.html#aed92d6c73e5faf8a2eff15428d11ea4a">fx_lin_multi_inv</a>(Cl, curve, &amp;n);</div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;    <span class="keywordflow">if</span> (n == 0 || n == SIZE_MAX) {</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        <span class="comment">/* No AoA will provide enough lift, guess at some value */</span></div>
 <div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        <span class="keywordflow">return</span> (10);</div>
@@ -1241,7 +1241,7 @@ $(function() {
 <div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;calc_total_E(<span class="keywordtype">double</span> mass, <span class="keywordtype">double</span> altm, <span class="keywordtype">double</span> tas)</div>
 <div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;{</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    <span class="keywordflow">return</span> (mass * EARTH_GRAVITY * altm + 0.5 * mass * POW2(tas));</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    <span class="keywordflow">return</span> (mass * EARTH_GRAVITY * altm + 0.5 * mass * <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(tas));</div>
 <div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;}</div>
 <div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160; </div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;<span class="comment">/*</span></div>
@@ -1258,7 +1258,7 @@ $(function() {
 <div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span></div>
 <div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;total_E_to_alt(<span class="keywordtype">double</span> E, <span class="keywordtype">double</span> m, <span class="keywordtype">double</span> tas)</div>
 <div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;{</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;    <span class="keywordflow">return</span> ((E - (0.5 * m * POW2(tas))) / (m * EARTH_GRAVITY));</div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;    <span class="keywordflow">return</span> ((E - (0.5 * m * <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(tas))) / (m * EARTH_GRAVITY));</div>
 <div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;}</div>
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160; </div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;<span class="comment">/*</span></div>
@@ -1285,7 +1285,7 @@ $(function() {
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    <span class="keywordflow">if</span> (flap_ratio == 0)</div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;        <span class="keywordflow">return</span> (cl_curve_get_aoa(Cl, acft-&gt;cl_curve));</div>
 <div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;        <span class="keywordflow">return</span> (wavg(cl_curve_get_aoa(Cl, acft-&gt;cl_curve),</div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(cl_curve_get_aoa(Cl, acft-&gt;cl_curve),</div>
 <div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;            cl_curve_get_aoa(Cl, acft-&gt;cl_flap_curve),</div>
 <div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;            flap_ratio));</div>
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;}</div>
@@ -1305,11 +1305,11 @@ $(function() {
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;get_drag(<span class="keywordtype">double</span> Pd, <span class="keywordtype">double</span> aoa, <span class="keywordtype">double</span> flap_ratio, <span class="keyword">const</span> <a class="code" href="structacft__perf__t.html">acft_perf_t</a> *acft)</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;{</div>
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    <span class="keywordflow">if</span> (flap_ratio == 0)</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;        <span class="keywordflow">return</span> (fx_lin_multi(aoa, acft-&gt;cd_curve, B_TRUE) * Pd *</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(aoa, acft-&gt;cd_curve, B_TRUE) * Pd *</div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;            acft-&gt;wing_area);</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        <span class="keywordflow">return</span> (wavg(fx_lin_multi(aoa, acft-&gt;cd_curve, B_TRUE),</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;            fx_lin_multi(aoa, acft-&gt;cd_flap_curve, B_TRUE),</div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(aoa, acft-&gt;cd_curve, B_TRUE),</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;            <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(aoa, acft-&gt;cd_flap_curve, B_TRUE),</div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;            flap_ratio) * Pd * acft-&gt;wing_area);</div>
 <div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;}</div>
 <div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160; </div>
@@ -1413,7 +1413,7 @@ $(function() {
 <div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    }</div>
 <div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160; </div>
 <div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    *burnp = burn;</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    (*distp) += MET2NM(tas_now * t + 0.5 * delta_v * POW2(t) +</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    (*distp) += MET2NM(tas_now * t + 0.5 * delta_v * <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(t) +</div>
 <div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;        wind_mps * t);</div>
 <div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160; </div>
 <div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
@@ -1601,7 +1601,7 @@ $(function() {
 <div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;        <span class="keywordtype">double</span> vs_tgt = (nalt - FEET2MET(*altp)) / t;</div>
 <div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;        <span class="keywordtype">double</span> v_accel = (vs_tgt - (*vsp)) / t;</div>
 <div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160; </div>
-<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;        v_accel = clamp(v_accel, -2.5, 2.5);</div>
+<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;        v_accel = <a class="code" href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a>(v_accel, -2.5, 2.5);</div>
 <div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160;        vs_tgt = (*vsp) + (v_accel * t);</div>
 <div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160;        *altp = MET2FEET(FEET2MET(*altp) + vs_tgt * t);</div>
 <div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;        *vsp = vs_tgt;</div>
@@ -1622,8 +1622,8 @@ $(function() {
 <div class="line"><a name="l01554"></a><span class="lineno"> 1554</span>&#160;        tp_alt) * (t / SECS_PER_HR);</div>
 <div class="line"><a name="l01555"></a><span class="lineno"> 1555</span>&#160; </div>
 <div class="line"><a name="l01556"></a><span class="lineno"> 1556</span>&#160;    *burnp = burn;</div>
-<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;    (*distp) += MET2NM(sqrt(POW2(tas_now * t) +</div>
-<div class="line"><a name="l01558"></a><span class="lineno"> 1558</span>&#160;        FEET2MET(POW2((*altp) - alt))) + wind_mps * t);</div>
+<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;    (*distp) += MET2NM(sqrt(<a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(tas_now * t) +</div>
+<div class="line"><a name="l01558"></a><span class="lineno"> 1558</span>&#160;        FEET2MET(<a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>((*altp) - alt))) + wind_mps * t);</div>
 <div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160; </div>
 <div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
 <div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;}</div>
@@ -1639,14 +1639,14 @@ $(function() {
 <div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;        spd_mps_or_mach, is_mach, alt_m, offsetof(<a class="code" href="structperf__table__cell__t.html">perf_table_cell_t</a>, ff));</div>
 <div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;    <span class="keywordtype">double</span> vs_des_mps = table_lookup_common(acft-&gt;des_tables, isadev, mass,</div>
 <div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;        spd_mps_or_mach, is_mach, alt_m, offsetof(<a class="code" href="structperf__table__cell__t.html">perf_table_cell_t</a>, vs));</div>
-<div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;    <span class="keywordtype">double</span> rat = iter_fract(vs_act_mps, 0, vs_des_mps, B_TRUE);</div>
+<div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;    <span class="keywordtype">double</span> rat = <a class="code" href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a>(vs_act_mps, 0, vs_des_mps, B_TRUE);</div>
 <div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;    <span class="keywordtype">double</span> burn;</div>
 <div class="line"><a name="l01576"></a><span class="lineno"> 1576</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;<span class="comment">     * Prevent sliding off the tables into nonsense.</span></div>
 <div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;    ff_des = MAX(ff_des, 0);</div>
 <div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;    ff_crz = MAX(ff_crz, 0);</div>
-<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;    burn = wavg(ff_crz, ff_des, rat) * d_t;</div>
+<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;    burn = <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(ff_crz, ff_des, rat) * d_t;</div>
 <div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;    <span class="keywordflow">if</span> (step_debug) {</div>
 <div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;        printf(<span class="stringliteral">&quot;DES:%-5.0f ft m:%-5.0f lb vs:%-5.0f fpm &quot;</span></div>
 <div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;            <span class="stringliteral">&quot;ff_crz:%-4.0f lbs/hr ff_des:%-4.0f rat:%.3f\n&quot;</span>,</div>
@@ -1804,8 +1804,8 @@ $(function() {
 <div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;<span class="comment">         * factored into the distance traveled estimation below.</span></div>
 <div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;        alt_fract = (alt - alt1_ft) / (alt2_ft - alt1_ft);</div>
-<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;        wind = <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(wavg(wind1.x, wind2.x, alt_fract),</div>
-<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;            wavg(wind1.y, wind2.y, alt_fract));</div>
+<div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;        wind = <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(wind1.x, wind2.x, alt_fract),</div>
+<div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;            <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(wind1.y, wind2.y, alt_fract));</div>
 <div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;        wind_mps = KT2MPS(<a class="code" href="geom_8h.html#adf971bec6e1ce191ee8c540e9f7fe4ba">vect2_dotprod</a>(wind, dir));</div>
 <div class="line"><a name="l01742"></a><span class="lineno"> 1742</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;<span class="comment">         * Swap to accel-and-climb tabulated profiles when we&#39;re</span></div>
@@ -2105,8 +2105,8 @@ $(function() {
 <div class="line"><a name="l02037"></a><span class="lineno"> 2037</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> dist_done = 0; dist_done &lt; dist_nm;) {</div>
 <div class="line"><a name="l02038"></a><span class="lineno"> 2038</span>&#160;        <span class="keywordtype">double</span> rat = dist_done / dist_nm;</div>
 <div class="line"><a name="l02039"></a><span class="lineno"> 2039</span>&#160;        <span class="keywordtype">double</span> mass = flt-&gt;zfw + MAX(fuel - burn, 0);</div>
-<div class="line"><a name="l02040"></a><span class="lineno"> 2040</span>&#160;        <a class="code" href="structvect2__t.html">vect2_t</a> wind = <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(wavg(wind1.x, wind2.y, rat),</div>
-<div class="line"><a name="l02041"></a><span class="lineno"> 2041</span>&#160;            wavg(wind1.y, wind2.y, rat));</div>
+<div class="line"><a name="l02040"></a><span class="lineno"> 2040</span>&#160;        <a class="code" href="structvect2__t.html">vect2_t</a> wind = <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(wind1.x, wind2.y, rat),</div>
+<div class="line"><a name="l02041"></a><span class="lineno"> 2041</span>&#160;            <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(wind1.y, wind2.y, rat));</div>
 <div class="line"><a name="l02042"></a><span class="lineno"> 2042</span>&#160;        <span class="keywordtype">double</span> wind_mps = KT2MPS(<a class="code" href="geom_8h.html#adf971bec6e1ce191ee8c540e9f7fe4ba">vect2_dotprod</a>(fltdir, wind));</div>
 <div class="line"><a name="l02043"></a><span class="lineno"> 2043</span>&#160; </div>
 <div class="line"><a name="l02044"></a><span class="lineno"> 2044</span>&#160;        <span class="keywordflow">if</span> (!crz_step(isadev, tp_alt, qnh, alt_ft, spd, is_mach,</div>
@@ -2155,11 +2155,11 @@ $(function() {
 <div class="line"><a name="l02087"></a><span class="lineno"> 2087</span>&#160; </div>
 <div class="line"><a name="l02088"></a><span class="lineno"> 2088</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> dist_done = 0; dist_done &lt; NM2MET(dist_nm);) {</div>
 <div class="line"><a name="l02089"></a><span class="lineno"> 2089</span>&#160;        <span class="keywordtype">double</span> rat = dist_done / NM2MET(dist_nm);</div>
-<div class="line"><a name="l02090"></a><span class="lineno"> 2090</span>&#160;        <span class="keywordtype">double</span> alt_ft = wavg(alt1_ft, alt2_ft, rat);</div>
-<div class="line"><a name="l02091"></a><span class="lineno"> 2091</span>&#160;        <span class="keywordtype">double</span> kcas = wavg(kcas1, kcas2, rat);</div>
+<div class="line"><a name="l02090"></a><span class="lineno"> 2090</span>&#160;        <span class="keywordtype">double</span> alt_ft = <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(alt1_ft, alt2_ft, rat);</div>
+<div class="line"><a name="l02091"></a><span class="lineno"> 2091</span>&#160;        <span class="keywordtype">double</span> kcas = <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(kcas1, kcas2, rat);</div>
 <div class="line"><a name="l02092"></a><span class="lineno"> 2092</span>&#160;        <span class="keywordtype">double</span> mass = flt-&gt;zfw + MAX(fuel - burn, 0);</div>
-<div class="line"><a name="l02093"></a><span class="lineno"> 2093</span>&#160;        <a class="code" href="structvect2__t.html">vect2_t</a> wind = <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(wavg(wind1.x, wind2.y, rat),</div>
-<div class="line"><a name="l02094"></a><span class="lineno"> 2094</span>&#160;            wavg(wind1.y, wind2.y, rat));</div>
+<div class="line"><a name="l02093"></a><span class="lineno"> 2093</span>&#160;        <a class="code" href="structvect2__t.html">vect2_t</a> wind = <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(wind1.x, wind2.y, rat),</div>
+<div class="line"><a name="l02094"></a><span class="lineno"> 2094</span>&#160;            <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(wind1.y, wind2.y, rat));</div>
 <div class="line"><a name="l02095"></a><span class="lineno"> 2095</span>&#160;        <span class="keywordtype">double</span> wind_mps = KT2MPS(<a class="code" href="geom_8h.html#adf971bec6e1ce191ee8c540e9f7fe4ba">vect2_dotprod</a>(fltdir, wind));</div>
 <div class="line"><a name="l02096"></a><span class="lineno"> 2096</span>&#160;        <span class="keywordtype">double</span> p = alt2press(alt_ft, qnh);</div>
 <div class="line"><a name="l02097"></a><span class="lineno"> 2097</span>&#160;        <span class="keywordtype">double</span> fl = alt2fl(alt_ft, qnh);</div>
@@ -2218,8 +2218,8 @@ $(function() {
 <div class="line"><a name="l02150"></a><span class="lineno"> 2150</span>&#160;{</div>
 <div class="line"><a name="l02151"></a><span class="lineno"> 2151</span>&#160;    <span class="keywordtype">double</span> mass = flt-&gt;zfw + flt-&gt;fuel;</div>
 <div class="line"><a name="l02152"></a><span class="lineno"> 2152</span>&#160;    <span class="keywordtype">double</span> lift = MASS2GFORCE(mass);</div>
-<div class="line"><a name="l02153"></a><span class="lineno"> 2153</span>&#160;    <span class="keywordtype">double</span> Cl = wavg(fx_lin_multi(acft-&gt;cl_max_aoa, acft-&gt;cl_curve, B_TRUE),</div>
-<div class="line"><a name="l02154"></a><span class="lineno"> 2154</span>&#160;        fx_lin_multi(acft-&gt;cl_flap_max_aoa, acft-&gt;cl_flap_curve, B_TRUE),</div>
+<div class="line"><a name="l02153"></a><span class="lineno"> 2153</span>&#160;    <span class="keywordtype">double</span> Cl = <a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(acft-&gt;cl_max_aoa, acft-&gt;cl_curve, B_TRUE),</div>
+<div class="line"><a name="l02154"></a><span class="lineno"> 2154</span>&#160;        <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(acft-&gt;cl_flap_max_aoa, acft-&gt;cl_flap_curve, B_TRUE),</div>
 <div class="line"><a name="l02155"></a><span class="lineno"> 2155</span>&#160;        flt-&gt;to_flap);</div>
 <div class="line"><a name="l02156"></a><span class="lineno"> 2156</span>&#160;    <span class="keywordtype">double</span> Pd = lift / (Cl * acft-&gt;wing_area);</div>
 <div class="line"><a name="l02157"></a><span class="lineno"> 2157</span>&#160;    <span class="keywordtype">double</span> tas = sqrt((2 * Pd) / ISA_SL_DENS);</div>
@@ -2252,11 +2252,11 @@ $(function() {
 <div class="line"><a name="l02184"></a><span class="lineno"> 2184</span>&#160;        tp_alt);</div>
 <div class="line"><a name="l02185"></a><span class="lineno"> 2185</span>&#160;    min_thr_AE = eng_get_thrust(flt, acft, 0.0, alt, ktas, qnh, isadev,</div>
 <div class="line"><a name="l02186"></a><span class="lineno"> 2186</span>&#160;        tp_alt);</div>
-<div class="line"><a name="l02187"></a><span class="lineno"> 2187</span>&#160;    throttle = iter_fract(thr, min_thr_AE, max_thr_AE, B_TRUE);</div>
+<div class="line"><a name="l02187"></a><span class="lineno"> 2187</span>&#160;    throttle = <a class="code" href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a>(thr, min_thr_AE, max_thr_AE, B_TRUE);</div>
 <div class="line"><a name="l02188"></a><span class="lineno"> 2188</span>&#160; </div>
 <div class="line"><a name="l02189"></a><span class="lineno"> 2189</span>&#160;    <span class="keywordflow">return</span> (ff_hr *</div>
-<div class="line"><a name="l02190"></a><span class="lineno"> 2190</span>&#160;        fx_lin_multi(throttle, acft-&gt;sfc_thro_curve, B_TRUE) *</div>
-<div class="line"><a name="l02191"></a><span class="lineno"> 2191</span>&#160;        fx_lin_multi(isadev, acft-&gt;sfc_isa_curve, B_TRUE));</div>
+<div class="line"><a name="l02190"></a><span class="lineno"> 2190</span>&#160;        <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(throttle, acft-&gt;sfc_thro_curve, B_TRUE) *</div>
+<div class="line"><a name="l02191"></a><span class="lineno"> 2191</span>&#160;        <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(isadev, acft-&gt;sfc_isa_curve, B_TRUE));</div>
 <div class="line"><a name="l02192"></a><span class="lineno"> 2192</span>&#160;}</div>
 <div class="line"><a name="l02193"></a><span class="lineno"> 2193</span>&#160; </div>
 <div class="line"><a name="l02194"></a><span class="lineno"> 2194</span>&#160;<span class="keywordtype">double</span></div>
@@ -2279,13 +2279,13 @@ $(function() {
 <div class="line"><a name="l02211"></a><span class="lineno"> 2211</span>&#160;        <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(bank_ratio, &lt;=, 1.0);</div>
 <div class="line"><a name="l02212"></a><span class="lineno"> 2212</span>&#160;    }</div>
 <div class="line"><a name="l02213"></a><span class="lineno"> 2213</span>&#160; </div>
-<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;    half_bank_rate = fx_lin_multi(gs_kts, acft-&gt;half_bank_curve, B_TRUE);</div>
+<div class="line"><a name="l02214"></a><span class="lineno"> 2214</span>&#160;    half_bank_rate = <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(gs_kts, acft-&gt;half_bank_curve, B_TRUE);</div>
 <div class="line"><a name="l02215"></a><span class="lineno"> 2215</span>&#160;    <span class="keywordflow">if</span> (bank_ratio &lt;= 0.5)</div>
 <div class="line"><a name="l02216"></a><span class="lineno"> 2216</span>&#160;        <span class="keywordflow">return</span> (2 * bank_ratio * half_bank_rate);</div>
-<div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;    full_bank_rate = fx_lin_multi(gs_kts, acft-&gt;full_bank_curve, B_TRUE);</div>
+<div class="line"><a name="l02217"></a><span class="lineno"> 2217</span>&#160;    full_bank_rate = <a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(gs_kts, acft-&gt;full_bank_curve, B_TRUE);</div>
 <div class="line"><a name="l02218"></a><span class="lineno"> 2218</span>&#160; </div>
-<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;    <span class="keywordflow">return</span> (wavg(half_bank_rate, full_bank_rate,</div>
-<div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;        clamp(2 * (bank_ratio - 0.5), 0, 1)));</div>
+<div class="line"><a name="l02219"></a><span class="lineno"> 2219</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a>(half_bank_rate, full_bank_rate,</div>
+<div class="line"><a name="l02220"></a><span class="lineno"> 2220</span>&#160;        <a class="code" href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a>(2 * (bank_ratio - 0.5), 0, 1)));</div>
 <div class="line"><a name="l02221"></a><span class="lineno"> 2221</span>&#160;}</div>
 <div class="line"><a name="l02222"></a><span class="lineno"> 2222</span>&#160; </div>
 <div class="line"><a name="l02223"></a><span class="lineno"> 2223</span>&#160;<span class="comment">/*</span></div>
@@ -2383,8 +2383,8 @@ $(function() {
 <div class="line"><a name="l02315"></a><span class="lineno"> 2315</span>&#160;<span class="comment">     * Where P0 is pressure at sea level, cas is calibrated airspeed</span></div>
 <div class="line"><a name="l02316"></a><span class="lineno"> 2316</span>&#160;<span class="comment">     * in m.s^-1 and a0 speed of sound at ISA temperature.</span></div>
 <div class="line"><a name="l02317"></a><span class="lineno"> 2317</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l02318"></a><span class="lineno"> 2318</span>&#160;    qc = ISA_SL_PRESS * (pow((POW2(KT2MPS(kcas)) / (5 *</div>
-<div class="line"><a name="l02319"></a><span class="lineno"> 2319</span>&#160;        POW2(ISA_SPEED_SOUND))) + 1, 3.5) - 1);</div>
+<div class="line"><a name="l02318"></a><span class="lineno"> 2318</span>&#160;    qc = ISA_SL_PRESS * (pow((<a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(KT2MPS(kcas)) / (5 *</div>
+<div class="line"><a name="l02319"></a><span class="lineno"> 2319</span>&#160;        <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(ISA_SPEED_SOUND))) + 1, 3.5) - 1);</div>
 <div class="line"><a name="l02320"></a><span class="lineno"> 2320</span>&#160; </div>
 <div class="line"><a name="l02321"></a><span class="lineno"> 2321</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l02322"></a><span class="lineno"> 2322</span>&#160;<span class="comment">     * Next take the impact pressure equation and solve for Mach number:</span></div>
@@ -2562,7 +2562,7 @@ $(function() {
 <div class="line"><a name="l02494"></a><span class="lineno"> 2494</span>&#160;<span class="keywordtype">double</span></div>
 <div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;sat2tat(<span class="keywordtype">double</span> sat, <span class="keywordtype">double</span> mach)</div>
 <div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160;{</div>
-<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;    <span class="keywordflow">return</span> (KELVIN2C(C2KELVIN(sat) * (1 + ((GAMMA - 1) / 2) * POW2(mach))));</div>
+<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;    <span class="keywordflow">return</span> (KELVIN2C(C2KELVIN(sat) * (1 + ((GAMMA - 1) / 2) * <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(mach))));</div>
 <div class="line"><a name="l02498"></a><span class="lineno"> 2498</span>&#160;}</div>
 <div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160; </div>
 <div class="line"><a name="l02500"></a><span class="lineno"> 2500</span>&#160;<span class="comment">/*</span></div>
@@ -2576,7 +2576,7 @@ $(function() {
 <div class="line"><a name="l02508"></a><span class="lineno"> 2508</span>&#160;<span class="keywordtype">double</span></div>
 <div class="line"><a name="l02509"></a><span class="lineno"> 2509</span>&#160;tat2sat(<span class="keywordtype">double</span> tat, <span class="keywordtype">double</span> mach)</div>
 <div class="line"><a name="l02510"></a><span class="lineno"> 2510</span>&#160;{</div>
-<div class="line"><a name="l02511"></a><span class="lineno"> 2511</span>&#160;    <span class="keywordflow">return</span> (KELVIN2C(C2KELVIN(tat) / (1 + ((GAMMA - 1) / 2) * POW2(mach))));</div>
+<div class="line"><a name="l02511"></a><span class="lineno"> 2511</span>&#160;    <span class="keywordflow">return</span> (KELVIN2C(C2KELVIN(tat) / (1 + ((GAMMA - 1) / 2) * <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(mach))));</div>
 <div class="line"><a name="l02512"></a><span class="lineno"> 2512</span>&#160;}</div>
 <div class="line"><a name="l02513"></a><span class="lineno"> 2513</span>&#160; </div>
 <div class="line"><a name="l02514"></a><span class="lineno"> 2514</span>&#160;<span class="comment">/*</span></div>
@@ -2689,7 +2689,7 @@ $(function() {
 <div class="line"><a name="l02621"></a><span class="lineno"> 2621</span>&#160;<span class="comment">     *</span></div>
 <div class="line"><a name="l02622"></a><span class="lineno"> 2622</span>&#160;<span class="comment">     * Where P is local static air pressure and M is flight mach number.</span></div>
 <div class="line"><a name="l02623"></a><span class="lineno"> 2623</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l02624"></a><span class="lineno"> 2624</span>&#160;    <span class="keywordflow">return</span> (pressure * (pow(1 + 0.2 * POW2(mach), 3.5) - 1));</div>
+<div class="line"><a name="l02624"></a><span class="lineno"> 2624</span>&#160;    <span class="keywordflow">return</span> (pressure * (pow(1 + 0.2 * <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(mach), 3.5) - 1));</div>
 <div class="line"><a name="l02625"></a><span class="lineno"> 2625</span>&#160;}</div>
 <div class="line"><a name="l02626"></a><span class="lineno"> 2626</span>&#160; </div>
 <div class="line"><a name="l02627"></a><span class="lineno"> 2627</span>&#160;<span class="comment">/*</span></div>
@@ -2715,7 +2715,7 @@ $(function() {
 <div class="line"><a name="l02647"></a><span class="lineno"> 2647</span>&#160;dyn_gas_press(<span class="keywordtype">double</span> ktas, <span class="keywordtype">double</span> press, <span class="keywordtype">double</span> oat, <span class="keywordtype">double</span> gas_const)</div>
 <div class="line"><a name="l02648"></a><span class="lineno"> 2648</span>&#160;{</div>
 <div class="line"><a name="l02649"></a><span class="lineno"> 2649</span>&#160;    <span class="keywordtype">double</span> p = (0.5 * gas_density(press, oat, gas_const) *</div>
-<div class="line"><a name="l02650"></a><span class="lineno"> 2650</span>&#160;        POW2(KT2MPS(ktas)));</div>
+<div class="line"><a name="l02650"></a><span class="lineno"> 2650</span>&#160;        <a class="code" href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a>(KT2MPS(ktas)));</div>
 <div class="line"><a name="l02651"></a><span class="lineno"> 2651</span>&#160;    <span class="keywordflow">if</span> (ktas &lt; 0)</div>
 <div class="line"><a name="l02652"></a><span class="lineno"> 2652</span>&#160;        <span class="keywordflow">return</span> (-p);</div>
 <div class="line"><a name="l02653"></a><span class="lineno"> 2653</span>&#160;    <span class="keywordflow">return</span> (p);</div>
@@ -2807,7 +2807,7 @@ $(function() {
 <div class="line"><a name="l02739"></a><span class="lineno"> 2739</span>&#160;        <a class="code" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>  <span class="comment">/* list terminator */</span></div>
 <div class="line"><a name="l02740"></a><span class="lineno"> 2740</span>&#160;    };</div>
 <div class="line"><a name="l02741"></a><span class="lineno"> 2741</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(temp_K, &gt;, 0);</div>
-<div class="line"><a name="l02742"></a><span class="lineno"> 2742</span>&#160;    <span class="keywordflow">return</span> (fx_lin_multi(temp_K, table, B_TRUE));</div>
+<div class="line"><a name="l02742"></a><span class="lineno"> 2742</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(temp_K, table, B_TRUE));</div>
 <div class="line"><a name="l02743"></a><span class="lineno"> 2743</span>&#160;}</div>
 <div class="line"><a name="l02744"></a><span class="lineno"> 2744</span>&#160; </div>
 <div class="line"><a name="l02745"></a><span class="lineno"> 2745</span>&#160;<span class="keywordtype">double</span></div>
@@ -2844,7 +2844,7 @@ $(function() {
 <div class="line"><a name="l02776"></a><span class="lineno"> 2776</span>&#160;        <a class="code" href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a>(1500, 1.309),</div>
 <div class="line"><a name="l02777"></a><span class="lineno"> 2777</span>&#160;        <a class="code" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a></div>
 <div class="line"><a name="l02778"></a><span class="lineno"> 2778</span>&#160;    };</div>
-<div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;    <span class="keywordflow">return</span> (fx_lin_multi(T, curve, B_TRUE));</div>
+<div class="line"><a name="l02779"></a><span class="lineno"> 2779</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(T, curve, B_TRUE));</div>
 <div class="line"><a name="l02780"></a><span class="lineno"> 2780</span>&#160;}</div>
 <div class="line"><a name="l02781"></a><span class="lineno"> 2781</span>&#160; </div>
 <div class="line"><a name="l02782"></a><span class="lineno"> 2782</span>&#160;<span class="keywordtype">double</span></div>
@@ -2858,7 +2858,7 @@ $(function() {
 <div class="line"><a name="l02790"></a><span class="lineno"> 2790</span>&#160;<span class="comment">     * we can just ignore the pressure component.</span></div>
 <div class="line"><a name="l02791"></a><span class="lineno"> 2791</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l02792"></a><span class="lineno"> 2792</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(T, &gt;, 0);</div>
-<div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;    <span class="keywordflow">return</span> (fx_lin(T, 233.2, 0.0209, 498.15, 0.0398));</div>
+<div class="line"><a name="l02793"></a><span class="lineno"> 2793</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#a2aca95baa9de5cb7872e22a02d76808a">fx_lin</a>(T, 233.2, 0.0209, 498.15, 0.0398));</div>
 <div class="line"><a name="l02794"></a><span class="lineno"> 2794</span>&#160;}</div>
 <div class="line"><a name="l02795"></a><span class="lineno"> 2795</span>&#160; </div>
 <div class="line"><a name="l02796"></a><span class="lineno"> 2796</span>&#160;<span class="keywordtype">double</span></div>
@@ -2873,7 +2873,7 @@ $(function() {
 <div class="line"><a name="l02805"></a><span class="lineno"> 2805</span>&#160;        <a class="code" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>  <span class="comment">/* list terminator */</span></div>
 <div class="line"><a name="l02806"></a><span class="lineno"> 2806</span>&#160;    };</div>
 <div class="line"><a name="l02807"></a><span class="lineno"> 2807</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(T, &gt;, 0);</div>
-<div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;    <span class="keywordflow">return</span> (fx_lin_multi(T, curve, B_TRUE));</div>
+<div class="line"><a name="l02808"></a><span class="lineno"> 2808</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(T, curve, B_TRUE));</div>
 <div class="line"><a name="l02809"></a><span class="lineno"> 2809</span>&#160;}</div>
 <div class="line"><a name="l02810"></a><span class="lineno"> 2810</span>&#160; </div>
 <div class="line"><a name="l02811"></a><span class="lineno"> 2811</span>&#160;<span class="keywordtype">double</span></div>
@@ -2892,7 +2892,7 @@ $(function() {
 <div class="line"><a name="l02824"></a><span class="lineno"> 2824</span>&#160;        <a class="code" href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a>  <span class="comment">/* list terminator */</span></div>
 <div class="line"><a name="l02825"></a><span class="lineno"> 2825</span>&#160;    };</div>
 <div class="line"><a name="l02826"></a><span class="lineno"> 2826</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(T, &gt;, 0);</div>
-<div class="line"><a name="l02827"></a><span class="lineno"> 2827</span>&#160;    <span class="keywordflow">return</span> (fx_lin_multi(T, curve, B_TRUE));</div>
+<div class="line"><a name="l02827"></a><span class="lineno"> 2827</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(T, curve, B_TRUE));</div>
 <div class="line"><a name="l02828"></a><span class="lineno"> 2828</span>&#160;}</div>
 <div class="line"><a name="l02829"></a><span class="lineno"> 2829</span>&#160; </div>
 <div class="line"><a name="l02830"></a><span class="lineno"> 2830</span>&#160;<span class="keywordtype">double</span></div>
@@ -2919,7 +2919,7 @@ $(function() {
 <div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;    <a class="code" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(lat, &lt;=, 90);</div>
 <div class="line"><a name="l02852"></a><span class="lineno"> 2852</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(isfinite(alt));</div>
 <div class="line"><a name="l02853"></a><span class="lineno"> 2853</span>&#160; </div>
-<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160;    <span class="keywordflow">return</span> (fx_lin_multi(ABS(lat), lat_curve, B_FALSE) + alt * delta_per_m);</div>
+<div class="line"><a name="l02854"></a><span class="lineno"> 2854</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a>(<a class="code" href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a>(lat), lat_curve, B_FALSE) + alt * delta_per_m);</div>
 <div class="line"><a name="l02855"></a><span class="lineno"> 2855</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a1ab9388cd7eb3262e94ea7f08073ea53"><div class="ttname"><a href="assert_8h.html#a1ab9388cd7eb3262e94ea7f08073ea53">ASSERT3P</a></div><div class="ttdeci">#define ASSERT3P(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00196">assert.h:196</a></div></div>
@@ -2946,10 +2946,10 @@ $(function() {
 <div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
 <div class="ttc" id="ageom_8h_html_a5e6f3b1fce0dfbb0d6ae2388a818da7f"><div class="ttname"><a href="geom_8h.html#a5e6f3b1fce0dfbb0d6ae2388a818da7f">IS_NULL_VECT</a></div><div class="ttdeci">#define IS_NULL_VECT(a)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00224">geom.h:224</a></div></div>
 <div class="ttc" id="ageom_8h_html_adf6bffc23ef733c49b9e9ac84f1616ef"><div class="ttname"><a href="geom_8h.html#adf6bffc23ef733c49b9e9ac84f1616ef">NULL_VECT2</a></div><div class="ttdeci">#define NULL_VECT2</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00214">geom.h:214</a></div></div>
-<div class="ttc" id="ageom_8h_html_adf971bec6e1ce191ee8c540e9f7fe4ba"><div class="ttname"><a href="geom_8h.html#adf971bec6e1ce191ee8c540e9f7fe4ba">vect2_dotprod</a></div><div class="ttdeci">double vect2_dotprod(vect2_t a, vect2_t b)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l00402">geom.c:402</a></div></div>
+<div class="ttc" id="ageom_8h_html_adf971bec6e1ce191ee8c540e9f7fe4ba"><div class="ttname"><a href="geom_8h.html#adf971bec6e1ce191ee8c540e9f7fe4ba">vect2_dotprod</a></div><div class="ttdeci">double vect2_dotprod(vect2_t a, vect2_t b)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l00404">geom.c:404</a></div></div>
 <div class="ttc" id="ageom_8h_html_aef9ee3b0deac953bb9bb8f5fdba178af"><div class="ttname"><a href="geom_8h.html#aef9ee3b0deac953bb9bb8f5fdba178af">VECT2</a></div><div class="ttdeci">#define VECT2(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00190">geom.h:190</a></div></div>
-<div class="ttc" id="ageom_8h_html_af0078c8c6fa2ed28725aaabf3831eb2f"><div class="ttname"><a href="geom_8h.html#af0078c8c6fa2ed28725aaabf3831eb2f">vect2_unit</a></div><div class="ttdeci">vect2_t vect2_unit(vect2_t a, double *l)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l00270">geom.c:270</a></div></div>
-<div class="ttc" id="ageom_8h_html_afef5027f89205069f5db70e3ed4460e0"><div class="ttname"><a href="geom_8h.html#afef5027f89205069f5db70e3ed4460e0">hdg2dir</a></div><div class="ttdeci">vect2_t hdg2dir(double truehdg)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l01357">geom.c:1357</a></div></div>
+<div class="ttc" id="ageom_8h_html_af0078c8c6fa2ed28725aaabf3831eb2f"><div class="ttname"><a href="geom_8h.html#af0078c8c6fa2ed28725aaabf3831eb2f">vect2_unit</a></div><div class="ttdeci">vect2_t vect2_unit(vect2_t a, double *l)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l00272">geom.c:272</a></div></div>
+<div class="ttc" id="ageom_8h_html_afef5027f89205069f5db70e3ed4460e0"><div class="ttname"><a href="geom_8h.html#afef5027f89205069f5db70e3ed4460e0">hdg2dir</a></div><div class="ttdeci">vect2_t hdg2dir(double truehdg)</div><div class="ttdef"><b>Definition:</b> <a href="geom_8c_source.html#l01359">geom.c:1359</a></div></div>
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a3cb4d21bba429e71025889e0aea7b1d6"><div class="ttname"><a href="helpers_8h.html#a3cb4d21bba429e71025889e0aea7b1d6">explode_line</a></div><div class="ttdeci">ssize_t explode_line(char *line, char delim, char **comps, size_t capacity)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00588">helpers.c:588</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a5ce6f08f3089e23580b4abf94529d07a"><div class="ttname"><a href="helpers_8h.html#a5ce6f08f3089e23580b4abf94529d07a">is_valid_alt_ft</a></div><div class="ttdeci">static bool_t is_valid_alt_ft(double alt_ft)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00139">helpers.h:139</a></div></div>
@@ -2963,6 +2963,16 @@ $(function() {
 <div class="ttc" id="alist_8h_html_a71f3147d098f96b66d9d681adacd8db0"><div class="ttname"><a href="list_8h.html#a71f3147d098f96b66d9d681adacd8db0">list_create</a></div><div class="ttdeci">void list_create(list_t *, size_t, size_t)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00113">list.c:113</a></div></div>
 <div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
 <div class="ttc" id="alog_8h_html_a34943dc7d05ecb5198fc5ec190346825"><div class="ttname"><a href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a></div><div class="ttdeci">#define logMsg(...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00111">log.h:111</a></div></div>
+<div class="ttc" id="amath_8h_html"><div class="ttname"><a href="math_8h.html">math.h</a></div></div>
+<div class="ttc" id="amath_8h_html_a1ac0abc7c913167ecaf81778d57e7a17"><div class="ttname"><a href="math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17">POW2</a></div><div class="ttdeci">#define POW2(x)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00036">math.h:36</a></div></div>
+<div class="ttc" id="amath_8h_html_a2aca95baa9de5cb7872e22a02d76808a"><div class="ttname"><a href="math_8h.html#a2aca95baa9de5cb7872e22a02d76808a">fx_lin</a></div><div class="ttdeci">double fx_lin(double x, double x1, double y1, double x2, double y2)</div><div class="ttdef"><b>Definition:</b> <a href="math_8c_source.html#l00069">math.c:69</a></div></div>
+<div class="ttc" id="amath_8h_html_a6bc203af5e174f0106c6817954755ffa"><div class="ttname"><a href="math_8h.html#a6bc203af5e174f0106c6817954755ffa">iter_fract</a></div><div class="ttdeci">static double iter_fract(double x, double min_val, double max_val, bool_t clamp_output)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00110">math.h:110</a></div></div>
+<div class="ttc" id="amath_8h_html_a996f7be338ccb40d1a2a5abc1ad61759"><div class="ttname"><a href="math_8h.html#a996f7be338ccb40d1a2a5abc1ad61759">ABS</a></div><div class="ttdeci">#define ABS(x)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00039">math.h:39</a></div></div>
+<div class="ttc" id="amath_8h_html_aace90961832d82032d33c6963f1b1e02"><div class="ttname"><a href="math_8h.html#aace90961832d82032d33c6963f1b1e02">fx_lin_multi</a></div><div class="ttdeci">double fx_lin_multi(double x, const struct vect2_s *points, bool_t extrapolate)</div><div class="ttdef"><b>Definition:</b> <a href="math_8c_source.html#l00097">math.c:97</a></div></div>
+<div class="ttc" id="amath_8h_html_aae614af2e112483ad83898d951ab4720"><div class="ttname"><a href="math_8h.html#aae614af2e112483ad83898d951ab4720">wavg2</a></div><div class="ttdeci">static double wavg2(double x, double y, double w)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00084">math.h:84</a></div></div>
+<div class="ttc" id="amath_8h_html_aed92d6c73e5faf8a2eff15428d11ea4a"><div class="ttname"><a href="math_8h.html#aed92d6c73e5faf8a2eff15428d11ea4a">fx_lin_multi_inv</a></div><div class="ttdeci">double * fx_lin_multi_inv(double y, const struct vect2_s *points, size_t *num_out)</div><div class="ttdef"><b>Definition:</b> <a href="math_8c_source.html#l00167">math.c:167</a></div></div>
+<div class="ttc" id="amath_8h_html_af8b944c9bd307cc5e71b2a693518133f"><div class="ttname"><a href="math_8h.html#af8b944c9bd307cc5e71b2a693518133f">wavg</a></div><div class="ttdeci">#define wavg(x, y, w)</div><div class="ttdef"><b>Definition:</b> <a href="math_8h_source.html#l00077">math.h:77</a></div></div>
+<div class="ttc" id="amath__core_8h_html_a52653613d5adb738039f68130901bb18"><div class="ttname"><a href="math__core_8h.html#a52653613d5adb738039f68130901bb18">clamp</a></div><div class="ttdeci">static double clamp(double x, double min_val, double max_val)</div><div class="ttdef"><b>Definition:</b> <a href="math__core_8h_source.html#l00060">math_core.h:60</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00062">safe_alloc.h:62</a></div></div>
 <div class="ttc" id="astructacft__perf__t_html"><div class="ttname"><a href="structacft__perf__t.html">acft_perf_t</a></div><div class="ttdef"><b>Definition:</b> <a href="perf_8h_source.html#l00156">perf.h:156</a></div></div>

@@ -681,7 +681,7 @@ $(function() {
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;<span class="comment">     * only write (since readers don&#39;t retain any ownership information),</span></div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;<span class="comment">     * so it&#39;s best to avoid recursion altogether.</span></div>
 <div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(!<a class="code" href="thread_8h.html#ab54461f822e127a882d6b144abcd9e1b">rwmutex_held_write</a>(rw), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Attempted to recursive &quot;</span></div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    <a class="code" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(!<a class="code" href="thread_8h.html#ab54461f822e127a882d6b144abcd9e1b">rwmutex_held_write</a>(rw), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Attempted to recursively &quot;</span></div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;        <span class="stringliteral">&quot;acquire an rwmutex_t. This is NOT supported!&quot;</span>);</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;rw-&gt;lock);</div>
