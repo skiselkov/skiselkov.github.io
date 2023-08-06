@@ -445,7 +445,7 @@ $(function() {
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span></div>
 <div class="line"><a name="l00599"></a><span class="lineno"><a class="line" href="helpers_8h.html#aa2b9dd8d8f8514d1b3c6c2b6114b6115">  599</a></span>&#160;<a class="code" href="helpers_8h.html#aa2b9dd8d8f8514d1b3c6c2b6114b6115">lacf_strcasecmp</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *s1, <span class="keyword">const</span> <span class="keywordtype">char</span> *s2)</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;{</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a5ba05f3a35f68bfc751e2bffac6f58c7">lacf_strncasecmp</a>(s1, s2, SIZE_MAX));</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a5ba05f3a35f68bfc751e2bffac6f58c7">lacf_strncasecmp</a>(s1, s2, MAX(strlen(s1), strlen(s2))));</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;}</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> *</div>
