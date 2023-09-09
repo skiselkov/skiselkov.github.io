@@ -113,286 +113,292 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structglutils__quads__t.html">   73</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GLuint  vao;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    GLuint  vbo;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    GLuint  ibo;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    bool_t  setup;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">size_t</span>  num_vtx;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structglutils__lines__t.html">   92</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    GLuint  vao;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    GLuint  vbo;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    bool_t  setup;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">size_t</span>  num_vtx;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <a class="code" href="structglutils__lines__t.html">glutils_lines_t</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structglutils__cache__s.html">glutils_cache_s</a> glutils_cache_t;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">  109</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">glutils_texsz_enum_cb_t</a>)(<span class="keyword">const</span> <span class="keywordtype">char</span> *token, int64_t bytes,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> *userinfo);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a3eb60df09986470ff2d695caff2123ff">glutils_sys_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#ac0b31b8b31f800a47432fa4355938bc3">glutils_disable_all_client_state</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a75759de190aea90da64dc7697b19770b">glutils_disable_all_vtx_attrs</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;API_EXPORT GLuint <a class="code" href="glutils_8h.html#aa9f099f343d02ac76f20a68fa8ddc57d">glutils_make_quads_IBO</a>(<span class="keywordtype">size_t</span> num_vtx);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> bool_t</div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="glutils_8h.html#a96f65d332b78b898c4ffb1a28dc02a77">  127</a></span>&#160;<a class="code" href="glutils_8h.html#a96f65d332b78b898c4ffb1a28dc02a77">glutils_quads_inited</a>(<span class="keyword">const</span> <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(quads != NULL);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> (quads-&gt;vbo != 0);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="glutils_8h.html#a4ea17becb36f77507cae2da4ce193112">  138</a></span>&#160;<span class="preprocessor">#define glutils_init_2D_quads(__quads, __p, __t, __num_pts) \</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">    glutils_init_2D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a66a84246f6deb16bd4c6a2e5dabe3378">glutils_init_2D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="glutils_8h.html#a2dbf1224e9bc9aa472525e7ecfde92e0">  146</a></span>&#160;<span class="preprocessor">#define glutils_update_2D_quads(__quads, __p, __t, __num_pts) \</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">    glutils_update_2D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a9e00724ddc243106d11e0215d759100f">glutils_update_2D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="glutils_8h.html#aab045abe822777157d02cc4c772ada2f">  164</a></span>&#160;<span class="preprocessor">#define glutils_init_3D_quads(__quads, __p, __t, __num_pts) \</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">    glutils_init_3D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a5940f30b071553e94fb8ad1207b7c343">glutils_init_3D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="glutils_8h.html#a7665a2d627d1dfbc5cd45b015ad184ad">  177</a></span>&#160;<span class="preprocessor">#define glutils_update_3D_quads(__quads, __p, __t, __num_pts) \</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">    glutils_update_3D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a443db2bcc87ce792a0cd21b45c2bcddc">glutils_update_3D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a7bd0c70cf2596b3e33ed7d47060bd8c8">glutils_destroy_quads</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#ab9951e9c26ba3aa15ca8fa473e7f7136">glutils_draw_quads</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, GLint prog);</div>
-<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="glutils_8h.html#a73651a7f8853c2473f6f5302bdff2f92">  203</a></span>&#160;<span class="preprocessor">#define glutils_init_3D_lines(__lines, __p, __num_pts) \</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">    glutils_init_3D_lines_impl((__lines), log_basename(__FILE__), \</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__num_pts))</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a>(<a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *lines,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a674dbcf0965551e2b169e1850b2d2e55">glutils_destroy_lines</a>(<a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *lines);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a1d76d99eb0319a0afc8f95fed45640f8">glutils_draw_lines</a>(<a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *lines, GLint prog);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"> * glutils cache is a generic quads/lines object cache.</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;API_EXPORT glutils_cache_t *<a class="code" href="glutils_8h.html#a4776edae0db6f5f2dceaa34546ae1227">glutils_cache_new</a>(<span class="keywordtype">size_t</span> cap_bytes);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a6a87949597fa0dd2c6c02a05ab596e34">glutils_cache_destroy</a>(glutils_cache_t *cache);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;API_EXPORT <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *<a class="code" href="glutils_8h.html#a54b86fbbc9f0c38f65ee03245152c792">glutils_cache_get_2D_quads</a>(</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    glutils_cache_t *cache, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t, <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;API_EXPORT <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *<a class="code" href="glutils_8h.html#a9098d7a8b37da6e2999ebbce6da2dd7a">glutils_cache_get_3D_quads</a>(</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    glutils_cache_t *cache, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t, <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;API_EXPORT <a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *<a class="code" href="glutils_8h.html#a405718f3727a5d4a2add700603cbb07e">glutils_cache_get_3D_lines</a>(</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    glutils_cache_t *cache, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afdbc0e73ae574de9521e3a9392704ce7">glutils_vp2pvm</a>(GLfloat pvm[16]);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#define GLUTILS_VALIDATE_INDICES(indices, num_idx, num_vtx) \</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">        for (unsigned i = 0; i &lt; (num_idx); i++) { \</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">            VERIFY_MSG((indices)[i] &lt; (num_vtx), &quot;invalid index &quot;</span> \</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                &quot;specification encountered, index %d (value %d) &quot; \</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                &quot;is outside of vertex range %d&quot;, i, (indices)[i], \</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                (num_vtx)); \</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        } \</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    } while (0)</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="glutils_8h.html#a5c80f51fb1c1221033597328becf2112">  290</a></span>&#160;<span class="preprocessor">#define TEXSZ_MK_TOKEN(name) \</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">    static const char *__texsz_token_ ## name = #name</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="glutils_8h.html#a331e95ce12a47bb1cafc77658a2a1aa3">  297</a></span>&#160;<span class="preprocessor">#define TEXSZ_DECL_TOKEN_GLOB(name) \</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">    extern const char *__texsz_token_ ## name</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="glutils_8h.html#a06ce8d766b9a0f782d49f2705f5ad8c7">  304</a></span>&#160;<span class="preprocessor">#define TEXSZ_DEF_TOKEN_GLOB(name) \</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">    const char *__texsz_token_ ## name = #name</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6f4e701382c1ee3a6160ec50b47d1fb6">  320</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC(__token_id, __format, __type, __w, __h) \</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="preprocessor">    TEXSZ_ALLOC_INSTANCE(__token_id, NULL, NULL, -1, (__format), \</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="preprocessor">        (__type), (__w), (__h))</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="glutils_8h.html#a86b5c5defca6d5706e810517e2797d48">  328</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE(__token_id, __format, __type, __w, __h) \</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">    TEXSZ_FREE_INSTANCE(__token_id, NULL, (__format), \</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">        (__type), (__w), (__h))</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">  355</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC_INSTANCE(__token_id, __instance, __filename, __line, \</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">    __format, __type, __w, __h) \</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="preprocessor">    glutils_texsz_alloc(__texsz_token_ ## __token_id, (__instance), \</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor">        (__filename), (__line), (__format), (__type), (__w), (__h))</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno"><a class="line" href="glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a">  367</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE_INSTANCE(__token_id, __instance, __format, __type, \</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">    __w, __h) \</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">    glutils_texsz_free(__texsz_token_ ## __token_id, (__instance), \</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">        (__format), (__type), (__w), (__h))</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno"><a class="line" href="glutils_8h.html#a5d6e37572080537ccdf23dc85b2460e7">  377</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC_BYTES(__token_id, __bytes) \</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">    TEXSZ_ALLOC_BYTES_INSTANCE(__token_id, NULL, NULL, -1, (__bytes))</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="glutils_8h.html#ac443ec1febad527b7469632f2903a568">  384</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE_BYTES(__token_id, __bytes) \</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="preprocessor">    TEXSZ_FREE_BYTES_INSTANCE(__token_id, NULL, (__bytes))</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="glutils_8h.html#a209f481518743f3159d158b8805e7733">  392</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC_BYTES_INSTANCE(__token_id, __instance, __filename, \</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor">    __line, __bytes) \</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">    glutils_texsz_alloc_bytes(__texsz_token_ ## __token_id, (__instance), \</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">        (__filename), (__line), (__bytes))</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="glutils_8h.html#a00052b9fc0634a676498596e0f36a64d">  402</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE_BYTES_INSTANCE(__token_id, __instance, __bytes) \</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor">    glutils_texsz_free_bytes(__texsz_token_ ## __token_id, (__instance), \</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor">        (__bytes))</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a12bc5f0f1fc81cc7d4561f6428f150a4">glutils_texsz_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#ad643551de35a7aa418fe1e69c0f6ab63">glutils_texsz_fini</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a2a46d8d646f2fbdb260f4255075d3fb1">glutils_texsz_alloc</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token, <span class="keyword">const</span> <span class="keywordtype">void</span> *instance,</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, GLenum format, GLenum type,</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">unsigned</span> w, <span class="keywordtype">unsigned</span> h);</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afbb605de7753497c715d0c183b7aaea0">glutils_texsz_free</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token, <span class="keyword">const</span> <span class="keywordtype">void</span> *instance,</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    GLenum format, GLenum type, <span class="keywordtype">unsigned</span> w, <span class="keywordtype">unsigned</span> h);</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#af2c91a7adbe352601c2ee88acf2104eb">glutils_texsz_alloc_bytes</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token,</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> *instance, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, int64_t bytes);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afa35afb29d01f4689bf801724fdf21ee">glutils_texsz_free_bytes</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token,</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> *instance, int64_t bytes);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;API_EXPORT uint64_t <a class="code" href="glutils_8h.html#a1c4b455d5eec979e9af19ad02239e085">glutils_texsz_get</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#aec842f38d63ed2c0d1058380298ff039">glutils_texsz_enum</a>(<a class="code" href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">glutils_texsz_enum_cb_t</a> cb, <span class="keywordtype">void</span> *userinfo);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno"><a class="line" href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">  428</a></span>&#160;<span class="preprocessor">#define IF_TEXSZ(__xxx) \</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor">        if (glutils_texsz_inited()) { \</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">            __xxx; \</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="preprocessor">        } \</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;API_EXPORT bool_t <a class="code" href="glutils_8h.html#a598a22ca8cb4797a328b8217d2a2dd92">glutils_texsz_inited</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="preprocessor">#ifndef _LACF_RENDER_DEBUG</span></div>
-<div class="line"><a name="l00444"></a><span class="lineno"><a class="line" href="glutils_8h.html#a774f93c4fb1474b6e346d48e5aa63646">  444</a></span>&#160;<span class="preprocessor">#define _LACF_RENDER_DEBUG  0</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="preprocessor">#if _LACF_RENDER_DEBUG</span></div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_NO_ERROR()   VERIFY3U(glGetError(), ==, GL_NO_ERROR)</span></div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT(_x_)     VERIFY(_x_)</span></div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_MSG(_x_, ...)    VERIFY(_x_, __VA_ARGS__)</span></div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3S(_x_, _y_, _z_) VERIFY3S(_x_, _y_, _z_)</span></div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3U(_x_, _y_, _z_) VERIFY3U(_x_, _y_, _z_)</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3P(_x_, _y_, _z_) VERIFY3P(_x_, _y_, _z_)</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="preprocessor">#define GLUTILS_RESET_ERRORS()      glutils_reset_errors()</span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !_LACF_RENDER_DEBUG */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00496"></a><span class="lineno"><a class="line" href="glutils_8h.html#a104599b9085b66c1ca807dab1043ad9f">  496</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_NO_ERROR()</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno"><a class="line" href="glutils_8h.html#ae5afa45afb422aafe713695d56079726">  497</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT(_x_)</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno"><a class="line" href="glutils_8h.html#a0d5b001db39cff8818e8470c9b889769">  498</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_MSG(_x_, ...)</span></div>
-<div class="line"><a name="l00499"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6889edbd1650121b7beffd5f32a20606">  499</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3S(_x_, _y_, _z_)</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno"><a class="line" href="glutils_8h.html#a7b5d2a40933de66888045bd5d091eeff">  500</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3U(_x_, _y_, _z_)</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno"><a class="line" href="glutils_8h.html#a07be5527759d45b5fc9434091b5b5de8">  501</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3P(_x_, _y_, _z_)</span></div>
-<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="glutils_8h.html#a958eacb3da42916506b399bf7bd237da">  502</a></span>&#160;<span class="preprocessor">#define GLUTILS_RESET_ERRORS()</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !_LACF_RENDER_DEBUG */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;API_EXPORT bool_t <a class="code" href="glutils_8h.html#a30182f04d046b525751e08d94b0861fd">glutils_nsight_debugger_present</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00512"></a><span class="lineno"><a class="line" href="glutils_8h.html#a1036a18fbb6988d562890ea39b5e1f07">  512</a></span>&#160;<a class="code" href="glutils_8h.html#a1036a18fbb6988d562890ea39b5e1f07">glutils_reset_errors</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;{</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keywordflow">while</span> (glGetError() != GL_NO_ERROR)</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        ;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;}</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;<span class="comment"> * MacOS doesn&#39;t support OpenGL 4.3.</span></div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;<span class="preprocessor">#if _LACF_RENDER_DEBUG &amp;&amp; !APL</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;PRINTF_ATTR(2) static inline <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<a class="code" href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">glutils_debug_push</a>(GLuint msgid, const <span class="keywordtype">char</span> *format, ...)</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;{</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keywordtype">char</span> buf_stack[128];</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keywordtype">int</span> len;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    va_list ap;</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    va_start(ap, format);</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    len = vsnprintf(buf_stack, <span class="keyword">sizeof</span> (buf_stack), format, ap);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    va_end(ap);</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keywordflow">if</span> (len &gt;= (<span class="keywordtype">int</span>)<span class="keyword">sizeof</span> (buf_stack)) {</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <span class="keywordtype">char</span> *buf_heap = (<span class="keywordtype">char</span> *)<a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(len + 1);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        va_start(ap, format);</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        vsnprintf(buf_heap, len + 1, format, ap);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        va_end(ap);</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, msgid, len,</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            buf_heap);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        free(buf_heap);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, msgid, len,</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            buf_stack);</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    }</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;}</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<a class="code" href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">glutils_debug_pop</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;{</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    glPopDebugGroup();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifdef  __AVX__</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define MAT4_ALLOC_ALIGN    32</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define MAT4_ALLOC_ALIGN    16</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structglutils__quads__t.html">   79</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    GLuint  vao;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    GLuint  vbo;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    GLuint  ibo;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    bool_t  setup;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">size_t</span>  num_vtx;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structglutils__lines__t.html">   98</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    GLuint  vao;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    GLuint  vbo;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    bool_t  setup;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">size_t</span>  num_vtx;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <a class="code" href="structglutils__lines__t.html">glutils_lines_t</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structglutils__cache__s.html">glutils_cache_s</a> glutils_cache_t;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">  115</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">glutils_texsz_enum_cb_t</a>)(<span class="keyword">const</span> <span class="keywordtype">char</span> *token, int64_t bytes,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> *userinfo);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a3eb60df09986470ff2d695caff2123ff">glutils_sys_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#ac0b31b8b31f800a47432fa4355938bc3">glutils_disable_all_client_state</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a75759de190aea90da64dc7697b19770b">glutils_disable_all_vtx_attrs</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;API_EXPORT GLuint <a class="code" href="glutils_8h.html#aa9f099f343d02ac76f20a68fa8ddc57d">glutils_make_quads_IBO</a>(<span class="keywordtype">size_t</span> num_vtx);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> bool_t</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="glutils_8h.html#a96f65d332b78b898c4ffb1a28dc02a77">  133</a></span>&#160;<a class="code" href="glutils_8h.html#a96f65d332b78b898c4ffb1a28dc02a77">glutils_quads_inited</a>(<span class="keyword">const</span> <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(quads != NULL);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> (quads-&gt;vbo != 0);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="glutils_8h.html#a4ea17becb36f77507cae2da4ce193112">  144</a></span>&#160;<span class="preprocessor">#define glutils_init_2D_quads(__quads, __p, __t, __num_pts) \</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">    glutils_init_2D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a66a84246f6deb16bd4c6a2e5dabe3378">glutils_init_2D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="glutils_8h.html#a2dbf1224e9bc9aa472525e7ecfde92e0">  152</a></span>&#160;<span class="preprocessor">#define glutils_update_2D_quads(__quads, __p, __t, __num_pts) \</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">    glutils_update_2D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a9e00724ddc243106d11e0215d759100f">glutils_update_2D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="glutils_8h.html#aab045abe822777157d02cc4c772ada2f">  170</a></span>&#160;<span class="preprocessor">#define glutils_init_3D_quads(__quads, __p, __t, __num_pts) \</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">    glutils_init_3D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a5940f30b071553e94fb8ad1207b7c343">glutils_init_3D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="glutils_8h.html#a7665a2d627d1dfbc5cd45b015ad184ad">  183</a></span>&#160;<span class="preprocessor">#define glutils_update_3D_quads(__quads, __p, __t, __num_pts) \</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">    glutils_update_3D_quads_impl((__quads), log_basename(__FILE__), \</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__t), (__num_pts))</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a443db2bcc87ce792a0cd21b45c2bcddc">glutils_update_3D_quads_impl</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads,</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a7bd0c70cf2596b3e33ed7d47060bd8c8">glutils_destroy_quads</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#ab9951e9c26ba3aa15ca8fa473e7f7136">glutils_draw_quads</a>(<a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *quads, GLint prog);</div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="glutils_8h.html#a73651a7f8853c2473f6f5302bdff2f92">  209</a></span>&#160;<span class="preprocessor">#define glutils_init_3D_lines(__lines, __p, __num_pts) \</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">    glutils_init_3D_lines_impl((__lines), log_basename(__FILE__), \</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">        __LINE__, (__p), (__num_pts))</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a>(<a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *lines,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a674dbcf0965551e2b169e1850b2d2e55">glutils_destroy_lines</a>(<a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *lines);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a1d76d99eb0319a0afc8f95fed45640f8">glutils_draw_lines</a>(<a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *lines, GLint prog);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment"> * glutils cache is a generic quads/lines object cache.</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;API_EXPORT glutils_cache_t *<a class="code" href="glutils_8h.html#a4776edae0db6f5f2dceaa34546ae1227">glutils_cache_new</a>(<span class="keywordtype">size_t</span> cap_bytes);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a6a87949597fa0dd2c6c02a05ab596e34">glutils_cache_destroy</a>(glutils_cache_t *cache);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;API_EXPORT <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *<a class="code" href="glutils_8h.html#a54b86fbbc9f0c38f65ee03245152c792">glutils_cache_get_2D_quads</a>(</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    glutils_cache_t *cache, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t, <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;API_EXPORT <a class="code" href="structglutils__quads__t.html">glutils_quads_t</a> *<a class="code" href="glutils_8h.html#a9098d7a8b37da6e2999ebbce6da2dd7a">glutils_cache_get_3D_quads</a>(</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    glutils_cache_t *cache, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keyword">const</span> <a class="code" href="structvect2__t.html">vect2_t</a> *t, <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;API_EXPORT <a class="code" href="structglutils__lines__t.html">glutils_lines_t</a> *<a class="code" href="glutils_8h.html#a405718f3727a5d4a2add700603cbb07e">glutils_cache_get_3D_lines</a>(</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    glutils_cache_t *cache, <span class="keyword">const</span> <a class="code" href="structvect3__t.html">vect3_t</a> *p, <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afdbc0e73ae574de9521e3a9392704ce7">glutils_vp2pvm</a>(GLfloat pvm[16]);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#define GLUTILS_VALIDATE_INDICES(indices, num_idx, num_vtx) \</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">        for (unsigned i = 0; i &lt; (num_idx); i++) { \</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">            VERIFY_MSG((indices)[i] &lt; (num_vtx), &quot;invalid index &quot;</span> \</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                &quot;specification encountered, index %d (value %d) &quot; \</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                &quot;is outside of vertex range %d&quot;, i, (indices)[i], \</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                (num_vtx)); \</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        } \</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    } while (0)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno"><a class="line" href="glutils_8h.html#a5c80f51fb1c1221033597328becf2112">  296</a></span>&#160;<span class="preprocessor">#define TEXSZ_MK_TOKEN(name) \</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">    static const char *__texsz_token_ ## name = #name</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="glutils_8h.html#a331e95ce12a47bb1cafc77658a2a1aa3">  303</a></span>&#160;<span class="preprocessor">#define TEXSZ_DECL_TOKEN_GLOB(name) \</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">    extern const char *__texsz_token_ ## name</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="glutils_8h.html#a06ce8d766b9a0f782d49f2705f5ad8c7">  310</a></span>&#160;<span class="preprocessor">#define TEXSZ_DEF_TOKEN_GLOB(name) \</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">    const char *__texsz_token_ ## name = #name</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6f4e701382c1ee3a6160ec50b47d1fb6">  326</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC(__token_id, __format, __type, __w, __h) \</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">    TEXSZ_ALLOC_INSTANCE(__token_id, NULL, NULL, -1, (__format), \</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor">        (__type), (__w), (__h))</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno"><a class="line" href="glutils_8h.html#a86b5c5defca6d5706e810517e2797d48">  334</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE(__token_id, __format, __type, __w, __h) \</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">    TEXSZ_FREE_INSTANCE(__token_id, NULL, (__format), \</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">        (__type), (__w), (__h))</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="glutils_8h.html#a970d748d35b29dbb2451c1e339ba8b8b">  361</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC_INSTANCE(__token_id, __instance, __filename, __line, \</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="preprocessor">    __format, __type, __w, __h) \</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">    glutils_texsz_alloc(__texsz_token_ ## __token_id, (__instance), \</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">        (__filename), (__line), (__format), (__type), (__w), (__h))</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno"><a class="line" href="glutils_8h.html#a3516f7d5b021b1ab3573995655b19f1a">  373</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE_INSTANCE(__token_id, __instance, __format, __type, \</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">    __w, __h) \</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="preprocessor">    glutils_texsz_free(__texsz_token_ ## __token_id, (__instance), \</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">        (__format), (__type), (__w), (__h))</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="glutils_8h.html#a5d6e37572080537ccdf23dc85b2460e7">  383</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC_BYTES(__token_id, __bytes) \</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="preprocessor">    TEXSZ_ALLOC_BYTES_INSTANCE(__token_id, NULL, NULL, -1, (__bytes))</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno"><a class="line" href="glutils_8h.html#ac443ec1febad527b7469632f2903a568">  390</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE_BYTES(__token_id, __bytes) \</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">    TEXSZ_FREE_BYTES_INSTANCE(__token_id, NULL, (__bytes))</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="glutils_8h.html#a209f481518743f3159d158b8805e7733">  398</a></span>&#160;<span class="preprocessor">#define TEXSZ_ALLOC_BYTES_INSTANCE(__token_id, __instance, __filename, \</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="preprocessor">    __line, __bytes) \</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="preprocessor">    glutils_texsz_alloc_bytes(__texsz_token_ ## __token_id, (__instance), \</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">        (__filename), (__line), (__bytes))</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno"><a class="line" href="glutils_8h.html#a00052b9fc0634a676498596e0f36a64d">  408</a></span>&#160;<span class="preprocessor">#define TEXSZ_FREE_BYTES_INSTANCE(__token_id, __instance, __bytes) \</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">    glutils_texsz_free_bytes(__texsz_token_ ## __token_id, (__instance), \</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor">        (__bytes))</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a12bc5f0f1fc81cc7d4561f6428f150a4">glutils_texsz_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#ad643551de35a7aa418fe1e69c0f6ab63">glutils_texsz_fini</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a2a46d8d646f2fbdb260f4255075d3fb1">glutils_texsz_alloc</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token, <span class="keyword">const</span> <span class="keywordtype">void</span> *instance,</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, GLenum format, GLenum type,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">unsigned</span> w, <span class="keywordtype">unsigned</span> h);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afbb605de7753497c715d0c183b7aaea0">glutils_texsz_free</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token, <span class="keyword">const</span> <span class="keywordtype">void</span> *instance,</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    GLenum format, GLenum type, <span class="keywordtype">unsigned</span> w, <span class="keywordtype">unsigned</span> h);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#af2c91a7adbe352601c2ee88acf2104eb">glutils_texsz_alloc_bytes</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token,</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> *instance, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">int</span> line, int64_t bytes);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afa35afb29d01f4689bf801724fdf21ee">glutils_texsz_free_bytes</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *token,</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> *instance, int64_t bytes);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;API_EXPORT uint64_t <a class="code" href="glutils_8h.html#a1c4b455d5eec979e9af19ad02239e085">glutils_texsz_get</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#aec842f38d63ed2c0d1058380298ff039">glutils_texsz_enum</a>(<a class="code" href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">glutils_texsz_enum_cb_t</a> cb, <span class="keywordtype">void</span> *userinfo);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="glutils_8h.html#aa6bbd5e3639e02b43daaa5219a781e3a">  434</a></span>&#160;<span class="preprocessor">#define IF_TEXSZ(__xxx) \</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="preprocessor">        if (glutils_texsz_inited()) { \</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="preprocessor">            __xxx; \</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;<span class="preprocessor">        } \</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;API_EXPORT bool_t <a class="code" href="glutils_8h.html#a598a22ca8cb4797a328b8217d2a2dd92">glutils_texsz_inited</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="preprocessor">#ifndef _LACF_RENDER_DEBUG</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno"><a class="line" href="glutils_8h.html#a774f93c4fb1474b6e346d48e5aa63646">  450</a></span>&#160;<span class="preprocessor">#define _LACF_RENDER_DEBUG  0</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="preprocessor">#if _LACF_RENDER_DEBUG</span></div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_NO_ERROR()   VERIFY3U(glGetError(), ==, GL_NO_ERROR)</span></div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT(_x_)     VERIFY(_x_)</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_MSG(_x_, ...)    VERIFY(_x_, __VA_ARGS__)</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3S(_x_, _y_, _z_) VERIFY3S(_x_, _y_, _z_)</span></div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3U(_x_, _y_, _z_) VERIFY3U(_x_, _y_, _z_)</span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3P(_x_, _y_, _z_) VERIFY3P(_x_, _y_, _z_)</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="preprocessor">#define GLUTILS_RESET_ERRORS()      glutils_reset_errors()</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !_LACF_RENDER_DEBUG */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00502"></a><span class="lineno"><a class="line" href="glutils_8h.html#a104599b9085b66c1ca807dab1043ad9f">  502</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_NO_ERROR()</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno"><a class="line" href="glutils_8h.html#ae5afa45afb422aafe713695d56079726">  503</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT(_x_)</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno"><a class="line" href="glutils_8h.html#a0d5b001db39cff8818e8470c9b889769">  504</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT_MSG(_x_, ...)</span></div>
+<div class="line"><a name="l00505"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6889edbd1650121b7beffd5f32a20606">  505</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3S(_x_, _y_, _z_)</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno"><a class="line" href="glutils_8h.html#a7b5d2a40933de66888045bd5d091eeff">  506</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3U(_x_, _y_, _z_)</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno"><a class="line" href="glutils_8h.html#a07be5527759d45b5fc9434091b5b5de8">  507</a></span>&#160;<span class="preprocessor">#define GLUTILS_ASSERT3P(_x_, _y_, _z_)</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno"><a class="line" href="glutils_8h.html#a958eacb3da42916506b399bf7bd237da">  508</a></span>&#160;<span class="preprocessor">#define GLUTILS_RESET_ERRORS()</span></div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !_LACF_RENDER_DEBUG */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;API_EXPORT bool_t <a class="code" href="glutils_8h.html#a30182f04d046b525751e08d94b0861fd">glutils_nsight_debugger_present</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00518"></a><span class="lineno"><a class="line" href="glutils_8h.html#a1036a18fbb6988d562890ea39b5e1f07">  518</a></span>&#160;<a class="code" href="glutils_8h.html#a1036a18fbb6988d562890ea39b5e1f07">glutils_reset_errors</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;{</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keywordflow">while</span> (glGetError() != GL_NO_ERROR)</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        ;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;}</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="comment"> * MacOS doesn&#39;t support OpenGL 4.3.</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="preprocessor">#if _LACF_RENDER_DEBUG &amp;&amp; !APL</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;PRINTF_ATTR(2) static inline <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<a class="code" href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">glutils_debug_push</a>(GLuint msgid, const <span class="keywordtype">char</span> *format, ...)</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;{</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="keywordtype">char</span> buf_stack[128];</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="keywordtype">int</span> len;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    va_list ap;</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    va_start(ap, format);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    len = vsnprintf(buf_stack, <span class="keyword">sizeof</span> (buf_stack), format, ap);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    va_end(ap);</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">if</span> (len &gt;= (<span class="keywordtype">int</span>)<span class="keyword">sizeof</span> (buf_stack)) {</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="keywordtype">char</span> *buf_heap = (<span class="keywordtype">char</span> *)<a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(len + 1);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        va_start(ap, format);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        vsnprintf(buf_heap, len + 1, format, ap);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        va_end(ap);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, msgid, len,</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            buf_heap);</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        free(buf_heap);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, msgid, len,</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            buf_stack);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    }</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;}</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !_LACF_RENDER_DEBUG || APL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;ALWAYS_INLINE_ATTR PRINTF_ATTR(2) static inline <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00587"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">  587</a></span>&#160;<a class="code" href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">glutils_debug_push</a>(GLuint msgid, const <span class="keywordtype">char</span> *format, ...)</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;{</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(msgid);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(format);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="comment">/* no-op */</span></div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;}</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;ALWAYS_INLINE_ATTR <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">  595</a></span>&#160;<a class="code" href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">glutils_debug_pop</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;{</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<a class="code" href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">glutils_debug_pop</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;{</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    glPopDebugGroup();</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;}</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !_LACF_RENDER_DEBUG || APL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;ALWAYS_INLINE_ATTR PRINTF_ATTR(2) static inline <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00593"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">  593</a></span>&#160;<a class="code" href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">glutils_debug_push</a>(GLuint msgid, const <span class="keywordtype">char</span> *format, ...)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;{</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(msgid);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(format);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">/* no-op */</span></div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;}</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !_LACF_RENDER_DEBUG || APL */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structglutils__nl__s.html">glutils_nl_s</a> <a class="code" href="structglutils__nl__t.html">glutils_nl_t</a>;</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;API_EXPORT <a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *<a class="code" href="glutils_8h.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D</a>(<span class="keyword">const</span> vec2 *pts, <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;API_EXPORT <a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *<a class="code" href="glutils_8h.html#a4060c897ae5664012f2f0b3502d51ddf">glutils_nl_alloc_3D</a>(<span class="keyword">const</span> vec3 *pts, <span class="keywordtype">size_t</span> num_pts);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free</a>(<a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *nl);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw</a>(<a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *nl, <span class="keywordtype">float</span> width, GLuint prog);</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno"><a class="line" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">  625</a></span>&#160;<a class="code" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a>(GLint index, GLint size, GLenum type,</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    GLboolean normalized, <span class="keywordtype">size_t</span> stride, <span class="keywordtype">size_t</span> offset)</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;{</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keywordflow">if</span> (index != -1) {</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        glEnableVertexAttribArray(index);</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        glVertexAttribPointer(index, size, type, normalized,</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            stride, (<span class="keywordtype">void</span> *)offset);</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    }</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;}</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno"><a class="line" href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">  643</a></span>&#160;<a class="code" href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a>(GLint index)</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;{</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keywordflow">if</span> (index != -1)</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        glDisableVertexAttribArray(index);</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;}</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;API_EXPORT bool_t <a class="code" href="glutils_8h.html#ac54f080841d8dd01f438f371a4883dea">glutils_png2gltexfmt</a>(<span class="keywordtype">int</span> png_color_type, <span class="keywordtype">int</span> png_bit_depth,</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    GLint *int_fmt, GLint *fmt, GLint *type);</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;ALWAYS_INLINE_ATTR <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno"><a class="line" href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">  601</a></span>&#160;<a class="code" href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">glutils_debug_pop</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;{</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">/* no-op */</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !_LACF_RENDER_DEBUG || APL */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structglutils__nl__s.html">glutils_nl_s</a> <a class="code" href="structglutils__nl__t.html">glutils_nl_t</a>;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;API_EXPORT <a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *<a class="code" href="glutils_8h.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D</a>(<span class="keyword">const</span> vec2 *pts, <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;API_EXPORT <a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *<a class="code" href="glutils_8h.html#a4060c897ae5664012f2f0b3502d51ddf">glutils_nl_alloc_3D</a>(<span class="keyword">const</span> vec3 *pts, <span class="keywordtype">size_t</span> num_pts);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#afeac34bb8268a6a992b6d7aba8ae6a15">glutils_nl_free</a>(<a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *nl);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="glutils_8h.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw</a>(<a class="code" href="structglutils__nl__t.html">glutils_nl_t</a> *nl, <span class="keywordtype">float</span> width, GLuint prog);</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno"><a class="line" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">  631</a></span>&#160;<a class="code" href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a>(GLint index, GLint size, GLenum type,</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    GLboolean normalized, <span class="keywordtype">size_t</span> stride, <span class="keywordtype">size_t</span> offset)</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;{</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keywordflow">if</span> (index != -1) {</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        glEnableVertexAttribArray(index);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        glVertexAttribPointer(index, size, type, normalized,</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            stride, (<span class="keywordtype">void</span> *)offset);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    }</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;}</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno"><a class="line" href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">  649</a></span>&#160;<a class="code" href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a>(GLint index)</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;{</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordflow">if</span> (index != -1)</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        glDisableVertexAttribArray(index);</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;}</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_GLUTILS_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;API_EXPORT bool_t <a class="code" href="glutils_8h.html#ac54f080841d8dd01f438f371a4883dea">glutils_png2gltexfmt</a>(<span class="keywordtype">int</span> png_color_type, <span class="keywordtype">int</span> png_bit_depth,</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    GLint *int_fmt, GLint *fmt, GLint *type);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;}</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_GLUTILS_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00088">core.h:88</a></div></div>
 <div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
 <div class="ttc" id="aglew_8h_html"><div class="ttname"><a href="glew_8h.html">glew.h</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a0868cd748e01d48be3ea63de6ef8cd4b"><div class="ttname"><a href="glutils_8h.html#a0868cd748e01d48be3ea63de6ef8cd4b">glutils_nl_draw</a></div><div class="ttdeci">void glutils_nl_draw(glutils_nl_t *nl, float width, GLuint prog)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01328">glutils.c:1328</a></div></div>
-<div class="ttc" id="aglutils_8h_html_a1036a18fbb6988d562890ea39b5e1f07"><div class="ttname"><a href="glutils_8h.html#a1036a18fbb6988d562890ea39b5e1f07">glutils_reset_errors</a></div><div class="ttdeci">static void glutils_reset_errors(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00512">glutils.h:512</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a1036a18fbb6988d562890ea39b5e1f07"><div class="ttname"><a href="glutils_8h.html#a1036a18fbb6988d562890ea39b5e1f07">glutils_reset_errors</a></div><div class="ttdeci">static void glutils_reset_errors(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00518">glutils.h:518</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a12bc5f0f1fc81cc7d4561f6428f150a4"><div class="ttname"><a href="glutils_8h.html#a12bc5f0f1fc81cc7d4561f6428f150a4">glutils_texsz_init</a></div><div class="ttdeci">void glutils_texsz_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00809">glutils.c:809</a></div></div>
-<div class="ttc" id="aglutils_8h_html_a13acd5e6e0df4ad8acc545627f25795f"><div class="ttname"><a href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_disable_vtx_attr_ptr(GLint index)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00643">glutils.h:643</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a13acd5e6e0df4ad8acc545627f25795f"><div class="ttname"><a href="glutils_8h.html#a13acd5e6e0df4ad8acc545627f25795f">glutils_disable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_disable_vtx_attr_ptr(GLint index)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00649">glutils.h:649</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a1c4b455d5eec979e9af19ad02239e085"><div class="ttname"><a href="glutils_8h.html#a1c4b455d5eec979e9af19ad02239e085">glutils_texsz_get</a></div><div class="ttdeci">uint64_t glutils_texsz_get(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01034">glutils.c:1034</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a1d76d99eb0319a0afc8f95fed45640f8"><div class="ttname"><a href="glutils_8h.html#a1d76d99eb0319a0afc8f95fed45640f8">glutils_draw_lines</a></div><div class="ttdeci">void glutils_draw_lines(glutils_lines_t *lines, GLint prog)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00722">glutils.c:722</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a2a46d8d646f2fbdb260f4255075d3fb1"><div class="ttname"><a href="glutils_8h.html#a2a46d8d646f2fbdb260f4255075d3fb1">glutils_texsz_alloc</a></div><div class="ttdeci">void glutils_texsz_alloc(const char *token, const void *instance, const char *filename, int line, GLenum format, GLenum type, unsigned w, unsigned h)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00979">glutils.c:979</a></div></div>
@@ -408,18 +414,18 @@ $(function() {
 <div class="ttc" id="aglutils_8h_html_a66a84246f6deb16bd4c6a2e5dabe3378"><div class="ttname"><a href="glutils_8h.html#a66a84246f6deb16bd4c6a2e5dabe3378">glutils_init_2D_quads_impl</a></div><div class="ttdeci">void glutils_init_2D_quads_impl(glutils_quads_t *quads, const char *filename, int line, const vect2_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00205">glutils.c:205</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a674dbcf0965551e2b169e1850b2d2e55"><div class="ttname"><a href="glutils_8h.html#a674dbcf0965551e2b169e1850b2d2e55">glutils_destroy_lines</a></div><div class="ttdeci">void glutils_destroy_lines(glutils_lines_t *lines)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00737">glutils.c:737</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a6a87949597fa0dd2c6c02a05ab596e34"><div class="ttname"><a href="glutils_8h.html#a6a87949597fa0dd2c6c02a05ab596e34">glutils_cache_destroy</a></div><div class="ttdeci">void glutils_cache_destroy(glutils_cache_t *cache)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00480">glutils.c:480</a></div></div>
-<div class="ttc" id="aglutils_8h_html_a6c9dc2144f55e443d38a5c124b372a21"><div class="ttname"><a href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">glutils_debug_pop</a></div><div class="ttdeci">static void glutils_debug_pop(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00595">glutils.h:595</a></div></div>
-<div class="ttc" id="aglutils_8h_html_a6e9b3c3c5959bbeb28074c0defc68ef6"><div class="ttname"><a href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">glutils_debug_push</a></div><div class="ttdeci">static void glutils_debug_push(GLuint msgid, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00587">glutils.h:587</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a6c9dc2144f55e443d38a5c124b372a21"><div class="ttname"><a href="glutils_8h.html#a6c9dc2144f55e443d38a5c124b372a21">glutils_debug_pop</a></div><div class="ttdeci">static void glutils_debug_pop(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00601">glutils.h:601</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a6e9b3c3c5959bbeb28074c0defc68ef6"><div class="ttname"><a href="glutils_8h.html#a6e9b3c3c5959bbeb28074c0defc68ef6">glutils_debug_push</a></div><div class="ttdeci">static void glutils_debug_push(GLuint msgid, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00593">glutils.h:593</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a737ab40cb1580fe8f373d9541dc24f24"><div class="ttname"><a href="glutils_8h.html#a737ab40cb1580fe8f373d9541dc24f24">glutils_init_3D_lines_impl</a></div><div class="ttdeci">void glutils_init_3D_lines_impl(glutils_lines_t *lines, const char *filename, int line, const vect3_t *p, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00662">glutils.c:662</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a75759de190aea90da64dc7697b19770b"><div class="ttname"><a href="glutils_8h.html#a75759de190aea90da64dc7697b19770b">glutils_disable_all_vtx_attrs</a></div><div class="ttdeci">void glutils_disable_all_vtx_attrs(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00158">glutils.c:158</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a7bd0c70cf2596b3e33ed7d47060bd8c8"><div class="ttname"><a href="glutils_8h.html#a7bd0c70cf2596b3e33ed7d47060bd8c8">glutils_destroy_quads</a></div><div class="ttdeci">void glutils_destroy_quads(glutils_quads_t *quads)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00309">glutils.c:309</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a7e7c3ef433fa0e2a49ab9023c59794ba"><div class="ttname"><a href="glutils_8h.html#a7e7c3ef433fa0e2a49ab9023c59794ba">glutils_nl_alloc_2D</a></div><div class="ttdeci">glutils_nl_t * glutils_nl_alloc_2D(const vec2 *pts, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01139">glutils.c:1139</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a9098d7a8b37da6e2999ebbce6da2dd7a"><div class="ttname"><a href="glutils_8h.html#a9098d7a8b37da6e2999ebbce6da2dd7a">glutils_cache_get_3D_quads</a></div><div class="ttdeci">glutils_quads_t * glutils_cache_get_3D_quads(glutils_cache_t *cache, const vect3_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00634">glutils.c:634</a></div></div>
-<div class="ttc" id="aglutils_8h_html_a96f65d332b78b898c4ffb1a28dc02a77"><div class="ttname"><a href="glutils_8h.html#a96f65d332b78b898c4ffb1a28dc02a77">glutils_quads_inited</a></div><div class="ttdeci">static bool_t glutils_quads_inited(const glutils_quads_t *quads)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00127">glutils.h:127</a></div></div>
-<div class="ttc" id="aglutils_8h_html_a99f09f0c951aa9a15eeb5db45147de3d"><div class="ttname"><a href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">glutils_texsz_enum_cb_t</a></div><div class="ttdeci">void(* glutils_texsz_enum_cb_t)(const char *token, int64_t bytes, void *userinfo)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00109">glutils.h:109</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a96f65d332b78b898c4ffb1a28dc02a77"><div class="ttname"><a href="glutils_8h.html#a96f65d332b78b898c4ffb1a28dc02a77">glutils_quads_inited</a></div><div class="ttdeci">static bool_t glutils_quads_inited(const glutils_quads_t *quads)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00133">glutils.h:133</a></div></div>
+<div class="ttc" id="aglutils_8h_html_a99f09f0c951aa9a15eeb5db45147de3d"><div class="ttname"><a href="glutils_8h.html#a99f09f0c951aa9a15eeb5db45147de3d">glutils_texsz_enum_cb_t</a></div><div class="ttdeci">void(* glutils_texsz_enum_cb_t)(const char *token, int64_t bytes, void *userinfo)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00115">glutils.h:115</a></div></div>
 <div class="ttc" id="aglutils_8h_html_a9e00724ddc243106d11e0215d759100f"><div class="ttname"><a href="glutils_8h.html#a9e00724ddc243106d11e0215d759100f">glutils_update_2D_quads_impl</a></div><div class="ttdeci">void glutils_update_2D_quads_impl(glutils_quads_t *quads, const char *filename, int line, const vect2_t *p, const vect2_t *t, size_t num_pts)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00221">glutils.c:221</a></div></div>
 <div class="ttc" id="aglutils_8h_html_aa9f099f343d02ac76f20a68fa8ddc57d"><div class="ttname"><a href="glutils_8h.html#aa9f099f343d02ac76f20a68fa8ddc57d">glutils_make_quads_IBO</a></div><div class="ttdeci">GLuint glutils_make_quads_IBO(size_t num_vtx)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00176">glutils.c:176</a></div></div>
-<div class="ttc" id="aglutils_8h_html_ab158cb78d23b47392ca58e01afd275fb"><div class="ttname"><a href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_enable_vtx_attr_ptr(GLint index, GLint size, GLenum type, GLboolean normalized, size_t stride, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00625">glutils.h:625</a></div></div>
+<div class="ttc" id="aglutils_8h_html_ab158cb78d23b47392ca58e01afd275fb"><div class="ttname"><a href="glutils_8h.html#ab158cb78d23b47392ca58e01afd275fb">glutils_enable_vtx_attr_ptr</a></div><div class="ttdeci">static void glutils_enable_vtx_attr_ptr(GLint index, GLint size, GLenum type, GLboolean normalized, size_t stride, size_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00631">glutils.h:631</a></div></div>
 <div class="ttc" id="aglutils_8h_html_ab9951e9c26ba3aa15ca8fa473e7f7136"><div class="ttname"><a href="glutils_8h.html#ab9951e9c26ba3aa15ca8fa473e7f7136">glutils_draw_quads</a></div><div class="ttdeci">void glutils_draw_quads(glutils_quads_t *quads, GLint prog)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00383">glutils.c:383</a></div></div>
 <div class="ttc" id="aglutils_8h_html_ac0b31b8b31f800a47432fa4355938bc3"><div class="ttname"><a href="glutils_8h.html#ac0b31b8b31f800a47432fa4355938bc3">glutils_disable_all_client_state</a></div><div class="ttdeci">void glutils_disable_all_client_state(void)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00128">glutils.c:128</a></div></div>
 <div class="ttc" id="aglutils_8h_html_ac54f080841d8dd01f438f371a4883dea"><div class="ttname"><a href="glutils_8h.html#ac54f080841d8dd01f438f371a4883dea">glutils_png2gltexfmt</a></div><div class="ttdeci">bool_t glutils_png2gltexfmt(int png_color_type, int png_bit_depth, GLint *int_fmt, GLint *fmt, GLint *type)</div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01411">glutils.c:1411</a></div></div>
@@ -433,12 +439,12 @@ $(function() {
 <div class="ttc" id="aglutils__zink_8h_html"><div class="ttname"><a href="glutils__zink_8h.html">glutils_zink.h</a></div></div>
 <div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
-<div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00047">safe_alloc.h:47</a></div></div>
+<div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00056">safe_alloc.h:56</a></div></div>
 <div class="ttc" id="astructglutils__cache__s_html"><div class="ttname"><a href="structglutils__cache__s.html">glutils_cache_s</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l00092">glutils.c:92</a></div></div>
-<div class="ttc" id="astructglutils__lines__t_html"><div class="ttname"><a href="structglutils__lines__t.html">glutils_lines_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00092">glutils.h:92</a></div></div>
+<div class="ttc" id="astructglutils__lines__t_html"><div class="ttname"><a href="structglutils__lines__t.html">glutils_lines_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00098">glutils.h:98</a></div></div>
 <div class="ttc" id="astructglutils__nl__s_html"><div class="ttname"><a href="structglutils__nl__s.html">glutils_nl_s</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8c_source.html#l01108">glutils.c:1108</a></div></div>
 <div class="ttc" id="astructglutils__nl__t_html"><div class="ttname"><a href="structglutils__nl__t.html">glutils_nl_t</a></div></div>
-<div class="ttc" id="astructglutils__quads__t_html"><div class="ttname"><a href="structglutils__quads__t.html">glutils_quads_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00073">glutils.h:73</a></div></div>
+<div class="ttc" id="astructglutils__quads__t_html"><div class="ttname"><a href="structglutils__quads__t.html">glutils_quads_t</a></div><div class="ttdef"><b>Definition:</b> <a href="glutils_8h_source.html#l00079">glutils.h:79</a></div></div>
 <div class="ttc" id="astructvect2__t_html"><div class="ttname"><a href="structvect2__t.html">vect2_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00116">geom.h:116</a></div></div>
 <div class="ttc" id="astructvect3__t_html"><div class="ttname"><a href="structvect3__t.html">vect3_t</a></div><div class="ttdef"><b>Definition:</b> <a href="geom_8h_source.html#l00089">geom.h:89</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

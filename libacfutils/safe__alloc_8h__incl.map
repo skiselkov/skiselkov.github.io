@@ -1,15 +1,16 @@
 <map id="acfutils/safe_alloc.h" name="acfutils/safe_alloc.h">
-<area shape="rect" id="node1" title=" " alt="" coords="87,5,239,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,76,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="155,453,225,480"/>
-<area shape="rect" id="node4" href="$assert_8h.html" title=" " alt="" coords="194,80,269,107"/>
-<area shape="rect" id="node8" href="$sysmacros_8h_source.html" title=" " alt="" coords="447,229,551,256"/>
-<area shape="rect" id="node5" href="$log_8h.html" title=" " alt="" coords="229,155,284,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="202,229,277,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="301,229,423,256"/>
-<area shape="rect" id="node9" href="$types_8h_source.html" title=" " alt="" coords="348,304,419,331"/>
-<area shape="rect" id="node10" title=" " alt="" coords="253,379,324,405"/>
-<area shape="rect" id="node11" title=" " alt="" coords="348,379,419,405"/>
-<area shape="rect" id="node12" href="$core_8h.html" title=" " alt="" coords="443,379,505,405"/>
-<area shape="rect" id="node13" href="$libconfig_8h_source.html" title=" " alt="" coords="429,453,519,480"/>
+<area shape="rect" id="node1" title=" " alt="" coords="130,5,282,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,73,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="97,80,168,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="247,453,317,480"/>
+<area shape="rect" id="node5" href="$assert_8h.html" title=" " alt="" coords="286,80,361,107"/>
+<area shape="rect" id="node9" href="$sysmacros_8h_source.html" title=" " alt="" coords="539,229,643,256"/>
+<area shape="rect" id="node6" href="$log_8h.html" title=" " alt="" coords="321,155,376,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="294,229,369,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="393,229,515,256"/>
+<area shape="rect" id="node10" href="$types_8h_source.html" title=" " alt="" coords="440,304,511,331"/>
+<area shape="rect" id="node11" title=" " alt="" coords="345,379,416,405"/>
+<area shape="rect" id="node12" title=" " alt="" coords="440,379,511,405"/>
+<area shape="rect" id="node13" href="$core_8h.html" title=" " alt="" coords="535,379,597,405"/>
+<area shape="rect" id="node14" href="$libconfig_8h_source.html" title=" " alt="" coords="521,453,611,480"/>
 </map>
