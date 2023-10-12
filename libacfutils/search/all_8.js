@@ -34,7 +34,7 @@ var searchData=
   ['htbl_5fremove_5fmulti_591',['htbl_remove_multi',['../htbl_8h.html#a3ef869e30605d7a3aa8b3c18817cc6b1',1,'htbl.c']]],
   ['htbl_5fset_592',['htbl_set',['../htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54',1,'htbl.c']]],
   ['htbl_5ft_593',['htbl_t',['../structhtbl__t.html',1,'']]],
-  ['htbl_5fvalue_5fmulti_594',['htbl_value_multi',['../htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2',1,'htbl.c']]],
-  ['htbl_5fvalue_5fmulti_595',['HTBL_VALUE_MULTI',['../htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3',1,'htbl.h']]],
+  ['htbl_5fvalue_5fmulti_594',['HTBL_VALUE_MULTI',['../htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3',1,'htbl.h']]],
+  ['htbl_5fvalue_5fmulti_595',['htbl_value_multi',['../htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2',1,'htbl.c']]],
   ['huff_5ftable_5ft_596',['huff_table_t',['../structhuff__table__t.html',1,'']]]
 ];
