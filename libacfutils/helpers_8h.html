@@ -732,7 +732,7 @@ Example</h4>
 </div><div class="memdoc">
 <p>Creates an empty directory at <code>dirname</code> with default permissions. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01256">1256</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01259">1259</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -753,7 +753,7 @@ Example</h4>
 </div><div class="memdoc">
 <p>Same as <a class="el" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory()</a>, but creates all intermediate directories on the way as well. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01285">1285</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01288">1288</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -867,7 +867,7 @@ Example</h4>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The file's contents allocated into a memory buffer. Use <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a> to free the the buffer when done. If an error occurred trying to read the file, the function returns <code>NULL</code> instead and the <code>errno</code> variable will contain the exact error which occurred. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01131">1131</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01134">1134</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -898,7 +898,7 @@ Example</h4>
 </div><div class="memdoc">
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated:</a></b></dt><dd>Use <a class="el" href="helpers_8h.html#af294bc5fff778bf59115d89b14602678">file2str_name()</a> instead. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01033">1033</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01036">1036</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -935,7 +935,7 @@ Example</h4>
 </div><div class="memdoc">
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd>Use <a class="el" href="helpers_8h.html#af294bc5fff778bf59115d89b14602678">file2str_name()</a> instead. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01052">1052</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01055">1055</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -974,7 +974,7 @@ Example</h4>
 <dl class="section return"><dt>Returns</dt><dd>The contents of the file as a C string. The string is always guaranteed to be NUL-terminated. You must free this string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a> when done. If the file cannot be read, this function returns <code>NULL</code> instead and the <code>errno</code> variable will contain the exact error which occurred. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="helpers_8h.html#af5575547211f8f53991140618173d08a">file2buf()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01084">1084</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01087">1087</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -1012,7 +1012,7 @@ Example</h4>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01219">1219</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01222">1222</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -1031,9 +1031,9 @@ Example</h4>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The size of the file at path <code>filename</code> in bytes. If the file size cannot be determined, this returns -1 instead. This function doesn't open the file for reading, so don't assume that <a class="el" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz()</a> returning a valid size indicates file read access. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of the file at path <code>filename</code> in bytes. If the file does not exist, or the size cannot be determined, this returns <code>-1</code> instead. This function doesn't open the file for reading, so don't assume that <a class="el" href="helpers_8h.html#a0c07f2f2f59a36c95df998f2f459b924">filesz()</a> returning a valid size indicates file read access. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01171">1171</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01174">1174</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -1052,9 +1052,9 @@ Example</h4>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>For some inexplicable reason, on Windows X-Plane can return paths via the API which are a mixture of Windows- &amp; Unix-style path separators. This function fixes that by flipping all path separators to the appropriate type used on the host OS. </p>
+<p>For some inexplicable reason, on Windows X-Plane can return paths via the API which are a mixture of Windows- &amp; Unix-style path separators. This function fixes that by flipping all path separators to the appropriate type used on the host OS. This also eliminates duplicate path separators, which tends to break Windows UNC path resolution. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00889">889</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00892">892</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -1815,7 +1815,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Portable version of the POSIX dirname() function. </p><dl class="section see"><dt>See also</dt><dd><a href="https://linux.die.net/man/3/dirname">dirname()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01474">1474</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01477">1477</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -1958,7 +1958,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Portable version of glibc's qsort_r() function. This is a thread-safe and reentrant version of standard C's qsort() function. </p><dl class="section see"><dt>See also</dt><dd><a href="https://linux.die.net/man/3/qsort_r">qsort_r()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01627">1627</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01630">1630</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2075,7 +2075,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Portable version of BSD's strlcpy() function. You should use this when copying a string into a fixed-length buffer, to guarantee that the output is always NUL-terminated. </p><dl class="section see"><dt>See also</dt><dd><a href="https://linux.die.net/man/3/strlcpy">strlcpy()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01644">1644</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01647">1647</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2406,7 +2406,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Takes &lsquo;path&rsquo; and substitutes its path extension (any characters following the last '.') with <code>ext</code>. If the path doesn't contain a path extension, it is appended. The newly allocated path is returned to the caller. The caller is responsible for freeing this path using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00961">961</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00973">973</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2427,7 +2427,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Returns the last path component of the path. If the path contains no separators, returns the entire input path. The returned value is a pointer into <code>path</code>, and so shouldn't be freed by the caller. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00940">940</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00952">952</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2458,10 +2458,10 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Strips the last path component from <code>path</code> and replaces with with <code>replace</code>. Example: </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *result = <a class="code" href="helpers_8h.html#a1b37c8461085af8c17765823cf767cd9">path_last_comp_subst</a>(<span class="stringliteral">&quot;/foo/bar&quot;</span>, <span class="stringliteral">&quot;baz&quot;</span>);</div>
 <div class="line"><span class="comment">// result = &quot;/foo/baz&quot;</span></div>
-<div class="ttc" id="ahelpers_8h_html_a1b37c8461085af8c17765823cf767cd9"><div class="ttname"><a href="helpers_8h.html#a1b37c8461085af8c17765823cf767cd9">path_last_comp_subst</a></div><div class="ttdeci">char * path_last_comp_subst(const char *path, const char *replace)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00912">helpers.c:912</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a1b37c8461085af8c17765823cf767cd9"><div class="ttname"><a href="helpers_8h.html#a1b37c8461085af8c17765823cf767cd9">path_last_comp_subst</a></div><div class="ttdeci">char * path_last_comp_subst(const char *path, const char *replace)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00924">helpers.c:924</a></div></div>
 </div><!-- fragment --><p> The returned value must be freed using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00912">912</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l00924">924</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2482,7 +2482,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Locates all instances of '//', '\', '..' and '.' and eliminates them from the path, resolving directory returns as necessary. This also first flips all path separators to the platform-appropriate type using <a class="el" href="helpers_8h.html#a250c0a74dbc6556d120fa2e563c46df6">fix_pathsep()</a>. The <code>path</code> argument is modified in place. </p>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01001">1001</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01013">1013</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2546,7 +2546,7 @@ Example:</h4>
 </div><div class="memdoc">
 <p>Removes a directory, including all its contents. </p><dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if successful, <code>B_FALSE</code> otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01371">1371</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01374">1374</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>
@@ -2584,7 +2584,7 @@ Example:</h4>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if removing the file was successful (or the file didn't exist, provided that <code>notfound_ok</code> was set to <code>B_TRUE</code>). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01446">1446</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="helpers_8c_source.html#l01449">1449</a> of file <a class="el" href="helpers_8c_source.html">helpers.c</a>.</p>
 
 </div>
 </div>

@@ -129,6 +129,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac5a6e046117e54936f4e24063e2117f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c2473bd55dfd6743277cfdc8c553079"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#a8c2473bd55dfd6743277cfdc8c553079">safe_aligned_calloc</a> (size_t alignment, size_t nmemb, size_t size)</td></tr>
 <tr class="separator:a8c2473bd55dfd6743277cfdc8c553079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f39482913cc5707fe4bc63274b2c47"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#a13f39482913cc5707fe4bc63274b2c47">aligned_free</a> (void *ptr)</td></tr>
+<tr class="separator:a13f39482913cc5707fe4bc63274b2c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac288e180c613af117aa0d5a7279d4f1a"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a> (const char *str2)</td></tr>
 <tr class="separator:ac288e180c613af117aa0d5a7279d4f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae1b664606ff3c5375676c0ec39152e"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc</a> (char *buf, const char *str)</td></tr>
@@ -152,7 +154,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Performs a zeroing of the <code>data</code> buffer. Please note that <code>sizeof</code> must return the correct size of the data to be zeroed. Thus this is intended to be used fixed-size arrays. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00278">278</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00296">296</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -177,7 +179,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE()</a>, but also sets <code>ptr</code> to NULL after freeing. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00246">246</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00264">264</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +214,7 @@ Functions</h2></td></tr>
 <div class="line">    while (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#af641f79c2c4a711aa6baa4fb3b0d72cc">ZERO_FREE_N()</a>, but also sets <code>ptr</code> to NULL after freeing. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00267">267</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00285">285</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +239,7 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>If <code>data</code> is not <code>NULL</code>, performs a <a class="el" href="safe__alloc_8h.html#a759a8fa73a1f7f859edf775dd6d76dde">BZERO</a> on the data. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00283">283</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00301">301</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +268,7 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p>If <code>ptr</code> is not a <code>NULL</code> pointer, the contained data is first zeroed, and subsequently deallocated using free(). This is useful for making sure nothing remains of a buffer after freeing, thus preventing potentially attempting to read its contents and seeing valid data (use-after-free).</p>
 <p>N.B. this macro relies on <code>sizeof</code> returning the correct size of this data buffer, so it should only be used on single struct buffers, not arrays. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00235">235</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00253">253</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -303,11 +305,40 @@ Functions</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Same as <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a>, but takes an explicit array element count argument. This is the variant of the <a class="el" href="safe__alloc_8h.html#a578aada848ef29ecdcdd7f9650475797">ZERO_FREE</a> macro to be used on arrays of objects, rather than single objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00257">257</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00275">275</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a13f39482913cc5707fe4bc63274b2c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f39482913cc5707fe4bc63274b2c47">&#9670;&nbsp;</a></span>aligned_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void aligned_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frees memory previously allocated using <a class="el" href="safe__alloc_8h.html#ac5a6e046117e54936f4e24063e2117f7">safe_aligned_malloc()</a> or <a class="el" href="safe__alloc_8h.html#a8c2473bd55dfd6743277cfdc8c553079">safe_aligned_calloc()</a>. </p><dl class="section note"><dt>Note</dt><dd>You must NOT use the normal C library free() function, as doing so is NOT portable. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00181">181</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+
+</div>
+</div>
 <a id="a8c2473bd55dfd6743277cfdc8c553079"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c2473bd55dfd6743277cfdc8c553079">&#9670;&nbsp;</a></span>safe_aligned_calloc()</h2>
 
@@ -354,12 +385,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If successful, the returned address is guaranteed to be aligned to multiples of <code>alignment</code> bytes. The contents of the memory buffer are zero-initialized. The returned pointer must be passed to free() (or std::free() in C++) to dispose of the allocation and avoid leaking memory. </dd>
-<dd>
-If the memory allocation cannot be satisfied, this function triggers an assertion failure with an out-of-memory error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful, the returned address is guaranteed to be aligned to multiples of <code>alignment</code> bytes. The contents of the memory buffer are zero-initialized. The returned pointer must be passed to <a class="el" href="safe__alloc_8h.html#a13f39482913cc5707fe4bc63274b2c47">aligned_free()</a> to dispose of the allocation and avoid leaking memory. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You must NOT use the normal C library free() function, as doing so is NOT portable. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If the memory allocation cannot be satisfied, this function triggers an assertion failure with an out-of-memory error. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the requested buffer size is 0, this function may return <code>NULL</code>, or an unusable non-<code>NULL</code> pointer which is safe to pass to free(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00165">165</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00167">167</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -403,12 +434,12 @@ If the memory allocation cannot be satisfied, this function triggers an assertio
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If successful, the returned address is guaranteed to be aligned to multiples of <code>alignment</code> bytes. The contents of the memory buffer are undefined. The returned pointer must be passed to free() (or std::free() in C++) to dispose of the allocation and avoid leaking memory. </dd>
-<dd>
-If the memory allocation cannot be satisfied, this function triggers an assertion failure with an out-of-memory error. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If successful, the returned address is guaranteed to be aligned to multiples of <code>alignment</code> bytes. The contents of the memory buffer are undefined. The returned pointer must be passed to <a class="el" href="safe__alloc_8h.html#a13f39482913cc5707fe4bc63274b2c47">aligned_free()</a> to dispose of the allocation and avoid leaking memory. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You must NOT use the normal C library free() function, as doing so is NOT portable. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>If the memory allocation cannot be satisfied, this function triggers an assertion failure with an out-of-memory error. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If the requested buffer size is 0, this function may return <code>NULL</code>, or an unusable non-<code>NULL</code> pointer which is safe to pass to free(). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00118">118</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00119">119</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -454,7 +485,7 @@ If the memory allocation cannot be satisfied, this function triggers an assertio
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new combined buffer holding a concatenation of <code>buf</code> and <code>str</code>. Please note that since reallocation may occur, you must not reuse the old <code>buf</code> pointer value after calling <a class="el" href="safe__alloc_8h.html#aaae1b664606ff3c5375676c0ec39152e">safe_append_realloc()</a>. You should reassign the pointer using the return value of this function. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00212">212</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00230">230</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>
@@ -591,7 +622,7 @@ If the memory allocation cannot be satisfied, this function triggers an assertio
 </div><div class="memdoc">
 <p>Provides an allocation-safe version of strdup(). If the allocation of the required number of bytes fails, this trips an assertion check and causes the application to crash due to having run out of memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00183">183</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="safe__alloc_8h_source.html#l00201">201</a> of file <a class="el" href="safe__alloc_8h_source.html">safe_alloc.h</a>.</p>
 
 </div>
 </div>

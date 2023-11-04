@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['safe_5fbzero_2070',['SAFE_BZERO',['../safe__alloc_8h.html#a601bef5ebbd768105bdf40337a884b35',1,'safe_alloc.h']]],
-  ['set_5fbitfield_5f1_2071',['SET_BITFIELD_1',['../helpers_8h.html#acec283ba2b5fca576867be025844b208',1,'helpers.h']]]
+  ['safe_5fbzero_2072',['SAFE_BZERO',['../safe__alloc_8h.html#a601bef5ebbd768105bdf40337a884b35',1,'safe_alloc.h']]],
+  ['set_5fbitfield_5f1_2073',['SET_BITFIELD_1',['../helpers_8h.html#acec283ba2b5fca576867be025844b208',1,'helpers.h']]]
 ];
