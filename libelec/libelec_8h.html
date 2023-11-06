@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -100,6 +101,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelec__tru__info__t.html">elec_tru_info_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelec__xfrmr__info__t.html">elec_xfrmr_info_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelec__load__info__t.html">elec_load_info_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelec__bus__info__t.html">elec_bus_info_t</a></td></tr>
@@ -112,6 +115,15 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelec__comp__info__s.html">elec_comp_info_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a570f6f733dc09cedaee85a2ac3c2284b"><td class="memItemLeft" align="right" valign="top"><a id="a570f6f733dc09cedaee85a2ac3c2284b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>STATIC_ARRAY_LEN_ARG</b>(len)</td></tr>
+<tr class="separator:a570f6f733dc09cedaee85a2ac3c2284b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecff94e02c169b5d94f716aaf326f5e4"><td class="memItemLeft" align="right" valign="top"><a id="aecff94e02c169b5d94f716aaf326f5e4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONST_ARRAY_LEN_ARG</b>(len)&#160;&#160;&#160;len</td></tr>
+<tr class="separator:aecff94e02c169b5d94f716aaf326f5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -126,18 +138,22 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top"><a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <b>ELEC_MAX_SRCS</b> = 64
+ }</td></tr>
+<tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d532867324163e8b840aef7b641e5eb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eb">elec_comp_type_t</a> { <br />
 &#160;&#160;<a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a>
 , <br />
-&#160;&#160;<a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a>
+&#160;&#160;<a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a>
+, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>
-, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a>
 , <br />
-&#160;&#160;<a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a>
+&#160;&#160;<a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a>
+, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a>
 , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba1540793797bc0e739d9fdd69b13e79d0">ELEC_LABEL_BOX</a>
 <br />
@@ -178,12 +194,24 @@ Functions</h2></td></tr>
 <tr class="separator:af2b2e6f8adbba0e36a27a194d8746ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fb5f8815cb443f2222f674c459251f7"><td class="memItemLeft" align="right" valign="top">elec_comp_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a1fb5f8815cb443f2222f674c459251f7">libelec_comp_find</a> (elec_sys_t *sys, const char *name)</td></tr>
 <tr class="separator:a1fb5f8815cb443f2222f674c459251f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8ff9966fbe4959059c09593aae5684c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#ad8ff9966fbe4959059c09593aae5684c">libelec_walk_comps</a> (elec_sys_t *sys, void(*cb)(elec_comp_t *, void *), void *userinfo)</td></tr>
-<tr class="separator:ad8ff9966fbe4959059c09593aae5684c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af5550a08af3826a7ccd5c3fb346ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a3af5550a08af3826a7ccd5c3fb346ef3">libelec_walk_comps</a> (const elec_sys_t *sys, void(*cb)(elec_comp_t *, void *), void *userinfo)</td></tr>
+<tr class="separator:a3af5550a08af3826a7ccd5c3fb346ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61f50cc47cb6e4011d9d46ba5ef99eed"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structelec__comp__info__t.html">elec_comp_info_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a61f50cc47cb6e4011d9d46ba5ef99eed">libelec_comp2info</a> (const elec_comp_t *comp)</td></tr>
 <tr class="separator:a61f50cc47cb6e4011d9d46ba5ef99eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a8eedeca7c08dcfd9634c8fddce76cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a0a8eedeca7c08dcfd9634c8fddce76cf">libelec_comp_is_AC</a> (const elec_comp_t *comp)</td></tr>
 <tr class="separator:a0a8eedeca7c08dcfd9634c8fddce76cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac66d3b27803b6661170d5db3554f696f"><td class="memItemLeft" align="right" valign="top"><a id="ac66d3b27803b6661170d5db3554f696f"></a>
+<a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eb">elec_comp_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>libelec_comp_get_type</b> (const elec_comp_t *comp)</td></tr>
+<tr class="separator:ac66d3b27803b6661170d5db3554f696f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8599d80fd0345d95c07213470a361288"><td class="memItemLeft" align="right" valign="top"><a id="a8599d80fd0345d95c07213470a361288"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>libelec_comp_get_name</b> (const elec_comp_t *comp)</td></tr>
+<tr class="separator:a8599d80fd0345d95c07213470a361288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483ddadca492684c275608db13c19ddb"><td class="memItemLeft" align="right" valign="top"><a id="a483ddadca492684c275608db13c19ddb"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>libelec_comp_get_location</b> (const elec_comp_t *comp)</td></tr>
+<tr class="separator:a483ddadca492684c275608db13c19ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fffd5ede236a70d85624091b6303959"><td class="memItemLeft" align="right" valign="top"><a id="a2fffd5ede236a70d85624091b6303959"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>libelec_comp_get_autogen</b> (const elec_comp_t *comp)</td></tr>
+<tr class="separator:a2fffd5ede236a70d85624091b6303959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4076e6e8502488f967c496e92bc0ac2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#ad4076e6e8502488f967c496e92bc0ac2">libelec_comp_get_num_conns</a> (const elec_comp_t *comp)</td></tr>
 <tr class="separator:ad4076e6e8502488f967c496e92bc0ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5eaf88a9d38170760c5abec3c5335d8"><td class="memItemLeft" align="right" valign="top">elec_comp_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#ac5eaf88a9d38170760c5abec3c5335d8">libelec_comp_get_conn</a> (const elec_comp_t *comp, size_t i)</td></tr>
@@ -210,6 +238,9 @@ Functions</h2></td></tr>
 <tr class="separator:a6eb347ad508fe5670c8ef52d3cb524c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3672a88f0fa45acf5830bbd42989da0e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a3672a88f0fa45acf5830bbd42989da0e">libelec_comp_get_eff</a> (const elec_comp_t *gen)</td></tr>
 <tr class="separator:a3672a88f0fa45acf5830bbd42989da0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02c214131402feaae1bc5d3c02241a0"><td class="memItemLeft" align="right" valign="top"><a id="ab02c214131402feaae1bc5d3c02241a0"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>libelec_comp_get_srcs</b> (const elec_comp_t *comp, elec_comp_t *srcs[ELEC_MAX_SRCS])</td></tr>
+<tr class="separator:ab02c214131402feaae1bc5d3c02241a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adea94312ecb31d3654c9a02087ff0d4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#adea94312ecb31d3654c9a02087ff0d4a">libelec_comp_set_failed</a> (elec_comp_t *comp, bool failed)</td></tr>
 <tr class="separator:adea94312ecb31d3654c9a02087ff0d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5730df63275dc5fb1f0f48f5df9ff886"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a5730df63275dc5fb1f0f48f5df9ff886">libelec_comp_get_failed</a> (const elec_comp_t *comp)</td></tr>
@@ -244,8 +275,8 @@ Functions</h2></td></tr>
 <tr class="separator:a465c7593a6ee6588171358a4dd3290e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab005029256584f8348d80062eac2dc2c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#ab005029256584f8348d80062eac2dc2c">libelec_cb_get_temp</a> (const elec_comp_t *comp)</td></tr>
 <tr class="separator:ab005029256584f8348d80062eac2dc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a750bf9de36462c5c45c9811b001e3ca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a750bf9de36462c5c45c9811b001e3ca7">libelec_tie_set_list</a> (elec_comp_t *comp, size_t list_len, elec_comp_t *const bus_list[list_len])</td></tr>
-<tr class="separator:a750bf9de36462c5c45c9811b001e3ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6f876cd9322f705a2d7c76f43150ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#aa6f876cd9322f705a2d7c76f43150ef3">libelec_tie_set_list</a> (elec_comp_t *comp, size_t list_len, elec_comp_t *const bus_list[])</td></tr>
+<tr class="separator:aa6f876cd9322f705a2d7c76f43150ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25508dddaebf2246ca8e95d1e1fd51cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a25508dddaebf2246ca8e95d1e1fd51cd">libelec_tie_set</a> (elec_comp_t *comp,...) SENTINEL_ATTR</td></tr>
 <tr class="separator:a25508dddaebf2246ca8e95d1e1fd51cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad703bfd7400acbad0f36966056824cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#ad703bfd7400acbad0f36966056824cdc">libelec_tie_set_v</a> (elec_comp_t *comp, va_list ap)</td></tr>
@@ -254,8 +285,8 @@ Functions</h2></td></tr>
 <tr class="separator:aae3a4c58ca63bb6770816a2c4555cfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef200f9babf90f263acb7059d9e74077"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#aef200f9babf90f263acb7059d9e74077">libelec_tie_get_all</a> (elec_comp_t *comp)</td></tr>
 <tr class="separator:aef200f9babf90f263acb7059d9e74077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb531d6f8002d401dc243e38d7590371"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#afb531d6f8002d401dc243e38d7590371">libelec_tie_get_list</a> (elec_comp_t *comp, size_t cap, elec_comp_t *bus_list[static cap])</td></tr>
-<tr class="separator:afb531d6f8002d401dc243e38d7590371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1257b7294dd1aeade3baf98f475d560"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#ac1257b7294dd1aeade3baf98f475d560">libelec_tie_get_list</a> (elec_comp_t *comp, size_t cap, elec_comp_t *bus_list[])</td></tr>
+<tr class="separator:ac1257b7294dd1aeade3baf98f475d560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81aebc83ce320bc7c4e4b0eefd8a8353"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a81aebc83ce320bc7c4e4b0eefd8a8353">libelec_tie_get_num_buses</a> (const elec_comp_t *comp)</td></tr>
 <tr class="separator:a81aebc83ce320bc7c4e4b0eefd8a8353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d6a4fd0ffa7fd5dba45d70b53954285"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="libelec_8h.html#a7d6a4fd0ffa7fd5dba45d70b53954285">libelec_tie_get</a> (elec_comp_t *tie, bool_t exhaustive,...) SENTINEL_ATTR</td></tr>
@@ -308,7 +339,7 @@ Functions</h2></td></tr>
 </ol>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00284">284</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00316">316</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
 
 </div>
 </div>
@@ -334,7 +365,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The generator rpm, using the same units as what you have used for the <code>EXC_RPM</code>, <code>MIN_RPM</code> and <code>MAX_RPM</code> stanzas when defining the generator in the config file. libelec doesn't enforce any specific type of units for generator, so you can use whatever units are most convenient. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#ae82d351d3ae6467eeb3c846e9e444b7c">libelec_gen_set_rpm()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00228">228</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00249">249</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
 
 </div>
 </div>
@@ -351,7 +382,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This is the callback type used by batteries to determine the temperature of the battery. Temperature has a significant effect on a battery's ability to provide current, as well as its absolute energy capacity. </p><dl class="section return"><dt>Returns</dt><dd>The temperature the battery in <b>Kelvin</b>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00195">195</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00216">216</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
 
 </div>
 </div>
@@ -370,7 +401,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="libelec_8h.html#af2b2e6f8adbba0e36a27a194d8746ae6">libelec_remove_user_cb()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00412">412</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00445">445</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
 
 </div>
 </div>
@@ -402,6 +433,8 @@ Functions</h2></td></tr>
 <p>libelec's TRUs are simple devices, whose output voltage always scales in proportion to their input voltage. Thus, they do not provide a stabilized output voltage, but instead depend on the ability of the AC-side generator to supply a stable voltage. A TRU doesn't permit reverse current flow from its output side to the input. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc"></a>ELEC_INV&#160;</td><td class="fielddoc"><p>An inverter is conceptually the opposite of a TRU. It changes DC power into AC power, and optionally also changes the input voltage to a different output voltage. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> </dd></dl>
+</td></tr>
+<tr><td class="fieldname"><a id="a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653"></a>ELEC_XFRMR&#160;</td><td class="fielddoc"><p>A transformer changes the AC voltage on its input into a different AC voltage on its output. The voltage ratio is fixed based on the ratio of the number of turns between the transformer's primary and secondary windings. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0"></a>ELEC_LOAD&#160;</td><td class="fielddoc"><p>A load is a consumer of electrical energy. This can be anything you need it to be. libelec tells you if the load is powered (and how much energy it is consuming), and you then implement your custom systems behaviors based on that energy usage. Loads can either have internal power supplies, or be simple unregulated energy consumers. You can customize all of this behavior to suit your needs. </p>
 </td></tr>
@@ -438,7 +471,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00037">37</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8h_source.html#l00051">51</a> of file <a class="el" href="libelec_8h_source.html">libelec.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +524,7 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>You must NOT register the exact same pre + callback + userinfo pointer combo more than once. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#af2b2e6f8adbba0e36a27a194d8746ae6">libelec_remove_user_cb()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01961">1961</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02048">2048</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -513,7 +546,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The relative state-of-charge of the battery <code>batt</code>. This MUST be a component of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#ab4928792e255853e781d68aceb8f0bfa">libelec_batt_set_chg_rel()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04703">4703</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04938">4938</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -535,7 +568,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The temperature of the battery <code>batt</code> in Kelvin. This MUST be a component of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a7fdef29b9eb03e9bfd1d3016761c32de">libelec_batt_set_temp()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04739">4739</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04974">4974</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -557,7 +590,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The battery temperature callback, which was previously set using <a class="el" href="libelec_8h.html#a68239c16ad42a24d1b758bcbeb5a447d">libelec_batt_set_temp_cb()</a>, or <code>NULL</code> if no callback was set. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a68239c16ad42a24d1b758bcbeb5a447d">libelec_batt_set_temp_cb()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02776">2776</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02933">2933</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -588,7 +621,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the relative state-of-charge of a battery. Due to the temperature-dependent behavior of batteries, libelec uses relative state of charge, rather than absolute energy content. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a08849724c0c89237d4d1acac6e7fb9e5">libelec_batt_get_chg_rel()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04718">4718</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04953">4953</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -625,7 +658,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a67ffe20b0037f75ca1005f84972249cd">libelec_batt_get_temp()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04759">4759</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04994">4994</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -664,7 +697,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a2bf200f8e0393edc5d7b6293eac83217">elec_get_temp_cb_t</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02761">2761</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02918">2918</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -686,7 +719,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the circuit breaker is currently closed, false if it is open. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The passed <code>comp</code> MUST be of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04322">4322</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04569">4569</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -708,7 +741,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The non-dimensional temperature of the circuit breaker's control filament. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The passed <code>comp</code> MUST be of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04337">4337</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04584">4584</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -739,7 +772,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets whether a circuit breaker is current set (closed) or reset (open). </p><dl class="section note"><dt>Note</dt><dd>The passed <code>comp</code> MUST be of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04304">4304</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04551">4551</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -760,7 +793,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Bool indicating if the battery charger is operating normally. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04774">4774</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l05009">5009</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -781,7 +814,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structelec__comp__info__t.html">elec_comp_info_t</a> in use by a particular electrical component in a network. This function never fails, since every electrical component MUST have an associated info structure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02044">2044</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02131">2131</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -818,7 +851,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If found on the network, a pointer to the electrical component. You can then interrogate this component using other libelec functions. If no component of the specified name exists, returns NULL instead. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02060">2060</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02147">2147</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -855,7 +888,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02106">2106</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02194">2194</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -874,9 +907,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The current efficiency of the component <code>comp</code>. This MUST be a component of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> or <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The current efficiency of the component <code>comp</code>. This MUST be a component of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> or <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02548">2548</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02682">2682</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -898,7 +931,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the component is set to failed, false if is not. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#adea94312ecb31d3654c9a02087ff0d4a">libelec_comp_set_failed()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02598">2598</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02755">2755</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -921,6 +954,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> : the charging current (if any)</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the input current on the AC side of the TRU</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the input current on the DC side of the inverter</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the input current to the transformer</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the input current into the power supply of the load. If the load has no input capacitance in its power supply, this will always be equal to the actual current consumption of the load. However, with input capacitance, some input current is also generated by the charging of this input capacitance. The inrush current can actually be quite significant, so you should balance the charging resistance of the power supply carefully against the breaker ratings on the bus.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a> : input current is an approximation of the mechanical load (but expressed in electrical terms as a fake current), which the generator puts on its input drive, accounting for generator efficiency losses. Simply put, the input current is equal to the output current divided by the generator's efficiency.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : always equal to the output current. These components are assumed to have zero resistance, thus resulting in no energy loss for current passing through them. </li>
@@ -929,7 +963,7 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Input current demand also accounts for leakage current due to a simulated short-circuit in the component. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a14f5e153e259bc3dae3ca9436e9583fc">libelec_comp_get_out_amps()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02232">2232</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02323">2323</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -952,13 +986,14 @@ Functions</h2></td></tr>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : these are DC-only devices, so this will always be zero.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the AC frequency on the AC side input of the TRU.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : always zero, since the inverter input is DC.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the frequency of the AC current flowing through the transformer. Both input and output frequency will always be equal to each other.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the AC frequency of the input bus into the load's power supply. If the load is DC, this will always be zero.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a> : always equal to the output frequency (see <a class="el" href="libelec_8h.html#a22ec7eecd61420722ee8159e3e8dcbd0">libelec_comp_get_out_freq()</a>).</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> : always equal to the output frequency. These components do not do anything with AC frequency, and so they simply pass the parameter through. </li>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02403">2403</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02504">2504</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -981,8 +1016,9 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>libelec has no notion of apparent power, power factor or cos-Phi. All power flows are assumed to be completely resistive. As such, input power is simply the product of input voltage and input current. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>While every component has a notion of an input and output power, their physical meaning changes depending on component type:<ul>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> : the charging power flow (if any)</li>
-<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the input power on the AC side of the TRU. This will be higher than the output power on the DC side, because the efficiency losses during rectification and voltage transformation inside of the TRU.</li>
-<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the input power on the DC side of the inverter. This will be higher than the output power on the AC side, because the efficiency losses during inversion and voltage transformation inside of the inverter.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the input power on the AC side of the TRU. This will be higher than the output power on the DC side because of the efficiency losses during rectification and voltage transformation inside of the TRU.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the input power on the DC side of the inverter. This will be higher than the output power on the AC side because of the efficiency losses during inversion and voltage transformation inside of the inverter.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the input power into the transformer. This will be higher than the output power because of the efficiency losses during voltage transformation.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the input power into the power supply of the load.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a> : the mechanical load which the generator causes on its input shaft. You can use this to account for generator-induced engine drag. The input power will always be greater than the generator's electrical output power, because the generator has a sub-100% efficiency during electrical power generation.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a> , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : always equal to the output power. These components are assumed to have zero resistance, thus resulting in no energy loss for power passing through them. </li>
@@ -990,7 +1026,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a57ed6891414e1d9e6a5157cd9451b17f">libelec_comp_get_out_pwr()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02315">2315</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02410">2410</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1013,6 +1049,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> : the charging voltage (if any)</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the input voltage on the AC side of the TRU</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the input voltage on the DC side of the inverter</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the input voltage to the transformer</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the input voltage into the power supply of the load. This will immediately follow the bus voltage to which the load is attached. Please note that simply seeing the voltage drop to zero doesn't mean the load immediately becomes unpowered. If the load has a power supply with non-zero input capacitance, its output voltage out of this power supply will decay more slowly, allowing the load to "bridge" short periods of loss of input power (e.g. during bus contactor switching).</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> : always equal to the output voltage</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : voltage at the input side of the diode. If the input voltage of any source on the input side of the diode is higher than that of any source on the output side, the diode allows current flow from input to output. Otherwise, the diode blocks current flow. </li>
@@ -1020,7 +1057,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#ac639dcb7e1519bef01780548c6ab4ef7">libelec_comp_get_out_volts()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02143">2143</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02232">2232</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1047,7 +1084,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The voltage of the internal power supply imaginary "capacitor" used to model power supply input capacitance. This can be used to estimate the "state of charge" of the power supply's capacitance. If the input voltage into the load is higher than this capacitor voltage, the imaginary capacitor will begin to charge up. If the input voltage is lower than the power supply capacitance voltage, the capacitance will begin to "make up the difference" to the desired energy flow to the load's electrical demand. Loads with no power supply capacitance always return 0. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02470">2470</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02574">2574</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1068,7 +1105,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The number of connections of a particular component. This can be used to dynamically figure out the network structure. You can then retrieve individual connected components using <a class="el" href="libelec_8h.html#ac5eaf88a9d38170760c5abec3c5335d8">libelec_comp_get_conn()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02077">2077</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02164">2164</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1091,6 +1128,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> : the discharging current (if any)</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the output current on the DC side of the TRU</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the output current on the AC side of the inverter</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the output current out of the transformer</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the output current out of the power supply of the load into its internal working components.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a> : output current demand on the generator. This is dictated by the current demands of all downstream components powered by the generator.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a> , <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : always equal to the input current. These components are assumed to have zero resistance, thus resulting in no energy loss for current passing through them. </li>
@@ -1099,7 +1137,7 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Output current demand also accounts for leakage current due to a simulated short-circuit in the component. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#aa6fa78687b569c8951a7498391f0d48a">libelec_comp_get_in_amps()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02268">2268</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02360">2360</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1122,13 +1160,14 @@ Functions</h2></td></tr>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : these are DC-only devices, so this will always be zero.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : always zero, since the TRU performs AC-to-DC rectification.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the AC frequency generated by the inverter.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the frequency of the AC current flowing through the transformer. Both input and output frequency will always be equal to each other.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the AC frequency of the input bus into the load's power supply. If the load is DC, this will always be zero. If the load is unpowered, this remains at the last value to which it was set. You should probably not really rely on this value to do anything sensible.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a> : for AC generators, this is the output frequency of the generator. For DC generators, this is always zero. AC generator frequency behavior depends on the input rpm and stabilization limits defined for the generator in the network definition file.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> : always equal to the input frequency. These components do not do anything with AC frequency, and so they simply pass the parameter through. </li>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02442">2442</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02546">2546</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1151,8 +1190,9 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>libelec has no notion of apparent power, power factor or cos-Phi. All power flows are assumed to be completely resistive. As such, output power is simply the product of output voltage and output current. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>While every component has a notion of an input and output power, their physical meaning changes depending on component type:<ul>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> : the discharging power flow out of the battery. Note that libelec doesn't simulate battery self-discharge. You will want to implement that yourself, by slowly reducing the battery's state of charge (using <a class="el" href="libelec_8h.html#ab4928792e255853e781d68aceb8f0bfa">libelec_batt_set_chg_rel()</a>) over time, according to your battery's behavioral characteristics.</li>
-<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the output power on the DC side of the TRU. This will be lower than the input power on the AC side, because the efficiency losses during rectification and voltage transformation inside of the TRU.</li>
-<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the output power on the AC side of the inverter. This will be lower than the input power on the DC side, because the efficiency losses during inversion and voltage transformation inside of the inverter.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the output power on the DC side of the TRU. This will be lower than the input power on the AC side because of the efficiency losses during rectification and voltage transformation inside of the TRU.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the output power on the AC side of the inverter. This will be lower than the input power on the DC side because of the efficiency losses during inversion and voltage transformation inside of the inverter.</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the output power out of the transformer. This will be lower than the input power because of efficiency losses during voltage transformation.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the output power out of the load's power supply and into the load's internal electronics. If you see this drop to zero, you can be sure that the load is no longer powered (you should use <a class="el" href="libelec_8h.html#a6eb347ad508fe5670c8ef52d3cb524c4">libelec_comp_is_powered()</a> for components which have a <code>MIN_VOLTS</code> value defined, as that communicates intent better than simply checking the output power).</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a> : the electrical power load on the generator, caused by all of its downstream loads. Note that this wiill always be lower than the input power load on the mechanical input of the generator due to efficiency losses.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : always equal to the input power. These components are assumed to have zero resistance, thus resulting in no energy loss for power passing through them. </li>
@@ -1160,7 +1200,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a7f8c6a261d8b0d584d8c86d9ec94c083">libelec_comp_get_in_pwr()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02371">2371</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02469">2469</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1183,6 +1223,7 @@ Functions</h2></td></tr>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> : the voltage the battery puts on the connected bus and which can be used by downstream components to extract energy out of the battery.</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> : the output voltage on the DC side of the TRU</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : the output voltage on the AC side of the inverter</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : the output voltage of the transformer</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba3ccedaacd0d67802d929b7c2bc8b3ca0">ELEC_LOAD</a> : the output voltage out of the power supply of the load. If the load's power supply has no input capacitance, this will immediately follow the input voltage from the bus the load is attached to. However, if the load's power supply has non-zero input capacitance, the output voltage out of this power supply will decay more slowly, allowing the load to "bridge" short periods of loss of input power (e.g. during bus contactor switching).</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba689b6a009aae3393c38f53a9542f81d4">ELEC_GEN</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba5c45cc02e2fdbcb068b60b74041bd000">ELEC_BUS</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebab28539941f12d05a55078fdb24578b3b">ELEC_CB</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0602db354c68545a54696ddb1212a2eb">ELEC_SHUNT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> : always equal to the input voltage</li>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : voltage at the output side of the diode. If the input voltage of any source on the input side of the diode is higher than that of any source on the output side, the diode allows current flow from input to output. Otherwise, the diode blocks current flow. </li>
@@ -1190,7 +1231,7 @@ Functions</h2></td></tr>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a76ceebe0d9768003e540fc9b724a1ca0">libelec_comp_get_in_volts()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02186">2186</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02276">2276</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1212,7 +1253,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the component's short-circuit failure is set, or false if it is not. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a8387883d0e965fa5b7c2fe4301dbc257">libelec_comp_set_shorted()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02632">2632</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02789">2789</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1233,7 +1274,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The userinfo pointer previously passed to <a class="el" href="libelec_8h.html#a0fc1b34d91e2f6641d961e4c2d9176a8">libelec_comp_set_userinfo()</a>. If no userinfo pointer was ever set, returns <code>NULL</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02738">2738</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02895">2895</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1254,12 +1295,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Depending on component type:<ul>
 <li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebac15a7fe5f113d83a29075ddbe72fad0c">ELEC_BATT</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba2fd1e630a3ca462cab4b1eb637265e15">ELEC_DIODE</a> : always return false</li>
-<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> : always returns true</li>
+<li><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba77b7e2e3c29d2384703727340a941be7">ELEC_TRU</a>, <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaa0bb5218d1fa4f14a593373b66b7c9fc">ELEC_INV</a> and <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5ebaf6f997855053dbfe5caddbf155a9f653">ELEC_XFRMR</a> : always returns true</li>
 <li>Any other component type will return true if is an AC component, and false if it is a DC component. </li>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02486">2486</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02590">2590</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1327,7 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02537">2537</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02670">2670</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1320,12 +1361,13 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 <li><code>ELEC_DIODE</code>, <code>ELEC_BUS</code>, <code>ELEC_CB</code>, <code>ELEC_SHUNT</code> and <code>ELEC_TIE</code>: doesn't allow any current to pass through the component.</li>
 <li><code>ELEC_TRU</code>: generates no electrical load on its AC input and provides no voltage on its DC output.</li>
 <li><code>ELEC_INV</code>: generates no electrical load on its DC input and provides no voltage on its AC output.</li>
+<li><code>ELEC_XFRMR</code>: generates no electrical load on its input and provides no voltage on its output.</li>
 <li><code>ELEC_GEN</code>: generates no voltage on its output and requires no mechanical input power.</li>
 <li><code>ELEC_LOAD</code>: draws no electrical current and is permanently unpowered (<a class="el" href="libelec_8h.html#a6eb347ad508fe5670c8ef52d3cb524c4">libelec_comp_is_powered()</a> always returns false). <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a5730df63275dc5fb1f0f48f5df9ff886">libelec_comp_get_failed()</a> </dd></dl>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02585">2585</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02742">2742</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1356,7 +1398,7 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 </div><div class="memdoc">
 <p>Sets a component's short-circuit failure status. Short circuits are simulated by creating a random massive increase in a leakage current entering the component. This energy is not directed to any other connected components, or accounted for in a load's output power, but is rather "lost" to ground. The amount of leakage current is randomized and depends on the component's normal input current flow. It will typically oscillate somewhere between 30-40x the normal current. This should guarantee that any breaker protecting this device will trip in fairly short order. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a6209c3a9d01db2bae1f6465412b489d0">libelec_comp_get_shorted()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02618">2618</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02775">2775</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1387,7 +1429,7 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 </div><div class="memdoc">
 <p>Sets the userinfo pointer of a component. This userinfo pointer is passed to all callbacks (such as those set up using <a class="el" href="libelec_8h.html#a68239c16ad42a24d1b758bcbeb5a447d">libelec_batt_set_temp_cb()</a> or ibelec_gen_set_rpm_cb()) in the second argument of the callback. You can use this information to pass along any extra information to the callbacks that you may need. </p>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02725">2725</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02882">2882</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1432,7 +1474,7 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the network state was reloaded successfully. If an error occurred, false is returned instead. The error reason is logged using libacfutils' logging facility. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01197">1197</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01245">1245</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1453,7 +1495,7 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 </div><div class="memdoc">
 <p>Destroys a libelec network, which was previously loaded using <a class="el" href="libelec_8h.html#a726d387a49134ed486ff6c85967beb79">libelec_new()</a>. You MUST stop the network using <a class="el" href="libelec_8h.html#a494c5d3d0246792f8fb1497572d646d2">libelec_sys_stop()</a> before attempting to destroy it. </p>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01239">1239</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01287">1287</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1478,7 +1520,7 @@ Components of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7
 <dd>
 elec_gen_rpm_cb_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04685">4685</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04920">4920</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1500,7 +1542,7 @@ elec_gen_rpm_cb_t </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The generator rpm callback, which was previously set using <a class="el" href="libelec_8h.html#a1578efa53417a927d54861bee07e0dff">libelec_gen_set_rpm_cb()</a>, or <code>NULL</code> if no callback was set. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a1578efa53417a927d54861bee07e0dff">libelec_gen_set_rpm_cb()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02813">2813</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02970">2970</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1531,7 +1573,7 @@ elec_gen_rpm_cb_t </dd></dl>
 </div><div class="memdoc">
 <p>Same as <a class="el" href="libelec_8h.html#abfd48afbf1c48663376f65ec5ee2e217">libelec_gen_set_random_volts()</a>, but operates on an AC generator's frequency stability. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#abfd48afbf1c48663376f65ec5ee2e217">libelec_gen_set_random_volts()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02707">2707</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02864">2864</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1570,7 +1612,7 @@ elec_gen_rpm_cb_t </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The new random voltage target of the generator. If <code>stddev</code> was zero, returns the nominal voltage of the generator. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a0dca4b7a8e29729454e77c38f0e8af36">libelec_gen_set_random_freq()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02692">2692</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02849">2849</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1609,7 +1651,7 @@ elec_gen_rpm_cb_t </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Despite its name, the units of <code>rpm</code> are arbitrary. You can use whatever units you prefer. You simply need to be consistent with the <code>EXC_RPM</code>, <code>MIN_RPM</code> and <code>MAX_RPM</code> stanzas when defining the generator in the config file. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#aa2cf037b5f6c1210126e8a9d2e06c5cf">libelec_gen_get_rpm()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04658">4658</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04893">4893</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1650,7 +1692,7 @@ elec_gen_rpm_cb_t </dd></dl>
 <dd>
 <a class="el" href="libelec_8h.html#ae82d351d3ae6467eeb3c846e9e444b7c">libelec_gen_set_rpm()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02799">2799</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02956">2956</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1729,7 @@ elec_gen_rpm_cb_t </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00520">520</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00539">539</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1709,7 +1751,7 @@ elec_gen_rpm_cb_t </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The load demand callback, which was previously set using <a class="el" href="libelec_8h.html#a6e14c40eb12b728b5e7265a65380e69f">libelec_load_set_load_cb()</a>, or <code>NULL</code> if no callback was set. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a1f65b9ac6872d67acea23c29a3939c3d">elec_get_load_cb_t</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02850">2850</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l03007">3007</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1790,7 @@ elec_gen_rpm_cb_t </dd></dl>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a1f65b9ac6872d67acea23c29a3939c3d">elec_get_load_cb_t</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02836">2836</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02993">2993</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1790,7 +1832,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 <dd>
 <a class="el" href="libelec_8h.html#a61f50cc47cb6e4011d9d46ba5ef99eed">libelec_comp2info()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00700">700</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00737">737</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1834,7 +1876,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04798">4798</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l05033">5033</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1877,7 +1919,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </div><div class="memdoc">
 <p>Removes a custom user callback, which was previously registered using <a class="el" href="libelec_8h.html#a855f4302b48a8ec5131ccb7dd794f3bb">libelec_add_user_cb()</a>. You must pass the exact same combination of <code>pre</code>, <code>cb</code> and <code>userinfo</code> as was previously used during the registration. The callback MUST exist, otherwise an assertion failure is triggered. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a855f4302b48a8ec5131ccb7dd794f3bb">libelec_add_user_cb()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01989">1989</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02076">2076</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1922,7 +1964,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01157">1157</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01205">1205</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1943,7 +1985,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </div><div class="memdoc">
 <p>Performs a validation check on the electrical network to see if it is ready for start. </p><dl class="section return"><dt>Returns</dt><dd>True if the network has passed validation checks and is ready to be started. If the validation checks failed, returns false instead and logs the error reason to the logging subsystem. If the network is already started, always returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00903">903</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00951">951</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1965,7 +2007,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 <dl class="section return"><dt>Returns</dt><dd>The current simulation time factor. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a1dd482ab4f0bc8b029a4bd871f11f48d">libelec_sys_set_time_factor()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01033">1033</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01081">1081</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -1986,7 +2028,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>True if the network has been started (<a class="el" href="libelec_8h.html#ae89af50399d40bf3d501c44d6200d9aa">libelec_sys_start()</a> has been called successfully), false if the network is stopped. Please note that this doesn't detect a paused state of the simulator. When the host simulator is paused, the network simulation doesn't "stop", it simply pauses. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00888">888</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00936">936</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2025,7 +2067,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </dl>
 <dl class="section note"><dt>Note</dt><dd>Faster simulation rates simply speed up the rate at which libelec performs its physics calculations. This comes with an inherent CPU cost. If running real-time libelec's worker thread consumes 5% of one CPU core, then running it with <code>time_factor=10</code> will consume 50% of one CPU core. libelec cannot run faster than a single CPU core on the machine, imposing a hard cap on the maximum <code>time_factor</code> that can be effectively followed. If the CPU cannot keep up, libelec will appear to be lagging behind the desired simulation rate. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00996">996</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01044">1044</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2049,7 +2091,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 <p>Since there is usually a significant delay between your aircraft loading into the simulator and the simulation actually starting up, you should delay starting the electrical network until the first simulator frame.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if starting the network succeeded, or false if there was a network configuration error. To allow for more dynamic reconfiguration of the network </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00929">929</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00977">977</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2070,7 +2112,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </div><div class="memdoc">
 <p>Stops the electrical network after it has been started using <a class="el" href="libelec_8h.html#ae89af50399d40bf3d501c44d6200d9aa">libelec_sys_start()</a>. If the network was already stopped, this function does nothing. </p><dl class="section note"><dt>Note</dt><dd>You MUST stop the network manually using <a class="el" href="libelec_8h.html#a494c5d3d0246792f8fb1497572d646d2">libelec_sys_stop()</a> prior to calling <a class="el" href="libelec_8h.html#ae11d4ec058cda24f00c6b8470227a452">libelec_destroy()</a> to free the network. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l00955">955</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l01003">1003</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2115,7 +2157,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if all of the buses specified in the argument list are tied. If even a single one of the buses is untied, this function returns false. In addition, if <code>exhaustive</code> is set to true, this function returns <code>false</code> if the argument list doesn't mention all of the buses currently tied (meaning, the argument list must be an exhaustive list of buses which are currently tied). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04590">4590</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04825">4825</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2143,12 +2185,12 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 <dl class="section return"><dt>Returns</dt><dd>True if all endpoints of the tie are currently tied together, or false otherwise. This is useful for ties which you are utilizing as a simple switch. Use <a class="el" href="libelec_8h.html#aae3a4c58ca63bb6770816a2c4555cfdc">libelec_tie_set_all()</a> to either open and close the switch, and <a class="el" href="libelec_8h.html#aef200f9babf90f263acb7059d9e74077">libelec_tie_get_all()</a> to examine if the switch is open or closed. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#aae3a4c58ca63bb6770816a2c4555cfdc">libelec_tie_set_all()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04497">4497</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04738">4738</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
-<a id="afb531d6f8002d401dc243e38d7590371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb531d6f8002d401dc243e38d7590371">&#9670;&nbsp;</a></span>libelec_tie_get_list()</h2>
+<a id="ac1257b7294dd1aeade3baf98f475d560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1257b7294dd1aeade3baf98f475d560">&#9670;&nbsp;</a></span>libelec_tie_get_list()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2169,7 +2211,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">elec_comp_t *&#160;</td>
-          <td class="paramname"><em>bus_list</em>[static cap]&#160;</td>
+          <td class="paramname"><em>bus_list</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2189,7 +2231,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 <dl class="section return"><dt>Returns</dt><dd>The actual number of buses filled into <code>bus_list</code>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a81aebc83ce320bc7c4e4b0eefd8a8353">libelec_tie_get_num_buses()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04532">4532</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04768">4768</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2208,10 +2250,10 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The total number of bus connections in tie <code>comp</code>. This MUST be a component of <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a>. The returned number DOESN'T signify that that number of buses are currently tied together, only that the tie is connected to this number of buses and CAN be tied together. Use <a class="el" href="libelec_8h.html#afb531d6f8002d401dc243e38d7590371">libelec_tie_get_list()</a> to determine the exact buses which are currently tied together. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#afb531d6f8002d401dc243e38d7590371">libelec_tie_get_list()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of bus connections in tie <code>comp</code>. This MUST be a component of <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a>. The returned number DOESN'T signify that that number of buses are currently tied together, only that the tie is connected to this number of buses and CAN be tied together. Use <a class="el" href="libelec_8h.html#ac1257b7294dd1aeade3baf98f475d560">libelec_tie_get_list()</a> to determine the exact buses which are currently tied together. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#ac1257b7294dd1aeade3baf98f475d560">libelec_tie_get_list()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04564">4564</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04799">4799</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2248,7 +2290,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </div><div class="memdoc">
 <p>Same as <a class="el" href="libelec_8h.html#a7d6a4fd0ffa7fd5dba45d70b53954285">libelec_tie_get()</a>, but takes a <code>va_list</code> argument for the bus list, to allow for nesting inside of other variadic functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04609">4609</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04844">4844</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2277,7 +2319,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A convenience variadic version of <a class="el" href="libelec_8h.html#a750bf9de36462c5c45c9811b001e3ca7">libelec_tie_set_list()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>A convenience variadic version of <a class="el" href="libelec_8h.html#aa6f876cd9322f705a2d7c76f43150ef3">libelec_tie_set_list()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comp</td><td>The tie to reconfigure. This must be of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a>. </td></tr>
     <tr><td class="paramname">...</td><td>A variadic list of elec_comp_t pointers to buses, which should be tied together. This list MUST be terminated by a single <code>NULL</code> pointer (sentinel). Any buses which the tie is connected to but are not mentioned on this list become untied. </td></tr>
@@ -2285,7 +2327,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04418">4418</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04659">4659</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2314,7 +2356,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Convenience function, which allows either tying all connections of an <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> component, or untying all of them. This is equivalent to calling <a class="el" href="libelec_8h.html#a750bf9de36462c5c45c9811b001e3ca7">libelec_tie_set_list()</a> with a list of all buses to which the tie is connected. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Convenience function, which allows either tying all connections of an <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> component, or untying all of them. This is equivalent to calling <a class="el" href="libelec_8h.html#aa6f876cd9322f705a2d7c76f43150ef3">libelec_tie_set_list()</a> with a list of all buses to which the tie is connected. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comp</td><td>The tie to reconfigure. This must be of type <a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a>. </td></tr>
     <tr><td class="paramname">tied</td><td>Flag indicating whether all endpoints of the tie should be tied, or untied. </td></tr>
@@ -2323,12 +2365,12 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#aef200f9babf90f263acb7059d9e74077">libelec_tie_get_all()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04472">4472</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04713">4713</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
-<a id="a750bf9de36462c5c45c9811b001e3ca7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a750bf9de36462c5c45c9811b001e3ca7">&#9670;&nbsp;</a></span>libelec_tie_set_list()</h2>
+<a id="aa6f876cd9322f705a2d7c76f43150ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f876cd9322f705a2d7c76f43150ef3">&#9670;&nbsp;</a></span>libelec_tie_set_list()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2349,7 +2391,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">elec_comp_t *const&#160;</td>
-          <td class="paramname"><em>bus_list</em>[list_len]&#160;</td>
+          <td class="paramname"><em>bus_list</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2368,7 +2410,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="libelec_8h.html#a9d532867324163e8b840aef7b641e5eba0a8207368959c7a9bcb8099fac883c46">ELEC_TIE</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04363">4363</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04605">4605</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
@@ -2404,12 +2446,12 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04435">4435</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l04676">4676</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
-<a id="ad8ff9966fbe4959059c09593aae5684c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8ff9966fbe4959059c09593aae5684c">&#9670;&nbsp;</a></span>libelec_walk_comps()</h2>
+<a id="a3af5550a08af3826a7ccd5c3fb346ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af5550a08af3826a7ccd5c3fb346ef3">&#9670;&nbsp;</a></span>libelec_walk_comps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2417,7 +2459,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
         <tr>
           <td class="memname">void libelec_walk_comps </td>
           <td>(</td>
-          <td class="paramtype">elec_sys_t *&#160;</td>
+          <td class="paramtype">const elec_sys_t *&#160;</td>
           <td class="paramname"><em>sys</em>, </td>
         </tr>
         <tr>
@@ -2447,7 +2489,7 @@ If an error occurred, this function returns NULL instead. You MUST be prepared t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02021">2021</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="libelec_8c_source.html#l02108">2108</a> of file <a class="el" href="libelec_8c_source.html">libelec.c</a>.</p>
 
 </div>
 </div>
