@@ -957,7 +957,7 @@ $(function() {
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00890"></a><span class="lineno"><a class="line" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">  890</a></span>&#160;<a class="code" href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a>(avl_tree_t *tree)</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;{</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(tree);</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    LACF_UNUSED(tree);</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(tree);</div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(tree-&gt;avl_numnodes == 0);</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(tree-&gt;avl_root == NULL);</div>
@@ -1119,7 +1119,6 @@ $(function() {
 <div class="ttc" id="aavl_8h_html_ae7ff5f2a20f926baa5bad8c09326f373"><div class="ttname"><a href="avl_8h.html#ae7ff5f2a20f926baa5bad8c09326f373">avl_update_gt</a></div><div class="ttdeci">bool_t avl_update_gt(avl_tree_t *, void *)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00827">avl.c:827</a></div></div>
 <div class="ttc" id="aavl_8h_html_af07adf796c231b360ea20c33dde96ea6"><div class="ttname"><a href="avl_8h.html#af07adf796c231b360ea20c33dde96ea6">avl_destroy</a></div><div class="ttdeci">void avl_destroy(avl_tree_t *tree)</div><div class="ttdef"><b>Definition:</b> <a href="avl_8c_source.html#l00890">avl.c:890</a></div></div>
 <div class="ttc" id="aavl_8h_html_af6054cfc4f01e5c9c76b1c8fc1e84d77"><div class="ttname"><a href="avl_8h.html#af6054cfc4f01e5c9c76b1c8fc1e84d77">AVL_BEFORE</a></div><div class="ttdeci">#define AVL_BEFORE</div><div class="ttdef"><b>Definition:</b> <a href="avl_8h_source.html#l00125">avl.h:125</a></div></div>
-<div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00088">core.h:88</a></div></div>
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

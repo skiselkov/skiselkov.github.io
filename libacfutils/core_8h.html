@@ -99,6 +99,9 @@ Macros</h2></td></tr>
 <tr class="separator:acf3209f083788b8c9ebfabd7a1fdb48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86d500a34c624c2cae56bc25a31b12f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)&#160;&#160;&#160;(void)(x)</td></tr>
 <tr class="separator:a86d500a34c624c2cae56bc25a31b12f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3100dcac6a11a4422a77289b817782a1"><td class="memItemLeft" align="right" valign="top"><a id="a3100dcac6a11a4422a77289b817782a1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LACF_UNUSED</b>(x)&#160;&#160;&#160;(void)(x)</td></tr>
+<tr class="separator:a3100dcac6a11a4422a77289b817782a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab83cc83b0ae0d87c4236894ff86a3600"><td class="memItemLeft" align="right" valign="top"><a id="ab83cc83b0ae0d87c4236894ff86a3600"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ACFSYM</b>(__sym__)&#160;&#160;&#160;__libacfutils_ ## __sym__</td></tr>
 <tr class="separator:ab83cc83b0ae0d87c4236894ff86a3600"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,7 +152,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Given a fixed-size array, evaluates to the number of elements in the array. Useful for automatically determining the capacity of an array for functions which take a count-of-elements argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00145">145</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00148">148</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>
@@ -176,7 +179,7 @@ Variables</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment --><p>Calls <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a> on <code>ptr</code> and also then sets the pointer to <code>NULL</code> to force a null-pointer-dereference and hard crash if an attempt is made to use the pointer after the <code>LACF_DESTROY</code> operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00132">132</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00135">135</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +217,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Attribute which stops a compiler from complaining when a variable isn't used. </p>
 
-<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00088">88</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="core_8h_source.html#l00089">89</a> of file <a class="el" href="core_8h_source.html">core.h</a>.</p>
 
 </div>
 </div>

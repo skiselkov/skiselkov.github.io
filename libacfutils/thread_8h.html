@@ -103,7 +103,7 @@ Include dependency graph for thread.h:</div>
 <area shape="rect" href="time_8h_source.html" title=" " alt="" coords="93,229,157,256"/>
 <area shape="rect" href="list_8h.html" title=" " alt="" coords="1250,80,1305,107"/>
 <area shape="rect" href="log_8h.html" title=" " alt="" coords="281,379,335,405"/>
-<area shape="rect" href="sysmacros_8h_source.html" title=" " alt="" coords="541,453,645,480"/>
+<area shape="rect" href="sysmacros_8h.html" title=" " alt="" coords="541,453,645,480"/>
 <area shape="rect" title=" " alt="" coords="144,453,219,480"/>
 <area shape="rect" title=" " alt="" coords="243,453,365,480"/>
 <area shape="rect" href="types_8h_source.html" title=" " alt="" coords="550,528,621,555"/>
@@ -198,6 +198,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8c472da748aed9d5a2214284bf704475"><td class="memItemLeft" align="right" valign="top"><a id="a8c472da748aed9d5a2214284bf704475"></a>
+static bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>thread_equal</b> (<a class="el" href="thread_8h.html#a9a1cbe064d0b759f6e73df45d51488be">thread_id_t</a> tid1, <a class="el" href="thread_8h.html#a9a1cbe064d0b759f6e73df45d51488be">thread_id_t</a> tid2)</td></tr>
+<tr class="separator:a8c472da748aed9d5a2214284bf704475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad740bab5dd6dd968f1b026c4b3cbc826"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mtx)</td></tr>
 <tr class="separator:ad740bab5dd6dd968f1b026c4b3cbc826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a786e2308c77efa9600eaa81522c1ab32"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mtx)</td></tr>
@@ -216,8 +219,8 @@ Functions</h2></td></tr>
 <tr class="separator:aee84e92c0685431cf140a4cbf10842cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedc8471978120bbf92d4560bf1496103"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#aedc8471978120bbf92d4560bf1496103">lacf_threads_fini</a> (void)</td></tr>
 <tr class="separator:aedc8471978120bbf92d4560bf1496103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79a0e2b593d97acacc597244ecd5ae9c"><td class="memItemLeft" align="right" valign="top">static DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#a79a0e2b593d97acacc597244ecd5ae9c">_lacf_thread_start_routine</a> (void *arg)</td></tr>
-<tr class="separator:a79a0e2b593d97acacc597244ecd5ae9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0c67fc8f2d8d8eb9528a65ae109ad2"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#a5a0c67fc8f2d8d8eb9528a65ae109ad2">lacf_thread_start_routine</a> (void *arg)</td></tr>
+<tr class="separator:a5a0c67fc8f2d8d8eb9528a65ae109ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39b5159e92fa0e7f699717c49777508d"><td class="memItemLeft" align="right" valign="top">static bool_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#a39b5159e92fa0e7f699717c49777508d">lacf_thread_create</a> (<a class="el" href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a> *thrp, void(*proc)(void *), void *arg, const char *filename, int linenum)</td></tr>
 <tr class="separator:a39b5159e92fa0e7f699717c49777508d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a65ac5862e099f0e7812957d43a3a1c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thread_8h.html#a7a65ac5862e099f0e7812957d43a3a1c">thread_join</a> (<a class="el" href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a> *thrp)</td></tr>
@@ -279,14 +282,14 @@ Thread Handling</h2>
 <p>Example of how to create a thread: </p><div class="fragment"><div class="line"><a class="code" href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a> my_thread;</div>
 <div class="line"><span class="keywordflow">if</span> (!<a class="code" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create</a>(&amp;my_thread, thread_main_func, thread_arg))</div>
 <div class="line">    fprintf(stderr, <span class="stringliteral">&quot;thread create failed!\n&quot;</span>);</div>
-<div class="ttc" id="athread_8h_html_ab473f076e05d966f00b78ecb88c8f357"><div class="ttname"><a href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a></div><div class="ttdeci">HANDLE thread_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00382">thread.h:382</a></div></div>
-<div class="ttc" id="athread_8h_html_af786b659a08ce46cf82d1ff34e850117"><div class="ttname"><a href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create</a></div><div class="ttdeci">#define thread_create(thrp, start_proc, arg)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00184">thread.h:184</a></div></div>
+<div class="ttc" id="athread_8h_html_ab473f076e05d966f00b78ecb88c8f357"><div class="ttname"><a href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a></div><div class="ttdeci">HANDLE thread_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00393">thread.h:393</a></div></div>
+<div class="ttc" id="athread_8h_html_af786b659a08ce46cf82d1ff34e850117"><div class="ttname"><a href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create</a></div><div class="ttdeci">#define thread_create(thrp, start_proc, arg)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00189">thread.h:189</a></div></div>
 </div><!-- fragment --><p> Example of how to wait for a thread to exit: </p><div class="fragment"><div class="line">   <a class="code" href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a> my_thread;</div>
 <div class="line">   <a class="code" href="thread_8h.html#a7a65ac5862e099f0e7812957d43a3a1c">thread_join</a>(my_thread);</div>
 <div class="line">   <span class="comment">// ... thread disposed of, no need for further cleanup ...</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">## Locking</span></div>
-<div class="ttc" id="athread_8h_html_a7a65ac5862e099f0e7812957d43a3a1c"><div class="ttname"><a href="thread_8h.html#a7a65ac5862e099f0e7812957d43a3a1c">thread_join</a></div><div class="ttdeci">static void thread_join(thread_t *thrp)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00829">thread.h:829</a></div></div>
+<div class="ttc" id="athread_8h_html_a7a65ac5862e099f0e7812957d43a3a1c"><div class="ttname"><a href="thread_8h.html#a7a65ac5862e099f0e7812957d43a3a1c">thread_join</a></div><div class="ttdeci">static void thread_join(thread_t *thrp)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00836">thread.h:836</a></div></div>
 </div><!-- fragment --><p> Example of how to use a <a class="el" href="structmutex__t.html">mutex_t</a>: </p><div class="fragment"><div class="line">   <a class="code" href="structmutex__t.html">mutex_t</a> my_lock;                <span class="comment">// the lock object itself</span></div>
 <div class="line">   <a class="code" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a>(&amp;my_lock);           <span class="comment">// create the lock</span></div>
 <div class="line">   <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;my_lock);          <span class="comment">// grab the lock</span></div>
@@ -295,11 +298,11 @@ Thread Handling</h2>
 <div class="line">   <a class="code" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a>(&amp;my_lock);        <span class="comment">// free the lock</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">## Condition Variables</span></div>
-<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00402">thread.h:402</a></div></div>
-<div class="ttc" id="athread_8h_html_a786e2308c77efa9600eaa81522c1ab32"><div class="ttname"><a href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a></div><div class="ttdeci">static void mutex_destroy(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00476">thread.h:476</a></div></div>
-<div class="ttc" id="athread_8h_html_a7c7c57534b154632f3ee43b3af22abe2"><div class="ttname"><a href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a></div><div class="ttdeci">static void mutex_enter(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00507">thread.h:507</a></div></div>
-<div class="ttc" id="athread_8h_html_a9147646b7eef9f977404c4192340442f"><div class="ttname"><a href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a></div><div class="ttdeci">static void mutex_exit(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00533">thread.h:533</a></div></div>
-<div class="ttc" id="athread_8h_html_ad740bab5dd6dd968f1b026c4b3cbc826"><div class="ttname"><a href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a></div><div class="ttdeci">static void mutex_init(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00465">thread.h:465</a></div></div>
+<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00413">thread.h:413</a></div></div>
+<div class="ttc" id="athread_8h_html_a786e2308c77efa9600eaa81522c1ab32"><div class="ttname"><a href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a></div><div class="ttdeci">static void mutex_destroy(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00499">thread.h:499</a></div></div>
+<div class="ttc" id="athread_8h_html_a7c7c57534b154632f3ee43b3af22abe2"><div class="ttname"><a href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a></div><div class="ttdeci">static void mutex_enter(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00530">thread.h:530</a></div></div>
+<div class="ttc" id="athread_8h_html_a9147646b7eef9f977404c4192340442f"><div class="ttname"><a href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a></div><div class="ttdeci">static void mutex_exit(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00556">thread.h:556</a></div></div>
+<div class="ttc" id="athread_8h_html_ad740bab5dd6dd968f1b026c4b3cbc826"><div class="ttname"><a href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a></div><div class="ttdeci">static void mutex_init(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00488">thread.h:488</a></div></div>
 </div><!-- fragment --><p> Example of how to use a condvar_t: </p><div class="fragment"><div class="line"><a class="code" href="structmutex__t.html">mutex_t</a> my_lock;</div>
 <div class="line"><a class="code" href="thread_8h.html#a0ab38838d7ef7332e8cced210141e72c">condvar_t</a> my_cv;</div>
 <div class="line"> </div>
@@ -319,10 +322,10 @@ Thread Handling</h2>
 <div class="line">                        <span class="comment">// to be signalled</span></div>
 <div class="line">    <span class="comment">// ... condition fulfilled, use the resource ...</span></div>
 <div class="line">    <a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;my_lock);           <span class="comment">// release the lock</span></div>
-<div class="ttc" id="athread_8h_html_a0ab38838d7ef7332e8cced210141e72c"><div class="ttname"><a href="thread_8h.html#a0ab38838d7ef7332e8cced210141e72c">condvar_t</a></div><div class="ttdeci">CONDITION_VARIABLE condvar_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00454">thread.h:454</a></div></div>
-<div class="ttc" id="athread_8h_html_a827d83b9b8c009b1f2c791b88190fdfd"><div class="ttname"><a href="thread_8h.html#a827d83b9b8c009b1f2c791b88190fdfd">cv_init</a></div><div class="ttdeci">static void cv_init(condvar_t *cv)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00919">thread.h:919</a></div></div>
-<div class="ttc" id="athread_8h_html_ab61a866c66b3a177a5ef1b31f1fc7ed1"><div class="ttname"><a href="thread_8h.html#ab61a866c66b3a177a5ef1b31f1fc7ed1">cv_wait</a></div><div class="ttdeci">static void cv_wait(condvar_t *cv, mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00861">thread.h:861</a></div></div>
-<div class="ttc" id="athread_8h_html_ae146473511da0640f3292e7b0b43d1a6"><div class="ttname"><a href="thread_8h.html#ae146473511da0640f3292e7b0b43d1a6">cv_broadcast</a></div><div class="ttdeci">static void cv_broadcast(condvar_t *cv)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00953">thread.h:953</a></div></div>
+<div class="ttc" id="athread_8h_html_a0ab38838d7ef7332e8cced210141e72c"><div class="ttname"><a href="thread_8h.html#a0ab38838d7ef7332e8cced210141e72c">condvar_t</a></div><div class="ttdeci">CONDITION_VARIABLE condvar_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00465">thread.h:465</a></div></div>
+<div class="ttc" id="athread_8h_html_a827d83b9b8c009b1f2c791b88190fdfd"><div class="ttname"><a href="thread_8h.html#a827d83b9b8c009b1f2c791b88190fdfd">cv_init</a></div><div class="ttdeci">static void cv_init(condvar_t *cv)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00926">thread.h:926</a></div></div>
+<div class="ttc" id="athread_8h_html_ab61a866c66b3a177a5ef1b31f1fc7ed1"><div class="ttname"><a href="thread_8h.html#ab61a866c66b3a177a5ef1b31f1fc7ed1">cv_wait</a></div><div class="ttdeci">static void cv_wait(condvar_t *cv, mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00868">thread.h:868</a></div></div>
+<div class="ttc" id="athread_8h_html_ae146473511da0640f3292e7b0b43d1a6"><div class="ttname"><a href="thread_8h.html#ae146473511da0640f3292e7b0b43d1a6">cv_broadcast</a></div><div class="ttdeci">static void cv_broadcast(condvar_t *cv)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00960">thread.h:960</a></div></div>
 </div><!-- fragment --><p> You can also performed a "timed" wait on a CV using <a class="el" href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait()</a>. The function will exit when either the condition has been signalled, or the timer has expired. The return value of the function indicates whether the condition was signalled before the timer expired (returns zero), or if the wait timed out (returns ETIMEDOUT) or another error occurred (returns -1). </p><div class="fragment"><div class="line"><a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;my_lock);          <span class="comment">// grab the lock</span></div>
 <div class="line"><span class="comment">// Wait for the CV to be signalled. Time argument is an</span></div>
 <div class="line"><span class="comment">// absolute time as returned by the &#39;microclock&#39; function +</span></div>
@@ -336,7 +339,7 @@ Thread Handling</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="line"><a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;my_lock);           <span class="comment">// release the lock</span></div>
-<div class="ttc" id="athread_8h_html_acef27d2f99d996e8b84a85bd43cfd5de"><div class="ttname"><a href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait</a></div><div class="ttdeci">static int cv_timedwait(condvar_t *cv, mutex_t *mtx, uint64_t limit)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00891">thread.h:891</a></div></div>
+<div class="ttc" id="athread_8h_html_acef27d2f99d996e8b84a85bd43cfd5de"><div class="ttname"><a href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait</a></div><div class="ttdeci">static int cv_timedwait(condvar_t *cv, mutex_t *mtx, uint64_t limit)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00898">thread.h:898</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 Atomics</h2>
 <p>The atomic32_t and atomic64_t types describe signed 32- and 64-bit integers respectively, which are suitable for being passed to the relevant <code>atomic_*</code> functions. Example of how use an atomic function: </p><div class="fragment"><div class="line"><a class="code" href="thread_8h.html#a76001c2c78446302a9aa4ad103d74116">atomic32_t</a> my_value;       <span class="comment">// declare an atomic 32-bit signed int</span></div>
@@ -344,11 +347,11 @@ Atomics</h2>
 <div class="line"><a class="code" href="thread_8h.html#aa3b5e21091a75e0e75cfca49c7f01598">atomic_inc_32</a>(&amp;my_value);      <span class="comment">// increment integer atomically</span></div>
 <div class="line"><a class="code" href="thread_8h.html#a21b7a2b69f112515950641b4e656dfa9">atomic_dec_32</a>(&amp;my_value);      <span class="comment">// decrement integer atomically</span></div>
 <div class="line"><a class="code" href="thread_8h.html#a853b82617fd36250fb02c111dacd8641">atomic_add_32</a>(&amp;my_value, -352);    <span class="comment">// add a value to the atomic integer</span></div>
-<div class="ttc" id="athread_8h_html_a21b7a2b69f112515950641b4e656dfa9"><div class="ttname"><a href="thread_8h.html#a21b7a2b69f112515950641b4e656dfa9">atomic_dec_32</a></div><div class="ttdeci">#define atomic_dec_32(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00311">thread.h:311</a></div></div>
-<div class="ttc" id="athread_8h_html_a76001c2c78446302a9aa4ad103d74116"><div class="ttname"><a href="thread_8h.html#a76001c2c78446302a9aa4ad103d74116">atomic32_t</a></div><div class="ttdeci">#define atomic32_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00309">thread.h:309</a></div></div>
-<div class="ttc" id="athread_8h_html_a853b82617fd36250fb02c111dacd8641"><div class="ttname"><a href="thread_8h.html#a853b82617fd36250fb02c111dacd8641">atomic_add_32</a></div><div class="ttdeci">#define atomic_add_32(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00312">thread.h:312</a></div></div>
-<div class="ttc" id="athread_8h_html_aa3b5e21091a75e0e75cfca49c7f01598"><div class="ttname"><a href="thread_8h.html#aa3b5e21091a75e0e75cfca49c7f01598">atomic_inc_32</a></div><div class="ttdeci">#define atomic_inc_32(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00310">thread.h:310</a></div></div>
-<div class="ttc" id="athread_8h_html_ad49900de1ae7bda860e67a808129e589"><div class="ttname"><a href="thread_8h.html#ad49900de1ae7bda860e67a808129e589">atomic_set_32</a></div><div class="ttdeci">#define atomic_set_32(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00313">thread.h:313</a></div></div>
+<div class="ttc" id="athread_8h_html_a21b7a2b69f112515950641b4e656dfa9"><div class="ttname"><a href="thread_8h.html#a21b7a2b69f112515950641b4e656dfa9">atomic_dec_32</a></div><div class="ttdeci">#define atomic_dec_32(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00316">thread.h:316</a></div></div>
+<div class="ttc" id="athread_8h_html_a76001c2c78446302a9aa4ad103d74116"><div class="ttname"><a href="thread_8h.html#a76001c2c78446302a9aa4ad103d74116">atomic32_t</a></div><div class="ttdeci">#define atomic32_t</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00314">thread.h:314</a></div></div>
+<div class="ttc" id="athread_8h_html_a853b82617fd36250fb02c111dacd8641"><div class="ttname"><a href="thread_8h.html#a853b82617fd36250fb02c111dacd8641">atomic_add_32</a></div><div class="ttdeci">#define atomic_add_32(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00317">thread.h:317</a></div></div>
+<div class="ttc" id="athread_8h_html_aa3b5e21091a75e0e75cfca49c7f01598"><div class="ttname"><a href="thread_8h.html#aa3b5e21091a75e0e75cfca49c7f01598">atomic_inc_32</a></div><div class="ttdeci">#define atomic_inc_32(x)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00315">thread.h:315</a></div></div>
+<div class="ttc" id="athread_8h_html_ad49900de1ae7bda860e67a808129e589"><div class="ttname"><a href="thread_8h.html#ad49900de1ae7bda860e67a808129e589">atomic_set_32</a></div><div class="ttdeci">#define atomic_set_32(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00318">thread.h:318</a></div></div>
 </div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -371,7 +374,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#ad2be31cac0a52c8d012ce5e6f387a2e2">ASSERT_MUTEX_NOT_HELD()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01221">1221</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01228">1228</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -394,7 +397,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#a5e863e9ba8b50eafe4f2b3d23bcbe7c0">ASSERT_MUTEX_HELD()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01222">1222</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01229">1229</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -411,7 +414,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Atomic signed 32-bit integer. You must use this type with the <code>atomic_*_32()</code> family of functions, such as <a class="el" href="thread_8h.html#aa3b5e21091a75e0e75cfca49c7f01598">atomic_inc_32()</a>, <a class="el" href="thread_8h.html#a21b7a2b69f112515950641b4e656dfa9">atomic_dec_32()</a>, <a class="el" href="thread_8h.html#ad49900de1ae7bda860e67a808129e589">atomic_set_32()</a> and <a class="el" href="thread_8h.html#a853b82617fd36250fb02c111dacd8641">atomic_add_32()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00309">309</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00314">314</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -428,7 +431,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Atomic signed 64-bit integer. You must use this type with the <code>atomic_*_64()</code> family of functions, such as <a class="el" href="thread_8h.html#afe103fb4cb042d1c0754af99bd7d2c99">atomic_inc_64()</a>, <a class="el" href="thread_8h.html#a4d765d86950dcff9fb10fcd6b0a5527c">atomic_dec_64()</a>, <a class="el" href="thread_8h.html#a6851805657330c5c775a7051c93c876c">atomic_set_64()</a> and <a class="el" href="thread_8h.html#aefe595a4cd13046f1241a36c6e43d668">atomic_add_64()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00314">314</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00319">319</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +468,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00312">312</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00317">317</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -502,7 +505,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00317">317</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00322">322</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -528,7 +531,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00311">311</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00316">316</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -554,7 +557,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00316">316</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00321">321</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -580,7 +583,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00310">310</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00315">315</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -606,7 +609,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00315">315</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00320">320</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -643,7 +646,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00313">313</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00318">318</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -680,7 +683,7 @@ Atomics</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00318">318</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00323">323</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -700,7 +703,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00457">457</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00468">468</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -720,7 +723,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#ac9686d1e1b5e62a2ccbab471d8cccf64">curthread</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00456">456</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00467">467</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -758,7 +761,7 @@ Atomics</h2>
 <b>Value:</b><div class="fragment"><div class="line">    <a class="code" href="thread_8h.html#a39b5159e92fa0e7f699717c49777508d">lacf_thread_create</a>((thrp), (start_proc), (arg), \</div>
 <div class="line">        <a class="code" href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a>(__FILE__), __LINE__)</div>
 <div class="ttc" id="alog_8h_html_a02a8f73c9408ca73f31f9d97e872b150"><div class="ttname"><a href="log_8h.html#a02a8f73c9408ca73f31f9d97e872b150">log_basename</a></div><div class="ttdeci">#define log_basename(f)</div><div class="ttdef"><b>Definition:</b> <a href="log_8h_source.html#l00089">log.h:89</a></div></div>
-<div class="ttc" id="athread_8h_html_a39b5159e92fa0e7f699717c49777508d"><div class="ttname"><a href="thread_8h.html#a39b5159e92fa0e7f699717c49777508d">lacf_thread_create</a></div><div class="ttdeci">static bool_t lacf_thread_create(thread_t *thrp, void(*proc)(void *), void *arg, const char *filename, int linenum)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00796">thread.h:796</a></div></div>
+<div class="ttc" id="athread_8h_html_a39b5159e92fa0e7f699717c49777508d"><div class="ttname"><a href="thread_8h.html#a39b5159e92fa0e7f699717c49777508d">lacf_thread_create</a></div><div class="ttdeci">static bool_t lacf_thread_create(thread_t *thrp, void(*proc)(void *), void *arg, const char *filename, int linenum)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00803">thread.h:803</a></div></div>
 </div><!-- fragment --><p>Creates a new thread. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">thrp</td><td>Return pointer to a thread_t, which will be filled with the thread handle if the thread was started successfully. </td></tr>
@@ -769,7 +772,7 @@ Atomics</h2>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if starting the thread was successful, <code>B_FALSE</code> otherwise. You MUST check the return value and not just assume that starting the thread is always succesful. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00184">184</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00189">189</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +789,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Higher than normal thread scheduling priority. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00984">984</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00991">991</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -803,7 +806,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Minimum thread scheduling priority - only use for threads which can can accept very long periods of not getting CPU time if the CPU is busy. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00963">963</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00970">970</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -820,7 +823,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Reduced thread scheduling priority, below normal priority. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00973">973</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00980">980</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -837,7 +840,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Normal thread scheduling priority. This is the default for newly created threads. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00979">979</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00986">986</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -854,7 +857,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Highest possible thread scheduling priority. Be very careful when using this, as if your thread does a lot of work at this priority, it can starve other threads of CPU time. Use sparingly and only for threads with a known bounded execution time between yields. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00997">997</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01004">1004</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -871,7 +874,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Very high thread scheduling priority. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00989">989</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00996">996</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -888,7 +891,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Very low thread scheduling priority. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a70e58cfdef7cfba56460fd162302fee0">thread_set_prio()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00968">968</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00975">975</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -911,7 +914,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#a5e863e9ba8b50eafe4f2b3d23bcbe7c0">ASSERT_MUTEX_HELD()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00539">539</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00562">562</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -934,7 +937,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#ad2be31cac0a52c8d012ce5e6f387a2e2">ASSERT_MUTEX_NOT_HELD()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00540">540</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00563">563</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -983,7 +986,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#ae146473511da0640f3292e7b0b43d1a6">cv_broadcast()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00454">454</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00465">465</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1000,7 +1003,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Thread ID object. This gets returned by macros such as curthread_id. Certain operations require the thread ID, instead of the handle, so this type encapsulates that detail on platforms where there is a distinction between thread handles and IDs (Windows). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a833ceaa5cf7a525bbd4f96f7fac6e223">curthread_id</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00390">390</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00401">401</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1017,7 +1020,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Thread handle object. This gets initialized with a thread handle by a call to <a class="el" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create()</a> and is consumed by a variety of other thread-related operations (such as thread_destroy()). </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00382">382</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00393">393</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1047,7 +1050,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00588">588</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00611">611</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1079,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00569">569</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00592">592</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1105,7 +1108,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00555">555</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00578">578</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1134,36 +1137,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00601">601</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
-
-</div>
-</div>
-<a id="a79a0e2b593d97acacc597244ecd5ae9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79a0e2b593d97acacc597244ecd5ae9c">&#9670;&nbsp;</a></span>_lacf_thread_start_routine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static DWORD _lacf_thread_start_routine </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00781">781</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00624">624</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1192,7 +1166,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Signals a condition variable to <em>ALL</em> threads waiting on that condition variable (either using <a class="el" href="thread_8h.html#ab61a866c66b3a177a5ef1b31f1fc7ed1">cv_wait()</a> or <a class="el" href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait()</a>). The threads will wake up (in an unpredictable order), and re-acquire the mutex associated with their <a class="el" href="thread_8h.html#ab61a866c66b3a177a5ef1b31f1fc7ed1">cv_wait()</a> or <a class="el" href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait()</a> call. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00953">953</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00960">960</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1221,7 +1195,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Destroys a condition variable which has been previously initialized using <a class="el" href="thread_8h.html#a827d83b9b8c009b1f2c791b88190fdfd">cv_init()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00929">929</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00936">936</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1254,7 +1228,7 @@ Atomics</h2>
 <dd>
 <a class="el" href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00919">919</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00926">926</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1283,7 +1257,7 @@ Atomics</h2>
 </div><div class="memdoc">
 <p>Signals a condition variable to a single waiting thread. If there are multiple threads currently blocked waiting on the condition variable (either using <a class="el" href="thread_8h.html#ab61a866c66b3a177a5ef1b31f1fc7ed1">cv_wait()</a> or <a class="el" href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait()</a>), only <em>ONE</em> of the threads is signalled (which one is unpredictable). </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00941">941</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00948">948</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1338,7 +1312,7 @@ Atomics</h2>
 <dd>
 If the timeout has been reached without the condition becoming signalled, this function returns ETIMEDOUT. If an error occurred, this function returns -1. In both cases, the mutex is re-acquired before returning. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00891">891</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00898">898</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1383,7 +1357,7 @@ If the timeout has been reached without the condition becoming signalled, this f
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00861">861</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00868">868</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1461,7 +1435,28 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <p>Implementation of <a class="el" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create()</a>. Do not call directly, use the <a class="el" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create()</a> macro. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00796">796</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00803">803</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a0c67fc8f2d8d8eb9528a65ae109ad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0c67fc8f2d8d8eb9528a65ae109ad2">&#9670;&nbsp;</a></span>lacf_thread_start_routine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD lacf_thread_start_routine </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thread_8c_source.html#l00040">40</a> of file <a class="el" href="thread_8c_source.html">thread.c</a>.</p>
 
 </div>
 </div>
@@ -1490,7 +1485,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <p>Checks to see if all threads that were created using <a class="el" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create()</a> have been properly disposed of. If not, this trips an assertion failure and lists all threads (including filenames and line numbers where they have been spawned) that weren't properly stopped. You should call this just as your plugin is exiting, to check for leaked threads. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00619">619</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00642">642</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1519,7 +1514,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <p>Destroys <a class="el" href="structmutex__t.html">mutex_t</a> object previously initialized by a call to <a class="el" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init()</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00476">476</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00499">499</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1557,7 +1552,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><!-- fragment --> All calls to <a class="el" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter()</a> must be balanced by matching calls to <a class="el" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit()</a> before the mutex is finally completely relinquished. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00507">507</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00530">530</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1595,7 +1590,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><!-- fragment --> All calls to <a class="el" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter()</a> must be balanced by matching calls to <a class="el" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit()</a> before the mutex is finally completely relinquished. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00533">533</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00556">556</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1624,7 +1619,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <p>Initializes a new <a class="el" href="structmutex__t.html">mutex_t</a> object. The mutex MUST be destroyed using <a class="el" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy()</a> to avoid leaking memory. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00465">465</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00488">488</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1658,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <dl class="section note"><dt>Note</dt><dd>Internal. Do not call directly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01093">1093</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01100">1100</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1692,7 +1687,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <p>Destroys an <a class="el" href="structrwmutex__t.html">rwmutex_t</a> that was previously initialized <a class="el" href="thread_8h.html#a377021479ab80f7873fd382ae111222d">rwmutex_init()</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a377021479ab80f7873fd382ae111222d">rwmutex_init()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01068">1068</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01075">1075</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1742,7 +1737,7 @@ Locking Order</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01136">1136</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01143">1143</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1771,7 +1766,7 @@ Locking Order</h3>
 </div><div class="memdoc">
 <p>Relinquishes a previously acquired read- or write lock of an <a class="el" href="structrwmutex__t.html">rwmutex_t</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01193">1193</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01200">1200</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1801,7 +1796,7 @@ Locking Order</h3>
 <dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if the <a class="el" href="structrwmutex__t.html">rwmutex_t</a> is currently held by the calling thread in write mode, <code>B_FALSE</code> otherwise. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This doesn't determine whether the calling thread is currently holding the <a class="el" href="structrwmutex__t.html">rwmutex_t</a> in read mode. Read mode acquisitions of the <a class="el" href="structrwmutex__t.html">rwmutex_t</a> do not retain any ownership information. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01084">1084</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01091">1091</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1830,7 +1825,7 @@ Locking Order</h3>
 </div><div class="memdoc">
 <p>Initializes a new <a class="el" href="structrwmutex__t.html">rwmutex_t</a>. The mutex must be destroyed using <a class="el" href="thread_8h.html#a5bf1a60ece7f1aaa11c711c304f678fd">rwmutex_destroy()</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="thread_8h.html#a5bf1a60ece7f1aaa11c711c304f678fd">rwmutex_destroy()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01054">1054</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01061">1061</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1859,7 +1854,7 @@ Locking Order</h3>
 </div><div class="memdoc">
 <p>"Upgrades" a currently held read lock into a write lock. </p>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01211">1211</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01218">1218</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1894,7 +1889,7 @@ Locking Order</h3>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This function doesn't <em>cause</em> the target thread to exit, it only blocks the calling thread until the target thread has exited. You should notify the target thread using other means to exit before calling <a class="el" href="thread_8h.html#a7a65ac5862e099f0e7812957d43a3a1c">thread_join()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00829">829</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00836">836</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1923,7 +1918,7 @@ Locking Order</h3>
 </div><div class="memdoc">
 <p>Sets the name of the calling thread. This is useful for debugging purposes, since the thread name is easily visible in a debugger or process analysis tool. </p><dl class="section note"><dt>Note</dt><dd>This function is only supported on macOS and Linux. Furthermore, on Linux, names longer than 16 bytes (including the terminating NUL character) will be truncated to 16 bytes. On Windows, calling this function does nothing. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00845">845</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l00852">852</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>
@@ -1972,7 +1967,7 @@ Locking Order</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01010">1010</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thread_8h_source.html#l01017">1017</a> of file <a class="el" href="thread_8h_source.html">thread.h</a>.</p>
 
 </div>
 </div>

@@ -122,7 +122,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * state, we statically pre-allocate these buffers to try and avoid having</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * to call into the VM subsystem.</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MAX_SYM_NAME_LEN    1024</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MAX_SYM_NAME_LEN    4096</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define MAX_BACKTRACE_LEN   (64 * 1024)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">static</span> <span class="keywordtype">char</span> backtrace_buf[MAX_BACKTRACE_LEN] = { 0 };</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">static</span> <span class="keywordtype">char</span> symbol_buf[<span class="keyword">sizeof</span> (SYMBOL_INFO) +</div>
@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">static</span> MODULEINFO mi[MAX_MODULES];</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">static</span> DWORD num_modules;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define SYMNAME_MAXLEN  1023    </span><span class="comment">/* C++ symbols can be HUUUUGE */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define SYMNAME_MAXLEN  4095    </span><span class="comment">/* C++ symbols can be HUUUUGE */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">static</span> logfunc_t log_func = NULL;</div>
@@ -239,292 +239,300 @@ $(function() {
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *sep;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">static</span> FILE *fp;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *prevptr = NULL;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *image_base = NULL;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    *symname = 0;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    *prevsym = 0;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    sep = strrchr(filename, DIRSEP);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (sep == NULL)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(symstxtname, filename, MIN((uintptr_t)(sep - filename) + 1,</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keyword">sizeof</span> (symstxtname)));</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    strncat(symstxtname, DIRSEP_S <span class="stringliteral">&quot;syms.txt&quot;</span>, <span class="keyword">sizeof</span> (symstxtname));</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    fp = fopen(symstxtname, <span class="stringliteral">&quot;rb&quot;</span>);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span> (fp == NULL)</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">while</span> (!feof(fp)) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> unused_c;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> *ptr;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> sym[SYMNAME_MAXLEN + 1];</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">&quot;%p %c %&quot;</span> SCANF_STR_AUTOLEN(SYMNAME_MAXLEN) <span class="stringliteral">&quot;s&quot;</span>,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            &amp;ptr, &amp;unused_c, sym) != 3) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">if</span> (strcmp(sym, <span class="stringliteral">&quot;__image_base__&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            image_base = ptr;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        ptr = (<span class="keywordtype">void</span> *)(ptr - image_base);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">if</span> (addr &gt;= prevptr &amp;&amp; addr &lt; ptr) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            snprintf(symname, symname_cap, <span class="stringliteral">&quot;%s+%x&quot;</span>, prevsym,</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                (<span class="keywordtype">unsigned</span>)(addr - prevptr));</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        prevptr = ptr;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(prevsym, sym, <span class="keyword">sizeof</span> (prevsym));</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    fclose(fp);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keyword">static</span> HMODULE</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;find_module(LPVOID pc, DWORD64 *module_base)</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">static</span> DWORD i;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; num_modules; i++) {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keyword">static</span> LPVOID start, end;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        start = mi[i].lpBaseOfDll;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        end = start + mi[i].SizeOfImage;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">if</span> (start &lt;= pc &amp;&amp; end &gt; pc) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            *module_base = (DWORD64)start;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordflow">return</span> (modules[i]);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    *module_base = 0;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;}</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;gather_module_info(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    HANDLE process = GetCurrentProcess();</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    EnumProcessModules(process, modules, <span class="keyword">sizeof</span> (HMODULE) * MAX_MODULES,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        &amp;num_modules);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    num_modules = MIN(num_modules, MAX_MODULES);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; num_modules; i++)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        GetModuleInformation(process, modules[i], &amp;mi[i], <span class="keyword">sizeof</span> (*mi));</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    *symname = 0;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    *prevsym = 0;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    sep = strrchr(filename, DIRSEP);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">if</span> (sep == NULL)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(symstxtname, filename, MIN((uintptr_t)(sep - filename) + 1,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">sizeof</span> (symstxtname)));</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    strncat(symstxtname, DIRSEP_S <span class="stringliteral">&quot;syms.txt&quot;</span>, <span class="keyword">sizeof</span> (symstxtname));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    fp = fopen(symstxtname, <span class="stringliteral">&quot;rb&quot;</span>);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (fp == NULL)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">while</span> (!feof(fp)) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> unused_c;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> *ptr;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> sym[SYMNAME_MAXLEN + 1];</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">if</span> (fscanf(fp, <span class="stringliteral">&quot;%p %c %&quot;</span> SCANF_STR_AUTOLEN(SYMNAME_MAXLEN) <span class="stringliteral">&quot;s&quot;</span>,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            &amp;ptr, &amp;unused_c, sym) != 3) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="comment">/*</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment">             * This might fail if we hit a MASSIVE symbol name</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">             * which is longer than SYMNAME_MAXLEN. In that case,</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment">             * we want to skip until the next newline.</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">             */</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordtype">int</span> c;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                c = fgetc(fp);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            } <span class="keywordflow">while</span> (c != <span class="charliteral">&#39;\n&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;\r&#39;</span> &amp;&amp; c != EOF);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">if</span> (c != EOF) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> (addr &gt;= prevptr &amp;&amp; addr &lt; ptr) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            snprintf(symname, symname_cap, <span class="stringliteral">&quot;%s+%x&quot;</span>, prevsym,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                (<span class="keywordtype">unsigned</span>)(addr - prevptr));</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        prevptr = ptr;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(prevsym, sym, <span class="keyword">sizeof</span> (prevsym));</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    fclose(fp);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keyword">static</span> HMODULE</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;find_module(LPVOID pc, DWORD64 *module_base)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;{</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">static</span> DWORD i;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; num_modules; i++) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keyword">static</span> LPVOID start, end;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        start = mi[i].lpBaseOfDll;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        end = start + mi[i].SizeOfImage;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> (start &lt;= pc &amp;&amp; end &gt; pc) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            *module_base = (DWORD64)start;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="keywordflow">return</span> (modules[i]);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    *module_base = 0;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;gather_module_info(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    HANDLE process = GetCurrentProcess();</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<a class="code" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames)</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> frames;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *stack[MAX_STACK_FRAMES];</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">static</span> SYMBOL_INFO *symbol;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keyword">static</span> HANDLE process;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keyword">static</span> DWORD displacement;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keyword">static</span> IMAGEHLP_LINE64 *line;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[MAX_PATH];</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    frames = RtlCaptureStackBackTrace(skip_frames + 1, MAX_STACK_FRAMES,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        stack, NULL);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    process = GetCurrentProcess();</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;backtrace_lock);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    SymInitialize(process, NULL, TRUE);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    SymSetOptions(SYMOPT_LOAD_LINES);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    EnumProcessModules(process, modules, <span class="keyword">sizeof</span> (HMODULE) * MAX_MODULES,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        &amp;num_modules);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    num_modules = MIN(num_modules, MAX_MODULES);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; num_modules; i++)</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        GetModuleInformation(process, modules[i], &amp;mi[i], <span class="keyword">sizeof</span> (*mi));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<a class="code" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> frames;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *stack[MAX_STACK_FRAMES];</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">static</span> SYMBOL_INFO *symbol;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keyword">static</span> HANDLE process;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">static</span> DWORD displacement;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keyword">static</span> IMAGEHLP_LINE64 *line;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[MAX_PATH];</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    gather_module_info();</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    memset(symbol_buf, 0, <span class="keyword">sizeof</span> (symbol_buf));</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    memset(line_buf, 0, <span class="keyword">sizeof</span> (line_buf));</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    frames = RtlCaptureStackBackTrace(skip_frames + 1, MAX_STACK_FRAMES,</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        stack, NULL);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    process = GetCurrentProcess();</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    symbol = (SYMBOL_INFO *)symbol_buf;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    symbol-&gt;MaxNameLen = MAX_SYM_NAME_LEN - 1;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    symbol-&gt;SizeOfStruct = <span class="keyword">sizeof</span> (SYMBOL_INFO);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    line = (IMAGEHLP_LINE64 *)line_buf;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    line-&gt;SizeOfStruct = <span class="keyword">sizeof</span> (*line);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> frame_nr = 0; frame_nr &lt; frames; frame_nr++) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keyword">static</span> DWORD64 address;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> fill;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        address = (DWORD64)(uintptr_t)stack[frame_nr];</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        fill = strlen(backtrace_buf);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        memset(symbol_buf, 0, <span class="keyword">sizeof</span> (symbol_buf));</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">         * Try to grab the symbol name from the stored %rip data.</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span> (!SymFromAddr(process, address, 0, symbol)) {</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <span class="keyword">static</span> DWORD64 start;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keyword">static</span> HMODULE module;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    SymInitialize(process, NULL, TRUE);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    SymSetOptions(SYMOPT_LOAD_LINES);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    gather_module_info();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    memset(symbol_buf, 0, <span class="keyword">sizeof</span> (symbol_buf));</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    memset(line_buf, 0, <span class="keyword">sizeof</span> (line_buf));</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    symbol = (SYMBOL_INFO *)symbol_buf;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    symbol-&gt;MaxNameLen = MAX_SYM_NAME_LEN - 1;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    symbol-&gt;SizeOfStruct = <span class="keyword">sizeof</span> (SYMBOL_INFO);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    line = (IMAGEHLP_LINE64 *)line_buf;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    line-&gt;SizeOfStruct = <span class="keyword">sizeof</span> (*line);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> frame_nr = 0; frame_nr &lt; frames; frame_nr++) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keyword">static</span> DWORD64 address;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> fill;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        address = (DWORD64)(uintptr_t)stack[frame_nr];</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        fill = strlen(backtrace_buf);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            module = find_module((<span class="keywordtype">void</span> *)address, &amp;start);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="keywordflow">if</span> (module != NULL) {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">char</span> symname[SYMNAME_MAXLEN + 1];</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                GetModuleFileNameA(module, filename,</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                    <span class="keyword">sizeof</span> (filename));</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                find_symbol(filename, stack[frame_nr] - start,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                    symname, <span class="keyword">sizeof</span> (symname));</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                fill += snprintf(&amp;backtrace_buf[fill],</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                    <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                    <span class="stringliteral">&quot;%d %p %s+%p (%s)\n&quot;</span>, frame_nr,</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                    stack[frame_nr], filename,</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                    stack[frame_nr] - start, symname);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                fill += snprintf(&amp;backtrace_buf[fill],</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                    <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                    <span class="stringliteral">&quot;%d %p &lt;unknown module&gt;\n&quot;</span>, frame_nr,</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                    stack[frame_nr]);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            }</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="comment">         * See if we have debug info available with file names and</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">         * line numbers.</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">if</span> (SymGetLineFromAddr64(process, address, &amp;displacement,</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            line)) {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            snprintf(&amp;backtrace_buf[fill], <span class="keyword">sizeof</span> (backtrace_buf) -</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                fill, <span class="stringliteral">&quot;%d: %s (0x%lx) [%s:%d]\n&quot;</span>, frame_nr,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                symbol-&gt;Name, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)symbol-&gt;Address,</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                line-&gt;FileName, (<span class="keywordtype">int</span>)line-&gt;LineNumber);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            snprintf(&amp;backtrace_buf[fill], <span class="keyword">sizeof</span> (backtrace_buf) -</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                fill, <span class="stringliteral">&quot;%d: %s - 0x%lx\n&quot;</span>, frame_nr, symbol-&gt;Name,</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)symbol-&gt;Address);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        abort();</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    log_func(backtrace_buf);</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    fputs(backtrace_buf, stderr);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    fflush(stderr);</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    SymCleanup(process);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;backtrace_lock);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;}</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;log_backtrace_sw64(PCONTEXT ctx)</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;{</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[MAX_PATH];</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keyword">static</span> DWORD64 pcs[MAX_STACK_FRAMES];</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> num_stack_frames;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">static</span> STACKFRAME64 sf;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">static</span> HANDLE process, thread;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keyword">static</span> DWORD machine;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    process = GetCurrentProcess();</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    thread = GetCurrentThread();</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;backtrace_lock);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    SymInitialize(process, NULL, TRUE);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    SymSetOptions(SYMOPT_LOAD_LINES);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        memset(symbol_buf, 0, <span class="keyword">sizeof</span> (symbol_buf));</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">         * Try to grab the symbol name from the stored %rip data.</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">if</span> (!SymFromAddr(process, address, 0, symbol)) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keyword">static</span> DWORD64 start;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="keyword">static</span> HMODULE module;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            module = find_module((<span class="keywordtype">void</span> *)address, &amp;start);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            <span class="keywordflow">if</span> (module != NULL) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">char</span> symname[SYMNAME_MAXLEN + 1];</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                GetModuleFileNameA(module, filename,</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                    <span class="keyword">sizeof</span> (filename));</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                find_symbol(filename, stack[frame_nr] - start,</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                    symname, <span class="keyword">sizeof</span> (symname));</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                fill += snprintf(&amp;backtrace_buf[fill],</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                    <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                    <span class="stringliteral">&quot;%d %p %s+%p (%s)\n&quot;</span>, frame_nr,</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    stack[frame_nr], filename,</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                    stack[frame_nr] - start, symname);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                fill += snprintf(&amp;backtrace_buf[fill],</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                    <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                    <span class="stringliteral">&quot;%d %p &lt;unknown module&gt;\n&quot;</span>, frame_nr,</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                    stack[frame_nr]);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            }</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="comment">/*</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="comment">         * See if we have debug info available with file names and</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="comment">         * line numbers.</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">if</span> (SymGetLineFromAddr64(process, address, &amp;displacement,</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            line)) {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            snprintf(&amp;backtrace_buf[fill], <span class="keyword">sizeof</span> (backtrace_buf) -</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                fill, <span class="stringliteral">&quot;%d: %s (0x%lx) [%s:%d]\n&quot;</span>, frame_nr,</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                symbol-&gt;Name, (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)symbol-&gt;Address,</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                line-&gt;FileName, (<span class="keywordtype">int</span>)line-&gt;LineNumber);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            snprintf(&amp;backtrace_buf[fill], <span class="keyword">sizeof</span> (backtrace_buf) -</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                fill, <span class="stringliteral">&quot;%d: %s - 0x%lx\n&quot;</span>, frame_nr, symbol-&gt;Name,</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>)symbol-&gt;Address);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        abort();</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    log_func(backtrace_buf);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    fputs(backtrace_buf, stderr);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    fflush(stderr);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    SymCleanup(process);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;}</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;log_backtrace_sw64(PCONTEXT ctx)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;{</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> filename[MAX_PATH];</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">static</span> DWORD64 pcs[MAX_STACK_FRAMES];</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> num_stack_frames;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">static</span> STACKFRAME64 sf;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keyword">static</span> HANDLE process, thread;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keyword">static</span> DWORD machine;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    gather_module_info();</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <a class="code" href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a>(&amp;backtrace_lock);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    memset(&amp;sf, 0, <span class="keyword">sizeof</span> (sf));</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    sf.AddrPC.Mode = AddrModeFlat;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    sf.AddrStack.Mode = AddrModeFlat;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    sf.AddrFrame.Mode = AddrModeFlat;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="preprocessor">#if defined(_M_IX86)</span></div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    machine = IMAGE_FILE_MACHINE_I386;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    sf.AddrPC.Offset = ctx-&gt;Eip;</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    sf.AddrStack.Offset = ctx-&gt;Esp;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    sf.AddrFrame.Offset = ctx-&gt;Ebp;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="preprocessor">#elif   defined(_M_X64)</span></div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    machine = IMAGE_FILE_MACHINE_AMD64;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    sf.AddrPC.Offset = ctx-&gt;Rip;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    sf.AddrStack.Offset = ctx-&gt;Rsp;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    sf.AddrFrame.Offset = ctx-&gt;Rbp;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="preprocessor">#elif   defined(_M_IA64)</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    machine = IMAGE_FILE_MACHINE_IA64;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    sf.AddrPC.Offset = ctx-&gt;StIIP;</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    sf.AddrFrame.Offset = ctx-&gt;IntSp;</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    sf.AddrBStore.Offset = ctx-&gt;RsBSP;</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    sf.AddrBStore.Mode = AddrModeFlat;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    sf.AddrStack.Offset = ctx-&gt;IntSp;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="preprocessor">#error  &quot;Unsupported architecture&quot;</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _M_X64 */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordflow">for</span> (num_stack_frames = 0; num_stack_frames &lt; MAX_STACK_FRAMES;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        num_stack_frames++) {</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        <span class="keywordflow">if</span> (!StackWalk64(machine, process, thread, &amp;sf, ctx, NULL,</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            SymFunctionTableAccess64, SymGetModuleBase64, NULL)) {</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        }</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        pcs[num_stack_frames] = sf.AddrPC.Offset;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    }</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; num_stack_frames; i++) {</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> fill;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <span class="keyword">static</span> DWORD64 pc;</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> symname[SYMNAME_MAXLEN + 1];</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="keyword">static</span> HMODULE module;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;        <span class="keyword">static</span> DWORD64 mbase;</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        fill = strlen(backtrace_buf);</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        pc = pcs[i];</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160; </div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        module = find_module((LPVOID)pc, &amp;mbase);</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        GetModuleFileNameA(module, filename, <span class="keyword">sizeof</span> (filename));</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        find_symbol(filename, (<span class="keywordtype">void</span> *)(pc - mbase),</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            symname, <span class="keyword">sizeof</span> (symname));</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        fill += snprintf(&amp;backtrace_buf[fill],</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            <span class="stringliteral">&quot;%d %p %s+%p (%s)\n&quot;</span>, i, (<span class="keywordtype">void</span> *)pc, filename,</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            (<span class="keywordtype">void</span> *)(pc - mbase), symname);</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    }</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        abort();</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    log_func(backtrace_buf);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    fputs(backtrace_buf, stderr);</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    fflush(stderr);</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    SymCleanup(process);</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;backtrace_lock);</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno"><a class="line" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">  508</a></span>&#160;<a class="code" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames)</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;{</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> *msg;</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> msg_len;</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *trace[MAX_STACK_FRAMES];</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> i, j, sz;</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> **fnames;</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    sz = backtrace(trace, MAX_STACK_FRAMES);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    fnames = backtrace_symbols(trace, sz);</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, msg_len = BACKTRACE_STRLEN; i &lt; sz; i++)</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        msg_len += snprintf(NULL, 0, <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    msg = (<span class="keywordtype">char</span> *)malloc(msg_len + 1);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    strcpy(msg, BACKTRACE_STR);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, j = BACKTRACE_STRLEN; i &lt; sz; i++)</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        j += sprintf(&amp;msg[j], <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    process = GetCurrentProcess();</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    thread = GetCurrentThread();</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    SymInitialize(process, NULL, TRUE);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    SymSetOptions(SYMOPT_LOAD_LINES);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    gather_module_info();</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    memset(&amp;sf, 0, <span class="keyword">sizeof</span> (sf));</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    sf.AddrPC.Mode = AddrModeFlat;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    sf.AddrStack.Mode = AddrModeFlat;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    sf.AddrFrame.Mode = AddrModeFlat;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="preprocessor">#if defined(_M_IX86)</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    machine = IMAGE_FILE_MACHINE_I386;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    sf.AddrPC.Offset = ctx-&gt;Eip;</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    sf.AddrStack.Offset = ctx-&gt;Esp;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    sf.AddrFrame.Offset = ctx-&gt;Ebp;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="preprocessor">#elif   defined(_M_X64)</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    machine = IMAGE_FILE_MACHINE_AMD64;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    sf.AddrPC.Offset = ctx-&gt;Rip;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    sf.AddrStack.Offset = ctx-&gt;Rsp;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    sf.AddrFrame.Offset = ctx-&gt;Rbp;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="preprocessor">#elif   defined(_M_IA64)</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    machine = IMAGE_FILE_MACHINE_IA64;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    sf.AddrPC.Offset = ctx-&gt;StIIP;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    sf.AddrFrame.Offset = ctx-&gt;IntSp;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    sf.AddrBStore.Offset = ctx-&gt;RsBSP;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    sf.AddrBStore.Mode = AddrModeFlat;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    sf.AddrStack.Offset = ctx-&gt;IntSp;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="preprocessor">#error  &quot;Unsupported architecture&quot;</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _M_X64 */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">for</span> (num_stack_frames = 0; num_stack_frames &lt; MAX_STACK_FRAMES;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        num_stack_frames++) {</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">if</span> (!StackWalk64(machine, process, thread, &amp;sf, ctx, NULL,</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;            SymFunctionTableAccess64, SymGetModuleBase64, NULL)) {</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        }</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        pcs[num_stack_frames] = sf.AddrPC.Offset;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    }</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    backtrace_buf[0] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(backtrace_buf, BACKTRACE_STR, <span class="keyword">sizeof</span> (backtrace_buf));</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; num_stack_frames; i++) {</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> fill;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        <span class="keyword">static</span> DWORD64 pc;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">char</span> symname[SYMNAME_MAXLEN + 1];</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        <span class="keyword">static</span> HMODULE module;</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="keyword">static</span> DWORD64 mbase;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        fill = strlen(backtrace_buf);</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        pc = pcs[i];</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        module = find_module((LPVOID)pc, &amp;mbase);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        GetModuleFileNameA(module, filename, <span class="keyword">sizeof</span> (filename));</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        find_symbol(filename, (<span class="keywordtype">void</span> *)(pc - mbase),</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            symname, <span class="keyword">sizeof</span> (symname));</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        fill += snprintf(&amp;backtrace_buf[fill],</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            <span class="keyword">sizeof</span> (backtrace_buf) - fill,</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            <span class="stringliteral">&quot;%d %p %s+%p (%s)\n&quot;</span>, i, (<span class="keywordtype">void</span> *)pc, filename,</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            (<span class="keywordtype">void</span> *)(pc - mbase), symname);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        abort();</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    log_func(backtrace_buf);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    fputs(backtrace_buf, stderr);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    fflush(stderr);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    SymCleanup(process);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;backtrace_lock);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;}</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno"><a class="line" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">  516</a></span>&#160;<a class="code" href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a>(<span class="keywordtype">int</span> skip_frames)</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;{</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> *msg;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> msg_len;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> *trace[MAX_STACK_FRAMES];</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">size_t</span> i, j, sz;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> **fnames;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    sz = backtrace(trace, MAX_STACK_FRAMES);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    fnames = backtrace_symbols(trace, sz);</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        abort();</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    log_func(msg);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    fputs(msg, stderr);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    free(msg);</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    free(fnames);</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;}</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, msg_len = BACKTRACE_STRLEN; i &lt; sz; i++)</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        msg_len += snprintf(NULL, 0, <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    msg = (<span class="keywordtype">char</span> *)malloc(msg_len + 1);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    strcpy(msg, BACKTRACE_STR);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordflow">for</span> (i = 1 + skip_frames, j = BACKTRACE_STRLEN; i &lt; sz; i++)</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        j += sprintf(&amp;msg[j], <span class="stringliteral">&quot;%s\n&quot;</span>, fnames[i]);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keywordflow">if</span> (log_func == NULL)</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        abort();</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    log_func(msg);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    fputs(msg, stderr);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    free(msg);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    free(fnames);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;}</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="ahelpers_8h_html"><div class="ttname"><a href="helpers_8h.html">helpers.h</a></div></div>
@@ -534,15 +542,15 @@ $(function() {
 <div class="ttc" id="alog_8h_html_a3f58a73e8891294c3a3df8a0ec520164"><div class="ttname"><a href="log_8h.html#a3f58a73e8891294c3a3df8a0ec520164">log_impl</a></div><div class="ttdeci">void log_impl(const char *filename, int line, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00140">log.c:140</a></div></div>
 <div class="ttc" id="alog_8h_html_ab764c12d013acf2af98b24058a4bb894"><div class="ttname"><a href="log_8h.html#ab764c12d013acf2af98b24058a4bb894">log_fini</a></div><div class="ttdeci">void log_fini(void)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00115">log.c:115</a></div></div>
 <div class="ttc" id="alog_8h_html_ad02cd0021647e725d93ac1ab07d9f5b0"><div class="ttname"><a href="log_8h.html#ad02cd0021647e725d93ac1ab07d9f5b0">log_init</a></div><div class="ttdeci">void log_init(logfunc_t func, const char *prefix)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00097">log.c:97</a></div></div>
-<div class="ttc" id="alog_8h_html_ad3222ede877663a8712ee41d15c1c0cf"><div class="ttname"><a href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a></div><div class="ttdeci">void log_backtrace(int skip_frames)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00508">log.c:508</a></div></div>
+<div class="ttc" id="alog_8h_html_ad3222ede877663a8712ee41d15c1c0cf"><div class="ttname"><a href="log_8h.html#ad3222ede877663a8712ee41d15c1c0cf">log_backtrace</a></div><div class="ttdeci">void log_backtrace(int skip_frames)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00516">log.c:516</a></div></div>
 <div class="ttc" id="alog_8h_html_ae6c7cd5f34871857a3d3a7e5e1a106f3"><div class="ttname"><a href="log_8h.html#ae6c7cd5f34871857a3d3a7e5e1a106f3">log_get_logfunc</a></div><div class="ttdeci">logfunc_t log_get_logfunc(void)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00130">log.c:130</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_ac288e180c613af117aa0d5a7279d4f1a"><div class="ttname"><a href="safe__alloc_8h.html#ac288e180c613af117aa0d5a7279d4f1a">safe_strdup</a></div><div class="ttdeci">static char * safe_strdup(const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00201">safe_alloc.h:201</a></div></div>
-<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00402">thread.h:402</a></div></div>
+<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00413">thread.h:413</a></div></div>
 <div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
-<div class="ttc" id="athread_8h_html_a786e2308c77efa9600eaa81522c1ab32"><div class="ttname"><a href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a></div><div class="ttdeci">static void mutex_destroy(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00476">thread.h:476</a></div></div>
-<div class="ttc" id="athread_8h_html_a7c7c57534b154632f3ee43b3af22abe2"><div class="ttname"><a href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a></div><div class="ttdeci">static void mutex_enter(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00507">thread.h:507</a></div></div>
-<div class="ttc" id="athread_8h_html_a9147646b7eef9f977404c4192340442f"><div class="ttname"><a href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a></div><div class="ttdeci">static void mutex_exit(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00533">thread.h:533</a></div></div>
-<div class="ttc" id="athread_8h_html_ad740bab5dd6dd968f1b026c4b3cbc826"><div class="ttname"><a href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a></div><div class="ttdeci">static void mutex_init(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00465">thread.h:465</a></div></div>
+<div class="ttc" id="athread_8h_html_a786e2308c77efa9600eaa81522c1ab32"><div class="ttname"><a href="thread_8h.html#a786e2308c77efa9600eaa81522c1ab32">mutex_destroy</a></div><div class="ttdeci">static void mutex_destroy(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00499">thread.h:499</a></div></div>
+<div class="ttc" id="athread_8h_html_a7c7c57534b154632f3ee43b3af22abe2"><div class="ttname"><a href="thread_8h.html#a7c7c57534b154632f3ee43b3af22abe2">mutex_enter</a></div><div class="ttdeci">static void mutex_enter(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00530">thread.h:530</a></div></div>
+<div class="ttc" id="athread_8h_html_a9147646b7eef9f977404c4192340442f"><div class="ttname"><a href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a></div><div class="ttdeci">static void mutex_exit(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00556">thread.h:556</a></div></div>
+<div class="ttc" id="athread_8h_html_ad740bab5dd6dd968f1b026c4b3cbc826"><div class="ttname"><a href="thread_8h.html#ad740bab5dd6dd968f1b026c4b3cbc826">mutex_init</a></div><div class="ttdeci">static void mutex_init(mutex_t *mtx)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00488">thread.h:488</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

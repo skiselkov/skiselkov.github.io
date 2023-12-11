@@ -75,7 +75,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">assert.h</a>&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
-<code>#include &quot;sysmacros.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="sysmacros_8h_source.html">sysmacros.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for assert.h:</div>
 <div class="dyncontent">
@@ -84,7 +84,7 @@ Include dependency graph for assert.h:</div>
 <area shape="rect" title=" " alt="" coords="139,7,266,33"/>
 <area shape="rect" title=" " alt="" coords="78,380,149,407"/>
 <area shape="rect" href="log_8h.html" title=" " alt="" coords="175,81,230,108"/>
-<area shape="rect" href="sysmacros_8h_source.html" title=" " alt="" coords="288,156,392,183"/>
+<area shape="rect" href="sysmacros_8h.html" title=" " alt="" coords="288,156,392,183"/>
 <area shape="rect" title=" " alt="" coords="43,156,117,183"/>
 <area shape="rect" title=" " alt="" coords="142,156,263,183"/>
 <area shape="rect" href="types_8h_source.html" title=" " alt="" coords="246,231,317,257"/>
@@ -122,19 +122,19 @@ Macros</h2></td></tr>
 <tr class="separator:a4bb880dc20444723fd13922d72d79937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b4c500b49dd44bf70ee464d5b5391fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a1b4c500b49dd44bf70ee464d5b5391fa">VERIFY_FAIL</a>()</td></tr>
 <tr class="separator:a1b4c500b49dd44bf70ee464d5b5391fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca68c0d4ac8df0838e209fb5300f7be3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(x)&#160;&#160;&#160;<a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)</td></tr>
+<tr class="memitem:aca68c0d4ac8df0838e209fb5300f7be3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(x)&#160;&#160;&#160;LACF_UNUSED(x)</td></tr>
 <tr class="separator:aca68c0d4ac8df0838e209fb5300f7be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63557ec6fbf04170cda1183151e62e64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a63557ec6fbf04170cda1183151e62e64">ASSERT3S</a>(x,  op,  y)&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td></tr>
+<tr class="memitem:a63557ec6fbf04170cda1183151e62e64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a63557ec6fbf04170cda1183151e62e64">ASSERT3S</a>(x,  op,  y)&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td></tr>
 <tr class="separator:a63557ec6fbf04170cda1183151e62e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa38648eecaaf23dc8e3ea8326bb04cf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(x,  op,  y)&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td></tr>
+<tr class="memitem:aa38648eecaaf23dc8e3ea8326bb04cf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(x,  op,  y)&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td></tr>
 <tr class="separator:aa38648eecaaf23dc8e3ea8326bb04cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9c0d2dfaaf525f68ab974cb7587856"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(x,  op,  y)&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td></tr>
+<tr class="memitem:aca9c0d2dfaaf525f68ab974cb7587856"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#aca9c0d2dfaaf525f68ab974cb7587856">ASSERT3F</a>(x,  op,  y)&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td></tr>
 <tr class="separator:aca9c0d2dfaaf525f68ab974cb7587856"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ab9388cd7eb3262e94ea7f08073ea53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a1ab9388cd7eb3262e94ea7f08073ea53">ASSERT3P</a>(x,  op,  y)&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td></tr>
+<tr class="memitem:a1ab9388cd7eb3262e94ea7f08073ea53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a1ab9388cd7eb3262e94ea7f08073ea53">ASSERT3P</a>(x,  op,  y)&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td></tr>
 <tr class="separator:a1ab9388cd7eb3262e94ea7f08073ea53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc45baee07ce65ad601c26de805ffc40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a>(x)&#160;&#160;&#160;<a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)</td></tr>
+<tr class="memitem:acc45baee07ce65ad601c26de805ffc40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a>(x)&#160;&#160;&#160;LACF_UNUSED(x)</td></tr>
 <tr class="separator:acc45baee07ce65ad601c26de805ffc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26960017b3b93ae2f2025c5a4bb06493"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(x,  fmt, ...)&#160;&#160;&#160;<a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)</td></tr>
+<tr class="memitem:a26960017b3b93ae2f2025c5a4bb06493"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a>(x,  fmt, ...)&#160;&#160;&#160;LACF_UNUSED(x)</td></tr>
 <tr class="separator:a26960017b3b93ae2f2025c5a4bb06493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -154,7 +154,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)</td>
+          <td>&#160;&#160;&#160;LACF_UNUSED(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -175,7 +175,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)</td>
+          <td>&#160;&#160;&#160;LACF_UNUSED(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -212,7 +212,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td>
+          <td></td><td>&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -249,7 +249,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td>
+          <td></td><td>&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -286,7 +286,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td>
+          <td></td><td>&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -323,7 +323,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;do { <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x); <a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(y); } while (0)</td>
+          <td></td><td>&#160;&#160;&#160;do { LACF_UNUSED(x); LACF_UNUSED(y); } while (0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -360,7 +360,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(x)</td>
+          <td></td><td>&#160;&#160;&#160;LACF_UNUSED(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">

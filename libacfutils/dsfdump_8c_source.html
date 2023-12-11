@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;cmd_cb(dsf_cmd_t cmd, <span class="keyword">const</span> <span class="keywordtype">void</span> *arg, <span class="keyword">const</span> <a class="code" href="structdsf__cmd__parser__t.html">dsf_cmd_parser_t</a> *parser)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(arg);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    LACF_UNUSED(arg);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (!(uintptr_t)parser-&gt;userinfo) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        printf(<span class="stringliteral">&quot;cmd: %s (%x)\n&quot;</span>, <a class="code" href="dsf_8h.html#a1f9b460be650d90d80fbdd30803d9168">dsf_cmd2str</a>(cmd),</div>
@@ -358,7 +358,6 @@ $(function() {
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a1b4c500b49dd44bf70ee464d5b5391fa"><div class="ttname"><a href="assert_8h.html#a1b4c500b49dd44bf70ee464d5b5391fa">VERIFY_FAIL</a></div><div class="ttdeci">#define VERIFY_FAIL()</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00160">assert.h:160</a></div></div>
 <div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00194">assert.h:194</a></div></div>
-<div class="ttc" id="acore_8h_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="core_8h.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00088">core.h:88</a></div></div>
 <div class="ttc" id="adsf_8h_html"><div class="ttname"><a href="dsf_8h.html">dsf.h</a></div></div>
 <div class="ttc" id="adsf_8h_html_a1f9b460be650d90d80fbdd30803d9168"><div class="ttname"><a href="dsf_8h.html#a1f9b460be650d90d80fbdd30803d9168">dsf_cmd2str</a></div><div class="ttdeci">const char * dsf_cmd2str(dsf_cmd_t cmd)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l01144">dsf.c:1144</a></div></div>
 <div class="ttc" id="adsf_8h_html_a28bac78fffc85e20efcdc5bd5f019404"><div class="ttname"><a href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup</a></div><div class="ttdeci">const dsf_atom_t * dsf_lookup(const dsf_t *dsf,...)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l00955">dsf.c:955</a></div></div>

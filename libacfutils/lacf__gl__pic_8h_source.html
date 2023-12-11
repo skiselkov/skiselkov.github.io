@@ -92,38 +92,40 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="core_8h.html">core.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geom_8h.html">geom.h</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;cglm/cglm.h&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlacf__gl__pic__s.html">lacf_gl_pic_s</a> lacf_gl_pic_t;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;API_EXPORT lacf_gl_pic_t *<a class="code" href="lacf__gl__pic_8h.html#adf95ec7703bb4c64ddf562c2f0a1185b">lacf_gl_pic_new</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;API_EXPORT lacf_gl_pic_t *<a class="code" href="lacf__gl__pic_8h.html#ae4e88ab67404a17c3a61cef153baea72">lacf_gl_pic_new_from_dir</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirpath,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#addca66dfbd7176c2966ff2998192ac2f">lacf_gl_pic_destroy</a>(lacf_gl_pic_t *pic);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;API_EXPORT bool_t <a class="code" href="lacf__gl__pic_8h.html#a699452b3b02e0878d8436c7fff7c94b3">lacf_gl_pic_load</a>(lacf_gl_pic_t *pic);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#a597fa0149cdb1e670ed269fa175be8b5">lacf_gl_pic_unload</a>(lacf_gl_pic_t *pic);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;API_EXPORT <span class="keywordtype">int</span> <a class="code" href="lacf__gl__pic_8h.html#ac3b0e9390296538883c3120b3c9c1076">lacf_gl_pic_get_width</a>(lacf_gl_pic_t *pic);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;API_EXPORT <span class="keywordtype">int</span> <a class="code" href="lacf__gl__pic_8h.html#afb8589e9ae2d467c0a7c9b3ebcecd3fe">lacf_gl_pic_get_height</a>(lacf_gl_pic_t *pic);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#afa59e13942a4c3fd19c6d5948cf860f0">lacf_gl_pic_draw</a>(lacf_gl_pic_t *pic, <a class="code" href="structvect2__t.html">vect2_t</a> pos,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="structvect2__t.html">vect2_t</a> size, <span class="keywordtype">float</span> alpha);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#a41902dab7adb53662cdb4516e79d395d">lacf_gl_pic_draw_custom</a>(lacf_gl_pic_t *pic, <a class="code" href="structvect2__t.html">vect2_t</a> pos,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="structvect2__t.html">vect2_t</a> size, GLuint prog);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _LIBACFUTILS_GLPIC_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="glew_8h.html">glew.h</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;cglm/cglm.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structlacf__gl__pic__s.html">lacf_gl_pic_s</a> lacf_gl_pic_t;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;API_EXPORT lacf_gl_pic_t *<a class="code" href="lacf__gl__pic_8h.html#adf95ec7703bb4c64ddf562c2f0a1185b">lacf_gl_pic_new</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;API_EXPORT lacf_gl_pic_t *<a class="code" href="lacf__gl__pic_8h.html#ae4e88ab67404a17c3a61cef153baea72">lacf_gl_pic_new_from_dir</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirpath,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#addca66dfbd7176c2966ff2998192ac2f">lacf_gl_pic_destroy</a>(lacf_gl_pic_t *pic);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;API_EXPORT bool_t <a class="code" href="lacf__gl__pic_8h.html#a699452b3b02e0878d8436c7fff7c94b3">lacf_gl_pic_load</a>(lacf_gl_pic_t *pic);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#a597fa0149cdb1e670ed269fa175be8b5">lacf_gl_pic_unload</a>(lacf_gl_pic_t *pic);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;API_EXPORT <span class="keywordtype">int</span> <a class="code" href="lacf__gl__pic_8h.html#ac3b0e9390296538883c3120b3c9c1076">lacf_gl_pic_get_width</a>(lacf_gl_pic_t *pic);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;API_EXPORT <span class="keywordtype">int</span> <a class="code" href="lacf__gl__pic_8h.html#afb8589e9ae2d467c0a7c9b3ebcecd3fe">lacf_gl_pic_get_height</a>(lacf_gl_pic_t *pic);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#afa59e13942a4c3fd19c6d5948cf860f0">lacf_gl_pic_draw</a>(lacf_gl_pic_t *pic, <a class="code" href="structvect2__t.html">vect2_t</a> pos,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="structvect2__t.html">vect2_t</a> size, <span class="keywordtype">float</span> alpha);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;API_EXPORT <span class="keywordtype">void</span> <a class="code" href="lacf__gl__pic_8h.html#a41902dab7adb53662cdb4516e79d395d">lacf_gl_pic_draw_custom</a>(lacf_gl_pic_t *pic, <a class="code" href="structvect2__t.html">vect2_t</a> pos,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="structvect2__t.html">vect2_t</a> size, GLuint prog);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _LIBACFUTILS_GLPIC_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
 <div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>
+<div class="ttc" id="aglew_8h_html"><div class="ttname"><a href="glew_8h.html">glew.h</a></div></div>
 <div class="ttc" id="alacf__gl__pic_8h_html_a41902dab7adb53662cdb4516e79d395d"><div class="ttname"><a href="lacf__gl__pic_8h.html#a41902dab7adb53662cdb4516e79d395d">lacf_gl_pic_draw_custom</a></div><div class="ttdeci">void lacf_gl_pic_draw_custom(lacf_gl_pic_t *pic, vect2_t pos, vect2_t size, GLuint prog)</div><div class="ttdef"><b>Definition:</b> <a href="lacf__gl__pic_8c_source.html#l00278">lacf_gl_pic.c:278</a></div></div>
 <div class="ttc" id="alacf__gl__pic_8h_html_a597fa0149cdb1e670ed269fa175be8b5"><div class="ttname"><a href="lacf__gl__pic_8h.html#a597fa0149cdb1e670ed269fa175be8b5">lacf_gl_pic_unload</a></div><div class="ttdeci">void lacf_gl_pic_unload(lacf_gl_pic_t *pic)</div><div class="ttdef"><b>Definition:</b> <a href="lacf__gl__pic_8c_source.html#l00176">lacf_gl_pic.c:176</a></div></div>
 <div class="ttc" id="alacf__gl__pic_8h_html_a699452b3b02e0878d8436c7fff7c94b3"><div class="ttname"><a href="lacf__gl__pic_8h.html#a699452b3b02e0878d8436c7fff7c94b3">lacf_gl_pic_load</a></div><div class="ttdeci">bool_t lacf_gl_pic_load(lacf_gl_pic_t *pic)</div><div class="ttdef"><b>Definition:</b> <a href="lacf__gl__pic_8c_source.html#l00157">lacf_gl_pic.c:157</a></div></div>

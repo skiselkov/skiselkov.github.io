@@ -89,9 +89,38 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;bool_t  lacf_thread_list_inited = B_FALSE;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="structmutex__t.html">mutex_t</a> lacf_thread_list_lock;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="structlist__t.html">list_t</a>  lacf_thread_list;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;DWORD</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="thread_8h.html#a5a0c67fc8f2d8d8eb9528a65ae109ad2">lacf_thread_start_routine</a>(<span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *ti = (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *)arg;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ti-&gt;proc(ti-&gt;arg);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="thread_8h.html#aee84e92c0685431cf140a4cbf10842cf">_lacf_thread_list_remove</a>(ti);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    free(ti);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="thread_8h.html#a5a0c67fc8f2d8d8eb9528a65ae109ad2">   40</a></span>&#160;<a class="code" href="thread_8h.html#a5a0c67fc8f2d8d8eb9528a65ae109ad2">lacf_thread_start_routine</a>(<span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *ti = (<a class="code" href="structlacf__thread__info__t.html">lacf_thread_info_t</a> *)arg;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ti-&gt;proc(ti-&gt;arg);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="thread_8h.html#aee84e92c0685431cf140a4cbf10842cf">_lacf_thread_list_remove</a>(ti);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    free(ti);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructlacf__thread__info__t_html"><div class="ttname"><a href="structlacf__thread__info__t.html">lacf_thread_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00171">thread.h:171</a></div></div>
 <div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
-<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00402">thread.h:402</a></div></div>
+<div class="ttc" id="astructmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00413">thread.h:413</a></div></div>
 <div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="athread_8h_html_a5a0c67fc8f2d8d8eb9528a65ae109ad2"><div class="ttname"><a href="thread_8h.html#a5a0c67fc8f2d8d8eb9528a65ae109ad2">lacf_thread_start_routine</a></div><div class="ttdeci">DWORD lacf_thread_start_routine(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8c_source.html#l00040">thread.c:40</a></div></div>
+<div class="ttc" id="athread_8h_html_aee84e92c0685431cf140a4cbf10842cf"><div class="ttname"><a href="thread_8h.html#aee84e92c0685431cf140a4cbf10842cf">_lacf_thread_list_remove</a></div><div class="ttdeci">static void _lacf_thread_list_remove(lacf_thread_info_t *ti)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00624">thread.h:624</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
