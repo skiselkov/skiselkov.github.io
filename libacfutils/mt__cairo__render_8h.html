@@ -1057,7 +1057,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mt_cairo_render_blit_
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Shader Uniforms and Vertex Attributes</h2>
 <p>Your custom shader program must contain at least a vertex and fragment shader. The mt_cairo_render_t automatically resolves attribute and uniform bindings using the following names:</p><ul>
 <li>The vertex position attribute as a <code>vec3</code> named "vtx_pos". The Z coordinate is always set to zero and only. X and Y correspond to the input vertex coordinates based on the <code>pos</code> and <code>size</code> arguments passed to <a class="el" href="mt__cairo__render_8h.html#aa76e051a4233da8d30a1cfb380e0ec1d">mt_cairo_render_draw()</a>.</li>
@@ -1182,7 +1182,7 @@ Shader Uniforms and Vertex Attributes</h2>
       </table>
 </div><div class="memdoc">
 <p>Initializes an asynchronous render surface uploader. This should be called from the main X-Plane thread.</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Background</h2>
 <p>An mt_cairo_render_t runs its Cairo rendering operations in a background thread. However, to present the final rendered image on screen, the resulting image must first be uploaded to the GPU. This requires having an OpenGL context bound to the current thread, however, OpenGL contexts cannot be shared between threads. The workaround would be to create a new context in every mt_cairo_render_t worker thread, however, given that there can be dozens of render workers, this would generate dozens of OpenGL contexts, which isn't very efficient either. In lieu of a better mechanism, mt_cairo_render would simply perform the final image upload to the GPU during the mt_cairo_render_draw operation. Which this was utilizing pixel-buffer-objects to streamline the uploading process and avoid OpenGL pipeline stalls, there was still some memcpy'ing involved, which had a non-trivial cost when invoked from the main X-Plane thread.</p>
 <p>mt_cairo_uploader_t solves all of these issues. It is a separate background worker thread with its own OpenGL context dedicated to doing nothing but uploading of finished renders to the GPU. Once created, the uploader goes into a wait-sleep, awaiting new work assignments from renderers. Once a render is finished, the uploader is notified, immediately wakes up and uploads the finished render to the GPU. This happens without waiting for the main X-Plane thread to come around wanting to draw a particular mt_cairo_render_t. With this infrastructure in place, calls to mt_cairo_render_draw no longer block for texture uploading.</p>

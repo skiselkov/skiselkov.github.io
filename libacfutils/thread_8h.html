@@ -277,7 +277,7 @@ bool_t&#160;</td><td class="memItemRight" valign="bottom"><b>lacf_thread_list_in
 <li><a class="el" href="thread_8h.html#a0ab38838d7ef7332e8cced210141e72c">condvar_t</a> - A generic condition variable.</li>
 </ol>
 <p>The actual implementation is large contained in this header and mostly works as a set of pre-processor switching on top of the OS-specific threading API (pthreads on Unix/Linux, winthreads on Win32).</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Thread Handling</h2>
 <p>Example of how to create a thread: </p><div class="fragment"><div class="line"><a class="code" href="thread_8h.html#ab473f076e05d966f00b78ecb88c8f357">thread_t</a> my_thread;</div>
 <div class="line"><span class="keywordflow">if</span> (!<a class="code" href="thread_8h.html#af786b659a08ce46cf82d1ff34e850117">thread_create</a>(&amp;my_thread, thread_main_func, thread_arg))</div>
@@ -340,7 +340,7 @@ Thread Handling</h2>
 <div class="line">}</div>
 <div class="line"><a class="code" href="thread_8h.html#a9147646b7eef9f977404c4192340442f">mutex_exit</a>(&amp;my_lock);           <span class="comment">// release the lock</span></div>
 <div class="ttc" id="athread_8h_html_acef27d2f99d996e8b84a85bd43cfd5de"><div class="ttname"><a href="thread_8h.html#acef27d2f99d996e8b84a85bd43cfd5de">cv_timedwait</a></div><div class="ttdeci">static int cv_timedwait(condvar_t *cv, mutex_t *mtx, uint64_t limit)</div><div class="ttdef"><b>Definition:</b> <a href="thread_8h_source.html#l00898">thread.h:898</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md18"></a>
 Atomics</h2>
 <p>The atomic32_t and atomic64_t types describe signed 32- and 64-bit integers respectively, which are suitable for being passed to the relevant <code>atomic_*</code> functions. Example of how use an atomic function: </p><div class="fragment"><div class="line"><a class="code" href="thread_8h.html#a76001c2c78446302a9aa4ad103d74116">atomic32_t</a> my_value;       <span class="comment">// declare an atomic 32-bit signed int</span></div>
 <div class="line"><a class="code" href="thread_8h.html#ad49900de1ae7bda860e67a808129e589">atomic_set_32</a>(&amp;my_value, 1234);    <span class="comment">// set an integer atomically</span></div>
@@ -1726,7 +1726,7 @@ If the timeout has been reached without the condition becoming signalled, this f
 </div><div class="memdoc">
 <p>Acquires an <a class="el" href="structrwmutex__t.html">rwmutex_t</a> in either read or write mode. The lock can be simultaneously held in read mode by any number of threads. However, in write mode, the lock can only be held by a single thread. If the lock cannot be acquired immediately, the calling thread is blocked until successful.</p>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="structrwmutex__t.html">rwmutex_t</a> does NOT support recursion. An attempt to acquire the lock multiple times from the same thread can cause an assertion failure or even deadlock.</dd></dl>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md19"></a>
 Locking Order</h3>
 <p><a class="el" href="structrwmutex__t.html">rwmutex_t</a> implements deterministic locking order. If the lock is currently held by one or more readers and another thread attempts to acquire the lock in write (exclusive) mode, the calling thread is blocked until all existing read locks are relinquished. Furthermore, any newly arriving locking attempts will queue up "behind" any preceding attempts and block. The queue of pending locks is then cleared in order of arrival. Writers can only enter one by one, while a "batched up" group of readers can enter simultaneously. This prevents lock starvation of writers in the presence of a large number of readers and vice versa.</p>
 <dl class="params"><dt>Parameters</dt><dd>

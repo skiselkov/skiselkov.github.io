@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xlate_5fent_5ft_1057',['xlate_ent_t',['../structxlate__ent__t.html',1,'']]],
-  ['xpjoy_5faxis_5ft_1058',['xpjoy_axis_t',['../joystick_8h.html#ab7e81012fa7b93e829d88a6bd1f31415',1,'joystick.h']]]
+  ['xlate_5fent_5ft_1109',['xlate_ent_t',['../structxlate__ent__t.html',1,'']]],
+  ['xpjoy_5faxis_5ft_1110',['xpjoy_axis_t',['../joystick_8h.html#ab7e81012fa7b93e829d88a6bd1f31415',1,'joystick.h']]]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['rad2deg_2073',['RAD2DEG',['../geom_8h.html#a18b5ff2c19b69c072069398c7a5520cd',1,'geom.h']]],
-  ['rad2deg_5fratio_2074',['RAD2DEG_RATIO',['../geom_8h.html#a239249078e7a3b4201b1ed2b7bd821a7',1,'geom.h']]],
-  ['rel_5fhdg_2075',['rel_hdg',['../helpers_8h.html#added5b55cac5c1aa30fe7d7b038d610e',1,'helpers.h']]],
-  ['req_5farr_2076',['REQ_ARR',['../sysmacros_8h.html#a10337d394834108db748acd2849dad84',1,'sysmacros.h']]],
-  ['req_5fptr_2077',['REQ_PTR',['../sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9',1,'sysmacros.h']]]
+  ['p2roundup_2168',['P2ROUNDUP',['../helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093',1,'helpers.h']]],
+  ['packed_5fattr_2169',['PACKED_ATTR',['../core_8h.html#acf3209f083788b8c9ebfabd7a1fdb48c',1,'core.h']]],
+  ['pow2_2170',['POW2',['../math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17',1,'math.h']]],
+  ['pow3_2171',['POW3',['../math_8h.html#ab051a5ece45339feb3f4b19a4dddbcb2',1,'math.h']]],
+  ['pow4_2172',['POW4',['../math_8h.html#a480e892f3d55bf748572c3952a738e6f',1,'math.h']]]
 ];

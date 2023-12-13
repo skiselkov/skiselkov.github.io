@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xpjoy_5faxis_5ft_1937',['xpjoy_axis_t',['../joystick_8h.html#ab7e81012fa7b93e829d88a6bd1f31415',1,'joystick.h']]]
+  ['optional_5fstate_5ft_2021',['optional_state_t',['../optional_8h.html#addfb05740c0220faaea7030f0111965e',1,'optional.h']]]
 ];

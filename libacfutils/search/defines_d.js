@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['p2roundup_2068',['P2ROUNDUP',['../helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093',1,'helpers.h']]],
-  ['packed_5fattr_2069',['PACKED_ATTR',['../core_8h.html#acf3209f083788b8c9ebfabd7a1fdb48c',1,'core.h']]],
-  ['pow2_2070',['POW2',['../math_8h.html#a1ac0abc7c913167ecaf81778d57e7a17',1,'math.h']]],
-  ['pow3_2071',['POW3',['../math_8h.html#ab051a5ece45339feb3f4b19a4dddbcb2',1,'math.h']]],
-  ['pow4_2072',['POW4',['../math_8h.html#a480e892f3d55bf748572c3952a738e6f',1,'math.h']]]
+  ['opt_5for_2164',['OPT_OR',['../optional_8h.html#ab65621263872982e2ecf95bb2c190810',1,'optional.h']]],
+  ['opt_5for_5felse_2165',['OPT_OR_ELSE',['../optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8',1,'optional.h']]],
+  ['optional_5ftype_5flist_2166',['OPTIONAL_TYPE_LIST',['../optional_8h.html#af1bc079f415a97870a88de442562210f',1,'optional.h']]],
+  ['optional_5ftype_5flist_5fadd_2167',['OPTIONAL_TYPE_LIST_ADD',['../optional_8h.html#a783fdd25c33e6bc7f19275548404e578',1,'optional.h']]]
 ];
