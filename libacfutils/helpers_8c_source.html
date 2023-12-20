@@ -986,8 +986,8 @@ $(function() {
 <div class="line"><a name="l01222"></a><span class="lineno"><a class="line" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5"> 1222</a></span>&#160;<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, bool_t *isdir)</div>
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;{</div>
 <div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;    <span class="keywordtype">int</span> len = strlen(filename);</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;    TCHAR filenameT[len + 1];</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;    <span class="keywordtype">unsigned</span> len = strlen(filename);</div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;    TCHAR *filenameT = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(len + 1, <span class="keyword">sizeof</span> (*filenameT));</div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;    DWORD attr;</div>
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
 <div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, filename, -1, filenameT, len + 1);</div>
@@ -996,402 +996,425 @@ $(function() {
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;        *isdir = !!(attr &amp; FILE_ATTRIBUTE_DIRECTORY);</div>
 <div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;    <span class="keywordflow">if</span> (attr == INVALID_FILE_ATTRIBUTES) {</div>
 <div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;        errno = ENOENT; <span class="comment">/* fake an errno value */</span></div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;    }</div>
-<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    <span class="keyword">struct </span>stat st;</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160; </div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;    <span class="keywordflow">if</span> (isdir != NULL)</div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;        *isdir = B_FALSE;</div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;    <span class="keywordflow">if</span> (stat(filename, &amp;st) &lt; 0) {</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        <span class="keywordflow">if</span> (errno != ENOENT)</div>
-<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error checking if file %s exists: %s&quot;</span>,</div>
-<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;                filename, strerror(errno));</div>
-<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;    }</div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;    <span class="keywordflow">if</span> (isdir != NULL)</div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;        *isdir = S_ISDIR(st.st_mode);</div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;}</div>
-<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160; </div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;bool_t</div>
-<div class="line"><a name="l01259"></a><span class="lineno"><a class="line" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b"> 1259</a></span>&#160;<a class="code" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirname)</div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;{</div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(dirname != NULL);</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    DWORD err;</div>
-<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;    <span class="keywordtype">int</span> len = strlen(dirname);</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    WCHAR dirnameW[len + 1];</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160; </div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, dirname, -1, dirnameW, len + 1);</div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;    <span class="keywordflow">if</span> (!CreateDirectory(dirnameW, NULL) &amp;&amp;</div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;        (err = GetLastError()) != ERROR_ALREADY_EXISTS) {</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;        win_perror(err, <span class="stringliteral">&quot;Error creating directory %s&quot;</span>, dirname);</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;    }</div>
-<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;    <span class="keywordflow">if</span> (mkdir(dirname, 0777) != 0 &amp;&amp; errno != EEXIST) {</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error creating directory %s: %s&quot;</span>, dirname,</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;            strerror(errno));</div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;    }</div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;}</div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160; </div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;bool_t</div>
-<div class="line"><a name="l01288"></a><span class="lineno"><a class="line" href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f"> 1288</a></span>&#160;<a class="code" href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirname)</div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;{</div>
-<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;    <span class="keywordtype">char</span> *partname = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, strlen(dirname) + 1);</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160; </div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> *start = dirname, *end = strchr(&amp;dirname[1], DIRSEP);</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;        end != NULL; start = end, end = strchr(&amp;start[1], DIRSEP)) {</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;        strncat(partname, start, end - start);</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a>(partname))</div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;            <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;    }</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160; </div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    free(partname);</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160; </div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a>(dirname));</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;}</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160; </div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160; </div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;<span class="keyword">static</span> bool_t</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;win_rmdir(<span class="keyword">const</span> LPTSTR dirnameT)</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;{</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;    WIN32_FIND_DATA find_data;</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;    HANDLE h_find;</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;    <span class="keywordtype">int</span> dirname_len = wcslen(dirnameT);</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;    TCHAR srchnameT[dirname_len + 4];</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160; </div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;    StringCchPrintf(srchnameT, dirname_len + 4, TEXT(<span class="stringliteral">&quot;%s\\*&quot;</span>), dirnameT);</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    h_find = FindFirstFile(srchnameT, &amp;find_data);</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;    <span class="keywordflow">if</span> (h_find == INVALID_HANDLE_VALUE) {</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;        <span class="keywordtype">int</span> err = GetLastError();</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;        <span class="keywordtype">char</span> dirname[MAX_PATH];</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;        WideCharToMultiByte(CP_UTF8, 0, dirnameT, -1, dirname,</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;            <span class="keyword">sizeof</span> (dirname), NULL, NULL);</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;        win_perror(err, <span class="stringliteral">&quot;Error listing directory %s&quot;</span>, dirname);</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;    }</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;    <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        TCHAR filepathT[MAX_PATH];</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;        DWORD attrs;</div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160; </div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;        <span class="keywordflow">if</span> (wcscmp(find_data.cFileName, TEXT(<span class="stringliteral">&quot;.&quot;</span>)) == 0 ||</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;            wcscmp(find_data.cFileName, TEXT(<span class="stringliteral">&quot;..&quot;</span>)) == 0)</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;        free(filenameT);</div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;    }</div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;    free(filenameT);</div>
+<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;    <span class="keyword">struct </span>stat st;</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160; </div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;    <span class="keywordflow">if</span> (isdir != NULL)</div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        *isdir = B_FALSE;</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    <span class="keywordflow">if</span> (stat(filename, &amp;st) &lt; 0) {</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;        <span class="keywordflow">if</span> (errno != ENOENT)</div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error checking if file %s exists: %s&quot;</span>,</div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;                filename, strerror(errno));</div>
+<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;    }</div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;    <span class="keywordflow">if</span> (isdir != NULL)</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        *isdir = S_ISDIR(st.st_mode);</div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;}</div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160; </div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;bool_t</div>
+<div class="line"><a name="l01261"></a><span class="lineno"><a class="line" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b"> 1261</a></span>&#160;<a class="code" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirname)</div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;{</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(dirname != NULL);</div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    DWORD err;</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;    <span class="keywordtype">unsigned</span> len = strlen(dirname);</div>
+<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    WCHAR *dirnameW = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(len + 1, <span class="keyword">sizeof</span> (*dirnameW));</div>
+<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160; </div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, dirname, -1, dirnameW, len + 1);</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;    <span class="keywordflow">if</span> (!CreateDirectory(dirnameW, NULL) &amp;&amp;</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;        (err = GetLastError()) != ERROR_ALREADY_EXISTS) {</div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;        win_perror(err, <span class="stringliteral">&quot;Error creating directory %s&quot;</span>, dirname);</div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160;        free(dirnameW);</div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    }</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;    free(dirnameW);</div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;    <span class="keywordflow">if</span> (mkdir(dirname, 0777) != 0 &amp;&amp; errno != EEXIST) {</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error creating directory %s: %s&quot;</span>, dirname,</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;            strerror(errno));</div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;    }</div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;}</div>
+<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160; </div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;bool_t</div>
+<div class="line"><a name="l01292"></a><span class="lineno"><a class="line" href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f"> 1292</a></span>&#160;<a class="code" href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirname)</div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;{</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;    <span class="keywordtype">char</span> *partname = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, strlen(dirname) + 1);</div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160; </div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> *start = dirname, *end = strchr(&amp;dirname[1], DIRSEP);</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;        end != NULL; start = end, end = strchr(&amp;start[1], DIRSEP)) {</div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;        strncat(partname, start, end - start);</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a>(partname))</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;            <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    }</div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160; </div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;    free(partname);</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a>(dirname));</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;}</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160; </div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160; </div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;<span class="keyword">static</span> bool_t</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;win_rmdir(<span class="keyword">const</span> LPTSTR dirnameT)</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;{</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;    WIN32_FIND_DATA find_data;</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;    HANDLE h_find = INVALID_HANDLE_VALUE;</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    <span class="keywordtype">unsigned</span> dirname_len = wcslen(dirnameT);</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;    TCHAR *srchnameT = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(dirname_len + 4, <span class="keyword">sizeof</span> (*srchnameT));</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160; </div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;    StringCchPrintf(srchnameT, dirname_len + 4, TEXT(<span class="stringliteral">&quot;%s\\*&quot;</span>), dirnameT);</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;    h_find = FindFirstFile(srchnameT, &amp;find_data);</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;    <span class="keywordflow">if</span> (h_find == INVALID_HANDLE_VALUE) {</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;        <span class="keywordtype">int</span> err = GetLastError();</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;        <span class="keywordtype">char</span> dirname[MAX_PATH];</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        WideCharToMultiByte(CP_UTF8, 0, dirnameT, -1, dirname,</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            <span class="keyword">sizeof</span> (dirname), NULL, NULL);</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;        win_perror(err, <span class="stringliteral">&quot;Error listing directory %s&quot;</span>, dirname);</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;    }</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;        TCHAR filepathT[MAX_PATH];</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;        DWORD attrs;</div>
 <div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160; </div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;        StringCchPrintf(filepathT, MAX_PATH, TEXT(<span class="stringliteral">&quot;%s\\%s&quot;</span>), dirnameT,</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            find_data.cFileName);</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;        attrs = GetFileAttributes(filepathT);</div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;        <span class="keywordflow">if</span> (wcscmp(find_data.cFileName, TEXT(<span class="stringliteral">&quot;.&quot;</span>)) == 0 ||</div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            wcscmp(find_data.cFileName, TEXT(<span class="stringliteral">&quot;..&quot;</span>)) == 0)</div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160; </div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;        <span class="keywordflow">if</span> (attrs &amp; FILE_ATTRIBUTE_DIRECTORY) {</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;            <span class="keywordflow">if</span> (!win_rmdir(filepathT))</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;                <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            <span class="keywordflow">if</span> (!DeleteFile(filepathT)) {</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;                <span class="keywordtype">char</span> filepath[MAX_PATH];</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;                WideCharToMultiByte(CP_UTF8, 0, filepathT, -1,</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;                    filepath, <span class="keyword">sizeof</span> (filepath), NULL, NULL);</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;                win_perror(GetLastError(), <span class="stringliteral">&quot;Error removing &quot;</span></div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;                    <span class="stringliteral">&quot;file %s&quot;</span>, filepath);</div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;                <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;            }</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;        }</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    } <span class="keywordflow">while</span> (FindNextFile(h_find, &amp;find_data));</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    FindClose(h_find);</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160; </div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    <span class="keywordflow">if</span> (!RemoveDirectory(dirnameT)) {</div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;        <span class="keywordtype">char</span> dirname[MAX_PATH];</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;        WideCharToMultiByte(CP_UTF8, 0, dirnameT, -1,</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;            dirname, <span class="keyword">sizeof</span> (dirname), NULL, NULL);</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        win_perror(GetLastError(), <span class="stringliteral">&quot;Error removing directory %s&quot;</span>,</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;            dirname);</div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;    }</div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160; </div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;errout:</div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    FindClose(h_find);</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;}</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160; </div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160; </div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;bool_t</div>
-<div class="line"><a name="l01374"></a><span class="lineno"><a class="line" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af"> 1374</a></span>&#160;<a class="code" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirname)</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;{</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;    TCHAR dirnameT[strlen(dirname) + 1];</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160; </div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, dirname, -1, dirnameT,</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;        <span class="keyword">sizeof</span> (dirnameT));</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <span class="keywordflow">return</span> (win_rmdir(dirnameT));</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    DIR *dp;</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    <span class="keyword">struct </span>dirent *de;</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160; </div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    <span class="keywordflow">if</span> ((dp = opendir(dirname)) == NULL) {</div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: %s&quot;</span>, dirname,</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;            strerror(errno));</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    }</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    <span class="keywordflow">while</span> ((de = readdir(dp)) != NULL) {</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;        <span class="keywordtype">char</span> filename[FILENAME_MAX];</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;        <span class="keywordtype">int</span> err;</div>
-<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;        <span class="keyword">struct </span>stat st;</div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;        StringCchPrintf(filepathT, MAX_PATH, TEXT(<span class="stringliteral">&quot;%s\\%s&quot;</span>), dirnameT,</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;            find_data.cFileName);</div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;        attrs = GetFileAttributes(filepathT);</div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160; </div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;        <span class="keywordflow">if</span> (attrs &amp; FILE_ATTRIBUTE_DIRECTORY) {</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            <span class="keywordflow">if</span> (!win_rmdir(filepathT))</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;                <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;            <span class="keywordflow">if</span> (!DeleteFile(filepathT)) {</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;                <span class="keywordtype">char</span> filepath[MAX_PATH];</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;                WideCharToMultiByte(CP_UTF8, 0, filepathT, -1,</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;                    filepath, <span class="keyword">sizeof</span> (filepath), NULL, NULL);</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;                win_perror(GetLastError(), <span class="stringliteral">&quot;Error removing &quot;</span></div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;                    <span class="stringliteral">&quot;file %s&quot;</span>, filepath);</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;                <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;            }</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;        }</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    } <span class="keywordflow">while</span> (FindNextFile(h_find, &amp;find_data));</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160; </div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;    <span class="keywordflow">if</span> (!RemoveDirectory(dirnameT)) {</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        <span class="keywordtype">char</span> dirname[MAX_PATH];</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;        WideCharToMultiByte(CP_UTF8, 0, dirnameT, -1,</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;            dirname, <span class="keyword">sizeof</span> (dirname), NULL, NULL);</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;        win_perror(GetLastError(), <span class="stringliteral">&quot;Error removing directory %s&quot;</span>,</div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;            dirname);</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    }</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    free(srchnameT);</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    FindClose(h_find);</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160; </div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;errout:</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    <span class="keywordflow">if</span> (h_find != INVALID_HANDLE_VALUE) {</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        FindClose(h_find);</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    }</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    free(srchnameT);</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;}</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160; </div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160; </div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;bool_t</div>
+<div class="line"><a name="l01382"></a><span class="lineno"><a class="line" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af"> 1382</a></span>&#160;<a class="code" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dirname)</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;{</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keywordtype">unsigned</span> l = strlen(dirname) + 1;</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    TCHAR *dirnameT = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(l + 1, <span class="keyword">sizeof</span> (*dirnameT));</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160; </div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, dirname, -1, dirnameT, l);</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;    bool_t result = win_rmdir(dirnameT);</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    free(dirnameT);</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;    <span class="keywordflow">return</span> (result);</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;    DIR *dp;</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;    <span class="keyword">struct </span>dirent *de;</div>
 <div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160; </div>
-<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;        <span class="keywordflow">if</span> (strcmp(de-&gt;d_name, <span class="stringliteral">&quot;.&quot;</span>) == 0 ||</div>
-<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;            strcmp(de-&gt;d_name, <span class="stringliteral">&quot;..&quot;</span>) == 0)</div>
-<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160; </div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;        <span class="keywordflow">if</span> (snprintf(filename, <span class="keyword">sizeof</span> (filename), <span class="stringliteral">&quot;%s/%s&quot;</span>, dirname,</div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;            de-&gt;d_name) &gt;= (ssize_t)sizeof (filename)) {</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: path too long&quot;</span>,</div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;                dirname);</div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;        }</div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        <span class="keywordflow">if</span> (lstat(filename, &amp;st) &lt; 0) {</div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: cannot stat &quot;</span></div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                <span class="stringliteral">&quot;file %s: %s&quot;</span>, dirname, de-&gt;d_name,</div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;                strerror(errno));</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;        }</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;        <span class="keywordflow">if</span> (S_ISDIR(st.st_mode)) {</div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a>(filename))</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;                <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;            err = 0;</div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;            err = unlink(filename);</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;        }</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;        <span class="keywordflow">if</span> (err != 0) {</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, filename,</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;                strerror(errno));</div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;        }</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    }</div>
-<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;    closedir(dp);</div>
-<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    <span class="keywordflow">if</span> (rmdir(dirname) != 0) {</div>
-<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, dirname, strerror(errno));</div>
-<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
-<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    }</div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;errout:</div>
-<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;    closedir(dp);</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;    <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;}</div>
-<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160; </div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;bool_t</div>
-<div class="line"><a name="l01449"></a><span class="lineno"><a class="line" href="helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7"> 1449</a></span>&#160;<a class="code" href="helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7">remove_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, bool_t notfound_ok)</div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;{</div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;    TCHAR filenameT[strlen(filename) + 1];</div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;    DWORD error;</div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160; </div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, filename, -1, filenameT,</div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;        <span class="keyword">sizeof</span> (filenameT));</div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">if</span> (!DeleteFile(filenameT) &amp;&amp; ((error = GetLastError()) !=</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        ERROR_FILE_NOT_FOUND || !notfound_ok)) {</div>
-<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;        win_perror(error, <span class="stringliteral">&quot;Cannot remove file %s&quot;</span>, filename);</div>
-<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    }</div>
-<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    <span class="keywordflow">if</span> (unlink(filename) &lt; 0 &amp;&amp; (errno != ENOENT || !notfound_ok)) {</div>
-<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot remove file %s: %s&quot;</span>, filename, strerror(errno));</div>
-<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
-<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;    }</div>
-<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
-<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;}</div>
-<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160; </div>
-<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;API_EXPORT <span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l01477"></a><span class="lineno"><a class="line" href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9"> 1477</a></span>&#160;<a class="code" href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9">lacf_dirname</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename)</div>
-<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;{</div>
-<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    <span class="keywordtype">int</span> l = strlen(filename);</div>
-<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;    <span class="keywordtype">char</span> *p1, *p2;</div>
-<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;    <span class="keywordtype">char</span> *str;</div>
-<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160; </div>
-<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;    <span class="keywordflow">if</span> (l == 0)</div>
-<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;        <span class="keywordflow">return</span> (strdup(<span class="stringliteral">&quot;&quot;</span>));</div>
-<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160; </div>
-<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;    p1 = strrchr(filename, <span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;    p2 = strrchr(filename, <span class="charliteral">&#39;\\&#39;</span>);</div>
-<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;    p1 = MAX(p1, p2);</div>
-<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;    <span class="keywordflow">if</span> (p1 == NULL)</div>
-<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;        <span class="keywordflow">return</span> (strdup(<span class="stringliteral">&quot;&quot;</span>));</div>
-<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;    str = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>((p1 - filename) + 1);</div>
-<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(str, filename, (p1 - filename) + 1);</div>
-<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160; </div>
-<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;    <span class="keywordflow">return</span> (str);</div>
-<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;}</div>
-<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160; </div>
-<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;<span class="preprocessor">#if IBM</span></div>
-<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160; </div>
-<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;DIR *</div>
-<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;opendir(<span class="keyword">const</span> <span class="keywordtype">char</span> *path)</div>
-<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;{</div>
-<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;    DIR *dirp = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*dirp));</div>
-<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;    TCHAR   pathT[strlen(path) + 3];    <span class="comment">/* For &#39;\*&#39; at the end */</span></div>
-<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160; </div>
-<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, path, -1, pathT, <span class="keyword">sizeof</span> (pathT));</div>
-<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;    StringCchCat(pathT, <span class="keyword">sizeof</span> (pathT), TEXT(<span class="stringliteral">&quot;\\*&quot;</span>));</div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;    dirp-&gt;handle = FindFirstFile(pathT, &amp;dirp-&gt;find_data);</div>
-<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;    <span class="keywordflow">if</span> (dirp-&gt;handle == INVALID_HANDLE_VALUE) {</div>
-<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;        win_perror(GetLastError(), <span class="stringliteral">&quot;Cannot open directory %s&quot;</span>, path);</div>
-<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;        free(dirp);</div>
-<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;    }</div>
-<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;    dirp-&gt;first = B_TRUE;</div>
-<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;    <span class="keywordflow">return</span> (dirp);</div>
-<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;}</div>
-<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160; </div>
-<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;<span class="keyword">struct </span>dirent *</div>
-<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;readdir(DIR *dirp)</div>
-<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;{</div>
-<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;    <span class="comment">/* First call to readdir retrieves what we got from FindFirstFile */</span></div>
-<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;    <span class="keywordflow">if</span> (!dirp-&gt;first) {</div>
-<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;        <span class="keywordflow">if</span> (FindNextFile(dirp-&gt;handle, &amp;dirp-&gt;find_data) == 0)</div>
-<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;            <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;        dirp-&gt;first = B_FALSE;</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;    <span class="keywordflow">if</span> ((dp = opendir(dirname)) == NULL) {</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: %s&quot;</span>, dirname,</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;            strerror(errno));</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    }</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;    <span class="keywordflow">while</span> ((de = readdir(dp)) != NULL) {</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        <span class="keywordtype">char</span> filename[FILENAME_MAX];</div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        <span class="keywordtype">int</span> err;</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;        <span class="keyword">struct </span>stat st;</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160; </div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;        <span class="keywordflow">if</span> (strcmp(de-&gt;d_name, <span class="stringliteral">&quot;.&quot;</span>) == 0 ||</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;            strcmp(de-&gt;d_name, <span class="stringliteral">&quot;..&quot;</span>) == 0)</div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160; </div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;        <span class="keywordflow">if</span> (snprintf(filename, <span class="keyword">sizeof</span> (filename), <span class="stringliteral">&quot;%s/%s&quot;</span>, dirname,</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;            de-&gt;d_name) &gt;= (ssize_t)sizeof (filename)) {</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: path too long&quot;</span>,</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;                dirname);</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;        }</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        <span class="keywordflow">if</span> (lstat(filename, &amp;st) &lt; 0) {</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing directory %s: cannot stat &quot;</span></div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                <span class="stringliteral">&quot;file %s: %s&quot;</span>, dirname, de-&gt;d_name,</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;                strerror(errno));</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;        }</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;        <span class="keywordflow">if</span> (S_ISDIR(st.st_mode)) {</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a>(filename))</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;                <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;            err = 0;</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;            err = unlink(filename);</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;        }</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;        <span class="keywordflow">if</span> (err != 0) {</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, filename,</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;                strerror(errno));</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;            <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        }</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;    }</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;    closedir(dp);</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;    <span class="keywordflow">if</span> (rmdir(dirname) != 0) {</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Error removing %s: %s&quot;</span>, dirname, strerror(errno));</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;    }</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;errout:</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    closedir(dp);</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;    <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;}</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160; </div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;bool_t</div>
+<div class="line"><a name="l01459"></a><span class="lineno"><a class="line" href="helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7"> 1459</a></span>&#160;<a class="code" href="helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7">remove_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename, bool_t notfound_ok)</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;{</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;    <span class="keywordtype">unsigned</span> l = strlen(filename) + 1;</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;    TCHAR *filenameT = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(l, <span class="keyword">sizeof</span> (*filenameT));</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;    DWORD error;</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160; </div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, filename, -1, filenameT, l);</div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;    <span class="keywordflow">if</span> (!DeleteFile(filenameT) &amp;&amp; ((error = GetLastError()) !=</div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        ERROR_FILE_NOT_FOUND || !notfound_ok)) {</div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;        win_perror(error, <span class="stringliteral">&quot;Cannot remove file %s&quot;</span>, filename);</div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;        free(filenameT);</div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;    }</div>
+<div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;    free(filenameT);</div>
+<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;<span class="preprocessor">#else   </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    <span class="keywordflow">if</span> (unlink(filename) &lt; 0 &amp;&amp; (errno != ENOENT || !notfound_ok)) {</div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot remove file %s: %s&quot;</span>, filename, strerror(errno));</div>
+<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;        <span class="keywordflow">return</span> (B_FALSE);</div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;    }</div>
+<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;    <span class="keywordflow">return</span> (B_TRUE);</div>
+<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* !IBM */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;}</div>
+<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160; </div>
+<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;API_EXPORT <span class="keywordtype">char</span> *</div>
+<div class="line"><a name="l01489"></a><span class="lineno"><a class="line" href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9"> 1489</a></span>&#160;<a class="code" href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9">lacf_dirname</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *filename)</div>
+<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;{</div>
+<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;    <span class="keywordtype">int</span> l = strlen(filename);</div>
+<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;    <span class="keywordtype">char</span> *p1, *p2;</div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;    <span class="keywordtype">char</span> *str;</div>
+<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160; </div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;    <span class="keywordflow">if</span> (l == 0)</div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;        <span class="keywordflow">return</span> (strdup(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160; </div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;    p1 = strrchr(filename, <span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;    p2 = strrchr(filename, <span class="charliteral">&#39;\\&#39;</span>);</div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;    p1 = MAX(p1, p2);</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;    <span class="keywordflow">if</span> (p1 == NULL)</div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;        <span class="keywordflow">return</span> (strdup(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;    str = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>((p1 - filename) + 1);</div>
+<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;    <a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(str, filename, (p1 - filename) + 1);</div>
+<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160; </div>
+<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;    <span class="keywordflow">return</span> (str);</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;}</div>
+<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160; </div>
+<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;<span class="preprocessor">#if IBM</span></div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160; </div>
+<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;DIR *</div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;opendir(<span class="keyword">const</span> <span class="keywordtype">char</span> *path)</div>
+<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;{</div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;    DIR *dirp = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(1, <span class="keyword">sizeof</span> (*dirp));</div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;    <span class="keywordtype">unsigned</span> l = strlen(path) + 3;  <span class="comment">/* For &#39;\*&#39; at the end */</span></div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;    TCHAR   *pathT = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(l, <span class="keyword">sizeof</span> (pathT));</div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160; </div>
+<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, path, -1, pathT, l);</div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;    StringCchCat(pathT, <span class="keyword">sizeof</span> (pathT), TEXT(<span class="stringliteral">&quot;\\*&quot;</span>));</div>
+<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;    dirp-&gt;handle = FindFirstFile(pathT, &amp;dirp-&gt;find_data);</div>
+<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;    <span class="keywordflow">if</span> (dirp-&gt;handle == INVALID_HANDLE_VALUE) {</div>
+<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;        win_perror(GetLastError(), <span class="stringliteral">&quot;Cannot open directory %s&quot;</span>, path);</div>
+<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;        free(dirp);</div>
+<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;        free(pathT);</div>
+<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;    }</div>
-<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;    WideCharToMultiByte(CP_UTF8, 0, dirp-&gt;find_data.cFileName, -1,</div>
-<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;        dirp-&gt;de.d_name, sizeof (dirp-&gt;de.d_name), NULL, NULL);</div>
-<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;    <span class="keywordflow">return</span> (&amp;dirp-&gt;de);</div>
+<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;    dirp-&gt;first = B_TRUE;</div>
+<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;    free(pathT);</div>
+<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;    <span class="keywordflow">return</span> (dirp);</div>
 <div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;}</div>
 <div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160; </div>
-<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;closedir(DIR *dirp)</div>
+<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;<span class="keyword">struct </span>dirent *</div>
+<div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;readdir(DIR *dirp)</div>
 <div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;{</div>
-<div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;    FindClose(dirp-&gt;handle);</div>
-<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;    free(dirp);</div>
-<div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160;}</div>
-<div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160; </div>
-<div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;<span class="keywordtype">int</span></div>
-<div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160;stat(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, <span class="keyword">struct</span> stat *buf)</div>
-<div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;{</div>
-<div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160;    FILETIME    wtime, atime;</div>
-<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;    HANDLE      fh;</div>
-<div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    TCHAR       pathnameT[strlen(pathname) + 1];</div>
-<div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;    LARGE_INTEGER   sz;</div>
-<div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;    ULARGE_INTEGER  ftime;</div>
-<div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;    bool_t      isdir;</div>
-<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160; </div>
-<div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(pathname, &amp;isdir)) {</div>
-<div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot stat %s: no such file or directory&quot;</span>, pathname);</div>
-<div class="line"><a name="l01551"></a><span class="lineno"> 1551</span>&#160;        errno = ENOENT;</div>
-<div class="line"><a name="l01552"></a><span class="lineno"> 1552</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><a name="l01553"></a><span class="lineno"> 1553</span>&#160;    }</div>
-<div class="line"><a name="l01554"></a><span class="lineno"> 1554</span>&#160; </div>
-<div class="line"><a name="l01555"></a><span class="lineno"> 1555</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, pathname, -1, pathnameT,</div>
-<div class="line"><a name="l01556"></a><span class="lineno"> 1556</span>&#160;        <span class="keyword">sizeof</span> (pathnameT));</div>
-<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;    fh = CreateFile(pathnameT, (!isdir ? FILE_READ_ATTRIBUTES : 0) |</div>
-<div class="line"><a name="l01558"></a><span class="lineno"> 1558</span>&#160;        GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);</div>
-<div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160;    <span class="keywordflow">if</span> (fh == INVALID_HANDLE_VALUE ||</div>
-<div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160;        !GetFileTime(fh, NULL, &amp;atime, &amp;wtime) ||</div>
-<div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;        (!isdir &amp;&amp; !GetFileSizeEx(fh, &amp;sz))) {</div>
-<div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160;        win_perror(GetLastError(), <span class="stringliteral">&quot;Cannot stat %s&quot;</span>, pathname);</div>
-<div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;        errno = EACCES;</div>
-<div class="line"><a name="l01564"></a><span class="lineno"> 1564</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><a name="l01565"></a><span class="lineno"> 1565</span>&#160;    }</div>
-<div class="line"><a name="l01566"></a><span class="lineno"> 1566</span>&#160;    <span class="keywordflow">if</span> (isdir)</div>
-<div class="line"><a name="l01567"></a><span class="lineno"> 1567</span>&#160;        buf-&gt;st_size = 0;</div>
-<div class="line"><a name="l01568"></a><span class="lineno"> 1568</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l01569"></a><span class="lineno"> 1569</span>&#160;        buf-&gt;st_size = sz.QuadPart;</div>
+<div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;    <span class="comment">/* First call to readdir retrieves what we got from FindFirstFile */</span></div>
+<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;    <span class="keywordflow">if</span> (!dirp-&gt;first) {</div>
+<div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160;        <span class="keywordflow">if</span> (FindNextFile(dirp-&gt;handle, &amp;dirp-&gt;find_data) == 0)</div>
+<div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160;            <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160;        dirp-&gt;first = B_FALSE;</div>
+<div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;    }</div>
+<div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160;    WideCharToMultiByte(CP_UTF8, 0, dirp-&gt;find_data.cFileName, -1,</div>
+<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;        dirp-&gt;de.d_name, sizeof (dirp-&gt;de.d_name), NULL, NULL);</div>
+<div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    <span class="keywordflow">return</span> (&amp;dirp-&gt;de);</div>
+<div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;}</div>
+<div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160; </div>
+<div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160;closedir(DIR *dirp)</div>
+<div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160;{</div>
+<div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160;    FindClose(dirp-&gt;handle);</div>
+<div class="line"><a name="l01551"></a><span class="lineno"> 1551</span>&#160;    free(dirp);</div>
+<div class="line"><a name="l01552"></a><span class="lineno"> 1552</span>&#160;}</div>
+<div class="line"><a name="l01553"></a><span class="lineno"> 1553</span>&#160; </div>
+<div class="line"><a name="l01554"></a><span class="lineno"> 1554</span>&#160;<span class="keywordtype">int</span></div>
+<div class="line"><a name="l01555"></a><span class="lineno"> 1555</span>&#160;stat(<span class="keyword">const</span> <span class="keywordtype">char</span> *pathname, <span class="keyword">struct</span> stat *buf)</div>
+<div class="line"><a name="l01556"></a><span class="lineno"> 1556</span>&#160;{</div>
+<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;    FILETIME    wtime, atime;</div>
+<div class="line"><a name="l01558"></a><span class="lineno"> 1558</span>&#160;    HANDLE      fh = INVALID_HANDLE_VALUE;</div>
+<div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160;    <span class="keywordtype">unsigned</span>    l = strlen(pathname) + 1;</div>
+<div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160;    TCHAR       *pathnameT = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(l, <span class="keyword">sizeof</span> (*pathnameT));</div>
+<div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;    LARGE_INTEGER   sz;</div>
+<div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160;    ULARGE_INTEGER  ftime;</div>
+<div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;    bool_t      isdir;</div>
+<div class="line"><a name="l01564"></a><span class="lineno"> 1564</span>&#160; </div>
+<div class="line"><a name="l01565"></a><span class="lineno"> 1565</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a>(pathname, &amp;isdir)) {</div>
+<div class="line"><a name="l01566"></a><span class="lineno"> 1566</span>&#160;        <a class="code" href="log_8h.html#a34943dc7d05ecb5198fc5ec190346825">logMsg</a>(<span class="stringliteral">&quot;Cannot stat %s: no such file or directory&quot;</span>, pathname);</div>
+<div class="line"><a name="l01567"></a><span class="lineno"> 1567</span>&#160;        errno = ENOENT;</div>
+<div class="line"><a name="l01568"></a><span class="lineno"> 1568</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01569"></a><span class="lineno"> 1569</span>&#160;    }</div>
 <div class="line"><a name="l01570"></a><span class="lineno"> 1570</span>&#160; </div>
-<div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;    ftime.LowPart = atime.dwLowDateTime;</div>
-<div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;    ftime.HighPart = atime.dwHighDateTime;</div>
-<div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;    buf-&gt;st_atime = ftime.QuadPart / 10000000ull - 11644473600ull;</div>
-<div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160; </div>
-<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;    ftime.LowPart = wtime.dwLowDateTime;</div>
-<div class="line"><a name="l01576"></a><span class="lineno"> 1576</span>&#160;    ftime.HighPart = wtime.dwHighDateTime;</div>
-<div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;    buf-&gt;st_mtime = ftime.QuadPart / 10000000ull - 11644473600ull;</div>
-<div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160; </div>
-<div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;    CloseHandle(fh);</div>
-<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160; </div>
-<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;}</div>
-<div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160; </div>
-<div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160; </div>
-<div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;<span class="keyword">static</span> <span class="keywordtype">size_t</span></div>
-<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;qsort_partition(<span class="keywordtype">void</span> *base, <span class="keywordtype">long</span> lo, <span class="keywordtype">long</span> hi, <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;    <span class="keywordtype">int</span> (*compar)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg)</div>
-<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;{</div>
-<div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;<span class="preprocessor">#define SWAP(i, j) \</span></div>
-<div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160;<span class="preprocessor">    do { \</span></div>
-<div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;<span class="preprocessor">        uint8_t tmp[size]; \</span></div>
-<div class="line"><a name="l01593"></a><span class="lineno"> 1593</span>&#160;<span class="preprocessor">        memcpy(tmp, base + size * (i), size); \</span></div>
-<div class="line"><a name="l01594"></a><span class="lineno"> 1594</span>&#160;<span class="preprocessor">        memcpy(base + size * (i), base + size * (j), size); \</span></div>
-<div class="line"><a name="l01595"></a><span class="lineno"> 1595</span>&#160;<span class="preprocessor">        memcpy(base + size * (j), tmp, size); \</span></div>
-<div class="line"><a name="l01596"></a><span class="lineno"> 1596</span>&#160;<span class="preprocessor">    } while (0)</span></div>
-<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;    <span class="keywordtype">void</span> *pivot = base + hi * size;</div>
-<div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160;    <span class="keywordtype">long</span> i = lo;</div>
-<div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160; </div>
-<div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">long</span> j = lo; j &lt; hi; j++) {</div>
-<div class="line"><a name="l01601"></a><span class="lineno"> 1601</span>&#160;        <span class="keywordflow">if</span> (compar(base + j * size, pivot, arg) &lt; 0) {</div>
-<div class="line"><a name="l01602"></a><span class="lineno"> 1602</span>&#160;            SWAP(i, j);</div>
-<div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;            i++;</div>
-<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;        }</div>
-<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;    }</div>
-<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;    SWAP(i, hi);</div>
+<div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;    MultiByteToWideChar(CP_UTF8, 0, pathname, -1, pathnameT,</div>
+<div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;        <span class="keyword">sizeof</span> (pathnameT));</div>
+<div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;    fh = CreateFile(pathnameT, (!isdir ? FILE_READ_ATTRIBUTES : 0) |</div>
+<div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;        GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);</div>
+<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;    <span class="keywordflow">if</span> (fh == INVALID_HANDLE_VALUE ||</div>
+<div class="line"><a name="l01576"></a><span class="lineno"> 1576</span>&#160;        !GetFileTime(fh, NULL, &amp;atime, &amp;wtime) ||</div>
+<div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;        (!isdir &amp;&amp; !GetFileSizeEx(fh, &amp;sz))) {</div>
+<div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;        win_perror(GetLastError(), <span class="stringliteral">&quot;Cannot stat %s&quot;</span>, pathname);</div>
+<div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;        errno = EACCES;</div>
+<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;        <span class="keywordflow">goto</span> errout;</div>
+<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;    }</div>
+<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;    <span class="keywordflow">if</span> (isdir)</div>
+<div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;        buf-&gt;st_size = 0;</div>
+<div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;        buf-&gt;st_size = sz.QuadPart;</div>
+<div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160; </div>
+<div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;    ftime.LowPart = atime.dwLowDateTime;</div>
+<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;    ftime.HighPart = atime.dwHighDateTime;</div>
+<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;    buf-&gt;st_atime = ftime.QuadPart / 10000000ull - 11644473600ull;</div>
+<div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160; </div>
+<div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160;    ftime.LowPart = wtime.dwLowDateTime;</div>
+<div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;    ftime.HighPart = wtime.dwHighDateTime;</div>
+<div class="line"><a name="l01593"></a><span class="lineno"> 1593</span>&#160;    buf-&gt;st_mtime = ftime.QuadPart / 10000000ull - 11644473600ull;</div>
+<div class="line"><a name="l01594"></a><span class="lineno"> 1594</span>&#160; </div>
+<div class="line"><a name="l01595"></a><span class="lineno"> 1595</span>&#160;    CloseHandle(fh);</div>
+<div class="line"><a name="l01596"></a><span class="lineno"> 1596</span>&#160;    free(pathnameT);</div>
+<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160;errout:</div>
+<div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;    <span class="keywordflow">if</span> (fh != INVALID_HANDLE_VALUE) {</div>
+<div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;        CloseHandle(fh);</div>
+<div class="line"><a name="l01601"></a><span class="lineno"> 1601</span>&#160;    }</div>
+<div class="line"><a name="l01602"></a><span class="lineno"> 1602</span>&#160;    free(pathnameT);</div>
+<div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;    <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;}</div>
+<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160; </div>
+<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* IBM */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l01607"></a><span class="lineno"> 1607</span>&#160; </div>
-<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;    <span class="keywordflow">return</span> (i);</div>
-<div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;<span class="preprocessor">#undef  SWAP</span></div>
-<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;}</div>
-<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160; </div>
-<div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160;qsort_r_impl(<span class="keywordtype">void</span> *base, <span class="keywordtype">long</span> lo, <span class="keywordtype">long</span> hi, <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;    <span class="keywordtype">int</span> (*compar)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg)</div>
-<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;{</div>
-<div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;    <span class="keywordflow">if</span> (lo &lt; hi) {</div>
-<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;        <span class="keywordtype">long</span> p = qsort_partition(base, lo, hi, size, compar, arg);</div>
-<div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160; </div>
-<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;        qsort_r_impl(base, lo, p - 1, size, compar, arg);</div>
-<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;        qsort_r_impl(base, p + 1, hi, size, compar, arg);</div>
-<div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;    }</div>
-<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;}</div>
-<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160; </div>
-<div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01630"></a><span class="lineno"><a class="line" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277"> 1630</a></span>&#160;<a class="code" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a>(<span class="keywordtype">void</span> *base, <span class="keywordtype">size_t</span> nmemb, <span class="keywordtype">size_t</span> size,</div>
-<div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;    <span class="keywordtype">int</span> (*compar)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg)</div>
-<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;{</div>
-<div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(compar != NULL);</div>
-<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;    <span class="keywordflow">if</span> (nmemb != 0) {</div>
-<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(base != NULL);</div>
-<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;        qsort_r_impl(base, 0, nmemb - 1, size, compar, arg);</div>
-<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;    }</div>
-<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;}</div>
-<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160; </div>
-<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01647"></a><span class="lineno"><a class="line" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd"> 1647</a></span>&#160;<a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(<span class="keywordtype">char</span> *restrict dest, <span class="keyword">const</span> <span class="keywordtype">char</span> *restrict src, <span class="keywordtype">size_t</span> cap)</div>
-<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;{</div>
-<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;    <span class="keywordtype">size_t</span> l;</div>
-<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160; </div>
-<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cap != 0);</div>
-<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;<span class="comment">     * We MUSTN&#39;T use strlen here, because src may be SIGNIFICANTLY</span></div>
-<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;<span class="comment">     * larger than dest and we don&#39;t want to measure the ENTIRE body</span></div>
-<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;<span class="comment">     * of src. We only care for length UP TO the destination capacity.</span></div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;    <span class="keywordflow">for</span> (l = 0; l + 1 &lt; cap &amp;&amp; src[l] != <span class="charliteral">&#39;\0&#39;</span>; l++)</div>
-<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;        ;</div>
-<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;<span class="comment">     * Due to a bug in GCC, we can&#39;t use strncpy, as it sometimes throws</span></div>
-<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;<span class="comment">     * &quot;call to __builtin___strncpy_chk will always overflow destination</span></div>
-<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;<span class="comment">     * buffer&quot;, even when it&#39;s absolutely NOT the case.</span></div>
-<div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;    memcpy(dest, src, MIN(cap - 1, l + 1));</div>
-<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;    <span class="comment">/* Insure the string is ALWAYS terminated */</span></div>
-<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;    dest[cap - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;}</div>
+<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;<span class="keyword">static</span> <span class="keywordtype">size_t</span></div>
+<div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;qsort_partition(<span class="keywordtype">void</span> *base, <span class="keywordtype">long</span> lo, <span class="keywordtype">long</span> hi, <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;    <span class="keywordtype">int</span> (*compar)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;{</div>
+<div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;<span class="preprocessor">#define SWAP(i, j) \</span></div>
+<div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160;<span class="preprocessor">    do { \</span></div>
+<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;<span class="preprocessor">        memcpy(tmp, base + size * (i), size); \</span></div>
+<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;<span class="preprocessor">        memcpy(base + size * (i), base + size * (j), size); \</span></div>
+<div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;<span class="preprocessor">        memcpy(base + size * (j), tmp, size); \</span></div>
+<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;<span class="preprocessor">    } while (0)</span></div>
+<div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;    <span class="keywordtype">void</span> *pivot = base + hi * size;</div>
+<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;    <span class="keywordtype">long</span> i = lo;</div>
+<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;    uint8_t *tmp = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(size * <span class="keyword">sizeof</span> (*tmp));</div>
+<div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160; </div>
+<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">long</span> j = lo; j &lt; hi; j++) {</div>
+<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;        <span class="keywordflow">if</span> (compar(base + j * size, pivot, arg) &lt; 0) {</div>
+<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;            SWAP(i, j);</div>
+<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;            i++;</div>
+<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;        }</div>
+<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;    }</div>
+<div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;    SWAP(i, hi);</div>
+<div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160;    free(tmp);</div>
+<div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160; </div>
+<div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;    <span class="keywordflow">return</span> (i);</div>
+<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;<span class="preprocessor">#undef  SWAP</span></div>
+<div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;}</div>
+<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160; </div>
+<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;qsort_r_impl(<span class="keywordtype">void</span> *base, <span class="keywordtype">long</span> lo, <span class="keywordtype">long</span> hi, <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;    <span class="keywordtype">int</span> (*compar)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;{</div>
+<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;    <span class="keywordflow">if</span> (lo &lt; hi) {</div>
+<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;        <span class="keywordtype">long</span> p = qsort_partition(base, lo, hi, size, compar, arg);</div>
+<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160; </div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;        qsort_r_impl(base, lo, p - 1, size, compar, arg);</div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;        qsort_r_impl(base, p + 1, hi, size, compar, arg);</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;    }</div>
+<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;}</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160; </div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l01653"></a><span class="lineno"><a class="line" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277"> 1653</a></span>&#160;<a class="code" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a>(<span class="keywordtype">void</span> *base, <span class="keywordtype">size_t</span> nmemb, <span class="keywordtype">size_t</span> size,</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;    <span class="keywordtype">int</span> (*compar)(<span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keyword">const</span> <span class="keywordtype">void</span> *, <span class="keywordtype">void</span> *), <span class="keywordtype">void</span> *arg)</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;{</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(compar != NULL);</div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;    <span class="keywordflow">if</span> (nmemb != 0) {</div>
+<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;        <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(base != NULL);</div>
+<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;        qsort_r_impl(base, 0, nmemb - 1, size, compar, arg);</div>
+<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;    }</div>
+<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;}</div>
+<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160; </div>
+<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l01670"></a><span class="lineno"><a class="line" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd"> 1670</a></span>&#160;<a class="code" href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a>(<span class="keywordtype">char</span> *restrict dest, <span class="keyword">const</span> <span class="keywordtype">char</span> *restrict src, <span class="keywordtype">size_t</span> cap)</div>
+<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;{</div>
+<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;    <span class="keywordtype">size_t</span> l;</div>
+<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160; </div>
+<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(cap != 0);</div>
+<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;<span class="comment">     * We MUSTN&#39;T use strlen here, because src may be SIGNIFICANTLY</span></div>
+<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;<span class="comment">     * larger than dest and we don&#39;t want to measure the ENTIRE body</span></div>
+<div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;<span class="comment">     * of src. We only care for length UP TO the destination capacity.</span></div>
+<div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;    <span class="keywordflow">for</span> (l = 0; l + 1 &lt; cap &amp;&amp; src[l] != <span class="charliteral">&#39;\0&#39;</span>; l++)</div>
+<div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;        ;</div>
+<div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;<span class="comment">     * Due to a bug in GCC, we can&#39;t use strncpy, as it sometimes throws</span></div>
+<div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;<span class="comment">     * &quot;call to __builtin___strncpy_chk will always overflow destination</span></div>
+<div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;<span class="comment">     * buffer&quot;, even when it&#39;s absolutely NOT the case.</span></div>
+<div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;    memcpy(dest, src, MIN(cap - 1, l + 1));</div>
+<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;    <span class="comment">/* Insure the string is ALWAYS terminated */</span></div>
+<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;    dest[cap - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_a26960017b3b93ae2f2025c5a4bb06493"><div class="ttname"><a href="assert_8h.html#a26960017b3b93ae2f2025c5a4bb06493">ASSERT_MSG</a></div><div class="ttdeci">#define ASSERT_MSG(x, fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00198">assert.h:198</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
@@ -1405,7 +1428,7 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_a250c0a74dbc6556d120fa2e563c46df6"><div class="ttname"><a href="helpers_8h.html#a250c0a74dbc6556d120fa2e563c46df6">fix_pathsep</a></div><div class="ttdeci">void fix_pathsep(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00892">helpers.c:892</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a28aa317f1047b42c1c77a71e03fada94"><div class="ttname"><a href="helpers_8h.html#a28aa317f1047b42c1c77a71e03fada94">strtoupper</a></div><div class="ttdeci">void strtoupper(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00783">helpers.c:783</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a361e1a0df927839f8a04c9df79bbc15b"><div class="ttname"><a href="helpers_8h.html#a361e1a0df927839f8a04c9df79bbc15b">copy_rwy_ID</a></div><div class="ttdeci">void copy_rwy_ID(const char *src, char dst[4])</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00411">helpers.c:411</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_a3b91113e3a9b25ab00175dbe5d7301af"><div class="ttname"><a href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a></div><div class="ttdeci">bool_t remove_directory(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01374">helpers.c:1374</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a3b91113e3a9b25ab00175dbe5d7301af"><div class="ttname"><a href="helpers_8h.html#a3b91113e3a9b25ab00175dbe5d7301af">remove_directory</a></div><div class="ttdeci">bool_t remove_directory(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01382">helpers.c:1382</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a3c1a2e6f05dd84ac0b31464d12eeb4b5"><div class="ttname"><a href="helpers_8h.html#a3c1a2e6f05dd84ac0b31464d12eeb4b5">is_valid_icao_code</a></div><div class="ttdeci">bool_t is_valid_icao_code(const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00312">helpers.c:312</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a3cb4d21bba429e71025889e0aea7b1d6"><div class="ttname"><a href="helpers_8h.html#a3cb4d21bba429e71025889e0aea7b1d6">explode_line</a></div><div class="ttdeci">ssize_t explode_line(char *line, char delim, char **comps, size_t capacity)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00588">helpers.c:588</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a3db7e407832795a9b8bedc18cd930547"><div class="ttname"><a href="helpers_8h.html#a3db7e407832795a9b8bedc18cd930547">path_normalize</a></div><div class="ttdeci">void path_normalize(char *path)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01013">helpers.c:1013</a></div></div>
@@ -1422,21 +1445,21 @@ $(function() {
 <div class="ttc" id="ahelpers_8h_html_a77793777dd754d167695308feae78833"><div class="ttname"><a href="helpers_8h.html#a77793777dd754d167695308feae78833">is_valid_ndb_freq</a></div><div class="ttdeci">bool_t is_valid_ndb_freq(double freq_khz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00297">helpers.c:297</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a7c9d440c0119c02b39eaf28f902118e9"><div class="ttname"><a href="helpers_8h.html#a7c9d440c0119c02b39eaf28f902118e9">is_valid_hdg</a></div><div class="ttdeci">static bool_t is_valid_hdg(double hdg)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8h_source.html#l00169">helpers.h:169</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a88cfba22243cc7fac93e890adfd16adb"><div class="ttname"><a href="helpers_8h.html#a88cfba22243cc7fac93e890adfd16adb">extract_icao_country_code</a></div><div class="ttdeci">const char * extract_icao_country_code(const char *icao)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00358">helpers.c:358</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_a8ea678319419f12b4ac1af41568dca3b"><div class="ttname"><a href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a></div><div class="ttdeci">bool_t create_directory(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01259">helpers.c:1259</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_a8ea678319419f12b4ac1af41568dca3b"><div class="ttname"><a href="helpers_8h.html#a8ea678319419f12b4ac1af41568dca3b">create_directory</a></div><div class="ttdeci">bool_t create_directory(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01261">helpers.c:1261</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a8f87ba6dc040d945474f832594982717"><div class="ttname"><a href="helpers_8h.html#a8f87ba6dc040d945474f832594982717">is_valid_tacan_freq</a></div><div class="ttdeci">bool_t is_valid_tacan_freq(double freq_mhz)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00280">helpers.c:280</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_a99a82d2bf808f14f113bb5fd787d780a"><div class="ttname"><a href="helpers_8h.html#a99a82d2bf808f14f113bb5fd787d780a">airac_cycle2exp_date</a></div><div class="ttdeci">bool_t airac_cycle2exp_date(int cycle, char buf[16], time_t *cycle_end_p)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00526">helpers.c:526</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aa012c69005867de5d490f681f69bdc32"><div class="ttname"><a href="helpers_8h.html#aa012c69005867de5d490f681f69bdc32">file2str</a></div><div class="ttdeci">char * file2str(const char *comp,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01036">helpers.c:1036</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aa8cb08867675f56a6dd9b290eb8df21f"><div class="ttname"><a href="helpers_8h.html#aa8cb08867675f56a6dd9b290eb8df21f">append_format</a></div><div class="ttdeci">void append_format(char **str, size_t *sz, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00731">helpers.c:731</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_aa98fbd7b4dbe9d23065ab1c078a65277"><div class="ttname"><a href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a></div><div class="ttdeci">void lacf_qsort_r(void *base, size_t nmemb, size_t size, int(*compar)(const void *, const void *, void *), void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01630">helpers.c:1630</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01647">helpers.c:1647</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa98fbd7b4dbe9d23065ab1c078a65277"><div class="ttname"><a href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a></div><div class="ttdeci">void lacf_qsort_r(void *base, size_t nmemb, size_t size, int(*compar)(const void *, const void *, void *), void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01653">helpers.c:1653</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_aa9d97a161a5426c8f90b05aecf11c4fd"><div class="ttname"><a href="helpers_8h.html#aa9d97a161a5426c8f90b05aecf11c4fd">lacf_strlcpy</a></div><div class="ttdeci">void lacf_strlcpy(char *dest, const char *src, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01670">helpers.c:1670</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aaaff6b37b83221c6846e1f33ff9904c3"><div class="ttname"><a href="helpers_8h.html#aaaff6b37b83221c6846e1f33ff9904c3">free_strlist</a></div><div class="ttdeci">void free_strlist(char **comps, size_t num)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00703">helpers.c:703</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aab2e0b814c99c025f8f9f104fbc2524b"><div class="ttname"><a href="helpers_8h.html#aab2e0b814c99c025f8f9f104fbc2524b">rel_hdg_impl</a></div><div class="ttdeci">double rel_hdg_impl(double hdg1, double hdg2, const char *file, int line)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00194">helpers.c:194</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_aadcb2d470c0aefd94e21311289597719"><div class="ttname"><a href="helpers_8h.html#aadcb2d470c0aefd94e21311289597719">utf8_char_get_num_bytes</a></div><div class="ttdeci">size_t utf8_char_get_num_bytes(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00797">helpers.c:797</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_ab09eb47db95844e4213f4329b64ede9f"><div class="ttname"><a href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a></div><div class="ttdeci">bool_t create_directory_recursive(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01288">helpers.c:1288</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ab09eb47db95844e4213f4329b64ede9f"><div class="ttname"><a href="helpers_8h.html#ab09eb47db95844e4213f4329b64ede9f">create_directory_recursive</a></div><div class="ttdeci">bool_t create_directory_recursive(const char *dirname)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01292">helpers.c:1292</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_ab16fce6a4a8867f5fb5415c6c291f2b7"><div class="ttname"><a href="helpers_8h.html#ab16fce6a4a8867f5fb5415c6c291f2b7">is_valid_rwy_ID</a></div><div class="ttdeci">bool_t is_valid_rwy_ID(const char *rwy_ID)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00379">helpers.c:379</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_ab5895711a627711af219cc53fe7dc7c9"><div class="ttname"><a href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9">lacf_dirname</a></div><div class="ttdeci">char * lacf_dirname(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01477">helpers.c:1477</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ab5895711a627711af219cc53fe7dc7c9"><div class="ttname"><a href="helpers_8h.html#ab5895711a627711af219cc53fe7dc7c9">lacf_dirname</a></div><div class="ttdeci">char * lacf_dirname(const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01489">helpers.c:1489</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_abafc800336b18c55464e9db4c1710a8a"><div class="ttname"><a href="helpers_8h.html#abafc800336b18c55464e9db4c1710a8a">strtolower</a></div><div class="ttdeci">void strtolower(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00773">helpers.c:773</a></div></div>
-<div class="ttc" id="ahelpers_8h_html_ac0e3a3ed39b38189fa9e7c99c536eec7"><div class="ttname"><a href="helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7">remove_file</a></div><div class="ttdeci">bool_t remove_file(const char *filename, bool_t notfound_ok)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01449">helpers.c:1449</a></div></div>
+<div class="ttc" id="ahelpers_8h_html_ac0e3a3ed39b38189fa9e7c99c536eec7"><div class="ttname"><a href="helpers_8h.html#ac0e3a3ed39b38189fa9e7c99c536eec7">remove_file</a></div><div class="ttdeci">bool_t remove_file(const char *filename, bool_t notfound_ok)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01459">helpers.c:1459</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_ac1d25f92a294583c6464dead6d76d486"><div class="ttname"><a href="helpers_8h.html#ac1d25f92a294583c6464dead6d76d486">airac_cycle2eff_date2</a></div><div class="ttdeci">time_t airac_cycle2eff_date2(int cycle)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00499">helpers.c:499</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_ac42646e74896317edfba4743494c72d2"><div class="ttname"><a href="helpers_8h.html#ac42646e74896317edfba4743494c72d2">is_valid_xpdr_code</a></div><div class="ttdeci">bool_t is_valid_xpdr_code(int code)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l00217">helpers.c:217</a></div></div>
 <div class="ttc" id="ahelpers_8h_html_adbf21fb1fa47e4190c44aec9ba2bc4e5"><div class="ttname"><a href="helpers_8h.html#adbf21fb1fa47e4190c44aec9ba2bc4e5">file_exists</a></div><div class="ttdeci">bool_t file_exists(const char *path, bool_t *isdir)</div><div class="ttdef"><b>Definition:</b> <a href="helpers_8c_source.html#l01222">helpers.c:1222</a></div></div>

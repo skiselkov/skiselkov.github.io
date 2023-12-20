@@ -313,7 +313,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Retrieves the boolean value of a configuration key. If found, the value is placed in <code>value</code>. </p><dl class="section return"><dt>Returns</dt><dd>B_TRUE if the key was found, else B_FALSE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00846">846</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00847">847</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -356,7 +356,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a6e772b1d838aed1c4df86ff157b91fa8">conf_get_b()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01264">1264</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01265">1265</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -393,7 +393,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Retrieves the 64-bit float value of a configuration key. If found, the value is placed in <code>value</code>. </p><dl class="section return"><dt>Returns</dt><dd>B_TRUE if the key was found, else B_FALSE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00760">760</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00761">761</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -436,7 +436,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a66cc177c4bc983c919b86e98434fc83b">conf_get_d()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01225">1225</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01226">1226</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -475,7 +475,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 <p>Due to a limitation in MinGW, we can't use 'a' here. Instead, we directly write the binary representation of the double value. Since IEEE754 is used on all our supported platforms, that makes it portable. As future-proofing for big endian platforms, we always enforce storing the value in LE.</p>
 <dl class="section return"><dt>Returns</dt><dd>B_TRUE if the key was found, else B_FALSE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00812">812</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00813">813</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -518,7 +518,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a1a82121e50361a9a80648e4164ab7236">conf_get_da()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01238">1238</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01239">1239</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -571,12 +571,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 <div class="line"><span class="keywordflow">if</span> (<a class="code" href="conf_8h.html#af5046ccebaddedc3b678647327943e5c">conf_get_data</a>(<a class="code" href="structconf.html">conf</a>, key, buf, len) != 0) {</div>
 <div class="line">    ... use data ...</div>
 <div class="line">}</div>
-<div class="ttc" id="aconf_8h_html_af5046ccebaddedc3b678647327943e5c"><div class="ttname"><a href="conf_8h.html#af5046ccebaddedc3b678647327943e5c">conf_get_data</a></div><div class="ttdeci">size_t conf_get_data(const conf_t *conf, const char *key, void *buf, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00898">conf.c:898</a></div></div>
+<div class="ttc" id="aconf_8h_html_af5046ccebaddedc3b678647327943e5c"><div class="ttname"><a href="conf_8h.html#af5046ccebaddedc3b678647327943e5c">conf_get_data</a></div><div class="ttdeci">size_t conf_get_data(const conf_t *conf, const char *key, void *buf, size_t cap)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00899">conf.c:899</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00056">safe_alloc.h:56</a></div></div>
 <div class="ttc" id="astructconf_html"><div class="ttname"><a href="structconf.html">conf</a></div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l00041">conf.c:41</a></div></div>
 </div><!-- fragment --> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00898">898</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00899">899</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -625,7 +625,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#af5046ccebaddedc3b678647327943e5c">conf_get_data()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01251">1251</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01252">1252</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -662,7 +662,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as conf_get_d, but for float values. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00782">782</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00783">783</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -705,7 +705,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#abb8505bc6c6adb43316afbbe5deda0ed">conf_get_f()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01213">1213</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01214">1214</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -748,7 +748,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as conf_get_i(), but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01188">1188</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01189">1189</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -785,7 +785,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Retrieves the 64-bit int value of a configuration key. If found, the value is placed in <code>value</code>. </p><dl class="section return"><dt>Returns</dt><dd>B_TRUE if the key was found, else B_FALSE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00740">740</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00741">741</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -828,7 +828,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a492cab1be80f5411632fdc0581ed36e6">conf_get_lli()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01201">1201</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01202">1202</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -865,7 +865,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Retrieves the string value of a configuration key. If found, the value is placed in <code>value</code>. </p><dl class="section return"><dt>Returns</dt><dd>B_TRUE if the key was found, else B_FALSE. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00700">700</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00701">701</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -908,7 +908,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>conf_set_str_v</b> (c
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#ad9469d0ccce3ef218cee68825a8708c7">conf_get_str()</a>, but allows passing in a printf-formatted argument string in &lsquo;fmt&rsquo; and a variable number of arguments following &lsquo;value&rsquo; to construct the configuration key name dynamically. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01176">1176</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01177">1177</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1128,7 +1128,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str()</a> but with a <code>bool_t</code> value. Obviously this cannot remove a key, use <code>conf_set_str(conf, key, NULL)</code> for that. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01077">1077</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01078">1078</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1171,7 +1171,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a1fbef60d648d09313dccad7de9df522b">conf_set_b()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01357">1357</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01358">1358</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1208,7 +1208,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str()</a> but with a double value. Obviously this cannot remove a key, use <code>conf_set_str(conf, key, NULL)</code> for that. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01020">1020</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01021">1021</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1251,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#af084f64aac66caadb4c9cba255c5080d">conf_set_d()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01334">1334</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01335">1335</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1288,7 +1288,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#af084f64aac66caadb4c9cba255c5080d">conf_set_d()</a>, but able to accurately represent the exact value of a double argument. Obviously this cannot remove a key, use <code>conf_set_str(conf, key, NULL)</code> for that. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01051">1051</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01052">1052</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1331,7 +1331,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a4b6a34954ef5f0896840969a4086e24b">conf_set_da()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01346">1346</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01347">1347</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1380,7 +1380,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01104">1104</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01105">1105</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1429,7 +1429,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a5b793efef1115fe7585bfd3f37139328">conf_set_data()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01368">1368</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01369">1369</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1466,7 +1466,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str()</a> but with a float value. Obviously this cannot remove a key, use <code>conf_set_str(conf, key, NULL)</code> for that. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01035">1035</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01036">1036</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1509,7 +1509,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a415d7aa9a0931e63f68b24a48c9521d8">conf_set_f()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01323">1323</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01324">1324</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1546,7 +1546,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str()</a> but with an int value. Obviously this cannot remove a key, use <code>conf_set_str(conf, key, NULL)</code> for that. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00988">988</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00989">989</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1589,7 +1589,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#ac41fd414f651e7aa8282e66300a106ca">conf_set_i()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01300">1300</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01301">1301</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1626,7 +1626,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#a5100ca068890d3d59dfaab65c21fbf6c">conf_set_str()</a> but with a long long value. Obviously this cannot remove a key, use <code>conf_set_str(conf, key, NULL)</code> for that. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01000">1000</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01001">1001</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1669,7 +1669,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 </div><div class="memdoc">
 <p>Same as <a class="el" href="conf_8h.html#af9141de6ec91a5b2703e760f5b85ff8d">conf_set_lli()</a>, but with dynamic name-construction as <a class="el" href="conf_8h.html#aaa3c45e0cb0dc76cfa8aeff9b44968c0">conf_get_str_v()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01312">1312</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01313">1313</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1712,7 +1712,7 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00924">924</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l00925">925</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>
@@ -1769,9 +1769,9 @@ Use <a class="el" href="conf_8h.html#abcdaec3e273332da27d16524c514f2d2">conf_fre
 <div class="line"><span class="keywordflow">while</span> (<a class="code" href="conf_8h.html#a7478d5a102c0976749c626c668c95f69">conf_walk</a>(<a class="code" href="structconf.html">conf</a>, &amp;key, &amp;value, &amp;cookie)) {</div>
 <div class="line">    ... <span class="keywordflow">do</span> something with key &amp; value ...</div>
 <div class="line">}</div>
-<div class="ttc" id="aconf_8h_html_a7478d5a102c0976749c626c668c95f69"><div class="ttname"><a href="conf_8h.html#a7478d5a102c0976749c626c668c95f69">conf_walk</a></div><div class="ttdeci">bool_t conf_walk(const conf_t *conf, const char **key, const char **value, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l01402">conf.c:1402</a></div></div>
+<div class="ttc" id="aconf_8h_html_a7478d5a102c0976749c626c668c95f69"><div class="ttname"><a href="conf_8h.html#a7478d5a102c0976749c626c668c95f69">conf_walk</a></div><div class="ttdeci">bool_t conf_walk(const conf_t *conf, const char **key, const char **value, void **cookie)</div><div class="ttdef"><b>Definition:</b> <a href="conf_8c_source.html#l01403">conf.c:1403</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01402">1402</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="conf_8c_source.html#l01403">1403</a> of file <a class="el" href="conf_8c_source.html">conf.c</a>.</p>
 
 </div>
 </div>

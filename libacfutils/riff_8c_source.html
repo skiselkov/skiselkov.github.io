@@ -299,7 +299,7 @@ $(function() {
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        chunk-&gt;listcc &amp; 0xff, (chunk-&gt;listcc &gt;&gt; 8) &amp; 0xff,</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        (chunk-&gt;listcc &gt;&gt; 16) &amp; 0xff, (chunk-&gt;listcc &gt;&gt; 24) &amp; 0xff, 0</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    };</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">char</span> indent_str[indent + 1];</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">char</span> *indent_str = <a class="code" href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a>(indent + 1, <span class="keyword">sizeof</span> (*indent_str));</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">int</span> len;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">char</span> *buf;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
@@ -314,39 +314,40 @@ $(function() {
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    snprintf(buf, len + 1, DUMP_FMT_ARGS);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#undef  DUMP_FMT_ARGS</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (!IS_LIST(chunk))</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">return</span> (buf);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *sc = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;chunk-&gt;subchunks); sc != NULL;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        sc = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;chunk-&gt;subchunks, sc)) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordtype">char</span> *subbuf = riff_dump_impl(sc, indent + 2);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        len += strlen(subbuf);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        buf = realloc(buf, len + 1);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        strcat(buf, subbuf);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        free(subbuf);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> (buf);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment"> * Returns a malloc&#39;d string containing the format dump of a RIFF file</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment"> * (for debugging). The string is formatted into individual lines:</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment"> * RIFF FTYP ChunkSz</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment"> *   CHNK      ChunkSz</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment"> *   LIST CHNK ChunkSz</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"> *     CHNK      ChunkSz</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (!IS_LIST(chunk)) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        free(indent_str);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">return</span> (buf);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *sc = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(&amp;chunk-&gt;subchunks); sc != NULL;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        sc = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(&amp;chunk-&gt;subchunks, sc)) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordtype">char</span> *subbuf = riff_dump_impl(sc, indent + 2);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        len += strlen(subbuf);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        buf = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(buf, len + 1);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        strcat(buf, subbuf);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        free(subbuf);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    free(indent_str);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> (buf);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment"> * Returns a malloc&#39;d string containing the format dump of a RIFF file</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment"> * (for debugging). The string is formatted into individual lines:</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment"> * RIFF FTYP ChunkSz</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment"> *   CHNK      ChunkSz</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"> *   LIST CHNK ChunkSz</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"> *     CHNK      ChunkSz</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"> *   CHNK      ChunkSz</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment"> *   ...</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keywordtype">char</span> *</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;riff_dump(<span class="keyword">const</span> <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *topchunk)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> (riff_dump_impl(topchunk, 0));</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"> *     CHNK      ChunkSz</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment"> *   CHNK      ChunkSz</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment"> *   ...</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keywordtype">char</span> *</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;riff_dump(<span class="keyword">const</span> <a class="code" href="structriff__chunk__t.html">riff_chunk_t</a> *topchunk)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;{</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">return</span> (riff_dump_impl(topchunk, 0));</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="alist_8h_html"><div class="ttname"><a href="list_8h.html">list.h</a></div></div>
@@ -359,6 +360,7 @@ $(function() {
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00056">safe_alloc.h:56</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a8d9fda542019d718b3566ba4f01800c1"><div class="ttname"><a href="safe__alloc_8h.html#a8d9fda542019d718b3566ba4f01800c1">safe_calloc</a></div><div class="ttdeci">static void * safe_calloc(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00071">safe_alloc.h:71</a></div></div>
+<div class="ttc" id="asafe__alloc_8h_html_a9f32a56587b5252c01a2304b3e44d658"><div class="ttname"><a href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a></div><div class="ttdeci">static void * safe_realloc(void *oldptr, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00086">safe_alloc.h:86</a></div></div>
 <div class="ttc" id="astructriff__chunk__t_html"><div class="ttname"><a href="structriff__chunk__t.html">riff_chunk_t</a></div><div class="ttdef"><b>Definition:</b> <a href="riff_8h_source.html#l00050">riff.h:50</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -344,7 +344,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Utility function to translate a DSF command type into a human-readable description. </p>
 
-<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01144">1144</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01153">1153</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 
 </div>
 </div>
@@ -371,7 +371,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A NUL-terminated string describing the DSF file. The caller is reponsible for freeing this string using <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l00914">914</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l00923">923</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 
 </div>
 </div>
@@ -467,10 +467,10 @@ Functions</h2></td></tr>
 <div class="line">    subatom != NULL; atom = <a class="code" href="dsf_8h.html#a4bc2c1d7d227c94c9b5f171d44005527">dsf_iter</a>(parent, MY_ATOM_ID, subatom)) {</div>
 <div class="line">    ... work with subatom ...</div>
 <div class="line">}</div>
-<div class="ttc" id="adsf_8h_html_a4bc2c1d7d227c94c9b5f171d44005527"><div class="ttname"><a href="dsf_8h.html#a4bc2c1d7d227c94c9b5f171d44005527">dsf_iter</a></div><div class="ttdeci">const dsf_atom_t * dsf_iter(const dsf_atom_t *parent, uint32_t atom_id, const dsf_atom_t *prev)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l01044">dsf.c:1044</a></div></div>
+<div class="ttc" id="adsf_8h_html_a4bc2c1d7d227c94c9b5f171d44005527"><div class="ttname"><a href="dsf_8h.html#a4bc2c1d7d227c94c9b5f171d44005527">dsf_iter</a></div><div class="ttdeci">const dsf_atom_t * dsf_iter(const dsf_atom_t *parent, uint32_t atom_id, const dsf_atom_t *prev)</div><div class="ttdef"><b>Definition:</b> <a href="dsf_8c_source.html#l01053">dsf.c:1053</a></div></div>
 <div class="ttc" id="astructdsf__atom__t_html"><div class="ttname"><a href="structdsf__atom__t.html">dsf_atom_t</a></div><div class="ttdef"><b>Definition:</b> <a href="dsf_8h_source.html#l00139">dsf.h:139</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01044">1044</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01053">1053</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 
 </div>
 </div>
@@ -502,7 +502,7 @@ Functions</h2></td></tr>
 <p>Performs a DSF atom lookup inside of a DSF file. The variadic part of this function must be a list of 32-bit unsigned integers, and MUST be terminated by a zero integer argument. The integers form an path of DSF atom IDs to be searched in the DSF tree structure. If along the way a part of the path sits in a list atom with multiple instances of the same atom ID, this picks the first instance. To search through lists of same-ID atoms, use dsf_lookup_v with a varying index number for the relevant atom path segment. </p><dl class="section return"><dt>Returns</dt><dd>The DSF atom at the provided path. If any part of the path was not found, this function returns <code>NULL</code> instead. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="dsf_8h.html#ac4d659f053e178e93a62637bcda133b1">dsf_lookup_v</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l00955">955</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l00964">964</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 
 </div>
 </div>
@@ -540,7 +540,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The DSF atom at the provided path. If any part of the path was not found, this function returns <code>NULL</code> instead. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="dsf_8h.html#a28bac78fffc85e20efcdc5bd5f019404">dsf_lookup()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l00998">998</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01007">1007</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>B_TRUE</code> if parsing of the command section was successful, or <code>B_FALSE</code> if not. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01073">1073</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="dsf_8c_source.html#l01082">1082</a> of file <a class="el" href="dsf_8c_source.html">dsf.c</a>.</p>
 
 </div>
 </div>
