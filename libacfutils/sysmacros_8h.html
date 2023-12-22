@@ -218,6 +218,9 @@ Macros</h2></td></tr>
 <tr class="separator:a8ad7f6eb54558a573b4dc19e1bc545e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10337d394834108db748acd2849dad84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysmacros_8h.html#a10337d394834108db748acd2849dad84">REQ_ARR</a>(x)&#160;&#160;&#160;x[n]</td></tr>
 <tr class="separator:a10337d394834108db748acd2849dad84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2772b19df342bc56c76db9027889e71f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sysmacros_8h.html#a2772b19df342bc56c76db9027889e71f">ENUM_BIT_WIDTH_CHECK</a>(enum_type,  num_bits, ...)</td></tr>
+<tr class="memdesc:a2772b19df342bc56c76db9027889e71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time macro for checking whether an enum can be represented in a fixed number of bits.  <a href="sysmacros_8h.html#a2772b19df342bc56c76db9027889e71f">More...</a><br /></td></tr>
+<tr class="separator:a2772b19df342bc56c76db9027889e71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a5b9670220af6a7b1f964e53887255cab"></a>
@@ -333,6 +336,70 @@ Macros</h2></td></tr>
 <div class="line">    } <span class="keywordflow">while</span> (0)</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="sysmacros_8h_source.html#l00138">138</a> of file <a class="el" href="sysmacros_8h_source.html">sysmacros.h</a>.</p>
+
+</div>
+</div>
+<a id="a2772b19df342bc56c76db9027889e71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2772b19df342bc56c76db9027889e71f">&#9670;&nbsp;</a></span>ENUM_BIT_WIDTH_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENUM_BIT_WIDTH_CHECK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enum_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">num_bits, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">        enum_type __enum_check_value__ = 0; \</div>
+<div class="line">        CTASSERT(num_bits &gt; 0); \</div>
+<div class="line">        enum { __enum_check_max_value__ = (1 &lt;&lt; (num_bits)) - 1 }; \</div>
+<div class="line">        switch (__enum_check_value__) { \</div>
+<div class="line">            __VA_ARGS__ \</div>
+<div class="line">        } \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>Compile-time macro for checking whether an enum can be represented in a fixed number of bits. </p>
+<p>This macro lets you perform a simple compile-time check to validate that all variants of an enum fit into a fixed bit space representation. This way you can validate that no variant accidentally exceeds the amount of bit space allocated in a bit field.</p>
+<p>This macro is used in conjunction with the ENUM_BIT_WIDTH_CHECK_VARIANT macro as follows: </p><div class="fragment"><div class="line"><span class="keyword">enum</span> foo {</div>
+<div class="line">    foo_a,</div>
+<div class="line">    foo_b,</div>
+<div class="line">    foo_c,</div>
+<div class="line">    foo_d,</div>
+<div class="line">};</div>
+<div class="line">uint8_t encode_enum_foo(<span class="keyword">enum</span> foo bar) {</div>
+<div class="line">     <span class="comment">// check to make sure all of enum foo fits into 2 bits</span></div>
+<div class="line">     <a class="code" href="sysmacros_8h.html#a2772b19df342bc56c76db9027889e71f">ENUM_BIT_WIDTH_CHECK</a>(<span class="keyword">enum</span> foo, 2,</div>
+<div class="line">         ENUM_BIT_WIDTH_CHECK_VARIANT(foo_a);</div>
+<div class="line">         ENUM_BIT_WIDTH_CHECK_VARIANT(foo_b);</div>
+<div class="line">         ENUM_BIT_WIDTH_CHECK_VARIANT(foo_c);</div>
+<div class="line">         ENUM_BIT_WIDTH_CHECK_VARIANT(foo_d);</div>
+<div class="line">     );</div>
+<div class="line">}</div>
+<div class="ttc" id="asysmacros_8h_html_a2772b19df342bc56c76db9027889e71f"><div class="ttname"><a href="sysmacros_8h.html#a2772b19df342bc56c76db9027889e71f">ENUM_BIT_WIDTH_CHECK</a></div><div class="ttdeci">#define ENUM_BIT_WIDTH_CHECK(enum_type, num_bits,...)</div><div class="ttdoc">Compile-time macro for checking whether an enum can be represented in a fixed number of bits.</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00413">sysmacros.h:413</a></div></div>
+</div><!-- fragment --><p> This macro performs no runtime computation and thus is complete inert from a runtime standpoint. All checking is performed at compile time. While you must manually list all enum variants in the macro to perform all checks, your compiler should warn you about unhandled variants, in case you forgot some, or added some variants later. </p>
+
+<p class="definition">Definition at line <a class="el" href="sysmacros_8h_source.html#l00413">413</a> of file <a class="el" href="sysmacros_8h_source.html">sysmacros.h</a>.</p>
 
 </div>
 </div>

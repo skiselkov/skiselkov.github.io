@@ -16,9 +16,10 @@ var searchData=
   ['ellip_5finit_398',['ellip_init',['../geom_8h.html#a7b9795e2c33cfc8f6cc844edf10f4d79',1,'geom.c']]],
   ['ellip_5ft_399',['ellip_t',['../structellip__t.html',1,'']]],
   ['ends_400',['ends',['../structrunway.html#a4e7d228d5bbaade67f2c687cdb22aee2',1,'runway']]],
-  ['except_2eh_401',['except.h',['../except_8h.html',1,'']]],
-  ['except_5ffini_402',['except_fini',['../except_8h.html#a219c7bfc0b03e17ce76bb1c7b7697a69',1,'except.c']]],
-  ['except_5finit_403',['except_init',['../except_8h.html#abece350a52da35e60605fe3ad6d1afdf',1,'except.c']]],
-  ['explode_5fline_404',['explode_line',['../helpers_8h.html#a3cb4d21bba429e71025889e0aea7b1d6',1,'helpers.c']]],
-  ['extract_5ficao_5fcountry_5fcode_405',['extract_icao_country_code',['../helpers_8h.html#a88cfba22243cc7fac93e890adfd16adb',1,'helpers.c']]]
+  ['enum_5fbit_5fwidth_5fcheck_401',['ENUM_BIT_WIDTH_CHECK',['../sysmacros_8h.html#a2772b19df342bc56c76db9027889e71f',1,'sysmacros.h']]],
+  ['except_2eh_402',['except.h',['../except_8h.html',1,'']]],
+  ['except_5ffini_403',['except_fini',['../except_8h.html#a219c7bfc0b03e17ce76bb1c7b7697a69',1,'except.c']]],
+  ['except_5finit_404',['except_init',['../except_8h.html#abece350a52da35e60605fe3ad6d1afdf',1,'except.c']]],
+  ['explode_5fline_405',['explode_line',['../helpers_8h.html#a3cb4d21bba429e71025889e0aea7b1d6',1,'helpers.c']]],
+  ['extract_5ficao_5fcountry_5fcode_406',['extract_icao_country_code',['../helpers_8h.html#a88cfba22243cc7fac93e890adfd16adb',1,'helpers.c']]]
 ];
