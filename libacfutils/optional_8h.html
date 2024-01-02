@@ -220,11 +220,14 @@ Macros</h2></td></tr>
 <tr class="memdesc:ae01ed771f70d85ff89606a591b79d2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a mutable reference to the value of the optional unconditionally.  <a href="optional_8h.html#ae01ed771f70d85ff89606a591b79d2aa">More...</a><br /></td></tr>
 <tr class="separator:ae01ed771f70d85ff89606a591b79d2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f9cffa8e039ff076b435e897846a83d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a>(opt,  dfl_value)&#160;&#160;&#160;	OPTIONAL_TYPE_SELECTOR(opt_unwrap_or_, (opt).value)((opt), (dfl_value))</td></tr>
-<tr class="memdesc:a2f9cffa8e039ff076b435e897846a83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the value of the optional, or returns a fallback value.  <a href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">More...</a><br /></td></tr>
+<tr class="memdesc:a2f9cffa8e039ff076b435e897846a83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the value of the optional, or evaluates to a fallback value.  <a href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">More...</a><br /></td></tr>
 <tr class="separator:a2f9cffa8e039ff076b435e897846a83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdab34dccc16a52317b37db053d1db9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a>(opt,  dfl_func,  dfl_arg)</td></tr>
-<tr class="memdesc:abdab34dccc16a52317b37db053d1db9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the value of the optional, or returns a fallback value with lazy evaluation.  <a href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">More...</a><br /></td></tr>
+<tr class="memdesc:abdab34dccc16a52317b37db053d1db9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the value of the optional, or yields a fallback value with lazy evaluation.  <a href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">More...</a><br /></td></tr>
 <tr class="separator:abdab34dccc16a52317b37db053d1db9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed10e38616c95b04336c8af536addc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a>(opt, ...)</td></tr>
+<tr class="memdesc:a4ed10e38616c95b04336c8af536addc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwraps a SOME value, or in case of a NONE value, returns from the current function.  <a href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">More...</a><br /></td></tr>
+<tr class="separator:a4ed10e38616c95b04336c8af536addc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65621263872982e2ecf95bb2c190810"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a>(a,  b)&#160;&#160;&#160;	OPTIONAL_TYPE_SELECTOR(opt_or_, (a).value)((a), (b))</td></tr>
 <tr class="memdesc:ab65621263872982e2ecf95bb2c190810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects between two optional values based on whether the first optional is in the SOME state.  <a href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">More...</a><br /></td></tr>
 <tr class="separator:ab65621263872982e2ecf95bb2c190810"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -319,8 +322,8 @@ Manipulating Optional Values</h2>
 <li><code><a class="el" href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536" title="Returns true if the optional is in the NONE state.">IS_NONE(opt_T opt)</a> -&gt; bool</code>: returns true if the optional <code>opt</code> is in the NONE state.</li>
 <li><code><a class="el" href="optional_8h.html#ace2138afa1ae8fb5f0e9127f90098469" title="Extracts the value embedded in the optional and returns the optional_state_t enum corresponding to th...">MATCH(opt_T opt, T &amp;out_value)</a> -&gt; optional_state_t</code>: this operation checks the state of the optional <code>opt</code>. If it is in the SOME state, the wrapped value is written to <code>&amp;out_value</code> and the entire <code>MATCH</code> operation returns the <code>OPT_SOME</code> enumeration. If the optional is in the NONE state, the <code>&amp;out_value</code> reference is filled with an invalid value and the <code>MATCH</code> operation returns <code>OPT_NONE</code>.</li>
 <li><code><a class="el" href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769" title="Extracts the value of the optional unconditionally.">UNWRAP(opt_T opt)</a> -&gt; T</code>: this operation returns the wrapped value contained within the optional type, if the optional is in the SOME state. If the state is NONE, then attempting this operation causes a runtime assertion failure and panic. <code><a class="el" href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769" title="Extracts the value of the optional unconditionally.">UNWRAP()</a></code> should only be used for testing, or for cases where another check has already been performed, guaranteeing that the value is the SOME state.</li>
-<li><code><a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or returns a fallback value.">UNWRAP_OR(opt_T opt, T dfl_value)</a> -&gt; T</code>: if the optional <code>opt</code> is in the SOME state, this operation returns the wrapped value of type <code>T</code>. If the optional value is in the NONE state, this operation returns <code>dfl_value</code> instead.</li>
-<li><code><a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or returns a fallback value with lazy evaluation.">UNWRAP_OR_ELSE(opt_T opt, T (*func), void *arg)</a> -&gt; T</code>: if the optional <code>opt</code> is in the SOME state, returns the wrapped value of type <code>T</code>. If the optional value is in the NONE state, lazily calls <code>func</code> with <code>arg</code> and returns its return value.</li>
+<li><code><a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or evaluates to a fallback value.">UNWRAP_OR(opt_T opt, T dfl_value)</a> -&gt; T</code>: if the optional <code>opt</code> is in the SOME state, this operation returns the wrapped value of type <code>T</code>. If the optional value is in the NONE state, this operation returns <code>dfl_value</code> instead.</li>
+<li><code><a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or yields a fallback value with lazy evaluation.">UNWRAP_OR_ELSE(opt_T opt, T (*func), void *arg)</a> -&gt; T</code>: if the optional <code>opt</code> is in the SOME state, returns the wrapped value of type <code>T</code>. If the optional value is in the NONE state, lazily calls <code>func</code> with <code>arg</code> and returns its return value.</li>
 <li><code><a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810" title="Selects between two optional values based on whether the first optional is in the SOME state.">OPT_OR(opt_T a, opt_T b)</a> -&gt; opt_T</code>: if the state of the optional <code>a</code> is SOME, returns <code>a</code>. Otherwise, returns <code>b</code>.</li>
 <li><code><a class="el" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8" title="Selects between two optional values based on whether the first optional is in the SOME state....">OPT_OR_ELSE(opt_T a, opt_T (*func), void *arg)</a> -&gt; opt_T</code>: if the state of <code>a</code> is SOME, returns <code>a</code>. Otherwise, lazily calls <code>func</code> with <code>arg</code> and returns its return value.</li>
 </ol>
@@ -456,7 +459,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    <span class="comment">// SOME state value of `my_option&#39;</span></div>
 <div class="line">    use_foo(foo);</div>
 <div class="line">IF_LET_END</div>
-<div class="ttc" id="aoptional_8h_html_af50612b5c0dc6f77d51269f51e935785"><div class="ttname"><a href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a></div><div class="ttdeci">#define IF_LET(vartype, varname, opt)</div><div class="ttdoc">Allows constructing Rust-like if-let statements in C.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01372">optional.h:1372</a></div></div>
+<div class="ttc" id="aoptional_8h_html_af50612b5c0dc6f77d51269f51e935785"><div class="ttname"><a href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a></div><div class="ttdeci">#define IF_LET(vartype, varname, opt)</div><div class="ttdoc">Allows constructing Rust-like if-let statements in C.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01405">optional.h:1405</a></div></div>
 <div class="ttc" id="astructopt__float_html"><div class="ttname"><a href="structopt__float.html">opt_float</a></div><div class="ttdoc">An optional type for wrapping a non-NAN float value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00736">optional.h:736</a></div></div>
 </div><!-- fragment --><p> In the above example, <code>foo</code> is prevented from leaking outside of the if block scope, thus stopping accidentally using it when no value was contained in the optional type. To add an else block to this kind of block, use: </p><div class="fragment"><div class="line"><a class="code" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a>(<span class="keywordtype">float</span>, foo, my_option)</div>
 <div class="line">    use_foo(foo);</div>
@@ -465,7 +468,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    do_something_else();</div>
 <div class="line">IF_LET_END</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01372">1372</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01405">1405</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -513,9 +516,9 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    <span class="comment">// `obj&#39; points into `maybe_obj&#39;</span></div>
 <div class="line">    use_obj_ref(obj);</div>
 <div class="line">IF_LET_END</div>
-<div class="ttc" id="aoptional_8h_html_a20ec60060bf83079070ef896e6a46a9c"><div class="ttname"><a href="optional_8h.html#a20ec60060bf83079070ef896e6a46a9c">IF_LET_AS_REF</a></div><div class="ttdeci">#define IF_LET_AS_REF(vartype, varname, opt)</div><div class="ttdoc">Same as IF_LET() macro, but returns reference to the value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01394">optional.h:1394</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a20ec60060bf83079070ef896e6a46a9c"><div class="ttname"><a href="optional_8h.html#a20ec60060bf83079070ef896e6a46a9c">IF_LET_AS_REF</a></div><div class="ttdeci">#define IF_LET_AS_REF(vartype, varname, opt)</div><div class="ttdoc">Same as IF_LET() macro, but returns reference to the value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01427">optional.h:1427</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01394">1394</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01427">1427</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -868,11 +871,11 @@ Adding Your Own Custom Optional Types</h2>
 <p>Selects between two optional values based on whether the first optional is in the SOME state. </p>
 <p>If the first argument is in the SOME state, returns the first optional. Otherwise returns the second optional. This macro can be used to provide a fallback optional value without actually unwrapping the value contained in the optional.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><a class="code" href="structopt__float.html">opt_float</a> result = <a class="code" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a>(my_opt_float, fallback_opt_float);</div>
-<div class="ttc" id="aoptional_8h_html_ab65621263872982e2ecf95bb2c190810"><div class="ttname"><a href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a></div><div class="ttdeci">#define OPT_OR(a, b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01294">optional.h:1294</a></div></div>
+<div class="ttc" id="aoptional_8h_html_ab65621263872982e2ecf95bb2c190810"><div class="ttname"><a href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a></div><div class="ttdeci">#define OPT_OR(a, b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01327">optional.h:1327</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The second argument to this macro is eagerly evaluated, even if the first argument is in the SOME state. You must take care to avoid unintended side effects of the second argument. If you want to force lazy execution, you must use the <a class="el" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8" title="Selects between two optional values based on whether the first optional is in the SOME state....">OPT_OR_ELSE()</a> macro instead. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8" title="Selects between two optional values based on whether the first optional is in the SOME state....">OPT_OR_ELSE</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01294">1294</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01327">1327</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -914,11 +917,11 @@ Adding Your Own Custom Optional Types</h2>
 <p>Example usage: </p><div class="fragment"><div class="line"><a class="code" href="structopt__float.html">opt_float</a> build_fallback(<span class="keywordtype">void</span> *arg);</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="structopt__float.html">opt_float</a> result = <a class="code" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8">OPT_OR_ELSE</a>(my_opt_float, build_fallback, foo);</div>
-<div class="ttc" id="aoptional_8h_html_a9a2271bdc73a0d537f55c0beefbd09b8"><div class="ttname"><a href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8">OPT_OR_ELSE</a></div><div class="ttdeci">#define OPT_OR_ELSE(a, func_b, arg_b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state....</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01330">optional.h:1330</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a9a2271bdc73a0d537f55c0beefbd09b8"><div class="ttname"><a href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8">OPT_OR_ELSE</a></div><div class="ttdeci">#define OPT_OR_ELSE(a, func_b, arg_b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state....</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01363">optional.h:1363</a></div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The purpose of this macro is to provide a mechanism for lazy evaluation of the fallback case. The <code>func_b</code> argument is not called unless the first argument is in the NONE state. If you want the second argument to be eagerly evaluated (as well as avoid having to write a callback function), use <a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810" title="Selects between two optional values based on whether the first optional is in the SOME state.">OPT_OR()</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810" title="Selects between two optional values based on whether the first optional is in the SOME state.">OPT_OR</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01330">1330</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01363">1363</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1129,12 +1132,12 @@ Adding Your Own Custom Optional Types</h2>
       </table>
 </div><div class="memdoc">
 
-<p>Extracts the value of the optional, or returns a fallback value. </p>
-<p>If <code>opt</code> is in the SOME state, returns the wrapped value. If <code>opt</code> is in the NONE state, returns the <code>dfl_value</code> argument. This can be used to safely unwrap an optional, providing a default value in case the optional was in the NONE state.</p>
+<p>Extracts the value of the optional, or evaluates to a fallback value. </p>
+<p>If <code>opt</code> is in the SOME state, evaluates to the wrapped value. If <code>opt</code> is in the NONE state, evaluates to the <code>dfl_value</code> argument. This can be used to safely unwrap an optional, providing a default value in case the optional was in the NONE state.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> my_value = <a class="code" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a>(my_opt_float, 0.0f);</div>
-<div class="ttc" id="aoptional_8h_html_a2f9cffa8e039ff076b435e897846a83d"><div class="ttname"><a href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a></div><div class="ttdeci">#define UNWRAP_OR(opt, dfl_value)</div><div class="ttdoc">Extracts the value of the optional, or returns a fallback value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01222">optional.h:1222</a></div></div>
-</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The second argument to this macro is eagerly evaluated, even if the first argument is in the SOME state. You must take care to avoid unintended side effects of the second argument. If you want to force lazy execution, you must use the <a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or returns a fallback value with lazy evaluation.">UNWRAP_OR_ELSE()</a> macro instead. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or returns a fallback value with lazy evaluation.">UNWRAP_OR_ELSE()</a> </dd></dl>
+<div class="ttc" id="aoptional_8h_html_a2f9cffa8e039ff076b435e897846a83d"><div class="ttname"><a href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a></div><div class="ttdeci">#define UNWRAP_OR(opt, dfl_value)</div><div class="ttdoc">Extracts the value of the optional, or evaluates to a fallback value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01222">optional.h:1222</a></div></div>
+</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The second argument to this macro is eagerly evaluated, even if the first argument is in the SOME state. You must take care to avoid unintended side effects of the second argument. If you want to force lazy execution, you must use the <a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or yields a fallback value with lazy evaluation.">UNWRAP_OR_ELSE()</a> macro instead. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or yields a fallback value with lazy evaluation.">UNWRAP_OR_ELSE()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01222">1222</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
@@ -1174,17 +1177,65 @@ Adding Your Own Custom Optional Types</h2>
 <b>Value:</b><div class="fragment"><div class="line">    OPTIONAL_TYPE_SELECTOR(opt_unwrap_or_else_, (opt).value)\</div>
 <div class="line">        ((opt), (dfl_func), (dfl_arg))</div>
 </div><!-- fragment -->
-<p>Extracts the value of the optional, or returns a fallback value with lazy evaluation. </p>
-<p>If <code>opt</code> is in the SOME state, returns the wrapped value. If <code>opt</code> is in the NONE state, calls <code>dfl_func</code> with <code>dfl_arg</code> in its argument and returns the return value of this call.. The function must have a signature conforming to: </p><div class="fragment"><div class="line">c_type func(<span class="keywordtype">void</span> *);</div>
+<p>Extracts the value of the optional, or yields a fallback value with lazy evaluation. </p>
+<p>If <code>opt</code> is in the SOME state, evaluates to the wrapped value. If <code>opt</code> is in the NONE state, calls <code>dfl_func</code> with <code>dfl_arg</code> in its argument and evaluates to the return value of this call. The function must have a signature conforming to: </p><div class="fragment"><div class="line">c_type func(<span class="keywordtype">void</span> *);</div>
 </div><!-- fragment --><p> where <code>c_type</code> is the native C type wrapped in the optional type. This can be used to safely unwrap an optional, providing a lazily evaluated default value in case the optional was in the NONE state.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> calc_fallback(<span class="keywordtype">void</span> *arg);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">float</span> my_value = <a class="code" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a>(my_opt_float, calc_fallback, foo);</div>
-<div class="ttc" id="aoptional_8h_html_abdab34dccc16a52317b37db053d1db9e"><div class="ttname"><a href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a></div><div class="ttdeci">#define UNWRAP_OR_ELSE(opt, dfl_func, dfl_arg)</div><div class="ttdoc">Extracts the value of the optional, or returns a fallback value with lazy evaluation.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01261">optional.h:1261</a></div></div>
-</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The purpose of this macro is to provide a mechanism for lazy evaluation of the default case. The function is not called unless the first argument is in the NONE state. If you want the second argument to be eagerly evaluated (as well as avoid having to write a callback function), use <a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or returns a fallback value.">UNWRAP_OR()</a>. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or returns a fallback value.">UNWRAP_OR()</a> </dd></dl>
+<div class="ttc" id="aoptional_8h_html_abdab34dccc16a52317b37db053d1db9e"><div class="ttname"><a href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a></div><div class="ttdeci">#define UNWRAP_OR_ELSE(opt, dfl_func, dfl_arg)</div><div class="ttdoc">Extracts the value of the optional, or yields a fallback value with lazy evaluation.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01261">optional.h:1261</a></div></div>
+</div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The purpose of this macro is to provide a mechanism for lazy evaluation of the default case. The function is not called unless the first argument is in the NONE state. If you want the second argument to be eagerly evaluated (as well as avoid having to write a callback function), use <a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or evaluates to a fallback value.">UNWRAP_OR()</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or evaluates to a fallback value.">UNWRAP_OR()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01261">1261</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ed10e38616c95b04336c8af536addc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed10e38616c95b04336c8af536addc2">&#9670;&nbsp;</a></span>UNWRAP_OR_RET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNWRAP_OR_RET</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">opt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ({ __typeof(opt) __tmp = (opt); \</div>
+<div class="line">        if (<a class="code" href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a>(__tmp)) { <span class="keywordflow">return</span> __VA_ARGS__; } \</div>
+<div class="line">        UNWRAP(__tmp); })</div>
+<div class="ttc" id="aoptional_8h_html_a1cab986d1f0da7498c0956df0e6c2536"><div class="ttname"><a href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a></div><div class="ttdeci">#define IS_NONE(x)</div><div class="ttdoc">Returns true if the optional is in the NONE state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00991">optional.h:991</a></div></div>
+</div><!-- fragment -->
+<p>Unwraps a SOME value, or in case of a NONE value, returns from the current function. </p>
+<p>This macro lets you emulate the Rust '?' operator.</p><ol type="1">
+<li>If the first argument is in the SOME state, the contained value is yielded.</li>
+<li>If the first argument is in the NONE state, returns from the current function, optionally with a return value of your choosing.</li>
+</ol>
+<p>The way to use this macro is as follows: </p><div class="fragment"><div class="line"><span class="keywordtype">bool</span> my_func(<a class="code" href="structopt__float.html">opt_float</a> wrapped_value) {</div>
+<div class="line">    <span class="comment">// if `wrapped_value` is NONE, we return from `my_func` with `false`:</span></div>
+<div class="line">    <span class="keywordtype">float</span> value = <a class="code" href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a>(wrapped_value, <span class="keyword">false</span>);</div>
+<div class="line">    <span class="comment">// ... do something with `value`, it is guaranteed to be valid ...</span></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="aoptional_8h_html_a4ed10e38616c95b04336c8af536addc2"><div class="ttname"><a href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a></div><div class="ttdeci">#define UNWRAP_OR_RET(opt,...)</div><div class="ttdoc">Unwraps a SOME value, or in case of a NONE value, returns from the current function.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01297">optional.h:1297</a></div></div>
+</div><!-- fragment --><p> To return with no value from the current function, simply invoke the macro with just one argument: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> foo = <a class="code" href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a>(wrapped_foo);</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01297">1297</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>

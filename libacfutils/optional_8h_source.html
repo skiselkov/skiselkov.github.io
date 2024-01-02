@@ -667,55 +667,62 @@ $(function() {
 <div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
 <div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(UNWRAP_OR)</span></div>
 <div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160; </div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;<span class="preprocessor">#ifndef OPT_OR</span></div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;<span class="preprocessor">#if __STDC_VERSION__ &gt;= 201112L || defined(__DOXYGEN__)</span></div>
-<div class="line"><a name="l01294"></a><span class="lineno"><a class="line" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810"> 1294</a></span>&#160;<span class="preprocessor">#define OPT_OR(a, b)        \</span></div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="preprocessor">    OPTIONAL_TYPE_SELECTOR(opt_or_, (a).value)((a), (b))</span></div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;<span class="preprocessor">#else   </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;<span class="preprocessor">#define OPT_OR(type_name, a, b) \</span></div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;<span class="preprocessor">    opt_or_ ## type_name((a), (b))</span></div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(OPT_OR)</span></div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160; </div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;<span class="preprocessor">#ifndef OPT_OR_ELSE</span></div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;<span class="preprocessor">#if __STDC_VERSION__ &gt;= 201112L || defined(__DOXYGEN__)</span></div>
-<div class="line"><a name="l01330"></a><span class="lineno"><a class="line" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8"> 1330</a></span>&#160;<span class="preprocessor">#define OPT_OR_ELSE(a, func_b, arg_b)       \</span></div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;<span class="preprocessor">    OPTIONAL_TYPE_SELECTOR(opt_or_else_, (a).value)((a), (func_b), (arg_b))</span></div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="preprocessor">#else   </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;<span class="preprocessor">#define OPT_OR_ELSE(type_name, a, func_b, arg_b)    \</span></div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;<span class="preprocessor">    opt_or_ ## type_name((a), (func_b), (arg_b))</span></div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(OPT_OR)</span></div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160; </div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;<span class="preprocessor">#ifndef IF_LET</span></div>
-<div class="line"><a name="l01372"></a><span class="lineno"><a class="line" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785"> 1372</a></span>&#160;<span class="preprocessor">#define IF_LET(vartype, varname, opt) \</span></div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;<span class="preprocessor">    { \</span></div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;<span class="preprocessor">        vartype __if_let_tmp_##varname; \</span></div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;<span class="preprocessor">        </span><span class="comment">/* \</span></div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;<span class="comment">         * The void pointer cast here gets rid of a C language quirk \</span></div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;<span class="comment">         * where const and non-const pointers aren&#39;t technically \</span></div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;<span class="comment">         * compatible for referencing. Thus to avoid having to force \</span></div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;<span class="comment">         * the caller to use a mutable reference when all they want \</span></div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;<span class="comment">         * is an immutable reference, we perform type erasure here. \</span></div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;<span class="comment">         */</span><span class="preprocessor"> \</span></div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;<span class="preprocessor">        if (MATCH((opt), (void *)&amp;__if_let_tmp_##varname) == \</span></div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;<span class="preprocessor">            OPT_SOME) { \</span></div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;<span class="preprocessor">            vartype varname = __if_let_tmp_##varname;</span></div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;<span class="preprocessor">#define IF_LET_AS_REF(vartype, varname, opt) \</span></div>
-<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;<span class="preprocessor">    { \</span></div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;<span class="preprocessor">        vartype __if_let_tmp_##varname; \</span></div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;<span class="preprocessor">        if (MATCH_AS_REF((opt), (void *)&amp;__if_let_tmp_##varname) == \</span></div>
-<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;<span class="preprocessor">            OPT_SOME) { \</span></div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;<span class="preprocessor">            vartype varname = __if_let_tmp_##varname;</span></div>
-<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;<span class="preprocessor">#define IF_LET_ELSE } else {</span></div>
-<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;<span class="preprocessor">#define IF_LET_END  }}</span></div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(IF_LET)</span></div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160; </div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;}</div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160; </div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_OPTIONAL_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;<span class="preprocessor">#ifndef UNWRAP_OR_RET</span></div>
+<div class="line"><a name="l01297"></a><span class="lineno"><a class="line" href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2"> 1297</a></span>&#160;<span class="preprocessor">#define UNWRAP_OR_RET(opt, ...) \</span></div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;<span class="preprocessor">    ({ __typeof(opt) __tmp = (opt); \</span></div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;<span class="preprocessor">        if (IS_NONE(__tmp)) { return __VA_ARGS__; } \</span></div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;<span class="preprocessor">        UNWRAP(__tmp); })</span></div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(UNWRAP_OR_RET)</span></div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160; </div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;<span class="preprocessor">#ifndef OPT_OR</span></div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;<span class="preprocessor">#if __STDC_VERSION__ &gt;= 201112L || defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l01327"></a><span class="lineno"><a class="line" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810"> 1327</a></span>&#160;<span class="preprocessor">#define OPT_OR(a, b)        \</span></div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;<span class="preprocessor">    OPTIONAL_TYPE_SELECTOR(opt_or_, (a).value)((a), (b))</span></div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;<span class="preprocessor">#else   </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;<span class="preprocessor">#define OPT_OR(type_name, a, b) \</span></div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;<span class="preprocessor">    opt_or_ ## type_name((a), (b))</span></div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(OPT_OR)</span></div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160; </div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;<span class="preprocessor">#ifndef OPT_OR_ELSE</span></div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;<span class="preprocessor">#if __STDC_VERSION__ &gt;= 201112L || defined(__DOXYGEN__)</span></div>
+<div class="line"><a name="l01363"></a><span class="lineno"><a class="line" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8"> 1363</a></span>&#160;<span class="preprocessor">#define OPT_OR_ELSE(a, func_b, arg_b)       \</span></div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;<span class="preprocessor">    OPTIONAL_TYPE_SELECTOR(opt_or_else_, (a).value)((a), (func_b), (arg_b))</span></div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;<span class="preprocessor">#else   </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;<span class="preprocessor">#define OPT_OR_ELSE(type_name, a, func_b, arg_b)    \</span></div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;<span class="preprocessor">    opt_or_ ## type_name((a), (func_b), (arg_b))</span></div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !(__STDC_VERSION__ &gt;= 201112L)</span></div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(OPT_OR)</span></div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160; </div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;<span class="preprocessor">#ifndef IF_LET</span></div>
+<div class="line"><a name="l01405"></a><span class="lineno"><a class="line" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785"> 1405</a></span>&#160;<span class="preprocessor">#define IF_LET(vartype, varname, opt) \</span></div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;<span class="preprocessor">    { \</span></div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;<span class="preprocessor">        vartype __if_let_tmp_##varname; \</span></div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;<span class="preprocessor">        </span><span class="comment">/* \</span></div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;<span class="comment">         * The void pointer cast here gets rid of a C language quirk \</span></div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;<span class="comment">         * where const and non-const pointers aren&#39;t technically \</span></div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;<span class="comment">         * compatible for referencing. Thus to avoid having to force \</span></div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;<span class="comment">         * the caller to use a mutable reference when all they want \</span></div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;<span class="comment">         * is an immutable reference, we perform type erasure here. \</span></div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;<span class="comment">         */</span><span class="preprocessor"> \</span></div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;<span class="preprocessor">        if (MATCH((opt), (void *)&amp;__if_let_tmp_##varname) == \</span></div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;<span class="preprocessor">            OPT_SOME) { \</span></div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;<span class="preprocessor">            vartype varname = __if_let_tmp_##varname;</span></div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;<span class="preprocessor">#define IF_LET_AS_REF(vartype, varname, opt) \</span></div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="preprocessor">    { \</span></div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;<span class="preprocessor">        vartype __if_let_tmp_##varname; \</span></div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;<span class="preprocessor">        if (MATCH_AS_REF((opt), (void *)&amp;__if_let_tmp_##varname) == \</span></div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;<span class="preprocessor">            OPT_SOME) { \</span></div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;<span class="preprocessor">            vartype varname = __if_let_tmp_##varname;</span></div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;<span class="preprocessor">#define IF_LET_ELSE } else {</span></div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;<span class="preprocessor">#define IF_LET_END  }}</span></div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// !defined(IF_LET)</span></div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160; </div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;}</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160; </div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* _ACF_UTILS_OPTIONAL_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aassert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="acore_8h_html_ab58a705ceeb200925bb0a7e302959982"><div class="ttname"><a href="core_8h.html#ab58a705ceeb200925bb0a7e302959982">UNUSED_ATTR</a></div><div class="ttdeci">#define UNUSED_ATTR</div><div class="ttdef"><b>Definition:</b> <a href="core_8h_source.html#l00084">core.h:84</a></div></div>
 <div class="ttc" id="ageom_8h_html"><div class="ttname"><a href="geom_8h.html">geom.h</a></div></div>

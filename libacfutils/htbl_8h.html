@@ -69,13 +69,16 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">htbl.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="sysmacros_8h_source.html">sysmacros.h</a>&quot;</code><br />
 <code>#include &quot;types.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="list_8h_source.html">list.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -83,16 +86,18 @@ Include dependency graph for htbl.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="htbl_8h__incl.png" border="0" usemap="#aacfutils_2htbl_8h" alt=""/></div>
 <map name="aacfutils_2htbl_8h" id="aacfutils_2htbl_8h">
-<area shape="rect" title=" " alt="" coords="43,5,154,32"/>
-<area shape="rect" title=" " alt="" coords="100,229,171,256"/>
-<area shape="rect" title=" " alt="" coords="27,155,98,181"/>
-<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="100,80,171,107"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="272,80,327,107"/>
-<area shape="rect" title=" " alt="" coords="174,155,244,181"/>
-<area shape="rect" href="core_8h.html" title=" " alt="" coords="268,155,331,181"/>
-<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="250,229,341,256"/>
-<area shape="rect" href="list__impl_8h.html" title=" " alt="" coords="364,155,454,181"/>
-<area shape="rect" title=" " alt="" coords="365,229,461,256"/>
+<area shape="rect" title=" " alt="" coords="174,5,285,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
+<area shape="rect" title=" " alt="" coords="237,304,307,331"/>
+<area shape="rect" title=" " alt="" coords="163,229,234,256"/>
+<area shape="rect" href="sysmacros_8h.html" title=" " alt="" coords="223,80,327,107"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="242,155,313,181"/>
+<area shape="rect" href="list_8h.html" title=" " alt="" coords="409,80,463,107"/>
+<area shape="rect" title=" " alt="" coords="310,229,381,256"/>
+<area shape="rect" href="core_8h.html" title=" " alt="" coords="405,229,467,256"/>
+<area shape="rect" href="libconfig_8h_source.html" title=" " alt="" coords="391,304,481,331"/>
+<area shape="rect" href="list__impl_8h.html" title=" " alt="" coords="484,155,575,181"/>
+<area shape="rect" title=" " alt="" coords="492,229,588,256"/>
 </map>
 </div>
 </div>
@@ -102,11 +107,19 @@ Include dependency graph for htbl.h:</div>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhtbl__t.html">htbl_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhtbl2__t.html">htbl2_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab5b59d969356f69c1016f3dcc3ed72b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a>(x)&#160;&#160;&#160;<a class="el" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a>(x)</td></tr>
+<tr class="memitem:ab5b59d969356f69c1016f3dcc3ed72b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#ab5b59d969356f69c1016f3dcc3ed72b3">HTBL_VALUE_MULTI</a>(x)&#160;&#160;&#160;<a class="el" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi</a>(x)</td></tr>
 <tr class="separator:ab5b59d969356f69c1016f3dcc3ed72b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:adf4499eeb0d7c1c4de74ef9dea90f0eb"><td class="memItemLeft" align="right" valign="top"><a id="adf4499eeb0d7c1c4de74ef9dea90f0eb"></a>
+typedef struct htbl2_multi_value_s&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_multi_value_t</b></td></tr>
+<tr class="separator:adf4499eeb0d7c1c4de74ef9dea90f0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -114,24 +127,57 @@ Functions</h2></td></tr>
 <tr class="separator:abcfcd47ef71717b7b88bd20850592e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff88c3b81bd2226f60a9b3bbc9865c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy</a> (<a class="el" href="structhtbl__t.html">htbl_t</a> *htbl)</td></tr>
 <tr class="separator:aff88c3b81bd2226f60a9b3bbc9865c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b05ea528a04110120c12fa9cbd9fa9"><td class="memItemLeft" align="right" valign="top"><a id="ab7b05ea528a04110120c12fa9cbd9fa9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_create</b> (<a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, size_t tbl_sz, size_t key_sz, size_t value_sz, bool multi_value)</td></tr>
+<tr class="separator:ab7b05ea528a04110120c12fa9cbd9fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5dae9e46b83ed8954b74335787055f2"><td class="memItemLeft" align="right" valign="top"><a id="ae5dae9e46b83ed8954b74335787055f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_destroy</b> (<a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl)</td></tr>
+<tr class="separator:ae5dae9e46b83ed8954b74335787055f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dfaf9e203e5b7b089c31b7821ba29d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty</a> (<a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, void(*func)(void *value, void *userinfo), void *userinfo)</td></tr>
 <tr class="separator:a3dfaf9e203e5b7b089c31b7821ba29d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1b1a5f437d33f6e6b9d582de4b70d7"><td class="memItemLeft" align="right" valign="top"><a id="a9a1b1a5f437d33f6e6b9d582de4b70d7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_empty</b> (<a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, size_t value_sz, void(*func)(void *value, void *userinfo), void *userinfo)</td></tr>
+<tr class="separator:a9a1b1a5f437d33f6e6b9d582de4b70d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf69b28398b68e98de60c76ca98f3c9b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#abf69b28398b68e98de60c76ca98f3c9b">htbl_count</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl)</td></tr>
 <tr class="separator:abf69b28398b68e98de60c76ca98f3c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fe09b7f5a9109a837a826280c2d2ac"><td class="memItemLeft" align="right" valign="top"><a id="a07fe09b7f5a9109a837a826280c2d2ac"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_count</b> (const <a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl)</td></tr>
+<tr class="separator:a07fe09b7f5a9109a837a826280c2d2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d645f2bea53d9a6723c363794f4f54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a88d645f2bea53d9a6723c363794f4f54">htbl_set</a> (<a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key, void *value)</td></tr>
 <tr class="separator:a88d645f2bea53d9a6723c363794f4f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5822221599f1724562c4d403b0f083b6"><td class="memItemLeft" align="right" valign="top"><a id="a5822221599f1724562c4d403b0f083b6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_set</b> (<a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, const void *key, size_t key_sz, void *value, size_t value_sz)</td></tr>
+<tr class="separator:a5822221599f1724562c4d403b0f083b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1b155e7115a03a19adca3c62120688c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#ac1b155e7115a03a19adca3c62120688c">htbl_remove</a> (<a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key, bool_t nil_ok)</td></tr>
 <tr class="separator:ac1b155e7115a03a19adca3c62120688c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f593d6390bab02c355b169fc704bfd7"><td class="memItemLeft" align="right" valign="top"><a id="a2f593d6390bab02c355b169fc704bfd7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_remove</b> (<a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, const void *key, size_t key_sz, bool nil_ok)</td></tr>
+<tr class="separator:a2f593d6390bab02c355b169fc704bfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ef869e30605d7a3aa8b3c18817cc6b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a3ef869e30605d7a3aa8b3c18817cc6b1">htbl_remove_multi</a> (<a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key, htbl_multi_value_t *list_item)</td></tr>
 <tr class="separator:a3ef869e30605d7a3aa8b3c18817cc6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b48efaf2287e97fe995c76a1ebaa84"><td class="memItemLeft" align="right" valign="top"><a id="a49b48efaf2287e97fe995c76a1ebaa84"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_remove_multi</b> (<a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, const void *key, size_t key_sz, htbl2_multi_value_t *list_item)</td></tr>
+<tr class="separator:a49b48efaf2287e97fe995c76a1ebaa84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28bd05cab4bf9f4896317f19c574047e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a28bd05cab4bf9f4896317f19c574047e">htbl_lookup</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key)</td></tr>
 <tr class="separator:a28bd05cab4bf9f4896317f19c574047e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7f4e0008a45ef674f409c4aa151f06"><td class="memItemLeft" align="right" valign="top"><a id="a1d7f4e0008a45ef674f409c4aa151f06"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_lookup</b> (const <a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, const void *key, size_t key_sz, size_t value_sz)</td></tr>
+<tr class="separator:a1d7f4e0008a45ef674f409c4aa151f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a248883027609880b0caab6b6acb0fa07"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structlist__t.html">list_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, const void *key)</td></tr>
 <tr class="separator:a248883027609880b0caab6b6acb0fa07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d2d6815c34c1ce1e82c3c0f39eb76a2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a> (htbl_multi_value_t *mv)</td></tr>
-<tr class="separator:a0d2d6815c34c1ce1e82c3c0f39eb76a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb332fe03709a5ba67f8e8c0109e22e"><td class="memItemLeft" align="right" valign="top"><a id="adfb332fe03709a5ba67f8e8c0109e22e"></a>
+const <a class="el" href="structlist__t.html">list_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_lookup_multi</b> (const <a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, const void *key, size_t key_sz)</td></tr>
+<tr class="separator:adfb332fe03709a5ba67f8e8c0109e22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07fb697a747e1455b9e1723438ec0173"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi</a> (const htbl_multi_value_t *mv)</td></tr>
+<tr class="separator:a07fb697a747e1455b9e1723438ec0173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f02342d23fd2e5fd3592e9bc611cbf"><td class="memItemLeft" align="right" valign="top"><a id="ab9f02342d23fd2e5fd3592e9bc611cbf"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_value_multi</b> (const htbl2_multi_value_t *mv, size_t value_sz)</td></tr>
+<tr class="separator:ab9f02342d23fd2e5fd3592e9bc611cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fdbefff05a579f2b06b064c52ae7f5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a2fdbefff05a579f2b06b064c52ae7f5b">htbl_foreach</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, void(*func)(const void *key, void *value, void *userinfo), void *userinfo)</td></tr>
 <tr class="separator:a2fdbefff05a579f2b06b064c52ae7f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1527e51482a938f461947552a5a07c5"><td class="memItemLeft" align="right" valign="top"><a id="ab1527e51482a938f461947552a5a07c5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>htbl2_foreach</b> (const <a class="el" href="structhtbl2__t.html">htbl2_t</a> *htbl, size_t key_sz, size_t value_sz, void(*func)(const void *key, void *value, void *userinfo), void *userinfo)</td></tr>
+<tr class="separator:ab1527e51482a938f461947552a5a07c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43e24d603598d8c31216278197346459"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a43e24d603598d8c31216278197346459">htbl_dump</a> (const <a class="el" href="structhtbl__t.html">htbl_t</a> *htbl, bool_t printable_keys)</td></tr>
 <tr class="separator:a43e24d603598d8c31216278197346459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d588ff4981651cb2c591ff113954ccc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="htbl_8h.html#a1d588ff4981651cb2c591ff113954ccc">htbl_free</a> (void *obj, void *unused)</td></tr>
@@ -154,13 +200,13 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a>(x)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi</a>(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Legacy backwards compatibility macro that just invokes <a class="el" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi()</a>. </p>
+<p>Legacy backwards compatibility macro that just invokes <a class="el" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00088">88</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00127">127</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
 
 </div>
 </div>
@@ -182,7 +228,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The number of values stored in the hash table. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00180">180</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00234">234</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -234,7 +280,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00080">80</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00127">127</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -256,7 +302,7 @@ Functions</h2></td></tr>
 <p>Deinitializes a hash table which was initialized using <a class="el" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create()</a>. The hash table must be empty at the time that <a class="el" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy()</a> is called. If you want to quickly empty the entire hash table, see <a class="el" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty()</a>. </p><dl class="section note"><dt>Note</dt><dd>This <b>doesn't</b> call free() on the <a class="el" href="structhtbl__t.html">htbl_t</a> argument. If you have dynamically allocated the <a class="el" href="structhtbl__t.html">htbl_t</a> object, you will need to free it yourself after calling <a class="el" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy()</a>. Also note that simply free()ing a <a class="el" href="structhtbl__t.html">htbl_t</a> isn't enough to free all memory associated with a hash table. You <b>must</b> call <a class="el" href="htbl_8h.html#aff88c3b81bd2226f60a9b3bbc9865c86">htbl_destroy()</a> on every hash table which you have initialized using <a class="el" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create()</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="htbl_8h.html#abcfcd47ef71717b7b88bd20850592e3b">htbl_create()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00112">112</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00154">154</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -288,7 +334,7 @@ Functions</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated:</a></b></dt><dd>Dumps a hash table's context in text form. This has limited usefulness and shouldn't be used too much. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A string containing a printable description of the contents of the hash table. Free with <a class="el" href="core_8h.html#a8f9ec45dfcbfb9fbab71c05303821c85">lacf_free()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00476">476</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00602">602</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -331,7 +377,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00155">155</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00203">203</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -375,7 +421,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00414">414</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00521">521</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -414,7 +460,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Utility function that can be passed in the second argument of <a class="el" href="htbl_8h.html#a3dfaf9e203e5b7b089c31b7821ba29d0">htbl_empty()</a> if your values only require a standard C <code>free()</code> call using your own heap allocator. You can use this as a shorthand to freeing all the values in a hash table, instead of having to write a custom callback every time. </p><dl class="section note"><dt>Note</dt><dd>This <b>only</b> calls <code>free()</code> and does no other deinitialization of the memory pointed to by the hash table value. Do NOT use this if your values need more complex deinitialization. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00106">106</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8h_source.html#l00149">149</a> of file <a class="el" href="htbl_8h_source.html">htbl.h</a>.</p>
 
 </div>
 </div>
@@ -451,7 +497,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The original <code>value</code> which was stored under the key, if it exists in the hash table. If no value was stored under <code>key</code>, this returns NULL instead. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00371">371</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00462">462</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -486,11 +532,11 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If at least one value exists stored under <code>key</code>, this function returns a <code><a class="el" href="structlist__t.html">list_t</a></code> of <code>htbl_multi_value_t</code> structures. You must <b>not</b> modify any of the fields of the returned structure, only access the value stored within using <a class="el" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi()</a>. </dd>
+<dl class="section return"><dt>Returns</dt><dd>If at least one value exists stored under <code>key</code>, this function returns a <code><a class="el" href="structlist__t.html">list_t</a></code> of <code>htbl_multi_value_t</code> structures. You must <b>not</b> modify any of the fields of the returned structure, only access the value stored within using <a class="el" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi()</a>. </dd>
 <dd>
 If no values are stored under <code>key</code>, returns NULL. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00393">393</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00492">492</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -533,7 +579,7 @@ If no values are stored under <code>key</code>, returns NULL. </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00266">266</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00341">341</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -585,19 +631,19 @@ Example</h4>
 <div class="line">       <span class="comment">// to remove the current one (which would mean we can no</span></div>
 <div class="line">       <span class="comment">// longer use it in list_next()).</span></div>
 <div class="line">       mv_next = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(values, mv);</div>
-<div class="line">       <span class="keywordflow">if</span> (want_to_remove_this_item(<a class="code" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a>(mv)) {</div>
+<div class="line">       <span class="keywordflow">if</span> (want_to_remove_this_item(<a class="code" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi</a>(mv)) {</div>
 <div class="line">           <a class="code" href="htbl_8h.html#a3ef869e30605d7a3aa8b3c18817cc6b1">htbl_remove_multi</a>(my_hash_table, my_key, mv);</div>
 <div class="line">       }</div>
 <div class="line">   }</div>
 <div class="line">}</div>
-<div class="ttc" id="ahtbl_8h_html_a0d2d6815c34c1ce1e82c3c0f39eb76a2"><div class="ttname"><a href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a></div><div class="ttdeci">void * htbl_value_multi(htbl_multi_value_t *mv)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00462">htbl.c:462</a></div></div>
-<div class="ttc" id="ahtbl_8h_html_a248883027609880b0caab6b6acb0fa07"><div class="ttname"><a href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a></div><div class="ttdeci">const list_t * htbl_lookup_multi(const htbl_t *htbl, const void *key)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00393">htbl.c:393</a></div></div>
-<div class="ttc" id="ahtbl_8h_html_a3ef869e30605d7a3aa8b3c18817cc6b1"><div class="ttname"><a href="htbl_8h.html#a3ef869e30605d7a3aa8b3c18817cc6b1">htbl_remove_multi</a></div><div class="ttdeci">void htbl_remove_multi(htbl_t *htbl, const void *key, htbl_multi_value_t *list_item)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00318">htbl.c:318</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_a07fb697a747e1455b9e1723438ec0173"><div class="ttname"><a href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi</a></div><div class="ttdeci">void * htbl_value_multi(const htbl_multi_value_t *mv)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00578">htbl.c:578</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_a248883027609880b0caab6b6acb0fa07"><div class="ttname"><a href="htbl_8h.html#a248883027609880b0caab6b6acb0fa07">htbl_lookup_multi</a></div><div class="ttdeci">const list_t * htbl_lookup_multi(const htbl_t *htbl, const void *key)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00492">htbl.c:492</a></div></div>
+<div class="ttc" id="ahtbl_8h_html_a3ef869e30605d7a3aa8b3c18817cc6b1"><div class="ttname"><a href="htbl_8h.html#a3ef869e30605d7a3aa8b3c18817cc6b1">htbl_remove_multi</a></div><div class="ttdeci">void htbl_remove_multi(htbl_t *htbl, const void *key, htbl_multi_value_t *list_item)</div><div class="ttdef"><b>Definition:</b> <a href="htbl_8c_source.html#l00402">htbl.c:402</a></div></div>
 <div class="ttc" id="alist_8h_html_a19992f20adf9d4f271feffa6cbb532c1"><div class="ttname"><a href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a></div><div class="ttdeci">void * list_head(const list_t *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00292">list.c:292</a></div></div>
 <div class="ttc" id="alist_8h_html_a9bce03174cd33b6f6cc191c53cbfc48e"><div class="ttname"><a href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a></div><div class="ttdeci">void * list_next(const list_t *, const void *)</div><div class="ttdef"><b>Definition:</b> <a href="list_8c_source.html#l00344">list.c:344</a></div></div>
 <div class="ttc" id="astructlist__t_html"><div class="ttname"><a href="structlist__t.html">list_t</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00318">318</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00402">402</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
@@ -644,12 +690,12 @@ Example</h4>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00218">218</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00313">313</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
-<a id="a0d2d6815c34c1ce1e82c3c0f39eb76a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d2d6815c34c1ce1e82c3c0f39eb76a2">&#9670;&nbsp;</a></span>htbl_value_multi()</h2>
+<a id="a07fb697a747e1455b9e1723438ec0173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fb697a747e1455b9e1723438ec0173">&#9670;&nbsp;</a></span>htbl_value_multi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -657,7 +703,7 @@ Example</h4>
         <tr>
           <td class="memname">void* htbl_value_multi </td>
           <td>(</td>
-          <td class="paramtype">htbl_multi_value_t *&#160;</td>
+          <td class="paramtype">const htbl_multi_value_t *&#160;</td>
           <td class="paramname"><em>mv</em></td><td>)</td>
           <td></td>
         </tr>
@@ -673,13 +719,13 @@ Example</h4>
 <div class="line">   <span class="comment">// key found in hash table, walk the list of values</span></div>
 <div class="line">   <span class="keywordflow">for</span> (htbl_multi_value_t *mv = <a class="code" href="list_8h.html#a19992f20adf9d4f271feffa6cbb532c1">list_head</a>(values); mv != NULL;</div>
 <div class="line">       mv = <a class="code" href="list_8h.html#a9bce03174cd33b6f6cc191c53cbfc48e">list_next</a>(values, mv)) {</div>
-<div class="line">       my_struct_t *value = <a class="code" href="htbl_8h.html#a0d2d6815c34c1ce1e82c3c0f39eb76a2">htbl_value_multi</a>(mv);</div>
+<div class="line">       my_struct_t *value = <a class="code" href="htbl_8h.html#a07fb697a747e1455b9e1723438ec0173">htbl_value_multi</a>(mv);</div>
 <div class="line">       <span class="comment">// do something with `value&#39;</span></div>
 <div class="line">   }</div>
 <div class="line">}</div>
-<div class="ttc" id="astructhtbl__t_html"><div class="ttname"><a href="structhtbl__t.html">htbl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00060">htbl.h:60</a></div></div>
+<div class="ttc" id="astructhtbl__t_html"><div class="ttname"><a href="structhtbl__t.html">htbl_t</a></div><div class="ttdef"><b>Definition:</b> <a href="htbl_8h_source.html#l00062">htbl.h:62</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00462">462</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="htbl_8c_source.html#l00578">578</a> of file <a class="el" href="htbl_8c_source.html">htbl.c</a>.</p>
 
 </div>
 </div>
