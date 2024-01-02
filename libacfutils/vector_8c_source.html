@@ -81,218 +81,221 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * CDDL HEADER END</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Copyright 2023 Saso Kiselkov. All rights reserved.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Copyright 2024 Saso Kiselkov. All rights reserved.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helpers_8h.html">acfutils/helpers.h</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="safe__alloc_8h.html">acfutils/safe_alloc.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;acfutils/vector.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vector_8h.html">acfutils/vector.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread_8h.html">acfutils/thread.h</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;vector_grow(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> new_size)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// already large enough</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (new_size &lt;= v-&gt;cap) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    v-&gt;cap = <a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(new_size);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    v-&gt;buf = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(v-&gt;buf, v-&gt;cap * sizeof (*v-&gt;buf));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;vector_shrink(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> ((v-&gt;cap &gt;&gt; 1) &gt;= v-&gt;fill) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        v-&gt;cap &gt;&gt;= 1;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        v-&gt;buf = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(v-&gt;buf, v-&gt;cap * sizeof (*v-&gt;buf));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;vector_init(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (new_size &lt;= v-&gt;cap) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    v-&gt;cap = <a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(new_size);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    v-&gt;buf = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(v-&gt;buf, v-&gt;cap * sizeof (*v-&gt;buf));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="vector_8h.html#a1afc2a5fdc9e1f558677a7ff0af9974a">vector_create</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="vector_8h.html#ad799b5e05cd9fff2f51f39e06db8db0c">vector_create_cap</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> cap_hint)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (cap_hint != 0) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        v-&gt;cap = <a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(cap_hint);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        v-&gt;buf = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(v-&gt;cap * sizeof (*v-&gt;buf));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;vector_init_cap(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> cap)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<a class="code" href="vector_8h.html#af1cb082e450adaeb7a4a1b9dac4da397">vector_destroy</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (cap != 0) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        v-&gt;cap = <a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(cap);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        v-&gt;buf = <a class="code" href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a>(cap * <span class="keyword">sizeof</span> (*v-&gt;buf));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;vector_fini(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a>(v-&gt;fill);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    free(v-&gt;buf);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">size_t</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;vector_get_len(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> (v-&gt;fill);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;vector_get(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> index)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(index, &lt;, v-&gt;fill);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> (v-&gt;buf[index]);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;vector_head(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> (v-&gt;buf[0]);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;vector_tail(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> (v-&gt;buf[v-&gt;fill - 1]);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;vector_insert(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">void</span> *elem, <span class="keywordtype">size_t</span> index)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(elem != NULL);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    vector_grow(v, index + 1);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    v-&gt;buf[index] = elem;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;vector_insert_head(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">void</span> *elem)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(elem != NULL);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    vector_grow(v, v-&gt;fill + 1);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    memmove(&amp;v-&gt;buf[1], &amp;v-&gt;buf[0], v-&gt;fill * sizeof (*v-&gt;buf));</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    v-&gt;buf[0] = elem;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    v-&gt;fill++;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;vector_insert_tail(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">void</span> *elem)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(elem != NULL);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    vector_grow(v, v-&gt;fill + 1);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    v-&gt;buf[v-&gt;fill] = elem;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    v-&gt;fill++;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;vector_remove(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> index)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(index, &lt;, v-&gt;fill);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> *old = v-&gt;buf[index];</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    memmove(&amp;v-&gt;buf[index], &amp;v-&gt;buf[index + 1],</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        (v-&gt;fill - index - 1) * sizeof (*v-&gt;buf));</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    v-&gt;fill--;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    vector_shrink(v);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> (old);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;vector_remove_head(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> (vector_remove(v, 0));</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;vector_remove_tail(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">void</span> *old = v-&gt;buf[v-&gt;fill - 1];</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        v-&gt;fill--;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        vector_shrink(v);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> (old);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keywordtype">void</span> *</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;vector_destroy_nodes(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(cookie))</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a>(*cookie, &lt;=, v-&gt;fill);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (*cookie == v-&gt;fill) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="comment">// reached end of vector</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        free(v-&gt;buf);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a>(v-&gt;fill);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    free(v-&gt;buf);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    *v = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">size_t</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="vector_8h.html#a1a15438c1e3d795e728afb93b14245b1">vector_len</a>(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> (v-&gt;fill);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="vector_8h.html#ae0cbd8fcd3497d718e2614042acb5f70">vector_get</a>(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(index, &lt;, v-&gt;fill);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> (v-&gt;buf[index]);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<a class="code" href="vector_8h.html#afbfc1f3c31ee61389657c62265af527c">vector_head</a>(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> (v-&gt;buf[0]);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="vector_8h.html#afe897999a947e789a10a9afc35bc9d48">vector_tail</a>(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> (v-&gt;buf[v-&gt;fill - 1]);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="vector_8h.html#a3f649050b3cf0062bb9e6373c589c8da">vector_insert</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">void</span> *elem, <span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(elem != NULL);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(index, &lt;=, v-&gt;fill);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    vector_grow(v, v-&gt;fill + 1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    memmove(&amp;v-&gt;buf[index + 1], &amp;v-&gt;buf[index],</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        (v-&gt;fill - index) * sizeof (*v-&gt;buf));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    v-&gt;buf[index] = elem;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    v-&gt;fill++;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<a class="code" href="vector_8h.html#a89bda2be8d144687723da24eb413b7e1">vector_insert_tail</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">void</span> *elem)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(elem != NULL);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    vector_grow(v, v-&gt;fill + 1);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    v-&gt;buf[v-&gt;fill] = elem;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    v-&gt;fill++;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<a class="code" href="vector_8h.html#a50ec97ab791e829ee09dcfbdaaa08534">vector_replace</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">void</span> *new_elem, <span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a>(new_elem != NULL);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(index, &lt;, v-&gt;fill);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> *old_elem = v-&gt;buf[index];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(old_elem != NULL);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    v-&gt;buf[index] = new_elem;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> (old_elem);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<a class="code" href="vector_8h.html#a21d7071e98adce79798bb61712d7637a">vector_remove</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">size_t</span> index)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a>(index, &lt;, v-&gt;fill);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> *old = v-&gt;buf[index];</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    memmove(&amp;v-&gt;buf[index], &amp;v-&gt;buf[index + 1],</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        (v-&gt;fill - index - 1) * sizeof (*v-&gt;buf));</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    v-&gt;fill--;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (old);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<a class="code" href="vector_8h.html#a74532cdb6e71a45a7841053718eec9b7">vector_remove_head</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="vector_8h.html#a21d7071e98adce79798bb61712d7637a">vector_remove</a>(v, 0));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keywordtype">void</span> *</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<a class="code" href="vector_8h.html#abf33ab825ddba79f04c68196ea010ad0">vector_remove_tail</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill != 0) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">void</span> *old = v-&gt;buf[v-&gt;fill - 1];</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        v-&gt;fill--;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> (old);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">size_t</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<a class="code" href="vector_8h.html#a8068e14f48e53a1aad836395843d3b51">vector_shrink</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (v-&gt;fill == 0) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> (v-&gt;cap != 0) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            free(v-&gt;buf);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            v-&gt;buf = NULL;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            v-&gt;cap = 0;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordtype">size_t</span> new_cap = <a class="code" href="helpers_8h.html#affbf3bc3071c56f0176da4018ca5c093">P2ROUNDUP</a>(v-&gt;fill);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (new_cap != v-&gt;cap) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            v-&gt;cap = new_cap;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            v-&gt;buf = <a class="code" href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a>(v-&gt;buf,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                v-&gt;cap * sizeof (*v-&gt;buf));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span> *next = v-&gt;buf[*cookie];</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(next != NULL);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    (*cookie)++;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> (next);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;vector_move_all(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(from), <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(to))</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a>(to-&gt;fill);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    free(to-&gt;buf);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    to-&gt;buf = from-&gt;buf;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    to-&gt;cap = from-&gt;cap;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    to-&gt;fill = from-&gt;fill;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    *from = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="structsort__info__t.html">  186</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    int (*sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    int (*sort_func_r)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> *userinfo;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;} <a class="code" href="structsort__info__t.html">sort_info_t</a>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;sort_cb(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo)</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;{</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">const</span> <a class="code" href="structsort__info__t.html">sort_info_t</a> *info = userinfo;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> (info-&gt;sort_func(*(<span class="keywordtype">void</span> **)a, *(<span class="keywordtype">void</span> **)b));</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;vector_sort(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">int</span> (*sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b))</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(sort_func != NULL);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="structsort__info__t.html">sort_info_t</a> sort_info = { .sort_func = sort_func };</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a>(v-&gt;buf, v-&gt;fill, sizeof (*v-&gt;buf), sort_cb, &amp;sort_info);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;sort_cb_r(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keyword">const</span> <a class="code" href="structsort__info__t.html">sort_info_t</a> *info = userinfo;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">return</span> (info-&gt;sort_func_r(*(<span class="keywordtype">void</span> **)a, *(<span class="keywordtype">void</span> **)b, info-&gt;userinfo));</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;vector_sort_r(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v),</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">int</span> (*sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo),</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> *userinfo)</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(sort_func != NULL);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="structsort__info__t.html">sort_info_t</a> sort_info = {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        .sort_func_r = sort_func,</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        .userinfo = userinfo,</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    };</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a>(v-&gt;buf, v-&gt;fill, sizeof (*v-&gt;buf), sort_cb_r, &amp;sort_info);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> (v-&gt;cap);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keywordtype">size_t</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<a class="code" href="vector_8h.html#af032c2db9638782f276d28da00059c66">vector_cap</a>(<span class="keyword">const</span> <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v))</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> (v-&gt;cap);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<a class="code" href="vector_8h.html#a10334f7eeca408324aee9fd6d85218ca">vector_move_all</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(src), <a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(dest))</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a>(dest-&gt;fill);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    free(dest-&gt;buf);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    dest-&gt;buf = src-&gt;buf;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    dest-&gt;cap = src-&gt;cap;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    dest-&gt;fill = src-&gt;fill;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    *src = (<a class="code" href="structvector__t.html">vector_t</a>){};</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="structsort__info__t.html">  189</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    int (*sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    int (*sort_func_r)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> *userinfo;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;} <a class="code" href="structsort__info__t.html">sort_info_t</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;sort_cb(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo)</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">const</span> <a class="code" href="structsort__info__t.html">sort_info_t</a> *info = userinfo;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">return</span> (info-&gt;sort_func(*(<span class="keywordtype">void</span> **)a, *(<span class="keywordtype">void</span> **)b));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<a class="code" href="vector_8h.html#a2fac8e02588fd1292036b9ba6d5b7981">vector_sort</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v), <span class="keywordtype">int</span> (*sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b))</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(sort_func != NULL);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="structsort__info__t.html">sort_info_t</a> sort_info = { .sort_func = sort_func };</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a>(v-&gt;buf, v-&gt;fill, sizeof (*v-&gt;buf), sort_cb, &amp;sort_info);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;sort_cb_r(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">const</span> <a class="code" href="structsort__info__t.html">sort_info_t</a> *info = userinfo;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> (info-&gt;sort_func_r(*(<span class="keywordtype">void</span> **)a, *(<span class="keywordtype">void</span> **)b, info-&gt;userinfo));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<a class="code" href="vector_8h.html#aade2aa874295fe8b65735ef1f90b8816">vector_sort_r</a>(<a class="code" href="structvector__t.html">vector_t</a> <a class="code" href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a>(v),</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">int</span> (*sort_func)(<span class="keyword">const</span> <span class="keywordtype">void</span> *a, <span class="keyword">const</span> <span class="keywordtype">void</span> *b, <span class="keywordtype">void</span> *userinfo),</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">void</span> *userinfo)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(sort_func != NULL);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="structsort__info__t.html">sort_info_t</a> sort_info = {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        .sort_func_r = sort_func,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        .userinfo = userinfo,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    };</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="helpers_8h.html#aa98fbd7b4dbe9d23065ab1c078a65277">lacf_qsort_r</a>(v-&gt;buf, v-&gt;fill, sizeof (*v-&gt;buf), sort_cb_r, &amp;sort_info);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="ttc" id="aassert_8h_html_a3675cf895544424c921cf6f8f5e91887"><div class="ttname"><a href="assert_8h.html#a3675cf895544424c921cf6f8f5e91887">VERIFY</a></div><div class="ttdeci">#define VERIFY(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00078">assert.h:78</a></div></div>
 <div class="ttc" id="aassert_8h_html_a4bb880dc20444723fd13922d72d79937"><div class="ttname"><a href="assert_8h.html#a4bb880dc20444723fd13922d72d79937">VERIFY0</a></div><div class="ttdeci">#define VERIFY0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00154">assert.h:154</a></div></div>
-<div class="ttc" id="aassert_8h_html_aa38648eecaaf23dc8e3ea8326bb04cf6"><div class="ttname"><a href="assert_8h.html#aa38648eecaaf23dc8e3ea8326bb04cf6">ASSERT3U</a></div><div class="ttdeci">#define ASSERT3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00194">assert.h:194</a></div></div>
 <div class="ttc" id="aassert_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="assert_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00192">assert.h:192</a></div></div>
 <div class="ttc" id="aassert_8h_html_acc45baee07ce65ad601c26de805ffc40"><div class="ttname"><a href="assert_8h.html#acc45baee07ce65ad601c26de805ffc40">ASSERT0</a></div><div class="ttdeci">#define ASSERT0(x)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00197">assert.h:197</a></div></div>
 <div class="ttc" id="aassert_8h_html_aeccf3bac58621f5a2868fdfb604e4f12"><div class="ttname"><a href="assert_8h.html#aeccf3bac58621f5a2868fdfb604e4f12">VERIFY3U</a></div><div class="ttdeci">#define VERIFY3U(x, op, y)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00136">assert.h:136</a></div></div>
@@ -302,10 +305,29 @@ $(function() {
 <div class="ttc" id="asafe__alloc_8h_html"><div class="ttname"><a href="safe__alloc_8h.html">safe_alloc.h</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a7548137d093d63064f1972b9d160ff74"><div class="ttname"><a href="safe__alloc_8h.html#a7548137d093d63064f1972b9d160ff74">safe_malloc</a></div><div class="ttdeci">static void * safe_malloc(size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00056">safe_alloc.h:56</a></div></div>
 <div class="ttc" id="asafe__alloc_8h_html_a9f32a56587b5252c01a2304b3e44d658"><div class="ttname"><a href="safe__alloc_8h.html#a9f32a56587b5252c01a2304b3e44d658">safe_realloc</a></div><div class="ttdeci">static void * safe_realloc(void *oldptr, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="safe__alloc_8h_source.html#l00086">safe_alloc.h:86</a></div></div>
-<div class="ttc" id="astructsort__info__t_html"><div class="ttname"><a href="structsort__info__t.html">sort_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00186">vector.c:186</a></div></div>
+<div class="ttc" id="astructsort__info__t_html"><div class="ttname"><a href="structsort__info__t.html">sort_info_t</a></div><div class="ttdef"><b>Definition:</b> <a href="vector_8c_source.html#l00189">vector.c:189</a></div></div>
 <div class="ttc" id="astructvector__t_html"><div class="ttname"><a href="structvector__t.html">vector_t</a></div><div class="ttdef"><b>Definition:</b> <a href="vector__impl_8h_source.html#l00037">vector_impl.h:37</a></div></div>
 <div class="ttc" id="asysmacros_8h_html_a8ad7f6eb54558a573b4dc19e1bc545e9"><div class="ttname"><a href="sysmacros_8h.html#a8ad7f6eb54558a573b4dc19e1bc545e9">REQ_PTR</a></div><div class="ttdeci">#define REQ_PTR(x)</div><div class="ttdef"><b>Definition:</b> <a href="sysmacros_8h_source.html#l00332">sysmacros.h:332</a></div></div>
 <div class="ttc" id="athread_8h_html"><div class="ttname"><a href="thread_8h.html">thread.h</a></div></div>
+<div class="ttc" id="avector_8h_html"><div class="ttname"><a href="vector_8h.html">vector.h</a></div></div>
+<div class="ttc" id="avector_8h_html_a10334f7eeca408324aee9fd6d85218ca"><div class="ttname"><a href="vector_8h.html#a10334f7eeca408324aee9fd6d85218ca">vector_move_all</a></div><div class="ttdeci">void vector_move_all(vector_t REQ_PTR(src), vector_t REQ_PTR(dest))</div><div class="ttdoc">Moves all elements from the src vector to the dest vector.</div></div>
+<div class="ttc" id="avector_8h_html_a1a15438c1e3d795e728afb93b14245b1"><div class="ttname"><a href="vector_8h.html#a1a15438c1e3d795e728afb93b14245b1">vector_len</a></div><div class="ttdeci">size_t vector_len(const vector_t REQ_PTR(v))</div><div class="ttdoc">Returns the current number of elements contained inside the vector.</div></div>
+<div class="ttc" id="avector_8h_html_a1afc2a5fdc9e1f558677a7ff0af9974a"><div class="ttname"><a href="vector_8h.html#a1afc2a5fdc9e1f558677a7ff0af9974a">vector_create</a></div><div class="ttdeci">void vector_create(vector_t REQ_PTR(v))</div><div class="ttdoc">Initializes a new vector_t to a blank state, with zero starting capacity.</div></div>
+<div class="ttc" id="avector_8h_html_a21d7071e98adce79798bb61712d7637a"><div class="ttname"><a href="vector_8h.html#a21d7071e98adce79798bb61712d7637a">vector_remove</a></div><div class="ttdeci">void * vector_remove(vector_t REQ_PTR(v), size_t index)</div><div class="ttdoc">Removes an element from the vector at a given index.</div></div>
+<div class="ttc" id="avector_8h_html_a2fac8e02588fd1292036b9ba6d5b7981"><div class="ttname"><a href="vector_8h.html#a2fac8e02588fd1292036b9ba6d5b7981">vector_sort</a></div><div class="ttdeci">void vector_sort(vector_t REQ_PTR(v), int(*sort_func)(const void *a, const void *b))</div><div class="ttdoc">Sorts a vector using the and a sorting predicate.</div></div>
+<div class="ttc" id="avector_8h_html_a3f649050b3cf0062bb9e6373c589c8da"><div class="ttname"><a href="vector_8h.html#a3f649050b3cf0062bb9e6373c589c8da">vector_insert</a></div><div class="ttdeci">void vector_insert(vector_t REQ_PTR(v), void *elem, size_t index)</div><div class="ttdoc">Inserts a new element into the vector at a given index.</div></div>
+<div class="ttc" id="avector_8h_html_a50ec97ab791e829ee09dcfbdaaa08534"><div class="ttname"><a href="vector_8h.html#a50ec97ab791e829ee09dcfbdaaa08534">vector_replace</a></div><div class="ttdeci">void * vector_replace(vector_t REQ_PTR(v), void *new_elem, size_t index)</div><div class="ttdoc">Replaces an element in the vector in-place.</div></div>
+<div class="ttc" id="avector_8h_html_a74532cdb6e71a45a7841053718eec9b7"><div class="ttname"><a href="vector_8h.html#a74532cdb6e71a45a7841053718eec9b7">vector_remove_head</a></div><div class="ttdeci">void * vector_remove_head(vector_t REQ_PTR(v))</div><div class="ttdoc">Removes and returns the first element in a vector, if any.</div></div>
+<div class="ttc" id="avector_8h_html_a8068e14f48e53a1aad836395843d3b51"><div class="ttname"><a href="vector_8h.html#a8068e14f48e53a1aad836395843d3b51">vector_shrink</a></div><div class="ttdeci">size_t vector_shrink(vector_t REQ_PTR(v))</div><div class="ttdoc">Orders the vector to shrink to the nearest power-of-2 capacity suitable to hold its current contents.</div></div>
+<div class="ttc" id="avector_8h_html_a89bda2be8d144687723da24eb413b7e1"><div class="ttname"><a href="vector_8h.html#a89bda2be8d144687723da24eb413b7e1">vector_insert_tail</a></div><div class="ttdeci">void vector_insert_tail(vector_t REQ_PTR(v), void *elem)</div><div class="ttdoc">Inserts a new element at the tail of the vector.</div></div>
+<div class="ttc" id="avector_8h_html_aade2aa874295fe8b65735ef1f90b8816"><div class="ttname"><a href="vector_8h.html#aade2aa874295fe8b65735ef1f90b8816">vector_sort_r</a></div><div class="ttdeci">void vector_sort_r(vector_t REQ_PTR(v), int(*sort_func)(const void *a, const void *b, void *userinfo), void *userinfo)</div><div class="ttdoc">Sorts a vector using the and a thread-safe sorting predicate.</div></div>
+<div class="ttc" id="avector_8h_html_abf33ab825ddba79f04c68196ea010ad0"><div class="ttname"><a href="vector_8h.html#abf33ab825ddba79f04c68196ea010ad0">vector_remove_tail</a></div><div class="ttdeci">void * vector_remove_tail(vector_t REQ_PTR(v))</div><div class="ttdoc">Removes and returns the last element in a vector, if any.</div></div>
+<div class="ttc" id="avector_8h_html_ad799b5e05cd9fff2f51f39e06db8db0c"><div class="ttname"><a href="vector_8h.html#ad799b5e05cd9fff2f51f39e06db8db0c">vector_create_cap</a></div><div class="ttdeci">void vector_create_cap(vector_t REQ_PTR(v), size_t cap_hint)</div><div class="ttdoc">Initializes a new vector_t with a capacity hint.</div></div>
+<div class="ttc" id="avector_8h_html_ae0cbd8fcd3497d718e2614042acb5f70"><div class="ttname"><a href="vector_8h.html#ae0cbd8fcd3497d718e2614042acb5f70">vector_get</a></div><div class="ttdeci">void * vector_get(const vector_t REQ_PTR(v), size_t index)</div><div class="ttdoc">Retrieves elements within the vector.</div></div>
+<div class="ttc" id="avector_8h_html_af032c2db9638782f276d28da00059c66"><div class="ttname"><a href="vector_8h.html#af032c2db9638782f276d28da00059c66">vector_cap</a></div><div class="ttdeci">size_t vector_cap(const vector_t REQ_PTR(v))</div><div class="ttdoc">Returns the current element capacity of the vector.</div></div>
+<div class="ttc" id="avector_8h_html_af1cb082e450adaeb7a4a1b9dac4da397"><div class="ttname"><a href="vector_8h.html#af1cb082e450adaeb7a4a1b9dac4da397">vector_destroy</a></div><div class="ttdeci">void vector_destroy(vector_t REQ_PTR(v))</div><div class="ttdoc">Destroys a vector previously created using vector_create().</div></div>
+<div class="ttc" id="avector_8h_html_afbfc1f3c31ee61389657c62265af527c"><div class="ttname"><a href="vector_8h.html#afbfc1f3c31ee61389657c62265af527c">vector_head</a></div><div class="ttdeci">void * vector_head(const vector_t REQ_PTR(v))</div><div class="ttdoc">Retrieves the element at the head of the vector, if any.</div></div>
+<div class="ttc" id="avector_8h_html_afe897999a947e789a10a9afc35bc9d48"><div class="ttname"><a href="vector_8h.html#afe897999a947e789a10a9afc35bc9d48">vector_tail</a></div><div class="ttdeci">void * vector_tail(const vector_t REQ_PTR(v))</div><div class="ttdoc">Retrieves the element at the tail of the vector, if any.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
