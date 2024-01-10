@@ -70,7 +70,8 @@ $(function() {
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">optional.h File Reference</div>  </div>
 </div><!--header-->
@@ -228,6 +229,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a4ed10e38616c95b04336c8af536addc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a>(opt, ...)</td></tr>
 <tr class="memdesc:a4ed10e38616c95b04336c8af536addc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwraps a SOME value, or in case of a NONE value, returns from the current function.  <a href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">More...</a><br /></td></tr>
 <tr class="separator:a4ed10e38616c95b04336c8af536addc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7b9cfb51a5a99a436e2b7931bda182"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a0b7b9cfb51a5a99a436e2b7931bda182">UNWRAP_OR_GOTO</a>(opt,  label)</td></tr>
+<tr class="memdesc:a0b7b9cfb51a5a99a436e2b7931bda182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwraps a SOME value, or in case of a NONE value, goes to the label.  <a href="optional_8h.html#a0b7b9cfb51a5a99a436e2b7931bda182">More...</a><br /></td></tr>
+<tr class="separator:a0b7b9cfb51a5a99a436e2b7931bda182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c9931829ced65af643eee46c5f89d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a35c9931829ced65af643eee46c5f89d3">UNWRAP_OR_BREAK</a>(opt)</td></tr>
+<tr class="memdesc:a35c9931829ced65af643eee46c5f89d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwraps a SOME value, or in case of a NONE value, breaks out of the current loop or switch case (invokes the <code>break</code> keyword).  <a href="optional_8h.html#a35c9931829ced65af643eee46c5f89d3">More...</a><br /></td></tr>
+<tr class="separator:a35c9931829ced65af643eee46c5f89d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec726970abcfff30b1393958aa3768c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a1ec726970abcfff30b1393958aa3768c">UNWRAP_OR_CONTINUE</a>(opt)</td></tr>
+<tr class="memdesc:a1ec726970abcfff30b1393958aa3768c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unwraps a SOME value, or in case of a NONE value, restarts the current loop iteration (invokes the <code>continue</code> keyword).  <a href="optional_8h.html#a1ec726970abcfff30b1393958aa3768c">More...</a><br /></td></tr>
+<tr class="separator:a1ec726970abcfff30b1393958aa3768c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65621263872982e2ecf95bb2c190810"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a>(a,  b)&#160;&#160;&#160;	OPTIONAL_TYPE_SELECTOR(opt_or_, (a).value)((a), (b))</td></tr>
 <tr class="memdesc:ab65621263872982e2ecf95bb2c190810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects between two optional values based on whether the first optional is in the SOME state.  <a href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">More...</a><br /></td></tr>
 <tr class="separator:ab65621263872982e2ecf95bb2c190810"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,6 +250,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a20ec60060bf83079070ef896e6a46a9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#a20ec60060bf83079070ef896e6a46a9c">IF_LET_AS_REF</a>(vartype,  varname,  opt)</td></tr>
 <tr class="memdesc:a20ec60060bf83079070ef896e6a46a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785" title="Allows constructing Rust-like if-let statements in C.">IF_LET()</a> macro, but returns reference to the value.  <a href="optional_8h.html#a20ec60060bf83079070ef896e6a46a9c">More...</a><br /></td></tr>
 <tr class="separator:a20ec60060bf83079070ef896e6a46a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b197c4eb4243b3a74bac0736911fc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_8h.html#ad2b197c4eb4243b3a74bac0736911fc5">OPT_INTO</a>(value)&#160;&#160;&#160;OPTIONAL_TYPE_SELECTOR(opt_into_, (value))(value)</td></tr>
+<tr class="memdesc:ad2b197c4eb4243b3a74bac0736911fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows wrapping an implicitly representable value into a suitable optional.  <a href="optional_8h.html#ad2b197c4eb4243b3a74bac0736911fc5">More...</a><br /></td></tr>
+<tr class="separator:ad2b197c4eb4243b3a74bac0736911fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -298,6 +311,102 @@ Enumerations</h2></td></tr>
 , <a class="el" href="optional_8h.html#addfb05740c0220faaea7030f0111965ea09a1ad2f8ced7d15945c07ccb267b04f">OPT_SOME</a>
  }</td></tr>
 <tr class="separator:addfb05740c0220faaea7030f0111965e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8ce69d4c44fc80e776a13d5af0e0d74c"><td class="memItemLeft" align="right" valign="top"><a id="a8ce69d4c44fc80e776a13d5af0e0d74c"></a>
+static <a class="el" href="structopt__int8__t.html">opt_int8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_int8_t</b> (void)</td></tr>
+<tr class="separator:a8ce69d4c44fc80e776a13d5af0e0d74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f6db8238def1548f6f36dd5cb98b70"><td class="memItemLeft" align="right" valign="top"><a id="a26f6db8238def1548f6f36dd5cb98b70"></a>
+static <a class="el" href="structopt__uint8__t.html">opt_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_uint8_t</b> (void)</td></tr>
+<tr class="separator:a26f6db8238def1548f6f36dd5cb98b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02210fd1207cffa59bfe97962a84d121"><td class="memItemLeft" align="right" valign="top"><a id="a02210fd1207cffa59bfe97962a84d121"></a>
+static <a class="el" href="structopt__int16__t.html">opt_int16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_int16_t</b> (void)</td></tr>
+<tr class="separator:a02210fd1207cffa59bfe97962a84d121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab262dbd3c834291aa0274b55caf74d68"><td class="memItemLeft" align="right" valign="top"><a id="ab262dbd3c834291aa0274b55caf74d68"></a>
+static <a class="el" href="structopt__uint16__t.html">opt_uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_uint16_t</b> (void)</td></tr>
+<tr class="separator:ab262dbd3c834291aa0274b55caf74d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43470d66d1e7861590a8d9a51afef5b3"><td class="memItemLeft" align="right" valign="top"><a id="a43470d66d1e7861590a8d9a51afef5b3"></a>
+static <a class="el" href="structopt__int32__t.html">opt_int32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_int32_t</b> (void)</td></tr>
+<tr class="separator:a43470d66d1e7861590a8d9a51afef5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a9ae82be76ea09239e50f4cb5160f33"><td class="memItemLeft" align="right" valign="top"><a id="a0a9ae82be76ea09239e50f4cb5160f33"></a>
+static <a class="el" href="structopt__uint32__t.html">opt_uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_uint32_t</b> (void)</td></tr>
+<tr class="separator:a0a9ae82be76ea09239e50f4cb5160f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a665db5720a4e71ce062888e337b911e5"><td class="memItemLeft" align="right" valign="top"><a id="a665db5720a4e71ce062888e337b911e5"></a>
+static <a class="el" href="structopt__int64__t.html">opt_int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_int64_t</b> (void)</td></tr>
+<tr class="separator:a665db5720a4e71ce062888e337b911e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73069222c51cff6bd918314bcc28eb65"><td class="memItemLeft" align="right" valign="top"><a id="a73069222c51cff6bd918314bcc28eb65"></a>
+static <a class="el" href="structopt__uint64__t.html">opt_uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_uint64_t</b> (void)</td></tr>
+<tr class="separator:a73069222c51cff6bd918314bcc28eb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790daaa92f310c0b6b4742a5dae60fc9"><td class="memItemLeft" align="right" valign="top"><a id="a790daaa92f310c0b6b4742a5dae60fc9"></a>
+static <a class="el" href="optional_8h.html#a148e4316703b359faa171e06869cecbd">opt_size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_size_t</b> (size_t value)</td></tr>
+<tr class="separator:a790daaa92f310c0b6b4742a5dae60fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d917e3fa371b1c808c3c74fdada296b"><td class="memItemLeft" align="right" valign="top"><a id="a6d917e3fa371b1c808c3c74fdada296b"></a>
+static <a class="el" href="structopt__float.html">opt_float</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_float</b> (float x)</td></tr>
+<tr class="separator:a6d917e3fa371b1c808c3c74fdada296b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a019b151095f94e947d804382c22c346e"><td class="memItemLeft" align="right" valign="top"><a id="a019b151095f94e947d804382c22c346e"></a>
+static <a class="el" href="structopt__double.html">opt_double</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_double</b> (double x)</td></tr>
+<tr class="separator:a019b151095f94e947d804382c22c346e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9827866a2dff82958893681a2e10016b"><td class="memItemLeft" align="right" valign="top"><a id="a9827866a2dff82958893681a2e10016b"></a>
+static <a class="el" href="optional_8h.html#a939ecf6b6e49cc27531fe042eb97f979">opt_i8</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_i8</b> (int8_t value)</td></tr>
+<tr class="separator:a9827866a2dff82958893681a2e10016b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6e5bfbd03e19e93d424569c8980ddd"><td class="memItemLeft" align="right" valign="top"><a id="a6c6e5bfbd03e19e93d424569c8980ddd"></a>
+static <a class="el" href="optional_8h.html#ad183ec0bf19896b17bb80f5cbac7f043">opt_u8</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_u8</b> (uint8_t value)</td></tr>
+<tr class="separator:a6c6e5bfbd03e19e93d424569c8980ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c78a27df91ac5ef1abc59669004c80"><td class="memItemLeft" align="right" valign="top"><a id="a09c78a27df91ac5ef1abc59669004c80"></a>
+static <a class="el" href="optional_8h.html#aa3cedb1b96c9646f26da0cc0a02e24c9">opt_i16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_i16</b> (int16_t value)</td></tr>
+<tr class="separator:a09c78a27df91ac5ef1abc59669004c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac249be88b48406c0bd188ba391edc787"><td class="memItemLeft" align="right" valign="top"><a id="ac249be88b48406c0bd188ba391edc787"></a>
+static <a class="el" href="optional_8h.html#afa86371541fc193318f70139543e1aa2">opt_u16</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_u16</b> (uint16_t value)</td></tr>
+<tr class="separator:ac249be88b48406c0bd188ba391edc787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea0f9a4356365d67a793cd4ae0c817f"><td class="memItemLeft" align="right" valign="top"><a id="a9ea0f9a4356365d67a793cd4ae0c817f"></a>
+static <a class="el" href="optional_8h.html#a58bb9d2f4e966598a2035a4cc0979574">opt_i32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_i32</b> (int32_t value)</td></tr>
+<tr class="separator:a9ea0f9a4356365d67a793cd4ae0c817f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba4f461a8919e5fc480bdc3e769ba600"><td class="memItemLeft" align="right" valign="top"><a id="aba4f461a8919e5fc480bdc3e769ba600"></a>
+static <a class="el" href="optional_8h.html#a2da5e818472ac3798255864399436409">opt_u32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_u32</b> (uint32_t value)</td></tr>
+<tr class="separator:aba4f461a8919e5fc480bdc3e769ba600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eaa91219272002e4f20b092acfdb58d"><td class="memItemLeft" align="right" valign="top"><a id="a3eaa91219272002e4f20b092acfdb58d"></a>
+static <a class="el" href="optional_8h.html#aadf856309d66cc728bc6301aaed6105b">opt_i64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_i64</b> (int64_t value)</td></tr>
+<tr class="separator:a3eaa91219272002e4f20b092acfdb58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f28dafafa21153d90348a97db1f8cc"><td class="memItemLeft" align="right" valign="top"><a id="a50f28dafafa21153d90348a97db1f8cc"></a>
+static <a class="el" href="optional_8h.html#a983e54c1bf0670e5f518408e786a44c7">opt_u64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_u64</b> (uint64_t value)</td></tr>
+<tr class="separator:a50f28dafafa21153d90348a97db1f8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ace087a28c06ef9bf45b976f4241731"><td class="memItemLeft" align="right" valign="top"><a id="a5ace087a28c06ef9bf45b976f4241731"></a>
+static <a class="el" href="optional_8h.html#abf9d6a40124de05b87228c94a938eaf2">opt_usize</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_usize</b> (size_t value)</td></tr>
+<tr class="separator:a5ace087a28c06ef9bf45b976f4241731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07841705f0865d06d0cd866a412efacf"><td class="memItemLeft" align="right" valign="top"><a id="a07841705f0865d06d0cd866a412efacf"></a>
+static <a class="el" href="optional_8h.html#ac0b9642c4973cd5a20870aa3fd0a1efc">opt_f32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_f32</b> (float value)</td></tr>
+<tr class="separator:a07841705f0865d06d0cd866a412efacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b29b9b7432b122e8cd2b219f9a96b6d"><td class="memItemLeft" align="right" valign="top"><a id="a3b29b9b7432b122e8cd2b219f9a96b6d"></a>
+static <a class="el" href="optional_8h.html#aab2b4dae58703f188dd7ec4e6b9c4e76">opt_f64</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_f64</b> (double value)</td></tr>
+<tr class="separator:a3b29b9b7432b122e8cd2b219f9a96b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb53aec43099b4519546fbbfc4434063"><td class="memItemLeft" align="right" valign="top"><a id="aeb53aec43099b4519546fbbfc4434063"></a>
+static <a class="el" href="structopt__str.html">opt_str</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_str</b> (char *x)</td></tr>
+<tr class="separator:aeb53aec43099b4519546fbbfc4434063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09da930d05e2ba3e097d525cd1395a6a"><td class="memItemLeft" align="right" valign="top"><a id="a09da930d05e2ba3e097d525cd1395a6a"></a>
+static <a class="el" href="structopt__str__const.html">opt_str_const</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_str_const</b> (const char *x)</td></tr>
+<tr class="separator:a09da930d05e2ba3e097d525cd1395a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e88efd0c43c1977591a28fa37d9d767"><td class="memItemLeft" align="right" valign="top"><a id="a2e88efd0c43c1977591a28fa37d9d767"></a>
+static <a class="el" href="structopt__vect2__t.html">opt_vect2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_vect2_t</b> (<a class="el" href="structvect2__t.html">vect2_t</a> x)</td></tr>
+<tr class="separator:a2e88efd0c43c1977591a28fa37d9d767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a75ad4607e24e0282bd62a2d9255c5c"><td class="memItemLeft" align="right" valign="top"><a id="a8a75ad4607e24e0282bd62a2d9255c5c"></a>
+static <a class="el" href="structopt__vect3__t.html">opt_vect3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_vect3_t</b> (<a class="el" href="structvect3__t.html">vect3_t</a> x)</td></tr>
+<tr class="separator:a8a75ad4607e24e0282bd62a2d9255c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06bd6f823aea54c3f4268f7a0c96f20b"><td class="memItemLeft" align="right" valign="top"><a id="a06bd6f823aea54c3f4268f7a0c96f20b"></a>
+static <a class="el" href="structopt__vect3l__t.html">opt_vect3l_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_vect3l_t</b> (<a class="el" href="structvect3l__t.html">vect3l_t</a> x)</td></tr>
+<tr class="separator:a06bd6f823aea54c3f4268f7a0c96f20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5faea65ba6dce9ef37a6e3236af79ba"><td class="memItemLeft" align="right" valign="top"><a id="af5faea65ba6dce9ef37a6e3236af79ba"></a>
+static <a class="el" href="structopt__geo__pos2__t.html">opt_geo_pos2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_geo_pos2_t</b> (<a class="el" href="structgeo__pos2__t.html">geo_pos2_t</a> x)</td></tr>
+<tr class="separator:af5faea65ba6dce9ef37a6e3236af79ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2df3e60179b38033a0cfa01d95c9bb9"><td class="memItemLeft" align="right" valign="top"><a id="af2df3e60179b38033a0cfa01d95c9bb9"></a>
+static <a class="el" href="structopt__geo__pos3__t.html">opt_geo_pos3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_geo_pos3_t</b> (<a class="el" href="structgeo__pos3__t.html">geo_pos3_t</a> x)</td></tr>
+<tr class="separator:af2df3e60179b38033a0cfa01d95c9bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9500f2ec584a4f65510c18d0b429d1a2"><td class="memItemLeft" align="right" valign="top"><a id="a9500f2ec584a4f65510c18d0b429d1a2"></a>
+static <a class="el" href="structopt__geo__pos2__32__t.html">opt_geo_pos2_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_geo_pos2_32_t</b> (<a class="el" href="structgeo__pos2__32__t.html">geo_pos2_32_t</a> x)</td></tr>
+<tr class="separator:a9500f2ec584a4f65510c18d0b429d1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf9bbe4be50ce3bceb8907966aa3fba"><td class="memItemLeft" align="right" valign="top"><a id="abcf9bbe4be50ce3bceb8907966aa3fba"></a>
+static <a class="el" href="structopt__geo__pos3__32__t.html">opt_geo_pos3_32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>opt_into_geo_pos3_32_t</b> (<a class="el" href="structgeo__pos3__32__t.html">geo_pos3_32_t</a> x)</td></tr>
+<tr class="separator:abcf9bbe4be50ce3bceb8907966aa3fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h1><a class="anchor" id="autotoc_md10"></a>
@@ -373,7 +482,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif  </span><span class="comment">// _my_optional_h_</span></div>
 <div class="ttc" id="aoptional_8h_html_a308278970253212c8e9f8c0ae317b96a"><div class="ttname"><a href="optional_8h.html#a308278970253212c8e9f8c0ae317b96a">IMPL_OPTIONAL_EXPLICIT</a></div><div class="ttdeci">#define IMPL_OPTIONAL_EXPLICIT(type_name, c_type)</div><div class="ttdoc">Declares a custom optional type with explicit NONE encoding.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00308">optional.h:308</a></div></div>
-<div class="ttc" id="aoptional_8h_html_a784e18ac9e8950db47089383372b2e93"><div class="ttname"><a href="optional_8h.html#a784e18ac9e8950db47089383372b2e93">IMPL_OPTIONAL_IMPLICIT</a></div><div class="ttdeci">#define IMPL_OPTIONAL_IMPLICIT(type_name, c_type, none_value, none_check)</div><div class="ttdoc">Declares a custom optional type with implicit NONE encoding.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00487">optional.h:487</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a784e18ac9e8950db47089383372b2e93"><div class="ttname"><a href="optional_8h.html#a784e18ac9e8950db47089383372b2e93">IMPL_OPTIONAL_IMPLICIT</a></div><div class="ttdeci">#define IMPL_OPTIONAL_IMPLICIT(type_name, c_type, none_value, none_check)</div><div class="ttdoc">Declares a custom optional type with implicit NONE encoding.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00491">optional.h:491</a></div></div>
 </div><!-- fragment --><p> We have now constructed all of the necessary typedefs and inline functions to manipulate each optional type. Lastly, we need to link these new types into the master auto-selection macro inside of <code><a class="el" href="optional_8h.html">optional.h</a></code>. We do this by simply redefining the <code>OPTIONAL_TYPE_LIST</code> macro, filling it with our types: </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef _my_optional_h_</span></div>
 <div class="line"><span class="preprocessor">#define _my_optional_h_</span></div>
 <div class="line"> </div>
@@ -446,7 +555,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">        if (<a class="code" href="optional_8h.html#ace2138afa1ae8fb5f0e9127f90098469">MATCH</a>((opt), (<span class="keywordtype">void</span> *)&amp;__if_let_tmp_##varname) == \</div>
 <div class="line">            <a class="code" href="optional_8h.html#addfb05740c0220faaea7030f0111965ea09a1ad2f8ced7d15945c07ccb267b04f">OPT_SOME</a>) { \</div>
 <div class="line">            vartype varname = __if_let_tmp_##varname;</div>
-<div class="ttc" id="aoptional_8h_html_ace2138afa1ae8fb5f0e9127f90098469"><div class="ttname"><a href="optional_8h.html#ace2138afa1ae8fb5f0e9127f90098469">MATCH</a></div><div class="ttdeci">#define MATCH(opt, out_value)</div><div class="ttdoc">Extracts the value embedded in the optional and returns the optional_state_t enum corresponding to th...</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01030">optional.h:1030</a></div></div>
+<div class="ttc" id="aoptional_8h_html_ace2138afa1ae8fb5f0e9127f90098469"><div class="ttname"><a href="optional_8h.html#ace2138afa1ae8fb5f0e9127f90098469">MATCH</a></div><div class="ttdeci">#define MATCH(opt, out_value)</div><div class="ttdoc">Extracts the value embedded in the optional and returns the optional_state_t enum corresponding to th...</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01046">optional.h:1046</a></div></div>
 <div class="ttc" id="aoptional_8h_html_addfb05740c0220faaea7030f0111965ea09a1ad2f8ced7d15945c07ccb267b04f"><div class="ttname"><a href="optional_8h.html#addfb05740c0220faaea7030f0111965ea09a1ad2f8ced7d15945c07ccb267b04f">OPT_SOME</a></div><div class="ttdeci">@ OPT_SOME</div><div class="ttdoc">State denoting that the optional contains a valid value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00275">optional.h:275</a></div></div>
 </div><!-- fragment -->
 <p>Allows constructing Rust-like if-let statements in C. </p>
@@ -459,8 +568,8 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    <span class="comment">// SOME state value of `my_option&#39;</span></div>
 <div class="line">    use_foo(foo);</div>
 <div class="line">IF_LET_END</div>
-<div class="ttc" id="aoptional_8h_html_af50612b5c0dc6f77d51269f51e935785"><div class="ttname"><a href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a></div><div class="ttdeci">#define IF_LET(vartype, varname, opt)</div><div class="ttdoc">Allows constructing Rust-like if-let statements in C.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01405">optional.h:1405</a></div></div>
-<div class="ttc" id="astructopt__float_html"><div class="ttname"><a href="structopt__float.html">opt_float</a></div><div class="ttdoc">An optional type for wrapping a non-NAN float value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00736">optional.h:736</a></div></div>
+<div class="ttc" id="aoptional_8h_html_af50612b5c0dc6f77d51269f51e935785"><div class="ttname"><a href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a></div><div class="ttdeci">#define IF_LET(vartype, varname, opt)</div><div class="ttdoc">Allows constructing Rust-like if-let statements in C.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01496">optional.h:1496</a></div></div>
+<div class="ttc" id="astructopt__float_html"><div class="ttname"><a href="structopt__float.html">opt_float</a></div><div class="ttdoc">An optional type for wrapping a non-NAN float value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00752">optional.h:752</a></div></div>
 </div><!-- fragment --><p> In the above example, <code>foo</code> is prevented from leaking outside of the if block scope, thus stopping accidentally using it when no value was contained in the optional type. To add an else block to this kind of block, use: </p><div class="fragment"><div class="line"><a class="code" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a>(<span class="keywordtype">float</span>, foo, my_option)</div>
 <div class="line">    use_foo(foo);</div>
 <div class="line">IF_LET_ELSE</div>
@@ -468,7 +577,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    do_something_else();</div>
 <div class="line">IF_LET_END</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01405">1405</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01496">1496</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -508,7 +617,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">        if (<a class="code" href="optional_8h.html#ab9fa7456dfc3fb1e8896b95c3aa80bf2">MATCH_AS_REF</a>((opt), (<span class="keywordtype">void</span> *)&amp;__if_let_tmp_##varname) == \</div>
 <div class="line">            <a class="code" href="optional_8h.html#addfb05740c0220faaea7030f0111965ea09a1ad2f8ced7d15945c07ccb267b04f">OPT_SOME</a>) { \</div>
 <div class="line">            vartype varname = __if_let_tmp_##varname;</div>
-<div class="ttc" id="aoptional_8h_html_ab9fa7456dfc3fb1e8896b95c3aa80bf2"><div class="ttname"><a href="optional_8h.html#ab9fa7456dfc3fb1e8896b95c3aa80bf2">MATCH_AS_REF</a></div><div class="ttdeci">#define MATCH_AS_REF(opt, out_value_p)</div><div class="ttdoc">Extracts an immutable reference to the value embedded in the optional and returns the optional_state_...</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01072">optional.h:1072</a></div></div>
+<div class="ttc" id="aoptional_8h_html_ab9fa7456dfc3fb1e8896b95c3aa80bf2"><div class="ttname"><a href="optional_8h.html#ab9fa7456dfc3fb1e8896b95c3aa80bf2">MATCH_AS_REF</a></div><div class="ttdeci">#define MATCH_AS_REF(opt, out_value_p)</div><div class="ttdoc">Extracts an immutable reference to the value embedded in the optional and returns the optional_state_...</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01088">optional.h:1088</a></div></div>
 </div><!-- fragment -->
 <p>Same as <a class="el" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785" title="Allows constructing Rust-like if-let statements in C.">IF_LET()</a> macro, but returns reference to the value. </p>
 <p>This macro works in a similar manner as <a class="el" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785" title="Allows constructing Rust-like if-let statements in C.">IF_LET()</a>, but instead returning the optional in the SOME case by value, the optional is returned by reference (as in <a class="el" href="optional_8h.html#ab9fa7456dfc3fb1e8896b95c3aa80bf2" title="Extracts an immutable reference to the value embedded in the optional and returns the optional_state_...">MATCH_AS_REF()</a>). Example: </p><div class="fragment"><div class="line">opt_object_t maybe_obj;</div>
@@ -516,9 +625,9 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    <span class="comment">// `obj&#39; points into `maybe_obj&#39;</span></div>
 <div class="line">    use_obj_ref(obj);</div>
 <div class="line">IF_LET_END</div>
-<div class="ttc" id="aoptional_8h_html_a20ec60060bf83079070ef896e6a46a9c"><div class="ttname"><a href="optional_8h.html#a20ec60060bf83079070ef896e6a46a9c">IF_LET_AS_REF</a></div><div class="ttdeci">#define IF_LET_AS_REF(vartype, varname, opt)</div><div class="ttdoc">Same as IF_LET() macro, but returns reference to the value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01427">optional.h:1427</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a20ec60060bf83079070ef896e6a46a9c"><div class="ttname"><a href="optional_8h.html#a20ec60060bf83079070ef896e6a46a9c">IF_LET_AS_REF</a></div><div class="ttdeci">#define IF_LET_AS_REF(vartype, varname, opt)</div><div class="ttdoc">Same as IF_LET() macro, but returns reference to the value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01518">optional.h:1518</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01427">1427</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01518">1518</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -565,7 +674,7 @@ Adding Your Own Custom Optional Types</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00639">639</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00651">651</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -661,7 +770,7 @@ Adding Your Own Custom Optional Types</h2>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00487">487</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00491">491</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -714,7 +823,7 @@ Adding Your Own Custom Optional Types</h2>
 </div><!-- fragment --> </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01030">1030</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01046">1046</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -759,7 +868,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    <span class="keywordflow">break</span>;</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01109">1109</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01125">1125</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -806,7 +915,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">}</div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#ad597bc0d9a06c841ff83207760bdee87" title="Extracts a reference to the value embedded in the optional and returns the optional_state_t enum corr...">MATCH_AS_MUT()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01072">1072</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01088">1088</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -835,10 +944,45 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">         <span class="keywordflow">return</span> <a class="code" href="optional_8h.html#a8a1dd117c8e0f7c9a98acd48235cd2f8">NONE</a>(<span class="keywordtype">float</span>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="aoptional_8h_html_a8a1dd117c8e0f7c9a98acd48235cd2f8"><div class="ttname"><a href="optional_8h.html#a8a1dd117c8e0f7c9a98acd48235cd2f8">NONE</a></div><div class="ttdeci">#define NONE(type_name)</div><div class="ttdoc">Constructs a new optional value in the NONE state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00969">optional.h:969</a></div></div>
-<div class="ttc" id="aoptional_8h_html_ad37ae435f25f46c67993270d88bc219d"><div class="ttname"><a href="optional_8h.html#ad37ae435f25f46c67993270d88bc219d">SOME</a></div><div class="ttdeci">#define SOME(expr)</div><div class="ttdoc">Constructs a new optional value in the SOME state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00940">optional.h:940</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a8a1dd117c8e0f7c9a98acd48235cd2f8"><div class="ttname"><a href="optional_8h.html#a8a1dd117c8e0f7c9a98acd48235cd2f8">NONE</a></div><div class="ttdeci">#define NONE(type_name)</div><div class="ttdoc">Constructs a new optional value in the NONE state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00985">optional.h:985</a></div></div>
+<div class="ttc" id="aoptional_8h_html_ad37ae435f25f46c67993270d88bc219d"><div class="ttname"><a href="optional_8h.html#ad37ae435f25f46c67993270d88bc219d">SOME</a></div><div class="ttdeci">#define SOME(expr)</div><div class="ttdoc">Constructs a new optional value in the SOME state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00956">optional.h:956</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00969">969</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00985">985</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2b197c4eb4243b3a74bac0736911fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b197c4eb4243b3a74bac0736911fc5">&#9670;&nbsp;</a></span>OPT_INTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OPT_INTO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">value</td><td>)</td>
+          <td>&#160;&#160;&#160;OPTIONAL_TYPE_SELECTOR(opt_into_, (value))(value)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allows wrapping an implicitly representable value into a suitable optional. </p>
+<p>This macro works by performing a NONE-check on the value itself, to then determine whether the value should be wrapped in a SOME variant, or a NONE variant.</p>
+<dl class="section note"><dt>Note</dt><dd>This <em>only</em> works for values which can be implicitly represented in an optional (i.e. they are defined using IMPL_OPTIONAL_IMPLICIT). This is because we rely on the value itself containing enough information to convey its state. Only the following types implemented in libacfutils support implicit conversion into an optional type:<ul>
+<li>floating point types <code><a class="el" href="structopt__float.html" title="An optional type for wrapping a non-NAN float value.">opt_float</a></code> and <code><a class="el" href="structopt__double.html" title="An optional type for wrapping a non-NAN double value.">opt_double</a></code></li>
+<li>string types <code><a class="el" href="structopt__str.html" title="An optional type for wrapping a non-NULL char * value.">opt_str</a></code> and <code><a class="el" href="structopt__str__const.html" title="An optional type for wrapping a non-NULL char const * value.">opt_str_const</a></code></li>
+<li>vector geometric types <code>opt_vect*_t</code></li>
+<li>geographic coordinate types <code>opt_geo_pos*_t</code></li>
+</ul>
+</dd></dl>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> foo();        <span class="comment">// may return NAN to indicate an invalid value</span></div>
+<div class="line"><a class="code" href="optional_8h.html#af50612b5c0dc6f77d51269f51e935785">IF_LET</a>(<span class="keywordtype">float</span>, valid_value, <a class="code" href="optional_8h.html#ad2b197c4eb4243b3a74bac0736911fc5">OPT_INTO</a>(foo()))</div>
+<div class="line"> <span class="comment">// valid_value is guaranteed to be non-NAN here</span></div>
+<div class="line">IF_LET_END</div>
+<div class="ttc" id="aoptional_8h_html_ad2b197c4eb4243b3a74bac0736911fc5"><div class="ttname"><a href="optional_8h.html#ad2b197c4eb4243b3a74bac0736911fc5">OPT_INTO</a></div><div class="ttdeci">#define OPT_INTO(value)</div><div class="ttdoc">Allows wrapping an implicitly representable value into a suitable optional.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01557">optional.h:1557</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01557">1557</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -871,11 +1015,11 @@ Adding Your Own Custom Optional Types</h2>
 <p>Selects between two optional values based on whether the first optional is in the SOME state. </p>
 <p>If the first argument is in the SOME state, returns the first optional. Otherwise returns the second optional. This macro can be used to provide a fallback optional value without actually unwrapping the value contained in the optional.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><a class="code" href="structopt__float.html">opt_float</a> result = <a class="code" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a>(my_opt_float, fallback_opt_float);</div>
-<div class="ttc" id="aoptional_8h_html_ab65621263872982e2ecf95bb2c190810"><div class="ttname"><a href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a></div><div class="ttdeci">#define OPT_OR(a, b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01327">optional.h:1327</a></div></div>
+<div class="ttc" id="aoptional_8h_html_ab65621263872982e2ecf95bb2c190810"><div class="ttname"><a href="optional_8h.html#ab65621263872982e2ecf95bb2c190810">OPT_OR</a></div><div class="ttdeci">#define OPT_OR(a, b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01418">optional.h:1418</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>The second argument to this macro is eagerly evaluated, even if the first argument is in the SOME state. You must take care to avoid unintended side effects of the second argument. If you want to force lazy execution, you must use the <a class="el" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8" title="Selects between two optional values based on whether the first optional is in the SOME state....">OPT_OR_ELSE()</a> macro instead. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8" title="Selects between two optional values based on whether the first optional is in the SOME state....">OPT_OR_ELSE</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01327">1327</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01418">1418</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -917,11 +1061,11 @@ Adding Your Own Custom Optional Types</h2>
 <p>Example usage: </p><div class="fragment"><div class="line"><a class="code" href="structopt__float.html">opt_float</a> build_fallback(<span class="keywordtype">void</span> *arg);</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="structopt__float.html">opt_float</a> result = <a class="code" href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8">OPT_OR_ELSE</a>(my_opt_float, build_fallback, foo);</div>
-<div class="ttc" id="aoptional_8h_html_a9a2271bdc73a0d537f55c0beefbd09b8"><div class="ttname"><a href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8">OPT_OR_ELSE</a></div><div class="ttdeci">#define OPT_OR_ELSE(a, func_b, arg_b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state....</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01363">optional.h:1363</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a9a2271bdc73a0d537f55c0beefbd09b8"><div class="ttname"><a href="optional_8h.html#a9a2271bdc73a0d537f55c0beefbd09b8">OPT_OR_ELSE</a></div><div class="ttdeci">#define OPT_OR_ELSE(a, func_b, arg_b)</div><div class="ttdoc">Selects between two optional values based on whether the first optional is in the SOME state....</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01454">optional.h:1454</a></div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The purpose of this macro is to provide a mechanism for lazy evaluation of the fallback case. The <code>func_b</code> argument is not called unless the first argument is in the NONE state. If you want the second argument to be eagerly evaluated (as well as avoid having to write a callback function), use <a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810" title="Selects between two optional values based on whether the first optional is in the SOME state.">OPT_OR()</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#ab65621263872982e2ecf95bb2c190810" title="Selects between two optional values based on whether the first optional is in the SOME state.">OPT_OR</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01363">1363</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01454">1454</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -949,7 +1093,7 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line"><span class="preprocessor">    OPTIONAL_TYPE_LIST_ADD(my_type_2, my_type_2 *, op_name)</span></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#custom_opt_types">Adding Your Own Custom Optional Types</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00877">877</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00893">893</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -989,7 +1133,7 @@ Adding Your Own Custom Optional Types</h2>
 <p>Use this macro to append entries to your <a class="el" href="optional_8h.html#af1bc079f415a97870a88de442562210f" title="Overridable list of custom optional types provided by your code.">OPTIONAL_TYPE_LIST()</a> macro, which contains a list of your custom optional types.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#custom_opt_types">Adding Your Own Custom Optional Types</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00855">855</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00871">871</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1021,7 +1165,7 @@ Adding Your Own Custom Optional Types</h2>
 </div><!-- fragment --><p> Because the type is determined solely by the macro argument expression and not by the overall return type, you must make sure the expression is typed exactly to the desired optional type. This can require an explicit cast. For example <code>SOME(5.0)</code> always results in an <code><a class="el" href="structopt__double.html" title="An optional type for wrapping a non-NAN double value.">opt_double</a></code>, even if you want assign to or return an <code><a class="el" href="structopt__float.html" title="An optional type for wrapping a non-NAN float value.">opt_float</a></code>. To force the correct type inference, use <code>SOME(5.0f)</code> or <code>SOME((float)5.0)</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>C++ doesn't support the C11 <code>_Generic</code> construct and thus automatic type inference cannot be used for the <code>SOME</code> macro. When used from C++ code, you must provide an explicit optional type name in the first argument, such as: <code>SOME(float, 5.0f)</code>. The optional type name is the latter part of the name of the optional type, e.g. for an <code><a class="el" href="structopt__str.html" title="An optional type for wrapping a non-NULL char * value.">opt_str</a></code> the type name is <code>str</code> and not necessarily the C type designator (which is <code>char *</code> in the case of <code><a class="el" href="structopt__str.html" title="An optional type for wrapping a non-NULL char * value.">opt_str</a></code>). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00940">940</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l00956">956</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1047,9 +1191,9 @@ Adding Your Own Custom Optional Types</h2>
 <p>Extracts the value of the optional unconditionally. </p>
 <p>If the optional was in the SOME state, returns the wrapped value. If the optional was in the NONE state, causes a runtime assertion failure and panic. You should only use this macro during testing, or after you have made sure using other means that the optional is in the SOME state.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> my_value = <a class="code" href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769">UNWRAP</a>(my_opt_float);</div>
-<div class="ttc" id="aoptional_8h_html_a8a7d5589a8cfccfee83d6e1688eb9769"><div class="ttname"><a href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769">UNWRAP</a></div><div class="ttdeci">#define UNWRAP(opt)</div><div class="ttdoc">Extracts the value of the optional unconditionally.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01135">optional.h:1135</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a8a7d5589a8cfccfee83d6e1688eb9769"><div class="ttname"><a href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769">UNWRAP</a></div><div class="ttdeci">#define UNWRAP(opt)</div><div class="ttdoc">Extracts the value of the optional unconditionally.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01151">optional.h:1151</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01135">1135</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01151">1151</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1074,9 +1218,9 @@ Adding Your Own Custom Optional Types</h2>
 <p>Extracts a mutable reference to the value of the optional unconditionally. </p>
 <p>If the optional was in the SOME state, returns a pointer to the wrapped value. If the optional was in the NONE state, causes a runtime assertion failure and panic. You should only use this macro during testing, or after you have made sure using other means that the optional is in the SOME state.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> *my_value_ref = <a class="code" href="optional_8h.html#ac3349fe30b9b3402f8be17056d4096a8">UNWRAP_AS_REF</a>(&amp;my_opt_float);</div>
-<div class="ttc" id="aoptional_8h_html_ac3349fe30b9b3402f8be17056d4096a8"><div class="ttname"><a href="optional_8h.html#ac3349fe30b9b3402f8be17056d4096a8">UNWRAP_AS_REF</a></div><div class="ttdeci">#define UNWRAP_AS_REF(opt)</div><div class="ttdoc">Extracts an immutable reference to the value of the optional unconditionally.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01162">optional.h:1162</a></div></div>
+<div class="ttc" id="aoptional_8h_html_ac3349fe30b9b3402f8be17056d4096a8"><div class="ttname"><a href="optional_8h.html#ac3349fe30b9b3402f8be17056d4096a8">UNWRAP_AS_REF</a></div><div class="ttdeci">#define UNWRAP_AS_REF(opt)</div><div class="ttdoc">Extracts an immutable reference to the value of the optional unconditionally.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01178">optional.h:1178</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01190">1190</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01206">1206</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1102,7 +1246,7 @@ Adding Your Own Custom Optional Types</h2>
 <p>If the optional was in the SOME state, returns a pointer to the wrapped value. If the optional was in the NONE state, causes a runtime assertion failure and panic. You should only use this macro during testing, or after you have made sure using other means that the optional is in the SOME state.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">float</span> *my_value_ref = <a class="code" href="optional_8h.html#ac3349fe30b9b3402f8be17056d4096a8">UNWRAP_AS_REF</a>(&amp;my_opt_float);</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01162">1162</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01178">1178</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1135,11 +1279,76 @@ Adding Your Own Custom Optional Types</h2>
 <p>Extracts the value of the optional, or evaluates to a fallback value. </p>
 <p>If <code>opt</code> is in the SOME state, evaluates to the wrapped value. If <code>opt</code> is in the NONE state, evaluates to the <code>dfl_value</code> argument. This can be used to safely unwrap an optional, providing a default value in case the optional was in the NONE state.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> my_value = <a class="code" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a>(my_opt_float, 0.0f);</div>
-<div class="ttc" id="aoptional_8h_html_a2f9cffa8e039ff076b435e897846a83d"><div class="ttname"><a href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a></div><div class="ttdeci">#define UNWRAP_OR(opt, dfl_value)</div><div class="ttdoc">Extracts the value of the optional, or evaluates to a fallback value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01222">optional.h:1222</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a2f9cffa8e039ff076b435e897846a83d"><div class="ttname"><a href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d">UNWRAP_OR</a></div><div class="ttdeci">#define UNWRAP_OR(opt, dfl_value)</div><div class="ttdoc">Extracts the value of the optional, or evaluates to a fallback value.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01238">optional.h:1238</a></div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The second argument to this macro is eagerly evaluated, even if the first argument is in the SOME state. You must take care to avoid unintended side effects of the second argument. If you want to force lazy execution, you must use the <a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or yields a fallback value with lazy evaluation.">UNWRAP_OR_ELSE()</a> macro instead. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e" title="Extracts the value of the optional, or yields a fallback value with lazy evaluation.">UNWRAP_OR_ELSE()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01222">1222</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01238">1238</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+
+</div>
+</div>
+<a id="a35c9931829ced65af643eee46c5f89d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c9931829ced65af643eee46c5f89d3">&#9670;&nbsp;</a></span>UNWRAP_OR_BREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNWRAP_OR_BREAK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">opt</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ({ __typeof(opt) __tmp = (opt); \</div>
+<div class="line">        if (<a class="code" href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a>(__tmp)) { <span class="keywordflow">break</span>; } <a class="code" href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769">UNWRAP</a>(__tmp); })</div>
+<div class="ttc" id="aoptional_8h_html_a1cab986d1f0da7498c0956df0e6c2536"><div class="ttname"><a href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a></div><div class="ttdeci">#define IS_NONE(x)</div><div class="ttdoc">Returns true if the optional is in the NONE state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01007">optional.h:1007</a></div></div>
+</div><!-- fragment -->
+<p>Unwraps a SOME value, or in case of a NONE value, breaks out of the current loop or switch case (invokes the <code>break</code> keyword). </p>
+<p>This macro helps with flow control when a NONE variant is encountered.</p>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
+<div class="line">    ...</div>
+<div class="line">    <span class="comment">// break out of loop if we get a NONE variant here</span></div>
+<div class="line">    <span class="keywordtype">float</span> need_valid_value_here = <a class="code" href="optional_8h.html#a35c9931829ced65af643eee46c5f89d3">UNWRAP_OR_BREAK</a>(this_can_be_NONE());</div>
+<div class="line">    ...</div>
+<div class="line">}</div>
+<div class="ttc" id="aoptional_8h_html_a35c9931829ced65af643eee46c5f89d3"><div class="ttname"><a href="optional_8h.html#a35c9931829ced65af643eee46c5f89d3">UNWRAP_OR_BREAK</a></div><div class="ttdeci">#define UNWRAP_OR_BREAK(opt)</div><div class="ttdoc">Unwraps a SOME value, or in case of a NONE value, breaks out of the current loop or switch case (invo...</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01366">optional.h:1366</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01366">1366</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ec726970abcfff30b1393958aa3768c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec726970abcfff30b1393958aa3768c">&#9670;&nbsp;</a></span>UNWRAP_OR_CONTINUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNWRAP_OR_CONTINUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">opt</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ({ __typeof(opt) __tmp = (opt); \</div>
+<div class="line">        if (<a class="code" href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a>(__tmp)) { <span class="keywordflow">continue</span>; } <a class="code" href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769">UNWRAP</a>(__tmp); })</div>
+</div><!-- fragment -->
+<p>Unwraps a SOME value, or in case of a NONE value, restarts the current loop iteration (invokes the <code>continue</code> keyword). </p>
+<p>This macro helps with flow control when a NONE variant is encountered.</p>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
+<div class="line">    ...</div>
+<div class="line">    <span class="comment">// continue to next loop iteration if we get a NONE variant here</span></div>
+<div class="line">    <span class="keywordtype">float</span> need_valid_value_here = <a class="code" href="optional_8h.html#a1ec726970abcfff30b1393958aa3768c">UNWRAP_OR_CONTINUE</a>(this_can_be_NONE());</div>
+<div class="line">    ...</div>
+<div class="line">}</div>
+<div class="ttc" id="aoptional_8h_html_a1ec726970abcfff30b1393958aa3768c"><div class="ttname"><a href="optional_8h.html#a1ec726970abcfff30b1393958aa3768c">UNWRAP_OR_CONTINUE</a></div><div class="ttdeci">#define UNWRAP_OR_CONTINUE(opt)</div><div class="ttdoc">Unwraps a SOME value, or in case of a NONE value, restarts the current loop iteration (invokes the co...</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01389">optional.h:1389</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01389">1389</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1183,11 +1392,59 @@ Adding Your Own Custom Optional Types</h2>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> calc_fallback(<span class="keywordtype">void</span> *arg);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">float</span> my_value = <a class="code" href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a>(my_opt_float, calc_fallback, foo);</div>
-<div class="ttc" id="aoptional_8h_html_abdab34dccc16a52317b37db053d1db9e"><div class="ttname"><a href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a></div><div class="ttdeci">#define UNWRAP_OR_ELSE(opt, dfl_func, dfl_arg)</div><div class="ttdoc">Extracts the value of the optional, or yields a fallback value with lazy evaluation.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01261">optional.h:1261</a></div></div>
+<div class="ttc" id="aoptional_8h_html_abdab34dccc16a52317b37db053d1db9e"><div class="ttname"><a href="optional_8h.html#abdab34dccc16a52317b37db053d1db9e">UNWRAP_OR_ELSE</a></div><div class="ttdeci">#define UNWRAP_OR_ELSE(opt, dfl_func, dfl_arg)</div><div class="ttdoc">Extracts the value of the optional, or yields a fallback value with lazy evaluation.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01277">optional.h:1277</a></div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>The purpose of this macro is to provide a mechanism for lazy evaluation of the default case. The function is not called unless the first argument is in the NONE state. If you want the second argument to be eagerly evaluated (as well as avoid having to write a callback function), use <a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or evaluates to a fallback value.">UNWRAP_OR()</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="optional_8h.html#a2f9cffa8e039ff076b435e897846a83d" title="Extracts the value of the optional, or evaluates to a fallback value.">UNWRAP_OR()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01261">1261</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01277">1277</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b7b9cfb51a5a99a436e2b7931bda182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7b9cfb51a5a99a436e2b7931bda182">&#9670;&nbsp;</a></span>UNWRAP_OR_GOTO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNWRAP_OR_GOTO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">opt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">label&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ({ __typeof(opt) __tmp = (opt); \</div>
+<div class="line">        if (<a class="code" href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a>(__tmp)) { <span class="keywordflow">goto</span> label; } <a class="code" href="optional_8h.html#a8a7d5589a8cfccfee83d6e1688eb9769">UNWRAP</a>(__tmp); })</div>
+</div><!-- fragment -->
+<p>Unwraps a SOME value, or in case of a NONE value, goes to the label. </p>
+<p>This macro helps with unwinding when a NONE variant is encountered, requiring cleanup of the current function.</p>
+<p>Example usage: </p><div class="fragment"><div class="line"><a class="code" href="structopt__float.html">opt_float</a> foo(<span class="keywordtype">void</span>);    <span class="comment">// can return NONE variant</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> bar() {</div>
+<div class="line">    <span class="comment">// setup some resources that need cleanup</span></div>
+<div class="line">    ...</div>
+<div class="line">    <span class="keywordtype">float</span> need_valid_value_here = <a class="code" href="optional_8h.html#a0b7b9cfb51a5a99a436e2b7931bda182">UNWRAP_OR_GOTO</a>(foo(), out);</div>
+<div class="line">    ...</div>
+<div class="line">    <span class="comment">// use need_valid_value_here</span></div>
+<div class="line">    ...</div>
+<div class="line">out:</div>
+<div class="line">    <span class="comment">// perform cleanup of resources acquired during setup</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aoptional_8h_html_a0b7b9cfb51a5a99a436e2b7931bda182"><div class="ttname"><a href="optional_8h.html#a0b7b9cfb51a5a99a436e2b7931bda182">UNWRAP_OR_GOTO</a></div><div class="ttdeci">#define UNWRAP_OR_GOTO(opt, label)</div><div class="ttdoc">Unwraps a SOME value, or in case of a NONE value, goes to the label.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01343">optional.h:1343</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01343">1343</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1476,6 @@ Adding Your Own Custom Optional Types</h2>
 <b>Value:</b><div class="fragment"><div class="line">    ({ __typeof(opt) __tmp = (opt); \</div>
 <div class="line">        if (<a class="code" href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a>(__tmp)) { <span class="keywordflow">return</span> __VA_ARGS__; } \</div>
 <div class="line">        UNWRAP(__tmp); })</div>
-<div class="ttc" id="aoptional_8h_html_a1cab986d1f0da7498c0956df0e6c2536"><div class="ttname"><a href="optional_8h.html#a1cab986d1f0da7498c0956df0e6c2536">IS_NONE</a></div><div class="ttdeci">#define IS_NONE(x)</div><div class="ttdoc">Returns true if the optional is in the NONE state.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l00991">optional.h:991</a></div></div>
 </div><!-- fragment -->
 <p>Unwraps a SOME value, or in case of a NONE value, returns from the current function. </p>
 <p>This macro lets you emulate the Rust '?' operator.</p><ol type="1">
@@ -1232,10 +1488,10 @@ Adding Your Own Custom Optional Types</h2>
 <div class="line">    <span class="comment">// ... do something with `value`, it is guaranteed to be valid ...</span></div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="aoptional_8h_html_a4ed10e38616c95b04336c8af536addc2"><div class="ttname"><a href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a></div><div class="ttdeci">#define UNWRAP_OR_RET(opt,...)</div><div class="ttdoc">Unwraps a SOME value, or in case of a NONE value, returns from the current function.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01297">optional.h:1297</a></div></div>
+<div class="ttc" id="aoptional_8h_html_a4ed10e38616c95b04336c8af536addc2"><div class="ttname"><a href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a></div><div class="ttdeci">#define UNWRAP_OR_RET(opt,...)</div><div class="ttdoc">Unwraps a SOME value, or in case of a NONE value, returns from the current function.</div><div class="ttdef"><b>Definition:</b> <a href="optional_8h_source.html#l01313">optional.h:1313</a></div></div>
 </div><!-- fragment --><p> To return with no value from the current function, simply invoke the macro with just one argument: </p><div class="fragment"><div class="line"><span class="keywordtype">float</span> foo = <a class="code" href="optional_8h.html#a4ed10e38616c95b04336c8af536addc2">UNWRAP_OR_RET</a>(wrapped_foo);</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01297">1297</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="optional_8h_source.html#l01313">1313</a> of file <a class="el" href="optional_8h_source.html">optional.h</a>.</p>
 
 </div>
 </div>
