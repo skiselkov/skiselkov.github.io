@@ -1,12 +1,22 @@
 <map id="acfutils/log.h" name="acfutils/log.h">
-<area shape="rect" id="node1" title=" " alt="" coords="112,5,219,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="105,80,226,107"/>
-<area shape="rect" id="node4" href="$sysmacros_8h.html" title=" " alt="" coords="251,80,355,107"/>
-<area shape="rect" id="node5" href="$types_8h_source.html" title=" " alt="" coords="267,155,338,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="158,229,229,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="261,304,331,331"/>
-<area shape="rect" id="node8" title=" " alt="" coords="305,229,375,256"/>
-<area shape="rect" id="node9" href="$core_8h.html" title=" " alt="" coords="399,229,462,256"/>
-<area shape="rect" id="node10" href="$libconfig_8h_source.html" title=" " alt="" coords="385,304,476,331"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="112,5,219,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,80,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,33,76,74,73,69,144,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="105,79,226,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,31,168,65,163,65,163,31"/>
+<area shape="rect" id="Node000004" href="$sysmacros_8h.html" title=" " alt="" coords="251,79,355,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,28,269,70,267,75,186,33"/>
+<area shape="rect" id="Node000005" href="$types_8h_source.html" title=" " alt="" coords="267,152,338,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="305,104,305,138,300,138,300,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="158,225,229,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="287,180,224,220,221,215,284,175"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="261,299,331,324"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="303,178,296,226,296,285,291,285,291,225,298,177"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="305,225,375,251"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="311,176,330,212,325,215,306,179"/>
+<area shape="rect" id="Node000009" href="$core_8h.html" title=" " alt="" coords="399,225,462,251"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="325,175,399,216,396,221,322,180"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="410,253,331,294,329,290,408,248"/>
+<area shape="rect" id="Node000010" href="$libconfig_8h_source.html" title=" " alt="" coords="385,299,476,324"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="433,251,433,285,428,285,428,251"/>
 </map>

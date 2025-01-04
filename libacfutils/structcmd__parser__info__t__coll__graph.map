@@ -1,11 +1,21 @@
 <map id="cmd_parser_info_t" name="cmd_parser_info_t">
-<area shape="rect" id="node1" title=" " alt="" coords="152,389,295,416"/>
-<area shape="rect" id="node2" href="$structdsf__cmd__parser__t.html" title=" " alt="" coords="155,300,292,327"/>
-<area shape="rect" id="node3" href="$structdsf__atom__t.html" title=" " alt="" coords="291,196,385,223"/>
-<area shape="rect" id="node4" href="$structlist__t.html" title=" " alt="" coords="84,5,139,32"/>
-<area shape="rect" id="node6" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="46,95,177,121"/>
-<area shape="rect" id="node9" href="$structdsf__t.html" title=" " alt="" coords="5,145,60,172"/>
-<area shape="rect" id="node5" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="201,95,336,121"/>
-<area shape="rect" id="node7" href="$structlist__node__t.html" title=" " alt="" coords="361,95,454,121"/>
-<area shape="rect" id="node8" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="479,95,621,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="109,383,252,408"/>
+<area shape="rect" id="Node000002" href="$structdsf__cmd__parser__t.html" title=" " alt="" coords="112,295,249,320"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,334,183,382,178,382,178,334"/>
+<area shape="rect" id="Node000003" href="$structdsf__t.html" title=" " alt="" coords="5,143,60,168"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="56,176,171,292,167,296,52,180"/>
+<area shape="rect" id="Node000004" href="$structlist__t.html" title=" " alt="" coords="61,5,116,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="50,35,37,44,27,56,20,78,20,101,30,142,25,143,15,102,14,77,22,53,33,40,47,31"/>
+<area shape="rect" id="Node000005" href="$structdsf__atom__t.html" title=" " alt="" coords="308,192,403,217"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="87,45,88,82,93,101,103,117,123,138,148,155,202,180,259,193,308,199,308,205,258,199,201,185,145,160,120,142,99,120,88,103,83,83,82,45"/>
+<area shape="rect" id="Node000006" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="182,93,313,119"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="123,35,227,91,225,95,121,40"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="325,226,202,297,199,292,322,222"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="265,128,298,166,334,190,331,194,295,170,261,132"/>
+<area shape="rect" id="Node000007" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="337,93,480,119"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="398,132,364,193,359,191,393,129"/>
+<area shape="rect" id="Node000008" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="504,93,639,119"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="548,129,516,151,480,170,442,185,404,196,402,191,440,180,478,166,514,146,545,125"/>
+<area shape="rect" id="Node000009" href="$structlist__node__t.html" title=" " alt="" coords="663,93,757,119"/>
+<area shape="poly" id="edge10_Node000005_Node000009" title=" " alt="" coords="684,129,648,151,606,171,552,185,498,195,403,205,403,199,497,190,551,180,604,165,646,147,682,125"/>
 </map>

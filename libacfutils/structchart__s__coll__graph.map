@@ -1,9 +1,17 @@
 <map id="chart_t" name="chart_t">
-<area shape="rect" id="node1" title=" " alt="" coords="237,288,304,315"/>
-<area shape="rect" id="node2" href="$structchart__procs__t.html" title=" " alt="" coords="5,184,115,211"/>
-<area shape="rect" id="node3" href="$structchart__georef__t.html" title=" " alt="" coords="139,184,255,211"/>
-<area shape="rect" id="node4" href="$structgeo__pos2__t.html" title=" " alt="" coords="41,95,137,121"/>
-<area shape="rect" id="node5" href="$structchart__bbox__t.html" title=" " alt="" coords="253,95,360,121"/>
-<area shape="rect" id="node6" href="$structvect2__t.html" title=" " alt="" coords="171,5,242,32"/>
-<area shape="rect" id="node7" href="$structlist__node__t.html" title=" " alt="" coords="371,184,464,211"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="237,284,304,309"/>
+<area shape="rect" id="Node000002" href="$structchart__procs__t.html" title=" " alt="" coords="5,181,115,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,212,176,258,238,282,236,287,174,262,88,216"/>
+<area shape="rect" id="Node000003" href="$structchart__georef__t.html" title=" " alt="" coords="139,181,255,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,217,241,258,262,282,257,286,237,262,209,220"/>
+<area shape="rect" id="Node000004" href="$structvect2__t.html" title=" " alt="" coords="50,5,121,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="78,45,71,81,72,100,78,117,95,138,116,156,162,179,159,184,113,160,91,142,74,120,67,101,66,81,73,44"/>
+<area shape="rect" id="Node000006" href="$structchart__bbox__t.html" title=" " alt="" coords="252,93,359,119"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="129,33,277,91,275,96,127,38"/>
+<area shape="rect" id="Node000005" href="$structgeo__pos2__t.html" title=" " alt="" coords="132,93,228,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="181,133,184,157,193,180,188,182,179,158,176,133"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="307,133,301,192,288,261,279,285,274,283,283,259,296,191,301,132"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="269,127,243,145,207,183,204,180,240,141,266,123"/>
+<area shape="rect" id="Node000007" href="$structlist__node__t.html" title=" " alt="" coords="371,181,464,207"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="391,217,324,262,289,286,286,282,321,258,388,212"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="flt_perf_t" name="flt_perf_t">
-<area shape="rect" id="node1" title=" " alt="" coords="18,109,99,136"/>
-<area shape="rect" id="node2" href="$structflt__spd__lim__t.html" title=" " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="18,108,99,133"/>
+<area shape="rect" id="Node000002" href="$structflt__spd__lim__t.html" title=" " alt="" coords="5,5,112,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,45,61,108,56,108,56,45"/>
 </map>

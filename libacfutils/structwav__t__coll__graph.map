@@ -1,5 +1,7 @@
 <map id="wav_t" name="wav_t">
-<area shape="rect" id="node1" title=" " alt="" coords="93,124,154,151"/>
-<area shape="rect" id="node2" href="$structwav__fmt__hdr__t.html" title=" " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node3" href="$structvect3__t.html" title=" " alt="" coords="148,5,219,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="93,123,154,148"/>
+<area shape="rect" id="Node000002" href="$structwav__fmt__hdr__t.html" title=" " alt="" coords="5,5,124,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,42,120,121,115,124,74,44"/>
+<area shape="rect" id="Node000003" href="$structvect3__t.html" title=" " alt="" coords="148,5,219,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,44,132,124,127,121,169,42"/>
 </map>

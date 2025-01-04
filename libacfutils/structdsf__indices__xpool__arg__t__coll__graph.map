@@ -1,9 +1,16 @@
 <map id="dsf_indices_xpool_arg_t" name="dsf_indices_xpool_arg_t">
-<area shape="rect" id="node1" title=" " alt="" coords="238,288,417,315"/>
-<area shape="rect" id="node2" href="$structdsf__atom__t.html" title=" " alt="" coords="280,184,375,211"/>
-<area shape="rect" id="node3" href="$structlist__t.html" title=" " alt="" coords="5,5,60,32"/>
-<area shape="rect" id="node5" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="105,95,235,121"/>
-<area shape="rect" id="node4" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="260,95,395,121"/>
-<area shape="rect" id="node6" href="$structlist__node__t.html" title=" " alt="" coords="419,95,513,121"/>
-<area shape="rect" id="node7" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="537,95,680,121"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="242,284,421,309"/>
+<area shape="rect" id="Node000002" href="$structdsf__atom__t.html" title=" " alt="" coords="284,181,379,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,221,334,284,329,284,329,221"/>
+<area shape="rect" id="Node000003" href="$structlist__t.html" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="24,45,16,82,18,101,25,117,42,131,67,143,137,163,215,177,284,186,284,191,214,182,136,168,66,148,39,135,21,120,12,102,11,82,19,43"/>
+<area shape="rect" id="Node000004" href="$structdsf__prop__atom__t.html" title=" " alt="" coords="105,93,235,119"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="64,36,153,91,150,95,61,40"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="200,124,253,155,304,179,302,184,250,160,197,128"/>
+<area shape="rect" id="Node000005" href="$structdsf__planar__atom__t.html" title=" " alt="" coords="260,93,403,119"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="334,133,334,181,329,181,329,133"/>
+<area shape="rect" id="Node000006" href="$structdsf__demi__atom__t.html" title=" " alt="" coords="427,93,561,119"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="471,129,425,160,368,184,366,179,422,155,468,125"/>
+<area shape="rect" id="Node000007" href="$structlist__node__t.html" title=" " alt="" coords="586,93,679,119"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="602,128,568,145,529,160,451,179,379,190,378,185,450,174,528,155,566,140,600,123"/>
 </map>

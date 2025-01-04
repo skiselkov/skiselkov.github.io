@@ -1,8 +1,13 @@
 <map id="mt_cairo_render_t" name="mt_cairo_render_t">
-<area shape="rect" id="node1" title=" " alt="" coords="192,109,332,136"/>
-<area shape="rect" id="node2" href="$structrender__surf__t.html" title=" " alt="" coords="5,5,113,32"/>
-<area shape="rect" id="node3" href="$structmutex__t.html" title=" " alt="" coords="137,5,213,32"/>
-<area shape="rect" id="node4" href="$structlist__node__t.html" title=" " alt="" coords="238,5,331,32"/>
-<area shape="rect" id="node5" href="$structvect2__t.html" title=" " alt="" coords="379,5,449,32"/>
-<area shape="rect" id="node6" href="$structvect3__t.html" title=" " alt="" coords="473,5,544,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="244,108,384,133"/>
+<area shape="rect" id="Node000002" href="$structvect3__t.html" title=" " alt="" coords="5,5,76,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,43,55,64,69,82,98,95,142,104,244,114,244,120,142,110,97,100,66,86,50,67,42,45"/>
+<area shape="rect" id="Node000003" href="$structlist__node__t.html" title=" " alt="" coords="115,5,209,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,44,169,65,180,82,210,102,245,113,243,118,207,107,176,86,164,67,160,45"/>
+<area shape="rect" id="Node000004" href="$structrender__surf__t.html" title=" " alt="" coords="247,5,355,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,44,315,108,310,108,301,44"/>
+<area shape="rect" id="Node000005" href="$structmutex__t.html" title=" " alt="" coords="379,5,455,31"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="397,42,328,110,324,106,393,39"/>
+<area shape="rect" id="Node000006" href="$structvect2__t.html" title=" " alt="" coords="479,5,549,31"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="489,41,455,64,415,86,354,110,352,105,413,82,452,59,486,37"/>
 </map>

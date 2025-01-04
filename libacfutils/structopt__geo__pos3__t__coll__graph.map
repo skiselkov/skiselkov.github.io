@@ -1,4 +1,5 @@
 <map id="opt_geo_pos3_t" name="opt_geo_pos3_t">
-<area shape="rect" id="node1" title="An optional type for wrapping a non&#45;NULL geo_pos3_t value." alt="" coords="5,95,129,121"/>
-<area shape="rect" id="node2" href="$structgeo__pos3__t.html" title=" " alt="" coords="19,5,115,32"/>
+<area shape="rect" id="Node000001" title="An optional type for wrapping a non&#45;NULL geo_pos3_t value." alt="" coords="5,93,129,119"/>
+<area shape="rect" id="Node000002" href="$structgeo__pos3__t.html" title=" " alt="" coords="19,5,115,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,45,70,93,65,93,65,45"/>
 </map>

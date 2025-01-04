@@ -1,4 +1,5 @@
 <map id="odb_t" name="odb_t">
-<area shape="rect" id="node1" title=" " alt="" coords="14,124,73,151"/>
-<area shape="rect" id="node2" href="$structmutex__t.html" title=" " alt="" coords="5,5,81,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="14,123,73,148"/>
+<area shape="rect" id="Node000002" href="$structmutex__t.html" title=" " alt="" coords="5,5,81,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,44,46,123,41,123,41,44"/>
 </map>

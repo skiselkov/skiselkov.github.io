@@ -1,4 +1,5 @@
 <map id="taskq_task_t" name="taskq_task_t">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,111,121"/>
-<area shape="rect" id="node2" href="$structlist__node__t.html" title=" " alt="" coords="11,5,105,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,111,119"/>
+<area shape="rect" id="Node000002" href="$structlist__node__t.html" title=" " alt="" coords="11,5,105,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,45,61,93,55,93,55,45"/>
 </map>

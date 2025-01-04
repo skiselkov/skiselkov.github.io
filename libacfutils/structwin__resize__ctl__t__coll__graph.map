@@ -1,4 +1,5 @@
 <map id="win_resize_ctl_t" name="win_resize_ctl_t">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,132,121"/>
-<area shape="rect" id="node2" href="$structdelay__line__t.html" title=" " alt="" coords="18,5,119,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,132,119"/>
+<area shape="rect" id="Node000002" href="$structdelay__line__t.html" title=" " alt="" coords="18,5,119,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,45,71,93,66,93,66,45"/>
 </map>

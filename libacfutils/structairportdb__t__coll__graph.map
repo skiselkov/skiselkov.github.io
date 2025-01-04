@@ -1,7 +1,11 @@
 <map id="airportdb_t" name="airportdb_t">
-<area shape="rect" id="node1" title=" " alt="" coords="27,288,121,315"/>
-<area shape="rect" id="node2" href="$structmutex__t.html" title=" " alt="" coords="5,184,81,211"/>
-<area shape="rect" id="node3" href="$structhtbl2__t.html" title=" " alt="" coords="106,184,173,211"/>
-<area shape="rect" id="node4" href="$structhtbl__t.html" title=" " alt="" coords="110,95,169,121"/>
-<area shape="rect" id="node5" href="$structlist__t.html" title=" " alt="" coords="112,5,167,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,284,121,309"/>
+<area shape="rect" id="Node000002" href="$structmutex__t.html" title=" " alt="" coords="5,181,81,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,219,63,259,72,283,67,285,58,261,47,221"/>
+<area shape="rect" id="Node000003" href="$structhtbl2__t.html" title=" " alt="" coords="106,181,173,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,220,84,285,79,283,122,217"/>
+<area shape="rect" id="Node000004" href="$structhtbl__t.html" title=" " alt="" coords="110,93,169,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="142,133,142,181,137,181,137,133"/>
+<area shape="rect" id="Node000005" href="$structlist__t.html" title=" " alt="" coords="112,5,167,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="142,45,142,93,137,93,137,45"/>
 </map>

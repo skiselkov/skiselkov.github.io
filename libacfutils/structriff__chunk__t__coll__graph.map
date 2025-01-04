@@ -1,5 +1,7 @@
 <map id="riff_chunk_t" name="riff_chunk_t">
-<area shape="rect" id="node1" title=" " alt="" coords="35,95,134,121"/>
-<area shape="rect" id="node2" href="$structlist__t.html" title=" " alt="" coords="5,5,60,32"/>
-<area shape="rect" id="node3" href="$structlist__node__t.html" title=" " alt="" coords="90,5,183,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="35,93,134,119"/>
+<area shape="rect" id="Node000002" href="$structlist__t.html" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="32,44,36,68,47,81,61,91,57,95,43,85,32,70,26,45"/>
+<area shape="rect" id="Node000003" href="$structlist__node__t.html" title=" " alt="" coords="90,5,183,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,44,110,71,95,94,90,92,105,68,121,42"/>
 </map>

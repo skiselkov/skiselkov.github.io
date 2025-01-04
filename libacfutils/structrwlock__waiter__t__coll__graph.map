@@ -1,4 +1,5 @@
 <map id="rwlock_waiter_t" name="rwlock_waiter_t">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,131,121"/>
-<area shape="rect" id="node2" href="$structlist__node__t.html" title=" " alt="" coords="21,5,115,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,131,119"/>
+<area shape="rect" id="Node000002" href="$structlist__node__t.html" title=" " alt="" coords="21,5,115,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,45,71,93,65,93,65,45"/>
 </map>
